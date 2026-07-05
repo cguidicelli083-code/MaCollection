@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Collection — Gestion de collection rétro-gaming</title>
+<meta name="description" content="Ma Collection : cataloguez vos consoles, jeux et accessoires rétro. Reconnaissance par photo, cote des prix, encyclopédie et mini-jeux.">
+<style>
+  :root{
+    --bg:#0b0f1a; --bg2:#121a2e; --card:#161f38; --border:#2a3a63;
+    --cyan:#22e0d6; --violet:#8b5cf6; --pink:#ff5db1; --gold:#ffcc4d;
+    --txt:#e7ecff; --muted:#9fb0d8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--txt); line-height:1.6;
+    background-image:radial-gradient(1200px 600px at 80% -10%,rgba(139,92,246,.18),transparent),
+                     radial-gradient(900px 500px at -10% 20%,rgba(34,224,214,.12),transparent);
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{text-align:center;padding:72px 20px 48px}
+  .logo{font-size:56px;line-height:1}
+  h1{font-size:clamp(28px,6vw,46px);margin:14px 0 6px;
+     background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));
+     -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .tagline{color:var(--muted);font-size:clamp(15px,2.5vw,19px);max-width:640px;margin:0 auto}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+  .pill{border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.03)}
+
+  section{padding:44px 0;border-top:1px solid var(--border)}
+  h2{font-size:clamp(22px,4vw,30px);margin-bottom:6px}
+  h2 .em{margin-right:10px}
+  .lead{color:var(--muted);margin-bottom:26px;max-width:680px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+  .card h3{font-size:17px;margin-bottom:6px}
+  .card .ic{font-size:26px;display:block;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .apis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .api{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);
+       border:1px solid var(--border);border-radius:12px;padding:14px}
+  .api .ic{font-size:22px}
+  .api strong{display:block;font-size:14.5px}
+  .api span{color:var(--muted);font-size:13px}
+
+  .policy h3{margin:22px 0 6px;font-size:18px;color:var(--cyan)}
+  .policy p,.policy li{color:var(--muted);font-size:14.5px}
+  .policy ul{margin:6px 0 0 20px}
+  .note{background:rgba(255,204,77,.08);border:1px solid rgba(255,204,77,.35);
+        border-radius:12px;padding:14px 16px;color:#ffe6a8;font-size:14px;margin-top:18px}
+
+  footer{text-align:center;padding:40px 20px 60px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--border)}
+  .btn{display:inline-block;margin-top:20px;padding:12px 22px;border-radius:12px;font-weight:600;
+       color:#0b0f1a;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+  .btn:hover{text-decoration:none;filter:brightness(1.08)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">🕹️</div>
+    <h1>Ma Collection</h1>
+    <p class="tagline">L'application pour cataloguer, estimer et faire vivre votre collection de
+      consoles, jeux et accessoires rétro — du salon à la poche.</p>
+    <div class="pills">
+      <span class="pill">Android</span>
+      <span class="pill">Hors-ligne d'abord</span>
+      <span class="pill">Reconnaissance par photo</span>
+      <span class="pill">Cote des prix</span>
+      <span class="pill">Encyclopédie</span>
+      <span class="pill">Mini-jeux rétro</span>
+    </div>
+    <a class="btn" href="#confidentialite">Politique de confidentialité</a>
+  </header>
+
+  <section id="appli">
+    <h2><span class="em">🎮</span>Ce que fait l'application</h2>
+    <p class="lead">Ma Collection transforme votre téléphone en inventaire complet et vivant de
+      votre collection rétro-gaming.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="ic">📸</span>
+        <h3>Ajout par photo ou code-barres</h3>
+        <p>Prenez une photo d'une jaquette, d'une boîte ou d'une console : une IA visuelle
+           l'identifie et pré-remplit la fiche (nom, éditeur, année, jaquette). Scan de
+           code-barres également pris en charge.</p>
+      </div>
+      <div class="card">
+        <span class="ic">🗂️</span>
+        <h3>Collection & liste de souhaits</h3>
+        <p>Consoles, jeux et accessoires classés par type, marque, état et région, avec photos,
+           notes et galerie. Une liste de souhaits séparée pour vos futures trouvailles.</p>
+      </div>
+      <div class="card">
+        <span class="ic">💶</span>
+        <h3>Cote des prix</h3>
+        <p>Estimation de la valeur de vos objets à partir d'annonces réelles, pour suivre la
+           cote de votre collection dans le temps.</p>
+      </div>
+      <div class="card">
+        <span class="ic">📚</span>
+        <h3>Encyclopédie rétro</h3>
+        <p>Fiches détaillées de centaines de consoles (specs, année, fabricant) et catalogue de
+           jeux en ligne pour enrichir vos fiches.</p>
+      </div>
+      <div class="card">
+        <span class="ic">🏆</span>
+        <h3>Gamification</h3>
+        <p>Gagnez des points, débloquez des thèmes visuels et une dizaine de mini-jeux rétro
+           (avec quiz progressif à 10 niveaux).</p>
+      </div>
+      <div class="card">
+        <span class="ic">☁️</span>
+        <h3>Sauvegarde & multi-langues</h3>
+        <p>Export de la collection en fichier, sauvegarde des points liée à votre compte Google,
+           et interface disponible en 11 langues.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apis">
+    <h2><span class="em">🔌</span>Technologies & sources de données</h2>
+    <p class="lead">L'application s'appuie sur des services tiers pour l'identification, les
+      informations de jeux et la cote des prix. Merci à leurs auteurs.</p>
+    <div class="apis">
+      <div class="api"><span class="ic">🎯</span><div><strong>IGDB</strong><span>Base de données de jeux (via Twitch), source principale de la recherche.</span></div></div>
+      <div class="api"><span class="ic">🟣</span><div><strong>Twitch Developers</strong><span>Authentification d'accès à l'API IGDB.</span></div></div>
+      <div class="api"><span class="ic">🎲</span><div><strong>RAWG</strong><span>Catalogue de jeux complémentaire (jaquettes, genres, descriptions).</span></div></div>
+      <div class="api"><span class="ic">🏷️</span><div><strong>eBay</strong><span>Cote des prix à partir d'annonces.</span></div></div>
+      <div class="api"><span class="ic">🤖</span><div><strong>Google Gemini</strong><span>Reconnaissance visuelle des objets sur les photos.</span></div></div>
+      <div class="api"><span class="ic">📖</span><div><strong>Wikipédia</strong><span>Descriptions et visuels d'appoint des consoles et jeux.</span></div></div>
+    </div>
+  </section>
+
+  <section id="confidentialite" class="policy">
+    <h2><span class="em">🔒</span>Politique de confidentialité</h2>
+    <p class="lead">Dernière mise à jour : 5 juillet 2026.</p>
+
+    <p>Ma Collection (« l'application ») respecte votre vie privée. Cette page explique quelles
+      données l'application traite et pourquoi. <strong>L'application ne possède aucun serveur
+      qui lui soit propre et ne crée aucun compte : vos données restent sur votre appareil.</strong></p>
+
+    <h3>Données stockées sur votre appareil</h3>
+    <ul>
+      <li>Votre collection (consoles, jeux, accessoires), vos listes, photos, notes et préférences
+        sont enregistrées <strong>localement</strong> sur le téléphone.</li>
+      <li>Vos points, déblocages et réglages peuvent être inclus dans la <strong>sauvegarde
+        automatique Android</strong>, liée à votre compte Google, afin de les retrouver en cas de
+        changement de téléphone. Cette sauvegarde est gérée par Google, pas par nous.</li>
+    </ul>
+
+    <h3>Données envoyées à des services tiers</h3>
+    <ul>
+      <li><strong>Recherche d'objets</strong> : le texte que vous recherchez est envoyé à IGDB,
+        RAWG, eBay ou Wikipédia pour récupérer les informations correspondantes.</li>
+      <li><strong>Reconnaissance par photo</strong> : lorsque vous utilisez l'identification par
+        photo, l'image concernée est envoyée à l'API Google (Gemini) pour être analysée. Les
+        photos ne sont pas publiées ni partagées à d'autres fins.</li>
+      <li>Ces échanges se limitent à la requête que vous déclenchez ; aucune donnée personnelle
+        identifiante n'est ajoutée par l'application.</li>
+    </ul>
+
+    <h3>Publicité et achats</h3>
+    <ul>
+      <li>Certaines éditions affichent des publicités via <strong>Google AdMob</strong>, qui peut
+        collecter des identifiants publicitaires selon sa propre politique. Une édition sans
+        publicité existe.</li>
+      <li>Les achats optionnels (accès premium) sont gérés par <strong>Google Play Billing</strong> ;
+        l'application ne voit jamais vos données bancaires.</li>
+    </ul>
+
+    <h3>Ce que nous ne faisons pas</h3>
+    <ul>
+      <li>Aucune revente de données. Aucun profilage publicitaire au-delà des services Google cités.</li>
+      <li>Aucune localisation, aucun contact, aucun micro.</li>
+    </ul>
+
+    <h3>Vos droits & suppression</h3>
+    <p>Vos données locales sont supprimées en désinstallant l'application. La sauvegarde Google se
+      gère depuis les réglages de votre compte Google. Pour toute question, contactez-nous
+      ci-dessous.</p>
+
+    <div class="note">ℹ️ Cette application est un projet indépendant réalisé par un passionné.
+      Les noms de consoles et de jeux cités le sont à titre encyclopédique ; les marques
+      appartiennent à leurs propriétaires respectifs.</div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="em">✉️</span>Contact</h2>
+    <p class="lead">Une question, un bug, une suggestion ?</p>
+    <p>Écrivez à <a href="mailto:c.guidicelli083@gmail.com">c.guidicelli083@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    Ma Collection — application Android de gestion de collection rétro-gaming.<br>
+    © 2026 · Projet indépendant. Marques et visuels cités appartiennent à leurs détenteurs.
+  </footer>
+
+</div>
+</body>
+</html>
