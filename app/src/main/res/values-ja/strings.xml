@@ -221,6 +221,8 @@
     <string name="tips_naming_text">写真による自動認識でゲーム、ゲーム機、またはアクセサリーが見つからない場合は、名前を手動で入力できます。その場合、PriceChartingでそのアイテムを探し、そこで使われている名前と完全に同じ名前を使ってみてください。価格検索は名前の一致に基づいているため、推定価値がより正確になります。</string>
     <string name="tips_price_ai_title">🤖「(AI)」表示の査定額</string>
     <string name="tips_price_ai_text">比較可能なeBay出品が見つからない場合、アプリはAIに代わりにオンラインで妥当な中古価格を検索させます。この価格は金額の隣に「(AI)」と表示されます。これは推定値であり、実際のeBay出品より信頼性は低く、あくまで目安として捉えてください。「価格を編集」からいつでも手動で修正できます。</string>
+    <string name="tips_news_title">📰 レトロゲームニュース</string>
+    <string name="tips_news_text">エンサイクロペディアの右上にある📰アイコンから、今後のレトロゲーム関連ニュース（復刻コンソール、コレクターパック、アーケード筐体、ゲームの発売情報など）を閲覧できます。各ニュースは元記事へのリンク付き（「ソースを見る」ボタン）で、端末の言語で自動的に表示されます。フィードは自動更新されるため、特に操作は必要ありません。</string>
 
     <string name="accessory_catalog_title">アクセサリーカタログ</string>
     <string name="add_custom_preset_title">ライブラリに追加</string>

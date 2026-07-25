@@ -221,6 +221,8 @@
     <string name="tips_naming_text">Si el reconocimiento automático por foto no encuentra nada para un juego, consola o accesorio, puedes escribir el nombre a mano. En ese caso, intenta encontrar el objeto en PriceCharting y usa exactamente el mismo nombre que se usa allí: el valor estimado será más preciso, ya que la búsqueda de precio se basa en la coincidencia del nombre.</string>
     <string name="tips_price_ai_title">🤖 Valor marcado «(IA)»</string>
     <string name="tips_price_ai_text">Cuando no se encuentra ningún anuncio comparable en eBay, la app le pide a una IA que busque en línea un precio de segunda mano plausible en su lugar. Este precio se marca «(IA)» junto al importe: es una estimación, menos fiable que un anuncio real de eBay, solo como orden de magnitud. Siempre puedes corregirlo a mano con «Editar precio».</string>
+    <string name="tips_news_title">📰 Noticias retro</string>
+    <string name="tips_news_text">En la Enciclopedia, el icono 📰 arriba a la derecha abre un flujo de noticias retro próximas: consolas reeditadas, packs de coleccionista, máquinas arcade, lanzamientos de juegos... Cada noticia enlaza a su fuente original (botón «Ver fuente») y se muestra automáticamente en tu idioma. El flujo se actualiza solo, no tienes que hacer nada.</string>
 
     <string name="accessory_catalog_title">Catálogo de accesorios</string>
     <string name="add_custom_preset_title">Añadir a la biblioteca</string>

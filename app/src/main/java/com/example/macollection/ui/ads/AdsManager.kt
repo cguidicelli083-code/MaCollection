@@ -155,6 +155,18 @@ fun showRewardedAd(activity: Activity, onReward: () -> Unit, onClosed: () -> Uni
 }
 
 /**
+ * Interstitiel affiché à chaque ouverture de l'onglet Total (écran à forte visibilité). Ne fait
+ * rien si [adsEnabled] est faux (Premium / pubs réduites) ou si aucune Activity n'est trouvée.
+ * Best-effort : un échec de chargement est ignoré (l'utilisateur voit simplement son total, sans pub).
+ */
+fun showTotalScreenAd(context: Context, adsEnabled: Boolean) {
+    if (!BuildConfig.ADS_ENABLED) return
+    if (!adsEnabled) return
+    val activity = context.findActivity() ?: return
+    showInterstitial(activity) { /* simple consultation du total : rien à reprendre */ }
+}
+
+/**
  * Cadence des interstitiels : un compteur PARTAGÉ par tous les mini-jeux, incrémenté à chaque niveau
  * franchi. La pub n'est JAMAIS affichée en pleine partie — uniquement en fin de partie (game over),
  * où le jeu est déjà arrêté (rien à mettre en pause). Elle n'apparaît que si assez de niveaux ont

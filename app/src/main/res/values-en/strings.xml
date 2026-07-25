@@ -223,6 +223,8 @@
     <string name="tips_naming_text">If automatic photo recognition finds nothing for a game, console, or accessory, you can type the name by hand. In that case, try to find the item on PriceCharting and use the exact same name used there: the estimated value will be more accurate, since price lookup relies on matching the name.</string>
     <string name="tips_price_ai_title">🤖 Value marked "(AI)"</string>
     <string name="tips_price_ai_text">When no comparable eBay listing is found, the app asks an AI to search online for a plausible used price instead. This price is marked "(AI)" next to the amount: it\'s an estimate, less reliable than a real eBay listing, just a rough ballpark. You can always correct it manually via "Edit price".</string>
+    <string name="tips_news_title">📰 Retro gaming news</string>
+    <string name="tips_news_text">In the Encyclopedia, the 📰 icon in the top right opens a feed of upcoming retro gaming news: reissued consoles, collector packs, arcade cabinets, game releases... Each item links back to its original source ("View source" button) and displays automatically in your language. The feed updates itself, nothing to do on your end.</string>
 
     <string name="accessory_catalog_title">Accessory catalog</string>
     <string name="add_custom_preset_title">Add to the library</string>

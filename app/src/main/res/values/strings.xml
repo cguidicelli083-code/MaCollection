@@ -291,4 +291,6 @@
     <string name="tips_naming_text">Si la reconnaissance automatique par photo ne trouve rien pour un jeu, une console ou un accessoire, tu peux saisir le nom à la main. Dans ce cas, essaie de retrouver l\'objet sur PriceCharting et reprends exactement le même nom que celui utilisé là-bas : la cote estimée sera plus précise, car la recherche de prix se base sur la correspondance du nom.</string>
     <string name="tips_price_ai_title">🤖 Cote marquée « (IA) »</string>
     <string name="tips_price_ai_text">Quand aucune annonce eBay comparable n\'est trouvée, l\'appli demande à une IA de chercher un prix d\'occasion plausible en ligne à la place. Ce prix est marqué « (IA) » à côté du montant : c\'est une estimation, moins fiable qu\'une vraie annonce eBay, à prendre comme simple ordre de grandeur. Tu peux toujours la corriger à la main via « Modifier le prix ».</string>
+    <string name="tips_news_title">📰 Actus retrogaming</string>
+    <string name="tips_news_text">Dans l\'Encyclopédie, l\'icône 📰 en haut à droite ouvre un flux d\'actualités retrogaming à venir : consoles rééditées, packs collectors, bornes d\'arcade, sorties de jeux... Chaque actu renvoie vers sa source d\'origine (bouton « Voir la source ») et s\'affiche automatiquement dans ta langue. Le flux se met à jour tout seul, pas besoin de faire quoi que ce soit.</string>
 </resources>

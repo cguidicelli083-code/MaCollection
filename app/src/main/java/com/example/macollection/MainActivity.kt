@@ -872,6 +872,14 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     )
                     androidx.compose.foundation.layout.Spacer(Modifier.height(4.dp))
                     Text(stringResource(R.string.tips_price_ai_text), style = MaterialTheme.typography.bodyMedium)
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(16.dp))
+                    Text(
+                        stringResource(R.string.tips_news_title),
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.titleSmall
+                    )
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(4.dp))
+                    Text(stringResource(R.string.tips_news_text), style = MaterialTheme.typography.bodyMedium)
                 }
             }
         )
@@ -1131,7 +1139,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         }
                     }
                 )
-                Tab.TOTAL -> TotalScreen(vm, Modifier.padding(padding))
+                Tab.TOTAL -> TotalScreen(vm, gameVm, Modifier.padding(padding))
                 Tab.GAMES -> GamesHubScreen(
                     vm = gameVm,
                     onOpenQuiz = { gamesSubScreen = GamesSubScreen.QUIZ },

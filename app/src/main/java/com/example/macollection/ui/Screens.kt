@@ -137,6 +137,7 @@ import com.example.macollection.data.SpreadsheetImport
 import com.example.macollection.data.UrlImport
 import com.example.macollection.data.consolePresets
 import com.example.macollection.BuildConfig
+import com.example.macollection.ui.ads.showTotalScreenAd
 import com.example.macollection.ui.ads.watchRewardedAdForPoints
 import kotlinx.coroutines.launch
 
@@ -363,9 +364,15 @@ private fun CollectionCard(
 // ---------------------------------------------------------------------------
 
 @Composable
-fun TotalScreen(vm: AppViewModel, modifier: Modifier = Modifier) {
+fun TotalScreen(vm: AppViewModel, gameVm: GameViewModel, modifier: Modifier = Modifier) {
     val total by vm.totalCents.collectAsState()
     val items by vm.allOwnedItems.collectAsState()
+
+    val context = LocalContext.current
+    val adsEnabled = !gameVm.isAdsReduced.collectAsState().value
+    LaunchedEffect(Unit) {
+        showTotalScreenAd(context, adsEnabled)
+    }
 
     Column(
         modifier.fillMaxSize().padding(24.dp),
