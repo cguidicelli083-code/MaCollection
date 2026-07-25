@@ -112,6 +112,18 @@ interface GameHighScoreDao {
     suspend fun upsert(score: GameHighScore)
 }
 
+@Dao
+interface RetroNewsDao {
+    @Query("SELECT * FROM retro_news ORDER BY publishedAt DESC")
+    fun observeAll(): Flow<List<RetroNewsEntry>>
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun upsertAll(entries: List<RetroNewsEntry>)
+
+    @Query("DELETE FROM retro_news")
+    suspend fun clear()
+}
+
 /** Migration 3 -> 4 : ajoute la table d'historique de prix SANS effacer les données. */
 val MIGRATION_3_4 = object : Migration(3, 4) {
     override fun migrate(db: SupportSQLiteDatabase) {
@@ -284,10 +296,31 @@ val MIGRATION_15_16 = object : Migration(15, 16) {
     }
 }
 
+/** Migration 16 -> 17 : ajoute la table `retro_news` (écran Actus de l'Encyclopédie) SANS effacer les données. */
+val MIGRATION_16_17 = object : Migration(16, 17) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS `retro_news` (
+                `id` TEXT PRIMARY KEY NOT NULL,
+                `title` TEXT NOT NULL,
+                `summary` TEXT NOT NULL,
+                `category` TEXT NOT NULL,
+                `sourceName` TEXT NOT NULL,
+                `sourceUrl` TEXT NOT NULL,
+                `imageUrl` TEXT NOT NULL,
+                `publishedAt` TEXT NOT NULL,
+                `scrapedAt` TEXT NOT NULL
+            )
+            """.trimIndent()
+        )
+    }
+}
+
 @Database(
     entities = [CollectionItem::class, PriceHistory::class, ItemPhoto::class, CustomPreset::class, PresetPhotoOverride::class,
-        PlayerProgress::class, UnlockedItem::class, GameHighScore::class],
-    version = 16,
+        PlayerProgress::class, UnlockedItem::class, GameHighScore::class, RetroNewsEntry::class],
+    version = 17,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -300,6 +333,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun playerProgressDao(): PlayerProgressDao
     abstract fun unlockedItemDao(): UnlockedItemDao
     abstract fun gameHighScoreDao(): GameHighScoreDao
+    abstract fun retroNewsDao(): RetroNewsDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
@@ -310,7 +344,7 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "macollection.db"
             )
-                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16)
+                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17)
                 .fallbackToDestructiveMigration()
                 .build().also { instance = it }
         }

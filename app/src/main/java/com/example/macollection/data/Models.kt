@@ -160,6 +160,21 @@ data class ItemPhoto(
     val createdAt: Long = 0
 )
 
+/** Actu retrogaming à venir (voir `scripts/scrape_retro_news.py` + écran Actus de l'Encyclopédie). */
+@Entity(tableName = "retro_news")
+data class RetroNewsEntry(
+    @PrimaryKey val id: String,
+    val title: String,
+    val summary: String,
+    /** Une des catégories du scraper (RETRO_CONSOLE, COLLECTOR_PACK, UPCOMING_CONSOLE, ARCADE_CABINET, GAME_RELEASE, REISSUE). */
+    val category: String,
+    val sourceName: String,
+    val sourceUrl: String,
+    val imageUrl: String,
+    val publishedAt: String,
+    val scrapedAt: String
+)
+
 /** Convertit les énumérations pour le stockage en base. */
 class Converters {
     @TypeConverter fun itemTypeToString(v: ItemType): String = v.name

@@ -33,6 +33,8 @@ import com.example.macollection.data.ItemType
 import com.example.macollection.data.MediaUtils
 import com.example.macollection.data.PresetPhotoOverride
 import com.example.macollection.data.PriceHistory
+import com.example.macollection.data.RetroNewsEntry
+import com.example.macollection.data.RetroNewsRepository
 import com.example.macollection.data.TavilyPriceEstimate
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -74,10 +76,15 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     private val photoDao = db.itemPhotoDao()
     private val customPresetDao = db.customPresetDao()
     private val photoOverrideDao = db.presetPhotoOverrideDao()
+    private val retroNewsDao = db.retroNewsDao()
 
     /** Fiches de catalogue ajoutées manuellement par l'utilisateur (console/accessoire). */
     val customPresets: StateFlow<List<CustomPreset>> =
         customPresetDao.observeAll().stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    /** Actus retrogaming à venir (écran Actus de l'Encyclopédie), rafraîchies au lancement. */
+    val retroNews: StateFlow<List<RetroNewsEntry>> =
+        retroNewsDao.observeAll().stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     /** Photos personnalisées (nom du preset -> URI locale), qui priment sur l'image par défaut. */
     val photoOverrides: StateFlow<Map<String, String>> =
@@ -98,6 +105,10 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                     photoOverrideDao.upsert(PresetPhotoOverride(p.name, uri))
                 }
             }
+        }
+        // Rafraîchit les actus retrogaming au lancement (best-effort, voir RetroNewsRepository).
+        viewModelScope.launch {
+            RetroNewsRepository.fetchLatest()?.let { retroNewsDao.upsertAll(it) }
         }
     }
 

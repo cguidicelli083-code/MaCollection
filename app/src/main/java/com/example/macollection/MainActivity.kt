@@ -39,6 +39,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Campaign
 import androidx.compose.material.icons.filled.Checklist
 import androidx.compose.material.icons.filled.Euro
 import androidx.compose.material.icons.filled.Favorite
@@ -103,6 +104,7 @@ import com.example.macollection.ui.ConsoleEncyclopediaScreen
 import com.example.macollection.ui.EncyclopediaScreen
 import com.example.macollection.ui.EncycloMode
 import com.example.macollection.ui.ItemDetailScreen
+import com.example.macollection.ui.NewsScreen
 import com.example.macollection.ui.BackupScreen
 import com.example.macollection.ui.BatchScanDialog
 import com.example.macollection.ui.ads.watchRewardedAd
@@ -222,6 +224,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     // sur cet onglet) : permet d'ajouter plusieurs consoles/accessoires d'un coup à la collection
     // ou aux souhaits, sans repasser fiche par fiche.
     var encycloSelectionMode by remember { mutableStateOf(false) }
+    // Écran Actus (nouveautés retrogaming à venir), ouvert depuis l'icône dédiée dans la TopAppBar
+    // de l'Encyclopédie — overlay plein écran indépendant du Tab, sur le modèle de gamesSubScreen.
+    var showNewsScreen by remember { mutableStateOf(false) }
     var addingCustomPreset by remember { mutableStateOf(false) }
     var editingCustomPreset by remember { mutableStateOf<CustomPreset?>(null) }
     var showLangDialog by remember { mutableStateOf(false) }
@@ -558,6 +563,11 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             GamesSubScreen.FROGGER -> FroggerScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.SHOP -> ShopScreen(vm = gameVm, onBack = { gamesSubScreen = null })
         }
+        return
+    }
+    if (showNewsScreen) {
+        BackHandler { showNewsScreen = false }
+        NewsScreen(vm = vm, onBack = { showNewsScreen = false })
         return
     }
 
@@ -958,6 +968,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                                     Icons.Filled.Checklist,
                                     contentDescription = stringResource(R.string.encyclo_selection_mode_toggle),
                                     tint = if (encycloSelectionMode) NeonCyan else Color.White
+                                )
+                            }
+                            IconButton(onClick = { showNewsScreen = true }) {
+                                Icon(
+                                    Icons.Filled.Campaign,
+                                    contentDescription = stringResource(R.string.news_content_description),
+                                    tint = Color.White
                                 )
                             }
                         }
