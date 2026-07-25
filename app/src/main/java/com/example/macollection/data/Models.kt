@@ -172,7 +172,9 @@ data class RetroNewsEntry(
     val sourceUrl: String,
     val imageUrl: String,
     val publishedAt: String,
-    val scrapedAt: String
+    val scrapedAt: String,
+    /** JSON brut {"en": {"title":..,"summary":..}, "fr": {...}, ...} (voir `translate_entry()` dans le scraper). */
+    val translationsJson: String = ""
 )
 
 /** Convertit les énumérations pour le stockage en base. */

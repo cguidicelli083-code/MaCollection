@@ -32,6 +32,11 @@ from pathlib import Path
 import feedparser
 import requests
 
+try:
+    from deep_translator import GoogleTranslator
+except ImportError:
+    GoogleTranslator = None  # traduction desactivee si le paquet n'est pas installe
+
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -43,15 +48,24 @@ HEADERS = {
     ),
 }
 
-# Flux RSS retenus (verifies actifs manuellement) : couvrent a eux quatre rééditions/mini-consoles
-# (Time Extension), bornes d'arcade dont les modeles home-arcade type 1up (Arcade Heroes),
-# actus retrogaming generalistes (RetroDodo) et actus Nintendo (filtrees par mots-cles retro
-# ensuite, car le flux couvre aussi l'actualite non-retro).
+# Flux RSS retenus (verifies actifs manuellement, tous en anglais) : rééditions/mini-consoles/
+# Evercade (Time Extension), bornes d'arcade dont les modeles home-arcade type 1up (Arcade Heroes,
+# Arcade Blogger), actus retrogaming generalistes (RetroDodo, Racketboy), et sites généralistes
+# (Nintendo Life, Push Square, Pure Xbox, My Nintendo News, Gematsu, Kotaku, GamingBolt) filtres
+# ensuite par mots-cles retro puisqu'ils couvrent aussi l'actualite non-retro.
 FEEDS = [
     ("Time Extension", "https://timeextension.com/feed"),
     ("Arcade Heroes", "https://arcadeheroes.com/feed"),
+    ("Arcade Blogger", "https://arcadeblogger.com/feed/"),
     ("RetroDodo", "https://retrododo.com/feed/"),
+    ("Racketboy", "https://www.racketboy.com/feed"),
     ("Nintendo Life", "https://www.nintendolife.com/feeds/latest"),
+    ("Push Square", "https://www.pushsquare.com/feeds/latest"),
+    ("Pure Xbox", "https://www.purexbox.com/feeds/latest"),
+    ("My Nintendo News", "https://www.mynintendonews.com/feed/"),
+    ("Gematsu", "https://www.gematsu.com/feed"),
+    ("Kotaku", "https://kotaku.com/tag/retro/rss"),
+    ("GamingBolt", "https://gamingbolt.com/feed"),
 ]
 
 # Categorisation par mots-cles (titre + resume), meme esprit que classify_licence() dans le
@@ -59,28 +73,34 @@ FEEDS = [
 # donnee inventee. Premiere categorie dont un mot-cle correspond l'emporte.
 CATEGORY_KEYWORDS = [
     ("ARCADE_CABINET", [
-        "arcade1up", "arcade 1up", "1up cabinet", "arcade cabinet", "borne d'arcade",
-        "borne arcade", "home arcade", "cabinet arcade",
+        "arcade1up", "arcade 1up", "1up cabinet", "arcade cabinet", "arcade machine",
+        "borne d'arcade", "borne arcade", "home arcade", "cabinet arcade", "pinball machine",
+        "pinball cabinet", "bartop",
     ]),
     ("COLLECTOR_PACK", [
         "collector's edition", "collectors edition", "edition collector", "collector edition",
         "limited edition", "edition limitee", "coffret collector", "pack collector",
+        "special edition", "steelbook", "collector's set",
     ]),
     ("UPCOMING_CONSOLE", [
         "new console", "nouvelle console", "console announced", "console annoncee",
-        "unveiled console", "next console",
+        "unveiled console", "next console", "console revealed", "console unveiled",
+        "kickstarter console",
     ]),
     ("REISSUE", [
         "mini console", "reissue", "reedition", "réédition", "relaunch", "remaster console",
-        "anniversary edition", "throwback", "classic edition", "revival",
+        "anniversary edition", "throwback", "classic edition", "revival", "clone console",
+        "plug and play", "flashback",
     ]),
     ("GAME_RELEASE", [
         "release date", "date de sortie", "out now", "sortie le", "coming soon", "launches on",
-        "sortira le",
+        "sortira le", "release window", "launch date", "confirmed for", "announced for",
+        "coming to switch", "coming to ps5", "coming to pc", "physical release", "pre-order",
+        "preorder",
     ]),
     ("RETRO_CONSOLE", [
         "retro console", "console retro", "console rétro", "handheld retro", "fpga",
-        "evercade", "analogue", "retron",
+        "evercade", "analogue", "retron", "mister fpga", "retroarch", "raspberry pi console",
     ]),
 ]
 
@@ -139,6 +159,47 @@ def classify(text: str) -> str:
         if any(kw in lower for kw in keywords):
             return category
     return "AUTRE"
+
+
+# Memes 11 langues que MaCollection (retrogaming) et le scraper WCF. Les flux retenus sont tous
+# en anglais ("en" = original, jamais traduit) ; "zh" utilise le code deep-translator "zh-CN" mais
+# est expose sous la cle "zh" (correspond a Locale.getDefault().language sur Android).
+TARGET_LANGS = [
+    ("fr", "fr"), ("es", "es"), ("it", "it"), ("de", "de"), ("pt", "pt"),
+    ("ru", "ru"), ("el", "el"), ("tr", "tr"), ("ja", "ja"), ("zh", "zh-CN"),
+]
+
+
+def translate_entry(title: str, summary: str) -> dict:
+    """Traduit un titre+resume dans les 10 autres langues de l'app, best-effort (jamais bloquant :
+    une langue en echec retombe sur le texte anglais original plutot que de faire planter le
+    scraper). Un seul appel reseau par langue (traduction en lot titre+resume), plutot qu'un appel
+    par champ. Retourne {"en": {...}, "fr": {...}, ...}."""
+    original = {"title": title, "summary": summary}
+    result = {"en": original}
+    if GoogleTranslator is None:
+        for json_key, _ in TARGET_LANGS:
+            result[json_key] = original
+        return result
+
+    texts = [title, summary]
+    non_empty_idx = [i for i, t in enumerate(texts) if t]
+    non_empty_texts = [texts[i] for i in non_empty_idx]
+
+    for json_key, dt_code in TARGET_LANGS:
+        try:
+            translated = (
+                GoogleTranslator(source="en", target=dt_code).translate_batch(non_empty_texts)
+                if non_empty_texts else []
+            )
+            full = list(texts)
+            for idx, val in zip(non_empty_idx, translated):
+                full[idx] = val or texts[idx]
+            result[json_key] = {"title": full[0], "summary": full[1]}
+        except Exception as exc:
+            print(f"  [erreur traduction {json_key}] {title[:40]}... : {exc}", file=sys.stderr)
+            result[json_key] = original
+    return result
 
 
 def entry_id(link: str) -> str:
@@ -223,11 +284,20 @@ def init_db(db_path: Path) -> sqlite3.Connection:
         )
         """
     )
+    # Migration douce : traductions ajoutees apres coup (voir translate_entry()).
+    existing_cols = {row[1] for row in conn.execute("PRAGMA table_info(retro_news)")}
+    if "translations_json" not in existing_cols:
+        conn.execute("ALTER TABLE retro_news ADD COLUMN translations_json TEXT")
     conn.commit()
     return conn
 
 
-def upsert_item(conn: sqlite3.Connection, item: NewsItem) -> None:
+def item_exists(conn: sqlite3.Connection, item_id: str) -> bool:
+    cur = conn.execute("SELECT 1 FROM retro_news WHERE id = ?", (item_id,))
+    return cur.fetchone() is not None
+
+
+def upsert_item(conn: sqlite3.Connection, item: NewsItem, translations_json: str) -> None:
     # INSERT OR REPLACE : contrairement au scraper WCF (fiche produit figee une fois publiee),
     # un article RSS peut voir son resume affine par la source apres publication -- on garde
     # donc la derniere version vue plutot que de figer sur la premiere.
@@ -235,12 +305,13 @@ def upsert_item(conn: sqlite3.Connection, item: NewsItem) -> None:
         """
         INSERT OR REPLACE INTO retro_news
             (id, title, summary, category, source_name, source_url, image_url,
-             published_at, scraped_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+             published_at, scraped_at, translations_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             item.id, item.title, item.summary, item.category, item.source_name,
             item.source_url, item.image_url, item.published_at, item.scraped_at,
+            translations_json,
         ),
     )
 
@@ -249,7 +320,7 @@ def export_json(conn: sqlite3.Connection, out_path: Path, recent_days: int) -> i
     cur = conn.execute(
         """
         SELECT id, title, summary, category, source_name, source_url, image_url,
-               published_at, scraped_at
+               published_at, scraped_at, translations_json
         FROM retro_news
         ORDER BY published_at DESC
         """
@@ -278,6 +349,7 @@ def export_json(conn: sqlite3.Connection, out_path: Path, recent_days: int) -> i
             "imageUrl": r[6],
             "publishedAt": r[7],
             "scrapedAt": r[8],
+            "translations": json.loads(r[9]) if r[9] else {},
         })
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -296,14 +368,29 @@ def main() -> int:
 
     conn = init_db(args.db)
     total_seen = 0
+    translated_count = 0
     for source_name, url in FEEDS:
         print(f"[{source_name}] {url}")
         items = fetch_feed(source_name, url)
         for item in items:
-            upsert_item(conn, item)
+            existing = conn.execute(
+                "SELECT translations_json FROM retro_news WHERE id = ?", (item.id,)
+            ).fetchone()
+            if item.category == "AUTRE":
+                # Exclue de l'export (voir export_json) : pas la peine de la traduire.
+                translations_json = existing[0] if existing else None
+            elif existing and existing[0]:
+                translations_json = existing[0]
+            else:
+                translations_json = json.dumps(
+                    translate_entry(item.title, item.summary), ensure_ascii=False
+                )
+                translated_count += 1
+            upsert_item(conn, item, translations_json)
         conn.commit()
         total_seen += len(items)
         print(f"  {len(items)} entree(s)")
+    print(f"{translated_count} entree(s) traduite(s) (nouvelles ou jamais traduites).")
 
     total_exported = export_json(conn, args.out, args.recent_days)
     conn.close()

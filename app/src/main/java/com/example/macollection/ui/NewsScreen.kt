@@ -57,6 +57,9 @@ import com.example.macollection.ui.theme.CardGradient
 import com.example.macollection.ui.theme.NeonBorder
 import com.example.macollection.ui.theme.NeonCyan
 import com.example.macollection.ui.theme.NeonPurple
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.util.Locale
 
 /** Libellé FR affiché pour chaque catégorie du scraper (voir `scripts/scrape_retro_news.py`). */
 private fun categoryLabel(category: String): Int = when (category) {
@@ -67,6 +70,31 @@ private fun categoryLabel(category: String): Int = when (category) {
     "GAME_RELEASE" -> R.string.news_category_game_release
     "REISSUE" -> R.string.news_category_reissue
     else -> R.string.news_category_other
+}
+
+/** Traduction (titre+résumé) d'une actu pour une langue (voir `translate_entry()` dans le scraper). */
+private data class NewsTranslation(val title: String?, val summary: String?)
+
+private val newsGson = Gson()
+private val newsTranslationsMapType = object : TypeToken<Map<String, NewsTranslation>>() {}.type
+
+/** Mêmes 11 langues que MaCollection et le scraper (l'anglais "en" est la langue d'origine des flux RSS). */
+private val NEWS_SUPPORTED_LANGS = setOf("en", "fr", "es", "it", "de", "pt", "ru", "el", "tr", "ja", "zh")
+
+/**
+ * Choisit la traduction correspondant à la langue de l'appareil (repli sur l'anglais original si
+ * la langue de l'appareil n'est pas couverte ou si le JSON de traductions est absent).
+ */
+private fun RetroNewsEntry.localized(): NewsTranslation {
+    val fallback = NewsTranslation(title, summary)
+    if (translationsJson.isBlank()) return fallback
+    val translations = try {
+        newsGson.fromJson<Map<String, NewsTranslation>>(translationsJson, newsTranslationsMapType) ?: emptyMap()
+    } catch (e: Exception) {
+        emptyMap()
+    }
+    val deviceLang = Locale.getDefault().language.lowercase().takeIf { it in NEWS_SUPPORTED_LANGS } ?: "en"
+    return translations[deviceLang] ?: translations["en"] ?: fallback
 }
 
 /**
@@ -152,6 +180,7 @@ fun NewsScreen(vm: AppViewModel, onBack: () -> Unit, modifier: Modifier = Modifi
 
 @Composable
 private fun NewsCard(entry: RetroNewsEntry, onClick: () -> Unit) {
+    val loc = entry.localized()
     val shape = RoundedCornerShape(20.dp)
     Box(
         Modifier
@@ -178,7 +207,7 @@ private fun NewsCard(entry: RetroNewsEntry, onClick: () -> Unit) {
             Column(Modifier.fillMaxWidth()) {
                 Text(stringResource(categoryLabel(entry.category)), fontSize = 11.sp, color = NeonCyan, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(2.dp))
-                Text(entry.title, fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color.White, maxLines = 3)
+                Text(loc.title ?: entry.title, fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color.White, maxLines = 3)
                 Spacer(Modifier.height(4.dp))
                 Text(entry.sourceName, fontSize = 11.sp, color = Color(0xFF7A7A96))
             }
@@ -188,11 +217,12 @@ private fun NewsCard(entry: RetroNewsEntry, onClick: () -> Unit) {
 
 @Composable
 private fun NewsDetailDialog(entry: RetroNewsEntry, onDismiss: () -> Unit) {
+    val loc = entry.localized()
     val context = LocalContext.current
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(entry.title, fontWeight = FontWeight.Bold) },
+        title = { Text(loc.title ?: entry.title, fontWeight = FontWeight.Bold) },
         text = {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 if (entry.imageUrl.isNotBlank()) {
@@ -210,7 +240,7 @@ private fun NewsDetailDialog(entry: RetroNewsEntry, onDismiss: () -> Unit) {
                 }
                 Text(stringResource(categoryLabel(entry.category)), fontSize = 12.sp, color = NeonCyan, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(6.dp))
-                Text(entry.summary, fontSize = 13.sp, color = Color(0xFFB5B5CC))
+                Text(loc.summary ?: entry.summary, fontSize = 13.sp, color = Color(0xFFB5B5CC))
                 Spacer(Modifier.height(8.dp))
                 Text(entry.sourceName, fontSize = 12.sp, color = NeonPurple)
             }

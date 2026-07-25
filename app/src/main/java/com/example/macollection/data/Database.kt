@@ -317,10 +317,17 @@ val MIGRATION_16_17 = object : Migration(16, 17) {
     }
 }
 
+/** Migration 17 -> 18 : ajoute `translationsJson` (traductions des actus) SANS effacer les données. */
+val MIGRATION_17_18 = object : Migration(17, 18) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `retro_news` ADD COLUMN `translationsJson` TEXT NOT NULL DEFAULT ''")
+    }
+}
+
 @Database(
     entities = [CollectionItem::class, PriceHistory::class, ItemPhoto::class, CustomPreset::class, PresetPhotoOverride::class,
         PlayerProgress::class, UnlockedItem::class, GameHighScore::class, RetroNewsEntry::class],
-    version = 17,
+    version = 18,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -344,7 +351,7 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "macollection.db"
             )
-                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17)
+                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17, MIGRATION_17_18)
                 .fallbackToDestructiveMigration()
                 .build().also { instance = it }
         }

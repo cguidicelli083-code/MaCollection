@@ -16,6 +16,13 @@
 -keepattributes Signature
 -keepattributes *Annotation*
 
+# Gson TypeToken (utilisé par RetroNewsEntry.localized() pour désérialiser les traductions JSON en
+# Map<String, ...>) : R8 peut sinon fusionner/renommer la sous-classe anonyme et perdre sa
+# signature générique, faisant planter Gson à l'exécution avec "TypeToken must be created with a
+# type argument" (règle officielle recommandée par Gson pour les builds minifiés).
+-keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+-keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
+
 -keep class com.example.macollection.data.CollectionItem { *; }
 -keep class com.example.macollection.data.PriceHistory { *; }
 -keep class com.example.macollection.data.ItemPhoto { *; }
@@ -86,6 +93,7 @@
 
 # Actus retrogaming (écran Actus de l'Encyclopédie) : JSON désérialisé par Gson.
 -keep class com.example.macollection.data.RetroNewsDto { *; }
+-keep class com.example.macollection.data.RetroNewsTranslationDto { *; }
 
 # Les enums (ItemType, Region, Condition) sont aussi lus par Gson via leur nom (CollectionItem en
 # contient) : on protège leurs constantes de la même façon, par précaution.

@@ -1,10 +1,17 @@
 package com.example.macollection.data
 
 import android.util.Log
+import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Url
+
+/** Traduction d'un titre+résumé pour une langue donnée (voir `translate_entry()` dans le scraper). */
+private data class RetroNewsTranslationDto(
+    val title: String?,
+    val summary: String?
+)
 
 /** Reflet JSON exact d'une entrée de `retro_news.json` (voir `scripts/scrape_retro_news.py`). */
 private data class RetroNewsDto(
@@ -16,7 +23,9 @@ private data class RetroNewsDto(
     val sourceUrl: String,
     val imageUrl: String?,
     val publishedAt: String,
-    val scrapedAt: String
+    val scrapedAt: String,
+    /** Clé = code langue (11 langues, mêmes codes que MaCollection : en/fr/es/it/de/pt/ru/el/tr/ja/zh). */
+    val translations: Map<String, RetroNewsTranslationDto>?
 )
 
 private interface RetroNewsApi {
@@ -32,6 +41,7 @@ private interface RetroNewsApi {
  */
 object RetroNewsRepository {
     private const val FEED_URL = "https://cguidicelli083-code.github.io/MaCollection/retro_news.json"
+    private val gson = Gson()
 
     private val api: RetroNewsApi by lazy {
         Retrofit.Builder()
@@ -52,7 +62,8 @@ object RetroNewsRepository {
                 sourceUrl = it.sourceUrl,
                 imageUrl = it.imageUrl ?: "",
                 publishedAt = it.publishedAt,
-                scrapedAt = it.scrapedAt
+                scrapedAt = it.scrapedAt,
+                translationsJson = gson.toJson(it.translations ?: emptyMap<String, RetroNewsTranslationDto>())
             )
         }
     } catch (e: Exception) {
