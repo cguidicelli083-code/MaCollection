@@ -1,0 +1,60 @@
+name: Scrape retro news
+
+on:
+  schedule:
+    # 03:00 UTC chaque nuit (~ 4h/5h du matin en France selon heure d'ete/hiver)
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-retro-news
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run scraper
+        run: |
+          python scripts/scrape_retro_news.py \
+            --db scripts/retro_news.sqlite3 \
+            --out docs/retro_news.json \
+            --recent-days 21
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "retro-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scripts/retro_news.sqlite3 docs/retro_news.json
+          if git diff --cached --quiet; then
+            echo "Aucune nouveaute, rien a committer."
+          else
+            git commit -m "chore: mise a jour automatique des actus retrogaming"
+            # rebase avant push : si main a avance entre-temps (ex. push manuel concurrent),
+            # evite un rejet non-fast-forward plutot que de faire echouer le job pour ca.
+            pushed=false
+            for attempt in 1 2 3; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              echo "Push rejete (tentative $attempt/3), rebase sur origin/main et nouvel essai..."
+              git fetch origin main
+              git rebase origin/main
+            done
+            $pushed || { echo "Echec du push apres 3 tentatives."; exit 1; }
+          fi

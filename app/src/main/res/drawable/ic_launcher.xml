@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Fond sombre (thème de l'app) -->
+    <path
+        android:fillColor="#15102B"
+        android:pathData="M0,0h108v108H0z" />
+
+    <!-- Corps de la Game Boy Color (turquoise) -->
+    <path
+        android:fillColor="#27C6BE"
+        android:pathData="M32,14 h44 a8,8 0 0 1 8,8 v66 a8,8 0 0 1 -8,8 h-44 a8,8 0 0 1 -8,-8 v-66 a8,8 0 0 1 8,-8 z" />
+
+    <!-- Contour d'écran (gris foncé) -->
+    <path
+        android:fillColor="#33334A"
+        android:pathData="M36,22 h36 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-36 a4,4 0 0 1 -4,-4 v-22 a4,4 0 0 1 4,-4 z" />
+
+    <!-- Écran (vert rétro) -->
+    <path
+        android:fillColor="#9BBC0F"
+        android:pathData="M40,27 h28 a2,2 0 0 1 2,2 v16 a2,2 0 0 1 -2,2 h-28 a2,2 0 0 1 -2,-2 v-16 a2,2 0 0 1 2,-2 z" />
+
+    <!-- LED power (rouge) -->
+    <path
+        android:fillColor="#FF4D4D"
+        android:pathData="M33,37 a1.4,1.4 0 1,0 2.8,0 a1.4,1.4 0 1,0 -2.8,0 z" />
+
+    <!-- Croix directionnelle -->
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M37,61 h6 v4 h4 v6 h-4 v4 h-6 v-4 h-4 v-6 h4 z" />
+
+    <!-- Bouton A -->
+    <path
+        android:fillColor="#E83F6F"
+        android:pathData="M64,60 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 z" />
+
+    <!-- Bouton B -->
+    <path
+        android:fillColor="#E83F6F"
+        android:pathData="M54,67 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 z" />
+
+    <!-- Select / Start -->
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M44,81 h6 a1.5,1.5 0 0 1 0,3 h-6 a1.5,1.5 0 0 1 0,-3 z" />
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M56,81 h6 a1.5,1.5 0 0 1 0,3 h-6 a1.5,1.5 0 0 1 0,-3 z" />
+
+    <!-- Haut-parleur -->
+    <path
+        android:fillColor="#1E9C96"
+        android:pathData="M68,84 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0 z M71,82 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0 z M74,80 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0 z" />
+</vector>

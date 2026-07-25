@@ -1,0 +1,79 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Icône de la VARIANTE TEST (flavor "restricted") : corps orange + bandeau rouge « TEST »
+         pour la distinguer au premier coup d'œil de l'app normale (turquoise). -->
+
+    <!-- Fond sombre (thème de l'app) -->
+    <path
+        android:fillColor="#15102B"
+        android:pathData="M0,0h108v108H0z" />
+
+    <!-- Corps de la console (ORANGE, au lieu du turquoise de l'app normale) -->
+    <path
+        android:fillColor="#FF8A1E"
+        android:pathData="M32,14 h44 a8,8 0 0 1 8,8 v66 a8,8 0 0 1 -8,8 h-44 a8,8 0 0 1 -8,-8 v-66 a8,8 0 0 1 8,-8 z" />
+
+    <!-- Contour d'écran (gris foncé) -->
+    <path
+        android:fillColor="#33334A"
+        android:pathData="M36,22 h36 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-36 a4,4 0 0 1 -4,-4 v-22 a4,4 0 0 1 4,-4 z" />
+
+    <!-- Écran (vert rétro) -->
+    <path
+        android:fillColor="#9BBC0F"
+        android:pathData="M40,27 h28 a2,2 0 0 1 2,2 v16 a2,2 0 0 1 -2,2 h-28 a2,2 0 0 1 -2,-2 v-16 a2,2 0 0 1 2,-2 z" />
+
+    <!-- LED power (rouge) -->
+    <path
+        android:fillColor="#FF4D4D"
+        android:pathData="M33,37 a1.4,1.4 0 1,0 2.8,0 a1.4,1.4 0 1,0 -2.8,0 z" />
+
+    <!-- Croix directionnelle -->
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M37,61 h6 v4 h4 v6 h-4 v4 h-6 v-4 h-4 v-6 h4 z" />
+
+    <!-- Bouton A -->
+    <path
+        android:fillColor="#B4295A"
+        android:pathData="M64,60 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 z" />
+
+    <!-- Bouton B -->
+    <path
+        android:fillColor="#B4295A"
+        android:pathData="M54,67 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 z" />
+
+    <!-- Select / Start -->
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M44,81 h6 a1.5,1.5 0 0 1 0,3 h-6 a1.5,1.5 0 0 1 0,-3 z" />
+    <path
+        android:fillColor="#24243A"
+        android:pathData="M56,81 h6 a1.5,1.5 0 0 1 0,3 h-6 a1.5,1.5 0 0 1 0,-3 z" />
+
+    <!-- ===== Bandeau « TEST » (rouge) en travers, avec lettres blanches ===== -->
+    <path
+        android:fillColor="#E6E23B3B"
+        android:pathData="M6,45 h96 v20 h-96 z" />
+
+    <!-- Lettre T -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,47 h18 v4 h-18 z M19,47 h4 v16 h-4 z" />
+    <!-- Lettre E -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,47 h4 v16 h-4 z M34,47 h16 v4 h-16 z M34,53 h13 v4 h-13 z M34,59 h16 v4 h-16 z" />
+    <!-- Lettre S -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,47 h16 v4 h-16 z M54,47 h4 v8 h-4 z M54,53 h16 v4 h-16 z M66,55 h4 v8 h-4 z M54,59 h16 v4 h-16 z" />
+    <!-- Lettre T -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,47 h18 v4 h-18 z M83,47 h4 v16 h-4 z" />
+</vector>

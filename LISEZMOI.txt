@@ -1,0 +1,79 @@
+========================================================
+   MA COLLECTION  —  Application Android (jeux & consoles)
+   Dossier de reprise du projet
+========================================================
+
+Bonjour ! Ce dossier rassemble tout pour RETROUVER et CONTINUER le projet.
+
+
+--------------------------------------------------------
+1) OU EST L'APPLICATION ?
+--------------------------------------------------------
+Le code du projet est ici :
+
+   C:\Users\okami\Projets\MaCollection
+
+(Raccourcis dans ce dossier : "Ouvrir le projet (Android Studio)" et
+ "Dossier du projet".)
+
+
+--------------------------------------------------------
+2) COMMENT REPRENDRE / MODIFIER L'APP
+--------------------------------------------------------
+Option A (la plus simple, avec Claude Code) :
+  - Rouvre Claude Code sur cet ordinateur.
+  - Dis-lui : "Reprends le projet MaCollection, on continue."
+  - La memoire du projet est sauvegardee : il se souviendra de tout
+    (ce qui est fait, ce qui reste, les bugs, les cles API...).
+
+Option B (manuel, dans Android Studio) :
+  - Double-clique sur "Ouvrir le projet (Android Studio)".
+  - Laisse-le synchroniser (Gradle).
+  - Branche ton telephone (debogage USB) et clique sur Run (fleche verte),
+    ou installe l'APK directement (voir plus bas).
+
+
+--------------------------------------------------------
+3) PARTAGER L'APP A UN AMI
+--------------------------------------------------------
+Le fichier a envoyer est : MaCollection.apk (dans ce dossier).
+  - Le plus simple : le deposer sur wetransfer.com ou Google Drive,
+    puis envoyer le LIEN par WhatsApp (WhatsApp bloque les .apk en direct).
+  - L'ami : telecharger -> ouvrir -> autoriser "applis inconnues" ->
+    si Play Protect alerte, "Installer quand meme".
+
+
+--------------------------------------------------------
+4) CE QUI MARCHE DEJA
+--------------------------------------------------------
+  - Collection, Souhaits, Total
+  - Scan code-barres + import photo (avec reconnaissance de console)
+  - Catalogue de 86 consoles (images, specs en francais)
+  - Catalogue de jeux par console (descriptions FR, jaquettes) via RAWG
+  - Encyclopedie (4e onglet) : toutes les consoles + 3D + jeux
+  - Vrai rendu 3D des consoles (rotation, zoom) + changement de couleur
+  - Prix automatiques eBay (marche FR, en euros) + historique de prix
+  - Interface "gamer" + logo Game Boy Color
+
+
+--------------------------------------------------------
+5) CE QUI RESTE / EN ATTENTE
+--------------------------------------------------------
+  - eBay "ventes reelles" (Marketplace Insights) : un ticket a ete envoye
+    a eBay pour demander l'acces. En attente de leur reponse (peut-etre
+    refuse pour un usage perso). En attendant : prix = annonces en cours.
+  - Idees : partage entre amis (necessite un serveur), version optimisee.
+  - D'autres petits bugs a corriger (a lister avec Claude).
+
+
+--------------------------------------------------------
+6) INFOS TECHNIQUES (pour memoire)
+--------------------------------------------------------
+  - Les cles API (RAWG, eBay) sont dans le fichier "local.properties"
+    du projet. Ne pas les partager publiquement.
+  - L'app n'embarque que l'architecture ARM64 (telephones modernes).
+  - Stack : Kotlin + Jetpack Compose + Room. Android Studio fourni le JDK.
+
+========================================================
+ Bon retour sur le projet ! Il suffit de demander a Claude de continuer.
+========================================================

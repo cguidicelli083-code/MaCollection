@@ -1,0 +1,15 @@
+build/
+.gradle/
+.kotlin/
+.idea/
+local.properties
+*.apk
+*.iml
+.DS_Store
+*.lnk
+
+# Base SQLite locale utilisee par les tests manuels du scraper (celle du workflow CI
+# est generee/committee automatiquement par .github/workflows/scrape.yml)
+scripts/*.sqlite3
+!scripts/retro_news.sqlite3
+scripts/__pycache__/

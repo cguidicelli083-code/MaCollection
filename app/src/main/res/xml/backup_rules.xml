@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Auto Backup (Google Drive, lié au compte Google) — API < 31.
+  On sauvegarde uniquement la base Room (points, déblocages, meilleurs scores, collection) et les
+  préférences. Les PHOTOS (domaine "file") sont volontairement EXCLUES : trop lourdes pour Auto
+  Backup (limite ~25 Mo) et déjà couvertes par la sauvegarde .zip manuelle. Avec des <include>,
+  seuls les domaines listés sont sauvegardés (le reste est ignoré). Lié au compte : suit un
+  changement de téléphone sur le même compte, mais n'est pas un fichier partageable.
+-->
+<full-backup-content>
+    <include domain="database" path="." />
+    <include domain="sharedpref" path="." />
+</full-backup-content>

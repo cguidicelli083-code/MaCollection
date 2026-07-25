@@ -1,0 +1,46 @@
+[
+  {
+    "id": "196ea4c4f450d8dbf60acb8158823a6f338fd0a6",
+    "title": "Sega CD Shown Running On The Analogue Pocket",
+    "summary": "There's still work to be done, but a release is coming \"soon\". A developer by the name of obrien654j has shown off a Sega CD FPGA core running on the Analogue Pocket . In the video, which was posted on Reddit , the developer notes that \"the core has good audio timing,\" but they are \"still working through some boot reliability issues, and FMVs stutter here and there.\" Read the full article on timeextension.com",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/07/sega-cd-shown-running-on-the-analogue-pocket",
+    "imageUrl": "https://images.timeextension.com/4764f81a0f827/large.jpg",
+    "publishedAt": "2026-07-24T11:00:00+00:00",
+    "scrapedAt": "2026-07-25T13:26:14.259885+00:00"
+  },
+  {
+    "id": "2c1a77c5741907fc9b06dbe6d2c1f2489f9b3257",
+    "title": "Arcade1Up Set To Release Two Sonic Arcade Cabinets Later This Year",
+    "summary": "&#x1f91d; Like our website? Support us as an independent publisher by tipping , joining our paid community or checking out our accessories brand GAMENOOK ! How nostalgic is the first Sonic the Hedgehog game? I started writing this article and then got lost in a loop of listening to the soundtrack and",
+    "category": "ARCADE_CABINET",
+    "sourceName": "RetroDodo",
+    "sourceUrl": "https://retrododo.com/arcade1up-set-to-release-two-sonic-arcade-cabinets-later-this-year/",
+    "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/marble-zone-arcade-cabinets.jpg",
+    "publishedAt": "2026-07-24T10:51:41+00:00",
+    "scrapedAt": "2026-07-25T13:26:19.305440+00:00"
+  },
+  {
+    "id": "e25d9cc467e8b2cd77ad36742a922d7ad7ba2775",
+    "title": "This Out Run Arcade Cabinet Features Five Games And Costs $629.99",
+    "summary": "OutRun! Turbo OutRun! OutRunners! Power Drift! Rad Rally! Arcade1Up has just lifted the lid on its latest OutRun arcade cabinet, which comes pre-loaded with five games. Revealed at the San Diego Comic-Con, the new OutRun Supreme cab boasts a 19-inch BOE-made LCD screen and stands at 67 inches tall. Read the full article on timeextension.com",
+    "category": "ARCADE_CABINET",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/07/this-out-run-arcade-cabinet-features-five-games-and-costs-usd629-99",
+    "imageUrl": "https://images.timeextension.com/03998c413a42d/large.jpg",
+    "publishedAt": "2026-07-24T09:00:00+00:00",
+    "scrapedAt": "2026-07-25T13:26:14.260019+00:00"
+  },
+  {
+    "id": "fbd23a2b233dd2cd7ece5d1758138f6049b095ad",
+    "title": "\"I Don't Even Know What A Prompt Is\" - Developer Behind Stunning Midway Wolf Unit FPGA Core Refutes AI Allegations",
+    "summary": "\"This is a complete fabrication\". FPGA developer blahm1d has just released an MiSTer FPGA core for Midway's Wolf Unit arcade board – something that many assumed was impossible. NBA Hangtime and Ultimate Mortal Kombat 3 are currently playable via the core, but Pixel Cherry Ninja is reporting that the rest of the library will follow soon – and that means Mortal Kombat 3, WWF WrestleMania, NHL: 2-on-2 Open Ice Challenge, NBA Maximum Hangtime and Rampage World Tour . Read the full article on timeext",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/07/i-dont-even-know-what-a-prompt-is-developer-behind-stunning-midway-wolf-unit-fpga-core-refutes-ai-allegations",
+    "imageUrl": "https://images.timeextension.com/7f7f966ad3949/large.jpg",
+    "publishedAt": "2026-07-22T10:30:00+00:00",
+    "scrapedAt": "2026-07-25T13:26:14.261268+00:00"
+  }
+]

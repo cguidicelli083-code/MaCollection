@@ -1,0 +1,282 @@
+<resources>
+    <string name="app_name">Ma Collection V2</string>
+
+    <!-- MainActivity: dialogs and nav -->
+    <string name="add_item_dialog_title">Ajouter un objet</string>
+    <string name="cancel">Annuler</string>
+    <string name="close">Fermer</string>
+    <string name="scan_barcode_option">📷  Scanner un code-barres</string>
+    <string name="choose_photo_option">🖼️  Choisir une photo</string>
+    <string name="take_photo_option">📸  Prendre une photo</string>
+    <string name="manual_entry_option">✏️  Saisie manuelle</string>
+    <string name="lang_dialog_title">Langue de l\'application</string>
+    <string name="lang_dialog_rawg_note">Affecte aussi les descriptions et genres des jeux récupérés en ligne (RAWG).</string>
+    <string name="lang_option_checked">%1$s  ✓</string>
+    <string name="settings_content_description">Réglages</string>
+    <string name="shop_content_description">🏪 Boutique</string>
+    <string name="add_content_description">Ajouter</string>
+    <string name="nav_collection">Collection</string>
+    <string name="nav_wishlist">Souhaits</string>
+    <string name="nav_encyclo">Encyclo</string>
+    <string name="nav_total">Total</string>
+    <string name="nav_games">Jeux</string>
+    <string name="title_collection">🎮 Ma collection</string>
+    <string name="title_wishlist">❤️ Acquisitions futures</string>
+    <string name="title_encyclo">📚 Encyclopédie</string>
+    <string name="title_total">💎 Valeur totale</string>
+    <string name="title_games">🕹️ Jeux &amp; Points</string>
+
+    <!-- Native language names for the picker -->
+    <string name="lang_name_fr">Français</string>
+    <string name="lang_name_en">English</string>
+    <string name="lang_name_es">Español</string>
+    <string name="lang_name_it">Italiano</string>
+    <string name="lang_name_de">Deutsch</string>
+    <string name="lang_name_pt">Português</string>
+    <string name="lang_name_ru">Русский</string>
+    <string name="lang_name_el">Ελληνικά</string>
+    <string name="lang_name_tr">Türkçe</string>
+    <string name="lang_name_ja">日本語</string>
+    <string name="lang_name_zh">中文</string>
+
+    <!-- CollectionScreen -->
+    <string name="collection_search_label">🔎 Rechercher dans la collection</string>
+    <string name="wishlist_search_label">🔎 Rechercher dans les souhaits</string>
+    <string name="collection_search_no_results">Aucun résultat pour cette recherche.</string>
+    <string name="sort_by">Trier par : %1$s</string>
+    <string name="sort_prefix">Trier par</string>
+    <string name="filter_show">Afficher</string>
+    <string name="sort_name">Nom</string>
+    <string name="sort_brand">Marque</string>
+    <string name="sort_console">Console</string>
+    <string name="sort_price_desc">Prix (élevé → bas)</string>
+    <string name="sort_price_asc">Prix (bas → élevé)</string>
+    <string name="sort_release">Date de sortie (ancien → récent)</string>
+    <string name="sort_release_desc">Date de sortie (récent → ancien)</string>
+    <string name="filter_all">Tous</string>
+    <string name="empty_collection">Aucun objet pour l\'instant.\nAppuie sur + pour scanner ou ajouter.</string>
+    <string name="unnamed_item">(sans nom)</string>
+    <string name="tag_box">Boîte</string>
+    <string name="tag_manual">Notice</string>
+    <string name="edit">Modifier</string>
+    <string name="delete">Supprimer</string>
+
+    <!-- WishlistScreen -->
+    <string name="empty_wishlist">Aucune acquisition future.\nAppuie sur + pour ajouter un souhait.</string>
+    <string name="wishlist_price_label">Cote : %1$s</string>
+
+    <!-- TotalScreen -->
+    <string name="total_value_label">VALEUR TOTALE</string>
+    <string name="total_items_count">%1$d objet(s) dans la collection</string>
+    <string name="total_consoles_count">🕹️ %1$d console(s)</string>
+    <string name="total_accessories_count">🔌 %1$d accessoire(s)</string>
+    <string name="total_games_count">🎮 %1$d jeu(x)</string>
+    <string name="total_auto_update_note">Mise à jour automatique à chaque ouverture.</string>
+
+    <!-- ItemDetailScreen -->
+    <string name="back">Retour</string>
+    <string name="repair_help_button">🛠️ Aide au dépannage</string>
+    <string name="more_info_button">ℹ️ Plus d\'infos</string>
+    <string name="platforms_label">Plateformes : %1$s</string>
+    <string name="genre_label">Genre : %1$s</string>
+    <string name="gallery_title">📸 Galerie (%1$d)</string>
+    <string name="view_3d_button">🧊  Voir en 3D</string>
+    <string name="color_3d_hint">🎨 Couleur modifiable dans la vue 3D (le rendu dépend du modèle)</string>
+    <string name="remove_photo">Retirer la photo</string>
+    <string name="add_photos">Ajouter des photos</string>
+
+    <!-- PriceHistoryChart -->
+    <string name="price_evolution_title">📈 Évolution du prix (%1$d relevés)</string>
+    <string name="price_min">Min %1$s</string>
+    <string name="price_current">Actuel %1$s</string>
+    <string name="price_max">Max %1$s</string>
+
+    <!-- AddCollectionForm -->
+    <string name="edit_item_title">Modifier l\'objet</string>
+    <string name="add_item_title">Ajouter un objet</string>
+    <string name="scan_detected_hint">✨ Détecté par scan — vérifie puis complète. La cote sera récupérée automatiquement plus tard via le code-barres.</string>
+    <string name="field_type">Type</string>
+    <string name="choose_from_catalog">📚 Choisir dans le catalogue (%1$d consoles)</string>
+    <string name="search_game_online">🔎 Rechercher un jeu en ligne</string>
+    <string name="search_console_online">🌐 Rechercher une console sur le net</string>
+    <string name="search_accessory_online">🌐 Rechercher un accessoire sur le net</string>
+    <string name="add_to_encyclopedia_title">Ajouter à l\'encyclopédie ?</string>
+    <string name="add_to_encyclopedia_message">Veux-tu ajouter « %1$s » à l\'encyclopédie pour le retrouver facilement la prochaine fois ?</string>
+    <string name="add_to_encyclopedia_confirm">Ajouter</string>
+    <string name="item_photo_gallery">📷 Photo de l\'objet (galerie)</string>
+    <string name="photo_content_description">Photo</string>
+    <string name="gallery_section_title">🖼️ Galerie (boîte, dos, notice, défauts...)</string>
+    <string name="field_name">Nom</string>
+    <string name="field_brand">Marque</string>
+    <string name="field_region">Région</string>
+    <string name="field_condition">État</string>
+    <string name="switch_has_box">Boîte présente</string>
+    <string name="switch_has_manual">Notice présente</string>
+    <string name="field_release_year">Année de sortie (optionnel)</string>
+    <string name="field_platforms">Plateforme(s) compatible(s)</string>
+    <string name="field_genre">Genre (action, course...)</string>
+    <string name="field_edition">Édition (optionnel)</string>
+    <string name="edition_none">Aucune</string>
+    <string name="field_price">Prix / cote (%1$s) (optionnel)</string>
+    <string name="field_barcode">Code-barres (optionnel)</string>
+    <string name="field_description">Description / caractéristiques</string>
+    <string name="update_button">Mettre à jour</string>
+    <string name="save_button">Enregistrer</string>
+
+    <!-- AddWishlistForm -->
+    <string name="new_wish_title">Nouveau souhait</string>
+    <string name="field_game_or_console_name">Nom du jeu / de la console</string>
+    <string name="field_wish_price">Cote en € (optionnel)</string>
+    <string name="wish_auto_fetch_note">La cote et les informations seront récupérées automatiquement une fois la source en ligne branchée.</string>
+    <string name="add_to_wishlist_button">Ajouter aux souhaits</string>
+    <!-- Encyclopédie : ajout rapide d'une console/accessoire à la collection ou aux souhaits -->
+    <string name="encyclo_add_to_collection_button">📦 Ajouter à ma collection</string>
+    <string name="encyclo_selection_count">%1$d sélectionné(s)</string>
+    <string name="encyclo_selection_mode_toggle">Sélection multiple</string>
+    <string name="encyclo_add_to_wishlist_button">⭐ Ajouter aux souhaits</string>
+    <string name="fill_missing_photos_button">🖼️ Rechercher les jaquettes manquantes</string>
+
+    <!-- ConsolePickerDialog -->
+    <string name="console_catalog_title">Catalogue des consoles</string>
+    <string name="accessory_catalog_title">Catalogue des accessoires</string>
+    <string name="search_filtered_by_console">Résultats filtrés sur : %1$s</string>
+    <string name="search_no_platform_filter">Pas de filtre RAWG disponible pour « %1$s » — résultats toutes consoles.</string>
+    <string name="game_trailer_title">🎬 Extrait vidéo</string>
+    <string name="no_trailer_available">Pas d\'extrait vidéo disponible pour ce jeu.</string>
+    <string name="no_description_available">Pas de description disponible.</string>
+    <string name="no_rawg_link">Pas encore lié à une fiche RAWG — recherche le jeu en ligne (modifier l\'objet) pour pouvoir afficher sa vidéo.</string>
+    <string name="youtube_search_button">▶️ Chercher une vidéo gameplay sur YouTube</string>
+    <string name="scanning_in_progress">Analyse de la photo en cours…</string>
+    <string name="scan_deep_analysis">Analyse approfondie en cours…</string>
+    <string name="batch_scan_option">📚 Scanner un lot (plusieurs objets)</string>
+    <string name="batch_analyzing">Analyse de votre lot en cours…</string>
+    <string name="batch_detected_title">%1$d article(s) détecté(s)</string>
+    <string name="batch_validate">Valider l\'ajout au lot</string>
+    <string name="batch_none">Aucun article détecté sur la photo.</string>
+    <string name="batch_unavailable">Analyse IA momentanément indisponible (limite quotidienne atteinte ou connexion). Réessayez plus tard.</string>
+    <string name="ad_unavailable">Publicité momentanément indisponible. Réessayez plus tard.</string>
+    <string name="batch_saving">Ajout de %1$d article(s) en cours…</string>
+    <string name="batch_selected_count">%1$d / %2$d sélectionné(s)</string>
+    <string name="search_name_or_brand">Rechercher (nom ou marque)</string>
+    <string name="no_console_found">Aucune console trouvée.</string>
+
+    <!-- GameSearchDialog -->
+    <string name="search_game_title">Rechercher un jeu</string>
+    <string name="api_key_not_configured">⚠️ Clé API non configurée.\n\n1. Crée un compte gratuit sur rawg.io/apidocs\n2. Copie ta clé dans le fichier local.properties :\n   rawgApiKey=TA_CLE\n3. Relance une compilation.</string>
+    <string name="field_game_title">Titre du jeu</string>
+    <string name="search_button">Chercher</string>
+    <string name="no_game_found">Aucun jeu trouvé.</string>
+    <string name="search_more_results">Proposer plus de résultats</string>
+
+    <!-- Generic UI text -->
+    <string name="remove_photo_button">Retirer la photo</string>
+
+    <!-- ConsoleEncyclopediaScreen / EncyclopediaScreens.kt -->
+    <string name="search_console_count">Rechercher une console (%1$d)</string>
+    <string name="search_accessory_count">Rechercher un accessoire (%1$d)</string>
+    <string name="encyclo_mode_consoles">📟 Consoles</string>
+    <string name="encyclo_mode_accessories">🎮 Accessoires</string>
+    <string name="cpu_label">CPU : %1$s</string>
+    <string name="memory_label">Mémoire : %1$s</string>
+    <string name="popular_games_title">🎮 Jeux populaires</string>
+    <string name="game_list_unavailable">Liste de jeux indisponible pour cette console.</string>
+
+    <!-- Presets personnalisés (ajout manuel à la bibliothèque) -->
+    <string name="add_custom_preset_title">Ajouter à la bibliothèque</string>
+    <string name="edit_custom_preset_title">Modifier la fiche</string>
+    <string name="field_kind">Type de console</string>
+    <string name="field_associated_console">Console associée</string>
+    <string name="associated_console_label">🎮 Console associée : %1$s</string>
+    <!-- Import automatique via URL source -->
+    <string name="field_source_url">URL source (import automatique)</string>
+    <string name="import_from_url_button">🔗 Importer depuis l\'URL</string>
+    <string name="import_url_success">Fiche enrichie depuis l\'URL (champs vides complétés).</string>
+    <string name="import_url_failed">Impossible de lire cette page. Vérifie l\'URL.</string>
+    <string name="pricecharting_button">🔍 Affiner la cote sur PriceCharting</string>
+    <string name="edit_price_button">✏️ Modifier le prix</string>
+    <string name="move_to_collection_button">📦 Marquer comme acquis (déplacer vers la Collection)</string>
+    <string name="tag_loose">Loose</string>
+    <string name="nav_backup">Sauvegarde</string>
+    <string name="title_backup">💾 Sauvegarde</string>
+    <string name="backup_explainer">Sauvegarde toute ta collection (données et photos) dans un fichier que tu choisis (téléchargements, Drive...). Ce fichier reste disponible même si tu désinstalles l\'application — utilise-le pour tout récupérer après un crash ou une réinstallation.</string>
+    <string name="backup_save_button">💾 Sauvegarder la collection</string>
+    <string name="backup_restore_button">📂 Restaurer une sauvegarde</string>
+    <string name="backup_restore_warning">Cette action remplace entièrement ta collection actuelle par le contenu de la sauvegarde. Continuer ?</string>
+    <string name="backup_success_message">Sauvegarde enregistrée avec succès.</string>
+    <string name="backup_error_message">Échec de la sauvegarde.</string>
+    <string name="restore_success_message">Collection restaurée avec succès.</string>
+    <string name="restore_error_message">Échec de la restauration : fichier invalide ou endommagé.</string>
+    <string name="excel_export_explainer">Exporte toute ta collection (et tes souhaits) sous forme de tableau avec une photo par ligne — lisible dans Excel ou tout tableur (Excel affichera un avertissement de format à l\'ouverture, sans conséquence : clique sur « Oui »).</string>
+    <string name="excel_export_button">📊 Exporter en tableau Excel</string>
+    <string name="excel_export_success_message">Tableau Excel exporté avec succès.</string>
+    <string name="excel_export_error_message">Échec de l\'export du tableau Excel.</string>
+    <string name="import_sheet_explainer">Importer une collection depuis un fichier Excel (.xlsx) ou CSV — même si ses colonnes ne correspondent pas au format de l\'appli, tu pourras les faire correspondre à l\'étape suivante.</string>
+    <string name="import_sheet_button">📥 Importer un fichier Excel/CSV</string>
+    <string name="import_mapping_title">Faire correspondre les colonnes</string>
+    <string name="import_mapping_explainer">Indique à quelle colonne de ton fichier correspond chaque champ. Seul le Nom est obligatoire ; les autres champs non trouvés resteront vides.</string>
+    <string name="import_column_none">Aucune colonne</string>
+    <string name="import_next">Suivant</string>
+    <string name="import_preview_title">%1$d objet(s) détecté(s)</string>
+    <string name="import_confirm">Importer</string>
+    <string name="import_parse_error">Impossible de lire ce fichier. Formats acceptés : .xlsx ou .csv.</string>
+    <string name="import_success">%1$d objet(s) importé(s) avec succès.</string>
+
+    <!-- Tutoriel de premier lancement -->
+    <string name="onboarding_choose_language">🌐 Choisis ta langue</string>
+    <string name="onboarding_skip">Passer</string>
+    <string name="onboarding_next">Suivant</string>
+    <string name="onboarding_finish">Commencer</string>
+    <string name="onboarding_page1_title">Bienvenue dans Ma Collection 🎮</string>
+    <string name="onboarding_page1_text">Cette appli t\'aide à cataloguer ta collection de jeux, consoles et accessoires rétro, avec reconnaissance automatique par photo et estimation des cotes.</string>
+    <string name="onboarding_page2_title">📷 Ajouter un objet</string>
+    <string name="onboarding_page2_text">Appuie sur le bouton + pour ajouter un objet : scanne un code-barres, prends une photo, choisis-en une dans ta galerie, ou saisis tout à la main. L\'appli essaie de reconnaître automatiquement le nom, le type et la console associée.</string>
+    <string name="onboarding_page3_title">✏️ Astuce : bien cadrer la photo</string>
+    <string name="onboarding_page3_text">Pour une meilleure reconnaissance, cadre la photo bien serrée sur le logo ou le titre, évite les reflets et le flou — plus le texte est net et lisible, plus l\'identification automatique sera fiable. Pour un jeu trouvé via la recherche en ligne, la photo principale affichée sera la vraie jaquette.</string>
+    <string name="onboarding_page4_title">📚 Encyclopédie</string>
+    <string name="onboarding_page4_text">Consulte le catalogue des consoles et accessoires, découvre leurs jeux les plus connus, ajoute directement une console, un accessoire ou un jeu à ta collection ou à tes souhaits depuis sa fiche, et ajoute toi-même une fiche personnalisée (avec photo) si elle manque, via le bouton +.</string>
+    <string name="onboarding_page5_title">❤️ Souhaits &amp; 💎 Valeur totale</string>
+    <string name="onboarding_page5_text">L\'onglet Souhaits liste tes futures acquisitions. L\'onglet Total affiche la valeur estimée de toute ta collection, mise à jour automatiquement. Si aucune annonce eBay comparable n\'est trouvée, une IA propose une estimation à la place, marquée « (IA) » à côté du prix — moins fiable qu\'une vraie annonce, à prendre comme ordre de grandeur.</string>
+    <string name="onboarding_page6_title">💾 Sauvegarde</string>
+    <string name="onboarding_page6_text">Sauvegarde toute ta collection (données et photos) dans un fichier que tu choisis où enregistrer, et restaure-la à tout moment — utile en cas de réinstallation ou de changement de téléphone. Astuce : dans les réglages (engrenage), tu peux aussi changer l\'image de fond de toute l\'application.</string>
+    <string name="onboarding_page7_title">💡 Astuces</string>
+    <string name="onboarding_page7_text">Dans les réglages (engrenage), un onglet « Astuces » résume les conseils pour bien cadrer tes photos et bien nommer tes objets en saisie manuelle, pour des reconnaissances et des cotes plus fiables.</string>
+    <string name="onboarding_page8_title">🕹️ Jeux &amp; récompenses</string>
+    <string name="onboarding_page8_text">L\'onglet Jeux (la manette) propose des mini-jeux rétro. Le Tennis Rétro est offert dès le départ ; joue au Quiz et aux jeux débloqués pour gagner des points 💎. Au tout premier lancement de chaque jeu, un écran t\'explique les règles et comment jouer. Après une partie, une pub optionnelle triple tes points gagnés ; l\'onglet Jeux propose aussi un Coffre Quotidien (pub) qui offre des points bonus toutes les 24h.</string>
+    <string name="onboarding_page9_title">🏪 Boutique &amp; 🎨 Thèmes</string>
+    <string name="onboarding_page9_text">Avec tes points, ouvre la Boutique (icône en haut à droite, ou bouton dans l\'onglet Jeux) pour débloquer d\'autres jeux, des thèmes visuels (Voyage temporel, Galaxie, Chasse au trésor, Ectoplasme…) et des options (export Excel, pubs réduites, Premium accès total). Une fois un thème acheté, applique-le dans les réglages (engrenage) → onglet Thème.</string>
+    <string name="onboarding_page10_title">📚 Scanner un lot d\'un coup</string>
+    <string name="onboarding_page10_text">Pour ajouter plusieurs objets à la fois (une étagère, un lot), choisis « 📚 Scanner un lot » dans le menu +. Une IA analyse la photo entière, isole chaque jeu ou console détecté et t\'affiche une liste à cocher : décoche les erreurs, puis valide pour tout ajouter d\'un coup à ta collection ou à tes souhaits. Jaquette, description, genre et année sont recherchés et remplis automatiquement pour chaque jeu ajouté. Astuce : une photo bien éclairée où chaque titre est lisible de face donne les meilleurs résultats. Le scan par lot est réservé au Premium ou débloqué en regardant une pub avant de lancer la photo (le scan à l\'unité reste gratuit).</string>
+    <string name="onboarding_page11_title">🔗 Import automatique via une URL</string>
+    <string name="onboarding_page11_text">En ajoutant ou modifiant une console, un jeu ou un accessoire, colle un lien (fiche Wikipédia, page produit…) dans le champ « URL source », puis appuie sur « 🔗 Importer depuis l\'URL » : l\'appli récupère le titre, la description, l\'année et la photo pour compléter automatiquement les champs encore vides — sans jamais écraser ce que tu as déjà saisi.</string>
+    <string name="onboarding_page12_title">🕹️ Accessoires précis &amp; Game &amp; Watch</string>
+    <string name="onboarding_page12_text">Pour un accessoire, renseigne sa « Console associée » : le catalogue et la recherche en ligne te proposent alors en priorité les bons résultats pour cette console (ex. le Control Stick de la Master System, le Super Scope de la Super Nintendo). Astuce Game &amp; Watch : tape « Game &amp; Watch » comme nom de console pour dérouler la liste complète des modèles (Ball, Fire, Donkey Kong, Zelda, séries Panorama, Table Top, rééditions…), chacun relié à sa fiche dans l\'Encyclopédie avec sa vraie photo et son vrai lien Wikipédia.</string>
+    <string name="onboarding_page13_title">📥 Importer une collection existante</string>
+    <string name="onboarding_page13_text">Depuis les réglages (engrenage) → Sauvegarde, importe un fichier Excel (.xlsx) ou CSV d\'une collection existante, même si ses colonnes ne correspondent pas au format de l\'appli : indique simplement à quelle colonne correspond chaque champ (nom, plateforme, état, prix…), vérifie l\'aperçu des objets détectés, puis valide l\'import.</string>
+    <string name="onboarding_page14_title">✅ Sélection multiple dans l’Encyclopédie</string>
+    <string name="onboarding_page14_text">Dans l’Encyclopédie, appuie sur l’icône ✅ en haut à droite pour activer la sélection multiple : coche plusieurs consoles ou accessoires, puis ajoute-les tous d’un coup à ta collection ou à tes souhaits grâce au bandeau qui apparaît en bas.</string>
+
+    <!-- Menu réglages (icône engrenage) -->
+    <string name="options_menu_title">Réglages</string>
+    <string name="options_language">🌐 Langue</string>
+    <string name="options_currency">💱 Devises</string>
+    <string name="currency_dialog_title">💱 Devise</string>
+    <string name="currency_dialog_note">Devise d\'affichage et de saisie des cotes (toujours convertie depuis l\'euro, au taux le plus récent récupéré au lancement). Choisie automatiquement selon la langue, mais modifiable ici à tout moment.</string>
+    <string name="options_backup">💾 Sauvegarde</string>
+    <string name="options_replay_tutorial">❓ Revoir le tutoriel</string>
+    <string name="recrop_button">✂️ Recadrer</string>
+    <string name="options_background">🖼️ Image de fond</string>
+    <string name="options_background_reset">↩️ Fond par défaut</string>
+    <string name="reset_photo_button">↩️ Photo par défaut</string>
+    <string name="retry_scan_button">🔄 Réessayer</string>
+    <string name="retry_no_alternative_message">Aucune autre piste détectée sur cette photo.</string>
+    <string name="options_tips">💡 Astuces</string>
+    <string name="tips_dialog_title">💡 Astuces</string>
+    <string name="tips_recognition_title">📸 Réussir la reconnaissance par photo</string>
+    <string name="tips_recognition_text">Comment ça marche : l\'appli lit d\'abord le texte de la photo (rapide, hors-ligne) ; si c\'est ambigu, une IA visuelle analyse l\'image (logos, jaquettes). En cas de saturation du service IA, un second prend automatiquement le relais — tu n\'as rien à faire.\n\nPhoto UNIQUE (un objet) : cadre serré sur la jaquette ou le logo, bien à plat et de face (évite l\'angle), en pleine lumière sans reflet ni flou. Un seul objet dans le cadre.\n\nSCAN d\'un LOT (plusieurs objets) : pose les boîtes/jeux de face, alignés et non empilés, pour que chaque titre soit lisible d\'un coup. Bonne lumière uniforme, sans reflet. Limite-toi à ~10-15 objets par photo : mieux vaut deux photos nettes qu\'une seule surchargée où les titres se chevauchent.\n\nSi le résultat n\'est pas bon : « 🔄 Réessayer » propose une autre piste sans recadrer, « ✂️ Recadrer » relance une analyse complète sur un nouveau cadrage.</string>
+    <string name="tips_crop_title">✂️ Bien recadrer la photo</string>
+    <string name="tips_crop_text">Cadre la photo bien serrée sur le logo ou le titre du produit, évite les reflets et le flou : plus le texte est net et lisible, plus la reconnaissance automatique est fiable. Si le résultat n\'est pas le bon, deux options : le bouton « 🔄 Réessayer » propose une autre piste détectée sur la même photo (un autre texte visible), sans recadrer ; le bouton « ✂️ Recadrer » reprend la photo depuis le début, te laisse la recadrer différemment, puis relance une analyse complète.</string>
+    <string name="tips_naming_title">🏷️ Bien nommer un objet en saisie manuelle</string>
+    <string name="tips_naming_text">Si la reconnaissance automatique par photo ne trouve rien pour un jeu, une console ou un accessoire, tu peux saisir le nom à la main. Dans ce cas, essaie de retrouver l\'objet sur PriceCharting et reprends exactement le même nom que celui utilisé là-bas : la cote estimée sera plus précise, car la recherche de prix se base sur la correspondance du nom.</string>
+    <string name="tips_price_ai_title">🤖 Cote marquée « (IA) »</string>
+    <string name="tips_price_ai_text">Quand aucune annonce eBay comparable n\'est trouvée, l\'appli demande à une IA de chercher un prix d\'occasion plausible en ligne à la place. Ce prix est marqué « (IA) » à côté du montant : c\'est une estimation, moins fiable qu\'une vraie annonce eBay, à prendre comme simple ordre de grandeur. Tu peux toujours la corriger à la main via « Modifier le prix ».</string>
+</resources>
