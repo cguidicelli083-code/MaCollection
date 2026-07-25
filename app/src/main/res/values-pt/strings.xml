@@ -47,6 +47,11 @@
     <string name="sort_release">Data de lançamento (antigo → novo)</string>
     <string name="sort_release_desc">Data de lançamento (novo → antigo)</string>
     <string name="filter_all">Todos</string>
+    <string name="filter_kind_prefix">Tipo</string>
+    <string name="filter_kind_all">Todas</string>
+    <string name="filter_kind_salon">Consolas de mesa</string>
+    <string name="filter_kind_portable">Consolas portáteis</string>
+    <string name="filter_kind_computer">Computadores</string>
     <string name="empty_collection">Ainda não há itens.\nToca em + para digitalizar ou adicionar.</string>
     <string name="unnamed_item">(sem nome)</string>
     <string name="tag_box">Caixa</string>

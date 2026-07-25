@@ -49,6 +49,11 @@
     <string name="sort_release">Release date (old → new)</string>
     <string name="sort_release_desc">Release date (new → old)</string>
     <string name="filter_all">All</string>
+    <string name="filter_kind_prefix">Type</string>
+    <string name="filter_kind_all">All</string>
+    <string name="filter_kind_salon">Home consoles</string>
+    <string name="filter_kind_portable">Handheld consoles</string>
+    <string name="filter_kind_computer">Computers</string>
     <string name="empty_collection">No items yet.\nTap + to scan or add one.</string>
     <string name="unnamed_item">(unnamed)</string>
     <string name="tag_box">Box</string>

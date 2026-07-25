@@ -66,6 +66,11 @@
     <string name="sort_release">Date de sortie (ancien → récent)</string>
     <string name="sort_release_desc">Date de sortie (récent → ancien)</string>
     <string name="filter_all">Tous</string>
+    <string name="filter_kind_prefix">Type</string>
+    <string name="filter_kind_all">Toutes</string>
+    <string name="filter_kind_salon">Consoles de salon</string>
+    <string name="filter_kind_portable">Consoles portables</string>
+    <string name="filter_kind_computer">Ordinateurs</string>
     <string name="empty_collection">Aucun objet pour l\'instant.\nAppuie sur + pour scanner ou ajouter.</string>
     <string name="unnamed_item">(sans nom)</string>
     <string name="tag_box">Boîte</string>

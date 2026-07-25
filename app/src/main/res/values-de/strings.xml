@@ -47,6 +47,11 @@
     <string name="sort_release">Erscheinungsdatum (alt → neu)</string>
     <string name="sort_release_desc">Erscheinungsdatum (neu → alt)</string>
     <string name="filter_all">Alle</string>
+    <string name="filter_kind_prefix">Typ</string>
+    <string name="filter_kind_all">Alle</string>
+    <string name="filter_kind_salon">Heimkonsolen</string>
+    <string name="filter_kind_portable">Handheld-Konsolen</string>
+    <string name="filter_kind_computer">Computer</string>
     <string name="empty_collection">Noch keine Objekte.\nTippe auf +, um zu scannen oder hinzuzufügen.</string>
     <string name="unnamed_item">(ohne Namen)</string>
     <string name="tag_box">Verpackung</string>

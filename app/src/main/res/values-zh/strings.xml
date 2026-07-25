@@ -47,6 +47,11 @@
     <string name="sort_release">发行日期（旧 → 新）</string>
     <string name="sort_release_desc">发行日期（新 → 旧）</string>
     <string name="filter_all">全部</string>
+    <string name="filter_kind_prefix">类型</string>
+    <string name="filter_kind_all">全部</string>
+    <string name="filter_kind_salon">家用主机</string>
+    <string name="filter_kind_portable">掌上主机</string>
+    <string name="filter_kind_computer">电脑</string>
     <string name="empty_collection">暂无物品。\n点击 + 扫描或添加物品。</string>
     <string name="unnamed_item">（未命名）</string>
     <string name="tag_box">包装盒</string>

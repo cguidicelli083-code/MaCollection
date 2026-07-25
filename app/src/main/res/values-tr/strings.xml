@@ -47,6 +47,11 @@
     <string name="sort_release">Çıkış tarihi (eski → yeni)</string>
     <string name="sort_release_desc">Çıkış tarihi (yeni → eski)</string>
     <string name="filter_all">Tümü</string>
+    <string name="filter_kind_prefix">Tür</string>
+    <string name="filter_kind_all">Tümü</string>
+    <string name="filter_kind_salon">Masaüstü konsollar</string>
+    <string name="filter_kind_portable">Taşınabilir konsollar</string>
+    <string name="filter_kind_computer">Bilgisayarlar</string>
     <string name="empty_collection">Henüz öğe yok.\nTaramak veya eklemek için + tuşuna bas.</string>
     <string name="unnamed_item">(adsız)</string>
     <string name="tag_box">Kutu</string>

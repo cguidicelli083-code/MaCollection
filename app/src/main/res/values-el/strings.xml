@@ -47,6 +47,11 @@
     <string name="sort_release">Ημερομηνία κυκλοφορίας (παλιά → νέα)</string>
     <string name="sort_release_desc">Ημερομηνία κυκλοφορίας (νέα → παλιά)</string>
     <string name="filter_all">Όλα</string>
+    <string name="filter_kind_prefix">Τύπος</string>
+    <string name="filter_kind_all">Όλες</string>
+    <string name="filter_kind_salon">Κονσόλες σαλονιού</string>
+    <string name="filter_kind_portable">Φορητές κονσόλες</string>
+    <string name="filter_kind_computer">Υπολογιστές</string>
     <string name="empty_collection">Δεν υπάρχουν αντικείμενα ακόμα.\nΠάτησε + για σκανάρισμα ή προσθήκη.</string>
     <string name="unnamed_item">(χωρίς όνομα)</string>
     <string name="tag_box">Κουτί</string>

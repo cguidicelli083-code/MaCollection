@@ -47,6 +47,11 @@
     <string name="sort_release">Дата выхода (старые → новые)</string>
     <string name="sort_release_desc">Дата выхода (новые → старые)</string>
     <string name="filter_all">Все</string>
+    <string name="filter_kind_prefix">Тип</string>
+    <string name="filter_kind_all">Все</string>
+    <string name="filter_kind_salon">Стационарные консоли</string>
+    <string name="filter_kind_portable">Портативные консоли</string>
+    <string name="filter_kind_computer">Компьютеры</string>
     <string name="empty_collection">Пока нет предметов.\nНажмите +, чтобы отсканировать или добавить.</string>
     <string name="unnamed_item">(без названия)</string>
     <string name="tag_box">Коробка</string>

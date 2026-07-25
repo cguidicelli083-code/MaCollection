@@ -106,6 +106,23 @@ private fun encycloSortLabel(o: EncycloSortOption): String = when (o) {
 }
 
 /**
+ * Filtre par type de console dans l'encyclopédie (salon / portable / ordinateur), basé sur
+ * [ConsolePreset.kind] ("Salon", "Portable" ou "Ordinateur"). ALL n'applique aucun filtre.
+ */
+enum class EncycloKindFilter(val kind: String?) {
+    ALL(null), SALON("Salon"), PORTABLE("Portable"), ORDINATEUR("Ordinateur")
+}
+
+/** Libellé lisible d'un filtre de type de console. */
+@Composable
+private fun encycloKindFilterLabel(f: EncycloKindFilter): String = when (f) {
+    EncycloKindFilter.ALL -> stringResource(R.string.filter_kind_all)
+    EncycloKindFilter.SALON -> stringResource(R.string.filter_kind_salon)
+    EncycloKindFilter.PORTABLE -> stringResource(R.string.filter_kind_portable)
+    EncycloKindFilter.ORDINATEUR -> stringResource(R.string.filter_kind_computer)
+}
+
+/**
  * Associe une fiche à sa fiche perso d'origine ([CustomPreset], non null seulement si la ligne
  * vient d'une fiche ajoutée par l'utilisateur). Sert à savoir EXACTEMENT quelle ligne a été
  * tapée sans avoir à la retrouver par nom (voir explication sur [EncyclopediaScreen]).
@@ -137,6 +154,7 @@ fun EncyclopediaScreen(
 ) {
     var query by remember { mutableStateOf("") }
     var sortOption by remember { mutableStateOf(EncycloSortOption.NAME) }
+    var kindFilter by remember { mutableStateOf(EncycloKindFilter.ALL) }
     var selectedAccessory by remember { mutableStateOf<AccessoryEntry?>(null) }
     val customPresets by vm.customPresets.collectAsState()
     val photoOverrides by vm.photoOverrides.collectAsState()
@@ -153,13 +171,14 @@ fun EncyclopediaScreen(
     // (ConsoleEntry.custom / AccessoryEntry.custom) : si une fiche perso partage le même nom
     // qu'une fiche native, on doit savoir laquelle des deux lignes a été tapée (pas la retrouver
     // par nom ensuite, ce qui associerait les boutons Modifier/Supprimer aux deux lignes).
-    val consoleList = remember(query, sortOption, customPresets) {
+    val consoleList = remember(query, sortOption, customPresets, kindFilter) {
         val q = query.trim().lowercase()
         val native = consolePresets.map { ConsoleEntry(it, null) }
         val custom = customPresets.filter { it.type == ItemType.CONSOLE }.map { ConsoleEntry(it.toConsolePreset(), it) }
         val all = native + custom
-        val filtered = if (q.isEmpty()) all
-        else all.filter {
+        val byKind = kindFilter.kind?.let { k -> all.filter { it.preset.kind == k } } ?: all
+        val filtered = if (q.isEmpty()) byKind
+        else byKind.filter {
             ConsoleRecognition.matchesQuery(listOf(it.preset.name, it.preset.brand) + ConsoleRecognition.aliasSearchTerms(it.preset.name), q)
         }
         when (sortOption) {
@@ -226,13 +245,24 @@ fun EncyclopediaScreen(
         )
         if (mode == EncycloMode.CONSOLES) {
             Spacer(Modifier.height(8.dp))
-            ThemedChoiceDropdown(
-                leading = stringResource(R.string.sort_prefix),
-                selectedLabel = encycloSortLabel(sortOption),
-                options = EncycloSortOption.values().toList(),
-                optionLabel = { encycloSortLabel(it) },
-                onSelect = { sortOption = it }
-            )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+                ThemedChoiceDropdown(
+                    leading = stringResource(R.string.sort_prefix),
+                    selectedLabel = encycloSortLabel(sortOption),
+                    options = EncycloSortOption.values().toList(),
+                    optionLabel = { encycloSortLabel(it) },
+                    onSelect = { sortOption = it },
+                    modifier = Modifier.weight(1f)
+                )
+                ThemedChoiceDropdown(
+                    leading = stringResource(R.string.filter_kind_prefix),
+                    selectedLabel = encycloKindFilterLabel(kindFilter),
+                    options = EncycloKindFilter.values().toList(),
+                    optionLabel = { encycloKindFilterLabel(it) },
+                    onSelect = { kindFilter = it },
+                    modifier = Modifier.weight(1f)
+                )
+            }
         }
         Spacer(Modifier.height(10.dp))
         val bottomInset = 90.dp

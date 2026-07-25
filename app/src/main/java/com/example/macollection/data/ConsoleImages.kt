@@ -399,7 +399,32 @@ object ConsoleImages {
         "Game Boy Édition The Legend of Zelda: Link's Awakening" to "file:///android_asset/console_photos/gb_zelda_linksawakening.webp",
         "Mega Drive II Édition Sonic Compilation" to "file:///android_asset/console_photos/md2_sonic_compilation.webp",
         "Master System II Édition Sonic" to "file:///android_asset/console_photos/ms2_sonic.webp",
-        "Master System II Édition Aladdin" to "file:///android_asset/console_photos/ms2_aladdin.webp"
+        "Master System II Édition Aladdin" to "file:///android_asset/console_photos/ms2_aladdin.webp",
+
+        // Révisions matérielles et matériel FPGA/rétro moderne (recherche 2026-07-25), toutes en
+        // vraies photos Wikimedia Commons vérifiées.
+        "PlayStation 2 (Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sony-PlayStation-2-70001-Console-FL.jpg/500px-Sony-PlayStation-2-70001-Console-FL.jpg",
+        "PlayStation 3 (Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/PS3-Slim-Console-Vert.jpg/500px-PS3-Slim-Console-Vert.jpg",
+        "PlayStation 3 (Super Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sony-PlayStation-PS3-SuperSlim-Console-FL.jpg/500px-Sony-PlayStation-PS3-SuperSlim-Console-FL.jpg",
+        "Xbox 360 S (Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Xbox-360S-Console-Set.jpg/500px-Xbox-360S-Console-Set.jpg",
+        "Xbox 360 E" to "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Microsoft-Xbox-360-E-wController.jpg/500px-Microsoft-Xbox-360-E-wController.jpg",
+        "PlayStation 4 (Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/PlayStation_4_Slim_8504.jpg/500px-PlayStation_4_Slim_8504.jpg",
+        "Wii Mini" to "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Wii-Mini-Console-Set-H.jpg/500px-Wii-Mini-Console-Set-H.jpg",
+        "PlayStation Vita (Slim)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/PlayStation-Vita-2001-FL.jpg/500px-PlayStation-Vita-2001-FL.jpg",
+        "PSP-2000 (Slim & Lite)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/PSP-2000.jpg/500px-PSP-2000.jpg",
+        "PSP-3000" to "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/PSP-3000-Silver.jpg/500px-PSP-3000-Silver.jpg",
+        "GameCube Jet Black" to "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Nintendo_GameCube_w_zasobach_muzeum_Gry_i_Komputery_Minionej_Ery_we_Wroc%C5%82awiu.jpg/500px-Nintendo_GameCube_w_zasobach_muzeum_Gry_i_Komputery_Minionej_Ery_we_Wroc%C5%82awiu.jpg",
+        "GameCube Spice Orange" to "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Nintendo_Gamecube_%282001%29_1.jpg/500px-Nintendo_Gamecube_%282001%29_1.jpg",
+        "Super Nt" to "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/SuperNT.jpg/500px-SuperNT.jpg",
+        "Mega Sg" to "https://upload.wikimedia.org/wikipedia/commons/2/2d/MegaSG_console.jpg",
+        "Evercade VS" to "https://upload.wikimedia.org/wikipedia/commons/9/97/Evercade_vs_with_1_gamepad.png",
+        "Evercade EXP" to "https://upload.wikimedia.org/wikipedia/commons/5/51/Evercade_EXP_front.jpg",
+        "Mega Drive Mini 2" to "https://upload.wikimedia.org/wikipedia/commons/8/89/SEGA_MEGA_DRIVE_2_Mini.jpg",
+        "WonderSwan Crystal" to "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Wonder-Swan-Crystal.jpg/500px-Wonder-Swan-Crystal.jpg",
+        "Xbox One S" to "https://upload.wikimedia.org/wikipedia/commons/6/63/Microsoft-Xbox-One-S-Console-FL.jpg",
+        "PSP E-1000 (Street)" to "https://upload.wikimedia.org/wikipedia/commons/1/1d/PSP_E-1000_ice_white.jpg",
+        "PlayStation 3 Édition Final Fantasy XIII (Lightning)" to "https://upload.wikimedia.org/wikipedia/commons/0/04/Final_Fantasy_XIII_Lightning_Edition_white_version_of_PlayStation_3%2C_Tokyo_Game_Show_20090927.jpg",
+        "Xbox 360 Elite" to "https://upload.wikimedia.org/wikipedia/commons/1/1b/Microsoft-Xbox-360-Elite-Console-FL.jpg"
     )
 
     // Photo générique de la gamme Game & Watch (vraie photo Wikimedia vérifiée) : repli pour toute

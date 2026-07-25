@@ -448,7 +448,32 @@ val consolePresets: List<ConsolePreset> = listOf(
     // Fiche recréée de zéro le 2026-07-19 (retapée à la main) pour éliminer une éventuelle
     // corruption invisible dans l'ancienne ligne, suite à une photo qui refusait de s'afficher
     // quel que soit le fichier associé.
-    ConsolePreset("Microsoft", "Xbox One Édition Halo 5 Guardians", 2015, "Salon", "AMD Jaguar 8 coeurs @ 1,75 GHz", "1 To", "Coque bicolore bleu metallique inspiree de Spartan Locke et de la technologie UNSC.")
+    ConsolePreset("Microsoft", "Xbox One Édition Halo 5 Guardians", 2015, "Salon", "AMD Jaguar 8 coeurs @ 1,75 GHz", "1 To", "Coque bicolore bleu metallique inspiree de Spartan Locke et de la technologie UNSC."),
+
+    // --- Révisions matérielles officielles (« slim », « mini »...) et matériel FPGA/rétro moderne
+    // complétant le catalogue (recherche 2026-07-25) ---
+    ConsolePreset("Sony", "PlayStation 2 (Slim)", 2004, "Salon", "Emotion Engine @ 294 MHz", "32 Mo", "Refonte compacte (série SCPH-700xx, novembre 2004) de la PlayStation 2 : bien plus fine et légère, Ethernet intégré, mais baie d'extension supprimée (plus de disque dur officiel possible)."),
+    ConsolePreset("Sony", "PlayStation 3 (Slim)", 2009, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "Refonte CECH-2000 (septembre 2009) : environ un tiers du volume et du poids de la PS3 d'origine, consommation et bruit réduits, disque dur SATA 2,5″ amovible."),
+    ConsolePreset("Sony", "PlayStation 3 (Super Slim)", 2012, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "Refonte CECH-4000 (octobre 2012), environ 25 % plus petite et 20 % plus légère que la PS3 Slim ; tiroir à glissière remplaçant le lecteur à fente."),
+    ConsolePreset("Microsoft", "Xbox 360 S (Slim)", 2010, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "512 Mo GDDR3", "Refonte compacte et plus silencieuse de la Xbox 360 (juillet 2010), Wi-Fi intégré et port Kinect natif, boutons tactiles."),
+    ConsolePreset("Microsoft", "Xbox 360 E", 2013, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "512 Mo GDDR3", "Dernière révision de la Xbox 360 (juin 2013), design repris de la Xbox One (double concavité mate blanche ou noire)."),
+    ConsolePreset("Sony", "PlayStation 4 (Slim)", 2016, "Salon", "AMD Jaguar 8 cœurs @ 1,6 GHz", "8 Go GDDR5", "Refonte CUH-2000 (septembre 2016) : plus fine, plus légère, moins gourmande, alimentation intégrée (fin du bloc externe)."),
+    ConsolePreset("Nintendo", "Wii Mini", 2012, "Salon", "IBM PowerPC « Broadway » @ 729 MHz", "88 Mo", "Version compacte et économique de la Wii (décembre 2012, Canada d'abord) : ni Wi-Fi ni rétrocompatibilité GameCube, disque non éjectable par le haut, coloris noir uniquement."),
+    ConsolePreset("Sony", "PlayStation Vita (Slim)", 2013, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "Refonte PCH-2000 (Japon octobre 2013, Europe/USA 2014) : 20 % plus fine, 15 % plus légère, 1 Go de stockage interne ajouté, port micro-USB ; écran passé d'OLED à LCD."),
+    ConsolePreset("Sony", "PSP-2000 (Slim & Lite)", 2007, "Portable", "MIPS R4000 @ 222-333 MHz", "32 Mo (64 Mo)", "Révision plus fine et 33 % plus légère de la PSP d'origine (PSP-1000), sortie de vidéo TV ajoutée."),
+    ConsolePreset("Sony", "PSP-3000", 2008, "Portable", "MIPS R4000 @ 333 MHz", "64 Mo", "Révision de la PSP-2000 : écran amélioré (temps de réponse, contraste), micro intégré."),
+    ConsolePreset("Nintendo", "GameCube Jet Black", 2001, "Salon", "IBM PowerPC « Gekko » @ 485 MHz", "24 + 16 Mo", "Coloris noir de lancement (2001), commercialisé en parallèle de l'Indigo."),
+    ConsolePreset("Nintendo", "GameCube Spice Orange", 2002, "Salon", "IBM PowerPC « Gekko » @ 485 MHz", "24 + 16 Mo", "Coloris orange, exclusivité japonaise sortie après le lancement (2002)."),
+    ConsolePreset("Analogue", "Super Nt", 2018, "Salon", "FPGA Altera Cyclone V", "—", "Recréation matérielle (FPGA, pas d'émulation) de la Super Nintendo, sortie HDMI native, compatible cartouches SNES/Super Famicom d'origine."),
+    ConsolePreset("Analogue", "Mega Sg", 2019, "Salon", "FPGA (matériel, pas d'émulation)", "—", "Recréation matérielle de la Mega Drive/Genesis, compatible Master System/Game Gear/SG-1000 via adaptateurs, sortie HDMI native."),
+    ConsolePreset("Blaze", "Evercade VS", 2021, "Salon", "ARM Cortex-A53 4 cœurs @ 1,5 GHz", "512 Mo", "Version salon de l'Evercade : sortie HDMI 1080p, deux emplacements manette pour le multijoueur, compatible avec toutes les cartouches Evercade."),
+    ConsolePreset("Blaze", "Evercade EXP", 2022, "Portable", "ARM (SoC)", "256 Mo", "Portable haut de gamme de la gamme Evercade : écran IPS 4,3″, mode TATE (rotation) pour les bornes verticales, 18 jeux Capcom intégrés, sortie HDMI."),
+    ConsolePreset("Sega", "Mega Drive Mini 2", 2022, "Salon", "ARM (SoC, émulation)", "256 Mo", "Suite de la Mega Drive Mini (octobre 2022), 60 jeux Mega Drive et Mega CD intégrés (dont Sonic CD), fixation cosmétique imitant le Mega CD."),
+    ConsolePreset("Bandai", "WonderSwan Crystal", 2002, "Portable", "NEC V30MZ @ 3,07 MHz", "512 Ko", "Dernier modèle de la gamme WonderSwan (SwanCrystal, juillet 2002) : écran TFT couleur à matrice active, coque opaque, bouton d'alimentation rond jaune caractéristique."),
+    ConsolePreset("Microsoft", "Xbox One S", 2016, "Salon", "AMD Jaguar 8 cœurs @ 1,75 GHz", "8 Go DDR3", "Refonte compacte (40 % plus petite que la Xbox One d'origine), lecteur 4K Ultra HD Blu-ray et sortie HDR ajoutés, bloc d'alimentation intégré."),
+    ConsolePreset("Sony", "PSP E-1000 (Street)", 2011, "Portable", "MIPS R4000 @ 222 MHz", "32 Mo", "Version d'entrée de gamme et fin de vie de la PSP (2011) : sans Wi-Fi ni sortie vidéo TV, un seul haut-parleur mono, vendue nettement moins cher que la PSP-3000."),
+    ConsolePreset("Sony", "PlayStation 3 Édition Final Fantasy XIII (Lightning)", 2009, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "PS3 250 Go blanc céramique ornée d'une illustration rose de Lightning, manette blanche assortie, exclusivité japonaise vendue avec l'édition limitée de Final Fantasy XIII, épuisée en une semaine."),
+    ConsolePreset("Microsoft", "Xbox 360 Elite", 2007, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "512 Mo GDDR3", "SKU haut de gamme (2007) : coque noire, disque dur 120 Go (puis 250 Go), sortie HDMI dès le lancement — contrairement au modèle « Premium » blanc d'origine.")
 )
     // Le catalogue ci-dessus reste écrit par date de sortie (plus simple à compléter),
     // mais on l'expose trié par ordre alphabétique : plus simple pour la recherche dans l'app.

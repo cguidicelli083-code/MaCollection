@@ -47,6 +47,11 @@
     <string name="sort_release">発売日（古い → 新しい）</string>
     <string name="sort_release_desc">発売日（新しい → 古い）</string>
     <string name="filter_all">すべて</string>
+    <string name="filter_kind_prefix">種類</string>
+    <string name="filter_kind_all">すべて</string>
+    <string name="filter_kind_salon">据置型ゲーム機</string>
+    <string name="filter_kind_portable">携帯型ゲーム機</string>
+    <string name="filter_kind_computer">コンピューター</string>
     <string name="empty_collection">まだアイテムがありません。\n+ をタップしてスキャンまたは追加してください。</string>
     <string name="unnamed_item">（名前なし）</string>
     <string name="tag_box">箱</string>

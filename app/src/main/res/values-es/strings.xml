@@ -47,6 +47,11 @@
     <string name="sort_release">Fecha de lanzamiento (antiguo → nuevo)</string>
     <string name="sort_release_desc">Fecha de lanzamiento (nuevo → antiguo)</string>
     <string name="filter_all">Todos</string>
+    <string name="filter_kind_prefix">Tipo</string>
+    <string name="filter_kind_all">Todas</string>
+    <string name="filter_kind_salon">Consolas de sobremesa</string>
+    <string name="filter_kind_portable">Consolas portátiles</string>
+    <string name="filter_kind_computer">Ordenadores</string>
     <string name="empty_collection">Aún no hay ningún objeto.\nPulsa + para escanear o añadir uno.</string>
     <string name="unnamed_item">(sin nombre)</string>
     <string name="tag_box">Caja</string>
