@@ -94,6 +94,7 @@
 # Actus retrogaming (écran Actus de l'Encyclopédie) : JSON désérialisé par Gson.
 -keep class com.example.macollection.data.RetroNewsDto { *; }
 -keep class com.example.macollection.data.RetroNewsTranslationDto { *; }
+-keep class com.example.macollection.ui.NewsTranslation { *; }
 
 # Les enums (ItemType, Region, Condition) sont aussi lus par Gson via leur nom (CollectionItem en
 # contient) : on protège leurs constantes de la même façon, par précaution.
