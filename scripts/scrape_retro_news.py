@@ -48,24 +48,33 @@ HEADERS = {
     ),
 }
 
-# Flux RSS retenus (verifies actifs manuellement, tous en anglais) : rééditions/mini-consoles/
-# Evercade (Time Extension), bornes d'arcade dont les modeles home-arcade type 1up (Arcade Heroes,
-# Arcade Blogger), actus retrogaming generalistes (RetroDodo, Racketboy), et sites généralistes
-# (Nintendo Life, Push Square, Pure Xbox, My Nintendo News, Gematsu, Kotaku, GamingBolt) filtres
-# ensuite par mots-cles retro puisqu'ils couvrent aussi l'actualite non-retro.
+# Flux RSS retenus (verifies actifs manuellement) : rééditions/mini-consoles/Evercade (Time
+# Extension), bornes d'arcade dont les modeles home-arcade type 1up (Arcade Heroes, Arcade
+# Blogger), actus retrogaming generalistes (RetroDodo, Racketboy, The Retro Gamer, Retrogaming.fr),
+# et sites généralistes anglophones (Nintendo Life, Push Square, Pure Xbox, My Nintendo News,
+# Gematsu, Kotaku, GamingBolt) ou francophones (JeuxActu, Gamekult, ActuGaming, JeuxVideo.com)
+# filtres ensuite par mots-cles retro puisqu'ils couvrent aussi l'actualite non-retro. Chaque
+# entree = (nom, url, langue d'origine du flux) ; la langue sert a savoir depuis quelle langue
+# traduire (voir translate_entry).
 FEEDS = [
-    ("Time Extension", "https://timeextension.com/feed"),
-    ("Arcade Heroes", "https://arcadeheroes.com/feed"),
-    ("Arcade Blogger", "https://arcadeblogger.com/feed/"),
-    ("RetroDodo", "https://retrododo.com/feed/"),
-    ("Racketboy", "https://www.racketboy.com/feed"),
-    ("Nintendo Life", "https://www.nintendolife.com/feeds/latest"),
-    ("Push Square", "https://www.pushsquare.com/feeds/latest"),
-    ("Pure Xbox", "https://www.purexbox.com/feeds/latest"),
-    ("My Nintendo News", "https://www.mynintendonews.com/feed/"),
-    ("Gematsu", "https://www.gematsu.com/feed"),
-    ("Kotaku", "https://kotaku.com/tag/retro/rss"),
-    ("GamingBolt", "https://gamingbolt.com/feed"),
+    ("Time Extension", "https://timeextension.com/feed", "en"),
+    ("Arcade Heroes", "https://arcadeheroes.com/feed", "en"),
+    ("Arcade Blogger", "https://arcadeblogger.com/feed/", "en"),
+    ("RetroDodo", "https://retrododo.com/feed/", "en"),
+    ("Racketboy", "https://www.racketboy.com/feed", "en"),
+    ("Nintendo Life", "https://www.nintendolife.com/feeds/latest", "en"),
+    ("Push Square", "https://www.pushsquare.com/feeds/latest", "en"),
+    ("Pure Xbox", "https://www.purexbox.com/feeds/latest", "en"),
+    ("My Nintendo News", "https://www.mynintendonews.com/feed/", "en"),
+    ("Gematsu", "https://www.gematsu.com/feed", "en"),
+    ("Kotaku", "https://kotaku.com/tag/retro/rss", "en"),
+    ("GamingBolt", "https://gamingbolt.com/feed", "en"),
+    ("The Retro Gamer", "https://the-retrogamer.com/feed", "fr"),
+    ("Retrogaming.fr", "https://retrogaming.fr/feed", "fr"),
+    ("JeuxActu", "https://www.jeuxactu.com/rss/news.rss", "fr"),
+    ("Gamekult", "https://www.gamekult.com/feed.xml", "fr"),
+    ("ActuGaming", "https://www.actugaming.net/feed", "fr"),
+    ("JeuxVideo.com", "https://www.jeuxvideo.com/rss/rss.xml", "fr"),
 ]
 
 # Categorisation par mots-cles (titre + resume), meme esprit que classify_licence() dans le
@@ -161,24 +170,27 @@ def classify(text: str) -> str:
     return "AUTRE"
 
 
-# Memes 11 langues que MaCollection (retrogaming) et le scraper WCF. Les flux retenus sont tous
-# en anglais ("en" = original, jamais traduit) ; "zh" utilise le code deep-translator "zh-CN" mais
-# est expose sous la cle "zh" (correspond a Locale.getDefault().language sur Android).
-TARGET_LANGS = [
-    ("fr", "fr"), ("es", "es"), ("it", "it"), ("de", "de"), ("pt", "pt"),
+# Memes 11 langues que MaCollection (retrogaming) et le scraper WCF. "zh" utilise le code
+# deep-translator "zh-CN" mais est expose sous la cle "zh" (correspond a
+# Locale.getDefault().language sur Android).
+ALL_LANGS = [
+    ("en", "en"), ("fr", "fr"), ("es", "es"), ("it", "it"), ("de", "de"), ("pt", "pt"),
     ("ru", "ru"), ("el", "el"), ("tr", "tr"), ("ja", "ja"), ("zh", "zh-CN"),
 ]
 
 
-def translate_entry(title: str, summary: str) -> dict:
-    """Traduit un titre+resume dans les 10 autres langues de l'app, best-effort (jamais bloquant :
-    une langue en echec retombe sur le texte anglais original plutot que de faire planter le
-    scraper). Un seul appel reseau par langue (traduction en lot titre+resume), plutot qu'un appel
-    par champ. Retourne {"en": {...}, "fr": {...}, ...}."""
+def translate_entry(title: str, summary: str, source_lang: str) -> dict:
+    """Traduit un titre+resume depuis `source_lang` (langue d'origine du flux, "en" ou "fr") vers
+    les 10 autres langues de l'app, best-effort (jamais bloquant : une langue en echec retombe sur
+    le texte d'origine plutot que de faire planter le scraper). Un seul appel reseau par langue
+    (traduction en lot titre+resume), plutot qu'un appel par champ. Retourne
+    {"en": {...}, "fr": {...}, ...} avec la langue source incluse telle quelle (jamais traduite
+    vers elle-meme)."""
     original = {"title": title, "summary": summary}
-    result = {"en": original}
+    result = {source_lang: original}
+    target_langs = [(k, dt) for k, dt in ALL_LANGS if k != source_lang]
     if GoogleTranslator is None:
-        for json_key, _ in TARGET_LANGS:
+        for json_key, _ in target_langs:
             result[json_key] = original
         return result
 
@@ -186,10 +198,10 @@ def translate_entry(title: str, summary: str) -> dict:
     non_empty_idx = [i for i, t in enumerate(texts) if t]
     non_empty_texts = [texts[i] for i in non_empty_idx]
 
-    for json_key, dt_code in TARGET_LANGS:
+    for json_key, dt_code in target_langs:
         try:
             translated = (
-                GoogleTranslator(source="en", target=dt_code).translate_batch(non_empty_texts)
+                GoogleTranslator(source=source_lang, target=dt_code).translate_batch(non_empty_texts)
                 if non_empty_texts else []
             )
             full = list(texts)
@@ -369,7 +381,7 @@ def main() -> int:
     conn = init_db(args.db)
     total_seen = 0
     translated_count = 0
-    for source_name, url in FEEDS:
+    for source_name, url, source_lang in FEEDS:
         print(f"[{source_name}] {url}")
         items = fetch_feed(source_name, url)
         for item in items:
@@ -383,7 +395,7 @@ def main() -> int:
                 translations_json = existing[0]
             else:
                 translations_json = json.dumps(
-                    translate_entry(item.title, item.summary), ensure_ascii=False
+                    translate_entry(item.title, item.summary, source_lang), ensure_ascii=False
                 )
                 translated_count += 1
             upsert_item(conn, item, translations_json)
