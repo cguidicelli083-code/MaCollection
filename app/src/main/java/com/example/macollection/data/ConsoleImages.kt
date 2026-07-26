@@ -424,7 +424,20 @@ object ConsoleImages {
         "Xbox One S" to "https://upload.wikimedia.org/wikipedia/commons/6/63/Microsoft-Xbox-One-S-Console-FL.jpg",
         "PSP E-1000 (Street)" to "https://upload.wikimedia.org/wikipedia/commons/1/1d/PSP_E-1000_ice_white.jpg",
         "PlayStation 3 Édition Final Fantasy XIII (Lightning)" to "https://upload.wikimedia.org/wikipedia/commons/0/04/Final_Fantasy_XIII_Lightning_Edition_white_version_of_PlayStation_3%2C_Tokyo_Game_Show_20090927.jpg",
-        "Xbox 360 Elite" to "https://upload.wikimedia.org/wikipedia/commons/1/1b/Microsoft-Xbox-360-Elite-Console-FL.jpg"
+        "Xbox 360 Elite" to "https://upload.wikimedia.org/wikipedia/commons/1/1b/Microsoft-Xbox-360-Elite-Console-FL.jpg",
+
+        // Consoles réintégrées malgré l'absence de photo librement réutilisable (2026-07-26) :
+        // photos officielles/presse (Microsoft, Analogue, sites d'archives collector) dont les droits
+        // ne sont PAS libres — stockées à part dans assets/console_photos/non_libre/ pour bien les
+        // distinguer des photos Wikimedia Commons ci-dessus.
+        "Xbox One S All-Digital Edition" to "file:///android_asset/console_photos/non_libre/xbox_one_s_alldigital.webp",
+        "Analogue Duo" to "file:///android_asset/console_photos/non_libre/analogue_duo.webp",
+        "Analogue 3D" to "file:///android_asset/console_photos/non_libre/analogue_3d.webp",
+        "PlayStation 3 Édition Metal Gear Solid 4 (Hagane)" to "file:///android_asset/console_photos/non_libre/ps3_mgs4_hagane.webp",
+        "PlayStation 2 Ceramic White" to "file:///android_asset/console_photos/non_libre/ps2_ceramic_white.webp",
+        "PlayStation 2 Sakura" to "file:///android_asset/console_photos/non_libre/ps2_sakura.webp",
+        "Xbox 360 Édition Call of Duty: Modern Warfare 3" to "file:///android_asset/console_photos/non_libre/xbox360_mw3.webp",
+        "Xbox 360 S Édition Halo: Reach" to "file:///android_asset/console_photos/non_libre/xbox360_halo_reach.webp"
     )
 
     // Photo générique de la gamme Game & Watch (vraie photo Wikimedia vérifiée) : repli pour toute

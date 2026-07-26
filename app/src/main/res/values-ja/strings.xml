@@ -228,6 +228,10 @@
     <string name="tips_price_ai_text">比較可能なeBay出品が見つからない場合、アプリはAIに代わりにオンラインで妥当な中古価格を検索させます。この価格は金額の隣に「(AI)」と表示されます。これは推定値であり、実際のeBay出品より信頼性は低く、あくまで目安として捉えてください。「価格を編集」からいつでも手動で修正できます。</string>
     <string name="tips_news_title">📰 レトロゲームニュース</string>
     <string name="tips_news_text">エンサイクロペディアの右上にある📰アイコンから、今後のレトロゲーム関連ニュース（復刻コンソール、コレクターパック、アーケード筐体、ゲームの発売情報など）を閲覧できます。各ニュースは元記事へのリンク付き（「ソースを見る」ボタン）で、端末の言語で自動的に表示されます。フィードは自動更新されるため、特に操作は必要ありません。</string>
+    <string name="tips_encyclo_filter_title">🗂️ 種類でコンソールを絞り込む</string>
+    <string name="tips_encyclo_filter_text">エンサイクロペディア（コンソールタブ）では、「並び替え」の隣にある2つ目のメニューで種類を絞り込めます：据置型ゲーム機、携帯型ゲーム機、またはコンピューター。</string>
+    <string name="tips_photo_zoom_title">🔍 写真を拡大表示</string>
+    <string name="tips_photo_zoom_text">エンサイクロペディアで、コンソールやアクセサリーのサムネイルを直接タップすると拡大表示されます。拡大画像（またはその外側）をタップすると閉じます。</string>
 
     <string name="accessory_catalog_title">アクセサリーカタログ</string>
     <string name="add_custom_preset_title">ライブラリに追加</string>

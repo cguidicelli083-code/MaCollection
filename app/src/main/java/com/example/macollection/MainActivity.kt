@@ -39,13 +39,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Campaign
-import androidx.compose.material.icons.filled.Checklist
 import androidx.compose.material.icons.filled.Euro
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SportsEsports
+import androidx.compose.material.icons.filled.Campaign
 import androidx.compose.material.icons.filled.Storefront
 import androidx.compose.material.icons.filled.VideogameAsset
 import androidx.compose.material3.AlertDialog
@@ -880,6 +879,22 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     )
                     androidx.compose.foundation.layout.Spacer(Modifier.height(4.dp))
                     Text(stringResource(R.string.tips_news_text), style = MaterialTheme.typography.bodyMedium)
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(16.dp))
+                    Text(
+                        stringResource(R.string.tips_encyclo_filter_title),
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.titleSmall
+                    )
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(4.dp))
+                    Text(stringResource(R.string.tips_encyclo_filter_text), style = MaterialTheme.typography.bodyMedium)
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(16.dp))
+                    Text(
+                        stringResource(R.string.tips_photo_zoom_title),
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.titleSmall
+                    )
+                    androidx.compose.foundation.layout.Spacer(Modifier.height(4.dp))
+                    Text(stringResource(R.string.tips_photo_zoom_text), style = MaterialTheme.typography.bodyMedium)
                 }
             }
         )
@@ -970,21 +985,15 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 TopAppBar(
                     title = { Text(titleFor(tab), fontWeight = FontWeight.Bold) },
                     actions = {
-                        if (tab == Tab.ENCYCLO) {
-                            IconButton(onClick = { encycloSelectionMode = !encycloSelectionMode }) {
-                                Icon(
-                                    Icons.Filled.Checklist,
-                                    contentDescription = stringResource(R.string.encyclo_selection_mode_toggle),
-                                    tint = if (encycloSelectionMode) NeonCyan else Color.White
-                                )
-                            }
-                            IconButton(onClick = { showNewsScreen = true }) {
-                                Icon(
-                                    Icons.Filled.Campaign,
-                                    contentDescription = stringResource(R.string.news_content_description),
-                                    tint = Color.White
-                                )
-                            }
+                        // Sélection multiple : déplacée dans EncyclopediaScreen, à côté des boutons
+                        // Consoles/Accessoires (voir EncyclopediaScreens.kt). Actus reste ici, visible
+                        // sur tous les onglets (pas seulement l'Encyclopédie).
+                        IconButton(onClick = { showNewsScreen = true }) {
+                            Icon(
+                                Icons.Filled.Campaign,
+                                contentDescription = stringResource(R.string.news_content_description),
+                                tint = Color.White
+                            )
                         }
                         // Accès permanent à la Boutique depuis n'importe quel onglet, en plus du
                         // bouton existant dans l'onglet Jeux (les deux coexistent, rien n'est retiré).
@@ -1129,6 +1138,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     modifier = Modifier.padding(padding),
                     consoleListState = encycloConsoleListState,
                     selectionMode = encycloSelectionMode,
+                    onToggleSelectionMode = { encycloSelectionMode = !encycloSelectionMode },
                     onAddSelectedToCollection = { consoles, accessories, isWishlist ->
                         // Variante TEST : l'ajout groupé depuis l'encyclopédie est aussi plafonné.
                         if (!isWishlist && testLimitReached) {

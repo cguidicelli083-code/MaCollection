@@ -230,6 +230,10 @@
     <string name="tips_price_ai_text">When no comparable eBay listing is found, the app asks an AI to search online for a plausible used price instead. This price is marked "(AI)" next to the amount: it\'s an estimate, less reliable than a real eBay listing, just a rough ballpark. You can always correct it manually via "Edit price".</string>
     <string name="tips_news_title">📰 Retro gaming news</string>
     <string name="tips_news_text">In the Encyclopedia, the 📰 icon in the top right opens a feed of upcoming retro gaming news: reissued consoles, collector packs, arcade cabinets, game releases... Each item links back to its original source ("View source" button) and displays automatically in your language. The feed updates itself, nothing to do on your end.</string>
+    <string name="tips_encyclo_filter_title">🗂️ Filter by console type</string>
+    <string name="tips_encyclo_filter_text">In the Encyclopedia (Consoles tab), a second menu next to "Sort by" lets you filter by type: home consoles, handheld consoles, or computers.</string>
+    <string name="tips_photo_zoom_title">🔍 Enlarge a photo</string>
+    <string name="tips_photo_zoom_text">In the Encyclopedia, tap directly on a console or accessory thumbnail to see it enlarged; tap the enlarged image (or outside it) to close it.</string>
 
     <string name="accessory_catalog_title">Accessory catalog</string>
     <string name="add_custom_preset_title">Add to the library</string>

@@ -228,6 +228,10 @@
     <string name="tips_price_ai_text">当找不到可比的eBay商品时，应用会请AI在线搜索一个合理的二手价格作为替代。该价格会在金额旁标注"(AI)"：这是一个估价，可靠性不如真实的eBay商品信息，仅供参考。你随时可以通过"编辑价格"手动修正。</string>
     <string name="tips_news_title">📰 复古游戏资讯</string>
     <string name="tips_news_text">在百科全书中，右上角的📰图标可打开即将到来的复古游戏资讯：复刻主机、收藏套装、街机柜、游戏发售信息等。每条资讯都链接到原始来源（"查看来源"按钮），并自动以你的语言显示。资讯会自动更新，你无需做任何操作。</string>
+    <string name="tips_encyclo_filter_title">🗂️ 按主机类型筛选</string>
+    <string name="tips_encyclo_filter_text">在百科全书（主机标签页）中，"排序方式"旁边的第二个菜单可按类型筛选：家用主机、掌上主机或电脑。</string>
+    <string name="tips_photo_zoom_title">🔍 放大照片</string>
+    <string name="tips_photo_zoom_text">在百科全书中，直接点击主机或配件的缩略图即可放大查看；点击放大的图片（或其外部）即可关闭。</string>
 
     <string name="accessory_catalog_title">配件目录</string>
     <string name="add_custom_preset_title">添加自定义条目</string>

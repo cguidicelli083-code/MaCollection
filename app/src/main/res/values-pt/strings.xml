@@ -228,6 +228,10 @@
     <string name="tips_price_ai_text">Quando nenhum anúncio comparável do eBay é encontrado, a app pede a uma IA que procure online um preço de usado plausível em vez disso. Este preço é marcado com «(IA)» ao lado do valor: é uma estimativa, menos fiável do que um anúncio real do eBay, apenas uma ordem de grandeza. Podes sempre corrigi-la manualmente através de «Editar preço».</string>
     <string name="tips_news_title">📰 Notícias retro</string>
     <string name="tips_news_text">Na Enciclopédia, o ícone 📰 no canto superior direito abre um feed de notícias retro a caminho: consolas reeditadas, packs de colecionador, máquinas de arcade, lançamentos de jogos... Cada notícia tem um link para a fonte original (botão «Ver fonte») e é apresentada automaticamente no teu idioma. O feed atualiza-se sozinho, não precisas de fazer nada.</string>
+    <string name="tips_encyclo_filter_title">🗂️ Filtrar por tipo de consola</string>
+    <string name="tips_encyclo_filter_text">Na Enciclopédia (separador Consolas), um segundo menu junto a «Ordenar por» permite filtrar por tipo: consolas de mesa, consolas portáteis ou computadores.</string>
+    <string name="tips_photo_zoom_title">🔍 Ampliar uma foto</string>
+    <string name="tips_photo_zoom_text">Na Enciclopédia, toca diretamente na miniatura de uma consola ou acessório para a ver ampliada; toca na imagem ampliada (ou fora dela) para fechar.</string>
 
     <string name="accessory_catalog_title">Catálogo de acessórios</string>
     <string name="add_custom_preset_title">Adicionar à biblioteca</string>

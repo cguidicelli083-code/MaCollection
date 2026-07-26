@@ -7,6 +7,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,6 +31,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Checklist
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -60,6 +62,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import coil.compose.AsyncImage
 import com.example.macollection.R
 import com.example.macollection.data.AccessoryImages
@@ -150,7 +153,11 @@ fun EncyclopediaScreen(
     // taper une fiche la coche au lieu de l'ouvrir ; un bandeau en bas permet de tout ajouter
     // d'un coup à la collection ou aux souhaits, consoles et accessoires confondus.
     selectionMode: Boolean = false,
-    onAddSelectedToCollection: (List<ConsolePreset>, List<AccessoryPreset>, Boolean) -> Unit = { _, _, _ -> }
+    onAddSelectedToCollection: (List<ConsolePreset>, List<AccessoryPreset>, Boolean) -> Unit = { _, _, _ -> },
+    // Ex-icône « sélection multiple » de la barre du haut (voir MainActivity) : déplacée ici, à
+    // côté des boutons Consoles/Accessoires, sur demande utilisateur (2026-07-26). L'icône Actus
+    // reste dans la barre du haut de MainActivity (visible sur tous les onglets, pas seulement ici).
+    onToggleSelectionMode: () -> Unit = {}
 ) {
     var query by remember { mutableStateOf("") }
     var sortOption by remember { mutableStateOf(EncycloSortOption.NAME) }
@@ -235,6 +242,14 @@ fun EncyclopediaScreen(
                 label = stringResource(R.string.encyclo_mode_accessories),
                 selected = mode == EncycloMode.ACCESSORIES
             ) { onModeChange(EncycloMode.ACCESSORIES) }
+            Spacer(Modifier.weight(1f))
+            IconButton(onClick = onToggleSelectionMode) {
+                Icon(
+                    Icons.Filled.Checklist,
+                    contentDescription = stringResource(R.string.encyclo_selection_mode_toggle),
+                    tint = if (selectionMode) NeonCyan else Color.White
+                )
+            }
         }
         Spacer(Modifier.height(10.dp))
         ThemedSearchField(
@@ -490,12 +505,19 @@ private fun AccessoryRow(
     ) {
         val url = overrideUrl ?: AccessoryImages.urlFor(preset.name)
         if (url != null) {
+            var zoomed by remember(url) { mutableStateOf(false) }
             AsyncImage(
                 model = url,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(width = 64.dp, height = 48.dp).clip(RoundedCornerShape(10.dp))
+                modifier = Modifier
+                    .size(width = 64.dp, height = 48.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .clickable { zoomed = true }
             )
+            if (zoomed) {
+                EnlargedPhotoDialog(url) { zoomed = false }
+            }
         } else {
             Box(
                 Modifier
@@ -706,17 +728,42 @@ private fun ConsoleRow(
     }
 }
 
+/**
+ * Zoom plein écran d'une photo de l'Encyclopédie (consoles et accessoires) : appui sur la
+ * miniature → dialogue avec l'image en grand. Le clic est consommé par cette miniature (ne
+ * remonte pas au clic de la ligne), donc taper la photo zoome au lieu d'ouvrir la fiche.
+ */
+@Composable
+private fun EnlargedPhotoDialog(url: String, onDismiss: () -> Unit) {
+    Dialog(onDismissRequest = onDismiss) {
+        AsyncImage(
+            model = url,
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(1f)
+                .clip(RoundedCornerShape(16.dp))
+                .clickable(onClick = onDismiss)
+        )
+    }
+}
+
 @Composable
 private fun ConsoleThumb(name: String, modifier: Modifier, overrideUrl: String? = null) {
     val url = overrideUrl ?: ConsoleImages.urlFor(name)
     val shape = RoundedCornerShape(12.dp)
     if (url != null) {
+        var zoomed by remember(url) { mutableStateOf(false) }
         AsyncImage(
             model = url,
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = modifier.clip(shape)
+            modifier = modifier.clip(shape).clickable { zoomed = true }
         )
+        if (zoomed) {
+            EnlargedPhotoDialog(url) { zoomed = false }
+        }
     } else {
         Box(
             modifier

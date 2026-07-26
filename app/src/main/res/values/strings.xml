@@ -298,4 +298,8 @@
     <string name="tips_price_ai_text">Quand aucune annonce eBay comparable n\'est trouvée, l\'appli demande à une IA de chercher un prix d\'occasion plausible en ligne à la place. Ce prix est marqué « (IA) » à côté du montant : c\'est une estimation, moins fiable qu\'une vraie annonce eBay, à prendre comme simple ordre de grandeur. Tu peux toujours la corriger à la main via « Modifier le prix ».</string>
     <string name="tips_news_title">📰 Actus retrogaming</string>
     <string name="tips_news_text">Dans l\'Encyclopédie, l\'icône 📰 en haut à droite ouvre un flux d\'actualités retrogaming à venir : consoles rééditées, packs collectors, bornes d\'arcade, sorties de jeux... Chaque actu renvoie vers sa source d\'origine (bouton « Voir la source ») et s\'affiche automatiquement dans ta langue. Le flux se met à jour tout seul, pas besoin de faire quoi que ce soit.</string>
+    <string name="tips_encyclo_filter_title">🗂️ Filtrer par type de console</string>
+    <string name="tips_encyclo_filter_text">Dans l\'Encyclopédie (onglet Consoles), un second menu à côté de « Trier par » permet de filtrer par type : consoles de salon, consoles portables ou ordinateurs. Pratique pour ne parcourir qu\'une catégorie à la fois.</string>
+    <string name="tips_photo_zoom_title">🔍 Agrandir une photo</string>
+    <string name="tips_photo_zoom_text">Dans l\'Encyclopédie, appuie directement sur la miniature d\'une console ou d\'un accessoire pour l\'afficher en grand ; touche l\'image agrandie (ou l\'extérieur) pour la refermer.</string>
 </resources>

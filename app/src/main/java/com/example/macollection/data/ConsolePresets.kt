@@ -473,7 +473,19 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("Microsoft", "Xbox One S", 2016, "Salon", "AMD Jaguar 8 cœurs @ 1,75 GHz", "8 Go DDR3", "Refonte compacte (40 % plus petite que la Xbox One d'origine), lecteur 4K Ultra HD Blu-ray et sortie HDR ajoutés, bloc d'alimentation intégré."),
     ConsolePreset("Sony", "PSP E-1000 (Street)", 2011, "Portable", "MIPS R4000 @ 222 MHz", "32 Mo", "Version d'entrée de gamme et fin de vie de la PSP (2011) : sans Wi-Fi ni sortie vidéo TV, un seul haut-parleur mono, vendue nettement moins cher que la PSP-3000."),
     ConsolePreset("Sony", "PlayStation 3 Édition Final Fantasy XIII (Lightning)", 2009, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "PS3 250 Go blanc céramique ornée d'une illustration rose de Lightning, manette blanche assortie, exclusivité japonaise vendue avec l'édition limitée de Final Fantasy XIII, épuisée en une semaine."),
-    ConsolePreset("Microsoft", "Xbox 360 Elite", 2007, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "512 Mo GDDR3", "SKU haut de gamme (2007) : coque noire, disque dur 120 Go (puis 250 Go), sortie HDMI dès le lancement — contrairement au modèle « Premium » blanc d'origine.")
+    ConsolePreset("Microsoft", "Xbox 360 Elite", 2007, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "512 Mo GDDR3", "SKU haut de gamme (2007) : coque noire, disque dur 120 Go (puis 250 Go), sortie HDMI dès le lancement — contrairement au modèle « Premium » blanc d'origine."),
+
+    // --- Consoles réintégrées malgré l'absence de photo librement réutilisable (2026-07-26) :
+    // photos officielles/presse non libres de droits, stockées à part dans
+    // assets/console_photos/non_libre/ pour bien les distinguer des photos Wikimedia Commons. ---
+    ConsolePreset("Microsoft", "Xbox One S All-Digital Edition", 2019, "Salon", "AMD Jaguar 8 cœurs @ 1,75 GHz", "8 Go DDR3", "Première Xbox 100 % numérique (2019) : Xbox One S sans lecteur disque, vendue avec Minecraft, Sea of Thieves et Forza Horizon 3 préinstallés."),
+    ConsolePreset("Analogue", "Analogue Duo", 2023, "Salon", "FPGA Xilinx Artix-7", "—", "Recréation matérielle de la PC Engine/TurboGrafx-16 et de leurs extensions CD, sortie HDMI 1080p, compatible cartouches HuCard et CD d'origine."),
+    ConsolePreset("Analogue", "Analogue 3D", 2025, "Salon", "FPGA Intel Cyclone 10 GX", "—", "Recréation matérielle de la Nintendo 64, sortie HDMI 2.1 jusqu'en 4K, quatre ports manette d'origine, compatible cartouches N64 authentiques."),
+    ConsolePreset("Sony", "PlayStation 3 Édition Metal Gear Solid 4 (Hagane)", 2008, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "PS3 40 Go coloris « hagane » (acier), premier « Premium Pack » PS3 en édition limitée, exclusivité japonaise sortie le jour du lancement mondial de Metal Gear Solid 4."),
+    ConsolePreset("Sony", "PlayStation 2 Ceramic White", 2004, "Salon", "Emotion Engine @ 294 MHz", "32 Mo", "Coloris blanc mat opaque (SCPH-50000CW), gamme couleurs limitées de printemps 2004, exclusivité japonaise."),
+    ConsolePreset("Sony", "PlayStation 2 Sakura", 2004, "Salon", "Emotion Engine @ 294 MHz", "32 Mo", "Coloris rose pâle translucide « fleur de cerisier » (SCPH-50000SA), gamme couleurs limitées de printemps/été 2004, exclusivité japonaise."),
+    ConsolePreset("Microsoft", "Xbox 360 Édition Call of Duty: Modern Warfare 3", 2011, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "320 Go", "Coque grise façon métal rouillé et éclairs, deux manettes assorties à croix directionnelle rotative, sortie avec Call of Duty: Modern Warfare 3."),
+    ConsolePreset("Microsoft", "Xbox 360 S Édition Halo: Reach", 2010, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "250 Go", "Xbox 360 S grise mate façon armure ONI conçue avec Bungie, deux manettes assorties, sortie avec Halo: Reach.")
 )
     // Le catalogue ci-dessus reste écrit par date de sortie (plus simple à compléter),
     // mais on l'expose trié par ordre alphabétique : plus simple pour la recherche dans l'app.

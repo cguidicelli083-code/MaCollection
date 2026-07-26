@@ -228,6 +228,10 @@
     <string name="tips_price_ai_text">Wenn keine vergleichbare eBay-Anzeige gefunden wird, bittet die App eine KI, stattdessen online nach einem plausiblen Gebrauchtpreis zu suchen. Dieser Preis wird neben dem Betrag mit „(KI)" markiert: Es handelt sich um eine Schätzung, weniger zuverlässig als eine echte eBay-Anzeige, nur als grobe Orientierung zu verstehen. Du kannst sie jederzeit über „Preis bearbeiten" manuell korrigieren.</string>
     <string name="tips_news_title">📰 Retro-Gaming-News</string>
     <string name="tips_news_text">In der Enzyklopädie öffnet das 📰-Symbol oben rechts einen Nachrichten-Feed zu kommenden Retro-Gaming-Neuheiten: neu aufgelegte Konsolen, Sammler-Sets, Arcade-Automaten, Spielveröffentlichungen... Jede Meldung verlinkt auf ihre Quelle (Button „Quelle ansehen") und wird automatisch in deiner Sprache angezeigt. Der Feed aktualisiert sich von selbst, du musst nichts tun.</string>
+    <string name="tips_encyclo_filter_title">🗂️ Nach Konsolentyp filtern</string>
+    <string name="tips_encyclo_filter_text">In der Enzyklopädie (Tab Konsolen) kannst du über ein zweites Menü neben „Sortieren nach" nach Typ filtern: Heimkonsolen, Handheld-Konsolen oder Computer.</string>
+    <string name="tips_photo_zoom_title">🔍 Foto vergrößern</string>
+    <string name="tips_photo_zoom_text">Tippe in der Enzyklopädie direkt auf das Vorschaubild einer Konsole oder eines Zubehörs, um es vergrößert anzuzeigen; tippe auf das vergrößerte Bild (oder daneben), um es zu schließen.</string>
 
     <string name="accessory_catalog_title">Zubehörkatalog</string>
     <string name="add_custom_preset_title">Zur Bibliothek hinzufügen</string>

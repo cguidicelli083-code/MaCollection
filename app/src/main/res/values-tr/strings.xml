@@ -228,6 +228,10 @@
     <string name="tips_price_ai_text">Karşılaştırılabilir bir eBay ilanı bulunamadığında, uygulama bunun yerine bir yapay zekadan makul bir ikinci el fiyatı için çevrimiçi arama yapmasını ister. Bu fiyat, tutarın yanında «(YZ)» ile işaretlenir: bu bir tahmindir, gerçek bir eBay ilanından daha az güvenilirdir, sadece yaklaşık bir fikir olarak alınmalıdır. Her zaman «Fiyatı düzenle» üzerinden elle düzeltebilirsin.</string>
     <string name="tips_news_title">📰 Retro oyun haberleri</string>
     <string name="tips_news_text">Ansiklopedi\'de, sağ üstteki 📰 simgesi yaklaşan retro oyun haberlerinin akışını açar: yeniden basılan konsollar, koleksiyoncu paketleri, arcade kabinleri, oyun çıkışları... Her haber orijinal kaynağına bağlantı verir («Kaynağı görüntüle» düğmesi) ve otomatik olarak senin dilinde gösterilir. Akış kendini günceller, senin bir şey yapmana gerek yok.</string>
+    <string name="tips_encyclo_filter_title">🗂️ Konsol türüne göre filtrele</string>
+    <string name="tips_encyclo_filter_text">Ansiklopedi\'de (Konsollar sekmesi), «Sırala» yanındaki ikinci bir menü türe göre filtrelemeni sağlar: masaüstü konsollar, taşınabilir konsollar veya bilgisayarlar.</string>
+    <string name="tips_photo_zoom_title">🔍 Fotoğrafı büyüt</string>
+    <string name="tips_photo_zoom_text">Ansiklopedi\'de, bir konsol veya aksesuarın küçük resmine dokunarak onu büyütülmüş şekilde gör; büyütülmüş görsele (veya dışına) dokunarak kapat.</string>
 
     <string name="accessory_catalog_title">Aksesuar kataloğu</string>
     <string name="add_custom_preset_title">Kütüphaneye ekle</string>
