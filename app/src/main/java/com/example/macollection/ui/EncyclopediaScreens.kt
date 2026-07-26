@@ -5,6 +5,7 @@ package com.example.macollection.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
@@ -32,6 +33,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Checklist
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -55,6 +57,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -732,20 +735,47 @@ private fun ConsoleRow(
  * Zoom plein écran d'une photo de l'Encyclopédie (consoles et accessoires) : appui sur la
  * miniature → dialogue avec l'image en grand. Le clic est consommé par cette miniature (ne
  * remonte pas au clic de la ligne), donc taper la photo zoome au lieu d'ouvrir la fiche.
+ * Une fois ouverte, l'image accepte le pincement à deux doigts (zoom/dézoom) et le glissement
+ * pour se déplacer une fois zoomée — fermeture via la croix ou en tapant en dehors de l'image
+ * (comportement par défaut de [Dialog] : tap hors du contenu = [onDismiss]).
  */
 @Composable
 private fun EnlargedPhotoDialog(url: String, onDismiss: () -> Unit) {
-    Dialog(onDismissRequest = onDismiss) {
-        AsyncImage(
-            model = url,
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
-            modifier = Modifier
-                .fillMaxWidth()
-                .aspectRatio(1f)
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = onDismiss)
-        )
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        var scale by remember { mutableStateOf(1f) }
+        var offset by remember { mutableStateOf(androidx.compose.ui.geometry.Offset.Zero) }
+        val transformState = androidx.compose.foundation.gestures.rememberTransformableState { zoomChange, panChange, _ ->
+            val newScale = (scale * zoomChange).coerceIn(1f, 6f)
+            scale = newScale
+            offset = if (newScale <= 1f) androidx.compose.ui.geometry.Offset.Zero else offset + panChange
+        }
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Color.Black.copy(alpha = 0.92f))
+        ) {
+            AsyncImage(
+                model = url,
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.Center)
+                    .graphicsLayer(
+                        scaleX = scale,
+                        scaleY = scale,
+                        translationX = offset.x,
+                        translationY = offset.y
+                    )
+                    .transformable(transformState)
+            )
+            IconButton(onClick = onDismiss, modifier = Modifier.align(Alignment.TopEnd).padding(12.dp)) {
+                Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.close), tint = Color.White)
+            }
+        }
     }
 }
 
