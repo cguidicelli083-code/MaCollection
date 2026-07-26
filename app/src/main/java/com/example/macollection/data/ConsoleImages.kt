@@ -233,6 +233,11 @@ object ConsoleImages {
         "Super NES Classic Edition" to "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Super_NES_Classic_Edition_top.jpg/500px-Super_NES_Classic_Edition_top.jpg",
         "Mega Drive Mini" to "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sega_Mega_Drive_Mini.jpg/500px-Sega_Mega_Drive_Mini.jpg",
         "Neo Geo Mini" to "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Neo_Geo_Mini%2C_version_international_%28cropped%29.jpg/500px-Neo_Geo_Mini%2C_version_international_%28cropped%29.jpg",
+        "Neo Geo Mini Japon" to "file:///android_asset/console_photos/neogeo_mini_jp.webp",
+        "Neo Geo Mini Christmas Limited Edition" to "file:///android_asset/console_photos/non_libre/neogeo_mini_xmas.webp",
+        "Neo Geo Mini Samurai Shodown Haohmaru" to "file:///android_asset/console_photos/non_libre/neogeo_mini_ss_haohmaru.webp",
+        "Neo Geo Mini Samurai Shodown Nakoruru" to "file:///android_asset/console_photos/non_libre/neogeo_mini_ss_nakoruru.webp",
+        "Neo Geo Mini Samurai Shodown Ukyo Tachibana" to "file:///android_asset/console_photos/non_libre/neogeo_mini_ss_ukyo.webp",
         "PlayStation Classic" to "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/PlayStation_Classic_Konsole_%2B_Controller.jpg/500px-PlayStation_Classic_Konsole_%2B_Controller.jpg",
         "ZX Spectrum" to "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ZXSpectrum48k.jpg/500px-ZXSpectrum48k.jpg",
         "Commodore 64" to "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/500px-Commodore-64-Computer-FL.jpg",
@@ -421,10 +426,10 @@ object ConsoleImages {
         "Evercade EXP" to "https://upload.wikimedia.org/wikipedia/commons/5/51/Evercade_EXP_front.jpg",
         "Mega Drive Mini 2" to "https://upload.wikimedia.org/wikipedia/commons/8/89/SEGA_MEGA_DRIVE_2_Mini.jpg",
         "WonderSwan Crystal" to "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Wonder-Swan-Crystal.jpg/500px-Wonder-Swan-Crystal.jpg",
-        "Xbox One S" to "https://upload.wikimedia.org/wikipedia/commons/6/63/Microsoft-Xbox-One-S-Console-FL.jpg",
+        "Xbox One S" to "file:///android_asset/console_photos/xbox_one_s.webp",
         "PSP E-1000 (Street)" to "https://upload.wikimedia.org/wikipedia/commons/1/1d/PSP_E-1000_ice_white.jpg",
-        "PlayStation 3 Édition Final Fantasy XIII (Lightning)" to "https://upload.wikimedia.org/wikipedia/commons/0/04/Final_Fantasy_XIII_Lightning_Edition_white_version_of_PlayStation_3%2C_Tokyo_Game_Show_20090927.jpg",
-        "Xbox 360 Elite" to "https://upload.wikimedia.org/wikipedia/commons/1/1b/Microsoft-Xbox-360-Elite-Console-FL.jpg",
+        "PlayStation 3 Édition Final Fantasy XIII (Lightning)" to "file:///android_asset/console_photos/ff13_ps3.webp",
+        "Xbox 360 Elite" to "file:///android_asset/console_photos/xbox360_elite.webp",
 
         // Consoles réintégrées malgré l'absence de photo librement réutilisable (2026-07-26) :
         // photos officielles/presse (Microsoft, Analogue, sites d'archives collector) dont les droits
@@ -437,7 +442,46 @@ object ConsoleImages {
         "PlayStation 2 Ceramic White" to "file:///android_asset/console_photos/non_libre/ps2_ceramic_white.webp",
         "PlayStation 2 Sakura" to "file:///android_asset/console_photos/non_libre/ps2_sakura.webp",
         "Xbox 360 Édition Call of Duty: Modern Warfare 3" to "file:///android_asset/console_photos/non_libre/xbox360_mw3.webp",
-        "Xbox 360 S Édition Halo: Reach" to "file:///android_asset/console_photos/non_libre/xbox360_halo_reach.webp"
+        "Xbox 360 S Édition Halo: Reach" to "file:///android_asset/console_photos/non_libre/xbox360_halo_reach.webp",
+
+        // --- Éditions collector complémentaires (recherche approfondie 2026-07-26) ---
+        "PlayStation 4 Édition Metal Gear Solid V" to "file:///android_asset/console_photos/non_libre/ps4_metal_gear_solid_v.webp",
+        "PlayStation 4 Pro Édition Kingdom Hearts III" to "file:///android_asset/console_photos/non_libre/ps4_pro_kingdom_hearts3.webp",
+        "Game Boy Color Édition Pokémon Center (Or & Argent)" to "file:///android_asset/console_photos/non_libre/gbc_pokemon_center.webp",
+        "Game Boy Color Édition Hello Kitty" to "file:///android_asset/console_photos/non_libre/gbc_hello_kitty.webp",
+        "Game Boy Light Édition Astro Boy (Tetsuwan Atom)" to "file:///android_asset/console_photos/non_libre/gblight_astroboy.webp",
+        "PlayStation Vita Slim Édition Persona 4: Dancing All Night" to "file:///android_asset/console_photos/non_libre/vita_persona4_dancing_all_night.webp",
+        "PlayStation Vita Slim Édition Danganronpa" to "file:///android_asset/console_photos/non_libre/vita_danganronpa.webp",
+        "PlayStation Vita (PCH-2000) Édition New Danganronpa V3" to "file:///android_asset/console_photos/non_libre/vita_danganronpa_v3.webp",
+        "PSP Édition Monster Hunter Portable 3rd" to "file:///android_asset/console_photos/non_libre/psp_monster_hunter_portable_3rd.webp",
+        "PSP-3000 Édition Hello Kitty Puzzle Party" to "file:///android_asset/console_photos/non_libre/psp_hello_kitty_puzzle_party.webp",
+        "Lynx II" to "file:///android_asset/console_photos/lynx2.webp",
+
+        // --- Coloris officiels complémentaires GB/GBC/GBA/PSP/PS Vita (recherche 2026-07-26),
+        // toutes en vraies photos Wikimedia Commons vérifiées (licence libre). ---
+        "Game Boy Play It Loud! Noire" to "file:///android_asset/console_photos/gb_black.webp",
+        "Game Boy Play It Loud! Rouge" to "file:///android_asset/console_photos/gb_red_gray.webp",
+        "Game Boy Play It Loud! Transparente" to "file:///android_asset/console_photos/gb_clear.webp",
+        "Game Boy Pocket Noire" to "file:///android_asset/console_photos/gbp_black.webp",
+        "Game Boy Pocket Bleue" to "file:///android_asset/console_photos/gbp_blue.webp",
+        "Game Boy Pocket Verte" to "file:///android_asset/console_photos/gbp_green.webp",
+        "Game Boy Pocket Rouge" to "file:///android_asset/console_photos/gbp_red.webp",
+        "Game Boy Color Berry (Rouge)" to "file:///android_asset/console_photos/gbc_berry.webp",
+        "Game Boy Color Dandelion (Jaune)" to "file:///android_asset/console_photos/gbc_dandelion.webp",
+        "Game Boy Color Kiwi (Vert)" to "file:///android_asset/console_photos/gbc_kiwi.webp",
+        "Game Boy Color Teal (Bleu Sarcelle)" to "file:///android_asset/console_photos/gbc_teal.webp",
+        "Game Boy Color Grape (Violet)" to "file:///android_asset/console_photos/gbc_grape.webp",
+        "Game Boy Color Atomic Purple (Violet Transparent)" to "file:///android_asset/console_photos/gbc_atomic_purple.webp",
+        "Game Boy Advance Indigo" to "file:///android_asset/console_photos/gba_indigo.webp",
+        "Game Boy Advance Arctic White" to "file:///android_asset/console_photos/gba_white.webp",
+        "Game Boy Advance Rose" to "file:///android_asset/console_photos/gba_pink.webp",
+        "Game Boy Advance Noire" to "file:///android_asset/console_photos/gba_black.webp",
+        "PSP-3000 Vibrant Blue" to "file:///android_asset/console_photos/psp3000_vblue.webp",
+        "PSP Go Blanche Nacrée" to "file:///android_asset/console_photos/pspgo_white.webp",
+        "PlayStation Vita Sapphire Blue" to "file:///android_asset/console_photos/vita_sapphire.webp",
+        "PlayStation Vita Slim Blanche" to "file:///android_asset/console_photos/vitaslim_white.webp",
+        "PlayStation 3 Super Slim Blanche" to "file:///android_asset/console_photos/ps3_superslim_white.webp",
+        "PlayStation 3 Super Slim Rouge Grenat" to "file:///android_asset/console_photos/ps3_superslim_red.webp"
     )
 
     // Photo générique de la gamme Game & Watch (vraie photo Wikimedia vérifiée) : repli pour toute

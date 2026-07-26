@@ -74,25 +74,29 @@ object ScanTools {
         val title = runCatching { EbayPrices.titleForBarcode(barcode) }.getOrNull()
             ?: return ScanResult(barcode, null)
 
+        // Une boîte/cartouche de JEU porte presque toujours aussi le nom de sa console (mention
+        // obligatoire du fabricant) : reconnaître une console dans le titre ne suffit donc pas à
+        // conclure que le produit scanné EST cette console (même piège que pour l'OCR photo, cf.
+        // scanImage). On cherche donc d'abord un jeu (filtré sur la console repérée si elle existe),
+        // et on ne retombe sur "c'est la console elle-même" que si aucun jeu fiable n'est trouvé.
         val consoleName = ConsoleRecognition.recognize(title)
-        var accessoryName: String? = null
+        val platformId = consoleName?.let { ConsolePlatforms.platformId(it) }
         var gameMatch: GameInfo? = null
-        if (consoleName == null) {
-            accessoryName = AccessoryRecognition.recognize(title)
-            if (accessoryName == null) {
-                val candidate = runCatching { GameCatalog.search(title) }.getOrNull()?.firstOrNull()
-                if (candidate != null && isConfidentGameMatch(title, candidate.name)) {
-                    val detailed = candidate.sourceId?.let { id -> GameCatalog.detail(id) } ?: candidate
-                    // Le catalogue (RAWG/IGDB) ne connaît que le titre de base : sans ça, une
-                    // mention d'édition lue sur l'annonce eBay (ex. "Platinum") disparaissait
-                    // silencieusement au profit du nom "propre" du catalogue.
-                    gameMatch = detailed.copy(name = GameCatalog.preserveEditionSuffix(title, detailed.name))
-                }
-            }
+        val candidate = runCatching { GameCatalog.search(title, platformId) }.getOrNull()?.firstOrNull()
+        if (candidate != null && isConfidentGameMatch(title, candidate.name)) {
+            val detailed = candidate.sourceId?.let { id -> GameCatalog.detail(id) } ?: candidate
+            // Le catalogue (RAWG/IGDB) ne connaît que le titre de base : sans ça, une
+            // mention d'édition lue sur l'annonce eBay (ex. "Platinum") disparaissait
+            // silencieusement au profit du nom "propre" du catalogue.
+            gameMatch = detailed.copy(name = GameCatalog.preserveEditionSuffix(title, detailed.name))
         }
-        val suggestedName = gameMatch?.name ?: consoleName ?: accessoryName ?: title
+        var accessoryName: String? = null
+        if (gameMatch == null) {
+            accessoryName = AccessoryRecognition.recognize(title)
+        }
+        val suggestedName = gameMatch?.name ?: accessoryName ?: consoleName ?: title
         val gameConsoleHint = if (gameMatch != null) consoleName else null
-        return ScanResult(barcode, suggestedName, consoleName, accessoryName, gameMatch, gameConsoleHint)
+        return ScanResult(barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint)
     }
 
     /**

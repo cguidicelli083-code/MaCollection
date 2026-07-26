@@ -333,6 +333,11 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("Sega", "Mega Drive Mini", 2019, "Salon", "ARM (SoC, émulation)", "256 Mo", "Mini réédition de la Mega Drive, 42 jeux intégrés, manettes 3 boutons filaires."),
     ConsolePreset("NEC / Konami", "PC Engine Mini", 2020, "Salon", "ARM (SoC, émulation)", "256 Mo", "Mini réédition de la PC Engine, jeux japonais et américains (CoreGrafx) selon la version."),
     ConsolePreset("SNK", "Neo Geo Mini", 2018, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Reproduction miniature de la borne d'arcade Neo Geo, écran intégré 3,5″, 40 jeux."),
+    ConsolePreset("SNK", "Neo Geo Mini Japon", 2018, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Version japonaise du Neo Geo Mini, coloris rouge/blanc/bleu reprenant la borne d'arcade originale de 1990 (contre le bleu/blanc/noir plus sobre de la version internationale)."),
+    ConsolePreset("SNK", "Neo Geo Mini Christmas Limited Edition", 2018, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Édition limitée à 15 000 exemplaires dans le monde, coloris rouge et or, 48 jeux dont 9 inédits par rapport aux versions Japon/International."),
+    ConsolePreset("SNK", "Neo Geo Mini Samurai Shodown Haohmaru", 2019, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Édition limitée à 20 000 exemplaires, coque transparente blanche à l'effigie de Haohmaru, vendue en bundle avec Samurai Shodown (2019)."),
+    ConsolePreset("SNK", "Neo Geo Mini Samurai Shodown Nakoruru", 2019, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Édition limitée à 20 000 exemplaires, coque transparente rouge à l'effigie de Nakoruru, vendue en bundle avec Samurai Shodown (2019)."),
+    ConsolePreset("SNK", "Neo Geo Mini Samurai Shodown Ukyo Tachibana", 2019, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Édition limitée à 20 000 exemplaires, coque transparente bleue à l'effigie d'Ukyo Tachibana, vendue en bundle avec Samurai Shodown (2019)."),
     ConsolePreset("Sony", "PlayStation Classic", 2018, "Salon", "ARM Cortex-A7 (SoC, émulation)", "512 Mo", "Mini réédition de la PlayStation, 20 jeux intégrés, deux manettes répliques non analogiques."),
     ConsolePreset("Sega", "Game Gear Micro", 2020, "Portable", "ARM (SoC, émulation)", "128 Mo", "Micro-console au format Game Gear miniature, 4 coloris (Noir/Bleu/Jaune/Rouge) avec jeux différents selon la couleur, vendue uniquement au Japon."),
 
@@ -484,7 +489,51 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("Sony", "PlayStation 2 Ceramic White", 2004, "Salon", "Emotion Engine @ 294 MHz", "32 Mo", "Coloris blanc mat opaque (SCPH-50000CW), gamme couleurs limitées de printemps 2004, exclusivité japonaise."),
     ConsolePreset("Sony", "PlayStation 2 Sakura", 2004, "Salon", "Emotion Engine @ 294 MHz", "32 Mo", "Coloris rose pâle translucide « fleur de cerisier » (SCPH-50000SA), gamme couleurs limitées de printemps/été 2004, exclusivité japonaise."),
     ConsolePreset("Microsoft", "Xbox 360 Édition Call of Duty: Modern Warfare 3", 2011, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "320 Go", "Coque grise façon métal rouillé et éclairs, deux manettes assorties à croix directionnelle rotative, sortie avec Call of Duty: Modern Warfare 3."),
-    ConsolePreset("Microsoft", "Xbox 360 S Édition Halo: Reach", 2010, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "250 Go", "Xbox 360 S grise mate façon armure ONI conçue avec Bungie, deux manettes assorties, sortie avec Halo: Reach.")
+    ConsolePreset("Microsoft", "Xbox 360 S Édition Halo: Reach", 2010, "Salon", "IBM Xenon 3 cœurs @ 3,2 GHz", "250 Go", "Xbox 360 S grise mate façon armure ONI conçue avec Bungie, deux manettes assorties, sortie avec Halo: Reach."),
+
+    // --- Éditions collector complémentaires (recherche approfondie 2026-07-26) : PS4, Game Boy/GBC,
+    // PS Vita, PSP et Atari Lynx II. Photos non libres (presse/revente) rangées à part dans
+    // assets/console_photos/non_libre/, distinctes des photos Wikimedia Commons.
+    ConsolePreset("Sony", "PlayStation 4 Édition Metal Gear Solid V", 2015, "Salon", "AMD Jaguar 8 cœurs @ 1,6 GHz", "8 Go GDDR5", "500 Go rouge profond à liserés dorés inspirés du bras bionique de Snake, manette DualShock 4 grise façon pistolet, emblème des Diamond Dogs."),
+    ConsolePreset("Sony", "PlayStation 4 Pro Édition Kingdom Hearts III", 2018, "Salon", "AMD Jaguar 8 cœurs @ 2,1 GHz", "8 Go GDDR5 + 1 Go", "PS4 Pro noire gravée de motifs Kingdom Hearts III (clés, cœurs), bundle exclusif Japon/GameStop avec manette assortie."),
+    ConsolePreset("Nintendo", "Game Boy Color Édition Pokémon Center (Or & Argent)", 2000, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coque or/argent illustrée de Pikachu et des starters de Johto, voyant d'alimentation intégré aux joues de Pikachu ; vendue uniquement en Pokémon Center au Japon."),
+    ConsolePreset("Nintendo / Sanrio", "Game Boy Color Édition Hello Kitty", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coque rose ornée du visage d'Hello Kitty et d'une fleur, éditée pour Noël 1998 au Japon."),
+    ConsolePreset("Nintendo / Tezuka Productions", "Game Boy Light Édition Astro Boy (Tetsuwan Atom)", 1998, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coque transparente illustrée d'Astro Boy, vendue au « Tezuka Osamu World Shop » d'Akihabara ; tirage très limité, exclusivité japonaise."),
+    ConsolePreset("Sony", "PlayStation Vita Slim Édition Persona 4: Dancing All Night", 2014, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "PCH-2000 jaune vif aux couleurs de Persona 4: Dancing All Night, exclusivité japonaise."),
+    ConsolePreset("Sony", "PlayStation Vita Slim Édition Danganronpa", 2014, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "PCH-2000 blanche gravée de Monokuma, Monomi et des sprites 16-bit de la série Danganronpa, exclusivité japonaise."),
+    ConsolePreset("Sony", "PlayStation Vita (PCH-2000) Édition New Danganronpa V3", 2017, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "Édition limitée noire « Glacier » pour la sortie de New Danganronpa V3: Killing Harmony, exclusivité japonaise (existe aussi en blanc)."),
+    ConsolePreset("Sony", "PSP Édition Monster Hunter Portable 3rd", 2010, "Portable", "MIPS R4000 @ 333 MHz", "64 Mo", "PSP-3000 noire mate à empreintes de pattes sur les haut-parleurs et finitions dorées, tirage très limité au Japon, très recherchée des collectionneurs."),
+    ConsolePreset("Sony / Sanrio", "PSP-3000 Édition Hello Kitty Puzzle Party", 2010, "Portable", "MIPS R4000 @ 333 MHz", "64 Mo", "PSP-3000 rose vendue en bundle officiel européen avec le jeu Hello Kitty: Puzzle Party."),
+    ConsolePreset("Atari", "Lynx II", 1991, "Portable", "MOS 65C02 @ 4 MHz", "64 Ko", "Refonte de la Lynx d'origine : boîtier plus compact et symétrique, poignées en caoutchouc, autonomie améliorée, son stéréo (contre mono sur la première Lynx) ; mêmes specs internes."),
+
+    // --- Coloris officiels complémentaires Game Boy / GBC / GBA / PSP / PS Vita (recherche 2026-07-26),
+    // toutes en vraies photos Wikimedia Commons vérifiées (licence libre). ---
+    ConsolePreset("Nintendo", "Game Boy Play It Loud! Noire", 1995, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris opaque de la gamme « Play It Loud! » (1995), premières couleurs officielles de la Game Boy originale."),
+    ConsolePreset("Nintendo", "Game Boy Play It Loud! Rouge", 1995, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris « Radiant Red » de la gamme « Play It Loud! » (1995)."),
+    ConsolePreset("Nintendo", "Game Boy Play It Loud! Transparente", 1995, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris « High Tech » transparent de la gamme « Play It Loud! », exclusivité nord-américaine (1995)."),
+    ConsolePreset("Nintendo", "Game Boy Pocket Noire", 1996, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris noir de la Game Boy Pocket."),
+    ConsolePreset("Nintendo", "Game Boy Pocket Bleue", 1996, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris bleu de la Game Boy Pocket."),
+    ConsolePreset("Nintendo", "Game Boy Pocket Verte", 1996, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris vert de la Game Boy Pocket."),
+    ConsolePreset("Nintendo", "Game Boy Pocket Rouge", 1996, "Portable", "Sharp LR35902 @ 4,19 MHz", "8 Ko", "Coloris rouge de la Game Boy Pocket."),
+    ConsolePreset("Nintendo", "Game Boy Color Berry (Rouge)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris de lancement rouge/rose (« Berry ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Color Dandelion (Jaune)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris de lancement jaune (« Dandelion ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Color Kiwi (Vert)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris de lancement vert (« Kiwi ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Color Teal (Bleu Sarcelle)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris de lancement bleu sarcelle (« Teal ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Color Grape (Violet)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris violet opaque (« Grape ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Color Atomic Purple (Violet Transparent)", 1998, "Portable", "Sharp LR35902 @ 8 MHz", "32 Ko", "Coloris violet transparent (« Atomic Purple ») de la Game Boy Color."),
+    ConsolePreset("Nintendo", "Game Boy Advance Indigo", 2001, "Portable", "ARM7TDMI @ 16,78 MHz", "32 Ko + 256 Ko", "Coloris violet indigo de lancement de la Game Boy Advance."),
+    ConsolePreset("Nintendo", "Game Boy Advance Arctic White", 2001, "Portable", "ARM7TDMI @ 16,78 MHz", "32 Ko + 256 Ko", "Coloris blanc de lancement de la Game Boy Advance."),
+    ConsolePreset("Nintendo", "Game Boy Advance Rose", 2001, "Portable", "ARM7TDMI @ 16,78 MHz", "32 Ko + 256 Ko", "Coloris rose translucide de la Game Boy Advance."),
+    ConsolePreset("Nintendo", "Game Boy Advance Noire", 2003, "Portable", "ARM7TDMI @ 16,78 MHz", "32 Ko + 256 Ko", "Coloris noir mat de la Game Boy Advance."),
+    ConsolePreset("Sony", "PSP-3000 Vibrant Blue", 2011, "Portable", "MIPS R4000 @ 333 MHz", "64 Mo", "Coloris bleu métallisé de la PSP-3000, commercialisé notamment à Taïwan."),
+    ConsolePreset("Sony", "PSP Go Blanche Nacrée", 2009, "Portable", "MIPS R4000 @ 333 MHz", "64 Mo", "Coloris blanc nacré (« Pearl White ») de la PSP Go."),
+    ConsolePreset("Sony", "PlayStation Vita Sapphire Blue", 2012, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "Coloris bleu saphir de la PlayStation Vita d'origine (PCH-1000)."),
+    ConsolePreset("Sony", "PlayStation Vita Slim Blanche", 2013, "Portable", "ARM Cortex-A9 4 cœurs", "512 Mo", "Coloris blanc de la PlayStation Vita Slim (PCH-2000)."),
+
+    // --- PS3 Super Slim : coloris officiels (recherche 2026-07-26) ---
+    ConsolePreset("Sony", "PlayStation 3 Super Slim Blanche", 2012, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "Coloris « Classic White » de la PS3 Super Slim (CECH-4000), Japon novembre 2012 puis bundle Instant Game Collection aux États-Unis début 2013."),
+    ConsolePreset("Sony", "PlayStation 3 Super Slim Rouge Grenat", 2013, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "Coloris « Garnet Red » de la PS3 Super Slim, associé au bundle God of War: Ascension 500 Go (Royaume-Uni février 2013, Amérique du Nord mars 2013)."),
+    ConsolePreset("Sony", "PlayStation 3 Super Slim Bleu Azurite", 2013, "Salon", "Cell BE @ 3,2 GHz", "256 + 256 Mo", "Coloris « Azurite Blue » de la PS3 Super Slim 500 Go, édition limitée britannique (février 2013) vendue avec deux manettes DualShock 3 assorties.")
 )
     // Le catalogue ci-dessus reste écrit par date de sortie (plus simple à compléter),
     // mais on l'expose trié par ordre alphabétique : plus simple pour la recherche dans l'app.
