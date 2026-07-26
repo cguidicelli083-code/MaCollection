@@ -304,16 +304,25 @@ object EbayPrices {
     }
 
     /**
-     * Titre de la première annonce eBay correspondant à ce code-barres (EAN/UPC), ou null.
+     * Titres des annonces eBay correspondant à ce code-barres (EAN/UPC), triés par pertinence.
      * Utilisé pour identifier un objet scanné par code-barres (eBay n'expose pas de base
      * "produit" séparée, mais une annonce qui matche le gtin donne quasiment toujours le bon
      * nom de jeu/console dans son titre).
+     *
+     * On renvoie PLUSIEURS titres (pas juste le premier) : eBay classe parfois en tête une
+     * annonce pour un objet différent (accessoire, pièce détachée, autre édition régionale...)
+     * qui partage le même GTIN — sans repli sur les annonces suivantes, une seule annonce mal
+     * classée faisait échouer toute l'identification. Les pièces détachées/matériel hors-sujet
+     * (cf. [isLikelyHardwarePart]) sont exclues d'office.
      */
-    suspend fun titleForBarcode(barcode: String): String? {
-        if (!isConfigured() || barcode.isBlank()) return null
-        return searchOrFallback { bearer ->
-            api.search(bearer = bearer, market = MARKET, gtin = barcode)
-        }?.itemSummaries?.firstOrNull()?.title
+    suspend fun titlesForBarcode(barcode: String, limit: Int = 10): List<String> {
+        if (!isConfigured() || barcode.isBlank()) return emptyList()
+        val items = searchOrFallback { bearer ->
+            api.search(bearer = bearer, market = MARKET, gtin = barcode, limit = limit)
+        }?.itemSummaries.orEmpty()
+        return items.mapNotNull { it.title }
+            .filterNot { isLikelyHardwarePart(it) }
+            .distinct()
     }
 
     /**

@@ -2,6 +2,7 @@ package com.example.macollection.data
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.google.mlkit.vision.common.InputImage
@@ -71,8 +72,19 @@ object ScanTools {
      * une photo (console, accessoire, ou jeu confirmé sur RAWG).
      */
     suspend fun identifyFromBarcode(barcode: String): ScanResult {
-        val title = runCatching { EbayPrices.titleForBarcode(barcode) }.getOrNull()
-            ?: return ScanResult(barcode, null)
+        // UPCitemdb en premier, puis Barcode Lookup : contrairement à une annonce eBay (titre
+        // rédigé librement par un vendeur, plein de mentions d'état/complétude qui égarent la
+        // recherche), ces deux bases renvoient un titre "propre" unique par code-barres (ex.
+        // "Mario Kart 8 Deluxe (Nintendo Switch)"), bien plus fiable pour retrouver le bon jeu —
+        // et à elles deux couvrent des jeux que ni l'une ni l'autre seule ne trouvait (constaté en
+        // conditions réelles). Les annonces eBay restent essayées ensuite (et en repli si aucun
+        // code-barres n'est connu des deux bases).
+        val upcTitle = runCatching { UpcItemDb.lookupTitle(barcode) }.getOrNull()
+        val barcodeLookupTitle = runCatching { BarcodeLookupApi.lookupTitle(barcode) }.getOrNull()
+        val ebayTitles = runCatching { EbayPrices.titlesForBarcode(barcode) }.getOrNull().orEmpty()
+        val titles = listOfNotNull(upcTitle, barcodeLookupTitle) + ebayTitles
+        Log.d("ScanBarcode", "barcode=$barcode upcTitle=$upcTitle barcodeLookupTitle=$barcodeLookupTitle ebayTitles=$ebayTitles")
+        val title = titles.firstOrNull() ?: return ScanResult(barcode, null)
 
         // Une boîte/cartouche de JEU porte presque toujours aussi le nom de sa console (mention
         // obligatoire du fabricant) : reconnaître une console dans le titre ne suffit donc pas à
@@ -81,21 +93,38 @@ object ScanTools {
         // et on ne retombe sur "c'est la console elle-même" que si aucun jeu fiable n'est trouvé.
         val consoleName = ConsoleRecognition.recognize(title)
         val platformId = consoleName?.let { ConsolePlatforms.platformId(it) }
-        var gameMatch: GameInfo? = null
-        val candidate = runCatching { GameCatalog.search(title, platformId) }.getOrNull()?.firstOrNull()
-        if (candidate != null && isConfidentGameMatch(title, candidate.name)) {
-            val detailed = candidate.sourceId?.let { id -> GameCatalog.detail(id) } ?: candidate
-            // Le catalogue (RAWG/IGDB) ne connaît que le titre de base : sans ça, une
-            // mention d'édition lue sur l'annonce eBay (ex. "Platinum") disparaissait
-            // silencieusement au profit du nom "propre" du catalogue.
-            gameMatch = detailed.copy(name = GameCatalog.preserveEditionSuffix(title, detailed.name))
+        Log.d("ScanBarcode", "consoleName=$consoleName platformId=$platformId")
+
+        // On essaie CHAQUE titre d'annonce renvoyé (pas seulement le premier) : eBay classe
+        // parfois en tête une annonce pour un objet DIFFÉRENT qui partage le même GTIN (ex. un lot
+        // "3 jeux" au lieu du jeu précis scanné) — s'arrêter au premier titre qui trouve NE
+        // SERAIT-CE QU'un match faible (ex. juste le préfixe de franchise) empêchait de découvrir
+        // le bien meilleur match d'un titre suivant, plus propre. On garde donc le MEILLEUR score
+        // toutes annonces confondues, pas le premier trouvé. On utilise aussi IGDB en priorité
+        // (meilleure couverture rétro que RAWG seul, cf. [firstGameMatch] déjà utilisé par le scan
+        // photo), et on nettoie chaque titre du bruit typique d'une annonce (état, complétude,
+        // marque/plateforme déjà identifiée à part, mentions d'édition) AVANT de chercher (cf.
+        // [cleanListingTitle]).
+        var best: Pair<GameInfo, Double>? = null
+        var bestOriginalTitle: String? = null
+        for (t in titles) {
+            val cleaned = cleanListingTitle(t).ifBlank { t }
+            val scored = firstGameMatchScored(cleaned, platformId)
+            Log.d("ScanBarcode", "firstGameMatch(\"$cleaned\") -> ${scored?.first?.name} (score=${scored?.second})")
+            if (scored != null && (best == null || scored.second > best!!.second)) {
+                best = scored
+                bestOriginalTitle = t
+            }
         }
+        val gameMatch = best?.let { (g, _) -> g.copy(name = GameCatalog.preserveEditionSuffix(bestOriginalTitle!!, g.name)) }
+
         var accessoryName: String? = null
         if (gameMatch == null) {
-            accessoryName = AccessoryRecognition.recognize(title)
+            accessoryName = titles.firstNotNullOfOrNull { AccessoryRecognition.recognize(it) }
         }
         val suggestedName = gameMatch?.name ?: accessoryName ?: consoleName ?: title
         val gameConsoleHint = if (gameMatch != null) consoleName else null
+        Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName")
         return ScanResult(barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint)
     }
 
@@ -306,14 +335,28 @@ object ScanTools {
      * Meilleure fiche jeu correspondant à [query] : IGDB d'abord (source principale), RAWG en
      * secours. Une fiche IGDB est déjà complète ; une fiche RAWG est enrichie via son détail.
      * Renvoie null si aucune correspondance fiable (mêmes règles de confiance que l'OCR).
+     *
+     * On garde le candidat au MEILLEUR score (pas le premier qui passe le seuil) : RAWG/IGDB
+     * renvoient les résultats par pertinence de LEUR moteur, pas par proximité avec notre requête
+     * nettoyée — un résultat plus loin dans la liste correspond parfois bien mieux qu'un résultat
+     * plus haut qui ne partage qu'un mot générique.
      */
-    private suspend fun firstGameMatch(query: String, platformId: Int?): GameInfo? {
-        runCatching { IgdbCatalog.search(query, 0) }.getOrNull().orEmpty()
-            .firstOrNull { isConfidentGameMatch(query, it.name) }
-            ?.let { return IgdbCatalog.frenchify(it) }
-        val rawg = runCatching { GameCatalog.search(query, platformId) }.getOrNull().orEmpty()
-            .firstOrNull { isConfidentGameMatch(query, it.name) } ?: return null
-        return rawg.sourceId?.let { id -> GameCatalog.detail(id) } ?: rawg
+    private suspend fun firstGameMatch(query: String, platformId: Int?): GameInfo? =
+        firstGameMatchScored(query, platformId)?.first
+
+    /** Variante de [firstGameMatch] qui renvoie aussi le score, pour comparer entre plusieurs requêtes
+     * (cf. [identifyFromBarcode], qui essaie plusieurs titres d'annonce pour un même code-barres). */
+    private suspend fun firstGameMatchScored(query: String, platformId: Int?): Pair<GameInfo, Double>? {
+        val igdbResults = runCatching { IgdbCatalog.search(query, 0) }.getOrNull().orEmpty()
+        Log.d("ScanBarcode", "  IGDB candidates for \"$query\": ${igdbResults.take(5).map { it.name }}")
+        val igdbBest = igdbResults.mapNotNull { g -> gameMatchScore(query, g.name)?.let { it to g } }.maxByOrNull { it.first }
+        if (igdbBest != null) return IgdbCatalog.frenchify(igdbBest.second) to igdbBest.first
+        val rawgResults = runCatching { GameCatalog.search(query, platformId) }.getOrNull().orEmpty()
+        Log.d("ScanBarcode", "  RAWG candidates for \"$query\": ${rawgResults.take(5).map { it.name }}")
+        val rawgBest = rawgResults.mapNotNull { g -> gameMatchScore(query, g.name)?.let { it to g } }.maxByOrNull { it.first }
+            ?: return null
+        val detailed = rawgBest.second.sourceId?.let { id -> GameCatalog.detail(id) } ?: rawgBest.second
+        return detailed to rawgBest.first
     }
 
     /** Mentions légales/standard très fréquentes sur boîtes et cartouches : jamais un titre de jeu. */
@@ -330,23 +373,114 @@ object ScanTools {
         return boilerplatePhrases.any { t.contains(it) }
     }
 
+    // Mots-outils très courants (FR/EN) à ignorer même à 2-3 lettres : sans cette liste, les
+    // garder à ce seuil (cf. ci-dessous) les ferait compter comme un "mot commun" entre deux
+    // titres totalement différents qui n'ont en réalité que ça en commun.
+    private val stopWords = setOf(
+        "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "où", "est", "sur", "pour",
+        "avec", "dans", "par", "au", "aux", "ce", "ces", "the", "and", "of", "in", "on", "to",
+        "for", "with", "vs", "by", "is", "as", "at", "from"
+    )
+
+    /**
+     * Seuil abaissé à 2 lettres (au lieu de 3) : un suffixe de plateforme court ("DS", "Wii", "HD",
+     * "DX"...) est souvent LE mot qui distingue un jeu d'un autre de la même franchise (ex. "Mario
+     * Kart DS" vs "Mario Kart 8") — le perdre réduisait ces titres à seulement 2 mots génériques
+     * ("mario", "kart"), qui matchaient alors n'importe quel autre "Mario Kart" par la règle plus
+     * permissive réservée aux noms courts. Un chiffre seul (le "8", le "4" d'un "IV" normalisé...)
+     * reste gardé même à 1 caractère, pour la même raison.
+     */
     private fun significantWords(s: String): Set<String> =
         s.lowercase()
             .replace(Regex("[^a-z0-9 ]"), " ")
             .split(" ")
-            .filter { it.length >= 3 }
+            .filter { it.isNotEmpty() && it !in stopWords && (it.length >= 2 || it.all(Char::isDigit)) }
             .toSet()
 
     /**
-     * Vrai si [query] et [candidate] partagent vraiment plusieurs mots. Un seul mot en commun
-     * ne suffit JAMAIS (même un mot rare) : un logo d'éditeur omniprésent comme « CAPCOM » sur
-     * la cartouche matchait n'importe quel jeu Capcom au hasard (ex. « Capcom's MVP Football »
-     * pour une cartouche Street Fighter II) avant ce durcissement.
+     * Score de confiance (0 si aucune correspondance fiable, sinon >0 — plus haut = meilleur) entre
+     * [query] et [candidate], ou null si aucune correspondance fiable. Un seul mot en commun ne
+     * suffit JAMAIS (même un mot rare) : un logo d'éditeur omniprésent comme « CAPCOM » sur la
+     * cartouche matchait n'importe quel jeu Capcom au hasard (ex. « Capcom's MVP Football » pour
+     * une cartouche Street Fighter II) avant ce durcissement.
+     *
+     * Renvoyer un SCORE (pas juste un booléen) permet, quand plusieurs candidats/titres passent
+     * le seuil, de garder le MEILLEUR plutôt que le premier trouvé — important pour le scan
+     * code-barres, où une annonce eBay mal choisie peut faire passer un match faible (ex. juste
+     * le préfixe de franchise « Tom Clancy's ») avant le bon match, beaucoup plus fort, trouvé
+     * dans une autre annonce du même code-barres (cf. [firstGameMatch] et [identifyFromBarcode]).
      */
-    private fun isConfidentGameMatch(query: String, candidate: String): Boolean {
-        val qWords = significantWords(query)
-        if (qWords.size < 2) return false
-        val overlap = qWords.intersect(significantWords(candidate))
-        return overlap.size >= 2 && overlap.size.toDouble() / qWords.size >= 0.6
+    private fun gameMatchScore(query: String, candidate: String): Double? {
+        // Les mentions d'édition ("Deluxe", "Definitive Edition"...) sont retirées des DEUX côtés
+        // avant de comparer : un candidat catalogue les inclut parfois dans son nom officiel (ex.
+        // "CastleStorm - Definitive Edition"), et les compter faussait la comparaison dans les deux
+        // sens (cf. [GameCatalog.stripEditionKeywords]).
+        val qWords = significantWords(GameCatalog.stripEditionKeywords(query))
+        val cWords = significantWords(GameCatalog.stripEditionKeywords(candidate))
+        if (qWords.size < 2 || cWords.isEmpty()) return null
+        val overlap = qWords.intersect(cWords)
+        return if (cWords.size <= 2) {
+            // Nom de jeu court (ex. "Rayman Legends") : les mots RESTANTS après nettoyage sont
+            // rares/spécifiques, donc on exige qu'ILS SOIENT TOUS retrouvés (pas de ratio permissif
+            // possible avec seulement 1-2 mots). Le plancher est plus haut que pour les noms longs
+            // (0.5 au lieu de tolérer un ratio bas) : un nom réduit à 1-2 mots très génériques par le
+            // nettoyage (ex. "Tom Clancy's H.A.W.X." réduit à "tom"/"clancy", le vrai titre distinctif
+            // ayant disparu dans les points/majuscules) ne doit PAS matcher juste sur ce préfixe de
+            // franchise partagé par des dizaines d'autres jeux.
+            val ratioQ = overlap.size.toDouble() / qWords.size
+            if (overlap.size == cWords.size && ratioQ >= 0.5) ratioQ else null
+        } else {
+            // Nom de jeu plus long : exige une bonne couverture des DEUX côtés. Un seul mot en
+            // commun (même un mot rare) ne suffit JAMAIS — un logo d'éditeur omniprésent comme
+            // « CAPCOM » matchait n'importe quel jeu Capcom au hasard (ex. « Capcom's MVP Football »
+            // pour une cartouche Street Fighter II), et un sous-titre générique partagé (ex.
+            // "Super"/"Bros" entre deux jeux Nintendo totalement différents) ne doit pas suffire
+            // non plus : la couverture doit être bonne des deux côtés à la fois, pas d'un seul.
+            val ratioQ = overlap.size.toDouble() / qWords.size
+            val ratioC = overlap.size.toDouble() / cWords.size
+            if (overlap.size >= 2 && ratioQ >= 0.6 && ratioC >= 0.6) minOf(ratioQ, ratioC) else null
+        }
+    }
+
+    private fun isConfidentGameMatch(query: String, candidate: String): Boolean =
+        gameMatchScore(query, candidate) != null
+
+    /** Marques/plateformes et vocabulaire d'état très fréquents sur une annonce eBay (jeu vidéo) :
+     * jamais des mots du titre du jeu lui-même, mais leur présence isolée dans le texte peut
+     * fausser le classement des catalogues (cf. [cleanListingTitle]). Les marques/plateformes
+     * sont redondantes ici : la console est déjà identifiée séparément par [ConsoleRecognition].
+     */
+    private val listingNoiseWords = setOf(
+        "complet", "complete", "complète", "neuf", "occasion", "boite", "boîte", "boitier", "boîtier",
+        "vide", "notice", "teste", "testé", "testee", "testée", "fonctionnel", "fonctionne",
+        "authentique", "original", "originale", "pal", "ntsc", "fra", "francais", "français",
+        "francaise", "française", "vf", "cib", "ttbe", "blister", "sous", "jaquette", "cartouche",
+        "disque", "avec", "sans", "tres", "très", "bon", "etat", "état", "jeu", "jeux",
+        "game", "games", "sony", "nintendo", "microsoft", "sega", "playstation", "xbox", "switch",
+        "wii", "gamecube", "atari", "oled", "lite", "console"
+    )
+
+    /**
+     * Nettoie un titre d'annonce eBay du bruit qui égare la recherche dans les catalogues : état/
+     * complétude ("Complet", "Testé Fonctionnel"...), marque/plateforme déjà identifiée à part,
+     * mentions entre crochets ("[FRA]"), et mentions d'édition (retirées puis réinjectées après
+     * coup via [GameCatalog.preserveEditionSuffix]). Un titre brut trop bruyant fait échouer IGDB
+     * (recherche stricte, contrairement à RAWG) ou fausse le classement de RAWG (ex. chercher
+     * "Rayman Legends Definitive Edition" ne retrouve même pas "Rayman Legends" dans les 5 premiers
+     * résultats, noyé par d'autres jeux "Definitive Edition" sans rapport).
+     */
+    private fun cleanListingTitle(title: String): String {
+        val noBrackets = title.replace(Regex("\\[[^]]*]"), " ")
+        // UPCitemdb formate souvent ses titres "Nom Du Jeu by Éditeur (CODE-SKU)" : tout ce qui suit
+        // " by " est du bruit (nom d'éditeur + code produit alphanumérique type ASIN), qui allonge
+        // la requête sans rien apporter et fait chuter le ratio de couverture sous le seuil de
+        // confiance même pour un match par ailleurs parfait (ex. "Lara Croft Temple of Osiris PS4
+        // by Square Enix (B00TPWPDHO)" ne retrouvait pas "Lara Croft and the Temple of Osiris").
+        val noPublisherSuffix = Regex("(?i)\\bby\\b.*$").replace(noBrackets, "")
+        val noEdition = GameCatalog.stripEditionKeywords(noPublisherSuffix)
+        val noSymbols = noEdition.replace(Regex("[^\\p{L}\\p{Nd}' -]"), " ")
+        val tokens = noSymbols.split(Regex("\\s+")).filter { it.isNotBlank() }
+        val kept = tokens.filterNot { it.lowercase().trim('\'', '-') in listingNoiseWords }
+        return kept.joinToString(" ").trim()
     }
 }

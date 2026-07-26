@@ -243,6 +243,22 @@ object GameCatalog {
     )
 
     /**
+     * Retire ces mentions d'édition d'un texte de recherche : le moteur de RAWG classe très mal
+     * les requêtes qui les contiennent (constaté en conditions réelles : chercher "Rayman Legends
+     * Definitive Edition" ne retrouve même pas "Rayman Legends" dans les 5 premiers résultats,
+     * noyé par d'autres jeux "Definitive Edition" sans rapport, alors que "Rayman Legends" seul le
+     * trouve instantanément). On les retire donc de la requête envoyée aux catalogues, et on les
+     * réinjecte ensuite via [preserveEditionSuffix] une fois le bon jeu retrouvé.
+     */
+    fun stripEditionKeywords(text: String): String {
+        var result = text
+        for (kw in editionKeywords) {
+            result = result.replace(Regex("(?i)" + Regex.escape(kw)), " ")
+        }
+        return result.replace(Regex("\\s+"), " ").trim()
+    }
+
+    /**
      * Si [typed] (nom saisi/détecté par photo AVANT de choisir un résultat du catalogue) mentionne
      * une variante connue absente de [catalogName] (le titre "propre" renvoyé par RAWG/IGDB), on la
      * rajoute entre parenthèses au lieu de la perdre — sinon choisir un jeu dans le catalogue

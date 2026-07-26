@@ -69,6 +69,14 @@
 -keep class com.example.macollection.data.EbayItem { *; }
 -keep class com.example.macollection.data.EbayPrice { *; }
 
+# UPCitemdb (identification par code-barres, source principale).
+-keep class com.example.macollection.data.UpcItem { *; }
+-keep class com.example.macollection.data.UpcLookupResponse { *; }
+
+# Barcode Lookup (identification par code-barres, 2e source).
+-keep class com.example.macollection.data.BarcodeLookupProduct { *; }
+-keep class com.example.macollection.data.BarcodeLookupResponse { *; }
+
 -keep class com.example.macollection.data.WikiSummary { *; }
 -keep class com.example.macollection.data.WikiImage { *; }
 -keep class com.example.macollection.data.WikiSearchResponse { *; }

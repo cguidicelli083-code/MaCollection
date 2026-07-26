@@ -98,6 +98,7 @@ object IgdbCatalog {
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
+            android.util.Log.e("ScanBarcode", "IGDB token fetch failed: ${e.javaClass.simpleName}: ${e.message}", e)
             null
         }
     }
@@ -108,7 +109,10 @@ object IgdbCatalog {
      * quasi-doublons. Liste vide si non configuré ou en cas d'échec réseau.
      */
     suspend fun search(query: String, page: Int, platformId: Int? = null): List<GameInfo> {
-        if (!isConfigured()) return emptyList()
+        if (!isConfigured()) {
+            android.util.Log.e("ScanBarcode", "IGDB not configured (clientId/secret blank)")
+            return emptyList()
+        }
         // Le corps de requête IGDB est un mini-langage texte : on neutralise les caractères
         // qui casseraient la syntaxe (guillemets, antislash, point-virgule).
         val q = query.replace(Regex("[\"\\\\;]"), " ").trim()
@@ -134,6 +138,7 @@ object IgdbCatalog {
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
+                android.util.Log.e("ScanBarcode", "IGDB search failed (attempt $attempt): ${e.javaClass.simpleName}: ${e.message}", e)
                 token = null
                 if (attempt == 1) return emptyList()
             }

@@ -30,6 +30,8 @@ val groqApiKey: String = localProps.getProperty("groqApiKey") ?: ""
 // Tavily (recherche web) : 3e recours pour l'estimation de cote quand eBay ET Gemini échouent
 // tous les deux (quota Gemini très bas, 20 requêtes/jour) — quota Tavily séparé et plus généreux.
 val tavilyApiKey: String = localProps.getProperty("tavilyApiKey") ?: ""
+// Barcode Lookup : 2e source d'identification par code-barres (après UPCitemdb, avant eBay).
+val barcodeLookupApiKey: String = localProps.getProperty("barcodeLookupApiKey") ?: ""
 
 android {
     namespace = "com.example.macollection"
@@ -39,8 +41,8 @@ android {
         applicationId = "com.nawash.macollection"
         minSdk = 24
         targetSdk = 36
-        versionCode = 8
-        versionName = "2.1"
+        versionCode = 9
+        versionName = "2.2"
 
         buildConfigField("String", "RAWG_API_KEY", "\"$rawgApiKey\"")
         buildConfigField("String", "EBAY_CLIENT_ID", "\"$ebayClientId\"")
@@ -52,6 +54,7 @@ android {
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
         buildConfigField("String", "GROQ_API_KEY", "\"$groqApiKey\"")
         buildConfigField("String", "TAVILY_API_KEY", "\"$tavilyApiKey\"")
+        buildConfigField("String", "BARCODE_LOOKUP_API_KEY", "\"$barcodeLookupApiKey\"")
 
         // N'embarque que l'architecture ARM 64 (tous les téléphones modernes) -> APK plus léger.
         ndk {
