@@ -1,5 +1,62 @@
 [
   {
+    "id": "0f6e5c79eb7304c9a29c20317f4285206c16cbd8",
+    "title": "Round Up: Final Fantasy XIV: Evercold Extended Teaser Revealed, New Job And Crossover Raid Series Announced",
+    "summary": "Launching January 2027. Alongside the Switch 2 release date for Final Fantasy XIV Online , Square Enix shared another look at the game's sixth expansion, Evercold . It's set to launch in January 2027 and is also confirmed for Nintendo's new platform. Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/07/round-up-final-fantasy-xiv-evercold-extended-teaser-revealed-new-job-and-crossover-raid-series-announced",
+    "imageUrl": "https://images.nintendolife.com/82777bdd7270a/large.jpg",
+    "publishedAt": "2026-07-26T06:00:00+00:00",
+    "scrapedAt": "2026-07-26T10:17:18.327845+00:00",
+    "translations": {
+      "en": {
+        "title": "Round Up: Final Fantasy XIV: Evercold Extended Teaser Revealed, New Job And Crossover Raid Series Announced",
+        "summary": "Launching January 2027. Alongside the Switch 2 release date for Final Fantasy XIV Online , Square Enix shared another look at the game's sixth expansion, Evercold . It's set to launch in January 2027 and is also confirmed for Nintendo's new platform. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Round Up: Final Fantasy XIV: Evercold Extended Teaser révélé, nouvelle série de travaux et de raids croisés annoncés",
+        "summary": "Lancement en janvier 2027. Parallèlement à la date de sortie de Final Fantasy XIV Online sur Switch 2, Square Enix a partagé un autre aperçu de la sixième extension du jeu, Evercold. Son lancement est prévu pour janvier 2027 et est également confirmé pour la nouvelle plateforme de Nintendo. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Resumen: Final Fantasy XIV: Se revela el avance extendido de Evercold, se anuncia un nuevo trabajo y una serie de incursiones cruzadas",
+        "summary": "Lanzamiento en enero de 2027. Además de la fecha de lanzamiento de Switch 2 para Final Fantasy XIV Online, Square Enix compartió otro vistazo a la sexta expansión del juego, Evercold. Su lanzamiento está previsto para enero de 2027 y también está confirmado para la nueva plataforma de Nintendo. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Riepilogo: Final Fantasy XIV: rivelato il teaser esteso di Evercold, annunciati un nuovo lavoro e una serie di raid crossover",
+        "summary": "Lancio a gennaio 2027. Oltre alla data di uscita di Final Fantasy XIV Online su Switch 2, Square Enix ha condiviso un altro sguardo alla sesta espansione del gioco, Evercold. Il lancio è previsto per gennaio 2027 ed è confermato anche per la nuova piattaforma Nintendo. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Zusammenfassung: Final Fantasy XIV: Erweiterter Teaser zu Evercold enthüllt, neuer Job und Crossover-Raid-Serie angekündigt",
+        "summary": "Erscheint im Januar 2027. Neben dem Veröffentlichungstermin für Switch 2 für Final Fantasy XIV Online gab Square Enix einen weiteren Einblick in die sechste Erweiterung des Spiels, Evercold. Der Start ist für Januar 2027 geplant und auch für Nintendos neue Plattform bestätigt. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Resumo: Final Fantasy XIV: Evercold Extended Teaser revelado, novo trabalho e série Crossover Raid anunciada",
+        "summary": "Lançamento em janeiro de 2027. Juntamente com a data de lançamento do Switch 2 para Final Fantasy XIV Online, a Square Enix compartilhou outra visão da sexta expansão do jogo, Evercold. O lançamento está previsto para janeiro de 2027 e também está confirmado para a nova plataforma da Nintendo. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Сводка новостей: Final Fantasy XIV: раскрыт расширенный тизер Evercold, анонсированы новые дела и серия кроссоверов-рейдов",
+        "summary": "Запуск состоится в январе 2027 года. Наряду с датой выхода Final Fantasy XIV Online для Switch 2 компания Square Enix поделилась еще одним взглядом на шестое расширение игры, Evercold. Его запуск запланирован на январь 2027 года, а также подтвержден для новой платформы Nintendo. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Round Up: Final Fantasy XIV: Evercold Extended Teaser Revealed, New Job And Crossover Raid Series Ανακοινώθηκε",
+        "summary": "Κυκλοφορεί τον Ιανουάριο του 2027. Παράλληλα με την ημερομηνία κυκλοφορίας του Switch 2 για το Final Fantasy XIV Online, η Square Enix μοιράστηκε μια άλλη ματιά στην έκτη επέκταση του παιχνιδιού, το Evercold. Έχει προγραμματιστεί να κυκλοφορήσει τον Ιανουάριο του 2027 και έχει επίσης επιβεβαιωθεί για τη νέα πλατφόρμα της Nintendo. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "Özet: Final Fantasy XIV: Evercold Genişletilmiş Fragmanı Ortaya Çıktı, Yeni İş ve Crossover Raid Serisi Açıklandı",
+        "summary": "Ocak 2027'de çıkıyor. Final Fantasy XIV Online'ın Switch 2 çıkış tarihinin yanı sıra Square Enix, oyunun altıncı genişletmesi Evercold'a bir bakış daha paylaştı. Ocak 2027'de piyasaya sürülmesi planlanıyor ve Nintendo'nun yeni platformu için de onaylandı. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "まとめ：ファイナルファンタジーXIV：エバーコールド拡張ティーザーが公開、新ジョブとクロスオーバーレイドシリーズが発表",
+        "summary": "2027 年 1 月に発売予定。ファイナルファンタジー XIV オンラインの Switch 2 リリース日と並行して、スクウェア・エニックスは、ゲームの 6 番目の拡張であるエバーコールドの別の様子を共有しました。 2027年1月に発売予定で、任天堂の新しいプラットフォームでもリリースされることが確認されている。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "综述：《最终幻想 XIV：Evercold》加长预告片揭晓，新工作和跨界突袭系列也已公布",
+        "summary": "将于 2027 年 1 月推出。除了《最终幻想 XIV Online》的 Switch 2 发布日期外，史克威尔艾尼克斯还分享了该游戏的第六个资料片《Evercold》的另一个外观。它定于 2027 年 1 月推出，并已确认在任天堂的新平台上运行。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
     "id": "97924834e44b3038b0a34c823013e19a8bfdfb71",
     "title": "Aliens : Fireteam Elite 2 fixe sa date de sortie à fin août sur PC, PS5 et Xbox Series",
     "summary": "Cinq ans après les premiers assauts d'Aliens : Fireteam Elite, Cold Iron Studios et l'éditeur Daybreak Game Company préparent le retour des Colonial Marines. Officialisé pour la fin août 2026, Aliens : Fireteam Elite 2 débarquera simultanément sur PC (Steam et Epic Games Store), PlayStation 5 et Xbox Series X|S.",
@@ -8,7 +65,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/aliens-fireteam-elite-2-fixe-sa-date-de-sortie-a-fin-aout-sur-pc-ps5-et-xbox-series-3050871401.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871401/aliens-fireteam-elite-2-fixe-sa-date-de-sortie-a-fin-aout-sur-pc-ps5-et-xbox-series-9b4183be__800_800__326-0-2486-2160.jpg",
     "publishedAt": "2026-07-25T17:36:00+00:00",
-    "scrapedAt": "2026-07-25T17:51:51.547185+00:00",
+    "scrapedAt": "2026-07-26T10:17:36.923354+00:00",
     "translations": {
       "fr": {
         "title": "Aliens : Fireteam Elite 2 fixe sa date de sortie à fin août sur PC, PS5 et Xbox Series",
@@ -65,7 +122,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/07/25/final-fantasy-xiv-for-nintendo-switch-2-releases-4th-august/",
     "imageUrl": "",
     "publishedAt": "2026-07-25T17:14:26+00:00",
-    "scrapedAt": "2026-07-25T17:51:01.863002+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.399537+00:00",
     "translations": {
       "en": {
         "title": "Final Fantasy XIV for Nintendo Switch 2 releases 4th August",
@@ -122,7 +179,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/07/final-fantasy-xiv-online-releases-for-switch-2-on-4th-august-2026",
     "imageUrl": "https://images.nintendolife.com/c0bb5d4e3ace1/large.jpg",
     "publishedAt": "2026-07-25T13:30:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:52.603402+00:00",
+    "scrapedAt": "2026-07-26T10:17:18.328051+00:00",
     "translations": {
       "en": {
         "title": "Final Fantasy XIV Online Releases For Switch 2 On 4th August 2026",
@@ -179,7 +236,7 @@
     "sourceUrl": "https://www.purexbox.com/features/talking-point-what-are-you-playing-this-weekend-july-25-26",
     "imageUrl": "https://images.purexbox.com/4be5efad24291/large.jpg",
     "publishedAt": "2026-07-25T11:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:55.335337+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.157295+00:00",
     "translations": {
       "en": {
         "title": "Talking Point: What Are You Playing This Weekend? (July 25-26)",
@@ -236,7 +293,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/god-of-war-laufey-a-vos-agendas-la-date-de-sortie-vient-d-etre-annoncee-3050871405.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871405/god-of-war-laufey-a-vos-agendas-la-date-de-sortie-vient-d-etre-annoncee-867aff52__800_800__1029-387-2802-2160.jpg",
     "publishedAt": "2026-07-25T06:20:00+00:00",
-    "scrapedAt": "2026-07-25T17:51:51.547624+00:00",
+    "scrapedAt": "2026-07-26T10:17:36.923753+00:00",
     "translations": {
       "fr": {
         "title": "God of War Laufey : à vos agendas, la date de sortie vient d'être annoncée",
@@ -293,7 +350,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/07/ps5s-next-big-exclusive-dated-and-its-closer-than-you-think",
     "imageUrl": "https://images.pushsquare.com/12eb73bed8107/large.jpg",
     "publishedAt": "2026-07-25T06:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:54.011743+00:00",
+    "scrapedAt": "2026-07-26T10:17:30.842599+00:00",
     "translations": {
       "en": {
         "title": "PS5's Next Big Exclusive Dated, and It's Closer Than You Think",
@@ -350,7 +407,7 @@
     "sourceUrl": "https://gamingbolt.com/god-of-war-laufey-launches-on-february-16th-2027",
     "imageUrl": "",
     "publishedAt": "2026-07-25T02:33:35+00:00",
-    "scrapedAt": "2026-07-25T17:51:08.024011+00:00",
+    "scrapedAt": "2026-07-26T10:17:33.292575+00:00",
     "translations": {
       "en": {
         "title": "God of War Laufey Launches on February 16th, 2027",
@@ -407,7 +464,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/07/gta-6s-physical-ps5-download-codes-expire-after-just-170-days-in-japan",
     "imageUrl": "https://images.pushsquare.com/14b8271433f67/large.jpg",
     "publishedAt": "2026-07-24T17:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:54.011984+00:00",
+    "scrapedAt": "2026-07-26T10:17:30.842816+00:00",
     "translations": {
       "en": {
         "title": "GTA 6's Physical PS5 Download Codes Expire After Just 170 Days in Japan",
@@ -464,7 +521,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/two-massive-sports-games-have-joined-xboxs-stacked-lineup-for-september",
     "imageUrl": "https://images.purexbox.com/afb84c3b326ad/large.jpg",
     "publishedAt": "2026-07-24T17:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:55.335525+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.157442+00:00",
     "translations": {
       "en": {
         "title": "Two Massive Sports Games Have Joined Xbox's Stacked Lineup For September",
@@ -521,7 +578,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/oui-un-enieme-metroidvania-va-sortir-cette-annee-et-il-s-agit-d-akatori-3050871397.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871397/c004246e__800_800__434-0-1514-1080.jpg",
     "publishedAt": "2026-07-24T16:04:00+00:00",
-    "scrapedAt": "2026-07-25T17:51:51.547925+00:00",
+    "scrapedAt": "2026-07-26T10:17:36.924034+00:00",
     "translations": {
       "fr": {
         "title": "Oui, un énième metroidvania va sortir cette année et il s'agit d'Akatori",
@@ -578,7 +635,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/07/24/hello-kitty-party-land-gets-pre-order-trailer/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T14:17:08+00:00",
-    "scrapedAt": "2026-07-25T17:51:01.863547+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.400044+00:00",
     "translations": {
       "en": {
         "title": "Hello Kitty Party Land gets pre-order trailer",
@@ -635,7 +692,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/it-sure-sounds-like-xbox-360-games-are-coming-to-backwards-compatibility-on-pc",
     "imageUrl": "https://images.purexbox.com/c2090dc7e2a50/large.jpg",
     "publishedAt": "2026-07-24T13:30:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:55.335780+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.157637+00:00",
     "translations": {
       "en": {
         "title": "It Sure Sounds Like Xbox 360 Games Are Coming To Backwards Compatibility On PC",
@@ -692,7 +749,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/sega-cd-shown-running-on-the-analogue-pocket",
     "imageUrl": "https://images.timeextension.com/4764f81a0f827/large.jpg",
     "publishedAt": "2026-07-24T11:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:37.803048+00:00",
+    "scrapedAt": "2026-07-26T10:17:16.152914+00:00",
     "translations": {
       "en": {
         "title": "Sega CD Shown Running On The Analogue Pocket",
@@ -749,7 +806,7 @@
     "sourceUrl": "https://retrododo.com/arcade1up-set-to-release-two-sonic-arcade-cabinets-later-this-year/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/marble-zone-arcade-cabinets.jpg",
     "publishedAt": "2026-07-24T10:51:41+00:00",
-    "scrapedAt": "2026-07-25T17:50:43.878953+00:00",
+    "scrapedAt": "2026-07-26T10:17:17.947587+00:00",
     "translations": {
       "en": {
         "title": "Arcade1Up Set To Release Two Sonic Arcade Cabinets Later This Year",
@@ -806,7 +863,7 @@
     "sourceUrl": "https://retrododo.com/mattel-hot-wheels-buildable-halo-unsc-warthog-is-up-for-pre-order-on-amazon/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/warthog-amazn.webp",
     "publishedAt": "2026-07-24T09:16:57+00:00",
-    "scrapedAt": "2026-07-25T17:50:43.879008+00:00",
+    "scrapedAt": "2026-07-26T10:17:17.947639+00:00",
     "translations": {
       "en": {
         "title": "Mattel & Hot Wheels Buildable Halo UNSC Warthog Is Up For Pre-Order On Amazon",
@@ -863,7 +920,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/this-out-run-arcade-cabinet-features-five-games-and-costs-usd629-99",
     "imageUrl": "https://images.timeextension.com/03998c413a42d/large.jpg",
     "publishedAt": "2026-07-24T09:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:37.803202+00:00",
+    "scrapedAt": "2026-07-26T10:17:16.153059+00:00",
     "translations": {
       "en": {
         "title": "This Out Run Arcade Cabinet Features Five Games And Costs $629.99",
@@ -920,7 +977,7 @@
     "sourceUrl": "https://the-retrogamer.com/arcade1up-devoile-sa-borne-outrun-supreme-le-volant-et-le-pedalier-enfin-de-retour/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T08:52:29+00:00",
-    "scrapedAt": "2026-07-25T17:45:01.867989+00:00",
+    "scrapedAt": "2026-07-26T10:17:34.429451+00:00",
     "translations": {
       "fr": {
         "title": "Arcade1Up dévoile sa borne OutRun Supreme : le volant et le pédalier enfin de retour",
@@ -977,7 +1034,7 @@
     "sourceUrl": "https://www.pushsquare.com/guides/new-ps5-games-release-dates-in-2026",
     "imageUrl": "https://images.pushsquare.com/10dd8b21bc29c/large.jpg",
     "publishedAt": "2026-07-24T05:00:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:54.012770+00:00",
+    "scrapedAt": "2026-07-26T10:17:30.843568+00:00",
     "translations": {
       "en": {
         "title": "Guide: New PS5 Games Release Dates in 2026",
@@ -1034,7 +1091,7 @@
     "sourceUrl": "https://www.pushsquare.com/guides/new-ps4-games-release-dates-in-2026",
     "imageUrl": "https://images.pushsquare.com/5faa140d282d3/large.jpg",
     "publishedAt": "2026-07-24T04:30:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:54.012834+00:00",
+    "scrapedAt": "2026-07-26T10:17:30.843626+00:00",
     "translations": {
       "en": {
         "title": "Guide: New PS4 Games Release Dates in 2026",
@@ -1091,7 +1148,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/07/crime-solving-party-game-batman-caped-crusader-chronicles-announced-for-luna",
     "imageUrl": "",
     "publishedAt": "2026-07-23T23:30:51+00:00",
-    "scrapedAt": "2026-07-25T17:51:03.176732+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.625772+00:00",
     "translations": {
       "en": {
         "title": "Crime-solving party game Batman: Caped Crusader – Chronicles announced for Luna",
@@ -1148,7 +1205,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/xbox-introduces-free-game-streaming-with-ads-outlines-five-principles-theyll-adhere-to",
     "imageUrl": "https://images.purexbox.com/b76c6c69371bf/large.jpg",
     "publishedAt": "2026-07-23T16:45:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:55.336257+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.158051+00:00",
     "translations": {
       "en": {
         "title": "Xbox Introduces Free Game Streaming With Ads, Outlines Five Principles They'll Adhere To",
@@ -1205,7 +1262,7 @@
     "sourceUrl": "https://retrododo.com/hasbro-reveals-first-wave-of-legend-of-zelda-action-figures/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/zelda-figures-box.webp",
     "publishedAt": "2026-07-23T13:54:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:43.879122+00:00",
+    "scrapedAt": "2026-07-26T10:17:17.947743+00:00",
     "translations": {
       "en": {
         "title": "Hasbro Reveals First Wave Of Legend of Zelda Action Figures",
@@ -1262,7 +1319,7 @@
     "sourceUrl": "https://www.purexbox.com/guides/halo-campaign-evolved-release-date-release-times-and-early-access-details-for-xbox-and-pc",
     "imageUrl": "https://images.purexbox.com/c93a34b643a8a/large.jpg",
     "publishedAt": "2026-07-22T20:37:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:55.336939+00:00",
+    "scrapedAt": "2026-07-26T10:17:31.158691+00:00",
     "translations": {
       "en": {
         "title": "Guide: Halo: Campaign Evolved Release Date, Release Times & Early Access Details For Xbox & PC",
@@ -1319,7 +1376,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/i-dont-even-know-what-a-prompt-is-developer-behind-stunning-midway-wolf-unit-fpga-core-refutes-ai-allegations",
     "imageUrl": "https://images.timeextension.com/7f7f966ad3949/large.jpg",
     "publishedAt": "2026-07-22T10:30:00+00:00",
-    "scrapedAt": "2026-07-25T17:50:37.804647+00:00",
+    "scrapedAt": "2026-07-26T10:17:16.154342+00:00",
     "translations": {
       "en": {
         "title": "\"I Don't Even Know What A Prompt Is\" - Developer Behind Stunning Midway Wolf Unit FPGA Core Refutes AI Allegations",
