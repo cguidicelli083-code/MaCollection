@@ -75,8 +75,6 @@
     <string name="platforms_label">Платформы: %1$s</string>
     <string name="genre_label">Жанр: %1$s</string>
     <string name="gallery_title">📸 Галерея (%1$d)</string>
-    <string name="view_3d_button">🧊  Смотреть в 3D</string>
-    <string name="color_3d_hint">🎨 Цвет можно изменить в 3D-просмотре (отображение зависит от модели)</string>
     <string name="remove_photo">Удалить фото</string>
     <string name="add_photos">Добавить фото</string>
 

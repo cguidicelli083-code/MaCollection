@@ -53,12 +53,6 @@
             android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat" />
 
-        <activity
-            android:name=".Console3DActivity"
-            android:exported="false"
-            android:hardwareAccelerated="true"
-            android:theme="@style/Theme.MaCollection" />
-
         <!-- Verrouillé en portrait : une rotation recréerait l'écran et perdrait tout
              formulaire en cours (les champs ne sont pas conçus pour survivre à ça). -->
         <activity

@@ -71,7 +71,6 @@ import com.example.macollection.data.BrandLogos
 import com.example.macollection.data.ConsoleColorSupport
 import com.example.macollection.data.ConsoleRecognition
 import com.example.macollection.data.ConsoleImages
-import com.example.macollection.data.ConsoleModels
 import com.example.macollection.data.ConsolePlatforms
 import com.example.macollection.data.ConsolePreset
 import com.example.macollection.data.CuratedGames
@@ -617,12 +616,17 @@ private fun AccessoryDetailDialog(
             Column(Modifier.padding(16.dp).verticalScroll(rememberScrollState())) {
                 val url = overrideUrl ?: AccessoryImages.urlFor(preset.name)
                 if (url != null) {
+                    var zoomed by remember(url) { mutableStateOf(false) }
                     AsyncImage(
                         model = url,
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxWidth().height(160.dp).clip(RoundedCornerShape(14.dp))
+                            .clickable { zoomed = true }
                     )
+                    if (zoomed) {
+                        EnlargedPhotoDialog(url) { zoomed = false }
+                    }
                     Spacer(Modifier.height(10.dp))
                 }
                 Text(preset.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = Color.White)
@@ -718,10 +722,6 @@ private fun ConsoleRow(
             CustomBadge()
             Spacer(Modifier.width(8.dp))
         }
-        if (ConsoleModels.urlFor(preset.name) != null) {
-            Text("🧊", fontSize = 20.sp)
-            Spacer(Modifier.width(4.dp))
-        }
         if (selectionMode) {
             RoundCheckbox(checked = selected, onCheckedChange = onToggleSelect)
         }
@@ -793,7 +793,6 @@ private fun ConsoleThumb(name: String, modifier: Modifier, overrideUrl: String? 
 fun ConsoleEncyclopediaScreen(
     vm: AppViewModel,
     preset: ConsolePreset,
-    onView3D: () -> Unit,
     onAddToCollection: () -> Unit,
     onAddToWishlist: () -> Unit,
     onAddGameToCollection: (GameInfo) -> Unit,
@@ -808,7 +807,6 @@ fun ConsoleEncyclopediaScreen(
         val pid = ConsolePlatforms.platformId(preset.name)
         games = if (pid != null) GameCatalog.gamesForPlatform(pid) else emptyList()
     }
-    val has3D = ConsoleModels.urlFor(preset.name) != null
     val photoOverrides by vm.photoOverrides.collectAsState()
     val overrideUrl = photoOverrides[preset.name]
     val imageUrl = overrideUrl ?: ConsoleImages.urlFor(preset.name)
@@ -890,13 +888,18 @@ fun ConsoleEncyclopediaScreen(
                 item {
                     val shape = RoundedCornerShape(20.dp)
                     if (imageUrl != null) {
+                        var zoomed by remember(imageUrl) { mutableStateOf(false) }
                         AsyncImage(
                             model = imageUrl,
                             contentDescription = null,
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxWidth().height(200.dp).clip(shape)
                                 .border(1.dp, NeonBorder, shape)
+                                .clickable { zoomed = true }
                         )
+                        if (zoomed) {
+                            EnlargedPhotoDialog(imageUrl) { zoomed = false }
+                        }
                     } else {
                         Box(
                             Modifier.fillMaxWidth().height(160.dp).clip(shape)
@@ -944,19 +947,6 @@ fun ConsoleEncyclopediaScreen(
                                 context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(url)))
                             }
                         ) { Text(stringResource(R.string.repair_help_button)) }
-                    }
-                }
-                if (has3D) {
-                    item {
-                        Button(onClick = onView3D, modifier = Modifier.fillMaxWidth()) {
-                            Text(stringResource(R.string.view_3d_button), fontWeight = FontWeight.Bold)
-                        }
-                        Spacer(Modifier.height(4.dp))
-                        Text(
-                            stringResource(R.string.color_3d_hint),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = NeonCyan
-                        )
                     }
                 }
                 item {

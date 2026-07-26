@@ -75,8 +75,6 @@
     <string name="platforms_label">平台：%1$s</string>
     <string name="genre_label">类型：%1$s</string>
     <string name="gallery_title">📸 图库 (%1$d)</string>
-    <string name="view_3d_button">🧊  查看3D模型</string>
-    <string name="color_3d_hint">🎨 可在3D视图中自定义颜色（效果取决于模型）</string>
     <string name="remove_photo">移除照片</string>
     <string name="add_photos">添加照片</string>
 

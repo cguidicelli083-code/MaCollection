@@ -85,7 +85,6 @@ import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.macollection.data.AppPrefs
 import com.example.macollection.data.CollectionItem
-import com.example.macollection.data.ConsoleModels
 import com.example.macollection.data.AccessoryPreset
 import com.example.macollection.data.ConsolePreset
 import com.example.macollection.data.GameInfo
@@ -443,24 +442,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         val liveItems by vm.items.collectAsState()
         val liveWishlist by vm.wishlist.collectAsState()
         val item = (liveItems + liveWishlist).firstOrNull { it.id == snapshot.id } ?: snapshot
-        val url3d = if (item.type == ItemType.CONSOLE) ConsoleModels.urlFor(item.name) else null
         BackHandler { viewing = null }
         ItemDetailScreen(
             vm = vm,
             item = item,
-            model3dUrl = url3d,
             loadHistory = { vm.priceHistory(it) },
             onEdit = { editor = CollectionEditor(existing = item); viewing = null },
             onDelete = { vm.deleteCollectionItem(item); viewing = null },
-            onView3D = {
-                url3d?.let { u ->
-                    context.startActivity(
-                        Intent(context, Console3DActivity::class.java)
-                            .putExtra(Console3DActivity.EXTRA_URL, u)
-                            .putExtra(Console3DActivity.EXTRA_TITLE, item.name)
-                    )
-                }
-            },
             onBack = { viewing = null },
             canMoveToCollection = {
                 // Variante TEST : déplacer un souhait vers la collection est aussi plafonné.
@@ -479,15 +467,6 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         ConsoleEncyclopediaScreen(
             vm = vm,
             preset = preset,
-            onView3D = {
-                ConsoleModels.urlFor(preset.name)?.let { u ->
-                    context.startActivity(
-                        Intent(context, Console3DActivity::class.java)
-                            .putExtra(Console3DActivity.EXTRA_URL, u)
-                            .putExtra(Console3DActivity.EXTRA_TITLE, preset.name)
-                    )
-                }
-            },
             onAddToCollection = {
                 // Variante TEST : l'ajout depuis l'encyclopédie est aussi plafonné.
                 if (testLimitReached) {

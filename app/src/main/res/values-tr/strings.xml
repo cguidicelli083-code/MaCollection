@@ -75,8 +75,6 @@
     <string name="platforms_label">Platformlar: %1$s</string>
     <string name="genre_label">Tür: %1$s</string>
     <string name="gallery_title">📸 Galeri (%1$d)</string>
-    <string name="view_3d_button">🧊  3D olarak görüntüle</string>
-    <string name="color_3d_hint">🎨 3D görünümde renk özelleştirilebilir (görüntü modele bağlıdır)</string>
     <string name="remove_photo">Fotoğrafı kaldır</string>
     <string name="add_photos">Fotoğraf ekle</string>
 

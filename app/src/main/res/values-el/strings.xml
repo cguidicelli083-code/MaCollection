@@ -75,8 +75,6 @@
     <string name="platforms_label">Πλατφόρμες: %1$s</string>
     <string name="genre_label">Είδος: %1$s</string>
     <string name="gallery_title">📸 Συλλογή φωτογραφιών (%1$d)</string>
-    <string name="view_3d_button">🧊  Προβολή σε 3D</string>
-    <string name="color_3d_hint">🎨 Το χρώμα αλλάζει στην προβολή 3D (η απόδοση εξαρτάται από το μοντέλο)</string>
     <string name="remove_photo">Αφαίρεση φωτογραφίας</string>
     <string name="add_photos">Προσθήκη φωτογραφιών</string>
 

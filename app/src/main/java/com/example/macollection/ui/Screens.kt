@@ -156,9 +156,6 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import com.example.macollection.data.MediaUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -521,11 +518,9 @@ fun GameTrailerPlayer(url: String, modifier: Modifier = Modifier) {
 fun ItemDetailScreen(
     vm: AppViewModel,
     item: CollectionItem,
-    model3dUrl: String?,
     loadHistory: suspend (Long) -> List<PriceHistory>,
     onEdit: () -> Unit,
     onDelete: () -> Unit,
-    onView3D: () -> Unit,
     onBack: () -> Unit,
     /** Renvoie false pour bloquer le passage souhait -> collection (ex. limite de la version de
      * test) : appelé avant le déplacement, qui n'a lieu que si la fonction renvoie true. */
@@ -804,22 +799,6 @@ fun ItemDetailScreen(
                     }
                 }
 
-                if (item.type == ItemType.CONSOLE && model3dUrl != null) {
-                    Spacer(Modifier.height(18.dp))
-                    Button(
-                        onClick = onView3D,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text(stringResource(R.string.view_3d_button), fontWeight = FontWeight.Bold)
-                    }
-                    Spacer(Modifier.height(4.dp))
-                    Text(
-                        stringResource(R.string.color_3d_hint),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = NeonCyan
-                    )
-                }
-
                 Spacer(Modifier.height(14.dp))
                 Row(
                     Modifier.fillMaxWidth(),
@@ -929,114 +908,6 @@ private fun HeroVisual(item: CollectionItem) {
         }
     }
 }
-
-// ---------------------------------------------------------------------------
-// Visualiseur 3D (WebView + <model-viewer> de Google)
-// ---------------------------------------------------------------------------
-
-@Composable
-fun Console3DScreen(
-    modelUrl: String,
-    title: String,
-    onBack: () -> Unit
-) {
-    GamerScreenBackground {
-        Scaffold(
-            containerColor = Color.Transparent,
-            topBar = {
-                TopAppBar(
-                    title = { Text(title, fontWeight = FontWeight.Bold) },
-                    navigationIcon = {
-                        IconButton(onClick = onBack) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back), tint = Color.White)
-                        }
-                    },
-                    colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color.Transparent,
-                        titleContentColor = Color.White
-                    )
-                )
-            }
-        ) { p ->
-            AndroidView(
-                modifier = Modifier.padding(p).fillMaxSize(),
-                factory = { ctx ->
-                    WebView(ctx).apply {
-                        settings.javaScriptEnabled = true
-                        settings.domStorageEnabled = true
-                        settings.mediaPlaybackRequiresUserGesture = false
-                        settings.loadWithOverviewMode = true
-                        settings.useWideViewPort = true
-                        setBackgroundColor(0xFF0B0B14.toInt())
-                        setLayerType(android.view.View.LAYER_TYPE_HARDWARE, null)
-                        webChromeClient = object : WebChromeClient() {
-                            override fun onConsoleMessage(m: android.webkit.ConsoleMessage): Boolean {
-                                android.util.Log.d(
-                                    "MC3D",
-                                    "${m.message()} @${m.sourceId()}:${m.lineNumber()}"
-                                )
-                                return true
-                            }
-                        }
-                        webViewClient = object : WebViewClient() {
-                            override fun onPageFinished(view: WebView?, url: String?) {
-                                android.util.Log.d("MC3D", "pageFinished $url")
-                            }
-                            override fun onReceivedError(
-                                view: WebView?,
-                                request: android.webkit.WebResourceRequest?,
-                                error: android.webkit.WebResourceError?
-                            ) {
-                                android.util.Log.e("MC3D", "err ${error?.description} ${request?.url}")
-                            }
-                        }
-                        // DIAGNOSTIC : test model-viewer + modèle standard + sondes WebGL.
-                        loadDataWithBaseURL(
-                            "https://modelviewer.dev/",
-                            diagnosticHtml(),
-                            "text/html",
-                            "UTF-8",
-                            null
-                        )
-                    }
-                }
-            )
-        }
-    }
-}
-
-private fun diagnosticHtml(): String = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-      <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
-      <style>
-        html, body { margin: 0; height: 100%; background: #FF0000; }
-        model-viewer { width: 100%; height: 100%; background-color: transparent; }
-      </style>
-    </head>
-    <body>
-      <model-viewer id="mv"
-        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-        camera-controls auto-rotate></model-viewer>
-      <script>
-        try {
-          var c = document.createElement('canvas');
-          var gl = c.getContext('webgl2') || c.getContext('webgl');
-          console.log('WEBGL_SUPPORTED=' + (!!gl));
-        } catch (e) { console.log('WEBGL_CHECK_FAIL=' + e); }
-        var mv = document.getElementById('mv');
-        mv.addEventListener('load', function () { console.log('MODEL_LOADED'); });
-        mv.addEventListener('error', function (e) { console.log('MODEL_ERROR=' + JSON.stringify(e && e.detail)); });
-        window.addEventListener('error', function (e) { console.log('JS_ERROR=' + e.message); });
-        setTimeout(function () {
-          console.log('MV_DEFINED=' + (!!customElements.get('model-viewer')));
-        }, 3000);
-      </script>
-    </body>
-    </html>
-""".trimIndent()
 
 @Composable
 private fun rememberTilt(): Pair<Float, Float> {

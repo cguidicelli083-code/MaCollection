@@ -75,8 +75,6 @@
     <string name="platforms_label">プラットフォーム: %1$s</string>
     <string name="genre_label">ジャンル: %1$s</string>
     <string name="gallery_title">📸 ギャラリー (%1$d)</string>
-    <string name="view_3d_button">🧊  3Dで見る</string>
-    <string name="color_3d_hint">🎨 3D表示で色を変更できます（表示はモデルによって異なります）</string>
     <string name="remove_photo">写真を削除</string>
     <string name="add_photos">写真を追加</string>
 

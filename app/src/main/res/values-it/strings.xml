@@ -75,8 +75,6 @@
     <string name="platforms_label">Piattaforme: %1$s</string>
     <string name="genre_label">Genere: %1$s</string>
     <string name="gallery_title">📸 Galleria (%1$d)</string>
-    <string name="view_3d_button">🧊  Visualizza in 3D</string>
-    <string name="color_3d_hint">🎨 Colore personalizzabile nella vista 3D (il rendering dipende dal modello)</string>
     <string name="remove_photo">Rimuovi la foto</string>
     <string name="add_photos">Aggiungi foto</string>
 

@@ -8,8 +8,7 @@ data class ConsolePreset(
     val kind: String,        // "Salon" ou "Portable"
     val cpu: String,
     val memory: String,
-    val description: String,
-    val model3dUrl: String? = null   // modèle 3D .glb (si disponible)
+    val description: String
 ) {
     /** Texte de fiche prêt à stocker dans l'objet de la collection. */
     fun specsText(): String = buildString {
