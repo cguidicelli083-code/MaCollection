@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">Desde los ajustes (icono de engranaje) → Copia de seguridad, importa un archivo Excel (.xlsx) o CSV de una colección existente, aunque sus columnas no coincidan con el formato de la app: indica a qué columna corresponde cada campo (nombre, plataforma, estado, precio…), revisa la vista previa de los objetos detectados y confirma la importación.</string>
     <string name="onboarding_page14_title">✅ Selección múltiple en la Enciclopedia</string>
     <string name="onboarding_page14_text">En la Enciclopedia, toca el icono ✅ arriba a la derecha para activar la selección múltiple: marca varias consolas o accesorios y añádelos todos de golpe a tu colección o a tus deseos con la barra que aparece abajo.</string>
-    <string name="retry_scan_button">🔄 Reintentar</string>
-    <string name="retry_no_alternative_message">No se detectó ninguna otra pista en esta foto.</string>
     <string name="options_tips">💡 Consejos</string>
     <string name="tips_dialog_title">💡 Consejos</string>
     <string name="tips_crop_title">✂️ Recortar bien la foto</string>

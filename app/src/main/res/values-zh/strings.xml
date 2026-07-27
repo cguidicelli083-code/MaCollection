@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">在设置（齿轮图标）→备份中，导入一份现有收藏的Excel文件(.xlsx)或CSV文件，即使其列与本应用的格式不同也没关系：只需指出文件中的哪一列对应每个字段（名称、平台、状态、价格等），查看检测到物品的预览，然后确认导入。</string>
     <string name="onboarding_page14_title">✅ 图鉴中的多选</string>
     <string name="onboarding_page14_text">在图鉴中,点击右上角的✅图标即可开启多选:勾选多台主机或配件,然后通过底部出现的操作栏一次性将它们全部添加到收藏或心愿单。</string>
-    <string name="retry_scan_button">🔄 重试</string>
-    <string name="retry_no_alternative_message">在这张照片上未检测到其他线索。</string>
     <string name="options_tips">💡 提示</string>
     <string name="tips_dialog_title">💡 提示</string>
     <string name="tips_crop_title">✂️ 如何裁剪好照片</string>

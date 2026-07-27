@@ -30,34 +30,8 @@ object ScanTools {
         /** Jeu retrouvé en ligne (RAWG) à partir du texte lu (sinon null). */
         val gameMatch: GameInfo? = null,
         /** Console reconnue en même temps qu'un jeu (ex. cartouche) : à préremplir en "Console associée". */
-        val gameConsoleHint: String? = null,
-        /**
-         * Autres pistes plausibles trouvées sur la même photo (autres lignes de texte), pour le
-         * bouton « Réessayer » : permet d'essayer une autre détection sans recadrer à nouveau.
-         */
-        val alternatives: List<ScanCandidate> = emptyList()
+        val gameConsoleHint: String? = null
     )
-
-    /** Une piste de reconnaissance (texte/ligne) repérée sur la photo, pas encore résolue en détail. */
-    data class ScanCandidate(
-        val name: String,
-        val type: ItemType,
-        val gameMatch: GameInfo? = null,
-        val consolePresetName: String? = null,
-        val accessoryName: String? = null
-    )
-
-    /** Complète une piste alternative (détail RAWG si jeu) pour l'appliquer au formulaire. */
-    suspend fun resolveCandidate(candidate: ScanCandidate): ScanResult {
-        val detailed = candidate.gameMatch?.let { g -> g.sourceId?.let { id -> GameCatalog.detail(id) } ?: g }
-        return ScanResult(
-            barcode = null,
-            suggestedName = candidate.name,
-            consolePresetName = candidate.consolePresetName,
-            accessoryName = candidate.accessoryName,
-            gameMatch = detailed
-        )
-    }
 
     /** Scanner caméra : renvoie le code-barres lu, ou null si annulé / introuvable. */
     suspend fun scanCamera(context: Context): String? = try {
@@ -168,7 +142,6 @@ object ScanTools {
                 ?: GameInfo(sourceId = null, name = m.name, platforms = m.platformName.orEmpty(), genres = "", releaseYear = null, description = "", coverUrl = null, source = "igdb")
         }
         val gameMatch = scanDexGame ?: distinctCandidates.firstOrNull()?.first
-        val fuzzyAlternatives = if (scanDexGame != null) distinctCandidates else distinctCandidates.drop(1)
 
         var accessoryName: String? = null
         if (gameMatch == null) {
@@ -177,27 +150,9 @@ object ScanTools {
         val suggestedName = gameMatch?.name ?: accessoryName ?: consoleName ?: title
         val gameConsoleHint = if (gameMatch != null) consoleName else null
 
-        // Pistes alternatives pour le bouton « Réessayer » : les autres jeux candidats trouvés
-        // (moins bien classés), puis la console/l'accessoire reconnu s'il n'est pas déjà le
-        // résultat principal — même logique que pour le scan photo (cf. scanImage).
-        val alternatives = mutableListOf<ScanCandidate>()
-        fuzzyAlternatives.take(4).forEach { (g, _) ->
-            if (!g.name.equals(gameMatch?.name, ignoreCase = true)) alternatives += ScanCandidate(g.name, ItemType.JEU, gameMatch = g)
-        }
-        // La console reconnue reste une piste "Réessayer" tant qu'elle n'est pas déjà le résultat
-        // principal (jeu OU accessoire) : une boîte d'accessoire (ex. "Super Scope") porte presque
-        // toujours aussi le nom de la console compatible, donc elle est encore pertinente en repli.
-        if (gameMatch != null || accessoryName != null) {
-            consoleName?.let { alternatives += ScanCandidate(it, ItemType.CONSOLE, consolePresetName = it) }
-        }
-        accessoryName?.takeIf { it != suggestedName }?.let {
-            alternatives += ScanCandidate(it, ItemType.ACCESSOIRE, accessoryName = it)
-        }
-
-        Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName alternatives=${alternatives.map { it.name }}")
+        Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName")
         return ScanResult(
-            barcode, suggestedName, consoleName.takeIf { gameMatch == null && accessoryName == null }, accessoryName, gameMatch, gameConsoleHint,
-            alternatives = alternatives
+            barcode, suggestedName, consoleName.takeIf { gameMatch == null && accessoryName == null }, accessoryName, gameMatch, gameConsoleHint
         )
     }
 
@@ -347,25 +302,10 @@ object ScanTools {
             val gameConsoleHint = if (gameMatch != null) consoleName else null
             suggestedName = gameMatch?.name ?: consoleName ?: accessoryName ?: suggestedName ?: cleanLine
 
-            // Pistes alternatives pour le bouton « Réessayer » (sans le résultat déjà retenu) :
-            // les autres titres de jeu trouvés, puis la console/l'accessoire reconnu s'il n'est
-            // pas déjà le résultat principal.
-            val alternatives = mutableListOf<ScanCandidate>()
-            gameCandidates.drop(if (gameMatch != null) 1 else 0).forEach { g ->
-                if (g.sourceId != gameMatch?.sourceId) alternatives += ScanCandidate(g.name, ItemType.JEU, gameMatch = g)
-            }
-            if (gameMatch != null) {
-                consoleName?.let { alternatives += ScanCandidate(it, ItemType.CONSOLE, consolePresetName = it) }
-            }
-            accessoryName?.takeIf { it != suggestedName }?.let {
-                alternatives += ScanCandidate(it, ItemType.ACCESSOIRE, accessoryName = it)
-            }
-
             // NIVEAU 1 (OCR) concluant : correspondance console/accessoire/jeu trouvée -> on valide.
             if (gameMatch != null || consoleName != null || accessoryName != null) {
                 return ScanResult(
-                    barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint,
-                    alternatives = alternatives
+                    barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint
                 )
             }
         } catch (e: Exception) {

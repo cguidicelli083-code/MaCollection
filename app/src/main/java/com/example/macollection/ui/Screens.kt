@@ -1069,8 +1069,6 @@ fun AddCollectionForm(
     /** Photo telle que choisie/prise AVANT recadrage (galerie/caméra) : c'est elle qu'il faut
      * recadrer à nouveau (bouton « Recadrer »), pas le résultat déjà rogné une première fois. */
     initialOriginalCoverUri: String? = null,
-    /** Autres pistes de reconnaissance trouvées sur la même photo (bouton « Réessayer »). */
-    initialAlternatives: List<ScanTools.ScanCandidate> = emptyList(),
     isWishlist: Boolean = false
 ) {
     val isEdit = existing != null
@@ -1140,9 +1138,6 @@ fun AddCollectionForm(
     // Photo telle que prise/choisie AVANT recadrage : c'est elle qu'on recadre à nouveau (jamais
     // un recadrage d'un recadrage, qui réduit la marge disponible à chaque tentative).
     var originalCoverUri by remember { mutableStateOf(initialOriginalCoverUri ?: initialCoverUri) }
-    var remainingAlternatives by remember { mutableStateOf(initialAlternatives) }
-    var retryFeedback by remember { mutableStateOf<String?>(null) }
-    val noMoreAlternativesMessage = stringResource(R.string.retry_no_alternative_message)
 
     // Auto-remplissage quand le nom tapé/sélectionné à la main correspond exactement à une
     // console ou un accessoire du catalogue (même règle que le bouton "Choisir dans le
@@ -1281,7 +1276,6 @@ fun AddCollectionForm(
                             originalCoverUri = if (origUri != null) {
                                 withContext(Dispatchers.IO) { MediaUtils.copyToInternal(context, origUri) } ?: saved
                             } else saved
-                            remainingAlternatives = emptyList()
                         }
                     }
                 }
@@ -1339,8 +1333,6 @@ fun AddCollectionForm(
                         photoManuallySet = true
                         val r = runCatching { ScanTools.scanImage(context, Uri.parse(saved)) }.getOrNull()
                         applyScanResult(r)
-                        remainingAlternatives = r?.alternatives ?: emptyList()
-                        retryFeedback = null
                     }
                     retryingScan = false
                 }
@@ -1352,30 +1344,9 @@ fun AddCollectionForm(
         name = ""; brand = ""; year = ""; genre = ""; platform = ""; barcode = ""; description = ""
         rawgId = null
         type = AppPrefs.defaultType()
-        remainingAlternatives = emptyList()
-        retryFeedback = null
         recropAndRescanLauncher.launch(
             CropImageContractOptions(Uri.parse(source), CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK", initialCropWindowPaddingRatio = 0.2f))
         )
-    }
-
-    // "Réessayer" : essaie une AUTRE piste détectée sur la même photo (autre ligne de texte),
-    // sans recadrer à nouveau — beaucoup plus rapide quand l'OCR a juste mal choisi entre
-    // plusieurs textes visibles sur la même photo.
-    fun retryNextAlternative() {
-        val next = remainingAlternatives.firstOrNull()
-        if (next == null) {
-            retryFeedback = noMoreAlternativesMessage
-            return
-        }
-        remainingAlternatives = remainingAlternatives.drop(1)
-        scope.launch {
-            retryingScan = true
-            val r = runCatching { ScanTools.resolveCandidate(next) }.getOrNull()
-            applyScanResult(r)
-            retryFeedback = null
-            retryingScan = false
-        }
     }
 
     // Sélecteur de photo personnelle (galerie, sans permission).
@@ -1688,28 +1659,6 @@ fun AddCollectionForm(
                         enabled = !retryingScan
                     ) { Text(stringResource(R.string.recrop_button)) }
                 }
-            }
-        }
-        // Bouton "Réessayer" : indépendant de la présence d'une photo (contrairement à
-        // "Recadrer"), car un scan code-barres n'a jamais de photo mais peut quand même avoir
-        // trouvé plusieurs pistes (jeu/console/accessoire) à proposer en repli.
-        if (remainingAlternatives.isNotEmpty() || retryFeedback != null) {
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState())
-            ) {
-                TextButton(
-                    onClick = { retryNextAlternative() },
-                    enabled = !retryingScan
-                ) { Text(stringResource(R.string.retry_scan_button)) }
-                if (retryingScan) {
-                    Spacer(Modifier.width(8.dp))
-                    CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
-                }
-            }
-            retryFeedback?.let {
-                Text(it, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
             }
         }
 

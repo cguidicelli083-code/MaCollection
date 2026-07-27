@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">Ayarlar (dişli simgesi) → Yedekleme bölümünden, mevcut bir koleksiyonun Excel (.xlsx) veya CSV dosyasını içe aktar — sütunları uygulamanın biçimiyle eşleşmese bile: sadece dosyandaki hangi sütunun hangi alana (ad, platform, durum, fiyat…) karşılık geldiğini belirt, tespit edilen nesnelerin önizlemesini kontrol et ve içe aktarmayı onayla.</string>
     <string name="onboarding_page14_title">✅ Ansiklopedide çoklu seçim</string>
     <string name="onboarding_page14_text">Ansiklopedi\'de sağ üstteki ✅ simgesine dokunarak çoklu seçimi aç: birden fazla konsol veya aksesuarı işaretle, ardından altta görünen çubukla hepsini tek seferde koleksiyonuna veya isteklerine ekle.</string>
-    <string name="retry_scan_button">🔄 Yeniden dene</string>
-    <string name="retry_no_alternative_message">Bu fotoğrafta başka bir ipucu tespit edilmedi.</string>
     <string name="options_tips">💡 İpuçları</string>
     <string name="tips_dialog_title">💡 İpuçları</string>
     <string name="tips_crop_title">✂️ Fotoğrafı iyi kırpmak</string>

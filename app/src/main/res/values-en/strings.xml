@@ -216,8 +216,6 @@
     <string name="onboarding_page13_text">From settings (gear icon) → Backup, import an Excel (.xlsx) or CSV file from an existing collection, even if its columns don\'t match the app\'s format: just tell us which column corresponds to each field (name, platform, condition, price…), check the preview of detected items, then confirm the import.</string>
     <string name="onboarding_page14_title">✅ Multi-select in the Encyclopedia</string>
     <string name="onboarding_page14_text">In the Encyclopedia, tap the ✅ icon at the top right to turn on multi-select: check off several consoles or accessories, then add them all at once to your collection or wishlist with the bar that appears at the bottom.</string>
-    <string name="retry_scan_button">🔄 Retry</string>
-    <string name="retry_no_alternative_message">No other lead detected on this photo.</string>
     <string name="options_tips">💡 Tips</string>
     <string name="tips_dialog_title">💡 Tips</string>
     <string name="tips_crop_title">✂️ Cropping your photo well</string>

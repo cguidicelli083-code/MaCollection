@@ -165,7 +165,6 @@ data class CollectionEditor(
     val gameConsoleHint: String? = null,
     val coverUri: String? = null,
     val originalCoverUri: String? = null,
-    val alternatives: List<ScanTools.ScanCandidate> = emptyList(),
     val isWishlist: Boolean = false
 )
 
@@ -294,7 +293,6 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         gameConsoleHint = r?.gameConsoleHint,
                         coverUri = saved,
                         originalCoverUri = originalSaved,
-                        alternatives = r?.alternatives ?: emptyList(),
                         isWishlist = chooserForWishlist
                     )
                 }
@@ -433,7 +431,6 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             initialGameConsoleHint = ed.gameConsoleHint,
             initialCoverUri = ed.coverUri,
             initialOriginalCoverUri = ed.originalCoverUri,
-            initialAlternatives = ed.alternatives,
             isWishlist = ed.isWishlist,
             onSave = { item, photos -> vm.saveCollectionItem(item, photos); editor = null },
             onCancel = { editor = null }
@@ -578,8 +575,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                                     accessoryName = r?.accessoryName,
                                     gameMatch = r?.gameMatch,
                                     gameConsoleHint = r?.gameConsoleHint,
-                                    isWishlist = chooserForWishlist,
-                                    alternatives = r?.alternatives ?: emptyList()
+                                    isWishlist = chooserForWishlist
                                 )
                             }
                             // Suite "complète" (bases à quota partagé) : seulement si le quota

@@ -282,8 +282,6 @@
     <string name="options_background">🖼️ Image de fond</string>
     <string name="options_background_reset">↩️ Fond par défaut</string>
     <string name="reset_photo_button">↩️ Photo par défaut</string>
-    <string name="retry_scan_button">🔄 Réessayer</string>
-    <string name="retry_no_alternative_message">Aucune autre piste détectée sur cette photo.</string>
     <string name="options_tips">💡 Astuces</string>
     <string name="tips_dialog_title">💡 Astuces</string>
     <string name="tips_recognition_title">📸 Réussir la reconnaissance par photo</string>

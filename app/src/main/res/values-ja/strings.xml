@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">設定（歯車アイコン）→バックアップから、既存コレクションのExcelファイル(.xlsx)またはCSVファイルをインポートできます。列が本アプリの形式と異なっていても大丈夫：各項目（名前、プラットフォーム、状態、価格など）がどの列に対応するか指定し、検出されたアイテムのプレビューを確認してからインポートを確定してください。</string>
     <string name="onboarding_page14_title">✅ 図鑑での複数選択</string>
     <string name="onboarding_page14_text">図鑑画面右上の✅アイコンをタップすると複数選択モードになります。複数のコンソールやアクセサリーにチェックを入れ、下に表示されるバーからまとめてコレクションや欲しいものリストに追加できます。</string>
-    <string name="retry_scan_button">🔄 再試行</string>
-    <string name="retry_no_alternative_message">この写真には他の候補が見つかりませんでした。</string>
     <string name="options_tips">💡 ヒント</string>
     <string name="tips_dialog_title">💡 ヒント</string>
     <string name="tips_crop_title">✂️ 写真を上手に切り取る</string>

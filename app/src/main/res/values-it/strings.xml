@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">Dalle impostazioni (icona ingranaggio) → Backup, importa un file Excel (.xlsx) o CSV di una collezione esistente, anche se le sue colonne non corrispondono al formato dell\'app: indica semplicemente a quale colonna corrisponde ciascun campo (nome, piattaforma, condizione, prezzo…), controlla l\'anteprima degli oggetti rilevati e confermi l\'importazione.</string>
     <string name="onboarding_page14_title">✅ Selezione multipla nell’Enciclopedia</string>
     <string name="onboarding_page14_text">Nell’Enciclopedia, tocca l’icona ✅ in alto a destra per attivare la selezione multipla: seleziona più console o accessori, poi aggiungili tutti insieme alla tua collezione o ai desideri con la barra che appare in basso.</string>
-    <string name="retry_scan_button">🔄 Riprova</string>
-    <string name="retry_no_alternative_message">Nessun\'altra pista rilevata su questa foto.</string>
     <string name="options_tips">💡 Consigli</string>
     <string name="tips_dialog_title">💡 Consigli</string>
     <string name="tips_crop_title">✂️ Ritagliare bene la foto</string>

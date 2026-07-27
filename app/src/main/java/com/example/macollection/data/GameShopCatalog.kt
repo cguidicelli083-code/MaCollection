@@ -44,7 +44,7 @@ object GameShopCatalog {
      * Lookup, Barcode Spider — ~100 requêtes/jour chacune) : sans ce frein, quelques utilisateurs
      * actifs suffiraient à épuiser ce quota commun en quelques minutes le matin.
      */
-    const val FREE_DAILY_BARCODE_SCANS = 5
+    const val FREE_DAILY_BARCODE_SCANS = 8
 
     // Identifiants des jeux d'arcade (utilisés à la fois pour le déblocage et le high-score).
     const val PONG = "pong"

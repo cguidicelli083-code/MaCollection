@@ -214,8 +214,6 @@
     <string name="onboarding_page13_text">Importiere in den Einstellungen (Zahnrad) → Sicherung eine Excel-Datei (.xlsx) oder CSV einer bestehenden Sammlung, auch wenn ihre Spalten nicht dem Format der App entsprechen: gib einfach an, welcher Spalte jedes Feld entspricht (Name, Plattform, Zustand, Preis…), prüfe die Vorschau der erkannten Objekte und bestätige den Import.</string>
     <string name="onboarding_page14_title">✅ Mehrfachauswahl im Lexikon</string>
     <string name="onboarding_page14_text">Tippe im Lexikon oben rechts auf das ✅-Symbol, um die Mehrfachauswahl zu aktivieren: markiere mehrere Konsolen oder Zubehörteile und füge sie über die unten angezeigte Leiste alle auf einmal zu deiner Sammlung oder deiner Wunschliste hinzu.</string>
-    <string name="retry_scan_button">🔄 Erneut versuchen</string>
-    <string name="retry_no_alternative_message">Keine andere Spur auf diesem Foto erkannt.</string>
     <string name="options_tips">💡 Tipps</string>
     <string name="tips_dialog_title">💡 Tipps</string>
     <string name="tips_crop_title">✂️ Foto richtig zuschneiden</string>
