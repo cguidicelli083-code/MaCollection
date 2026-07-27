@@ -50,7 +50,6 @@ import com.example.macollection.ui.AD_REWARD_POINTS
 import com.example.macollection.ui.GameViewModel
 import com.example.macollection.ui.theme.AppTheme
 import com.example.macollection.ui.GamerScreenBackground
-import com.example.macollection.ui.ads.AdBanner
 import com.example.macollection.ui.ads.watchRewardedAdForPoints
 import com.example.macollection.ui.theme.CardGradient
 import com.example.macollection.ui.theme.NeonCyan
@@ -84,7 +83,6 @@ fun GamesHubScreen(
 ) {
     val points by vm.points.collectAsState()
     val unlockedGames by vm.unlockedGameIds.collectAsState()
-    val isAdsReduced by vm.isAdsReduced.collectAsState()
     val isPremium by vm.isPremiumAllAccess.collectAsState()
     val context = LocalContext.current
     var comingSoonMessage by remember { mutableStateOf<String?>(null) }
@@ -223,9 +221,6 @@ fun GamesHubScreen(
                     }
                 }
                 Spacer(Modifier.height(12.dp))
-            }
-            if (BuildConfig.ADS_ENABLED && !isAdsReduced && !isPremium) {
-                AdBanner()
             }
         }
     }

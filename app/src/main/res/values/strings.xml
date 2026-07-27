@@ -5,7 +5,7 @@
     <string name="add_item_dialog_title">Ajouter un objet</string>
     <string name="cancel">Annuler</string>
     <string name="close">Fermer</string>
-    <string name="scan_barcode_option">📷  Scanner un code-barres</string>
+    <string name="scan_barcode_option">📷  Scanner un code-barres de jeu</string>
     <string name="choose_photo_option">🖼️  Choisir une photo</string>
     <string name="take_photo_option">📸  Prendre une photo</string>
     <string name="manual_entry_option">✏️  Saisie manuelle</string>
@@ -244,7 +244,7 @@
     <string name="onboarding_page1_title">Bienvenue dans Ma Collection 🎮</string>
     <string name="onboarding_page1_text">Cette appli t\'aide à cataloguer ta collection de jeux, consoles et accessoires rétro, avec reconnaissance automatique par photo et estimation des cotes.</string>
     <string name="onboarding_page2_title">📷 Ajouter un objet</string>
-    <string name="onboarding_page2_text">Appuie sur le bouton + pour ajouter un objet : scanne un code-barres, prends une photo, choisis-en une dans ta galerie, ou saisis tout à la main. L\'appli essaie de reconnaître automatiquement le nom, le type et la console associée.</string>
+    <string name="onboarding_page2_text">Appuie sur le bouton + pour ajouter un objet : scanne un code-barres (jeux uniquement), prends une photo (jeux, consoles et accessoires), choisis-en une dans ta galerie, ou saisis tout à la main. L\'appli essaie de reconnaître automatiquement le nom, le type et la console associée.</string>
     <string name="onboarding_page3_title">✏️ Astuce : bien cadrer la photo</string>
     <string name="onboarding_page3_text">Pour une meilleure reconnaissance, cadre la photo bien serrée sur le logo ou le titre, évite les reflets et le flou — plus le texte est net et lisible, plus l\'identification automatique sera fiable. Pour un jeu trouvé via la recherche en ligne, la photo principale affichée sera la vraie jaquette.</string>
     <string name="onboarding_page4_title">📚 Encyclopédie</string>

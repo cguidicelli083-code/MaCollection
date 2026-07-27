@@ -28,6 +28,9 @@ object AppPrefs {
     private const val KEY_AD_REWARDS_TODAY = "adRewardsToday"
     private const val KEY_AD_REWARDS_DAY = "adRewardsDay"
     private const val KEY_DAILY_CHEST_LAST_OPENED = "dailyChestLastOpened"
+    private const val KEY_BARCODE_SCANS_TODAY = "barcodeScansToday"
+    private const val KEY_BARCODE_BONUS_TODAY = "barcodeBonusScansToday"
+    private const val KEY_BARCODE_SCANS_DAY = "barcodeScansDay"
 
     /**
      * Image de fond personnalisée (URI "file://..."), ou null pour le dégradé par défaut.
@@ -123,6 +126,13 @@ object AppPrefs {
      */
     val dailyChestLastOpened = mutableStateOf(0L)
 
+    /** Scans code-barres déjà effectués AUJOURD'HUI (remis à 0 au changement de jour calendaire). */
+    val barcodeScansToday = mutableStateOf(0)
+
+    /** Scans bonus débloqués AUJOURD'HUI via pub récompensée, en plus du quota gratuit
+     *  ([GameShopCatalog.FREE_DAILY_BARCODE_SCANS]) — remis à 0 au changement de jour aussi. */
+    val barcodeBonusScansToday = mutableStateOf(0)
+
     fun load(context: Context) {
         val p = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         language = p.getString(KEY_LANG, "fr") ?: "fr"
@@ -148,6 +158,13 @@ object AppPrefs {
         lastBackupUri.value = p.getString(KEY_LAST_BACKUP_URI, null)
         adRewardsToday.value = if (p.getLong(KEY_AD_REWARDS_DAY, 0L) == todayEpochDay()) p.getInt(KEY_AD_REWARDS_TODAY, 0) else 0
         dailyChestLastOpened.value = p.getLong(KEY_DAILY_CHEST_LAST_OPENED, 0L)
+        if (p.getLong(KEY_BARCODE_SCANS_DAY, 0L) == todayEpochDay()) {
+            barcodeScansToday.value = p.getInt(KEY_BARCODE_SCANS_TODAY, 0)
+            barcodeBonusScansToday.value = p.getInt(KEY_BARCODE_BONUS_TODAY, 0)
+        } else {
+            barcodeScansToday.value = 0
+            barcodeBonusScansToday.value = 0
+        }
     }
 
     private fun todayEpochDay(): Long = System.currentTimeMillis() / 86_400_000L
@@ -174,6 +191,44 @@ object AppPrefs {
         adRewardsToday.value = updated
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit().putInt(KEY_AD_REWARDS_TODAY, updated).apply()
+    }
+
+    private fun resetBarcodeScansIfNewDay(context: Context) {
+        val today = todayEpochDay()
+        val p = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        if (p.getLong(KEY_BARCODE_SCANS_DAY, 0L) != today) {
+            barcodeScansToday.value = 0
+            barcodeBonusScansToday.value = 0
+            p.edit()
+                .putInt(KEY_BARCODE_SCANS_TODAY, 0)
+                .putInt(KEY_BARCODE_BONUS_TODAY, 0)
+                .putLong(KEY_BARCODE_SCANS_DAY, today)
+                .apply()
+        }
+    }
+
+    /** true si le quota gratuit du jour (+ bonus pub déjà débloqués) n'est pas encore atteint. */
+    fun canScanBarcodeFree(context: Context): Boolean {
+        resetBarcodeScansIfNewDay(context)
+        return barcodeScansToday.value < GameShopCatalog.FREE_DAILY_BARCODE_SCANS + barcodeBonusScansToday.value
+    }
+
+    /** À appeler à chaque scan code-barres effectivement lancé (avant même de connaître le résultat). */
+    fun recordBarcodeScanUsed(context: Context) {
+        resetBarcodeScansIfNewDay(context)
+        val updated = barcodeScansToday.value + 1
+        barcodeScansToday.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putInt(KEY_BARCODE_SCANS_TODAY, updated).apply()
+    }
+
+    /** À appeler seulement après un visionnage complet confirmé d'une pub récompensée. */
+    fun recordBarcodeBonusScanGranted(context: Context) {
+        resetBarcodeScansIfNewDay(context)
+        val updated = barcodeBonusScansToday.value + 1
+        barcodeBonusScansToday.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putInt(KEY_BARCODE_BONUS_TODAY, updated).apply()
     }
 
     private const val CHEST_COOLDOWN_MS = 24 * 60 * 60 * 1000L

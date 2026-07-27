@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Bir öğe ekle</string>
     <string name="cancel">İptal</string>
     <string name="close">Kapat</string>
-    <string name="scan_barcode_option">📷  Barkod tara</string>
+    <string name="scan_barcode_option">📷  Oyun barkodu tara</string>
     <string name="choose_photo_option">🖼️  Fotoğraf seç</string>
     <string name="take_photo_option">📸  Fotoğraf çek</string>
     <string name="manual_entry_option">✏️  Manuel giriş</string>

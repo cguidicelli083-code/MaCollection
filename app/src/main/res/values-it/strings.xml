@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Aggiungi un oggetto</string>
     <string name="cancel">Annulla</string>
     <string name="close">Chiudi</string>
-    <string name="scan_barcode_option">📷  Scansiona un codice a barre</string>
+    <string name="scan_barcode_option">📷  Scansiona un codice a barre di un gioco</string>
     <string name="choose_photo_option">🖼️  Scegli una foto</string>
     <string name="take_photo_option">📸  Scatta una foto</string>
     <string name="manual_entry_option">✏️  Inserimento manuale</string>

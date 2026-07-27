@@ -17,6 +17,8 @@ object ConsoleImages {
         "NES" to "file:///android_asset/console_photos/nes.webp",
         "Master System" to "https://media.sketchfab.com/models/0ec998c9b9de4e7f956cab56bbca3c0f/thumbnails/3455e37a767440c8945e435aafd5baf3/b8901a3b278949789df1b56745f967e5.jpeg",
         "PC Engine" to "https://media.sketchfab.com/models/694dd99905564d2b8f90d8b5f3ace002/thumbnails/7f6ebc84b918489f8aab138fd8e2b74d/720x405.jpeg",
+        "PC Engine CoreGrafx" to "file:///android_asset/console_photos/pce_coregrafx.webp",
+        "PC Engine CoreGrafx II" to "file:///android_asset/console_photos/pce_coregrafx2.webp",
         "Mega Drive" to "https://media.sketchfab.com/models/bceba7d09cd147da8e25ff3f5c238b37/thumbnails/7ec21a3504554b36b06938c54d7a6574/fd4ed7e2b33743ab9e4fef44f3f9e128.jpeg",
         "SuperGrafx" to "https://media.sketchfab.com/models/4dcd673206c244a9ab423de50e420366/thumbnails/ecd5c002168940f99853949dd0b0815b/021ba8a93afb40d183ad617c99f385d9.jpeg",
         "Game Boy" to "file:///android_asset/console_photos/game_boy.webp",

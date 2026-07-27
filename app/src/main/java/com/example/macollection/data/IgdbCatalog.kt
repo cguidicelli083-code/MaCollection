@@ -146,6 +146,35 @@ object IgdbCatalog {
         return emptyList()
     }
 
+    /**
+     * Fiche IGDB exacte pour l'identifiant [id] (pas une recherche floue) : utilisée quand
+     * l'identifiant est déjà connu avec certitude (ex. [ScanDexApi], qui renvoie l'id IGDB déjà
+     * apparié à un code-barres par leur propre base), pour récupérer la fiche complète sans
+     * repasser par le scoring de confiance appliqué aux résultats de recherche par texte.
+     */
+    suspend fun byId(id: Long): GameInfo? {
+        if (!isConfigured()) return null
+        val body = buildString {
+            append("fields name, first_release_date, summary, cover.image_id, genres.name, platforms.name, ")
+            append("involved_companies.company.name, involved_companies.publisher; ")
+            append("where id = ").append(id).append(";")
+        }
+        repeat(2) { attempt ->
+            val bearer = bearer() ?: return null
+            try {
+                return api.games(clientId, "Bearer $bearer", body.toRequestBody(TEXT))
+                    .firstOrNull()?.toGameInfo()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                android.util.Log.e("ScanBarcode", "IGDB byId failed (attempt $attempt): ${e.javaClass.simpleName}: ${e.message}", e)
+                token = null
+                if (attempt == 1) return null
+            }
+        }
+        return null
+    }
+
     private fun normTitle(s: String): String =
         s.lowercase().replace(Regex("[^\\p{L}\\p{Nd}]+"), " ").trim()
 

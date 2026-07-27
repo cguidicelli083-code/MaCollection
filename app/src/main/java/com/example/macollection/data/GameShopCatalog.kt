@@ -36,6 +36,16 @@ object GameShopCatalog {
      */
     const val DAILY_AD_REWARD_CAP = 8
 
+    /**
+     * Nombre de scans code-barres gratuits par jour avant de devoir regarder une pub récompensée
+     * pour continuer (voir [AppPrefs.canScanBarcodeFree]) — jamais Premium/V2SP, toujours
+     * illimité pour eux. Sert surtout à répartir dans le temps le quota QUOTIDIEN PARTAGÉ (par
+     * toute l'appli, pas par utilisateur) des bases de codes-barres gratuites (UPCitemdb, Barcode
+     * Lookup, Barcode Spider — ~100 requêtes/jour chacune) : sans ce frein, quelques utilisateurs
+     * actifs suffiraient à épuiser ce quota commun en quelques minutes le matin.
+     */
+    const val FREE_DAILY_BARCODE_SCANS = 5
+
     // Identifiants des jeux d'arcade (utilisés à la fois pour le déblocage et le high-score).
     const val PONG = "pong"
     const val ARKANOID = "arkanoid"

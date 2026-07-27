@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Προσθήκη αντικειμένου</string>
     <string name="cancel">Άκυρο</string>
     <string name="close">Κλείσιμο</string>
-    <string name="scan_barcode_option">📷  Σκανάρισμα γραμμωτού κώδικα</string>
+    <string name="scan_barcode_option">📷  Σκανάρισμα γραμμωτού κώδικα παιχνιδιού</string>
     <string name="choose_photo_option">🖼️  Επιλογή φωτογραφίας</string>
     <string name="take_photo_option">📸  Λήψη φωτογραφίας</string>
     <string name="manual_entry_option">✏️  Χειροκίνητη καταχώριση</string>

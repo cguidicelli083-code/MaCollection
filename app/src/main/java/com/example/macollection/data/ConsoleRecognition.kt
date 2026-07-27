@@ -138,6 +138,8 @@ object ConsoleRecognition {
         listOf("supergrafx", "super grafx", "sgfx") to "SuperGrafx",
         listOf("turbografx", "turbo grafx", "tg16", "tg-16") to "TurboGrafx-16",
         listOf("turboexpress", "turbo express", "tg-gt") to "TurboExpress",
+        listOf("core grafx ii", "coregrafx ii", "core grafx 2", "coregrafx 2") to "PC Engine CoreGrafx II",
+        listOf("core grafx", "coregrafx") to "PC Engine CoreGrafx",
         listOf("pc engine", "pce") to "PC Engine",
         listOf("atari 2600", "2600") to "2600 (VCS)",
         listOf("atari 5200", "5200") to "5200",
@@ -163,18 +165,24 @@ object ConsoleRecognition {
      * sous-chaîne classique (déjà sans risque, et nécessaire pour les variantes sans espace fixe).
      */
     private fun matchesKey(text: String, key: String): Boolean {
-        return if (!key.contains(' ') && key.length <= 5) {
-            Regex("\\b${Regex.escape(key)}\\b").containsMatchIn(text)
+        // Un tiret joue souvent le même rôle qu'une espace dans ces libellés ("PC-Engine" vs
+        // "PC Engine", "Core-Grafx" vs "Core Grafx") : on l'aplatit aussi des deux côtés, sinon un
+        // titre d'annonce stylisé avec un tiret ne matchait plus du tout (ex. "Pc-engine Core Grafx
+        // II" scanné par code-barres, jamais reconnu comme console faute de "pc engine" littéral).
+        val normalizedKey = key.replace(Regex("[\\s-]+"), " ")
+        return if (!normalizedKey.contains(' ') && normalizedKey.length <= 5) {
+            Regex("\\b${Regex.escape(normalizedKey)}\\b").containsMatchIn(text)
         } else {
-            text.contains(key)
+            text.contains(normalizedKey)
         }
     }
 
     /** Renvoie le nom de preset reconnu, ou null. */
     fun recognize(ocrText: String): String? {
         // Les retours à la ligne de l'OCR coupent les mots-clés à plusieurs mots
-        // (ex. "Super\nNintendo" ne contient pas "super nintendo") : on les aplatit en espaces.
-        val t = ocrText.lowercase().replace(Regex("\\s+"), " ")
+        // (ex. "Super\nNintendo" ne contient pas "super nintendo") : on les aplatit en espaces,
+        // de même pour les tirets (cf. [matchesKey]).
+        val t = ocrText.lowercase().replace(Regex("[\\s-]+"), " ")
         for ((keys, name) in rules) {
             if (keys.any { matchesKey(t, it) }) return name
         }

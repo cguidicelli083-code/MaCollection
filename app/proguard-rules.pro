@@ -77,6 +77,15 @@
 -keep class com.example.macollection.data.BarcodeLookupProduct { *; }
 -keep class com.example.macollection.data.BarcodeLookupResponse { *; }
 
+# Barcode Spider (identification par code-barres, 3e source).
+-keep class com.example.macollection.data.BarcodeSpiderAttributes { *; }
+-keep class com.example.macollection.data.BarcodeSpiderResponse { *; }
+
+# ScanDex (identification par code-barres, source specialisee jeux video).
+-keep class com.example.macollection.data.ScanDexPlatform { *; }
+-keep class com.example.macollection.data.ScanDexIgdbMetadata { *; }
+-keep class com.example.macollection.data.ScanDexResponse { *; }
+
 -keep class com.example.macollection.data.WikiSummary { *; }
 -keep class com.example.macollection.data.WikiImage { *; }
 -keep class com.example.macollection.data.WikiSearchResponse { *; }

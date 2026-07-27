@@ -79,6 +79,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -1393,14 +1394,19 @@ fun AddCollectionForm(
     }
 
     // Prise de photo directe à la caméra, pour la photo principale OU pour la galerie.
-    var pendingCameraFile by remember { mutableStateOf<Pair<Uri, String>?>(null) }
-    var cameraForGallery by remember { mutableStateOf(false) }
+    // rememberSaveable (pas remember) : tourner le téléphone pendant que l'appli caméra système
+    // est ouverte peut faire tuer notre activité par le système (mémoire), ce qui recréait cet
+    // état à null et faisait échouer silencieusement le retour de la photo prise ("la capture se
+    // ferme") — rememberSaveable survit à cette recréation, contrairement à remember.
+    var pendingCameraUri by rememberSaveable { mutableStateOf<String?>(null) }
+    var cameraForGallery by rememberSaveable { mutableStateOf(false) }
     val cameraLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.TakePicture()
     ) { success ->
-        val pending = pendingCameraFile
+        val pending = pendingCameraUri
+        pendingCameraUri = null
         if (success && pending != null) {
-            launchCrop(pending.first, forGallery = cameraForGallery)
+            launchCrop(Uri.parse(pending), forGallery = cameraForGallery)
         }
     }
     val cameraPermissionLauncher = rememberLauncherForActivityResult(
@@ -1408,7 +1414,7 @@ fun AddCollectionForm(
     ) { granted ->
         if (granted) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         }
     }
@@ -1416,7 +1422,7 @@ fun AddCollectionForm(
         cameraForGallery = forGallery
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         } else {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
@@ -1681,14 +1687,25 @@ fun AddCollectionForm(
                         onClick = { recropAndRescan() },
                         enabled = !retryingScan
                     ) { Text(stringResource(R.string.recrop_button)) }
-                    TextButton(
-                        onClick = { retryNextAlternative() },
-                        enabled = !retryingScan
-                    ) { Text(stringResource(R.string.retry_scan_button)) }
-                    if (retryingScan) {
-                        Spacer(Modifier.width(8.dp))
-                        CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
-                    }
+                }
+            }
+        }
+        // Bouton "Réessayer" : indépendant de la présence d'une photo (contrairement à
+        // "Recadrer"), car un scan code-barres n'a jamais de photo mais peut quand même avoir
+        // trouvé plusieurs pistes (jeu/console/accessoire) à proposer en repli.
+        if (remainingAlternatives.isNotEmpty() || retryFeedback != null) {
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+            ) {
+                TextButton(
+                    onClick = { retryNextAlternative() },
+                    enabled = !retryingScan
+                ) { Text(stringResource(R.string.retry_scan_button)) }
+                if (retryingScan) {
+                    Spacer(Modifier.width(8.dp))
+                    CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
                 }
             }
             retryFeedback?.let {
@@ -2316,14 +2333,19 @@ fun AddCustomPresetForm(
         }
     }
 
-    var pendingCameraFile by remember { mutableStateOf<Pair<Uri, String>?>(null) }
+    // rememberSaveable (pas remember) : tourner le téléphone pendant que l'appli caméra système
+    // est ouverte peut faire tuer notre activité par le système (mémoire), ce qui recréait cet
+    // état à null et faisait échouer silencieusement le retour de la photo prise ("la capture se
+    // ferme") — rememberSaveable survit à cette recréation, contrairement à remember.
+    var pendingCameraUri by rememberSaveable { mutableStateOf<String?>(null) }
     val cameraLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.TakePicture()
     ) { success ->
-        val pending = pendingCameraFile
+        val pending = pendingCameraUri
+        pendingCameraUri = null
         if (success && pending != null) {
             cropLauncher.launch(
-                CropImageContractOptions(pending.first, CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK", initialCropWindowPaddingRatio = 0.2f))
+                CropImageContractOptions(Uri.parse(pending), CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK", initialCropWindowPaddingRatio = 0.2f))
             )
         }
     }
@@ -2332,14 +2354,14 @@ fun AddCustomPresetForm(
     ) { granted ->
         if (granted) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         }
     }
     fun launchCamera() {
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         } else {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA)

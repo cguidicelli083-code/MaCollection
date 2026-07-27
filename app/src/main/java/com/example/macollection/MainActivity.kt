@@ -71,6 +71,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -326,14 +327,20 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
 
     // Prise de photo directe à la caméra : utilisée à la fois pour le scan (texte/code-barres)
     // et comme photo principale par défaut du nouvel objet.
-    var pendingCameraFile by remember { mutableStateOf<Pair<Uri, String>?>(null) }
+    // rememberSaveable (pas remember) : tourner le téléphone pendant que l'appli caméra système
+    // est ouverte peut faire tuer notre activité par le système (mémoire), ce qui recréait cet
+    // état à null et faisait échouer silencieusement le retour de la photo prise ("la capture se
+    // ferme") — rememberSaveable survit à cette recréation, contrairement à remember.
+    var pendingCameraUri by rememberSaveable { mutableStateOf<String?>(null) }
     val cameraLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.TakePicture()
     ) { success ->
-        val pending = pendingCameraFile
+        val pending = pendingCameraUri
+        pendingCameraUri = null
         if (success && pending != null) {
-            pendingOriginalUri = pending.first
-            cropLauncher.launch(CropImageContractOptions(pending.first, CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK")))
+            val uri = Uri.parse(pending)
+            pendingOriginalUri = uri
+            cropLauncher.launch(CropImageContractOptions(uri, CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK")))
         }
     }
     val cameraPermissionLauncher = rememberLauncherForActivityResult(
@@ -341,14 +348,14 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     ) { granted ->
         if (granted) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         }
     }
     fun launchCamera() {
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             val pair = MediaUtils.newCameraFile(context)
-            pendingCameraFile = pair
+            pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
         } else {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
@@ -563,21 +570,54 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     TextButton(
                         onClick = {
                             showChooser = false
-                            scope.launch {
-                                val code = runCatching { ScanTools.scanCamera(context) }.getOrNull()
-                                if (code != null) {
+                            fun applyResult(code: String, r: ScanTools.ScanResult?) {
+                                editor = CollectionEditor(
+                                    name = r?.suggestedName ?: "",
+                                    barcode = code,
+                                    presetName = r?.consolePresetName,
+                                    accessoryName = r?.accessoryName,
+                                    gameMatch = r?.gameMatch,
+                                    gameConsoleHint = r?.gameConsoleHint,
+                                    isWishlist = chooserForWishlist,
+                                    alternatives = r?.alternatives ?: emptyList()
+                                )
+                            }
+                            // Suite "complète" (bases à quota partagé) : seulement si le quota
+                            // gratuit du jour n'est pas atteint (Premium/V2SP toujours illimités),
+                            // sinon pub récompensée pour débloquer un scan de plus (cf.
+                            // GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
+                            fun runFullScan(code: String) {
+                                scope.launch {
+                                    AppPrefs.recordBarcodeScanUsed(context)
                                     scanning = true
-                                    val r = runCatching { ScanTools.identifyFromBarcode(code) }.getOrNull()
+                                    val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
                                     scanning = false
-                                    editor = CollectionEditor(
-                                        name = r?.suggestedName ?: "",
-                                        barcode = code,
-                                        presetName = r?.consolePresetName,
-                                        accessoryName = r?.accessoryName,
-                                        gameMatch = r?.gameMatch,
-                                        gameConsoleHint = r?.gameConsoleHint,
-                                        isWishlist = chooserForWishlist
+                                    applyResult(code, r)
+                                }
+                            }
+                            fun offerFullScan(code: String) {
+                                if (isPremium || AppPrefs.canScanBarcodeFree(context)) {
+                                    runFullScan(code)
+                                } else {
+                                    watchRewardedAd(
+                                        context,
+                                        onRewarded = { AppPrefs.recordBarcodeBonusScanGranted(context) },
+                                        onClosed = { if (isPremium || AppPrefs.canScanBarcodeFree(context)) runFullScan(code) }
                                     )
+                                }
+                            }
+                            scope.launch {
+                                val code = runCatching { ScanTools.scanCamera(context) }.getOrNull() ?: return@launch
+                                // Premier essai TOUJOURS gratuit (ScanDex + eBay, pas de quota
+                                // partagé) : la plupart des jeux se résolvent déjà ici, sans jamais
+                                // avoir besoin du quota limité ni d'une pub.
+                                scanning = true
+                                val free = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = false) }.getOrNull()
+                                scanning = false
+                                if (free?.gameMatch != null || free?.consolePresetName != null || free?.accessoryName != null) {
+                                    applyResult(code, free)
+                                } else {
+                                    offerFullScan(code)
                                 }
                             }
                         },

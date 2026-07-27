@@ -45,6 +45,8 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("Nintendo", "Famicom Disk System", 1986, "Salon", "Ricoh 2A03 @ 1,79 MHz", "32 Ko", "Extension à disquettes de la Famicom."),
     ConsolePreset("Atari", "7800", 1986, "Salon", "Atari SALLY 6502C @ 1,79 MHz", "4 Ko", "Rétrocompatible avec la 2600."),
     ConsolePreset("NEC", "PC Engine", 1987, "Salon", "HuC6280 @ 7,16 MHz", "8 Ko", "Compacte et puissante, énorme au Japon."),
+    ConsolePreset("NEC", "PC Engine CoreGrafx", 1989, "Salon", "HuC6280 @ 7,16 MHz", "8 Ko", "Révision de la PC Engine avec sortie AV (composite/stéréo) intégrée d'origine, contre RF seule sur le modèle initial."),
+    ConsolePreset("NEC", "PC Engine CoreGrafx II", 1991, "Salon", "HuC6280 @ 7,16 MHz", "8 Ko", "Révision à prix réduit de la CoreGrafx, coque grise et logo orange ; aucune différence interne, purement cosmétique."),
     ConsolePreset("Atari", "XEGS", 1987, "Salon", "MOS 6502C @ 1,79 MHz", "64 Ko", "Console basée sur l'ordinateur Atari 8 bits."),
     ConsolePreset("Sega", "Mega Drive", 1988, "Salon", "Motorola 68000 @ 7,6 MHz + Z80", "64 Ko + 8 Ko", "L'ère 16 bits, « Genesis » aux USA."),
     ConsolePreset("Sega", "Mega Drive II", 1993, "Salon", "Motorola 68000 @ 7,6 MHz + Z80", "64 Ko + 8 Ko", "Révision compacte et moins coûteuse de la Mega Drive, même ludothèque."),

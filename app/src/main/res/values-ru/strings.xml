@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Добавить предмет</string>
     <string name="cancel">Отмена</string>
     <string name="close">Закрыть</string>
-    <string name="scan_barcode_option">📷  Сканировать штрих-код</string>
+    <string name="scan_barcode_option">📷  Сканировать штрих-код игры</string>
     <string name="choose_photo_option">🖼️  Выбрать фото</string>
     <string name="take_photo_option">📸  Сделать фото</string>
     <string name="manual_entry_option">✏️  Ввести вручную</string>

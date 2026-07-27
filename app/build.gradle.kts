@@ -32,6 +32,12 @@ val groqApiKey: String = localProps.getProperty("groqApiKey") ?: ""
 val tavilyApiKey: String = localProps.getProperty("tavilyApiKey") ?: ""
 // Barcode Lookup : 2e source d'identification par code-barres (après UPCitemdb, avant eBay).
 val barcodeLookupApiKey: String = localProps.getProperty("barcodeLookupApiKey") ?: ""
+// Barcode Spider : 3e source d'identification par code-barres, quota gratuit distinct des deux
+// précédentes (100 requêtes/jour propres à ce compte).
+val barcodeSpiderApiKey: String = localProps.getProperty("barcodeSpiderApiKey") ?: ""
+// ScanDex : base spécialisée jeux vidéo (code-barres -> fiche IGDB déjà appariée), essayée en
+// tout premier pour un jeu, avant les bases produits généralistes ci-dessus.
+val scanDexApiKey: String = localProps.getProperty("scanDexApiKey") ?: ""
 
 android {
     namespace = "com.example.macollection"
@@ -42,7 +48,7 @@ android {
         minSdk = 24
         targetSdk = 36
         versionCode = 9
-        versionName = "2.2"
+        versionName = "2.5"
 
         buildConfigField("String", "RAWG_API_KEY", "\"$rawgApiKey\"")
         buildConfigField("String", "EBAY_CLIENT_ID", "\"$ebayClientId\"")
@@ -55,6 +61,8 @@ android {
         buildConfigField("String", "GROQ_API_KEY", "\"$groqApiKey\"")
         buildConfigField("String", "TAVILY_API_KEY", "\"$tavilyApiKey\"")
         buildConfigField("String", "BARCODE_LOOKUP_API_KEY", "\"$barcodeLookupApiKey\"")
+        buildConfigField("String", "BARCODE_SPIDER_API_KEY", "\"$barcodeSpiderApiKey\"")
+        buildConfigField("String", "SCANDEX_API_KEY", "\"$scanDexApiKey\"")
 
         // N'embarque que l'architecture ARM 64 (tous les téléphones modernes) -> APK plus léger.
         ndk {

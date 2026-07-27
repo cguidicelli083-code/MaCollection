@@ -4,18 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.widget.Toast
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import com.example.macollection.BuildConfig
 import com.example.macollection.R
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -33,15 +24,12 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
  * ces IDs n'y sont donc jamais utilisés.
  */
 private object AdUnits {
-    private const val TEST_BANNER = "ca-app-pub-3940256099942544/6300978111"
     private const val TEST_INTERSTITIAL = "ca-app-pub-3940256099942544/1033173712"
     private const val TEST_REWARDED = "ca-app-pub-3940256099942544/5224354917"
 
-    private const val REAL_BANNER = "ca-app-pub-6018236504099673/8980070261"
     private const val REAL_INTERSTITIAL = "ca-app-pub-6018236504099673/3026438372"
     private const val REAL_REWARDED = "ca-app-pub-6018236504099673/3437501917"
 
-    val BANNER: String get() = if (BuildConfig.IS_TEST) TEST_BANNER else REAL_BANNER
     val INTERSTITIAL: String get() = if (BuildConfig.IS_TEST) TEST_INTERSTITIAL else REAL_INTERSTITIAL
     val REWARDED: String get() = if (BuildConfig.IS_TEST) TEST_REWARDED else REAL_REWARDED
 }
@@ -81,22 +69,6 @@ fun watchRewardedAd(context: Context, onRewarded: () -> Unit, onClosed: () -> Un
         return
     }
     showRewardedAd(activity, onReward = onRewarded, onClosed = onClosed)
-}
-
-/** Bannière publicitaire (50dp) — à masquer côté appelant si pubs réduites/Premium. */
-@Composable
-fun AdBanner(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    AndroidView(
-        modifier = modifier.fillMaxWidth().height(50.dp),
-        factory = {
-            AdView(context).apply {
-                setAdSize(AdSize.BANNER)
-                adUnitId = AdUnits.BANNER
-                loadAd(AdRequest.Builder().build())
-            }
-        }
-    )
 }
 
 /**

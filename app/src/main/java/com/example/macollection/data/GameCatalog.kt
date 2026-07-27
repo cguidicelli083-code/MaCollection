@@ -253,7 +253,9 @@ object GameCatalog {
     fun stripEditionKeywords(text: String): String {
         var result = text
         for (kw in editionKeywords) {
-            result = result.replace(Regex("(?i)" + Regex.escape(kw)), " ")
+            // Bordures de mot obligatoires : sans elles, "collector" matchait aussi en sous-chaîne
+            // à l'intérieur d'un mot plus long (ex. "Collectors Item" mutilé en "s Item").
+            result = result.replace(Regex("(?i)\\b" + Regex.escape(kw) + "\\b"), " ")
         }
         return result.replace(Regex("\\s+"), " ").trim()
     }

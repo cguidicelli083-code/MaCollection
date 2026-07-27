@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Objekt hinzufügen</string>
     <string name="cancel">Abbrechen</string>
     <string name="close">Schließen</string>
-    <string name="scan_barcode_option">📷  Barcode scannen</string>
+    <string name="scan_barcode_option">📷  Spiele-Barcode scannen</string>
     <string name="choose_photo_option">🖼️  Foto auswählen</string>
     <string name="take_photo_option">📸  Foto aufnehmen</string>
     <string name="manual_entry_option">✏️  Manuelle Eingabe</string>

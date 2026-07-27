@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">添加物品</string>
     <string name="cancel">取消</string>
     <string name="close">关闭</string>
-    <string name="scan_barcode_option">📷  扫描条形码</string>
+    <string name="scan_barcode_option">📷  扫描游戏条形码</string>
     <string name="choose_photo_option">🖼️  选择照片</string>
     <string name="take_photo_option">📸  拍照</string>
     <string name="manual_entry_option">✏️  手动输入</string>

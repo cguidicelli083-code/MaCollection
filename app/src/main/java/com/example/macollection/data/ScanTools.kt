@@ -67,31 +67,68 @@ object ScanTools {
     }
 
     /**
+     * Codes-barres de CONSOLES connus en dur, vérifiés manuellement (barcode → nom de preset) :
+     * les consoles sont beaucoup moins bien indexées que les jeux dans UPCitemdb/Barcode
+     * Lookup/eBay (constaté en conditions réelles : zéro résultat des 3 sources, même pour un
+     * modèle grand public comme la Switch OLED), donc pas d'autre choix que de les recenser à la
+     * main au fur et à mesure qu'un utilisateur en signale un manquant.
+     */
+    private val knownConsoleBarcodes = mapOf(
+        "0718910896254" to "Switch OLED",
+        "3328170307079" to "Switch 2"
+    )
+
+    /**
      * Identifie un objet à partir de son seul code-barres (EAN/UPC) : récupère le titre d'une
      * annonce eBay correspondante, puis applique les mêmes règles de reconnaissance que pour
      * une photo (console, accessoire, ou jeu confirmé sur RAWG).
      */
-    suspend fun identifyFromBarcode(barcode: String): ScanResult {
-        // UPCitemdb en premier, puis Barcode Lookup : contrairement à une annonce eBay (titre
-        // rédigé librement par un vendeur, plein de mentions d'état/complétude qui égarent la
-        // recherche), ces deux bases renvoient un titre "propre" unique par code-barres (ex.
-        // "Mario Kart 8 Deluxe (Nintendo Switch)"), bien plus fiable pour retrouver le bon jeu —
-        // et à elles deux couvrent des jeux que ni l'une ni l'autre seule ne trouvait (constaté en
-        // conditions réelles). Les annonces eBay restent essayées ensuite (et en repli si aucun
-        // code-barres n'est connu des deux bases).
-        val upcTitle = runCatching { UpcItemDb.lookupTitle(barcode) }.getOrNull()
-        val barcodeLookupTitle = runCatching { BarcodeLookupApi.lookupTitle(barcode) }.getOrNull()
+    /**
+     * @param allowQuotaLimitedSources Si faux, n'interroge PAS UPCitemdb/Barcode Lookup/Barcode
+     * Spider (quota partagé par toute l'appli, ~100 requêtes/jour CHACUNE, cf. [knownConsoleBarcodes]) —
+     * seulement ScanDex (spécialisé jeux, pas de quota connu) et eBay (quota bien plus large,
+     * ~5000/jour par clé + clé de secours). Utilisé par l'appelant pour un premier essai
+     * totalement gratuit avant de proposer une pub récompensée si rien n'est trouvé (cf.
+     * [MainActivity]) : la plupart des JEUX se résolvent déjà via ScanDex seul, donc la majorité
+     * des scans n'ont jamais besoin de toucher au quota partagé.
+     */
+    suspend fun identifyFromBarcode(barcode: String, allowQuotaLimitedSources: Boolean = true): ScanResult {
+        knownConsoleBarcodes[barcode]?.let { return ScanResult(barcode, it, consolePresetName = it) }
+
+        // ScanDex : base spécialisée JEUX VIDÉO, essayée en tout premier — un code-barres qui y
+        // est connu est déjà apparié à une fiche IGDB précise par LEUR base (pas un titre
+        // d'annonce à deviner), donc plus fiable que le scoring flou appliqué aux autres sources
+        // ci-dessous. Interrogée même si les autres sources ne trouvent rien (cf. plus bas, ne
+        // dépend pas de titles).
+        val scanDexMatch = runCatching { ScanDexApi.lookupGame(barcode) }.getOrNull()
+        Log.d("ScanBarcode", "ScanDex match for $barcode: $scanDexMatch")
+
+        // UPCitemdb en premier, puis Barcode Lookup et Barcode Spider : contrairement à une
+        // annonce eBay (titre rédigé librement par un vendeur, plein de mentions d'état/
+        // complétude qui égarent la recherche), ces bases renvoient un titre "propre" unique par
+        // code-barres (ex. "Mario Kart 8 Deluxe (Nintendo Switch)"), bien plus fiable pour
+        // retrouver le bon jeu — et à elles trois couvrent des objets qu'aucune seule ne trouvait
+        // (constaté en conditions réelles). Sautées si [allowQuotaLimitedSources] est faux (cf.
+        // doc ci-dessus). Les annonces eBay restent essayées dans tous les cas (et en repli si
+        // aucun code-barres n'est connu des bases précédentes).
+        val upcTitle = if (allowQuotaLimitedSources) runCatching { UpcItemDb.lookupTitle(barcode) }.getOrNull() else null
+        val barcodeLookupTitle = if (allowQuotaLimitedSources) runCatching { BarcodeLookupApi.lookupTitle(barcode) }.getOrNull() else null
+        val barcodeSpiderTitle = if (allowQuotaLimitedSources) runCatching { BarcodeSpiderApi.lookupTitle(barcode) }.getOrNull() else null
         val ebayTitles = runCatching { EbayPrices.titlesForBarcode(barcode) }.getOrNull().orEmpty()
-        val titles = listOfNotNull(upcTitle, barcodeLookupTitle) + ebayTitles
-        Log.d("ScanBarcode", "barcode=$barcode upcTitle=$upcTitle barcodeLookupTitle=$barcodeLookupTitle ebayTitles=$ebayTitles")
-        val title = titles.firstOrNull() ?: return ScanResult(barcode, null)
+        val titles = listOfNotNull(upcTitle, barcodeLookupTitle, barcodeSpiderTitle) + ebayTitles
+        Log.d("ScanBarcode", "barcode=$barcode allowQuotaLimited=$allowQuotaLimitedSources upcTitle=$upcTitle barcodeLookupTitle=$barcodeLookupTitle barcodeSpiderTitle=$barcodeSpiderTitle ebayTitles=$ebayTitles")
+        if (scanDexMatch == null && titles.isEmpty()) return ScanResult(barcode, null)
+        val title = titles.firstOrNull()
 
         // Une boîte/cartouche de JEU porte presque toujours aussi le nom de sa console (mention
         // obligatoire du fabricant) : reconnaître une console dans le titre ne suffit donc pas à
         // conclure que le produit scanné EST cette console (même piège que pour l'OCR photo, cf.
         // scanImage). On cherche donc d'abord un jeu (filtré sur la console repérée si elle existe),
         // et on ne retombe sur "c'est la console elle-même" que si aucun jeu fiable n'est trouvé.
-        val consoleName = ConsoleRecognition.recognize(title)
+        // La plateforme renvoyée par ScanDex prime sur le texte des autres titres quand connue :
+        // c'est un champ structuré (pas du texte libre à deviner).
+        val consoleName = scanDexMatch?.platformName?.let { ConsoleRecognition.recognize(it) }
+            ?: title?.let { ConsoleRecognition.recognize(it) }
         val platformId = consoleName?.let { ConsolePlatforms.platformId(it) }
         Log.d("ScanBarcode", "consoleName=$consoleName platformId=$platformId")
 
@@ -99,24 +136,39 @@ object ScanTools {
         // parfois en tête une annonce pour un objet DIFFÉRENT qui partage le même GTIN (ex. un lot
         // "3 jeux" au lieu du jeu précis scanné) — s'arrêter au premier titre qui trouve NE
         // SERAIT-CE QU'un match faible (ex. juste le préfixe de franchise) empêchait de découvrir
-        // le bien meilleur match d'un titre suivant, plus propre. On garde donc le MEILLEUR score
-        // toutes annonces confondues, pas le premier trouvé. On utilise aussi IGDB en priorité
-        // (meilleure couverture rétro que RAWG seul, cf. [firstGameMatch] déjà utilisé par le scan
-        // photo), et on nettoie chaque titre du bruit typique d'une annonce (état, complétude,
-        // marque/plateforme déjà identifiée à part, mentions d'édition) AVANT de chercher (cf.
-        // [cleanListingTitle]).
-        var best: Pair<GameInfo, Double>? = null
-        var bestOriginalTitle: String? = null
+        // le bien meilleur match d'un titre suivant, plus propre. On garde donc TOUS les candidats
+        // trouvés (pas juste le premier), pour proposer les autres comme piste "Réessayer" si le
+        // meilleur choix automatique n'est pas le bon — l'identification par code-barres reste
+        // fondamentalement une heuristique (titres d'annonces tiers, pas une base produit fiable
+        // à 100 %), donc plutôt que de deviner en silence, on donne la main à l'utilisateur.
+        // On utilise aussi IGDB en priorité (meilleure couverture rétro que RAWG seul, cf.
+        // [firstGameMatch] déjà utilisé par le scan photo), et on nettoie chaque titre du bruit
+        // typique d'une annonce (état, complétude, marque/plateforme déjà identifiée à part,
+        // mentions d'édition) AVANT de chercher (cf. [cleanListingTitle]).
+        val allCandidates = mutableListOf<Pair<GameInfo, Double>>()
         for (t in titles) {
             val cleaned = cleanListingTitle(t).ifBlank { t }
             val scored = firstGameMatchScored(cleaned, platformId)
             Log.d("ScanBarcode", "firstGameMatch(\"$cleaned\") -> ${scored?.first?.name} (score=${scored?.second})")
-            if (scored != null && (best == null || scored.second > best!!.second)) {
-                best = scored
-                bestOriginalTitle = t
+            if (scored != null) {
+                allCandidates += scored.first.copy(name = GameCatalog.preserveEditionSuffix(t, scored.first.name)) to scored.second
             }
         }
-        val gameMatch = best?.let { (g, _) -> g.copy(name = GameCatalog.preserveEditionSuffix(bestOriginalTitle!!, g.name)) }
+        val distinctCandidates = allCandidates
+            .distinctBy { it.first.name.lowercase() }
+            .sortedByDescending { it.second }
+
+        // ScanDex (déjà curatée par leur base) prime sur le meilleur candidat trouvé par scoring
+        // flou dans les titres des autres sources : on ne garde ce dernier qu'en repli, ou comme
+        // pistes "Réessayer" si jamais ScanDex se trompait.
+        val scanDexGame = scanDexMatch?.let { m ->
+            (runCatching { IgdbCatalog.byId(m.igdbId) }.getOrNull()?.let { IgdbCatalog.frenchify(it) })
+                // Repli si la fiche détaillée échoue (réseau) : au moins le nom/plateforme déjà
+                // fournis par ScanDex, plutôt que de perdre une correspondance qu'on a pourtant.
+                ?: GameInfo(sourceId = null, name = m.name, platforms = m.platformName.orEmpty(), genres = "", releaseYear = null, description = "", coverUrl = null, source = "igdb")
+        }
+        val gameMatch = scanDexGame ?: distinctCandidates.firstOrNull()?.first
+        val fuzzyAlternatives = if (scanDexGame != null) distinctCandidates else distinctCandidates.drop(1)
 
         var accessoryName: String? = null
         if (gameMatch == null) {
@@ -124,8 +176,29 @@ object ScanTools {
         }
         val suggestedName = gameMatch?.name ?: accessoryName ?: consoleName ?: title
         val gameConsoleHint = if (gameMatch != null) consoleName else null
-        Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName")
-        return ScanResult(barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint)
+
+        // Pistes alternatives pour le bouton « Réessayer » : les autres jeux candidats trouvés
+        // (moins bien classés), puis la console/l'accessoire reconnu s'il n'est pas déjà le
+        // résultat principal — même logique que pour le scan photo (cf. scanImage).
+        val alternatives = mutableListOf<ScanCandidate>()
+        fuzzyAlternatives.take(4).forEach { (g, _) ->
+            if (!g.name.equals(gameMatch?.name, ignoreCase = true)) alternatives += ScanCandidate(g.name, ItemType.JEU, gameMatch = g)
+        }
+        // La console reconnue reste une piste "Réessayer" tant qu'elle n'est pas déjà le résultat
+        // principal (jeu OU accessoire) : une boîte d'accessoire (ex. "Super Scope") porte presque
+        // toujours aussi le nom de la console compatible, donc elle est encore pertinente en repli.
+        if (gameMatch != null || accessoryName != null) {
+            consoleName?.let { alternatives += ScanCandidate(it, ItemType.CONSOLE, consolePresetName = it) }
+        }
+        accessoryName?.takeIf { it != suggestedName }?.let {
+            alternatives += ScanCandidate(it, ItemType.ACCESSOIRE, accessoryName = it)
+        }
+
+        Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName alternatives=${alternatives.map { it.name }}")
+        return ScanResult(
+            barcode, suggestedName, consoleName.takeIf { gameMatch == null && accessoryName == null }, accessoryName, gameMatch, gameConsoleHint,
+            alternatives = alternatives
+        )
     }
 
     /**
@@ -417,7 +490,12 @@ object ScanTools {
         // sens (cf. [GameCatalog.stripEditionKeywords]).
         val qWords = significantWords(GameCatalog.stripEditionKeywords(query))
         val cWords = significantWords(GameCatalog.stripEditionKeywords(candidate))
-        if (qWords.size < 2 || cWords.isEmpty()) return null
+        // En dessous de 3 mots significatifs, la requête est trop pauvre pour qu'un chevauchement
+        // veuille dire quoi que ce soit : un résidu de nettoyage à 2 mots très génériques (ex. "2
+        // pc", tout ce qu'il restait d'un titre étranger mal encodé après avoir retiré le bruit)
+        // matchait n'importe quel candidat qui contient ces 2 mots par hasard (ex. "Disgaea 2 PC"
+        // pour la boîte d'une console PC Engine CoreGrafx sans aucun rapport).
+        if (qWords.size < 3 || cWords.isEmpty()) return null
         val overlap = qWords.intersect(cWords)
         return if (cWords.size <= 2) {
             // Nom de jeu court (ex. "Rayman Legends") : les mots RESTANTS après nettoyage sont

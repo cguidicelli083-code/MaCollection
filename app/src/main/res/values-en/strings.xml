@@ -4,7 +4,7 @@
     <string name="add_item_dialog_title">Add an item</string>
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
-    <string name="scan_barcode_option">📷  Scan a barcode</string>
+    <string name="scan_barcode_option">📷  Scan a game barcode</string>
     <string name="choose_photo_option">🖼️  Choose a photo</string>
     <string name="take_photo_option">📸  Take a photo</string>
     <string name="manual_entry_option">✏️  Manual entry</string>
@@ -191,7 +191,7 @@
     <string name="onboarding_page1_title">Welcome to My Collection 🎮</string>
     <string name="onboarding_page1_text">This app helps you catalog your retro games, consoles and accessories collection, with automatic photo recognition and price estimates.</string>
     <string name="onboarding_page2_title">📷 Add an item</string>
-    <string name="onboarding_page2_text">Tap the + button to add an item: scan a barcode, take a photo, pick one from your gallery, or enter everything manually. The app tries to automatically recognize the name, type and associated console.</string>
+    <string name="onboarding_page2_text">Tap the + button to add an item: scan a barcode (games only), take a photo (games, consoles and accessories), pick one from your gallery, or enter everything manually. The app tries to automatically recognize the name, type and associated console.</string>
     <string name="onboarding_page3_title">✏️ Tip: frame your photo well</string>
     <string name="onboarding_page3_text">For better recognition, crop the photo tightly on the logo or title, avoid glare and blur — the sharper and more readable the text, the more reliable automatic identification will be. For a game found via online search, the main photo shown will be the real cover art.</string>
     <string name="onboarding_page4_title">📚 Encyclopedia</string>
