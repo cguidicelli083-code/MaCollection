@@ -1,5 +1,803 @@
 [
   {
+    "id": "f5b50f34f0f53698cf34e61d684e9a3cdc57e4d9",
+    "title": "Dragon Ball: Sparking! ZERO Super Limit-Breaking NEO is Out Now",
+    "summary": "This one’s got a lot of fighting between some new faces, in new places, and for brand-new prizes while long-term fans are going to be happy.",
+    "category": "GAME_RELEASE",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/dragon-ball-sparking-zero-super-limit-breaking-neo-is-out-now",
+    "imageUrl": "",
+    "publishedAt": "2026-07-31T04:25:28+00:00",
+    "scrapedAt": "2026-07-31T06:21:21.791486+00:00",
+    "translations": {
+      "en": {
+        "title": "Dragon Ball: Sparking! ZERO Super Limit-Breaking NEO is Out Now",
+        "summary": "This one’s got a lot of fighting between some new faces, in new places, and for brand-new prizes while long-term fans are going to be happy."
+      },
+      "fr": {
+        "title": "Dragon Ball : Des étincelles ! ZERO Super Limit-Breaking NEO est maintenant disponible",
+        "summary": "Celui-ci comporte de nombreux combats entre de nouveaux visages, dans de nouveaux endroits et pour de tout nouveaux prix, tandis que les fans de longue date seront heureux."
+      },
+      "es": {
+        "title": "Dragon Ball: ¡Chispas! ZERO Super Limit-Breaking NEO ya está disponible",
+        "summary": "Este tiene muchas peleas entre caras nuevas, en lugares nuevos y por premios nuevos, mientras que los fanáticos a largo plazo estarán felices."
+      },
+      "it": {
+        "title": "Dragon Ball: Scintille! ZERO Super Limit-Breaking NEO è ora disponibile",
+        "summary": "In questo caso ci saranno molti combattimenti tra alcuni volti nuovi, in posti nuovi e per premi nuovi di zecca, mentre i fan di lunga data saranno felici."
+      },
+      "de": {
+        "title": "Dragon Ball: Funken! ZERO Super Limit-Breaking NEO ist jetzt erhältlich",
+        "summary": "Hier gibt es viele Kämpfe zwischen einigen neuen Gesichtern, an neuen Orten und um brandneue Preise, während langjährige Fans glücklich sein werden."
+      },
+      "pt": {
+        "title": "Dragon Ball: Faísca! ZERO Super Limit-Breaking NEO já foi lançado",
+        "summary": "Este terá muitas brigas entre alguns rostos novos, em novos lugares e por prêmios totalmente novos, enquanto os fãs de longa data ficarão felizes."
+      },
+      "ru": {
+        "title": "Жемчуг дракона: Искра! ZERO Super Limit Breaking NEO уже доступен",
+        "summary": "Здесь будет много борьбы между новыми лицами, в новых местах и ​​за совершенно новые призы, в то время как давние фанаты будут счастливы."
+      },
+      "el": {
+        "title": "Dragon Ball: Σπινθήρα! Το ZERO Super Limit-Breaking NEO κυκλοφορεί τώρα",
+        "summary": "Αυτό έχει πολλές μάχες μεταξύ μερικών νέων προσώπων, σε νέα μέρη και για ολοκαίνουργια βραβεία, ενώ οι μακροχρόνιοι θαυμαστές θα είναι ευχαριστημένοι."
+      },
+      "tr": {
+        "title": "Dragon Ball: Kıvılcımlar saçıyor! SIFIR Süper Limiti Aşan NEO Artık Çıktı",
+        "summary": "Bu seferki bazı yeni yüzler arasında, yeni yerlerde ve yepyeni ödüller için çok fazla kavga var, uzun vadeli hayranlar ise mutlu olacak."
+      },
+      "ja": {
+        "title": "ドラゴンボール スパーキング！ 『ZERO 超限界突破NEO』発売",
+        "summary": "この作品では、新しい顔ぶれの間で、新しい場所で、そして真新しい賞品をめぐって多くの争いが繰り広げられるが、長年のファンは満足するだろう。"
+      },
+      "zh": {
+        "title": "龙珠：火花四射！零超极限突破NEO现已上线",
+        "summary": "在这场比赛中，一些新面孔、新地点和全新奖品之间展开了激烈的战斗，而长期粉丝将会很高兴。"
+      }
+    }
+  },
+  {
+    "id": "5bee7407475ca9fba38919575000643e32103ee6",
+    "title": "‘Drama-like adventure’ game Seasons of Books and Keys announced for Switch, PC",
+    "summary": "Publisher Shueisha Games and developer iMel have announced Seasons of Books and Keys, a &#8220;drama-like &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/07/drama-like-adventure-game-seasons-of-books-and-keys-announced-for-switch-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-07-31T03:15:04+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.782859+00:00",
+    "translations": {
+      "en": {
+        "title": "‘Drama-like adventure’ game Seasons of Books and Keys announced for Switch, PC",
+        "summary": "Publisher Shueisha Games and developer iMel have announced Seasons of Books and Keys, a &#8220;drama-like &hellip;"
+      },
+      "fr": {
+        "title": "Le jeu « d'aventure dramatique » Seasons of Books and Keys annoncé pour Switch et PC",
+        "summary": "L'éditeur Shueisha Games et le développeur iMel ont annoncé Seasons of Books and Keys, un jeu &hellip;"
+      },
+      "es": {
+        "title": "Se anuncia el juego de 'aventura dramática' Seasons of Books and Keys para Switch y PC",
+        "summary": "El editor Shueisha Games y el desarrollador iMel han anunciado Seasons of Books and Keys, un juego &#8220;drama &hellip;"
+      },
+      "it": {
+        "title": "Annunciato il gioco \"avventura drammatica\" Seasons of Books and Keys per Switch e PC",
+        "summary": "L'editore Shueisha Games e lo sviluppatore iMel hanno annunciato Seasons of Books and Keys, un film \"drammatico\" &hellip;"
+      },
+      "de": {
+        "title": "„Dramaartiges Abenteuer“-Spiel Seasons of Books and Keys für Switch, PC angekündigt",
+        "summary": "Der Herausgeber Shueisha Games und der Entwickler iMel haben Seasons of Books and Keys angekündigt, ein „dramaartiges“ Spiel."
+      },
+      "pt": {
+        "title": "Jogo de ‘aventura dramática’ Seasons of Books and Keys anunciado para Switch, PC",
+        "summary": "A editora Shueisha Games e a desenvolvedora iMel anunciaram Seasons of Books and Keys, um jogo “semelhante a um drama”."
+      },
+      "ru": {
+        "title": "«Драматическая приключенческая игра Seasons of Books and Keys анонсирована для Switch и ПК»",
+        "summary": "Издатель Shueisha Games и разработчик iMel анонсировали Seasons of Books and Keys, «драматическую игру &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το παιχνίδι «Drama-like adventure» Seasons of Books and Keys για Switch, PC",
+        "summary": "Ο εκδότης Shueisha Games και ο προγραμματιστής iMel ανακοίνωσαν το Seasons of Books and Keys, ένα &#8220;δραματικό &hellip;"
+      },
+      "tr": {
+        "title": "'Drama benzeri macera' oyunu Seasons of Books and Keys Switch, PC için duyuruldu",
+        "summary": "Yayıncı Shueisha Games ve geliştirici iMel, 'drama benzeri' bir oyun olan Seasons of Books and Keys'i duyurdu."
+      },
+      "ja": {
+        "title": "「ドラマのようなアドベンチャー」ゲーム「Seasons of Books and Keys」がSwitch、PC向けに発表",
+        "summary": "パブリッシャーのShuhei GamesとデベロッパーのiMelは、「ドラマのような」ゲーム「Seasons of Books and Keys」を発表した。"
+      },
+      "zh": {
+        "title": "“戏剧式冒险”游戏《Seasons of Books and Keys》宣布登陆 Switch、PC",
+        "summary": "发行商 Shueisha Games 和开发商 iMel 宣布推出《Seasons of Books and Keys》，这是一款“类似戏剧的游戏”。"
+      }
+    }
+  },
+  {
+    "id": "aa12184de03df0a99452b30e89fd83713b895807",
+    "title": "Two cancelled Virtual Boy games announced for Nintendo Classics",
+    "summary": "Nintendo has announced that two previously unreleased Virtual Boy titles are being added to the Nintendo Classics library. D-HOPPER (originally known as Dragon Hopper), an action-adventure game developed by Intelligent Systems but was never released due to the low sales of the Virtual Boy, and ZERO RACERS, a cancelled spin-off of the F-Zero series developed&#8230;&#160; Read More &#187; Two cancelled Virtual Boy games announced for Nintendo Classics Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/07/31/two-cancelled-virtual-boy-games-announced-for-nintendo-classics/",
+    "imageUrl": "",
+    "publishedAt": "2026-07-31T02:41:52+00:00",
+    "scrapedAt": "2026-07-31T06:19:56.534670+00:00",
+    "translations": {
+      "en": {
+        "title": "Two cancelled Virtual Boy games announced for Nintendo Classics",
+        "summary": "Nintendo has announced that two previously unreleased Virtual Boy titles are being added to the Nintendo Classics library. D-HOPPER (originally known as Dragon Hopper), an action-adventure game developed by Intelligent Systems but was never released due to the low sales of the Virtual Boy, and ZERO RACERS, a cancelled spin-off of the F-Zero series developed&#8230;&#160; Read More &#187; Two cancelled Virtual Boy games announced for Nintendo Classics Source"
+      },
+      "fr": {
+        "title": "Deux jeux Virtual Boy annulés annoncés pour Nintendo Classics",
+        "summary": "Nintendo a annoncé que deux titres Virtual Boy inédits seraient ajoutés à la bibliothèque Nintendo Classics. D-HOPPER (à l'origine connu sous le nom de Dragon Hopper), un jeu d'action-aventure développé par Intelligent Systems mais qui n'a jamais été publié en raison des faibles ventes de Virtual Boy, et ZERO RACERS, un spin-off annulé de la série F-Zero développé... Lire la suite &#187; Deux jeux Virtual Boy annulés annoncés pour Nintendo Classics Source"
+      },
+      "es": {
+        "title": "Se anuncian dos juegos cancelados de Virtual Boy para Nintendo Classics",
+        "summary": "Nintendo ha anunciado que se agregarán dos títulos de Virtual Boy inéditos a la biblioteca de Nintendo Classics. D-HOPPER (originalmente conocido como Dragon Hopper), un juego de acción y aventuras desarrollado por Intelligent Systems pero nunca fue lanzado debido a las bajas ventas de Virtual Boy, y ZERO RACERS, un spin-off cancelado de la serie F-Zero desarrollado&#8230;&#160; Leer más &#187; Se anuncian dos juegos cancelados de Virtual Boy para Nintendo Classics Fuente"
+      },
+      "it": {
+        "title": "Annunciati due giochi Virtual Boy cancellati per Nintendo Classics",
+        "summary": "Nintendo ha annunciato che due titoli Virtual Boy inediti verranno aggiunti alla libreria Nintendo Classics. D-HOPPER (originariamente noto come Dragon Hopper), un gioco di azione e avventura sviluppato da Intelligent Systems ma non è mai stato pubblicato a causa delle scarse vendite di Virtual Boy, e ZERO RACERS, uno spin-off cancellato della serie F-Zero sviluppato&#8230;&#160; Leggi di più &#187; Annunciati due giochi Virtual Boy cancellati per Nintendo Classics Source"
+      },
+      "de": {
+        "title": "Zwei abgesagte Virtual Boy-Spiele für Nintendo Classics angekündigt",
+        "summary": "Nintendo hat angekündigt, dass der Nintendo Classics-Bibliothek zwei bisher unveröffentlichte Virtual Boy-Titel hinzugefügt werden. D-HOPPER (ursprünglich bekannt als Dragon Hopper), ein Action-Adventure-Spiel, das von Intelligent Systems entwickelt wurde, aber aufgrund der geringen Verkaufszahlen des Virtual Boy nie veröffentlicht wurde, und ZERO RACERS, ein abgebrochenes Spin-off der F-Zero-Serie, das &#8230;&#160; Weiterlesen &#187; Zwei abgesagte Virtual Boy-Spiele für Nintendo Classics Source angekündigt"
+      },
+      "pt": {
+        "title": "Dois jogos Virtual Boy cancelados anunciados para Nintendo Classics",
+        "summary": "A Nintendo anunciou que dois títulos Virtual Boy inéditos serão adicionados à biblioteca Nintendo Classics. D-HOPPER (originalmente conhecido como Dragon Hopper), um jogo de ação e aventura desenvolvido pela Intelligent Systems, mas nunca foi lançado devido às baixas vendas do Virtual Boy, e ZERO RACERS, um spin-off cancelado da série F-Zero desenvolvida... Leia mais &#187; Dois jogos Virtual Boy cancelados anunciados para Nintendo Classics Source"
+      },
+      "ru": {
+        "title": "Две отмененные игры Virtual Boy анонсированы для Nintendo Classics",
+        "summary": "Nintendo объявила, что в библиотеку Nintendo Classics добавляются две ранее не издававшиеся игры Virtual Boy. D-HOPPER (первоначально известная как Dragon Hopper), приключенческая игра, разработанная Intelligent Systems, но так и не выпущенная из-за низких продаж Virtual Boy, и ZERO RACERS, отмененного спин-оффа серии F-Zero, разработанной &#8230;&#160; Читать далее &#187; Две отмененные игры Virtual Boy анонсированы для Nintendo Classics Source"
+      },
+      "el": {
+        "title": "Δύο ακυρωμένα παιχνίδια Virtual Boy ανακοινώθηκαν για το Nintendo Classics",
+        "summary": "Η Nintendo ανακοίνωσε ότι δύο τίτλοι Virtual Boy που δεν είχαν κυκλοφορήσει στο παρελθόν προστίθενται στη βιβλιοθήκη Nintendo Classics. Το D-HOPPER (αρχικά γνωστό ως Dragon Hopper), ένα παιχνίδι δράσης-περιπέτειας που αναπτύχθηκε από την Intelligent Systems αλλά δεν κυκλοφόρησε ποτέ λόγω των χαμηλών πωλήσεων του Virtual Boy και το ZERO RACERS, ένα ακυρωμένο spin-off της σειράς F-Zero που αναπτύχθηκε&#8230;&#160; Διαβάστε περισσότερα &#187; Ανακοινώθηκαν δύο ακυρωμένα παιχνίδια Virtual Boy για το Nintendo Classics Source"
+      },
+      "tr": {
+        "title": "Nintendo Classics için iptal edilen iki Virtual Boy oyunu duyuruldu",
+        "summary": "Nintendo, daha önce yayınlanmamış iki Virtual Boy oyununun Nintendo Classics kütüphanesine ekleneceğini duyurdu. Intelligent Systems tarafından geliştirilen ancak Virtual Boy'un düşük satışları nedeniyle hiçbir zaman piyasaya sürülmeyen bir aksiyon-macera oyunu olan D-HOPPER (başlangıçta Dragon Hopper olarak biliniyordu) ve geliştirilen F-Zero serisinin iptal edilen yan ürünü olan ZERO RACERS; Devamını Okuyun &#187; Nintendo Classics için iptal edilen iki Virtual Boy oyunu duyuruldu"
+      },
+      "ja": {
+        "title": "ニンテンドー クラシック向けにキャンセルされた 2 つのバーチャルボーイ ゲームが発表されました",
+        "summary": "任天堂は、これまで発売されていなかったバーチャルボーイの2タイトルがニンテンドークラシックスライブラリに追加されることを発表しました。インテリジェント システムズが開発したアクション アドベンチャー ゲームである D-HOPPER (当初は Dragon Hopper として知られていました) ですが、バーチャル ボーイの売り上げが低かったためリリースされませんでした。および開発された F-Zero シリーズのキャンセルされたスピンオフである ZERO RACERS は、続きを読む&#187;ニンテンドークラシックソース向けにキャンセルされた2つのバーチャルボーイゲームが発表"
+      },
+      "zh": {
+        "title": "任天堂经典宣布两款取消的 Virtual Boy 游戏",
+        "summary": "任天堂宣布，两款之前未发布的 Virtual Boy 游戏将被添加到任天堂经典库中。 D-HOPPER（最初称为 Dragon Hopper）是由Intelligent Systems 开发的一款动作冒险游戏，但由于 Virtual Boy 的销量低而从未发行，而 ZERO RACERS 则是由 F-Zero 系列取消的衍生游戏。阅读更多内容 &#187; Nintendo Classics Source 宣布两款取消的 Virtual Boy 游戏"
+      }
+    }
+  },
+  {
+    "id": "94555cbcc1b0097319695d457a7771e81195c339",
+    "title": "Two Cancelled Virtual Boy Games Join 'Nintendo Classics' Next Week",
+    "summary": "Retro revival. Since joining the Nintendo Classics service earlier this year, the Virtual Boy library has been receiving regular game updates. Now, in an announcement this week, Nintendo has revealed it's bringing the cancelled Virtual Boy titles Zero Racers and D-Hopper ( Dragon Hopper ) to the subscription service on 4th August 2026 . It originally announced it was reviving the title based on F-Zero and the Intelligent Systems game earlier this year . Read the full article on nintendolife.com",
+    "category": "REISSUE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/07/two-cancelled-virtual-boy-games-join-nintendo-classics-next-week",
+    "imageUrl": "https://images.nintendolife.com/fc473debfb913/large.jpg",
+    "publishedAt": "2026-07-31T01:30:00+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.711162+00:00",
+    "translations": {
+      "en": {
+        "title": "Two Cancelled Virtual Boy Games Join 'Nintendo Classics' Next Week",
+        "summary": "Retro revival. Since joining the Nintendo Classics service earlier this year, the Virtual Boy library has been receiving regular game updates. Now, in an announcement this week, Nintendo has revealed it's bringing the cancelled Virtual Boy titles Zero Racers and D-Hopper ( Dragon Hopper ) to the subscription service on 4th August 2026 . It originally announced it was reviving the title based on F-Zero and the Intelligent Systems game earlier this year . Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Deux jeux Virtual Boy annulés rejoignent les « Nintendo Classics » la semaine prochaine",
+        "summary": "Renaissance du rétro. Depuis qu'elle a rejoint le service Nintendo Classics plus tôt cette année, la bibliothèque Virtual Boy a reçu des mises à jour régulières des jeux. Maintenant, dans une annonce cette semaine, Nintendo a révélé qu'elle apporterait les titres Virtual Boy annulés Zero Racers et D-Hopper (Dragon Hopper) au service d'abonnement le 4 août 2026. Il avait initialement annoncé qu'il relançait le titre basé sur F-Zero et le jeu Intelligent Systems plus tôt cette année. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Dos juegos virtuales para niños cancelados se unen a los 'Clásicos de Nintendo' la próxima semana",
+        "summary": "Renacimiento retro. Desde que se unió al servicio Nintendo Classics a principios de este año, la biblioteca de Virtual Boy ha recibido actualizaciones periódicas de juegos. Ahora, en un anuncio de esta semana, Nintendo ha revelado que traerá los títulos cancelados de Virtual Boy Zero Racers y D-Hopper (Dragon Hopper) al servicio de suscripción el 4 de agosto de 2026. Originalmente anunció que reviviría el título basado en F-Zero y el juego Intelligent Systems a principios de este año. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Due giochi per ragazzi virtuali cancellati si uniranno a \"Nintendo Classics\" la prossima settimana",
+        "summary": "Revival retrò. Da quando si è unito al servizio Nintendo Classics all'inizio di quest'anno, la libreria Virtual Boy ha ricevuto aggiornamenti regolari dei giochi. Ora, in un annuncio di questa settimana, Nintendo ha rivelato che porterà i titoli cancellati Virtual Boy Zero Racers e D-Hopper (Dragon Hopper) al servizio di abbonamento il 4 agosto 2026. Inizialmente aveva annunciato che avrebbe rilanciato il titolo basato su F-Zero e sul gioco Intelligent Systems all'inizio di quest'anno. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Zwei abgesagte Virtual Boy-Spiele kommen nächste Woche zu „Nintendo Classics“.",
+        "summary": "Retro-Revival. Seit dem Beitritt zum Nintendo Classics-Dienst Anfang des Jahres erhält die Virtual Boy-Bibliothek regelmäßig Spielaktualisierungen. Nun hat Nintendo diese Woche in einer Ankündigung bekannt gegeben, dass es die abgesagten Virtual Boy-Titel Zero Racers und D-Hopper (Dragon Hopper) am 4. August 2026 in den Abonnementdienst aufnehmen wird. Ursprünglich wurde Anfang des Jahres angekündigt, den auf F-Zero und dem Spiel Intelligent Systems basierenden Titel wiederzubeleben. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Dois jogos virtuais de meninos cancelados juntam-se aos 'Nintendo Classics' na próxima semana",
+        "summary": "Renascimento retrô. Desde que ingressou no serviço Nintendo Classics no início deste ano, a biblioteca Virtual Boy tem recebido atualizações regulares de jogos. Agora, em um anúncio esta semana, a Nintendo revelou que está trazendo os títulos cancelados do Virtual Boy Zero Racers e D-Hopper (Dragon Hopper) para o serviço de assinatura em 4 de agosto de 2026. A empresa anunciou originalmente que estava revivendo o título baseado em F-Zero e no jogo Intelligent Systems no início deste ano. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Две отмененные игры Virtual Boy присоединятся к Nintendo Classics на следующей неделе",
+        "summary": "Ретро возрождение. С момента присоединения к сервису Nintendo Classics в начале этого года библиотека Virtual Boy регулярно получает обновления игр. Теперь, в объявлении на этой неделе, Nintendo сообщила, что переносит отмененные игры Virtual Boy Zero Racers и D-Hopper (Dragon Hopper) в службу подписки 4 августа 2026 года. Первоначально в этом году компания объявила, что возрождает игру, основанную на F-Zero и игре Intelligent Systems. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Δύο εικονικά παιχνίδια για αγόρια που ακυρώθηκαν, εγγραφείτε στο «Nintendo Classics» την επόμενη εβδομάδα",
+        "summary": "Ρετρό αναβίωση. Από τότε που έγινε μέλος της υπηρεσίας Nintendo Classics νωρίτερα φέτος, η βιβλιοθήκη Virtual Boy λαμβάνει τακτικές ενημερώσεις παιχνιδιών. Τώρα, σε μια ανακοίνωση αυτή την εβδομάδα, η Nintendo αποκάλυψε ότι φέρνει τους ακυρωμένους τίτλους Virtual Boy Zero Racers και D-Hopper ( Dragon Hopper ) στη συνδρομητική υπηρεσία στις 4 Αυγούστου 2026. Αρχικά ανακοίνωσε ότι αναβιώνει τον τίτλο που βασίζεται στο F-Zero και το παιχνίδι Intelligent Systems νωρίτερα φέτος. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "İptal Edilen İki Sanal Çocuk Oyunu Gelecek Hafta 'Nintendo Classics'e Katılıyor",
+        "summary": "Retro canlanma. Bu yılın başlarında Nintendo Classics hizmetine katıldığından beri Virtual Boy kütüphanesi düzenli olarak oyun güncellemeleri alıyor. Şimdi, bu hafta yapılan bir duyuruda Nintendo, iptal edilen Virtual Boy oyunları Zero Racers ve D-Hopper'ı (Dragon Hopper) 4 Ağustos 2026'da abonelik hizmetine getireceğini açıkladı. Başlangıçta, bu yılın başlarında F-Zero ve Intelligent Systems oyununa dayanan oyunu yeniden canlandıracağını duyurmuştu. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "キャンセルされたバーチャルボーイゲーム2本が来週「ニンテンドークラシックス」に参加",
+        "summary": "レトロ復活。今年初めにニンテンドー クラシック サービスに参加して以来、バーチャル ボーイ ライブラリは定期的にゲームのアップデートを受信して​​います。さて、今週の発表で、任天堂はキャンセルされたバーチャルボーイのタイトルであるゼロレーサーとD-ホッパー（ドラゴンホッパー）を2026年8月4日にサブスクリプションサービスに導入することを明らかにしました。同社は当初、今年初めに F-Zero と Intelligent Systems ゲームをベースにしたタイトルを復活させると発表しました。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "两款被取消的 Virtual Boy 游戏下周将加入“任天堂经典”",
+        "summary": "复古复兴。自从今年早些时候加入任天堂经典服务以来，Virtual Boy 库一直在定期接收游戏更新。现在，任天堂在本周的一份声明中透露，它将于 2026 年 8 月 4 日将取消的 Virtual Boy 游戏《零赛车手》和《D-Hopper》（Dragon Hopper）引入订阅服务。今年早些时候，它最初宣布将恢复基于 F-Zero 和智能系统游戏的游戏。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
+    "id": "723b875c3f20654ad7dc8b9665f15c5085297ea9",
+    "title": "Talking Point: What Was The First Gears Of War Game You Ever Played?",
+    "summary": "Where you there when Carmine's gun jammed? As we draw ever closer to the Gears of War: E-Day multiplayer Beta (August 6-10 for players who pre-ordered or subscribe to XGP Ultimate/PC, followed by the Open Beta from August 13-17) we thought now would be the perfect time to ask about your first experience with the series. For many of us who chainsawed our first Locust grub in the OG Gears of War , will most likely remember that iconic Mad World trailer . We fell in love with Gears for its gritty c",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/features/talking-point-what-was-the-first-gears-of-war-game-you-ever-played",
+    "imageUrl": "https://images.purexbox.com/c836b4302580a/large.jpg",
+    "publishedAt": "2026-07-30T17:30:00+00:00",
+    "scrapedAt": "2026-07-31T06:19:42.487792+00:00",
+    "translations": {
+      "en": {
+        "title": "Talking Point: What Was The First Gears Of War Game You Ever Played?",
+        "summary": "Where you there when Carmine's gun jammed? As we draw ever closer to the Gears of War: E-Day multiplayer Beta (August 6-10 for players who pre-ordered or subscribe to XGP Ultimate/PC, followed by the Open Beta from August 13-17) we thought now would be the perfect time to ask about your first experience with the series. For many of us who chainsawed our first Locust grub in the OG Gears of War , will most likely remember that iconic Mad World trailer . We fell in love with Gears for its gritty c"
+      },
+      "fr": {
+        "title": "Point de discussion : quel a été le premier jeu Gears Of War auquel vous avez joué ?",
+        "summary": "Où étais-tu quand l'arme de Carmine s'est enrayée ? Alors que nous nous rapprochons de plus en plus de la bêta multijoueur de Gears of War : E-Day (du 6 au 10 août pour les joueurs ayant précommandé ou abonnés à XGP Ultimate/PC, suivie de la bêta ouverte du 13 au 17 août), nous avons pensé que ce serait le moment idéal pour vous poser des questions sur votre première expérience avec la série. Pour beaucoup d'entre nous qui ont tronçonné notre première larve Locust dans l'OG Gears of War, ils se souviendront très probablement de cette bande-annonce emblématique de Mad World. Nous sommes tombés amoureux de Gears pour son style réaliste."
+      },
+      "es": {
+        "title": "Punto de conversación: ¿Cuál fue el primer juego de Gears Of War que jugaste?",
+        "summary": "¿Dónde estabas cuando el arma de Carmine se atascó? A medida que nos acercamos cada vez más a la Beta multijugador de Gears of War: E-Day (del 6 al 10 de agosto para los jugadores que reservaron o se suscribieron a XGP Ultimate/PC, seguida de la Beta abierta del 13 al 17 de agosto), pensamos que ahora sería el momento perfecto para preguntarte sobre tu primera experiencia con la serie. Muchos de los que cortamos con motosierra nuestra primera comida Locust en el original Gears of War, probablemente recordaremos ese icónico tráiler de Mad World. Nos enamoramos de Gears por su valiente c"
+      },
+      "it": {
+        "title": "Punto di discussione: qual è stato il primo gioco di Gears Of War a cui hai giocato?",
+        "summary": "Dov'eri quando la pistola di Carmine si è inceppata? Mentre ci avviciniamo sempre più alla Beta multiplayer di Gears of War: E-Day (6-10 agosto per i giocatori che hanno prenotato o si sono abbonati a XGP Ultimate/PC, seguita dall'Open Beta dal 13 al 17 agosto) abbiamo pensato che questo fosse il momento perfetto per chiedere della tua prima esperienza con la serie. Molti di noi che hanno mangiato la prima preda di Locuste nell'originale Gears of War ricorderanno molto probabilmente l'iconico trailer di Mad World. Ci siamo innamorati di Gears per il suo grintoso c"
+      },
+      "de": {
+        "title": "Diskussionspunkt: Was war das erste Gears of War-Spiel, das Sie jemals gespielt haben?",
+        "summary": "Wo warst du da, als Carmines Waffe blockierte? Während wir immer näher an die Multiplayer-Beta von Gears of War: E-Day heranrücken (6. bis 10. August für Spieler, die XGP Ultimate/PC vorbestellt oder abonniert haben, gefolgt von der offenen Beta vom 13. bis 17. August), dachten wir, dass jetzt der perfekte Zeitpunkt wäre, nach Ihren ersten Erfahrungen mit der Serie zu fragen. Viele von uns, die unser erstes Locust-Essen im OG Gears of War mit der Kettensäge erlegt haben, werden sich höchstwahrscheinlich an den legendären Mad World-Trailer erinnern. Wir haben uns in Gears wegen seines düsteren Designs verliebt"
+      },
+      "pt": {
+        "title": "Ponto de discussão: Qual foi o primeiro jogo Gears Of War que você já jogou?",
+        "summary": "Onde você estava quando a arma do Carmine travou? À medida que nos aproximamos cada vez mais do Beta multijogador de Gears of War: E-Day (6 a 10 de agosto para jogadores que pré-encomendaram ou assinaram o XGP Ultimate/PC, seguido pelo Open Beta de 13 a 17 de agosto), pensamos que agora seria o momento perfeito para perguntar sobre sua primeira experiência com a série. Para muitos de nós que cortamos nossa primeira comida Locust no OG Gears of War, provavelmente nos lembraremos daquele trailer icônico de Mad World. Nós nos apaixonamos por Gears por seu estilo corajoso"
+      },
+      "ru": {
+        "title": "Тема для разговора: какая была первая игра Gears Of War, в которую вы когда-либо играли?",
+        "summary": "Где ты был там, когда у Кармина заклинило пистолет? По мере того, как мы приближаемся к многопользовательскому бета-тестированию Gears of War: E-Day (6–10 августа для игроков, оформивших предзаказ или подписавшихся на XGP Ultimate/ПК, а затем 13–17 августа состоится открытое бета-тестирование), мы подумали, что сейчас самое время спросить о вашем первом опыте игры в серию. Многие из нас, кто пилил нашу первую личинку Саранчи в OG Gears of War, скорее всего, помнят тот культовый трейлер Mad World. Мы влюбились в Gears за их суровость."
+      },
+      "el": {
+        "title": "Talking Point: Ποιο ήταν το πρώτο παιχνίδι Gears Of War που παίξατε ποτέ;",
+        "summary": "Πού είσαι εκεί όταν μπλοκάρει το όπλο της Carmine; Καθώς πλησιάζουμε ολοένα και περισσότερο στο Gears of War: E-Day για πολλούς παίκτες Beta (6-10 Αυγούστου για παίκτες που έχουν προπαραγγείλει ή έχουν εγγραφεί στο XGP Ultimate/PC, ακολουθούμενο από το Open Beta από 13-17 Αυγούστου) πιστεύαμε ότι τώρα θα ήταν η ιδανική στιγμή να ρωτήσουμε για την πρώτη σας εμπειρία με τη σειρά. Για πολλούς από εμάς που αλυσοπρίοναμε το πρώτο μας Locust grub στο OG Gears of War, πιθανότατα θα θυμόμαστε αυτό το εμβληματικό τρέιλερ του Mad World. Ερωτευτήκαμε το Gears για το χοντρό γ"
+      },
+      "tr": {
+        "title": "Konuşma Konusu: Oynadığınız İlk Gears Of War Oyunu Hangisiydi?",
+        "summary": "Carmine'nin silahı tutukluk yaptığında neredeydin? Gears of War: E-Day çok oyunculu Beta'ya (XGP Ultimate/PC için ön sipariş veren veya abone olan oyuncular için 6-10 Ağustos, ardından 13-17 Ağustos Açık Beta) yaklaşırken, seriyle ilgili ilk deneyiminizi sormak için şimdi mükemmel bir zaman olacağını düşündük. OG Gears of War'da ilk Locust grubumuzu elektrikli testereyle kesen çoğumuz, o ikonik Mad World fragmanını büyük ihtimalle hatırlayacaktır. Cesur tasarımı nedeniyle Gears'a aşık olduk"
+      },
+      "ja": {
+        "title": "トーキングポイント: あなたが初めてプレイした Gears of War ゲームは何ですか?",
+        "summary": "カーマインの銃が詰まったとき、どこにいたの？ Gears of War: E-Day マルチプレイヤー ベータ版 (XGP Ultimate/PC を予約または購読しているプレイヤー向けに 8 月 6 日から 10 日まで、続いて 8 月 13 日から 17 日までオープン ベータ版) が近づくにつれ、今こそシリーズの最初の体験について尋ねるのに最適な時期だと考えました。 OG Gears of War で初めてローカストの幼虫をチェーンソーで切断した私たちの多くは、あの象徴的な Mad World トレーラーを覚えているでしょう。私たちは Gears の気骨のあるストーリーに夢中になりました。"
+      },
+      "zh": {
+        "title": "话题：您玩过的第一款《战争机器》游戏是什么？",
+        "summary": "卡迈因的枪卡壳时你在哪里？随着我们越来越接近《战争机器：E-Day》多人测试版（8 月 6 日至 10 日，针对预购或订阅 XGP Ultimate/PC 的玩家，随后是 8 月 13 日至 17 日的公开测试版），我们认为现在是询问您对该系列的首次体验的最佳时机。对于我们许多人来说，在 OG Gears of War 中用电锯锯过我们的第一个蝗虫幼虫，很可能会记得那个标志性的《疯狂世界》预告片。我们爱上《战争机器》是因为它坚韧不拔的设计"
+      }
+    }
+  },
+  {
+    "id": "a46aa36e1687e761a5bab41734dd8f19e19bf543",
+    "title": "Stupid Never Dies : le jeu d'action des anciens de Capcom tient sa date de sortie",
+    "summary": "Parmi les producteurs japonais vétérans ayant tout quitté pour rejoindre NetEase Games il y a quelques années, Hiroyuki Kobayashi s'apprête à réussir là où Toshihiro Nagoshi a échoué. GPTRACK50, le studio de l'ancien pensionnaire de Capcom, vient d'annoncer que son premier jeu sortira le 21 octobre 2026 sur PS5 et PC.",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gamekult",
+    "sourceUrl": "https://www.gamekult.com/actualite/stupid-never-dies-le-jeu-d-action-des-anciens-de-capcom-tient-sa-date-de-sortie-3050871469.html",
+    "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871469/stupid-never-dies-l-action-rpg-des-anciens-de-capcom-tient-sa-date-de-sortie-b2beeec3__800_800__529-0-2689-2160.jpg",
+    "publishedAt": "2026-07-30T17:10:00+00:00",
+    "scrapedAt": "2026-07-31T06:21:41.052825+00:00",
+    "translations": {
+      "fr": {
+        "title": "Stupid Never Dies : le jeu d'action des anciens de Capcom tient sa date de sortie",
+        "summary": "Parmi les producteurs japonais vétérans ayant tout quitté pour rejoindre NetEase Games il y a quelques années, Hiroyuki Kobayashi s'apprête à réussir là où Toshihiro Nagoshi a échoué. GPTRACK50, le studio de l'ancien pensionnaire de Capcom, vient d'annoncer que son premier jeu sortira le 21 octobre 2026 sur PS5 et PC."
+      },
+      "en": {
+        "title": "Stupid Never Dies: the action game from Capcom alumni keeps its release date",
+        "summary": "Among the veteran Japanese producers who left everything to join NetEase Games a few years ago, Hiroyuki Kobayashi is preparing to succeed where Toshihiro Nagoshi failed. GPTRACK50, the studio of the former Capcom resident, has just announced that its first game will be released on October 21, 2026 on PS5 and PC."
+      },
+      "es": {
+        "title": "Stupid Never Dies: el juego de acción de los antiguos alumnos de Capcom mantiene su fecha de lanzamiento",
+        "summary": "Entre los veteranos productores japoneses que dejaron todo para unirse a NetEase Games hace unos años, Hiroyuki Kobayashi se está preparando para triunfar donde Toshihiro Nagoshi fracasó. GPTRACK50, el estudio del ex residente de Capcom, acaba de anunciar que su primer juego se lanzará el 21 de octubre de 2026 en PS5 y PC."
+      },
+      "it": {
+        "title": "Stupid Never Dies: il gioco d'azione degli ex allievi Capcom mantiene la sua data di uscita",
+        "summary": "Tra i veterani produttori giapponesi che hanno lasciato tutto per unirsi a NetEase Games qualche anno fa, Hiroyuki Kobayashi si prepara a riuscire dove Toshihiro Nagoshi ha fallito. GPTRACK50, lo studio dell'ex residente di Capcom, ha appena annunciato che il suo primo gioco uscirà il 21 ottobre 2026 su PS5 e PC."
+      },
+      "de": {
+        "title": "Stupid Never Dies: Das Actionspiel der Capcom-Alumni behält seinen Erscheinungstermin",
+        "summary": "Unter den erfahrenen japanischen Produzenten, die vor ein paar Jahren alles aufgegeben haben, um sich NetEase Games anzuschließen, bereitet sich Hiroyuki Kobayashi darauf vor, dort erfolgreich zu sein, wo Toshihiro Nagoshi gescheitert ist. GPTRACK50, das Studio des ehemaligen Capcom-Bewohners, hat gerade angekündigt, dass sein erstes Spiel am 21. Oktober 2026 auf PS5 und PC erscheinen wird."
+      },
+      "pt": {
+        "title": "Stupid Never Dies: jogo de ação de ex-alunos da Capcom mantém data de lançamento",
+        "summary": "Entre os veteranos produtores japoneses que largaram tudo para ingressar na NetEase Games há alguns anos, Hiroyuki Kobayashi se prepara para ter sucesso onde Toshihiro Nagoshi falhou. GPTRACK50, estúdio do ex-residente da Capcom, acaba de anunciar que seu primeiro jogo será lançado em 21 de outubro de 2026 para PS5 e PC."
+      },
+      "ru": {
+        "title": "Stupid Never Dies: экшен от выпускников Capcom сохранил дату выхода",
+        "summary": "Среди опытных японских продюсеров, которые несколько лет назад оставили все, чтобы присоединиться к NetEase Games, Хироюки Кобаяши готовится добиться успеха там, где потерпел неудачу Тосихиро Нагоши. GPTRACK50, студия бывшего резидента Capcom, только что объявила, что ее первая игра выйдет 21 октября 2026 года на PS5 и ПК."
+      },
+      "el": {
+        "title": "Το Stupid Never Dies: το παιχνίδι δράσης από τους αποφοίτους της Capcom διατηρεί την ημερομηνία κυκλοφορίας του",
+        "summary": "Μεταξύ των βετεράνων Ιάπωνων παραγωγών που άφησαν τα πάντα για να ενταχθούν στην NetEase Games πριν από μερικά χρόνια, ο Hiroyuki Kobayashi ετοιμάζεται να πετύχει εκεί που απέτυχε ο Toshihiro Nagoshi. Το GPTRACK50, το στούντιο του πρώην κατοίκου της Capcom, μόλις ανακοίνωσε ότι το πρώτο του παιχνίδι θα κυκλοφορήσει στις 21 Οκτωβρίου 2026 σε PS5 και PC."
+      },
+      "tr": {
+        "title": "Stupid Never Dies: Capcom mezunlarının aksiyon oyunu çıkış tarihini koruyor",
+        "summary": "Birkaç yıl önce NetEase Games'e katılmak için her şeyini bırakan deneyimli Japon yapımcılardan Hiroyuki Kobayashi, Toshihiro Nagoshi'nin başarısız olduğu yerde başarılı olmaya hazırlanıyor. Eski Capcom sakininin stüdyosu GPTRACK50, ilk oyununun 21 Ekim 2026'da PS5 ve PC'de yayınlanacağını duyurdu."
+      },
+      "ja": {
+        "title": "Stupid Never Dies: カプコン卒業生によるアクション ゲームはリリース日を維持",
+        "summary": "数年前にすべてを捨ててNetEase Gamesに入社したベテラン日本人プロデューサーの中でも、小林裕幸氏は名越稔洋氏が失敗した成功を目指して準備を進めている。元カプコン居住者のスタジオである GPTRACK50 は、最初のゲームが 2026 年 10 月 21 日に PS5 と PC でリリースされることを発表しました。"
+      },
+      "zh": {
+        "title": "《愚蠢不死》：卡普空校友制作的动作游戏保持发行日期",
+        "summary": "在几年前抛下一切加盟网易游戏的日本资深制作人中，小林博之正准备在名越俊博失败的地方取得成功。前 Capcom 驻地工作室 GPTRACK50 刚刚宣布，其首款游戏将于 2026 年 10 月 21 日在 PS5 和 PC 上发布。"
+      }
+    }
+  },
+  {
+    "id": "95fb8e01f887fe552b9045dd24847e32b55d8ad0",
+    "title": "US: Nintendo Download for 30th July, 2026",
+    "summary": "This week’s Nintendo Download includes the following content: Pre-orders: Nintendo Music: Activities: Nintendo eShop sales on Nintendo Switch 2 and Nintendo Switch: Also new this week on Nintendo eShop on Nintendo Switch 2: Also new this week on Nintendo eShop on Nintendo Switch: Nintendo of America Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/07/30/us-nintendo-download-for-30th-july-2026/",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T16:00:31+00:00",
+    "scrapedAt": "2026-07-31T06:19:56.535062+00:00",
+    "translations": {
+      "en": {
+        "title": "US: Nintendo Download for 30th July, 2026",
+        "summary": "This week’s Nintendo Download includes the following content: Pre-orders: Nintendo Music: Activities: Nintendo eShop sales on Nintendo Switch 2 and Nintendo Switch: Also new this week on Nintendo eShop on Nintendo Switch 2: Also new this week on Nintendo eShop on Nintendo Switch: Nintendo of America Source"
+      },
+      "fr": {
+        "title": "États-Unis : téléchargement Nintendo pour le 30 juillet 2026",
+        "summary": "Le téléchargement Nintendo de cette semaine comprend le contenu suivant : Précommandes : Nintendo Music : Activités : Ventes Nintendo eShop sur Nintendo Switch 2 et Nintendo Switch : Nouveauté également cette semaine sur le Nintendo eShop sur Nintendo Switch 2 : Nouveauté également cette semaine sur Nintendo eShop sur Nintendo Switch : Nintendo of America Source"
+      },
+      "es": {
+        "title": "EE. UU.: Descarga de Nintendo para el 30 de julio de 2026",
+        "summary": "La descarga de Nintendo de esta semana incluye el siguiente contenido: Reservas: Nintendo Música: Actividades: Ventas de Nintendo eShop en Nintendo Switch 2 y Nintendo Switch: También nuevo esta semana en Nintendo eShop de Nintendo Switch 2: También nuevo esta semana en Nintendo eShop de Nintendo Switch: Nintendo of America Fuente"
+      },
+      "it": {
+        "title": "USA: download Nintendo per il 30 luglio 2026",
+        "summary": "Il download Nintendo di questa settimana include i seguenti contenuti: Preordini: Nintendo Music: Attività: Vendite nel Nintendo eShop su Nintendo Switch 2 e Nintendo Switch: Novità anche questa settimana nel Nintendo eShop su Nintendo Switch 2: Novità anche questa settimana nel Nintendo eShop su Nintendo Switch: Nintendo of America Fonte"
+      },
+      "de": {
+        "title": "USA: Nintendo-Download für den 30. Juli 2026",
+        "summary": "Der Nintendo-Download dieser Woche umfasst die folgenden Inhalte: Vorbestellungen: Nintendo-Musik: Aktivitäten: Nintendo eShop-Verkäufe auf Nintendo Switch 2 und Nintendo Switch: Auch diese Woche neu im Nintendo eShop auf Nintendo Switch 2: Auch diese Woche neu im Nintendo eShop auf Nintendo Switch: Nintendo of America-Quelle"
+      },
+      "pt": {
+        "title": "EUA: download da Nintendo para 30 de julho de 2026",
+        "summary": "O Nintendo Download desta semana inclui o seguinte conteúdo: Pré-encomendas: Nintendo Music: Atividades: Vendas do Nintendo eShop no Nintendo Switch 2 e Nintendo Switch: Também novidade esta semana na Nintendo eShop no Nintendo Switch 2: Também novidade esta semana na Nintendo eShop no Nintendo Switch: Nintendo of America Fonte"
+      },
+      "ru": {
+        "title": "США: загрузка для Nintendo, 30 июля 2026 г.",
+        "summary": "Загрузка Nintendo на этой неделе включает в себя следующий контент: Предварительные заказы: Nintendo Music: Мероприятия: Распродажи в Nintendo eShop на Nintendo Switch 2 и Nintendo Switch: Также новинка на этой неделе в Nintendo eShop на Nintendo Switch 2: Также новинка на этой неделе в Nintendo eShop на Nintendo Switch: Nintendo of America Источник"
+      },
+      "el": {
+        "title": "ΗΠΑ: Λήψη Nintendo για 30 Ιουλίου 2026",
+        "summary": "Το Nintendo Download αυτής της εβδομάδας περιλαμβάνει το ακόλουθο περιεχόμενο: Προπαραγγελίες: Μουσική Nintendo: Δραστηριότητες: Πωλήσεις Nintendo eShop στο Nintendo Switch 2 και στο Nintendo Switch: Επίσης νέο αυτήν την εβδομάδα στο Nintendo eShop στο Nintendo Switch 2: Επίσης νέο αυτήν την εβδομάδα στο Nintendo eShop στο Nintendo Switch Πηγή: Nintendo of America"
+      },
+      "tr": {
+        "title": "ABD: 30 Temmuz 2026 için Nintendo İndirme",
+        "summary": "Bu haftanın Nintendo İndirmesi aşağıdaki içeriği içerir: Ön siparişler: Nintendo Müzik: Etkinlikler: Nintendo Switch 2 ve Nintendo Switch'te Nintendo eShop satışları: Ayrıca bu hafta Nintendo Switch 2'de Nintendo eShop'ta yeni: Ayrıca bu hafta Nintendo Switch'te Nintendo eShop'ta yeni: Nintendo of America Kaynak"
+      },
+      "ja": {
+        "title": "米国: 任天堂、2026 年 7 月 30 日のダウンロード",
+        "summary": "今週の Nintendo ダウンロードには次のコンテンツが含まれます: 予約注文: Nintendo Music: アクティビティ: Nintendo Switch 2 および Nintendo Switch での Nintendo eShop 販売: Nintendo Switch 2 の Nintendo eShop で今週も新登場: Nintendo Switch の Nintendo eShop で今週も新登場: Nintendo of America 出典"
+      },
+      "zh": {
+        "title": "美国：任天堂 2026 年 7 月 30 日下载",
+        "summary": "本周的 Nintendo Download 包括以下内容： 预购：Nintendo 音乐：活动：Nintendo Switch 2 和 Nintendo Switch 上的 Nintendo eShop 销售：本周 Nintendo Switch 2 上的 Nintendo eShop 上也有新内容：本周 Nintendo Switch 上的 Nintendo eShop 上也有新内容：Nintendo of America 来源"
+      }
+    }
+  },
+  {
+    "id": "f6817b94b046a3bc96ab252a13c18066b8a2fb14",
+    "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+    "summary": "Though there have not been many major arcade releases out West to speak of this Summer (albeit due to most being delayed into the coming weeks), other parts of the world have already seen a few new games launch, with Asia receiving several. One place in which that has been happening is of course Japan, [&#8230;] The post Out Now In Japan: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash appeared first on Arcade Heroes .",
+    "category": "GAME_RELEASE",
+    "sourceName": "Arcade Heroes",
+    "sourceUrl": "https://arcadeheroes.com/2026/07/30/out-now-in-japan-one-piece-demon-slayer/",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T14:36:01+00:00",
+    "scrapedAt": "2026-07-31T06:18:56.849272+00:00",
+    "translations": {
+      "en": {
+        "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Though there have not been many major arcade releases out West to speak of this Summer (albeit due to most being delayed into the coming weeks), other parts of the world have already seen a few new games launch, with Asia receiving several. One place in which that has been happening is of course Japan, [&#8230;] The post Out Now In Japan: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash appeared first on Arcade Heroes ."
+      },
+      "fr": {
+        "title": "Disponible maintenant au Japon : One Piece Dawn Strike et Demon Slayer Kimetsu No Yaiba : Nichirin Battle Slash",
+        "summary": "Bien qu'il n'y ait pas eu beaucoup de sorties d'arcade majeures en Occident cet été (bien que la plupart aient été retardées dans les semaines à venir), d'autres régions du monde ont déjà vu quelques nouveaux jeux être lancés, l'Asie en recevant plusieurs. Un endroit où cela s'est produit est bien sûr le Japon, [&#8230;] L'article Disponible maintenant au Japon : One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba : Nichirin Battle Slash est apparu en premier sur Arcade Heroes."
+      },
+      "es": {
+        "title": "Ya disponible en Japón: One Piece Dawn Strike y Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Aunque no ha habido muchos lanzamientos importantes de arcade en Occidente para hablar de este verano (aunque debido a que la mayoría se retrasó hasta las próximas semanas), otras partes del mundo ya han visto el lanzamiento de algunos juegos nuevos, y Asia recibió varios. Un lugar en el que esto ha estado sucediendo es, por supuesto, Japón, [&#8230;] El post Ya disponible en Japón: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash apareció por primera vez en Arcade Heroes."
+      },
+      "it": {
+        "title": "Disponibile ora in Giappone: One Piece Dawn Strike e Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Sebbene non ci siano state molte importanti uscite arcade in Occidente di cui parlare quest'estate (anche se la maggior parte è stata ritardata nelle prossime settimane), altre parti del mondo hanno già visto il lancio di alcuni nuovi giochi, con l'Asia che ne ha ricevuti diversi. Un luogo in cui ciò è accaduto è ovviamente il Giappone, [&#8230;] Il post ora disponibile in Giappone: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash è apparso per la prima volta su Arcade Heroes."
+      },
+      "de": {
+        "title": "Jetzt in Japan erhältlich: One Piece Dawn Strike und Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Auch wenn es in diesem Sommer im Westen nicht viele nennenswerte Arcade-Veröffentlichungen gab (obwohl sich die meisten auf die kommenden Wochen verzögern), wurden in anderen Teilen der Welt bereits einige neue Spiele auf den Markt gebracht, darunter auch einige in Asien. Ein Ort, an dem das passiert ist, ist natürlich Japan, [&#8230;] Der Beitrag Out Now In Japan: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash erschien zuerst auf Arcade Heroes."
+      },
+      "pt": {
+        "title": "Já disponível no Japão: One Piece Dawn Strike e Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Embora não tenha havido muitos lançamentos de arcade importantes no Ocidente para falar neste verão (embora devido ao fato de a maioria ter sido adiada para as próximas semanas), outras partes do mundo já viram o lançamento de alguns novos jogos, com a Ásia recebendo vários. Um lugar onde isso tem acontecido é, claro, o Japão, [&#8230;] O post Out Now In Japan: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash apareceu pela primeira vez em Arcade Heroes."
+      },
+      "ru": {
+        "title": "Уже в Японии: One Piece Dawn Strike и Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Хотя этим летом на Западе было не так много крупных релизов игровых автоматов, о которых можно было бы говорить (хотя большинство из них было отложено на ближайшие недели), в других частях мира уже было запущено несколько новых игр, причем несколько из них получили в Азии. Одним из мест, где это происходит, является, конечно же, Япония. [&#8230;] Пост уже доступен в Японии: One Piece Dawn Strike &#038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash впервые появился в Arcade Heroes."
+      },
+      "el": {
+        "title": "Κυκλοφορεί τώρα στην Ιαπωνία: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Αν και δεν υπήρξαν πολλές σημαντικές κυκλοφορίες arcade από τη Δύση για να μιλήσουμε για αυτό το καλοκαίρι (αν και επειδή οι περισσότερες καθυστερούν τις επόμενες εβδομάδες), άλλα μέρη του κόσμου έχουν ήδη δει μερικά νέα παιχνίδια να κυκλοφορούν, με την Ασία να δέχεται αρκετά. Ένα μέρος στο οποίο συμβαίνει αυτό είναι φυσικά η Ιαπωνία, [&#8230;] The post Out Now In Japan: One Piece Dawn Strike &#038; Το Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash εμφανίστηκε πρώτα στο Arcade Heroes ."
+      },
+      "tr": {
+        "title": "Şimdi Japonya'da: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
+        "summary": "Her ne kadar bu yaz Batı'da pek fazla büyük atari oyunu yayınlanmamış olsa da (her ne kadar çoğu gelecek haftalara ertelenmiş olsa da), dünyanın diğer bölgelerinde halihazırda birkaç yeni oyun piyasaya sürüldü ve Asya'da da birkaç oyun çıktı. Bunun gerçekleştiği yerlerden biri de elbette Japonya'dır. [&#8230;] Şimdi Japonya'da: One Piece Dawn Strike #038; Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash ilk olarak Arcade Heroes'da ortaya çıktı."
+      },
+      "ja": {
+        "title": "日本で発売中：ワンピース ドーンストライク＆鬼滅の刃 日輪バトルスラッシュ",
+        "summary": "この夏に関して言えば、西側諸国ではアーケードでの大規模なリリースはそれほど多くありませんが（大部分が今後数週間に延期されたためですが）、世界の他の地域ではすでにいくつかの新しいゲームがリリースされており、アジアでもいくつかのゲームがリリースされています。それが起こっている場所の 1 つは、もちろん日本です。[&#8230;] The post Out Now In Japan: One Piece Dawn Strike&#038;デーモンスレイヤー キメツの刃：日輪バトルスラッシュは、アーケードヒーローズに最初に登場しました。"
+      },
+      "zh": {
+        "title": "现已在日本推出：《海贼王黎明强袭》和《鬼灭之刃：日轮战斗斩》",
+        "summary": "尽管今年夏天西方并没有推出太多大型街机游戏（尽管大多数都被推迟到未来几周），但世界其他地区已经推出了一些新游戏，其中亚洲就收到了几款。发生这种情况的地方当然是日本，[&#8230;] 帖子现在在日本发布：海贼王黎明罢工&#038; 《鬼灭之刃：日轮战斗斩》首次出现在《街机英雄》中。"
+      }
+    }
+  },
+  {
+    "id": "ca06fb98d8b4267c3702d2eed610a445c3a24de6",
+    "title": "In the Busiest Gaming Month of the Year, PS5's Control Resonant Will Take Up a Lot of Your Time",
+    "summary": "Approximate length announced. September is the apocalypse for new console releases, with games like Marvel’s Wolverine and The Blood of Dawnwalker all vying for your attention. If you were hoping Control Resonant would be a breezy campaign you could beat in around 10 hours like its predecessor, then – well, think again. Read the full article on pushsquare.com",
+    "category": "UPCOMING_CONSOLE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/07/in-the-busiest-gaming-month-of-the-year-ps5s-control-resonant-will-take-up-a-lot-of-your-time",
+    "imageUrl": "https://images.pushsquare.com/04b3bd1e08c60/large.jpg",
+    "publishedAt": "2026-07-30T14:00:00+00:00",
+    "scrapedAt": "2026-07-31T06:19:30.400772+00:00",
+    "translations": {
+      "en": {
+        "title": "In the Busiest Gaming Month of the Year, PS5's Control Resonant Will Take Up a Lot of Your Time",
+        "summary": "Approximate length announced. September is the apocalypse for new console releases, with games like Marvel’s Wolverine and The Blood of Dawnwalker all vying for your attention. If you were hoping Control Resonant would be a breezy campaign you could beat in around 10 hours like its predecessor, then – well, think again. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Au cours du mois de jeu le plus chargé de l'année, Control Resonant de la PS5 prendra beaucoup de votre temps",
+        "summary": "Longueur approximative annoncée. Septembre est l'apocalypse pour les nouvelles sorties de consoles, avec des jeux comme Marvel's Wolverine et The Blood of Dawnwalker qui rivalisent tous pour attirer votre attention. Si vous espériez que Control Resonant serait une campagne légère que vous pourriez terminer en 10 heures environ comme son prédécesseur, alors – eh bien, détrompez-vous. Lire l'article complet sur pushsquare.com"
+      },
+      "es": {
+        "title": "En el mes de juegos más ocupado del año, Control Resonant de PS5 ocupará mucho de su tiempo",
+        "summary": "Longitud aproximada anunciada. Septiembre es el apocalipsis para los nuevos lanzamientos de consolas, con juegos como Marvel's Wolverine y The Blood of Dawnwalker compitiendo por tu atención. Si esperabas que Control Resonant fuera una campaña divertida que pudieras superar en unas 10 horas como su predecesora, entonces... bueno, piénsalo de nuevo. Lea el artículo completo en pushsquare.com"
+      },
+      "it": {
+        "title": "Nel mese di gioco più impegnativo dell'anno, la risonanza di controllo di PS5 richiederà molto del tuo tempo",
+        "summary": "Durata approssimativa annunciata. Settembre è l'apocalisse per le nuove uscite su console, con giochi come Marvel's Wolverine e The Blood of Dawnwalker che gareggiano per attirare la tua attenzione. Se speravi che Control Resonant fosse una campagna vivace da poter completare in circa 10 ore come il suo predecessore, allora... beh, ripensaci. Leggi l'articolo completo su pushsquare.com"
+      },
+      "de": {
+        "title": "Im geschäftigsten Gaming-Monat des Jahres wird die Steuerung Resonant der PS5 viel Zeit in Anspruch nehmen",
+        "summary": "Ungefähre Länge bekannt gegeben. Der September ist die Apokalypse für neue Konsolenveröffentlichungen, denn Spiele wie Marvel’s Wolverine und The Blood of Dawnwalker wetteifern alle um Ihre Aufmerksamkeit. Wenn Sie gehofft haben, dass Control Resonant eine flotte Kampagne sein würde, die Sie wie sein Vorgänger in etwa 10 Stunden durchspielen könnten, dann – nun ja, denken Sie noch einmal darüber nach. Lesen Sie den vollständigen Artikel auf pushsquare.com"
+      },
+      "pt": {
+        "title": "No mês mais movimentado do ano para jogos, o Control Resonant do PS5 ocupará muito do seu tempo",
+        "summary": "Comprimento aproximado anunciado. Setembro é o apocalipse para novos lançamentos de console, com jogos como Wolverine da Marvel e The Blood of Dawnwalker disputando sua atenção. Se você esperava que Control Resonant fosse uma campanha alegre que você pudesse vencer em cerca de 10 horas como seu antecessor, então – bem, pense novamente. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "В самый загруженный игровой месяц года контрольный резонанс PS5 отнимет у вас много времени",
+        "summary": "Объявлена ​​приблизительная длина. Сентябрь — это апокалипсис для новых выпусков консолей: такие игры, как Marvel’s Wolverine и The Blood of Dawnwalker, борются за ваше внимание. Если вы надеялись, что Control Resonant будет легкой кампанией, которую вы сможете пройти примерно за 10 часов, как и ее предшественницу, то – что ж, подумайте еще раз. Полную версию статьи читайте на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "Τον πιο πολυσύχναστο μήνα παιχνιδιού της χρονιάς, το Control Resonant του PS5 θα σας πάρει πολύ χρόνο",
+        "summary": "Ανακοινώθηκε το κατά προσέγγιση μήκος. Ο Σεπτέμβριος είναι η αποκάλυψη για νέες κυκλοφορίες κονσόλας, με παιχνίδια όπως το Marvel’s Wolverine και το The Blood of Dawnwalker να διεκδικούν την προσοχή σας. Αν ήλπιζα ότι το Control Resonant θα ήταν μια συναρπαστική καμπάνια που θα μπορούσατε να νικήσετε σε περίπου 10 ώρες όπως ο προκάτοχός του, τότε – λοιπόν, ξανασκεφτείτε το. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
+      },
+      "tr": {
+        "title": "Yılın En Yoğun Oyun Ayı'nda PS5'in Kontrol Tınlaması Zamanınızın Büyük Bir kısmını Alacak",
+        "summary": "Yaklaşık uzunluk açıklandı. Eylül ayı, Marvel's Wolverine ve The Blood of Dawnwalker gibi oyunların dikkatinizi çekmek için yarıştığı yeni konsol sürümleri için kıyamet günüdür. Control Resonant'ın selefi gibi yaklaşık 10 saat içinde yenebileceğiniz havalı bir kampanya olacağını umuyorsanız, o zaman tekrar düşünün. Makalenin tamamını pushsquare.com'da okuyun"
+      },
+      "ja": {
+        "title": "一年で最もゲームが忙しい月は、PS5 のコントロール レゾナントに多くの時間が費やされることになります",
+        "summary": "おおよその長さを発表。 9 月は新しいコンソールのリリースの終末期であり、Marvel's Wolverine や The Blood of Dawnwalker などのゲームが注目を集めようと競い合います。 Control Resonant が前作のように 10 時間程度でクリアできるさわやかなキャンペーンになることを期待していたなら、考え直してください。 Pushsquare.comで記事全文を読む"
+      },
+      "zh": {
+        "title": "一年中最繁忙的游戏月，PS5的控制共振将占用你大量的时间",
+        "summary": "大致长度已公布。九月是新主机发布的末日，漫威的《金刚狼》和《黎明行者之血》等游戏都在争夺您的注意力。如果您希望 Control Resonant 是一款轻松的战役，您可以像它的前身一样在 10 小时左右通关，那么 – 好吧，再想一想。在pushsquare.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "47f8fc6a42674fbaa0c03ba74cbc5baa082e432e",
+    "title": "Open-world sandbox cultivation game 9 Yin Sutra: Immortal announced for PC",
+    "summary": "Snail has announced 9 Yin Sutra: Immortal, an &#8220;open-world cultivation sandbox blending survival, building, exploration, &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/07/open-world-sandbox-cultivation-game-9-yin-sutra-immortal-announced-for-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T13:48:52+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.783090+00:00",
+    "translations": {
+      "en": {
+        "title": "Open-world sandbox cultivation game 9 Yin Sutra: Immortal announced for PC",
+        "summary": "Snail has announced 9 Yin Sutra: Immortal, an &#8220;open-world cultivation sandbox blending survival, building, exploration, &hellip;"
+      },
+      "fr": {
+        "title": "Le jeu de culture sandbox en monde ouvert 9 Yin Sutra: Immortal annoncé sur PC",
+        "summary": "Snail a annoncé 9 Yin Sutra: Immortal, un « bac à sable de culture en monde ouvert mêlant survie, construction, exploration et &hellip;"
+      },
+      "es": {
+        "title": "El juego de cultivo sandbox de mundo abierto 9 Yin Sutra: Immortal anunciado para PC",
+        "summary": "Snail ha anunciado 9 Yin Sutra: Immortal, un \"sandbox de cultivo en mundo abierto que combina supervivencia, construcción, exploración y..."
+      },
+      "it": {
+        "title": "Il gioco di coltivazione sandbox open-world 9 Yin Sutra: Immortal annunciato per PC",
+        "summary": "Snail ha annunciato 9 Yin Sutra: Immortal, un \"sandbox di coltivazione open-world che unisce sopravvivenza, costruzione, esplorazione e..."
+      },
+      "de": {
+        "title": "Open-World-Sandbox-Kultivierungsspiel 9 Yin Sutra: Immortal für PC angekündigt",
+        "summary": "Snail hat 9 Yin Sutra: Immortal angekündigt, eine „Open-World-Kultivierungs-Sandbox, die Überleben, Bauen, Erkunden und mehr vereint“."
+      },
+      "pt": {
+        "title": "Jogo de cultivo sandbox de mundo aberto 9 Yin Sutra: Immortal anunciado para PC",
+        "summary": "Snail anunciou 9 Yin Sutra: Immortal, uma “caixa de areia de cultivo de mundo aberto que combina sobrevivência, construção, exploração e…"
+      },
+      "ru": {
+        "title": "Игра по культивированию в песочнице с открытым миром 9 Yin Sutra: Immortal анонсирована для ПК",
+        "summary": "Snail анонсировала 9 Yin Sutra: Immortal, «песочницу для выращивания в открытом мире, сочетающую в себе выживание, строительство, исследование и…"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το παιχνίδι καλλιέργειας sandbox open-world 9 Yin Sutra: Immortal για υπολογιστή",
+        "summary": "Η Snail ανακοίνωσε το 9 Yin Sutra: Immortal, ένα &#8220;ανοιχτού κόσμου καλλιέργειας sandbox που συνδυάζει επιβίωση, οικοδόμηση, εξερεύνηση και &hellip;"
+      },
+      "tr": {
+        "title": "Açık dünya sandbox yetiştirme oyunu 9 Yin Sutra: Immortal PC için duyuruldu",
+        "summary": "Snail, hayatta kalma, inşa etme, keşfetme ve cehennemi harmanlayan bir açık dünya yetiştirme sanal alanı olan 9 Yin Sutra: Immortal'ı duyurdu."
+      },
+      "ja": {
+        "title": "オープンワールドサンドボックス育成ゲーム『9 ying Sutra: Immortal』がPC向けに発表",
+        "summary": "Snail は、サバイバル、建築、探索などが融合したオープンワールドの育成サンドボックス「9 ying Sutra: Immortal」を発表しました。"
+      },
+      "zh": {
+        "title": "开放世界沙盒养成游戏《九阴经：不朽》宣布登陆PC",
+        "summary": "蜗牛宣布推出《九阴经：仙》，一款集生存、建造、探索于一体的开放世界养成沙盒……"
+      }
+    }
+  },
+  {
+    "id": "0759beb2041c9c1fcd08a16de4d0d2fe6dec932e",
+    "title": "Wobbly Life coming to Switch 2 on August 20",
+    "summary": "Publisher Curve Games and developer RubberBandGames will Wobbly Life &#8211; Nintendo Switch 2 Edition on &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/07/wobbly-life-coming-to-switch-2-on-august-20",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T13:12:35+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.783156+00:00",
+    "translations": {
+      "en": {
+        "title": "Wobbly Life coming to Switch 2 on August 20",
+        "summary": "Publisher Curve Games and developer RubberBandGames will Wobbly Life &#8211; Nintendo Switch 2 Edition on &hellip;"
+      },
+      "fr": {
+        "title": "Wobbly Life arrive sur Switch 2 le 20 août",
+        "summary": "L'éditeur Curve Games et le développeur RubberBandGames proposeront Wobbly Life &#8211; Édition Nintendo Switch 2 sur &hellip;"
+      },
+      "es": {
+        "title": "Wobbly Life llegará a Switch 2 el 20 de agosto",
+        "summary": "El editor Curve Games y el desarrollador RubberBandGames lanzarán Wobbly Life &#8211; Edición Nintendo Switch 2 en &hellip;"
+      },
+      "it": {
+        "title": "Wobbly Life in arrivo su Switch 2 il 20 agosto",
+        "summary": "L'editore Curve Games e lo sviluppatore RubberBandGames pubblicheranno Wobbly Life &#8211; Edizione Nintendo Switch 2 su &hellip;"
+      },
+      "de": {
+        "title": "Wobbly Life erscheint am 20. August für Switch 2",
+        "summary": "Publisher Curve Games und Entwickler RubberBandGames werden Wobbly Life &#8211; Nintendo Switch 2 Edition auf &hellip;"
+      },
+      "pt": {
+        "title": "Wobbly Life chegando ao Switch 2 em 20 de agosto",
+        "summary": "A editora Curve Games e a desenvolvedora RubberBandGames irão Wobbly Life &#8211; Nintendo Switch 2 Edition ligado &hellip;"
+      },
+      "ru": {
+        "title": "Wobbly Life выйдет на Switch 2 20 августа",
+        "summary": "Издатель Curve Games и разработчик RubberBandGames будут Wobbly Life &#8211; Nintendo Switch 2 Edition на &hellip;"
+      },
+      "el": {
+        "title": "Το Wobbly Life έρχεται στο Switch 2 στις 20 Αυγούστου",
+        "summary": "Το Publisher Curve Games και ο προγραμματιστής RubberBandGames θα Wobbly Life &#8211; Nintendo Switch 2 Edition σε &hellip;"
+      },
+      "tr": {
+        "title": "Wobbly Life 20 Ağustos'ta Switch 2'ye geliyor",
+        "summary": "Yayıncı Curve Games ve geliştirici RubberBandGames Wobbly Life &#8211; Nintendo Switch 2 Sürümü &hellip;"
+      },
+      "ja": {
+        "title": "Wobly Life が 8 月 20 日に Switch 2 に登場",
+        "summary": "パブリッシャー Curve Games とデベロッパー RubberBandGames は、Wobly Life &#8211; をリリースします。 Nintendo Switch 2 Edition の &hellip;"
+      },
+      "zh": {
+        "title": "《摇摆人生》将于 8 月 20 日登陆 Switch 2",
+        "summary": "发行商 Curve Games 和开发商 RubberBandGames 将打造《Wobbly Life》 Nintendo Switch 2 版已上线..."
+      }
+    }
+  },
+  {
+    "id": "f7a4fb12096f4b6d886493833f29608621dc8382",
+    "title": "Don't Worry, The Neo Geo AES+ Hasn't Been Delayed",
+    "summary": "Unconnected delay causes confusion. The Neo Geo AES+ is due for release later this year, but a recent post on social media has had people fretting about it potentially be delayed until next year. \"The release of the NEOGEO AES+ has been postponed from November this year to September next year,\" reported majinemui7638 , adding that \"those who pre-ordered should have received an email about the delay by now.\" Read the full article on timeextension.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/07/dont-worry-the-neo-geo-aesplus-hasnt-been-delayed",
+    "imageUrl": "https://images.timeextension.com/bd02522383a11/large.jpg",
+    "publishedAt": "2026-07-30T12:30:00+00:00",
+    "scrapedAt": "2026-07-31T06:18:31.553708+00:00",
+    "translations": {
+      "en": {
+        "title": "Don't Worry, The Neo Geo AES+ Hasn't Been Delayed",
+        "summary": "Unconnected delay causes confusion. The Neo Geo AES+ is due for release later this year, but a recent post on social media has had people fretting about it potentially be delayed until next year. \"The release of the NEOGEO AES+ has been postponed from November this year to September next year,\" reported majinemui7638 , adding that \"those who pre-ordered should have received an email about the delay by now.\" Read the full article on timeextension.com"
+      },
+      "fr": {
+        "title": "Ne vous inquiétez pas, le Neo Geo AES+ n'a pas été retardé",
+        "summary": "Un retard non connecté provoque une confusion. Le Neo Geo AES+ devrait sortir plus tard cette année, mais une publication récente sur les réseaux sociaux a inquiété les gens à l'idée qu'il soit potentiellement retardé jusqu'à l'année prochaine. \"La sortie du NEOGEO AES+ a été reportée de novembre de cette année à septembre de l'année prochaine\", a rapporté majinemui7638, ajoutant que \"ceux qui ont précommandé auraient déjà dû recevoir un e-mail concernant le retard\". Lire l'article complet sur timeextension.com"
+      },
+      "es": {
+        "title": "No se preocupe, el Neo Geo AES+ no se ha retrasado",
+        "summary": "El retraso desconectado causa confusión. El lanzamiento del Neo Geo AES+ está previsto para finales de este año, pero una publicación reciente en las redes sociales ha hecho que la gente se preocupe porque podría retrasarse hasta el próximo año. \"El lanzamiento de NEOGEO AES+ se pospuso de noviembre de este año a septiembre del próximo año\", informó majinemui7638, y agregó que \"aquellos que realizaron pedidos por adelantado ya deberían haber recibido un correo electrónico sobre el retraso\". Lea el artículo completo en timeextension.com"
+      },
+      "it": {
+        "title": "Non preoccuparti, il Neo Geo AES+ non ha subito ritardi",
+        "summary": "Il ritardo non connesso causa confusione. Il rilascio del Neo Geo AES+ è previsto entro la fine dell'anno, ma un recente post sui social media ha fatto preoccupare le persone a proposito del fatto che potrebbe essere ritardato fino al prossimo anno. \"Il rilascio del NEOGEO AES+ è stato posticipato da novembre di quest'anno a settembre del prossimo anno,\" ha riferito majinemui7638 , aggiungendo che \"coloro che hanno effettuato il preordine dovrebbero già aver ricevuto un'e-mail sul ritardo.\" Leggi l'articolo completo su timeextension.com"
+      },
+      "de": {
+        "title": "Keine Sorge, der Neo Geo AES+ hat keine Verzögerung erfahren",
+        "summary": "Eine unverbundene Verzögerung sorgt für Verwirrung. Der Neo Geo AES+ soll später in diesem Jahr auf den Markt kommen, aber ein aktueller Beitrag in den sozialen Medien hat bei den Leuten Anlass zur Sorge gegeben, dass er möglicherweise auf nächstes Jahr verschoben werden könnte. „Die Veröffentlichung des NEOGEO AES+ wurde von November dieses Jahres auf September nächsten Jahres verschoben“, berichtete majinemui7638 und fügte hinzu, dass „diejenigen, die vorbestellt haben, inzwischen eine E-Mail über die Verzögerung erhalten haben sollten.“ Lesen Sie den vollständigen Artikel auf timeextension.com"
+      },
+      "pt": {
+        "title": "Não se preocupe, o Neo Geo AES+ não foi adiado",
+        "summary": "Atraso não conectado causa confusão. O Neo Geo AES + deve ser lançado ainda este ano, mas uma postagem recente nas redes sociais deixou as pessoas preocupadas com a possibilidade de ele ser adiado até o próximo ano. “O lançamento do NEOGEO AES+ foi adiado de novembro deste ano para setembro do próximo ano”, relatou majinemui7638, acrescentando que “aqueles que encomendaram já deveriam ter recebido um e-mail sobre o atraso”. Leia o artigo completo em timeextension.com"
+      },
+      "ru": {
+        "title": "Не волнуйтесь, выпуск Neo Geo AES+ не задерживается",
+        "summary": "Несвязанная задержка вызывает путаницу. Neo Geo AES+ должен быть выпущен позднее в этом году, но недавняя публикация в социальных сетях заставила людей беспокоиться о том, что выпуск может быть отложен до следующего года. «Выпуск NEOGEO AES+ перенесен с ноября этого года на сентябрь следующего года», — сообщил majinemui7638, добавив, что «те, кто сделал предварительный заказ, уже должны были получить электронное письмо о задержке». Полную версию статьи можно прочитать на сайте timeextension.com."
+      },
+      "el": {
+        "title": "Μην ανησυχείτε, το Neo Geo AES+ δεν έχει καθυστερήσει",
+        "summary": "Η μη συνδεδεμένη καθυστέρηση προκαλεί σύγχυση. Το Neo Geo AES+ αναμένεται να κυκλοφορήσει αργότερα μέσα στο έτος, αλλά μια πρόσφατη ανάρτηση στα μέσα κοινωνικής δικτύωσης έκανε τους ανθρώπους να ανησυχούν γι' αυτό ενδεχομένως να καθυστερήσει μέχρι το επόμενο έτος. \"Η κυκλοφορία του NEOGEO AES+ έχει αναβληθεί από τον Νοέμβριο του τρέχοντος έτους για τον Σεπτέμβριο του επόμενου έτους\", ανέφερε ο majinemui7638, προσθέτοντας ότι \"όσοι προπαραγγείλαν θα έπρεπε να έχουν λάβει ένα email για την καθυστέρηση μέχρι τώρα.\" Διαβάστε το πλήρες άρθρο στο timeextension.com"
+      },
+      "tr": {
+        "title": "Endişelenmeyin, Neo Geo AES+ Gecikmedi",
+        "summary": "Bağlantısız gecikme karışıklığa neden olur. Neo Geo AES+'ın bu yılın sonlarına doğru piyasaya sürülmesi planlanıyor, ancak sosyal medyada yakın zamanda yayınlanan bir gönderi, insanların bunun gelecek yıla ertelenme ihtimalinden endişe etmesine neden oldu. majinemui7638, \"NEOGEO AES+'ın piyasaya sürülmesi bu yılın kasım ayından gelecek yılın eylül ayına ertelendi\" dedi ve \"ön sipariş verenlerin şimdiye kadar gecikmeyle ilgili bir e-posta almış olmaları gerektiğini\" ekledi. Makalenin tamamını timeextension.com'da okuyun"
+      },
+      "ja": {
+        "title": "心配しないでください、ネオジオ AES+ は遅れていません",
+        "summary": "接続されていない遅延は混乱を引き起こします。 Neo Geo AES+ は今年後半にリリースされる予定ですが、ソーシャルメディア上の最近の投稿により、来年に延期される可能性があると人々が不安を感じています。 majinemui7638 は、「NEOGEO AES+ の発売は今年 11 月から来年 9 月に延期されました」と報告し、「予約注文した人には今頃延期についてのメールが届いているはずです」と付け加えた。 timeextension.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "别担心，Neo Geo AES+ 并没有延迟",
+        "summary": "未连接的延迟会导致混乱。 Neo Geo AES+ 定于今年晚些时候发布，但最近社交媒体上的一篇帖子让人们担心它可能会推迟到明年。 majinemui7638 报道称，“NEOGEO AES+ 的发布已从今年 11 月推迟到明年 9 月”，并补充说“预订的人现在应该已经收到了有关延迟的电子邮件。”在 timeextension.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "d812ac4c20cf0760d3084c0ff81966008911387a",
+    "title": "Croc 2: Kingdom of the Gobbos remaster announced for Nintendo Switch",
+    "summary": "Argonaut Games isn&#8217;t content with just remastering Croc: Legend of the Gobbos as it has now announced it has been working hard on remastering the game&#8217;s sequel Croc 2: Kingdom of the Gobbos. The 3D platformer will be coming to the Nintendo Switch, though a release date has not been announced. Argonaut Games did release a&#8230;&#160; Read More &#187; Croc 2: Kingdom of the Gobbos remaster announced for Nintendo Switch Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/07/30/croc-2-kingdom-of-the-gobbos-remaster-announced-for-nintendo-switch/",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T12:25:06+00:00",
+    "scrapedAt": "2026-07-31T06:19:56.535185+00:00",
+    "translations": {
+      "en": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster announced for Nintendo Switch",
+        "summary": "Argonaut Games isn&#8217;t content with just remastering Croc: Legend of the Gobbos as it has now announced it has been working hard on remastering the game&#8217;s sequel Croc 2: Kingdom of the Gobbos. The 3D platformer will be coming to the Nintendo Switch, though a release date has not been announced. Argonaut Games did release a&#8230;&#160; Read More &#187; Croc 2: Kingdom of the Gobbos remaster announced for Nintendo Switch Source"
+      },
+      "fr": {
+        "title": "Croc 2 : Kingdom of the Gobbos remaster annoncé sur Nintendo Switch",
+        "summary": "Argonaut Games ne se contente pas de remasteriser Croc : Legend of the Gobbos, car il a maintenant annoncé qu'il travaillait dur sur la remasterisation de la suite du jeu, Croc 2 : Kingdom of the Gobbos. Le jeu de plateforme 3D arrivera sur Nintendo Switch, même si aucune date de sortie n'a été annoncée. Argonaut Games a publié un… Lire la suite &#187; Croc 2 : Kingdom of the Gobbos remaster annoncé pour Nintendo Switch Source"
+      },
+      "es": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster anunciado para Nintendo Switch",
+        "summary": "Argonaut Games no se contenta con remasterizar Croc: Legend of the Gobbos, ya que ha anunciado que ha estado trabajando duro para remasterizar la secuela del juego, Croc 2: Kingdom of the Gobbos. El juego de plataformas 3D llegará a Nintendo Switch, aunque no se ha anunciado una fecha de lanzamiento. Argonaut Games lanzó un&#8230;&#160; Leer más &#187; Croc 2: Kingdom of the Gobbos remaster anunciado para Nintendo Switch Fuente"
+      },
+      "it": {
+        "title": "Annunciato il remaster di Croc 2: Il Regno dei Gobbo per Nintendo Switch",
+        "summary": "Argonaut Games non si accontenta della rimasterizzazione di Croc: Legend of the Gobbos poiché ha ora annunciato di aver lavorato duramente sulla rimasterizzazione del sequel del gioco Croc 2: Kingdom of the Gobbos. Il platform 3D arriverà su Nintendo Switch, anche se non è stata annunciata una data di uscita. Argonaut Games ha rilasciato un &#8230;&#160; Leggi di più &#187; Annunciato il remaster di Croc 2: Il Regno dei Gobbo per Nintendo Switch Source"
+      },
+      "de": {
+        "title": "Croc 2: Kingdom of the Gobbos Remaster für Nintendo Switch angekündigt",
+        "summary": "Argonaut Games gibt sich nicht damit zufrieden, Croc: Legend of the Gobbos einfach nur zu remastern, denn das Unternehmen hat nun angekündigt, dass es intensiv an der Remasterung der Fortsetzung des Spiels, Croc 2: Kingdom of the Gobbos, arbeitet. Der 3D-Plattformer wird für die Nintendo Switch erscheinen, ein Veröffentlichungsdatum wurde jedoch noch nicht bekannt gegeben. Argonaut Games hat ein &#8230;&#160; Weiterlesen &#187; Croc 2: Kingdom of the Gobbos Remaster für Nintendo Switch Source angekündigt"
+      },
+      "pt": {
+        "title": "Croc 2: Kingdom of the Gobbos remasterizado anunciado para Nintendo Switch",
+        "summary": "A Argonaut Games não se contenta em apenas remasterizar Croc: Legend of the Gobbos, pois anunciou agora que tem trabalhado duro na remasterização da sequência do jogo, Croc 2: Kingdom of the Gobbos. O jogo de plataformas 3D chegará ao Nintendo Switch, embora a data de lançamento não tenha sido anunciada. A Argonaut Games lançou um jogo&#8230;&#160; Leia mais &#187; Croc 2: Kingdom of the Gobbos remasterizado anunciado para Nintendo Switch Source"
+      },
+      "ru": {
+        "title": "Ремастер Croc 2: Kingdom of the Gobbos выйдет на Nintendo Switch",
+        "summary": "Argonaut Games не довольствуется ремастером Croc: Legend of the Gobbos, поскольку теперь объявила, что усердно работает над ремастером продолжения игры Croc 2: Kingdom of the Gobbos. 3D-платформер выйдет на Nintendo Switch, хотя дата выхода пока не объявлена. Argonaut Games выпустила игру &#8230;&#160; Читать далее &#187; Ремастер Croc 2: Kingdom of the Gobbos анонсирован для Nintendo Switch Source"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το remaster του Croc 2: Kingdom of the Gobbos για το Nintendo Switch",
+        "summary": "Η Argonaut Games δεν αρκείται απλώς στο remastering του Croc: Legend of the Gobbos, καθώς έχει πλέον ανακοινώσει ότι εργάζεται σκληρά για το remaster του σίκουελ του παιχνιδιού Croc 2: Kingdom of the Gobbos. Το 3D platformer θα έρθει στο Nintendo Switch, αν και δεν έχει ανακοινωθεί ημερομηνία κυκλοφορίας. Η Argonaut Games κυκλοφόρησε ένα&#8230;&#160; Διαβάστε περισσότερα &#187; Ανακοινώθηκε το remaster του Croc 2: Kingdom of the Gobbos για το Nintendo Switch Source"
+      },
+      "tr": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster'ı Nintendo Switch için duyuruldu",
+        "summary": "Argonaut Games, Croc: Legend of the Gobbos'u yeniden düzenlemekle yetinmiyor ve oyunun devamı olan Croc 2: Kingdom of the Gobbos'un yeniden düzenlenmesi üzerinde yoğun şekilde çalıştığını duyurdu. 3D platform oyunu Nintendo Switch'e gelecek ancak çıkış tarihi açıklanmadı. Argonaut Games bir&#8230;&#160; Devamını Okuyun &#187; Croc 2: Kingdom of the Gobbos remaster'ı Nintendo Switch için duyuruldu"
+      },
+      "ja": {
+        "title": "『Croc 2: Kingdom of the Gobbos』リマスターがNintendo Switch向けに発表",
+        "summary": "Argonaut Games は、『Croc: Legend of the Gobbos』のリマスターだけでは満足せず、ゲームの続編である『Croc 2: Kingdom of the Gobbos』のリマスターに鋭意取り組んでいることを発表しました。 3D プラットフォーマーは Nintendo Switch に登場しますが、リリース日は発表されていません。 Argonaut Games は「」をリリースしました。続きを読む&#187; Croc 2: Kingdom of the Gobbos リマスターが Nintendo Switch 向けに発表"
+      },
+      "zh": {
+        "title": "《Croc 2: Kingdom of the Gobbos》重制版宣布登陆 Nintendo Switch",
+        "summary": "Argonaut Games 并不满足于仅仅重制《Croc: Legend of the Gobbos》，它现在宣布正在努力重制该游戏的续作《Croc 2: Kingdom of the Gobbos》。这款 3D 平台游戏将登陆 Nintendo Switch，但发布日期尚未公布。 Argonaut Games 确实发布了一款“Argonaut Games”游戏。阅读更多内容 &#187; 《Croc 2: Kingdom of the Gobbos》重制版宣布登陆 Nintendo Switch"
+      }
+    }
+  },
+  {
+    "id": "9d8b443ba731e4616b129fb0af8ac77348ab54ca",
+    "title": "Croc 2: Kingdom of the Gobbos remaster announced for PS5, Xbox Series, PS4, Switch, and PC",
+    "summary": "Argonaut Games has announced a remastered version of the 1999-released platformer Croc 2: Kingdom of &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/07/croc-2-kingdom-of-the-gobbos-remaster-announced-for-ps5-xbox-series-ps4-switch-and-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-07-30T12:00:04+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.783222+00:00",
+    "translations": {
+      "en": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster announced for PS5, Xbox Series, PS4, Switch, and PC",
+        "summary": "Argonaut Games has announced a remastered version of the 1999-released platformer Croc 2: Kingdom of &hellip;"
+      },
+      "fr": {
+        "title": "Croc 2 : Kingdom of the Gobbos remaster annoncé pour PS5, Xbox Series, PS4, Switch et PC",
+        "summary": "Argonaut Games a annoncé une version remasterisée du jeu de plateforme Croc 2: Kingdom of &hellip;"
+      },
+      "es": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster anunciado para PS5, Xbox Series, PS4, Switch y PC",
+        "summary": "Argonaut Games ha anunciado una versión remasterizada del juego de plataformas Croc 2: Kingdom of &hellip;"
+      },
+      "it": {
+        "title": "Annunciato il remaster di Croc 2: Kingdom of the Gobbos per PS5, Xbox Series, PS4, Switch e PC",
+        "summary": "Argonaut Games ha annunciato una versione rimasterizzata del platform Croc 2: Kingdom of &hellip;"
+      },
+      "de": {
+        "title": "Croc 2: Kingdom of the Gobbos Remaster für PS5, Xbox Series, PS4, Switch und PC angekündigt",
+        "summary": "Argonaut Games hat eine Remastered-Version des 1999 veröffentlichten Plattformspiels Croc 2: Kingdom of &hellip; angekündigt."
+      },
+      "pt": {
+        "title": "Croc 2: Kingdom of the Gobbos remasterizado anunciado para PS5, Xbox Series, PS4, Switch e PC",
+        "summary": "A Argonaut Games anunciou uma versão remasterizada do jogo de plataformas Croc 2: Kingdom of &hellip;"
+      },
+      "ru": {
+        "title": "Ремастер Croc 2: Kingdom of the Gobbos анонсирован для PS5, Xbox Series, PS4, Switch и ПК",
+        "summary": "Argonaut Games анонсировала обновленную версию вышедшего в 1999 году платформера Croc 2: Kingdom of &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το remaster του Croc 2: Kingdom of the Gobbos για PS5, Xbox Series, PS4, Switch και PC",
+        "summary": "Η Argonaut Games ανακοίνωσε μια remastered έκδοση του platformer που κυκλοφόρησε το 1999 Croc 2: Kingdom of &hellip;"
+      },
+      "tr": {
+        "title": "Croc 2: Kingdom of the Gobbos remaster'ı PS5, Xbox Series, PS4, Switch ve PC için duyuruldu",
+        "summary": "Argonaut Games, 1999'da çıkan platform oyunu Croc 2: Kingdom of &hellip'in yeniden düzenlenmiş versiyonunu duyurdu."
+      },
+      "ja": {
+        "title": "Croc 2: Kingdom of the Gobbos リマスターが PS5、Xbox シリーズ、PS4、Switch、PC 向けに発表",
+        "summary": "Argonaut Games は、1999 年にリリースされたプラットフォーマー『Croc 2: Kingdom of &hellip;』のリマスター版を発表しました。"
+      },
+      "zh": {
+        "title": "《Croc 2: Kingdom of the Gobbos》重制版宣布登陆 PS5、Xbox Series、PS4、Switch 和 PC",
+        "summary": "Argonaut Games 宣布推出 1999 年发行的平台游戏《鳄鱼 2：王国》的重制版……"
+      }
+    }
+  },
+  {
     "id": "13b2cc0b73fe395eac0ade658129bf68e4400b7e",
     "title": "Aeruta coming to PS5, PS4, and Switch",
     "summary": "Publisher Gravity Game Arise and developer FromDawn will release dungeon exploration and bakery management RPG &hellip;",
@@ -8,7 +806,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/07/aeruta-coming-to-ps5-ps4-and-switch",
     "imageUrl": "",
     "publishedAt": "2026-07-30T05:44:00+00:00",
-    "scrapedAt": "2026-07-30T05:49:18.457896+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.783285+00:00",
     "translations": {
       "en": {
         "title": "Aeruta coming to PS5, PS4, and Switch",
@@ -122,7 +920,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/07/tmnt-splintered-fate-scores-legendary-switch-2-physical-release-new-dlc-character-and-more-teased",
     "imageUrl": "https://images.nintendolife.com/262b6bb8316e0/large.jpg",
     "publishedAt": "2026-07-30T04:30:00+00:00",
-    "scrapedAt": "2026-07-30T05:48:10.563375+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.712221+00:00",
     "translations": {
       "en": {
         "title": "TMNT: Splintered Fate Scores \"Legendary\" Switch 2 Physical Release, New DLC Character And More Teased",
@@ -179,7 +977,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/07/thimbleweed-park-2-announced-for-pc",
     "imageUrl": "",
     "publishedAt": "2026-07-29T22:15:45+00:00",
-    "scrapedAt": "2026-07-30T05:49:18.458155+00:00",
+    "scrapedAt": "2026-07-31T06:20:39.783488+00:00",
     "translations": {
       "en": {
         "title": "Thimbleweed Park 2 announced for PC",
@@ -224,63 +1022,6 @@
       "zh": {
         "title": "《银草公园 2》宣布推出 PC 版",
         "summary": "Terrible Toybox 宣布推出 Thimbleweed Park 2，这是原版 Thimbleweed Park 的后续作品……"
-      }
-    }
-  },
-  {
-    "id": "9d8b443ba731e4616b129fb0af8ac77348ab54ca",
-    "title": "Croc 2: Kingdom of the Gobbos remaster announced for PS5, Xbox Series, PS4, Switch, and PC",
-    "summary": "Argonaut Games has announced a remastered version of the 1999-released platformer Croc 2: Kingdom of &hellip;",
-    "category": "GAME_RELEASE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/07/croc-2-kingdom-of-the-gobbos-remaster-announced-for-ps5-xbox-series-ps4-switch-and-pc",
-    "imageUrl": "",
-    "publishedAt": "2026-07-29T17:51:04+00:00",
-    "scrapedAt": "2026-07-30T05:49:18.458188+00:00",
-    "translations": {
-      "en": {
-        "title": "Croc 2: Kingdom of the Gobbos remaster announced for PS5, Xbox Series, PS4, Switch, and PC",
-        "summary": "Argonaut Games has announced a remastered version of the 1999-released platformer Croc 2: Kingdom of &hellip;"
-      },
-      "fr": {
-        "title": "Croc 2 : Kingdom of the Gobbos remaster annoncé pour PS5, Xbox Series, PS4, Switch et PC",
-        "summary": "Argonaut Games a annoncé une version remasterisée du jeu de plateforme Croc 2: Kingdom of &hellip;"
-      },
-      "es": {
-        "title": "Croc 2: Kingdom of the Gobbos remaster anunciado para PS5, Xbox Series, PS4, Switch y PC",
-        "summary": "Argonaut Games ha anunciado una versión remasterizada del juego de plataformas Croc 2: Kingdom of &hellip;"
-      },
-      "it": {
-        "title": "Annunciato il remaster di Croc 2: Kingdom of the Gobbos per PS5, Xbox Series, PS4, Switch e PC",
-        "summary": "Argonaut Games ha annunciato una versione rimasterizzata del platform Croc 2: Kingdom of &hellip;"
-      },
-      "de": {
-        "title": "Croc 2: Kingdom of the Gobbos Remaster für PS5, Xbox Series, PS4, Switch und PC angekündigt",
-        "summary": "Argonaut Games hat eine Remastered-Version des 1999 veröffentlichten Plattformspiels Croc 2: Kingdom of &hellip; angekündigt."
-      },
-      "pt": {
-        "title": "Croc 2: Kingdom of the Gobbos remasterizado anunciado para PS5, Xbox Series, PS4, Switch e PC",
-        "summary": "A Argonaut Games anunciou uma versão remasterizada do jogo de plataformas Croc 2: Kingdom of &hellip;"
-      },
-      "ru": {
-        "title": "Ремастер Croc 2: Kingdom of the Gobbos анонсирован для PS5, Xbox Series, PS4, Switch и ПК",
-        "summary": "Argonaut Games анонсировала обновленную версию вышедшего в 1999 году платформера Croc 2: Kingdom of &hellip;"
-      },
-      "el": {
-        "title": "Ανακοινώθηκε το remaster του Croc 2: Kingdom of the Gobbos για PS5, Xbox Series, PS4, Switch και PC",
-        "summary": "Η Argonaut Games ανακοίνωσε μια remastered έκδοση του platformer που κυκλοφόρησε το 1999 Croc 2: Kingdom of &hellip;"
-      },
-      "tr": {
-        "title": "Croc 2: Kingdom of the Gobbos remaster'ı PS5, Xbox Series, PS4, Switch ve PC için duyuruldu",
-        "summary": "Argonaut Games, 1999'da çıkan platform oyunu Croc 2: Kingdom of &hellip'in yeniden düzenlenmiş versiyonunu duyurdu."
-      },
-      "ja": {
-        "title": "Croc 2: Kingdom of the Gobbos リマスターが PS5、Xbox シリーズ、PS4、Switch、PC 向けに発表",
-        "summary": "Argonaut Games は、1999 年にリリースされたプラットフォーマー『Croc 2: Kingdom of &hellip;』のリマスター版を発表しました。"
-      },
-      "zh": {
-        "title": "《Croc 2: Kingdom of the Gobbos》重制版宣布登陆 PS5、Xbox Series、PS4、Switch 和 PC",
-        "summary": "Argonaut Games 宣布推出 1999 年发行的平台游戏《鳄鱼 2：王国》的重制版……"
       }
     }
   },
@@ -350,7 +1091,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/07/pokopia-expansion-pass-trailer-reveals-new-pokemon-and-a-first-look-at-part-2",
     "imageUrl": "https://images.nintendolife.com/65eb1c010fd40/large.jpg",
     "publishedAt": "2026-07-29T14:15:00+00:00",
-    "scrapedAt": "2026-07-30T05:48:10.563926+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.712753+00:00",
     "translations": {
       "en": {
         "title": "Pokopia Expansion Pass Trailer Reveals New Pokémon & A First Look At 'Part 2'",
@@ -407,7 +1148,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/07/29/pokemon-company-confirms-pokemon-pokopia-dlc-for-5th-august/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T14:00:07+00:00",
-    "scrapedAt": "2026-07-30T05:49:04.323838+00:00",
+    "scrapedAt": "2026-07-31T06:19:56.535463+00:00",
     "translations": {
       "en": {
         "title": "Pokemon Company confirms Pokemon Pokopia DLC for 5th August",
@@ -464,7 +1205,7 @@
     "sourceUrl": "https://www.pushsquare.com/features/6-things-to-know-from-silent-hill-townfalls-glowing-ps5-previews",
     "imageUrl": "https://images.pushsquare.com/e68f59b7049c1/large.jpg",
     "publishedAt": "2026-07-29T14:00:00+00:00",
-    "scrapedAt": "2026-07-30T05:48:40.821185+00:00",
+    "scrapedAt": "2026-07-31T06:19:30.401991+00:00",
     "translations": {
       "en": {
         "title": "Feature: 6 Things to Know from Silent Hill: Townfall's Glowing PS5 Previews",
@@ -521,7 +1262,7 @@
     "sourceUrl": "https://retrododo.com/modretro-officially-reveals-m64-update-roadmap/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/m64-purple.webp",
     "publishedAt": "2026-07-29T12:55:34+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.706827+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.359812+00:00",
     "translations": {
       "en": {
         "title": "ModRetro Officially Reveals M64 Update Roadmap",
@@ -578,7 +1319,7 @@
     "sourceUrl": "https://the-retrogamer.com/vectaguard-sur-pc-le-vectoriel-ressuscite-par-tony-barnes/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T12:50:36+00:00",
-    "scrapedAt": "2026-07-30T05:50:13.550239+00:00",
+    "scrapedAt": "2026-07-31T06:21:38.376713+00:00",
     "translations": {
       "fr": {
         "title": "VectaGuard sur PC : Le vectoriel ressuscité par Tony Barnes",
@@ -741,6 +1482,63 @@
     }
   },
   {
+    "id": "cb7064b369d09a6d890532a9b40f4b2932d10d17",
+    "title": "SuperStation One's Delayed 'Console Mode' Is Available Now",
+    "summary": "Update: \"We delayed this release from last month until today to fix issues and to cook\". Taki Udon's promising SuperStation One FPGA PS1 console is getting a lot of people excited, and with good reason—not only is it capable of running your original PS1 games and accessories, but it will also play games for other systems thanks to the fact that it's built on the MiSTer FPGA platform. We've already seen what the system and its dock will look like, but now Taki Udon is showing off the SuperStation",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/07/superstation-ones-delayed-console-mode-is-available-now",
+    "imageUrl": "https://images.timeextension.com/9bc7aa3f54000/large.jpg",
+    "publishedAt": "2026-07-29T11:30:00+00:00",
+    "scrapedAt": "2026-07-31T06:18:31.554363+00:00",
+    "translations": {
+      "en": {
+        "title": "SuperStation One's Delayed 'Console Mode' Is Available Now",
+        "summary": "Update: \"We delayed this release from last month until today to fix issues and to cook\". Taki Udon's promising SuperStation One FPGA PS1 console is getting a lot of people excited, and with good reason—not only is it capable of running your original PS1 games and accessories, but it will also play games for other systems thanks to the fact that it's built on the MiSTer FPGA platform. We've already seen what the system and its dock will look like, but now Taki Udon is showing off the SuperStation"
+      },
+      "fr": {
+        "title": "Le « mode console » retardé de la SuperStation One est maintenant disponible",
+        "summary": "Mise à jour : \"Nous avons retardé cette version du mois dernier jusqu'à aujourd'hui pour résoudre les problèmes et cuisiner\". La prometteuse console SuperStation One FPGA PS1 de Taki Udon suscite l'enthousiasme de beaucoup de gens, et pour cause : non seulement elle est capable d'exécuter vos jeux et accessoires PS1 d'origine, mais elle permettra également de jouer à des jeux pour d'autres systèmes grâce au fait qu'elle est construite sur la plate-forme MiSTer FPGA. Nous avons déjà vu à quoi ressembleront le système et son dock, mais maintenant Taki Udon présente la SuperStation"
+      },
+      "es": {
+        "title": "El 'modo consola' retrasado de SuperStation One ya está disponible",
+        "summary": "Actualización: \"Retrasamos este lanzamiento desde el mes pasado hasta hoy para solucionar problemas y cocinar\". La prometedora consola SuperStation One FPGA PS1 de Taki Udon está entusiasmando a mucha gente, y con razón: no solo es capaz de ejecutar sus juegos y accesorios originales de PS1, sino que también reproducirá juegos para otros sistemas gracias al hecho de que está construida sobre la plataforma MiSTer FPGA. Ya hemos visto cómo se verá el sistema y su base, pero ahora Taki Udon muestra la SuperStation"
+      },
+      "it": {
+        "title": "La \"modalità console\" ritardata di SuperStation One è ora disponibile",
+        "summary": "Aggiornamento: \"Abbiamo ritardato questo rilascio dal mese scorso fino ad oggi per risolvere problemi e cucinare\". La promettente console SuperStation One FPGA PS1 di Taki Udon sta entusiasmando molte persone, e con buone ragioni: non solo è in grado di eseguire i giochi e gli accessori PS1 originali, ma può anche riprodurre giochi per altri sistemi grazie al fatto che è costruita sulla piattaforma MiSTer FPGA. Abbiamo già visto come saranno il sistema e il suo dock, ma ora Taki Udon mostra la SuperStation"
+      },
+      "de": {
+        "title": "Der verzögerte „Konsolenmodus“ von SuperStation One ist jetzt verfügbar",
+        "summary": "Update: „Wir haben diese Veröffentlichung vom letzten Monat auf heute verschoben, um Probleme zu beheben und zu kochen.“ Taki Udons vielversprechende SuperStation One FPGA PS1-Konsole begeistert viele Menschen, und das aus gutem Grund – sie ist nicht nur in der Lage, Ihre Original-PS1-Spiele und -Zubehörteile auszuführen, sondern dank der Tatsache, dass sie auf der MiSTer FPGA-Plattform basiert, auch Spiele für andere Systeme. Wir haben bereits gesehen, wie das System und sein Dock aussehen werden, aber jetzt präsentiert Taki Udon die SuperStation"
+      },
+      "pt": {
+        "title": "O ‘modo console’ atrasado do SuperStation One já está disponível",
+        "summary": "Atualização: “Atrasamos este lançamento do mês passado até hoje para corrigir problemas e cozinhar”. O promissor console SuperStation One FPGA PS1 de Taki Udon está deixando muitas pessoas entusiasmadas, e por um bom motivo – ele não apenas é capaz de rodar seus jogos e acessórios PS1 originais, mas também rodará jogos para outros sistemas graças ao fato de ser construído na plataforma MiSTer FPGA. Já vimos como será o sistema e seu dock, mas agora Taki Udon está exibindo o SuperStation"
+      },
+      "ru": {
+        "title": "Отложенный «консольный режим» SuperStation One уже доступен",
+        "summary": "Обновление: «Мы отложили этот выпуск с прошлого месяца до сегодняшнего дня, чтобы исправить проблемы и подготовиться». Многообещающая консоль SuperStation One FPGA PS1 от Таки Удона вызывает восторг у многих людей, и на это есть веские причины: она не только способна запускать оригинальные игры и аксессуары для PS1, но также поддерживает игры для других систем благодаря тому, что она построена на платформе MiSTer FPGA. Мы уже видели, как будет выглядеть система и ее док-станция, а теперь Таки Удон демонстрирует SuperStation."
+      },
+      "el": {
+        "title": "Η καθυστερημένη \"Κονσόλα Λειτουργία\" του SuperStation One είναι τώρα διαθέσιμη",
+        "summary": "Ενημέρωση: \"Καθυστερήσαμε αυτήν την κυκλοφορία από τον περασμένο μήνα μέχρι σήμερα για να διορθώσουμε προβλήματα και να μαγειρέψουμε\". Η πολλά υποσχόμενη κονσόλα SuperStation One FPGA PS1 του Taki Udon ενθουσιάζει πολύ κόσμο και δικαιολογημένα—όχι μόνο μπορεί να τρέξει τα αυθεντικά παιχνίδια και αξεσουάρ PS1, αλλά θα παίξει και παιχνίδια για άλλα συστήματα χάρη στο γεγονός ότι είναι χτισμένη στην πλατφόρμα MiSTer FPGA. Έχουμε ήδη δει πώς θα μοιάζει το σύστημα και η αποβάθρα του, αλλά τώρα ο Taki Udon επιδεικνύει το SuperStation"
+      },
+      "tr": {
+        "title": "SuperStation One'ın Gecikmeli 'Konsol Modu' Artık Kullanılabilir",
+        "summary": "Güncelleme: \"Sorunları düzeltmek ve yemek hazırlamak için bu sürümü geçen aydan bugüne erteledik\". Taki Udon'un gelecek vaat eden SuperStation One FPGA PS1 konsolu pek çok insanı heyecanlandırıyor ve bunun iyi bir nedeni var; yalnızca orijinal PS1 oyunlarınızı ve aksesuarlarınızı çalıştırmakla kalmıyor, aynı zamanda MiSTer FPGA platformu üzerine kurulu olması sayesinde diğer sistemler için de oyunlar oynatabiliyor. Sistemin ve dock'un neye benzeyeceğini zaten gördük, ancak şimdi Taki Udon SuperStation'ı gösteriyor"
+      },
+      "ja": {
+        "title": "SuperStation One の遅れていた「コンソール モード」が利用可能になりました",
+        "summary": "更新: 「問題を修正し、調整するために、このリリースを先月から今日まで延期しました。」滝うどんの有望な SuperStation One FPGA PS1 コンソールが多くの人々を興奮させていますが、それには十分な理由があります。オリジナルの PS1 ゲームやアクセサリを実行できるだけでなく、MiSTer FPGA プラットフォーム上に構築されているという事実のおかげで、他のシステムのゲームもプレイできます。システムとそのドックがどのようなものになるかはすでに見てきましたが、今度は滝うどんがスーパーステーションを披露しています。"
+      },
+      "zh": {
+        "title": "SuperStation One 的延迟“控制台模式”现已推出",
+        "summary": "更新：“我们从上个月推迟到今天发布此版本，以解决问题并进行烹饪”。 Taki Udon 前景广阔的 SuperStation One FPGA PS1 控制台让很多人兴奋不已，这是有充分理由的——它不仅能够运行原始 PS1 游戏和配件，而且还可以玩其他系统的游戏，因为它是在 MiSTer FPGA 平台上构建的。我们已经看到了系统及其底座的样子，但现在 Taki Udon 正在展示 SuperStation"
+      }
+    }
+  },
+  {
     "id": "0cdd65939963515db5f3aeedb0a33d5ec29a1489",
     "title": "Evercade DOOM Collection Leaks Ahead Of Full Announcement",
     "summary": "Update: Includes the first two games. Evercade maker Blaze has announced it will bring the DOOM series to the platform this year. The teaser shown below doesn't give much away, but it would be reasonable to expect a DOOM collection showcasing at least the first two titles, which were originally released on PC and console back in the 1990s. Read the full article on timeextension.com",
@@ -749,7 +1547,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/evercade-doom-collection-leaks-ahead-of-full-announcement",
     "imageUrl": "https://images.timeextension.com/55c395828ee30/large.jpg",
     "publishedAt": "2026-07-29T09:55:00+00:00",
-    "scrapedAt": "2026-07-30T05:47:21.342766+00:00",
+    "scrapedAt": "2026-07-31T06:18:31.554570+00:00",
     "translations": {
       "en": {
         "title": "Evercade DOOM Collection Leaks Ahead Of Full Announcement",
@@ -977,7 +1775,7 @@
     "sourceUrl": "https://retrododo.com/did-modretro-just-leak-an-atomic-purple-chromatic-handheld/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/transparent-purple-chromatic.webp",
     "publishedAt": "2026-07-28T19:32:15+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.706951+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.359910+00:00",
     "translations": {
       "en": {
         "title": "Did ModRetro Just Leak An Atomic Purple Chromatic Handheld?",
@@ -1034,7 +1832,7 @@
     "sourceUrl": "https://retrododo.com/modretro-finally-reveals-m64-av-adapter-now-available/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/modretro-m64-av.webp",
     "publishedAt": "2026-07-28T19:11:26+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.707002+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.359957+00:00",
     "translations": {
       "en": {
         "title": "ModRetro Finally Reveals M64 AV Adapter, Up For Pre-Order",
@@ -1091,7 +1889,7 @@
     "sourceUrl": "https://retrododo.com/modretro-reveals-limited-edition-smoke-m64-exclusive-to-gamestop/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/mr-gamestop.webp",
     "publishedAt": "2026-07-28T18:38:49+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.707037+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.359989+00:00",
     "translations": {
       "en": {
         "title": "ModRetro Reveals Limited Edition \"Smoke\" M64 Exclusive To GameStop",
@@ -1319,7 +2117,7 @@
     "sourceUrl": "https://retrododo.com/you-can-now-buy-the-modretro-m64-ships-today/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/07/m64-boxed.webp",
     "publishedAt": "2026-07-28T16:11:18+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.707084+00:00",
+    "scrapedAt": "2026-07-31T06:19:14.360033+00:00",
     "translations": {
       "en": {
         "title": "You Can Now Buy The ModRetro M64, Ships Today",
@@ -1376,7 +2174,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/you-might-as-well-play-on-a-raspberry-pi-the-world-of-mister-fpga-remains-divided-over-ai-slop-cores",
     "imageUrl": "https://images.timeextension.com/21af5cb3ab8b7/large.jpg",
     "publishedAt": "2026-07-28T15:30:00+00:00",
-    "scrapedAt": "2026-07-30T05:47:21.342964+00:00",
+    "scrapedAt": "2026-07-31T06:18:31.554762+00:00",
     "translations": {
       "en": {
         "title": "\"You Might As Well Play On A Raspberry Pi\" - The World Of MiSTer FPGA Remains Divided Over \"AI Slop\" Cores",
@@ -1433,7 +2231,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/halo-campaign-evolved-is-available-today-with-xbox-game-pass-and-heres-a-bunch-of-free-master-chief-skins",
     "imageUrl": "https://images.purexbox.com/454454bb019ab/large.jpg",
     "publishedAt": "2026-07-28T15:00:00+00:00",
-    "scrapedAt": "2026-07-30T05:49:04.197742+00:00",
+    "scrapedAt": "2026-07-31T06:19:42.488785+00:00",
     "translations": {
       "en": {
         "title": "Halo: Campaign Evolved Is Available Today With Xbox Game Pass, And Here's A Bunch Of Free Master Chief Skins",
@@ -1661,7 +2459,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/27/dungeon-crawler-carl-enders-game/",
     "imageUrl": "",
     "publishedAt": "2026-07-27T19:38:22+00:00",
-    "scrapedAt": "2026-07-30T05:47:55.363057+00:00",
+    "scrapedAt": "2026-07-31T06:18:56.849537+00:00",
     "translations": {
       "en": {
         "title": "Dungeon Crawler Carl & Ender’s Game Become Pinball Machines Thanks To Multimorphic",
@@ -1718,7 +2516,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/stalker-2-cost-of-hope-gets-august-2026-release-date-for-xbox-ps5-and-pc",
     "imageUrl": "https://images.purexbox.com/4698ab14f286f/large.jpg",
     "publishedAt": "2026-07-27T14:00:00+00:00",
-    "scrapedAt": "2026-07-30T05:49:04.198254+00:00",
+    "scrapedAt": "2026-07-31T06:19:42.489274+00:00",
     "translations": {
       "en": {
         "title": "Stalker 2: Cost Of Hope Gets August 2026 Release Date For Xbox, PS5 & PC",
@@ -1889,7 +2687,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/lara-croft-suffers-another-delay-tomb-raider-catalyst-pushed-to-2028",
     "imageUrl": "https://images.purexbox.com/ce1d9a796b667/large.jpg",
     "publishedAt": "2026-07-27T11:30:00+00:00",
-    "scrapedAt": "2026-07-30T05:49:04.198308+00:00",
+    "scrapedAt": "2026-07-31T06:19:42.489326+00:00",
     "translations": {
       "en": {
         "title": "Lara Croft Suffers Another Delay, Tomb Raider: Catalyst Pushed To 2028",
@@ -2060,7 +2858,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/three-games-are-confirmed-for-xbox-game-pass-to-end-the-month-july-28-31",
     "imageUrl": "https://images.purexbox.com/e714ca8fcf121/large.jpg",
     "publishedAt": "2026-07-26T15:00:00+00:00",
-    "scrapedAt": "2026-07-30T05:49:04.198438+00:00",
+    "scrapedAt": "2026-07-31T06:19:42.489457+00:00",
     "translations": {
       "en": {
         "title": "Three Games Are Confirmed For Xbox Game Pass To End The Month (July 28-31)",
@@ -3143,7 +3941,7 @@
     "sourceUrl": "https://the-retrogamer.com/arcade1up-devoile-sa-borne-outrun-supreme-le-volant-et-le-pedalier-enfin-de-retour/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T08:52:29+00:00",
-    "scrapedAt": "2026-07-30T05:50:13.550399+00:00",
+    "scrapedAt": "2026-07-31T06:21:38.376878+00:00",
     "translations": {
       "fr": {
         "title": "Arcade1Up dévoile sa borne OutRun Supreme : le volant et le pédalier enfin de retour",
