@@ -574,6 +574,11 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
      * Ne touche JAMAIS un objet dont la cote a été saisie à la main (`priceIsManual`) : la cote
      * manuelle prime toujours sur la cote recherchée en ligne, y compris lors d'une actualisation
      * ou de l'ajout d'un autre objet. Ne touche pas non plus un objet si eBay ne renvoie aucun prix.
+     *
+     * L'IA n'est sollicitée que pour un objet qui n'a ENCORE aucun prix (`priceCents == null`) :
+     * une fois une cote obtenue (eBay ou IA), les ouvertures suivantes ne la réinterrogent plus,
+     * seul eBay est revérifié (annonces réelles, comparables si ≥ 3). Avant ce correctif, l'IA était
+     * resollicitée à chaque ouverture, ce qui changeait la cote affichée à chaque fois sans raison.
      */
     fun refreshAllPrices() = viewModelScope.launch {
         if (!EbayPrices.isConfigured()) return@launch
@@ -581,10 +586,14 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         val items = collectionDao.observeAll().first()
         for (it in items) {
             if (it.priceIsManual) continue
-            // On fait confiance au résultat tel quel (même null) plutôt que de garder un ancien
-            // prix : un résultat qui ne trouve plus rien doit pouvoir corriger un prix erroné
-            // d'une recherche précédente (ex. une annonce hors-sujet supprimée du calcul depuis).
-            val resolved = resolvePrice(it.barcode, it.type, it.brand, it.name, it.region, it.condition, it.hasBox, it.hasManual, it.platform)
+            val hadPrice = it.priceCents != null
+            val resolved = resolvePrice(
+                it.barcode, it.type, it.brand, it.name, it.region, it.condition, it.hasBox, it.hasManual, it.platform,
+                allowAiRefresh = !hadPrice
+            )
+            // Si l'IA n'a pas été resollicitée et qu'eBay ne trouve rien, on garde la cote existante
+            // plutôt que de l'écraser par un null.
+            if (resolved.priceCents == null && hadPrice) continue
             collectionDao.update(it.copy(
                 priceCents = resolved.priceCents, priceIsManual = false,
                 priceIsAiEstimate = resolved.isAiEstimate, info = resolved.info
@@ -627,10 +636,12 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
      */
     private suspend fun resolvePrice(
         barcode: String?, type: ItemType, brand: String, name: String, region: Region,
-        condition: Condition, hasBox: Boolean, hasManual: Boolean, platform: String?
+        condition: Condition, hasBox: Boolean, hasManual: Boolean, platform: String?,
+        allowAiRefresh: Boolean = true
     ): PriceResolution {
         val r = EbayPrices.lookup(barcode, type, brand, name, region, condition, hasBox, hasManual, platform)
         if (r.priceCents == null) {
+            if (!allowAiRefresh) return PriceResolution(null, false, r.info)
             val ai = aiEstimatePrice(type, brand, name, condition, hasBox, hasManual, platform)
             return if (ai != null) {
                 val (priceCents, viaTavily) = ai
@@ -644,7 +655,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                 PriceResolution(null, false, r.info)
             }
         }
-        if (r.count < 3) {
+        if (r.count < 3 && allowAiRefresh) {
             val ai = aiEstimatePrice(type, brand, name, condition, hasBox, hasManual, platform)
             if (ai != null) {
                 val (priceCents, _) = ai
