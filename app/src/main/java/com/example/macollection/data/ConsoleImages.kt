@@ -336,7 +336,6 @@ object ConsoleImages {
         "Xbox 360 Édition Halo 4" to "file:///android_asset/console_photos/xbox360_halo4.webp",
         "Xbox One S Édition Minecraft" to "file:///android_asset/console_photos/xbox_one_s_minecraft.webp",
         "Xbox One X Édition Cyberpunk 2077" to "file:///android_asset/console_photos/xbox_one_x_cyberpunk.webp",
-        "Xbox One X Édition Project Scorpio" to "file:///android_asset/console_photos/xbox_one_x_edition_project_scorpio.webp",
         // _v2 ne s'affichait toujours pas (vide, pas juste noir) malgré un JPEG valide et un nom
         // de fichier différent — cause exacte non identifiée. Remplacée par une photo entièrement
         // neuve (2026-07-19) fournie par l'utilisateur plutôt que de continuer à réutiliser le
@@ -530,7 +529,99 @@ object ConsoleImages {
         "PlayStation 3 Super Slim Édition Gran Turismo 6 + GTA V" to "file:///android_asset/console_photos/non_libre/ps3_gt6_gtav.webp",
         "PlayStation 3 Scarlet Red" to "file:///android_asset/console_photos/non_libre/ps3_scarlet_red.webp",
         "PlayStation 3 Splash Blue" to "file:///android_asset/console_photos/non_libre/ps3_splash_blue.webp",
-        "PlayStation 3 Super Slim Édition Uncharted 3: Game of the Year" to "file:///android_asset/console_photos/non_libre/ps3_uncharted3_goty.webp"
+        "PlayStation 3 Super Slim Édition Uncharted 3: Game of the Year" to "file:///android_asset/console_photos/non_libre/ps3_uncharted3_goty.webp",
+
+        // --- PHASE 1 (recherche 2026-08-01) : portables Nintendo exclusifs Japon. Photos produit
+        // collector (consolevariations.com), non libres de droits -> sous-dossier non_libre/. ---
+        "Game Boy Color Édition ANA (All Nippon Airways)" to "file:///android_asset/console_photos/non_libre/game_boy_color_ana_limited.webp",
+        "Game Boy Color Édition Card Captor Sakura" to "file:///android_asset/console_photos/non_libre/game_boy_color_card_captor_sakura.webp",
+        "Game Boy Color Clear Black (Chūkyō)" to "file:///android_asset/console_photos/non_libre/game_boy_color_clear_black_aiwon.webp",
+        "Game Boy Color Clear Green (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/game_boy_color_clear_green_toysrus.webp",
+        "Game Boy Color Édition Jusco Mario Clear" to "file:///android_asset/console_photos/non_libre/game_boy_color_jusco_clear.webp",
+        "Game Boy Color Édition Jusco Mario Clear Purple" to "file:///android_asset/console_photos/non_libre/game_boy_color_jusco_purple.webp",
+        "Game Boy Color Édition Fukuoka Daiei Hawks" to "file:///android_asset/console_photos/non_libre/game_boy_color_daiei_hawks.webp",
+        "Game Boy Color Édition Hello Kitty Special Box 2" to "file:///android_asset/console_photos/non_libre/game_boy_color_hello_kitty_special_box_2.webp",
+        "Game Boy Color Ice Blue (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/game_boy_color_ice_blue_toysrus.webp",
+        "Game Boy Color Édition Lawson" to "file:///android_asset/console_photos/non_libre/game_boy_color_lawson.webp",
+        "Game Boy Color Midnight Blue (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/game_boy_color_midnight_blue_toysrus.webp",
+        "Game Boy Color Édition Pokémon Center 3e Anniversaire" to "file:///android_asset/console_photos/non_libre/game_boy_color_pokemon_center_3rd_anniversary.webp",
+        "Game Boy Color Water Blue (TSUTAYA)" to "file:///android_asset/console_photos/non_libre/game_boy_color_tsutaya_water_blue.webp",
+        "Game Boy Color Édition Sakura Taisen" to "file:///android_asset/console_photos/non_libre/game_boy_color_sakura_taisen.webp",
+        "Game Boy Color Édition Panasonic Alkaline" to "file:///android_asset/console_photos/non_libre/game_boy_color_panasonic.webp",
+
+        "Game Boy Advance SP Famicom Color" to "file:///android_asset/console_photos/non_libre/gba_sp_famicom_color.webp",
+        "Game Boy Advance SP Star Light Gold (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/gba_sp_starlight_gold_toysrus.webp",
+        "Game Boy Advance SP Pearl Green (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/gba_sp_pearl_green_toysrus.webp",
+        "Game Boy Advance SP Édition Pokémon Center Achamo (Torchic)" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_achamo_torchic.webp",
+        "Game Boy Advance SP Édition Pokémon Center Dracaufeu (Charizard)" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_charizard.webp",
+        "Game Boy Advance SP Édition Pokémon Center Florizarre (Venusaur)" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_venusaur.webp",
+        "Game Boy Advance SP Édition Pokémon Center Rayquaza" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_rayquaza.webp",
+        "Game Boy Advance SP Édition Pokémon Center Pikachu" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_pikachu.webp",
+        "Game Boy Advance SP Édition Pokémon Center Kaiogre (Kyogre)" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_kyogre.webp",
+        "Game Boy Advance SP Édition Pokémon Center Groudon" to "file:///android_asset/console_photos/non_libre/gba_sp_pokemon_center_groudon.webp",
+        "Game Boy Advance SP Édition Boktai: The Sun Is in Your Hand" to "file:///android_asset/console_photos/non_libre/gba_sp_boktai_django_red_black.webp",
+        "Game Boy Advance SP Édition Sword of Mana" to "file:///android_asset/console_photos/non_libre/gba_sp_sword_of_mana_blue.webp",
+        "Game Boy Advance SP Édition SD Gundam G Generation Advance" to "file:///android_asset/console_photos/non_libre/gba_sp_sd_gundam_char_aznable.webp",
+        "Game Boy Advance SP Édition Naruto RPG" to "file:///android_asset/console_photos/non_libre/gba_sp_naruto_orange.webp",
+        "Game Boy Advance SP Édition Kingdom Hearts: Chain of Memories" to "file:///android_asset/console_photos/non_libre/gba_sp_kingdom_hearts_deep_silver.webp",
+
+        "Game Boy Micro Famicom 20e Anniversaire" to "file:///android_asset/console_photos/non_libre/gb_micro_famicom_20th_anniversary.webp",
+        "Game Boy Micro Édition Pokémon Center" to "file:///android_asset/console_photos/non_libre/gb_micro_pokemon_center.webp",
+        "Game Boy Micro Édition Final Fantasy IV Advance" to "file:///android_asset/console_photos/non_libre/gb_micro_final_fantasy_iv_advance.webp",
+        "Game Boy Micro Mother 3 Deluxe Box" to "file:///android_asset/console_photos/non_libre/gb_micro_mother_3_deluxe_box.webp",
+        "Game Boy Micro Édition CoroCoro Comic 30e Anniversaire" to "file:///android_asset/console_photos/non_libre/gb_micro_corocoro_30th_anniversary.webp",
+
+        "DS Lite Édition A Bathing Ape × Baby Milo (Or)" to "file:///android_asset/console_photos/non_libre/ds_lite_bape_baby_milo_gold.webp",
+        "DS Lite Crimson/Black" to "file:///android_asset/console_photos/non_libre/ds_lite_crimson_black.webp",
+        "DS Lite Édition Final Fantasy Crystal Chronicles: Ring of Fates" to "file:///android_asset/console_photos/non_libre/ds_lite_ff_crystal_chronicles_ring_of_fates.webp",
+        "DS Lite Édition Final Fantasy III Crystal" to "file:///android_asset/console_photos/non_libre/ds_lite_final_fantasy_iii_crystal.webp",
+        "DS Lite Édition Final Fantasy XII: Revenant Wings" to "file:///android_asset/console_photos/non_libre/ds_lite_ff12_revenant_wings.webp",
+        "DS Lite Édition SD Gundam G Generation: Cross Drive" to "file:///android_asset/console_photos/non_libre/ds_lite_gundam_cross_drive.webp",
+        "DS Lite Édition Love and Berry" to "file:///android_asset/console_photos/non_libre/ds_lite_love_and_berry.webp",
+        "DS Lite Édition Momotaro Dentetsu" to "file:///android_asset/console_photos/non_libre/ds_lite_momotaro_dentetsu.webp",
+        "DS Lite Édition Pokémon Daisuki Club Giratina (forme Origine)" to "file:///android_asset/console_photos/non_libre/ds_lite_pokemon_daisuki_club_giratina_origin.webp",
+        "DS Lite Royal Gold" to "file:///android_asset/console_photos/non_libre/ds_lite_royal_gold.webp",
+        "DS Lite Édition Winning Eleven DS" to "file:///android_asset/console_photos/non_libre/ds_lite_winning_eleven.webp",
+        "DS Lite Édition It's a Wonderful World (Subarashiki Kono Sekai)" to "file:///android_asset/console_photos/non_libre/ds_lite_wonderful_world.webp",
+
+        "Nintendo DSi Édition Gyakuten Kenji" to "file:///android_asset/console_photos/non_libre/dsi_gyakuten_kenji_ace_attorney.webp",
+        "Nintendo DSi Édition SaGa 2: Hihō Densetsu (20e anniversaire)" to "file:///android_asset/console_photos/non_libre/dsi_saga_2.webp",
+        "Nintendo DSi LL Super Mario Bros. 25e Anniversaire" to "file:///android_asset/console_photos/non_libre/dsi_ll_super_mario_25th_anniversary.webp",
+        "Nintendo DSi LL Édition LovePlus+ Manaka Deluxe" to "file:///android_asset/console_photos/non_libre/dsi_ll_loveplus_blue.webp",
+        "Nintendo DSi LL Édition LovePlus+ Rinko Deluxe" to "file:///android_asset/console_photos/non_libre/dsi_ll_loveplus_green.webp",
+        "Nintendo DSi LL Édition LovePlus+ Nene Deluxe" to "file:///android_asset/console_photos/non_libre/dsi_ll_loveplus_pink.webp",
+        "Nintendo DSi LL Édition Pompompurin 15e Anniversaire" to "file:///android_asset/console_photos/non_libre/dsi_ll_pompompurin_15th_anniversary.webp",
+
+        "Nintendo 3DS Édition Fire Emblem: Awakening" to "file:///android_asset/console_photos/non_libre/3ds_fire_emblem_awakening.webp",
+        "Nintendo 3DS Édition Kingdom Hearts 3D: Dream Drop Distance" to "file:///android_asset/console_photos/non_libre/3ds_kingdom_hearts_3d.webp",
+        "Nintendo 3DS Édition Dragon Quest Monsters: Terry no Wonderland 3D" to "file:///android_asset/console_photos/non_libre/3ds_dragon_quest_monsters_terry.webp",
+        "Nintendo 3DS Ice White Édition Super Mario 3D Land" to "file:///android_asset/console_photos/non_libre/3ds_ice_white_super_mario_3d_land.webp",
+        "New Nintendo 2DS LL Édition Dragon Quest XI" to "file:///android_asset/console_photos/non_libre/new_2ds_ll_dragon_quest.webp",
+        "New Nintendo 3DS LL Édition Monster Hunter X (Rouge)" to "file:///android_asset/console_photos/non_libre/new_3ds_ll_monster_hunter_x_red.webp",
+        "Nintendo 3DS XL Édition Monster Hunter 4 Rajang (Or)" to "file:///android_asset/console_photos/non_libre/3ds_ll_monster_hunter_4_rajang_gold.webp",
+        "Nintendo 3DS XL Édition One Piece (Rouge)" to "file:///android_asset/console_photos/non_libre/3ds_ll_one_piece_red.webp",
+        "Nintendo 3DS XL Édition Shin Megami Tensei IV" to "file:///android_asset/console_photos/non_libre/3ds_ll_shin_megami_tensei_iv.webp",
+        "Nintendo 3DS XL Édition Theatrhythm Final Fantasy: Curtain Call" to "file:///android_asset/console_photos/non_libre/3ds_ll_ff_theatrhythm_curtain_call.webp",
+        "Nintendo 3DS XL Édition Dragon Quest Monsters 2" to "file:///android_asset/console_photos/non_libre/3ds_ll_dragon_quest_monsters_2.webp",
+        "New Nintendo 3DS Édition Pokémon Alpha Saphir" to "file:///android_asset/console_photos/non_libre/new_3ds_pokemon_alpha_sapphire.webp",
+
+        // --- PHASE 2 (recherche 2026-08-01/02) : consoles de salon Nintendo exclusives Japon.
+        // Famicom Téléviseur C1 : vraie photo Wikimedia Commons (licence libre). Les autres
+        // (Famicom/Super Famicom/N64/GameCube) sont des photos produit/collection non libres de
+        // droits (consolevariations.com, archives presse) -> sous-dossier non_libre/.
+        "Famicom Téléviseur C1" to "file:///android_asset/console_photos/famicom_tv_c1.webp",
+        "AV Famicom" to "file:///android_asset/console_photos/av_famicom.webp",
+        "Twin Famicom Rouge" to "file:///android_asset/console_photos/twin_famicom_rouge.webp",
+        "Super Famicom Jr." to "file:///android_asset/console_photos/super_famicom_jr.webp",
+        "Nintendo 64 Clear Blue" to "file:///android_asset/console_photos/nintendo_64_clear_blue.webp",
+        "Nintendo 64 Clear Red" to "file:///android_asset/console_photos/nintendo_64_clear_red_white.webp",
+        "Nintendo 64 Édition ANA (All Nippon Airways)" to "file:///android_asset/console_photos/non_libre/n64_ana_edition.webp",
+        "Nintendo 64 Édition Fukuoka Daiei Hawks" to "file:///android_asset/console_photos/non_libre/n64_daiei_hawks.webp",
+        "Nintendo 64 Jusco 30e Anniversaire" to "file:///android_asset/console_photos/non_libre/n64_jusco_30th_anniversary.webp",
+        "Nintendo 64 Édition Lawson" to "file:///android_asset/console_photos/non_libre/n64_lawson_station.webp",
+        "Nintendo 64 Édition Pikachu Orange" to "file:///android_asset/console_photos/non_libre/n64_pikachu_orange.webp",
+        "GameCube Starlight Gold" to "file:///android_asset/console_photos/non_libre/gamecube_starlight_gold.webp",
+        "GameCube Édition Final Fantasy Crystal Chronicles (Crystal White)" to "file:///android_asset/console_photos/non_libre/gamecube_crystal_white_ffcc.webp"
     )
 
     // Photo générique de la gamme Game & Watch (vraie photo Wikimedia vérifiée) : repli pour toute
@@ -626,7 +717,60 @@ object ConsoleImages {
         // Lifeboat (Multi Screen) et Mario's Bombs Away (Panorama) : aucune photo libre trouvée
         // sur Commons malgré recherche exhaustive -> photos fournies par l'utilisateur (2026-07-13).
         "Game & Watch Lifeboat (Multi Screen)" to "file:///android_asset/console_photos/gw_lifeboat.webp",
-        "Game & Watch Mario's Bombs Away (Panorama)" to "file:///android_asset/console_photos/gw_mario_bombs_away.webp"
+        "Game & Watch Mario's Bombs Away (Panorama)" to "file:///android_asset/console_photos/gw_mario_bombs_away.webp",
+
+        // --- PHASE 3 (recherche 2026-08-01/02) : Sony PlayStation/PS2/PS3/PS4/PS5/PSP/Vita
+        // exclusifs Japon. Sources croisées : sonyinteractive.com (archives Wayback Machine pour
+        // les visuels de presse SCEI d'origine, domaine scei.co.jp), Wikimedia Commons (Net Yaroze),
+        // mediaworld.co.jp, catwithmonocle.com. Photos non libres de droits -> non_libre/. ---
+        "PlayStation Net Yaroze" to "file:///android_asset/console_photos/net_yaroze.webp",
+        "PlayStation 2 Ocean Blue" to "file:///android_asset/console_photos/non_libre/ps2_ocean_blue.webp",
+        "PlayStation 2 Slim Ceramic White" to "file:///android_asset/console_photos/non_libre/ps2_slim_ceramic_white.webp",
+        "PlayStation 2 Slim Satin Silver" to "file:///android_asset/console_photos/non_libre/ps2_slim_satin_silver.webp",
+        "PlayStation 2 Slim Cinnabar Red" to "file:///android_asset/console_photos/non_libre/ps2_slim_cinnabar_red.webp",
+        "PlayStation 3 Édition Final Fantasy XIII-2 (Lightning Ver.2)" to "file:///android_asset/console_photos/non_libre/ps3_ff13_2_lightning_v2.webp",
+        "PlayStation 3 Édition One Piece Pirate Warriors (Gold Edition)" to "file:///android_asset/console_photos/non_libre/ps3_one_piece_gold_edition.webp",
+        "PlayStation 3 Édition Ni no Kuni (Magical Edition)" to "file:///android_asset/console_photos/non_libre/ps3_ninokuni_magical_edition.webp",
+        "PlayStation 3 Édition Tales of Xillia (X Edition)" to "file:///android_asset/console_photos/non_libre/ps3_tales_of_xillia_x_edition.webp",
+        "PlayStation 3 Édition Gran Turismo 5 (Titanium Blue)" to "file:///android_asset/console_photos/non_libre/ps3_gt5_titanium_blue.webp",
+        "PlayStation 4 Édition Dragon Quest (Metal Slime)" to "file:///android_asset/console_photos/non_libre/ps4_dq_metal_slime.webp",
+        "PlayStation 4 Édition Dragon Quest XI (Loto)" to "file:///android_asset/console_photos/non_libre/ps4_dq11_loto_edition.webp",
+        "PSP-2000 Rose Pink" to "file:///android_asset/console_photos/non_libre/psp2000_rose_pink.webp",
+        "PSP-2000 Lavender Purple" to "file:///android_asset/console_photos/non_libre/psp2000_lavender_purple.webp",
+        "PSP-2000 Felicia Blue" to "file:///android_asset/console_photos/non_libre/psp2000_felicia_blue.webp",
+        "PSP-3000 Value Pack Black/Red" to "file:///android_asset/console_photos/non_libre/psp3000_value_pack_black_red.webp",
+        "PSP-3000 Value Pack White/Blue" to "file:///android_asset/console_photos/non_libre/psp3000_value_pack_white_blue.webp",
+        "PSP-3000 Bright Yellow" to "file:///android_asset/console_photos/non_libre/psp3000_bright_yellow.webp",
+        "PSP-3000 Metallic Blue" to "file:///android_asset/console_photos/non_libre/psp3000_metallic_blue.webp",
+        "PlayStation Vita Slim Light Pink" to "file:///android_asset/console_photos/non_libre/vita_slim_light_pink.webp",
+        "PlayStation Vita Slim Blue/Black" to "file:///android_asset/console_photos/non_libre/vita_slim_blue_black.webp",
+        "PlayStation Vita Slim Red/Black" to "file:///android_asset/console_photos/non_libre/vita_slim_red_black.webp",
+        "PlayStation Vita Édition Soul Sacrifice" to "file:///android_asset/console_photos/non_libre/vita_soul_sacrifice.webp",
+
+        // --- PHASE 4 (recherche 2026-08-01/02) : Sega et NEC PC Engine, déclinaisons exclusives
+        // au Japon. Photos Wikimedia Commons (licence libre) utilisées en priorité ; à défaut,
+        // photos produit consolevariations.com (non libres de droits) -> non_libre/.
+        "Mark III" to "file:///android_asset/console_photos/sega_mark_iii.webp",
+        "Mega Jet" to "file:///android_asset/console_photos/mega_jet.webp",
+        "TeraDrive" to "file:///android_asset/console_photos/teradrive.webp",
+        "Wondermega" to "file:///android_asset/console_photos/non_libre/wondermega.webp",
+        "Wondermega 2" to "file:///android_asset/console_photos/non_libre/wondermega_2.webp",
+        "Hi-Saturn" to "file:///android_asset/console_photos/non_libre/hi_saturn.webp",
+        "V-Saturn" to "file:///android_asset/console_photos/non_libre/v_saturn.webp",
+        "Saturn Skeleton (This is Cool)" to "file:///android_asset/console_photos/non_libre/saturn_skeleton_this_is_cool.webp",
+        "Saturn Blanche (2e modèle)" to "file:///android_asset/console_photos/non_libre/saturn_blanche_2e_modele.webp",
+        "Saturn Sonic (Toys'R'Us Japon)" to "file:///android_asset/console_photos/non_libre/saturn_sonic_toysrus.webp",
+        "Saturn Édition Derby Stallion" to "file:///android_asset/console_photos/non_libre/saturn_derby_stallion.webp",
+        "Dreamcast Édition Hello Kitty" to "file:///android_asset/console_photos/dreamcast_edition_hello_kitty.webp",
+        "Dreamcast Édition Sakura Wars (Taisen)" to "file:///android_asset/console_photos/non_libre/dreamcast_edition_sakura_wars.webp",
+        "Divers 2000 CX-1" to "file:///android_asset/console_photos/divers_2000_cx1.webp",
+        "Game Gear Micro Noire" to "file:///android_asset/console_photos/non_libre/game_gear_micro_noire.webp",
+        "Game Gear Micro Bleue" to "file:///android_asset/console_photos/non_libre/game_gear_micro_bleue.webp",
+        "Game Gear Micro Jaune" to "file:///android_asset/console_photos/non_libre/game_gear_micro_jaune.webp",
+        "Game Gear Micro Rouge" to "file:///android_asset/console_photos/non_libre/game_gear_micro_rouge.webp",
+        "Game Gear Blanche" to "file:///android_asset/console_photos/non_libre/game_gear_blanche.webp",
+        "PC Engine Shuttle" to "file:///android_asset/console_photos/pc_engine_shuttle.webp",
+        "PC Engine Duo-R" to "file:///android_asset/console_photos/pc_engine_duo_r.webp"
     )
 
     fun urlFor(name: String): String? = gameAndWatchModelPhotos[name] ?: byName[name]
