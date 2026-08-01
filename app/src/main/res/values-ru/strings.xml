@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">Валюта отображения и ввода цен (всегда конвертируется из евро по последнему курсу, полученному при запуске). Выбирается автоматически в зависимости от языка, но может быть изменена здесь в любой момент.</string>
     <string name="options_backup">💾 Резервная копия</string>
     <string name="options_replay_tutorial">❓ Повторить обучение</string>
+    <string name="options_contact">✉️ Связаться с нами</string>
+    <string name="contact_email_subject">Ma Collection - Отзыв пользователя</string>
     <string name="options_background">🖼️ Фоновое изображение</string>
     <string name="options_background_reset">↩️ Фон по умолчанию</string>
     <string name="recrop_button">✂️ Обрезать</string>

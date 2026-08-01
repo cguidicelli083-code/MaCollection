@@ -180,6 +180,8 @@
     <string name="currency_dialog_note">Display/entry currency for values (always converted from euros, at the most recent rate fetched on launch). Chosen automatically based on language, but changeable here anytime.</string>
     <string name="options_backup">💾 Backup</string>
     <string name="options_replay_tutorial">❓ Replay tutorial</string>
+    <string name="options_contact">✉️ Contact us</string>
+    <string name="contact_email_subject">Ma Collection - User feedback</string>
     <string name="options_background">🖼️ Background image</string>
     <string name="options_background_reset">↩️ Default background</string>
     <string name="recrop_button">✂️ Crop</string>

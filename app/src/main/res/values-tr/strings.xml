@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">Değerlerin görüntülenme ve girilme para birimi (her zaman euro üzerinden, başlangıçta alınan en güncel kura göre dönüştürülür). Dile göre otomatik olarak seçilir, ancak buradan her zaman değiştirilebilir.</string>
     <string name="options_backup">💾 Yedekleme</string>
     <string name="options_replay_tutorial">❓ Eğitimi yeniden izle</string>
+    <string name="options_contact">✉️ Bize ulaşın</string>
+    <string name="contact_email_subject">Ma Collection - Kullanıcı geri bildirimi</string>
     <string name="options_background">🖼️ Arka plan resmi</string>
     <string name="options_background_reset">↩️ Varsayılan arka plan</string>
     <string name="recrop_button">✂️ Kırp</string>

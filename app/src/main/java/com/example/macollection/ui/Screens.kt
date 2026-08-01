@@ -1228,6 +1228,7 @@ fun AddCollectionForm(
                     detailed.releaseYear?.let { year = it.toString() }
                     if (detailed.description.isNotBlank()) description = detailed.description
                     detailed.publisher?.let { brand = it }
+                    if (detailed.platforms.isNotBlank()) platform = detailed.platforms
                     if (!photoManuallySet) {
                         // La photo principale d'un jeu doit être sa JAQUETTE. RAWG ne renvoie
                         // qu'une capture de gameplay (background_image) : on tente d'abord la vraie
@@ -1300,6 +1301,10 @@ fun AddCollectionForm(
                 r.gameMatch.releaseYear?.let { year = it.toString() }
                 if (r.gameMatch.description.isNotBlank()) description = r.gameMatch.description
                 r.gameMatch.publisher?.let { brand = it }
+                // Liste complète des consoles compatibles (IGDB/RAWG) si connue ; sinon on garde
+                // au moins la console repérée sur la boîte/cartouche (OCR/IA), qui peut être la
+                // seule info disponible pour un jeu absent de ces catalogues.
+                platform = r.gameMatch.platforms.takeIf { it.isNotBlank() } ?: r.gameConsoleHint ?: platform
                 rawgId = r.gameMatch.sourceId
             }
             r?.consolePresetName != null -> {
@@ -1511,6 +1516,7 @@ fun AddCollectionForm(
                 game.releaseYear?.let { year = it.toString() }
                 if (game.description.isNotBlank()) description = game.description
                 game.publisher?.let { brand = it }
+                if (game.platforms.isNotBlank()) platform = game.platforms
                 if (!photoManuallySet) {
                     // Jaquette IGDB déjà = vraie couverture ; sinon (résultat RAWG = capture de
                     // gameplay, ou Wikipédia) on va chercher la jaquette IGDB correspondante.
@@ -2803,7 +2809,10 @@ private fun AutocompleteField(
 ) {
     var expanded by remember { mutableStateOf(false) }
     val filtered = remember(value, suggestions) {
-        if (value.isBlank()) suggestions
+        // Plafonné même quand le champ est vide (ex. en cours d'effacement) : afficher toute la
+        // liste (des centaines de consoles) sans limite rendait le menu lent à composer/afficher
+        // à chaque frappe.
+        if (value.isBlank()) suggestions.take(20)
         else suggestions.filter { it.lowercase().contains(value.lowercase()) }.take(20)
     }
     ExposedDropdownMenuBox(expanded = expanded && filtered.isNotEmpty(), onExpandedChange = { expanded = it }) {

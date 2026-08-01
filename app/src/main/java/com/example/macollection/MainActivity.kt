@@ -151,6 +151,9 @@ class MainActivity : AppCompatActivity() {
 
 enum class Tab { COLLECTION, WISHLIST, ENCYCLO, TOTAL, GAMES, BACKUP }
 
+/** Adresse de contact affichée dans les Paramètres (bouton "Nous contacter"). */
+private const val CONTACT_EMAIL = "nawash083@gmail.com"
+
 /** Sous-écran plein écran ouvert depuis l'onglet Jeux (même pattern que `viewing`/`encyclo`). */
 private enum class GamesSubScreen { QUIZ, PONG, ARKANOID, INVADERS, CENTIPEDE, PACMAN, TETRIS, SNAKE, SIMON, FROGGER, SHOP }
 
@@ -711,6 +714,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     }
 
     if (showOptionsMenu) {
+        val contactEmailSubject = stringResource(R.string.contact_email_subject)
         AlertDialog(
             onDismissRequest = { showOptionsMenu = false },
             title = { Text(stringResource(R.string.options_menu_title)) },
@@ -757,6 +761,17 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         onClick = { showOptionsMenu = false; showThemeDialog = true },
                         modifier = Modifier.fillMaxWidth()
                     ) { Text("Thème") }
+                    TextButton(
+                        onClick = {
+                            showOptionsMenu = false
+                            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                                data = Uri.parse("mailto:$CONTACT_EMAIL")
+                                putExtra(Intent.EXTRA_SUBJECT, contactEmailSubject)
+                            }
+                            runCatching { context.startActivity(intent) }
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.options_contact)) }
                 }
             }
         )

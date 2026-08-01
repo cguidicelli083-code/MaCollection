@@ -28,6 +28,8 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("Atari", "Pong (Home)", 1975, "Salon", "Circuit dédié", "Aucune", "Console mono-jeu Pong pour la maison."),
     ConsolePreset("Fairchild", "Channel F", 1976, "Salon", "Fairchild F8 @ 1,79 MHz", "64 o", "Première console à cartouches."),
     ConsolePreset("Atari", "2600 (VCS)", 1977, "Salon", "MOS 6507 @ 1,19 MHz", "128 o", "La console qui a lancé le jeu vidéo domestique."),
+    ConsolePreset("Atari", "2600 (bois)", 1977, "Salon", "MOS 6507 @ 1,19 MHz", "128 o", "Modèle d'origine à façade en imitation bois (« woodgrain »), commercialisé de 1977 à 1980 avant le passage au tout noir."),
+    ConsolePreset("Atari", "2600 (noire, sans bois)", 1980, "Salon", "MOS 6507 @ 1,19 MHz", "128 o", "Redesign de 1980 sans façade bois, entièrement noire (surnommée « Darth Vader » par les collectionneurs), avant la 2600 Jr. de 1986."),
     ConsolePreset("Atari", "2600 Jr.", 1986, "Salon", "MOS 6507 @ 1,19 MHz", "128 o", "Redesign compact et économique de la 2600 (esthétique proche de la 7800), même matériel à l'intérieur."),
     ConsolePreset("Magnavox", "Odyssey 2", 1978, "Salon", "Intel 8048 @ 1,79 MHz", "64 o", "Console à cartouches avec clavier intégré."),
     ConsolePreset("Philips", "Videopac C52", 1979, "Salon", "Intel 8048 @ 1,79 MHz", "64 o", "Déclinaison française de la Philips Videopac G7000 (= Magnavox Odyssey 2) : sortie SECAM, marquages en français."),
@@ -342,6 +344,12 @@ val consolePresets: List<ConsolePreset> = listOf(
     ConsolePreset("SNK", "Neo Geo Mini Samurai Shodown Ukyo Tachibana", 2019, "Salon", "ARM Cortex-A7 (SoC, émulation)", "1 Go", "Édition limitée à 20 000 exemplaires, coque transparente bleue à l'effigie d'Ukyo Tachibana, vendue en bundle avec Samurai Shodown (2019)."),
     ConsolePreset("Sony", "PlayStation Classic", 2018, "Salon", "ARM Cortex-A7 (SoC, émulation)", "512 Mo", "Mini réédition de la PlayStation, 20 jeux intégrés, deux manettes répliques non analogiques."),
     ConsolePreset("Sega", "Game Gear Micro", 2020, "Portable", "ARM (SoC, émulation)", "128 Mo", "Micro-console au format Game Gear miniature, 4 coloris (Noir/Bleu/Jaune/Rouge) avec jeux différents selon la couleur, vendue uniquement au Japon."),
+    ConsolePreset("Retro Games Ltd", "TheC64 Mini", 2018, "Salon", "ARM (SoC, émulation VICE)", "256 Mo", "Mini réédition du Commodore 64 (29 mars 2018), 64 jeux intégrés, joystick inclus ; clavier miniature non fonctionnel (juste décoratif)."),
+    ConsolePreset("Sega", "Astro City Mini", 2020, "Salon", "ARM (SoC, émulation)", "—", "Réplique 1/6 de la borne d'arcade Astro City (17 décembre 2020, Japon), écran intégré 5 pouces, 37 jeux d'arcade Sega/Taito/Data East intégrés."),
+    ConsolePreset("Sega", "Astro City Mini V", 2022, "Salon", "ARM (SoC, émulation)", "—", "Version à écran vertical de l'Astro City Mini (27 juillet 2022, Japon), 22 jeux centrés sur le shoot'em up vertical (Raiden, Battle Garegga...)."),
+    ConsolePreset("Retro Games Ltd", "TheA500 Mini", 2022, "Salon", "ARM (SoC, émulation)", "—", "Mini réédition du Commodore Amiga 500 (25 mars 2022), 25 jeux intégrés, souris et manette fournies."),
+    ConsolePreset("Atari", "THE400 Mini", 2024, "Salon", "ARM (SoC, émulation)", "—", "Mini réédition de l'ordinateur Atari 400 (28 mars 2024), 25 jeux intégrés, joystick CX40+ inclus, chargement de ROM perso par port USB."),
+    ConsolePreset("Capcom", "Capcom Home Arcade", 2019, "Salon", "ARM (SoC, émulation CPS1/CPS2)", "—", "Boîtier en forme de logo Capcom intégrant deux vrais sticks d'arcade, 16 jeux CPS1/CPS2 préinstallés (25 octobre 2019)."),
 
     // --- Micro-ordinateurs familiaux les plus connus (machines de jeu à part entière en Europe) ---
     ConsolePreset("Sinclair", "ZX Spectrum", 1982, "Ordinateur", "Zilog Z80A @ 3,5 MHz", "16 ou 48 Ko", "Micro-ordinateur britannique culte, immense ludothèque, clavier à touches en caoutchouc."),

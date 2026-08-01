@@ -278,6 +278,8 @@
     <string name="currency_dialog_note">Devise d\'affichage et de saisie des cotes (toujours convertie depuis l\'euro, au taux le plus récent récupéré au lancement). Choisie automatiquement selon la langue, mais modifiable ici à tout moment.</string>
     <string name="options_backup">💾 Sauvegarde</string>
     <string name="options_replay_tutorial">❓ Revoir le tutoriel</string>
+    <string name="options_contact">✉️ Nous contacter</string>
+    <string name="contact_email_subject">Ma Collection - Retour utilisateur</string>
     <string name="recrop_button">✂️ Recadrer</string>
     <string name="options_background">🖼️ Image de fond</string>
     <string name="options_background_reset">↩️ Fond par défaut</string>

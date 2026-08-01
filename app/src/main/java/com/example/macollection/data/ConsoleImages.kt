@@ -13,6 +13,17 @@ object ConsoleImages {
         // Photo fournie par l'utilisateur (2026-07-13) : remplace le rendu 3D Sketchfab par une
         // vraie photo du modèle « wood-grain » emblématique.
         "2600 (VCS)" to "file:///android_asset/console_photos/atari_2600_vcs.webp",
+        "2600 (bois)" to "file:///android_asset/console_photos/atari_2600_vcs.webp",
+        "2600 (noire, sans bois)" to "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Atari-2600-Vader-FL.jpg/500px-Atari-2600-Vader-FL.jpg",
+        "TheC64 Mini" to "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/C64_mini_game_console.jpg/500px-C64_mini_game_console.jpg",
+        "THE400 Mini" to "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Atari_THE400_A74008420250206.jpg/500px-Atari_THE400_A74008420250206.jpg",
+        // Pas de photo libre de droits (Wikimedia Commons) trouvée pour ces 4 modèles : photo
+        // produit officielle du revendeur/éditeur reprise à la place (accord explicite de
+        // l'utilisateur, 2026-08-01, malgré le risque de droit d'auteur signalé au préalable).
+        "TheA500 Mini" to "https://retrogames.biz/images/thea500-mini/showcase/1.jpg",
+        "Astro City Mini" to "https://limitedrungames.com/cdn/shop/products/astro-city-mini-lrg.png?v=1666645857&width=650",
+        "Astro City Mini V" to "https://limitedrungames.com/cdn/shop/products/astro-city-mini-v-lrg-1.png?v=1666644335&width=650",
+        "Capcom Home Arcade" to "https://thechelseagamer.com/cdn/shop/products/CHA_BeautyShot.png?v=1560558228&width=1500",
         "Famicom" to "https://media.sketchfab.com/models/b33939368ad04640919570a9d3bdbeda/thumbnails/aca5faaf876742849a2bb50e1d47391e/d69356e0115448778d89435b871fb76c.jpeg",
         "NES" to "file:///android_asset/console_photos/nes.webp",
         "Master System" to "https://media.sketchfab.com/models/0ec998c9b9de4e7f956cab56bbca3c0f/thumbnails/3455e37a767440c8945e435aafd5baf3/b8901a3b278949789df1b56745f967e5.jpeg",

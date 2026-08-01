@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">Moneda de visualización y de introducción de las cotizaciones (siempre convertida desde el euro, al tipo más reciente obtenido al iniciar la app). Elegida automáticamente según el idioma, pero modificable aquí en cualquier momento.</string>
     <string name="options_backup">💾 Copia de seguridad</string>
     <string name="options_replay_tutorial">❓ Ver tutorial de nuevo</string>
+    <string name="options_contact">✉️ Contáctanos</string>
+    <string name="contact_email_subject">Ma Collection - Comentarios del usuario</string>
     <string name="options_background">🖼️ Imagen de fondo</string>
     <string name="options_background_reset">↩️ Fondo predeterminado</string>
     <string name="recrop_button">✂️ Recortar</string>

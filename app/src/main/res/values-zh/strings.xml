@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">显示和输入价格使用的货币（始终从欧元按启动时获取的最新汇率换算）。根据语言自动选择，但可以随时在此处更改。</string>
     <string name="options_backup">💾 备份</string>
     <string name="options_replay_tutorial">❓ 重新查看教程</string>
+    <string name="options_contact">✉️ 联系我们</string>
+    <string name="contact_email_subject">Ma Collection - 用户反馈</string>
     <string name="options_background">🖼️ 背景图片</string>
     <string name="options_background_reset">↩️ 默认背景</string>
     <string name="recrop_button">✂️ 裁剪</string>

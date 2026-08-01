@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">価格の表示・入力に使う通貨（常にユーロから、起動時に取得した最新レートで変換されます）。言語に応じて自動的に選択されますが、ここでいつでも変更できます。</string>
     <string name="options_backup">💾 バックアップ</string>
     <string name="options_replay_tutorial">❓ チュートリアルを見る</string>
+    <string name="options_contact">✉️ お問い合わせ</string>
+    <string name="contact_email_subject">Ma Collection - ユーザーフィードバック</string>
     <string name="options_background">🖼️ 背景画像</string>
     <string name="options_background_reset">↩️ デフォルトの背景</string>
     <string name="recrop_button">✂️ 切り取る</string>

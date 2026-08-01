@@ -178,6 +178,8 @@
     <string name="currency_dialog_note">Valuta di visualizzazione e inserimento delle valutazioni (sempre convertita dall\'euro, al tasso più recente recuperato all\'avvio). Scelta automaticamente in base alla lingua, ma modificabile qui in qualsiasi momento.</string>
     <string name="options_backup">💾 Backup</string>
     <string name="options_replay_tutorial">❓ Rivedi il tutorial</string>
+    <string name="options_contact">✉️ Contattaci</string>
+    <string name="contact_email_subject">Ma Collection - Feedback utente</string>
     <string name="options_background">🖼️ Immagine di sfondo</string>
     <string name="options_background_reset">↩️ Sfondo predefinito</string>
     <string name="recrop_button">✂️ Ritaglia</string>

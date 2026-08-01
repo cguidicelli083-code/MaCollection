@@ -10,6 +10,7 @@ import retrofit2.http.Query
 // --- DTO Wikipédia ---
 private data class WikiSummary(
     val extract: String?,
+    val description: String?,
     val thumbnail: WikiImage?,
     val originalimage: WikiImage?
 )
@@ -70,7 +71,11 @@ object ImageSearch {
     suspend fun frenchDescription(title: String): String? {
         // 1. Essai direct par le titre.
         summaryExtract(title)?.let { return it }
-        // 2. Repli : on cherche le bon titre français puis on récupère son résumé.
+        // 2. Repli : on cherche le bon titre français puis on récupère son résumé. La recherche
+        // plein-texte peut tomber sur la page d'une AUTRE entité que le jeu lui-même — le plus
+        // souvent la société qui l'a développé/édité, quand le jeu n'a pas sa propre page dédiée
+        // (ex. nom de jeu ambigu, article inexistant) — d'où le filtre [looksLikeGameDescription]
+        // avant d'accepter ce résultat.
         val found = try {
             frApi.search(title).query?.search?.firstOrNull()?.title
         } catch (e: Exception) {
@@ -83,10 +88,21 @@ object ImageSearch {
     }
 
     private suspend fun summaryExtract(title: String): String? = try {
-        frApi.summary(title).extract?.takeIf { it.isNotBlank() }
+        val s = frApi.summary(title)
+        s.extract?.takeIf { it.isNotBlank() && looksLikeGameDescription(s.description) }
     } catch (e: Exception) {
         null
     }
+
+    // Le court descriptif Wikipédia ("description", ex. « jeu vidéo de plate-forme sorti en
+    // 1991 ») distingue fiablement un article de JEU d'un article sur la société qui l'a créé
+    // (« société japonaise de jeux vidéo », « éditeur »...). Absent (null), on ne bloque pas :
+    // beaucoup d'articles de jeux n'ont pas ce descriptif renseigné.
+    private val nonGameDescriptors = Regex(
+        "soci[ée]t[ée]|entreprise|[ée]diteur|d[ée]veloppeur|studio|compagnie|constructeur|fabricant"
+    )
+    private fun looksLikeGameDescription(description: String?): Boolean =
+        description.isNullOrBlank() || !nonGameDescriptors.containsMatchIn(description.lowercase())
 
     private fun isLikelyPhoto(url: String): Boolean {
         val u = url.lowercase()
