@@ -225,7 +225,10 @@ object GeminiVision {
      * le même format JSON à Groq à partir des résultats de recherche web Tavily.
      */
     internal fun extractJsonPrice(text: String): Double? {
-        val match = Regex("\\{[^{}]*\"prix_eur\"[^{}]*}").find(text) ?: return null
+        // Le "}" final DOIT être échappé : accepté tel quel par java.util.regex (JVM), mais rejeté
+        // par le moteur ICU d'Android (PatternSyntaxException), jamais détecté avant la correction
+        // des règles ProGuard ci-dessus qui empêchait cette fonction de s'exécuter sur un appareil réel.
+        val match = Regex("\\{[^{}]*\"prix_eur\"[^{}]*\\}").find(text) ?: return null
         return runCatching { Gson().fromJson(match.value, GemPriceEstimate::class.java) }.getOrNull()?.prix_eur
     }
 

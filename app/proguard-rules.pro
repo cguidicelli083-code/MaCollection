@@ -48,6 +48,13 @@
 -keep class com.example.macollection.data.GemResponse { *; }
 -keep class com.example.macollection.data.GemProduct { *; }
 -keep class com.example.macollection.data.GemBatchEntry { *; }
+-keep class com.example.macollection.data.GemTool { *; }
+-keep class com.example.macollection.data.GemGoogleSearch { *; }
+-keep class com.example.macollection.data.GemPriceEstimate { *; }
+# Tavily (recherche web, 3e recours de cote) : requête et réponse sérialisées par Gson.
+-keep class com.example.macollection.data.TavilySearchRequest { *; }
+-keep class com.example.macollection.data.TavilyResult { *; }
+-keep class com.example.macollection.data.TavilySearchResponse { *; }
 # Groq (reconnaissance visuelle de secours) : requête et réponse sérialisées par Gson.
 -keep class com.example.macollection.data.GqImageUrl { *; }
 -keep class com.example.macollection.data.GqContent { *; }
