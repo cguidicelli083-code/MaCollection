@@ -195,7 +195,7 @@
     <string name="onboarding_page3_title">✏️ İpucu: fotoğrafı iyi kadrajla</string>
     <string name="onboarding_page3_text">Daha iyi tanıma için fotoğrafı logo veya başlık üzerine sıkıca kadrajla, yansımalardan ve bulanıklıktan kaçın — metin ne kadar net ve okunaklıysa otomatik tanımlama o kadar güvenilir olur. Çevrimiçi aramayla bulunan bir oyun için gösterilen ana fotoğraf gerçek kapak resmi olacaktır.</string>
     <string name="onboarding_page4_title">📚 Ansiklopedi</string>
-    <string name="onboarding_page4_text">Konsol ve aksesuar kataloğuna göz at, en bilinen oyunlarını keşfet, bir konsolu, aksesuarı veya oyunu kendi sayfasından doğrudan koleksiyonuna veya istek listene ekle, ve eksikse + düğmesiyle kendi özel kaydını (fotoğrafla) ekle.</string>
+    <string name="onboarding_page4_text">615 konsol ve 84 aksesuar içeren kataloğa göz at, en bilinen oyunlarını keşfet, bir konsolu, aksesuarı veya oyunu kendi sayfasından doğrudan koleksiyonuna veya istek listene ekle, ve eksikse + düğmesiyle kendi özel kaydını (fotoğrafla) ekle.</string>
     <string name="onboarding_page5_title">❤️ İstek Listesi ve 💎 Toplam Değer</string>
     <string name="onboarding_page5_text">İstek Listesi sekmesi gelecekteki edinimlerini listeler. Toplam sekmesi tüm koleksiyonunun tahmini değerini otomatik olarak güncellenmiş şekilde gösterir. Karşılaştırılabilir bir eBay ilanı bulunamazsa, bunun yerine bir yapay zeka fiyatın yanında «(YZ)» ile işaretlenen bir tahmin önerir — gerçek bir ilandan daha az güvenilir, sadece yaklaşık bir fikir.</string>
     <string name="onboarding_page6_title">💾 Yedekleme</string>

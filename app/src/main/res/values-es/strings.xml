@@ -195,7 +195,7 @@
     <string name="onboarding_page3_title">✏️ Consejo: encuadra bien la foto</string>
     <string name="onboarding_page3_text">Para un mejor reconocimiento, encuadra la foto bien ajustada al logo o al título, evita los reflejos y el desenfoque — cuanto más nítido y legible sea el texto, más fiable será la identificación automática. Para un juego encontrado mediante la búsqueda en línea, la foto principal mostrada será la portada real.</string>
     <string name="onboarding_page4_title">📚 Enciclopedia</string>
-    <string name="onboarding_page4_text">Consulta el catálogo de consolas y accesorios, descubre sus juegos más conocidos, añade una consola, un accesorio o un juego directamente a tu colección o a tus deseos desde su ficha, y añade tú mismo una ficha personalizada (con foto) si falta, mediante el botón +.</string>
+    <string name="onboarding_page4_text">Consulta el catálogo de 615 consolas y 84 accesorios, descubre sus juegos más conocidos, añade una consola, un accesorio o un juego directamente a tu colección o a tus deseos desde su ficha, y añade tú mismo una ficha personalizada (con foto) si falta, mediante el botón +.</string>
     <string name="onboarding_page5_title">❤️ Deseos y 💎 Valor total</string>
     <string name="onboarding_page5_text">La pestaña Deseos lista tus futuras adquisiciones. La pestaña Total muestra el valor estimado de toda tu colección, actualizado automáticamente. Si no se encuentra ningún anuncio comparable en eBay, una IA propone una estimación en su lugar, marcada «(IA)» junto al precio: menos fiable que un anuncio real, solo como orden de magnitud.</string>
     <string name="onboarding_page6_title">💾 Copia de seguridad</string>

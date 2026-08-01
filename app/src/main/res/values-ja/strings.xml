@@ -195,7 +195,7 @@
     <string name="onboarding_page3_title">✏️ コツ：写真をしっかり構図する</string>
     <string name="onboarding_page3_text">認識精度を高めるには、ロゴやタイトルにしっかり寄せて撮影し、反射やブレを避けてください。文字がはっきり読めるほど、自動認識の精度が上がります。オンライン検索で見つかったゲームの場合、表示されるメイン写真は実際のパッケージ写真になります。</string>
     <string name="onboarding_page4_title">📚 図鑑</string>
-    <string name="onboarding_page4_text">ゲーム機やアクセサリーのカタログを見て、人気の高いゲームを発見し、そのページから直接コレクションや欲しいものリストにゲーム機・アクセサリー・ゲームを追加でき、もし無ければ＋ボタンから自分でオリジナルの項目（写真付き）を追加できます。</string>
+    <string name="onboarding_page4_text">615種類のゲーム機と84種類のアクセサリーのカタログを見て、人気の高いゲームを発見し、そのページから直接コレクションや欲しいものリストにゲーム機・アクセサリー・ゲームを追加でき、もし無ければ＋ボタンから自分でオリジナルの項目（写真付き）を追加できます。</string>
     <string name="onboarding_page5_title">❤️ ウィッシュリスト &amp; 💎 合計金額</string>
     <string name="onboarding_page5_text">ウィッシュリストタブには今後欲しいものが表示されます。合計タブにはコレクション全体の推定価値が自動的に更新されて表示されます。比較可能なeBay出品が見つからない場合、代わりにAIが金額の隣に「(AI)」と表示される推定価格を提案します。実際の出品より信頼性は低く、目安として参考にしてください。</string>
     <string name="onboarding_page6_title">💾 バックアップ</string>

@@ -195,7 +195,7 @@
     <string name="onboarding_page3_title">✏️ 小贴士：拍照取景要精准</string>
     <string name="onboarding_page3_text">为了更好的识别效果，请将照片紧密对准徽标或标题，避免反光和模糊——文字越清晰易读，自动识别就越可靠。对于通过在线搜索找到的游戏，显示的主图将是真实的封面。</string>
     <string name="onboarding_page4_title">📚 百科全书</string>
-    <string name="onboarding_page4_text">浏览主机和配件目录，发现它们最知名的游戏，可以直接从条目页面把主机、配件或游戏添加到收藏或心愿单，如果缺少某个条目，还可以通过+按钮自行添加自定义条目（附照片）。</string>
+    <string name="onboarding_page4_text">浏览包含615款主机和84款配件的目录，发现它们最知名的游戏，可以直接从条目页面把主机、配件或游戏添加到收藏或心愿单，如果缺少某个条目，还可以通过+按钮自行添加自定义条目（附照片）。</string>
     <string name="onboarding_page5_title">❤️ 心愿单 和 💎 总价值</string>
     <string name="onboarding_page5_text">心愿单标签列出你未来想要购买的物品。总计标签显示你整个收藏的估计价值，自动更新。如果找不到可比的eBay商品，AI会代为提供一个估价，价格旁会标注"(AI)"——可靠性不如真实商品信息，仅供参考。</string>
     <string name="onboarding_page6_title">💾 备份</string>
