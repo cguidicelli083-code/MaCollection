@@ -33,6 +33,7 @@ object ScanDexApi {
     private val api: ScanDexApiService by lazy {
         Retrofit.Builder()
             .baseUrl("https://scandex.gamery.app/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ScanDexApiService::class.java)

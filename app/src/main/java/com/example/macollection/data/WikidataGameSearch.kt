@@ -57,6 +57,7 @@ object WikidataGameSearch {
     private val api: WikidataApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://www.wikidata.org/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WikidataApi::class.java)
@@ -66,6 +67,7 @@ object WikidataGameSearch {
     private val wiki: WikiSummaryApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://www.wikidata.org/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WikiSummaryApi::class.java)
@@ -124,7 +126,11 @@ object WikidataGameSearch {
         for (e in found) {
             val id = e.id ?: continue
             if (!seen.add(id)) continue
-            if (e.label.isNullOrBlank() || !keep(e.description)) continue
+            // La recherche Wikidata est un plein-texte permissif (comme Wikipédia, cf.
+            // [WikipediaPresetSearch.titleMatchesQuery]) : sans ce filtre, une entité au nom sans
+            // rapport pouvait remonter juste parce qu'elle partage un mot avec la requête
+            // (ex. le nom de la franchise) tout en passant le test de catégorie [keep].
+            if (e.label.isNullOrBlank() || !keep(e.description) || !WikipediaPresetSearch.titleMatchesQuery(e.label, query)) continue
             entities += e
             if (entities.size >= 8) break
         }

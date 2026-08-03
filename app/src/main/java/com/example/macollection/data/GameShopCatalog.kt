@@ -1,5 +1,7 @@
 package com.example.macollection.data
 
+import com.example.macollection.BuildConfig
+
 /** Catégorie d'item de la Boutique des Jeux. */
 enum class ShopItemCategory { ARCADE_GAME, SKIN, FEATURE }
 
@@ -57,6 +59,9 @@ object GameShopCatalog {
     const val SIMON = "simon"
     const val FROGGER = "frogger"
     const val QUIZ = "quiz"
+    const val MINER = "miner"
+    const val ORCHARD = "orchard"
+    const val BOMB_HUNTER = "bomb_hunter"
 
     // Identifiants des items de la boutique (hors jeux d'arcade, gérés séparément ci-dessus).
     const val EXCEL_EXPORT = "excel_export"
@@ -76,6 +81,18 @@ object GameShopCatalog {
     // Noms de jeux et de thèmes GÉNÉRIQUES uniquement (aucune marque déposée : pas de « Tetris »,
     // « Pac-Man », « Star Wars »... — exigence légale pour la publication sur le Play Store).
     // Les mécaniques restent des implémentations 100 % originales de concepts du domaine public.
+    /**
+     * Mineur/Croque-Fruits/Artificier encore en test (l'utilisateur veut les valider plus
+     * sérieusement avant de les exposer aux joueurs) : masqués de la Boutique/du Hub en
+     * production (variantes full/noads), mais toujours visibles en variante test/debug pour
+     * continuer à les tester sans avoir à les retirer puis remettre à chaque fois.
+     */
+    private val gamesUnderTest = listOf(
+        ShopItem(MINER, ShopItemCategory.ARCADE_GAME, "Mineur", "1984 — Débloque le mineur qui creuse et évite les rochers.", 350),
+        ShopItem(ORCHARD, ShopItemCategory.ARCADE_GAME, "Croque-Fruits", "1981 — Débloque le croqueur de fruits face aux insectes.", 350),
+        ShopItem(BOMB_HUNTER, ShopItemCategory.ARCADE_GAME, "Artificier", "1984 — Débloque l'artificier qui vole plané entre les plateformes.", 350)
+    )
+
     val lockedGames: List<ShopItem> = listOf(
         ShopItem(SNAKE, ShopItemCategory.ARCADE_GAME, "Serpent", "1976 — Débloque le serpent qui grandit.", 350),
         ShopItem(SPACE_INVADERS, ShopItemCategory.ARCADE_GAME, "Invasion", "1978 — Débloque le jeu de tir spatial.", 350),
@@ -85,7 +102,9 @@ object GameShopCatalog {
         ShopItem(FROGGER, ShopItemCategory.ARCADE_GAME, "Grenouille", "1981 — Débloque la traversée de la grenouille.", 350),
         ShopItem(TETRIS, ShopItemCategory.ARCADE_GAME, "Blocs", "1984 — Débloque le puzzle de blocs qui tombent.", 350),
         ShopItem(ARKANOID, ShopItemCategory.ARCADE_GAME, "Casse-Briques", "1986 — Débloque le casse-briques à bonus.", 350)
-    )
+    // Visibles sur "restricted" (IS_TEST) et "noads" (UNLOCK_ALL, usage perso/test au quotidien),
+    // masqués uniquement sur "full" — la seule variante réellement publiée sur le Play Store.
+    ) + (if (BuildConfig.IS_TEST || BuildConfig.UNLOCK_ALL) gamesUnderTest else emptyList())
 
     /**
      * Items non-jeu de la boutique (skins et fonctionnalités premium).

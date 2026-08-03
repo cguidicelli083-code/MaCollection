@@ -211,11 +211,12 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             .map { list -> list.filter { !it.isWishlist }.sumOf { it.priceCents ?: 0 } }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
-    // Pour les jeux, la marque (éditeur) est peu pertinente et souvent absente : on trie alors par
-    // console associée à la place (même option de tri, comportement adapté au type affiché).
+    // Pour les jeux et accessoires, la marque (éditeur/fabricant) est peu pertinente et souvent
+    // absente ou peu discriminante : on trie alors par console associée à la place (même option
+    // de tri, comportement adapté au type affiché).
     private fun sorter(sort: SortOption, filter: ItemType?): Comparator<CollectionItem> = when (sort) {
         SortOption.NAME -> compareBy { it.name.lowercase() }
-        SortOption.BRAND -> if (filter == ItemType.JEU) compareBy { (it.platform ?: "").lowercase() }
+        SortOption.BRAND -> if (filter == ItemType.JEU || filter == ItemType.ACCESSOIRE) compareBy { (it.platform ?: "").lowercase() }
             else compareBy { it.brand.lowercase() }
         SortOption.PRICE_DESC -> compareByDescending { it.priceCents ?: -1 }
         SortOption.PRICE_ASC -> compareBy { it.priceCents ?: Int.MAX_VALUE }

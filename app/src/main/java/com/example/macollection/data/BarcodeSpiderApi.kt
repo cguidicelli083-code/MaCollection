@@ -29,6 +29,7 @@ object BarcodeSpiderApi {
     private val api: BarcodeSpiderApiService by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.barcodespider.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(BarcodeSpiderApiService::class.java)

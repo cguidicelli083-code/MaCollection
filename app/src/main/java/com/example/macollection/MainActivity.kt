@@ -127,6 +127,9 @@ import com.example.macollection.ui.games.snake.SnakeScreen
 import com.example.macollection.ui.games.tetris.TetrisScreen
 import com.example.macollection.ui.games.pong.PongScreen
 import com.example.macollection.ui.games.quiz.QuizScreen
+import com.example.macollection.ui.games.miner.MinerScreen
+import com.example.macollection.ui.games.orchard.OrchardScreen
+import com.example.macollection.ui.games.bombhunter.BombHunterScreen
 import com.example.macollection.ui.theme.MaCollectionTheme
 import com.example.macollection.ui.theme.NeonCyan
 import com.example.macollection.ui.theme.NeonPurple
@@ -155,7 +158,7 @@ enum class Tab { COLLECTION, WISHLIST, ENCYCLO, TOTAL, GAMES, BACKUP }
 private const val CONTACT_EMAIL = "nawash083@gmail.com"
 
 /** Sous-écran plein écran ouvert depuis l'onglet Jeux (même pattern que `viewing`/`encyclo`). */
-private enum class GamesSubScreen { QUIZ, PONG, ARKANOID, INVADERS, CENTIPEDE, PACMAN, TETRIS, SNAKE, SIMON, FROGGER, SHOP }
+private enum class GamesSubScreen { QUIZ, PONG, ARKANOID, INVADERS, CENTIPEDE, PACMAN, TETRIS, SNAKE, SIMON, FROGGER, MINER, ORCHARD, BOMB_HUNTER, SHOP }
 
 /** État du formulaire Collection : nouvel objet (scan ou manuel) OU modification. */
 data class CollectionEditor(
@@ -189,6 +192,12 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     var tab by remember { mutableStateOf(Tab.COLLECTION) }
     var gamesSubScreen by remember { mutableStateOf<GamesSubScreen?>(null) }
     var showChooser by remember { mutableStateOf(false) }
+    // Choix caméra/galerie spécifique au scan de lot (affiché après la pub/vérification Premium).
+    var showBatchChooser by remember { mutableStateOf(false) }
+    // Scan code-barres sans résultat (code illisible ou aucune correspondance trouvée) : propose de
+    // relancer directement la caméra sans repasser par tout le menu d'ajout (l'utilisateur doit
+    // parfois recommencer 2-3 fois avant une lecture correcte du code-barres).
+    var showScanFailedDialog by remember { mutableStateOf(false) }
     // true quand le chooser/formulaire en cours sert à ajouter un SOUHAIT (onglet Acquisitions
     // futures) plutôt qu'un objet de la collection : même flux exact (scan/photo/manuel), la
     // seule différence est ce drapeau reporté sur l'objet créé (exclu de la valeur totale).
@@ -254,21 +263,52 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     var pendingOriginalUri by remember { mutableStateOf<Uri?>(null) }
 
     // Scan multiple : photo de lot envoyée telle quelle à Gemini (pas de recadrage restrictif).
+    // Partagé entre la galerie et la prise de photo directe (cf. [batchPhotoLauncher] et
+    // [batchCameraLauncher] ci-dessous), pour ne pas dupliquer cette logique deux fois.
+    fun processBatchPhoto(uri: Uri) = scope.launch {
+        scanning = true; batchScanning = true; batchError = false
+        // Gemini d'abord : meilleure qualité de reconnaissance que Groq (Qwen3.6, vérifié en
+        // conditions réelles), et le scan par lot ne coûte qu'UN SEUL appel Gemini par photo
+        // (quel que soit le nombre d'articles détectés dessus) — l'inverser pour économiser le
+        // quota Gemini (20 requêtes/jour) n'apportait donc quasiment rien, tout en dégradant la
+        // détection. Repli sur Groq si Gemini échoue (quota atteint, réseau…).
+        // null = échec des deux ; liste vide = analyse OK mais rien détecté.
+        val res = runCatching { GeminiVision.identifyBatch(context, uri) }.getOrNull()
+            ?: runCatching { GroqVision.identifyBatch(context, uri) }.getOrNull()
+        scanning = false; batchScanning = false
+        if (res == null) batchError = true else batchResults = res
+    }
     val batchPhotoLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.PickVisualMedia()
-    ) { uri ->
-        if (uri != null) scope.launch {
-            scanning = true; batchScanning = true; batchError = false
-            // Gemini d'abord : meilleure qualité de reconnaissance que Groq (Qwen3.6, vérifié en
-            // conditions réelles), et le scan par lot ne coûte qu'UN SEUL appel Gemini par photo
-            // (quel que soit le nombre d'articles détectés dessus) — l'inverser pour économiser le
-            // quota Gemini (20 requêtes/jour) n'apportait donc quasiment rien, tout en dégradant la
-            // détection. Repli sur Groq si Gemini échoue (quota atteint, réseau…).
-            // null = échec des deux ; liste vide = analyse OK mais rien détecté.
-            val res = runCatching { GeminiVision.identifyBatch(context, uri) }.getOrNull()
-                ?: runCatching { GroqVision.identifyBatch(context, uri) }.getOrNull()
-            scanning = false; batchScanning = false
-            if (res == null) batchError = true else batchResults = res
+    ) { uri -> if (uri != null) processBatchPhoto(uri) }
+
+    // Prise de photo directe pour le scan de lot (même logique que [cameraLauncher] pour le scan
+    // à l'unité, mais SANS passer par le recadrage : une photo de lot doit garder tout le cadrage
+    // large pour capter plusieurs objets à la fois).
+    var pendingBatchCameraUri by rememberSaveable { mutableStateOf<String?>(null) }
+    val batchCameraLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { success ->
+        val pending = pendingBatchCameraUri
+        pendingBatchCameraUri = null
+        if (success && pending != null) processBatchPhoto(Uri.parse(pending))
+    }
+    val batchCameraPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            val pair = MediaUtils.newCameraFile(context)
+            pendingBatchCameraUri = pair.first.toString()
+            batchCameraLauncher.launch(pair.first)
+        }
+    }
+    fun launchBatchCamera() {
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            val pair = MediaUtils.newCameraFile(context)
+            pendingBatchCameraUri = pair.first.toString()
+            batchCameraLauncher.launch(pair.first)
+        } else {
+            batchCameraPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
     }
     val cropLauncher = rememberLauncherForActivityResult(CropImageContract()) { result ->
@@ -521,6 +561,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             GamesSubScreen.SNAKE -> GameShopCatalog.SNAKE
             GamesSubScreen.SIMON -> GameShopCatalog.SIMON
             GamesSubScreen.FROGGER -> GameShopCatalog.FROGGER
+            GamesSubScreen.MINER -> GameShopCatalog.MINER
+            GamesSubScreen.ORCHARD -> GameShopCatalog.ORCHARD
+            GamesSubScreen.BOMB_HUNTER -> GameShopCatalog.BOMB_HUNTER
             GamesSubScreen.SHOP -> null
         }
         val guide = guideId?.let { GameGuide.forId(it) }
@@ -546,6 +589,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             GamesSubScreen.SNAKE -> SnakeScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.SIMON -> SimonScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.FROGGER -> FroggerScreen(vm = gameVm, onExit = { gamesSubScreen = null })
+            GamesSubScreen.MINER -> MinerScreen(vm = gameVm, onExit = { gamesSubScreen = null })
+            GamesSubScreen.ORCHARD -> OrchardScreen(vm = gameVm, onExit = { gamesSubScreen = null })
+            GamesSubScreen.BOMB_HUNTER -> BombHunterScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.SHOP -> ShopScreen(vm = gameVm, onBack = { gamesSubScreen = null })
         }
         return
@@ -554,6 +600,61 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         BackHandler { showNewsScreen = false }
         NewsScreen(vm = vm, onBack = { showNewsScreen = false })
         return
+    }
+
+    // Scan code-barres complet (caméra -> ScanDex/eBay gratuit -> bases à quota si besoin), extrait
+    // en fonction indépendante pour pouvoir être relancé directement depuis [showScanFailedDialog]
+    // (bouton « Réessayer ») sans repasser par tout le menu d'ajout.
+    fun startBarcodeScan() {
+        fun applyResult(code: String, r: ScanTools.ScanResult?) {
+            editor = CollectionEditor(
+                name = r?.suggestedName ?: "",
+                barcode = code,
+                presetName = r?.consolePresetName,
+                accessoryName = r?.accessoryName,
+                gameMatch = r?.gameMatch,
+                gameConsoleHint = r?.gameConsoleHint,
+                isWishlist = chooserForWishlist
+            )
+        }
+        fun isUseful(r: ScanTools.ScanResult?) =
+            r?.gameMatch != null || r?.consolePresetName != null || r?.accessoryName != null
+        // Suite "complète" (bases à quota partagé) : seulement si le quota gratuit du jour n'est
+        // pas atteint (Premium/V2SP toujours illimités), sinon pub récompensée pour débloquer un
+        // scan de plus (cf. GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
+        fun runFullScan(code: String) {
+            scope.launch {
+                AppPrefs.recordBarcodeScanUsed(context)
+                scanning = true
+                val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
+                scanning = false
+                if (isUseful(r)) applyResult(code, r) else showScanFailedDialog = true
+            }
+        }
+        fun offerFullScan(code: String) {
+            if (isPremium || AppPrefs.canScanBarcodeFree(context)) {
+                runFullScan(code)
+            } else {
+                watchRewardedAd(
+                    context,
+                    onRewarded = { AppPrefs.recordBarcodeBonusScanGranted(context) },
+                    onClosed = { if (isPremium || AppPrefs.canScanBarcodeFree(context)) runFullScan(code) }
+                )
+            }
+        }
+        scope.launch {
+            val code = runCatching { ScanTools.scanCamera(context) }.getOrNull() ?: return@launch
+            // Premier essai TOUJOURS gratuit (ScanDex + eBay, pas de quota partagé) : la plupart
+            // des jeux se résolvent déjà ici, sans jamais avoir besoin du quota limité ni d'une pub.
+            scanning = true
+            val free = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = false) }.getOrNull()
+            scanning = false
+            if (isUseful(free)) {
+                applyResult(code, free)
+            } else {
+                offerFullScan(code)
+            }
+        }
     }
 
     // --- Menu d'ajout (onglet Collection) ---
@@ -568,58 +669,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             text = {
                 Column {
                     TextButton(
-                        onClick = {
-                            showChooser = false
-                            fun applyResult(code: String, r: ScanTools.ScanResult?) {
-                                editor = CollectionEditor(
-                                    name = r?.suggestedName ?: "",
-                                    barcode = code,
-                                    presetName = r?.consolePresetName,
-                                    accessoryName = r?.accessoryName,
-                                    gameMatch = r?.gameMatch,
-                                    gameConsoleHint = r?.gameConsoleHint,
-                                    isWishlist = chooserForWishlist
-                                )
-                            }
-                            // Suite "complète" (bases à quota partagé) : seulement si le quota
-                            // gratuit du jour n'est pas atteint (Premium/V2SP toujours illimités),
-                            // sinon pub récompensée pour débloquer un scan de plus (cf.
-                            // GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
-                            fun runFullScan(code: String) {
-                                scope.launch {
-                                    AppPrefs.recordBarcodeScanUsed(context)
-                                    scanning = true
-                                    val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
-                                    scanning = false
-                                    applyResult(code, r)
-                                }
-                            }
-                            fun offerFullScan(code: String) {
-                                if (isPremium || AppPrefs.canScanBarcodeFree(context)) {
-                                    runFullScan(code)
-                                } else {
-                                    watchRewardedAd(
-                                        context,
-                                        onRewarded = { AppPrefs.recordBarcodeBonusScanGranted(context) },
-                                        onClosed = { if (isPremium || AppPrefs.canScanBarcodeFree(context)) runFullScan(code) }
-                                    )
-                                }
-                            }
-                            scope.launch {
-                                val code = runCatching { ScanTools.scanCamera(context) }.getOrNull() ?: return@launch
-                                // Premier essai TOUJOURS gratuit (ScanDex + eBay, pas de quota
-                                // partagé) : la plupart des jeux se résolvent déjà ici, sans jamais
-                                // avoir besoin du quota limité ni d'une pub.
-                                scanning = true
-                                val free = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = false) }.getOrNull()
-                                scanning = false
-                                if (free?.gameMatch != null || free?.consolePresetName != null || free?.accessoryName != null) {
-                                    applyResult(code, free)
-                                } else {
-                                    offerFullScan(code)
-                                }
-                            }
-                        },
+                        onClick = { showChooser = false; startBarcodeScan() },
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.scan_barcode_option)) }
 
@@ -647,12 +697,11 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             // Scan par lot : toujours Premium ou pub (utilise systématiquement
                             // l'IA visuelle, contrairement au scan unitaire qui passe le plus
                             // souvent par l'OCR gratuit) — voir la note mémoire "pricing APIs"
-                            // du 2026-07-16 pour le raisonnement économique complet.
-                            fun launchBatchScan() = batchPhotoLauncher.launch(
-                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
-                            )
-                            if (isPremium) launchBatchScan()
-                            else watchRewardedAd(context, onRewarded = { launchBatchScan() })
+                            // du 2026-07-16 pour le raisonnement économique complet. Le choix
+                            // caméra/galerie n'est proposé qu'APRÈS cette vérification, jamais
+                            // avant (pas de sous-menu pour rien si la pub est refusée).
+                            if (isPremium) showBatchChooser = true
+                            else watchRewardedAd(context, onRewarded = { showBatchChooser = true })
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.batch_scan_option)) }
@@ -665,6 +714,53 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.manual_entry_option)) }
                 }
+            }
+        )
+    }
+
+    // Scan de lot : choix entre prendre une photo directement ou en choisir une dans la galerie
+    // (avant, seule la galerie était possible pour le scan multiple).
+    if (showBatchChooser) {
+        AlertDialog(
+            onDismissRequest = { showBatchChooser = false },
+            title = { Text(stringResource(R.string.batch_scan_option)) },
+            text = {
+                Column {
+                    TextButton(
+                        onClick = { showBatchChooser = false; launchBatchCamera() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.take_photo_option)) }
+                    TextButton(
+                        onClick = {
+                            showBatchChooser = false
+                            batchPhotoLauncher.launch(
+                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                            )
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.choose_photo_option)) }
+                }
+            },
+            confirmButton = {},
+            dismissButton = { TextButton(onClick = { showBatchChooser = false }) { Text(stringResource(R.string.close)) } }
+        )
+    }
+
+    // Scan code-barres unitaire : code illisible ou aucune correspondance trouvée -> propose de
+    // relancer directement la caméra (l'utilisateur doit parfois recommencer 2-3 fois avant une
+    // lecture correcte), sans repasser par tout le menu d'ajout.
+    if (showScanFailedDialog) {
+        AlertDialog(
+            onDismissRequest = { showScanFailedDialog = false },
+            title = { Text(stringResource(R.string.scan_not_found_title)) },
+            text = { Text(stringResource(R.string.scan_not_found_message)) },
+            confirmButton = {
+                TextButton(onClick = { showScanFailedDialog = false; startBarcodeScan() }) {
+                    Text(stringResource(R.string.retry))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showScanFailedDialog = false }) { Text(stringResource(R.string.cancel)) }
             }
         )
     }
@@ -1179,7 +1275,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         }
                     }
                 )
-                Tab.TOTAL -> TotalScreen(vm, gameVm, Modifier.padding(padding))
+                Tab.TOTAL -> TotalScreen(
+                    vm, gameVm, Modifier.padding(padding),
+                    onNavigateToCollection = { type ->
+                        vm.setTypeFilter(type)
+                        tab = Tab.COLLECTION
+                    }
+                )
                 Tab.GAMES -> GamesHubScreen(
                     vm = gameVm,
                     onOpenQuiz = { gamesSubScreen = GamesSubScreen.QUIZ },
@@ -1202,6 +1304,12 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                                 gamesSubScreen = GamesSubScreen.SIMON
                             com.example.macollection.data.GameShopCatalog.FROGGER ->
                                 gamesSubScreen = GamesSubScreen.FROGGER
+                            com.example.macollection.data.GameShopCatalog.MINER ->
+                                gamesSubScreen = GamesSubScreen.MINER
+                            com.example.macollection.data.GameShopCatalog.ORCHARD ->
+                                gamesSubScreen = GamesSubScreen.ORCHARD
+                            com.example.macollection.data.GameShopCatalog.BOMB_HUNTER ->
+                                gamesSubScreen = GamesSubScreen.BOMB_HUNTER
                         }
                     },
                     onOpenShop = { gamesSubScreen = GamesSubScreen.SHOP },

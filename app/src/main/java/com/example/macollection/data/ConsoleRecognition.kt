@@ -195,6 +195,15 @@ object ConsoleRecognition {
             .mapValues { (_, lists) -> lists.flatten().filter { !it.contains(' ') && it.length <= 5 } }
     }
 
+    // Compilées une seule fois (au lieu d'un `Regex(...)` recréé — donc recompilé — à chaque appel
+    // de [normalize]) : cette fonction est appelée des centaines de fois par frappe dans
+    // [exactAliasMatch] (une fois par alias connu), donc le coût de compilation d'un Pattern à
+    // chaque fois se sentait nettement en tapant vite, en particulier en effaçant au Backspace
+    // (champ "Console associée" du formulaire d'ajout/modification, ralenti à l'effacement).
+    private val DIACRITICS_REGEX = Regex("\\p{Mn}+")
+    private val APOSTROPHE_DASH_REGEX = Regex("['’-]")
+    private val NON_ALNUM_REGEX = Regex("[^a-z0-9]+")
+
     /**
      * Normalise un texte pour la recherche floue : minuscules, accents retirés, apostrophes/tirets
      * fusionnés dans les mots adjacents (« spider-man » -> « spiderman », « marvel's » -> « marvels »),
@@ -203,8 +212,8 @@ object ConsoleRecognition {
     private fun normalize(text: String): String {
         val lower = text.lowercase()
         val noDiacritics = java.text.Normalizer.normalize(lower, java.text.Normalizer.Form.NFD)
-            .replace(Regex("\\p{Mn}+"), "")
-        return noDiacritics.replace(Regex("['’-]"), "").replace(Regex("[^a-z0-9]+"), " ").trim()
+            .replace(DIACRITICS_REGEX, "")
+        return noDiacritics.replace(APOSTROPHE_DASH_REGEX, "").replace(NON_ALNUM_REGEX, " ").trim()
     }
 
     private fun tokensOf(text: String): List<String> = normalize(text).split(' ').filter { it.isNotEmpty() }
@@ -291,12 +300,21 @@ object ConsoleRecognition {
         return tokens.joinToString(" ") { aliasToCanonical[it] ?: it }
     }
 
+    /**
+     * Alias déjà normalisés une seule fois par nom de preset (dérivé de [abbreviationsByName]) :
+     * évite de rappeler [normalize] — Normalizer + plusieurs Regex — sur chaque alias connu à
+     * CHAQUE frappe dans [exactAliasMatch], ce qui ralentissait nettement la saisie/l'effacement.
+     */
+    private val normalizedAliasesByName: Map<String, List<String>> by lazy {
+        abbreviationsByName.mapValues { (_, aliases) -> aliases.map { normalize(it) } }
+    }
+
     fun exactAliasMatch(query: String): String? {
         // Normalisé des deux côtés : insensible casse/accents/tirets/espaces (« néo-géo », « NEO GEO »
         // ... trouvent le même alias), en s'appuyant sur le même dictionnaire d'abréviations.
         val q = normalize(query)
         if (q.isEmpty()) return null
-        return abbreviationsByName.entries
-            .firstOrNull { (_, aliases) -> aliases.any { normalize(it) == q } }?.key
+        return normalizedAliasesByName.entries
+            .firstOrNull { (_, aliases) -> aliases.any { it == q } }?.key
     }
 }

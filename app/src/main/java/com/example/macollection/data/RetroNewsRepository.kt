@@ -46,6 +46,7 @@ object RetroNewsRepository {
     private val api: RetroNewsApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://example.invalid/") // non utilisée, l'URL complète est passée à @Url
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetroNewsApi::class.java)

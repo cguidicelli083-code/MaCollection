@@ -64,6 +64,7 @@ object IgdbCatalog {
     private val auth: TwitchAuthApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://id.twitch.tv/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(TwitchAuthApi::class.java)
@@ -72,6 +73,7 @@ object IgdbCatalog {
     private val api: IgdbApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.igdb.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(IgdbApi::class.java)
@@ -108,14 +110,14 @@ object IgdbCatalog {
      * Les rééditions/versions alternatives sont écartées (version_parent) pour éviter les
      * quasi-doublons. Liste vide si non configuré ou en cas d'échec réseau.
      */
-    suspend fun search(query: String, page: Int, platformId: Int? = null): List<GameInfo> {
+    suspend fun search(rawQuery: String, page: Int, platformId: Int? = null): List<GameInfo> {
         if (!isConfigured()) {
             android.util.Log.e("ScanBarcode", "IGDB not configured (clientId/secret blank)")
             return emptyList()
         }
         // Le corps de requête IGDB est un mini-langage texte : on neutralise les caractères
         // qui casseraient la syntaxe (guillemets, antislash, point-virgule).
-        val q = query.replace(Regex("[\"\\\\;]"), " ").trim()
+        val q = GameCatalog.normalizeSpelling(rawQuery).replace(Regex("[\"\\\\;]"), " ").trim()
         if (q.isBlank()) return emptyList()
         val body = buildString {
             append("search \"").append(q).append("\"; ")

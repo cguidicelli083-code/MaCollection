@@ -31,6 +31,7 @@ object UpcItemDb {
     private val api: UpcItemDbApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.upcitemdb.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(UpcItemDbApi::class.java)

@@ -1,4 +1,7 @@
-@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@file:OptIn(
+    androidx.compose.material3.ExperimentalMaterial3Api::class,
+    androidx.compose.foundation.ExperimentalFoundationApi::class
+)
 
 package com.example.macollection.ui
 
@@ -197,8 +200,20 @@ fun CollectionScreen(
         val q = searchQuery.trim().lowercase()
         if (q.isEmpty()) allItems
         else allItems.filter {
-            ConsoleRecognition.matchesQuery(listOf(it.name, it.brand) + ConsoleRecognition.aliasSearchTerms(it.name), q)
+            // Le nom de la console associée (jeux/accessoires) entre aussi dans la recherche, avec
+            // ses abréviations (« ps3 », « gb »...) : sans ça, taper le nom d'une console ne
+            // remontait que les objets dont LE NOM À EUX contenait ce mot (quasi jamais un jeu).
+            val haystack = listOf(it.name, it.brand) + ConsoleRecognition.aliasSearchTerms(it.name) +
+                listOfNotNull(it.platform) + (it.platform?.let(ConsoleRecognition::aliasSearchTerms) ?: emptyList())
+            ConsoleRecognition.matchesQuery(haystack, q)
         }
+    }
+    // En Jeux/Accessoires triés par console associée, les fiches sont regroupées sous un en-tête
+    // par console qui reste figé en haut pendant le défilement (voir stickyHeader ci-dessous).
+    val groupByConsole = (filter == ItemType.JEU || filter == ItemType.ACCESSOIRE) && sort == SortOption.BRAND
+    val consoleGroups = remember(items, groupByConsole) {
+        if (!groupByConsole) emptyList()
+        else items.groupConsecutiveBy { it.platform?.trim()?.takeIf { p -> p.isNotBlank() } }
     }
 
     Column(modifier.fillMaxSize().padding(horizontal = 14.dp)) {
@@ -240,13 +255,29 @@ fun CollectionScreen(
         } else {
             Box(Modifier.weight(1f)) {
                 LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    items(items, key = { it.id }) { item ->
-                        CollectionCard(
-                            item = item,
-                            onOpen = { onOpen(item) },
-                            onEdit = { onEdit(item) },
-                            onDelete = { vm.deleteCollectionItem(item) }
-                        )
+                    if (groupByConsole) {
+                        consoleGroups.forEach { (console, groupItems) ->
+                            stickyHeader(key = "header_${console ?: "?"}") {
+                                ConsoleGroupHeader(console ?: stringResource(R.string.console_group_unknown))
+                            }
+                            items(groupItems, key = { it.id }) { item ->
+                                CollectionCard(
+                                    item = item,
+                                    onOpen = { onOpen(item) },
+                                    onEdit = { onEdit(item) },
+                                    onDelete = { vm.deleteCollectionItem(item) }
+                                )
+                            }
+                        }
+                    } else {
+                        items(items, key = { it.id }) { item ->
+                            CollectionCard(
+                                item = item,
+                                onOpen = { onOpen(item) },
+                                onEdit = { onEdit(item) },
+                                onDelete = { vm.deleteCollectionItem(item) }
+                            )
+                        }
                     }
                     item { Spacer(Modifier.height(90.dp)) } // espace sous le bouton flottant
                 }
@@ -357,12 +388,66 @@ private fun CollectionCard(
     }
 }
 
+/**
+ * Regroupe une liste déjà triée en tronçons consécutifs de même clé (contrairement à
+ * [kotlin.collections.groupBy], qui rassemblerait toutes les occurrences d'une clé même non
+ * adjacentes) : utilisé pour les en-têtes de console, où l'ordre du tri par console associée doit
+ * être préservé tel quel.
+ */
+private fun <T, K> List<T>.groupConsecutiveBy(keySelector: (T) -> K): List<Pair<K, List<T>>> {
+    val result = mutableListOf<Pair<K, MutableList<T>>>()
+    for (element in this) {
+        val key = keySelector(element)
+        val last = result.lastOrNull()
+        if (last != null && last.first == key) last.second.add(element)
+        else result.add(key to mutableListOf(element))
+    }
+    return result
+}
+
+/** En-tête figé (sticky) au-dessus d'un groupe de jeux/accessoires partageant la même console. */
+@Composable
+private fun ConsoleGroupHeader(consoleName: String) {
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(vertical = 4.dp)
+    ) {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(12.dp))
+                .background(CardGradient)
+                .border(1.5.dp, NeonBorder, RoundedCornerShape(12.dp))
+                .padding(vertical = 8.dp, horizontal = 14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(typeEmoji(ItemType.CONSOLE), fontSize = 16.sp)
+            Spacer(Modifier.width(8.dp))
+            Text(
+                consoleName,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+        }
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Onglet TOTAL
 // ---------------------------------------------------------------------------
 
 @Composable
-fun TotalScreen(vm: AppViewModel, gameVm: GameViewModel, modifier: Modifier = Modifier) {
+fun TotalScreen(
+    vm: AppViewModel,
+    gameVm: GameViewModel,
+    modifier: Modifier = Modifier,
+    // Permet de taper une puce (Consoles/Accessoires/Jeux) pour basculer directement sur l'onglet
+    // Collection filtré sur cette catégorie, au lieu de devoir y aller puis choisir le filtre soi-même.
+    onNavigateToCollection: (ItemType) -> Unit = {}
+) {
     val total by vm.totalCents.collectAsState()
     val items by vm.allOwnedItems.collectAsState()
 
@@ -415,9 +500,18 @@ fun TotalScreen(vm: AppViewModel, gameVm: GameViewModel, modifier: Modifier = Mo
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            TotalCountChip(stringResource(R.string.total_consoles_count, consoleCount), Modifier.weight(1f))
-            TotalCountChip(stringResource(R.string.total_accessories_count, accessoryCount), Modifier.weight(1f))
-            TotalCountChip(stringResource(R.string.total_games_count, gameCount), Modifier.weight(1f))
+            TotalCountChip(
+                stringResource(R.string.total_consoles_count, consoleCount),
+                Modifier.weight(1f)
+            ) { onNavigateToCollection(ItemType.CONSOLE) }
+            TotalCountChip(
+                stringResource(R.string.total_accessories_count, accessoryCount),
+                Modifier.weight(1f)
+            ) { onNavigateToCollection(ItemType.ACCESSOIRE) }
+            TotalCountChip(
+                stringResource(R.string.total_games_count, gameCount),
+                Modifier.weight(1f)
+            ) { onNavigateToCollection(ItemType.JEU) }
         }
         Spacer(Modifier.height(20.dp))
         Text(
@@ -430,12 +524,13 @@ fun TotalScreen(vm: AppViewModel, gameVm: GameViewModel, modifier: Modifier = Mo
 }
 
 @Composable
-private fun TotalCountChip(text: String, modifier: Modifier = Modifier) {
+private fun TotalCountChip(text: String, modifier: Modifier = Modifier, onClick: (() -> Unit)? = null) {
     Box(
         modifier
             .clip(RoundedCornerShape(16.dp))
             .background(Color.White.copy(alpha = 0.06f))
             .border(1.dp, NeonPurple.copy(alpha = 0.4f), RoundedCornerShape(16.dp))
+            .let { if (onClick != null) it.clickable(onClick = onClick) else it }
             .padding(vertical = 10.dp, horizontal = 6.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -1135,6 +1230,9 @@ fun AddCollectionForm(
     var showOnlinePresetSearch by remember { mutableStateOf(false) }
     var pendingEncyclopediaAdd by remember { mutableStateOf<WikiPresetResult?>(null) }
     var retryingScan by remember { mutableStateOf(false) }
+    // Enregistrement d'une photo (galerie/caméra) juste après recadrage : sans indicateur, l'appli
+    // pouvait sembler figée le temps de copier le fichier recadré en stockage interne.
+    var cropSaving by remember { mutableStateOf(false) }
     // Photo telle que prise/choisie AVANT recadrage : c'est elle qu'on recadre à nouveau (jamais
     // un recadrage d'un recadrage, qui réduit la marge disponible à chaque tentative).
     var originalCoverUri by remember { mutableStateOf(initialOriginalCoverUri ?: initialCoverUri) }
@@ -1256,6 +1354,7 @@ fun AddCollectionForm(
             val croppedUri = result.uriContent
             if (croppedUri != null) {
                 scope.launch {
+                    cropSaving = true
                     val saved = withContext(Dispatchers.IO) { MediaUtils.copyToInternal(context, croppedUri) }
                     if (saved != null) {
                         if (cropForGallery) {
@@ -1279,6 +1378,7 @@ fun AddCollectionForm(
                             } else saved
                         }
                     }
+                    cropSaving = false
                 }
             }
         }
@@ -1640,6 +1740,13 @@ fun AddCollectionForm(
         ) {
             Text(stringResource(R.string.take_photo_option))
         }
+        if (cropSaving) {
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 4.dp)) {
+                CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp, color = NeonCyan)
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.photo_saving), color = Color.White)
+            }
+        }
         if (coverUrl != null) {
             AsyncImage(
                 model = coverUrl,
@@ -1663,7 +1770,13 @@ fun AddCollectionForm(
                     TextButton(
                         onClick = { recropAndRescan() },
                         enabled = !retryingScan
-                    ) { Text(stringResource(R.string.recrop_button)) }
+                    ) {
+                        if (retryingScan) {
+                            CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp, color = NeonCyan)
+                            Spacer(Modifier.width(6.dp))
+                        }
+                        Text(stringResource(R.string.recrop_button))
+                    }
                 }
             }
         }
@@ -2648,7 +2761,7 @@ private fun EmptyState(text: String) {
 @Composable
 private fun sortOptionLabel(option: SortOption, filter: ItemType? = null): String = when (option) {
     SortOption.NAME -> stringResource(R.string.sort_name)
-    SortOption.BRAND -> if (filter == ItemType.JEU) stringResource(R.string.sort_console) else stringResource(R.string.sort_brand)
+    SortOption.BRAND -> if (filter == ItemType.JEU || filter == ItemType.ACCESSOIRE) stringResource(R.string.sort_console) else stringResource(R.string.sort_brand)
     SortOption.PRICE_DESC -> stringResource(R.string.sort_price_desc)
     SortOption.PRICE_ASC -> stringResource(R.string.sort_price_asc)
     SortOption.RELEASE -> stringResource(R.string.sort_release)
@@ -2808,17 +2921,42 @@ private fun AutocompleteField(
     onValueChange: (String) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val filtered = remember(value, suggestions) {
-        // Plafonné même quand le champ est vide (ex. en cours d'effacement) : afficher toute la
-        // liste (des centaines de consoles) sans limite rendait le menu lent à composer/afficher
-        // à chaque frappe.
-        if (value.isBlank()) suggestions.take(20)
-        else suggestions.filter { it.lowercase().contains(value.lowercase()) }.take(20)
+    var lastLength by remember { mutableStateOf(value.length) }
+    // Pendant un effacement (Retour/Backspace maintenu ou répété), on suspend le recalcul des
+    // suggestions : les régénérer à chaque caractère supprimé ralentissait nettement l'effacement
+    // et bloquait la saisie. Elles reprennent dès que l'utilisateur retape (ajout de caractère) ou,
+    // à défaut, après une courte pause sans saisie (debounce).
+    var suggestionsSuspended by remember { mutableStateOf(false) }
+    val filtered = remember(value, suggestions, suggestionsSuspended) {
+        when {
+            suggestionsSuspended -> emptyList()
+            // Plafonné même quand le champ est vide : afficher toute la liste (des centaines de
+            // consoles) sans limite rendait le menu lent à composer/afficher à chaque frappe.
+            value.isBlank() -> suggestions.take(20)
+            else -> suggestions.filter { it.lowercase().contains(value.lowercase()) }.take(20)
+        }
+    }
+    LaunchedEffect(value, suggestionsSuspended) {
+        if (suggestionsSuspended) {
+            delay(300)
+            suggestionsSuspended = false
+        }
     }
     ExposedDropdownMenuBox(expanded = expanded && filtered.isNotEmpty(), onExpandedChange = { expanded = it }) {
         OutlinedTextField(
             value = value,
-            onValueChange = { onValueChange(it); expanded = true },
+            onValueChange = {
+                val deleting = it.length < lastLength
+                lastLength = it.length
+                if (deleting) {
+                    suggestionsSuspended = true
+                    expanded = false
+                } else {
+                    suggestionsSuspended = false
+                    expanded = true
+                }
+                onValueChange(it)
+            },
             label = { Text(label) },
             singleLine = true,
             modifier = Modifier.menuAnchor().fillMaxWidth()
@@ -3301,10 +3439,15 @@ private fun GameSearchDialog(
     fun runSearch(raw: String) {
         val trimmed = raw.trim()
         if (trimmed.isBlank()) return
+        // Nettoyage du bruit (état/complétude/marque déjà identifiée à part, ex. "jeu", "complet",
+        // "Switch"...) AVANT recherche, comme pour le scan code-barres (cf. [ScanTools.cleanListingTitle])
+        // : IGDB échoue sur le moindre mot en trop dans sa requête, or le nom peut déjà contenir ce
+        // genre de bruit (repris d'une reconnaissance photo ou tapé à la main en incluant la console).
+        val cleaned = ScanTools.cleanListingTitle(trimmed).ifBlank { trimmed }
         searchJob?.cancel()
         searchJob = scope.launch {
             loading = true
-            val session = HybridGameSearch(trimmed, platformId, consoleHint)
+            val session = HybridGameSearch(cleaned, platformId, consoleHint)
             val found = session.loadFirst()
             if (!isActive) return@launch
             searcher = session

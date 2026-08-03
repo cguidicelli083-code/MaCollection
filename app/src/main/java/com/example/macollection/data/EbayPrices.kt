@@ -80,6 +80,7 @@ object EbayPrices {
     private val api: EbayApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.ebay.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(EbayApi::class.java)

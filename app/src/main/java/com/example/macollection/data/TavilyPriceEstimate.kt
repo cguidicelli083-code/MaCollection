@@ -37,6 +37,7 @@ object TavilyPriceEstimate {
     private val api: TavilyApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.tavily.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(TavilyApi::class.java)

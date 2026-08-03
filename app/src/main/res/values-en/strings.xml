@@ -5,6 +5,9 @@
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
     <string name="scan_barcode_option">📷  Scan a game barcode</string>
+    <string name="scan_not_found_title">Nothing found</string>
+    <string name="scan_not_found_message">Barcode unreadable or no match found.</string>
+    <string name="retry">🔄 Retry</string>
     <string name="choose_photo_option">🖼️  Choose a photo</string>
     <string name="take_photo_option">📸  Take a photo</string>
     <string name="manual_entry_option">✏️  Manual entry</string>
@@ -44,6 +47,7 @@
     <string name="sort_name">Name</string>
     <string name="sort_brand">Brand</string>
     <string name="sort_console">Console</string>
+    <string name="console_group_unknown">Unspecified console</string>
     <string name="sort_price_desc">Price (high → low)</string>
     <string name="sort_price_asc">Price (low → high)</string>
     <string name="sort_release">Release date (old → new)</string>
@@ -139,6 +143,7 @@
     <string name="search_more_results">Show more results</string>
 
     <string name="remove_photo_button">Remove photo</string>
+    <string name="photo_saving">Saving photo…</string>
 
     <string name="search_console_count">Search a console (%1$d)</string>
     <string name="cpu_label">CPU: %1$s</string>

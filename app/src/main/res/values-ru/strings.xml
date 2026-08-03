@@ -5,6 +5,9 @@
     <string name="cancel">Отмена</string>
     <string name="close">Закрыть</string>
     <string name="scan_barcode_option">📷  Сканировать штрих-код игры</string>
+    <string name="scan_not_found_title">Ничего не найдено</string>
+    <string name="scan_not_found_message">Штрихкод нечитаем или совпадений не найдено.</string>
+    <string name="retry">🔄 Повторить</string>
     <string name="choose_photo_option">🖼️  Выбрать фото</string>
     <string name="take_photo_option">📸  Сделать фото</string>
     <string name="manual_entry_option">✏️  Ввести вручную</string>
@@ -42,6 +45,7 @@
     <string name="sort_name">Название</string>
     <string name="sort_brand">Бренд</string>
     <string name="sort_console">Консоль</string>
+    <string name="console_group_unknown">Консоль не указана</string>
     <string name="sort_price_desc">Цена (выс. → низ.)</string>
     <string name="sort_price_asc">Цена (низ. → выс.)</string>
     <string name="sort_release">Дата выхода (старые → новые)</string>
@@ -137,6 +141,7 @@
     <string name="search_more_results">Показать больше результатов</string>
 
     <string name="remove_photo_button">Удалить фото</string>
+    <string name="photo_saving">Сохранение фото…</string>
 
     <string name="search_console_count">Поиск консоли (%1$d)</string>
     <string name="cpu_label">Процессор: %1$s</string>

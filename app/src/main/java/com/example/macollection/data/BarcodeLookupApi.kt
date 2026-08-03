@@ -26,6 +26,7 @@ object BarcodeLookupApi {
     private val api: BarcodeLookupApiService by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.barcodelookup.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(BarcodeLookupApiService::class.java)

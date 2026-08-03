@@ -40,6 +40,7 @@ object ImageSearch {
     private fun apiFor(lang: String): WikiApi =
         Retrofit.Builder()
             .baseUrl("https://$lang.wikipedia.org/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WikiApi::class.java)

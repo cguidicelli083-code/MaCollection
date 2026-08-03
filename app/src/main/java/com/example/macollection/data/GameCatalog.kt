@@ -2,6 +2,8 @@ package com.example.macollection.data
 
 import com.example.macollection.BuildConfig
 import com.google.gson.annotations.SerializedName
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -92,6 +94,7 @@ object GameCatalog {
     private val api: RawgApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.rawg.io/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RawgApi::class.java)
@@ -111,25 +114,37 @@ object GameCatalog {
      * filtrée, en ajoutant les résultats absents de la première liste (jamais de doublons).
      * Liste vide en cas d'échec total.
      */
-    suspend fun search(query: String, platformId: Int? = null, page: Int = 1): List<GameInfo> {
+    suspend fun search(rawQuery: String, platformId: Int? = null, page: Int = 1): List<GameInfo> {
         if (!isConfigured()) return emptyList()
-        val filtered = if (platformId != null) {
-            try {
-                api.searchGames(key, query, platforms = platformId.toString(), page = page).results.orEmpty().map { localizeGenres(it.toGameInfo()) }
-            } catch (e: Exception) {
-                emptyList()
+        val query = normalizeSpelling(rawQuery)
+        // Les deux recherches (filtrée + non filtrée) sont indépendantes : lancées en parallèle
+        // plutôt que l'une après l'autre, ça évite de doubler l'attente quand RAWG est lent — un
+        // scan qui interroge plusieurs titres à la suite (cf. [ScanTools.identifyFromBarcode])
+        // sature vite sinon rien qu'à cause de cet appel supplémentaire systématique.
+        return coroutineScope {
+            val filteredDeferred = if (platformId != null) {
+                async {
+                    try {
+                        api.searchGames(key, query, platforms = platformId.toString(), page = page).results.orEmpty().map { localizeGenres(it.toGameInfo()) }
+                    } catch (e: Exception) {
+                        emptyList()
+                    }
+                }
+            } else null
+            val unfilteredDeferred = async {
+                try {
+                    api.searchGames(key, query, page = page).results.orEmpty().map { localizeGenres(it.toGameInfo()) }
+                } catch (e: Exception) {
+                    emptyList()
+                }
             }
-        } else emptyList()
+            val filtered = filteredDeferred?.await() ?: emptyList()
+            val unfiltered = unfilteredDeferred.await()
 
-        val unfiltered = try {
-            api.searchGames(key, query, page = page).results.orEmpty().map { localizeGenres(it.toGameInfo()) }
-        } catch (e: Exception) {
-            emptyList()
+            if (filtered.isEmpty()) return@coroutineScope unfiltered
+            val knownIds = filtered.mapNotNull { it.sourceId }.toSet()
+            filtered + unfiltered.filter { it.sourceId == null || it.sourceId !in knownIds }
         }
-
-        if (filtered.isEmpty()) return unfiltered
-        val knownIds = filtered.mapNotNull { it.sourceId }.toSet()
-        return filtered + unfiltered.filter { it.sourceId == null || it.sourceId !in knownIds }
     }
 
     /** Liste des jeux d'une plateforme (par popularité). Vide en cas d'échec. */
@@ -250,6 +265,27 @@ object GameCatalog {
      * trouve instantanément). On les retire donc de la requête envoyée aux catalogues, et on les
      * réinjecte ensuite via [preserveEditionSuffix] une fois le bon jeu retrouvé.
      */
+    // Orthographe britannique -> américaine : IGDB/RAWG suivent la convention américaine dans
+    // leurs noms officiels ("Sonic Colors: Ultimate"), alors que les boîtes/annonces européennes
+    // utilisent souvent l'anglais britannique ("Sonic Colours Ultimate") — sans cette conversion,
+    // une requête par ailleurs parfaite ne trouvait rien (constaté en conditions réelles).
+    private val britishToAmerican = listOf(
+        "colour" to "color", "colours" to "colors", "favourite" to "favorite",
+        "favourites" to "favorites", "armour" to "armor", "centre" to "center",
+        "defence" to "defense", "practise" to "practice", "travelling" to "traveling",
+        "honour" to "honor", "neighbour" to "neighbor", "grey" to "gray"
+    )
+
+    fun normalizeSpelling(text: String): String {
+        var result = text
+        for ((uk, us) in britishToAmerican) {
+            result = result.replace(Regex("(?i)\\b" + Regex.escape(uk) + "\\b")) { m ->
+                if (m.value.firstOrNull()?.isUpperCase() == true) us.replaceFirstChar { it.uppercase() } else us
+            }
+        }
+        return result
+    }
+
     fun stripEditionKeywords(text: String): String {
         var result = text
         for (kw in editionKeywords) {

@@ -135,14 +135,18 @@
       <div class="api"><span class="ic">🟣</span><div><strong>Twitch Developers</strong><span>Authentification d'accès à l'API IGDB.</span></div></div>
       <div class="api"><span class="ic">🎲</span><div><strong>RAWG</strong><span>Catalogue de jeux complémentaire (jaquettes, genres, descriptions).</span></div></div>
       <div class="api"><span class="ic">🏷️</span><div><strong>eBay</strong><span>Cote des prix à partir d'annonces.</span></div></div>
-      <div class="api"><span class="ic">🤖</span><div><strong>Google Gemini</strong><span>Reconnaissance visuelle des objets sur les photos.</span></div></div>
+      <div class="api"><span class="ic">🤖</span><div><strong>Google Gemini</strong><span>Reconnaissance visuelle des objets sur les photos (source principale).</span></div></div>
+      <div class="api"><span class="ic">🧠</span><div><strong>Groq</strong><span>Reconnaissance visuelle et traduction, en secours si Gemini est indisponible.</span></div></div>
+      <div class="api"><span class="ic">💰</span><div><strong>Tavily</strong><span>Estimation de cote par recherche web, en secours si eBay ne trouve rien.</span></div></div>
       <div class="api"><span class="ic">📖</span><div><strong>Wikipédia</strong><span>Descriptions et visuels d'appoint des consoles et jeux.</span></div></div>
+      <div class="api"><span class="ic">🗂️</span><div><strong>Wikidata</strong><span>Source complémentaire pour identifier un jeu absent d'IGDB/RAWG.</span></div></div>
+      <div class="api"><span class="ic">📷</span><div><strong>Google ML Kit</strong><span>Scan de code-barres et lecture de texte (OCR), traité entièrement sur l'appareil, aucune donnée envoyée à un serveur pour cette fonction.</span></div></div>
     </div>
   </section>
 
   <section id="confidentialite" class="policy">
     <h2><span class="em">🔒</span>Politique de confidentialité</h2>
-    <p class="lead">Dernière mise à jour : 5 juillet 2026.</p>
+    <p class="lead">Dernière mise à jour : 3 août 2026.</p>
 
     <p>Ma Collection (« l'application ») respecte votre vie privée. Cette page explique quelles
       données l'application traite et pourquoi. <strong>L'application ne possède aucun serveur
@@ -160,10 +164,16 @@
     <h3>Données envoyées à des services tiers</h3>
     <ul>
       <li><strong>Recherche d'objets</strong> : le texte que vous recherchez est envoyé à IGDB,
-        RAWG, eBay ou Wikipédia pour récupérer les informations correspondantes.</li>
+        RAWG, Wikipédia ou Wikidata pour récupérer les informations correspondantes.</li>
       <li><strong>Reconnaissance par photo</strong> : lorsque vous utilisez l'identification par
-        photo, l'image concernée est envoyée à l'API Google (Gemini) pour être analysée. Les
-        photos ne sont pas publiées ni partagées à d'autres fins.</li>
+        photo, l'image concernée est envoyée à Google Gemini pour être analysée, ou à Groq si
+        Gemini est momentanément indisponible (quota atteint). Les photos ne sont pas publiées ni
+        partagées à d'autres fins.</li>
+      <li><strong>Scan de code-barres et lecture de texte (OCR)</strong> : traités directement sur
+        l'appareil via Google ML Kit, sans envoi à un serveur pour cette fonction.</li>
+      <li><strong>Estimation de cote</strong> : le nom, l'état et la plateforme de l'objet sont
+        envoyés à eBay pour trouver des annonces comparables ; si aucune n'est trouvée, une
+        estimation est demandée à Tavily (recherche web) ou à Gemini/Groq.</li>
       <li>Ces échanges se limitent à la requête que vous déclenchez ; aucune donnée personnelle
         identifiante n'est ajoutée par l'application.</li>
     </ul>

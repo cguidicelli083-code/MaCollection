@@ -52,6 +52,7 @@ object WikipediaPresetSearch {
     private fun apiFor(lang: String): WikiPresetApi =
         Retrofit.Builder()
             .baseUrl("https://$lang.wikipedia.org/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WikiPresetApi::class.java)
@@ -201,11 +202,42 @@ object WikipediaPresetSearch {
     internal fun parseYear(vararg texts: String?): Int? =
         texts.firstNotNullOfOrNull { t -> t?.let { Regex("\\b(19[5-9]\\d|20[0-4]\\d)\\b").find(it)?.value?.toIntOrNull() } }
 
+    // Mots-outils très courants (FR/EN), jamais porteurs de sens pour juger si un titre correspond
+    // vraiment à la requête (cf. [titleMatchesQuery]).
+    private val stopWords = setOf(
+        "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "the", "and", "of", "in", "on"
+    )
+
+    internal fun significantWords(s: String): Set<String> =
+        s.lowercase()
+            .replace(Regex("[^\\p{L}\\p{Nd} ]"), " ")
+            .split(" ")
+            .filter { it.length >= 3 && it !in stopWords }
+            .toSet()
+
+    /**
+     * Vrai si [title] (résultat brut de la recherche plein-texte Wikipédia) correspond VRAIMENT à
+     * [query], pas juste par un mot en commun. La recherche Wikipédia est un plein-texte très
+     * permissif : sans ce filtre, une requête comme "Sonic Colours Ultimate" pouvait remonter la
+     * fiche du personnage "Tails (Sonic the Hedgehog)" — un seul mot partagé ("Sonic", le nom de
+     * la franchise) suffisant sinon à le faire passer le filtre [isVideoGame] (sa description
+     * mentionne bien "jeu vidéo", sans que l'article parle du jeu recherché). On exige donc la
+     * MAJORITÉ des mots significatifs de la requête, pas un seul.
+     */
+    internal fun titleMatchesQuery(title: String, query: String): Boolean {
+        val qWords = significantWords(query)
+        if (qWords.isEmpty()) return true
+        val tWords = significantWords(title)
+        val overlap = qWords.intersect(tWords)
+        return overlap.size.toDouble() / qWords.size >= 0.5
+    }
+
     /**
      * Recherche de JEUX sur Wikipédia (FR + EN), en complément d'IGDB/RAWG : de nombreux jeux
      * rétro (arcade, micro-ordinateurs, titres japonais…) ont un article Wikipédia mais sont
-     * absents de RAWG. On ne garde que les pages dont la description Wikidata dit « jeu vidéo ».
-     * Best-effort, liste vide en cas d'échec. Renvoie des [GameInfo] (source = "wiki").
+     * absents de RAWG. On ne garde que les pages dont la description Wikidata dit « jeu vidéo »
+     * ET dont le titre correspond vraiment à la requête (cf. [titleMatchesQuery]). Best-effort,
+     * liste vide en cas d'échec. Renvoie des [GameInfo] (source = "wiki").
      */
     suspend fun searchGames(query: String): List<GameInfo> = coroutineScope {
         if (query.isBlank()) return@coroutineScope emptyList()
@@ -215,7 +247,8 @@ object WikipediaPresetSearch {
         for (lang in langs) {
             val api = apiFor(lang)
             val titles = try {
-                api.search(query, 12).query?.search?.mapNotNull { it.title } ?: emptyList()
+                api.search(query, 12).query?.search?.mapNotNull { it.title }
+                    ?.filter { titleMatchesQuery(it, query) } ?: emptyList()
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {

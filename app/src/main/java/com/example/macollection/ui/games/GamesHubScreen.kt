@@ -69,7 +69,10 @@ private val implementedArcadeGames = setOf(
     GameShopCatalog.TETRIS,
     GameShopCatalog.SNAKE,
     GameShopCatalog.SIMON,
-    GameShopCatalog.FROGGER
+    GameShopCatalog.FROGGER,
+    GameShopCatalog.MINER,
+    GameShopCatalog.ORCHARD,
+    GameShopCatalog.BOMB_HUNTER
 )
 
 @Composable

@@ -5,6 +5,9 @@
     <string name="cancel">キャンセル</string>
     <string name="close">閉じる</string>
     <string name="scan_barcode_option">📷  ゲームのバーコードをスキャン</string>
+    <string name="scan_not_found_title">見つかりませんでした</string>
+    <string name="scan_not_found_message">バーコードが読み取れないか、一致する結果が見つかりませんでした。</string>
+    <string name="retry">🔄 再試行</string>
     <string name="choose_photo_option">🖼️  写真を選ぶ</string>
     <string name="take_photo_option">📸  写真を撮る</string>
     <string name="manual_entry_option">✏️  手動入力</string>
@@ -42,6 +45,7 @@
     <string name="sort_name">名前</string>
     <string name="sort_brand">ブランド</string>
     <string name="sort_console">ゲーム機</string>
+    <string name="console_group_unknown">機種未指定</string>
     <string name="sort_price_desc">価格(高→低)</string>
     <string name="sort_price_asc">価格(低→高)</string>
     <string name="sort_release">発売日（古い → 新しい）</string>
@@ -137,6 +141,7 @@
     <string name="search_more_results">さらに結果を表示</string>
 
     <string name="remove_photo_button">写真を削除</string>
+    <string name="photo_saving">写真を保存中…</string>
 
     <string name="search_console_count">機種を検索 (%1$d)</string>
     <string name="cpu_label">CPU: %1$s</string>

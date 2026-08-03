@@ -59,6 +59,7 @@ object GeminiVision {
     private val api: GeminiApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://generativelanguage.googleapis.com/")
+            .client(NetworkClient.vision)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(GeminiApi::class.java)
@@ -135,9 +136,12 @@ object GeminiVision {
         } catch (e: CancellationException) {
             throw e
         } catch (e: retrofit2.HttpException) {
+            val body = runCatching { e.response()?.errorBody()?.string() }.getOrNull()
+            android.util.Log.e("ScanBarcode", "Gemini identify HTTP ${e.code()}: $body")
             if (isDailyQuotaError(e)) markQuotaExhausted()
             null
         } catch (e: Exception) {
+            android.util.Log.e("ScanBarcode", "Gemini identify failed: ${e.javaClass.simpleName}: ${e.message}", e)
             null
         }
     }
@@ -263,7 +267,10 @@ object GeminiVision {
     }
 
     internal fun parseBatch(rawText: String): List<BatchItem>? {
-        val arr = runCatching { Gson().fromJson(stripFences(rawText), Array<GemBatchEntry>::class.java) }.getOrNull()
+        val cleaned = stripFences(rawText)
+        val arr = runCatching { Gson().fromJson(cleaned, Array<GemBatchEntry>::class.java) }
+            .onFailure { android.util.Log.e("ScanBarcode", "parseBatch JSON error: ${it.message} | cleaned=${cleaned.take(500)}") }
+            .getOrNull()
             ?: return null
         // PAS de dédoublonnage par titre : une étagère peut légitimement contenir plusieurs
         // exemplaires physiques du même jeu (vérifié : 3 boîtiers "Les Sims" identiques sur une
@@ -328,9 +335,12 @@ object GeminiVision {
         } catch (e: CancellationException) {
             throw e
         } catch (e: retrofit2.HttpException) {
+            val body = runCatching { e.response()?.errorBody()?.string() }.getOrNull()
+            android.util.Log.e("ScanBarcode", "Gemini identifyBatch HTTP ${e.code()}: $body")
             if (isDailyQuotaError(e)) markQuotaExhausted()
             null
         } catch (e: Exception) {
+            android.util.Log.e("ScanBarcode", "Gemini identifyBatch failed: ${e.javaClass.simpleName}: ${e.message}", e)
             null
         }
     }

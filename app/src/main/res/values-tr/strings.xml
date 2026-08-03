@@ -5,6 +5,9 @@
     <string name="cancel">İptal</string>
     <string name="close">Kapat</string>
     <string name="scan_barcode_option">📷  Oyun barkodu tara</string>
+    <string name="scan_not_found_title">Hiçbir şey bulunamadı</string>
+    <string name="scan_not_found_message">Barkod okunamadı veya eşleşme bulunamadı.</string>
+    <string name="retry">🔄 Tekrar dene</string>
     <string name="choose_photo_option">🖼️  Fotoğraf seç</string>
     <string name="take_photo_option">📸  Fotoğraf çek</string>
     <string name="manual_entry_option">✏️  Manuel giriş</string>
@@ -42,6 +45,7 @@
     <string name="sort_name">Ad</string>
     <string name="sort_brand">Marka</string>
     <string name="sort_console">Konsol</string>
+    <string name="console_group_unknown">Konsol belirtilmemiş</string>
     <string name="sort_price_desc">Fiyat (yüksek → düşük)</string>
     <string name="sort_price_asc">Fiyat (düşük → yüksek)</string>
     <string name="sort_release">Çıkış tarihi (eski → yeni)</string>
@@ -137,6 +141,7 @@
     <string name="search_more_results">Daha fazla sonuç göster</string>
 
     <string name="remove_photo_button">Fotoğrafı kaldır</string>
+    <string name="photo_saving">Fotoğraf kaydediliyor…</string>
 
     <string name="search_console_count">Konsol ara (%1$d)</string>
     <string name="cpu_label">İşlemci: %1$s</string>

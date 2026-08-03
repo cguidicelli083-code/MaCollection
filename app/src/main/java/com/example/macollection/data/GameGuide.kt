@@ -89,6 +89,30 @@ object GameGuide {
                 "Traverse de bas en haut en évitant les voitures des voies mobiles.",
                 "Atteins le haut pour réussir une traversée : ça accélère, et le parcours change dès la 4ᵉ traversée. Tu as 3 vies."
             )
+        ),
+        GameShopCatalog.MINER to Guide(
+            "⛏️", "Mineur",
+            listOf(
+                "Glisse dans une direction pour orienter le mineur : il creuse la terre en avançant.",
+                "Ramasse les diamants (+25) ; pousse les rochers horizontalement s'il y a de la place derrière.",
+                "Sans appui en dessous, rochers et diamants tombent d'une case : se faire écraser coûte une vie. Ramasse assez de diamants pour ouvrir la sortie."
+            )
+        ),
+        GameShopCatalog.ORCHARD to Guide(
+            "🍓", "Croque-Fruits",
+            listOf(
+                "Glisse pour creuser tes propres galeries dans le jardin et ramasser les fruits.",
+                "Pousse une pomme pour la faire rouler : elle écrase tout insecte sur son passage (gros bonus) — mais peut aussi t'écraser toi si tu restes sur sa trajectoire !",
+                "Tape l'écran pour lancer une bille à distance (une seule à la fois, il faut attendre son retour). Les insectes creusent aussi pour te rejoindre à travers la terre. Ramasse tous les fruits pour finir le niveau."
+            )
+        ),
+        GameShopCatalog.BOMB_HUNTER to Guide(
+            "💣", "Artificier",
+            listOf(
+                "Tape l'écran pour donner une impulsion vers le haut (répétable en l'air : vol plané).",
+                "Le doigt posé oriente le déplacement horizontal vers le côté touché.",
+                "Ramasse toutes les bombes en évitant les gardiens qui patrouillent — aucun moyen de les éliminer. Sortir d'un bord fait réapparaître de l'autre côté."
+            )
         )
     )
 

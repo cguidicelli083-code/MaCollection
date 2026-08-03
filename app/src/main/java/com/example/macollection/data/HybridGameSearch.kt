@@ -50,8 +50,14 @@ class HybridGameSearch(
         // correspondances floues qui, seules, masqueraient le bon jeu.
         val wiki = if (!wikiDone) async { WikipediaPresetSearch.searchGames(query) } else null
         val wikidata = if (!wikidataDone) async { WikidataGameSearch.search(query) } else null
-        if (!igdbDone) consumeIgdb(IgdbCatalog.search(query, igdbPage, igdbPlatformId))
-        if (all.isEmpty() && !rawgDone) consumeRawg(GameCatalog.search(query, platformId, rawgPage))
+        // RAWG n'est UTILISÉ que si IGDB ne trouve rien (voir plus bas), mais est lancé en
+        // parallèle dès le départ plutôt qu'après coup : sans ça, avec RAWG parfois lent,
+        // attendre IGDB PUIS RAWG l'un après l'autre pouvait doubler le temps total d'attente
+        // pour un résultat qui sera peut-être jeté de toute façon.
+        val igdb = if (!igdbDone) async { IgdbCatalog.search(query, igdbPage, igdbPlatformId) } else null
+        val rawg = if (!rawgDone) async { GameCatalog.search(query, platformId, rawgPage) } else null
+        igdb?.let { consumeIgdb(it.await()) }
+        if (all.isEmpty()) rawg?.let { consumeRawg(it.await()) } else rawg?.cancel()
         wiki?.let { consumeWiki(it.await()) }
         wikidata?.let { consumeWikidata(it.await()) }
         snapshot()

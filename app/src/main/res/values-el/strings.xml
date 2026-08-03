@@ -5,6 +5,9 @@
     <string name="cancel">Άκυρο</string>
     <string name="close">Κλείσιμο</string>
     <string name="scan_barcode_option">📷  Σκανάρισμα γραμμωτού κώδικα παιχνιδιού</string>
+    <string name="scan_not_found_title">Δεν βρέθηκε τίποτα</string>
+    <string name="scan_not_found_message">Μη αναγνώσιμος κωδικός ή καμία αντιστοιχία δεν βρέθηκε.</string>
+    <string name="retry">🔄 Επανάληψη</string>
     <string name="choose_photo_option">🖼️  Επιλογή φωτογραφίας</string>
     <string name="take_photo_option">📸  Λήψη φωτογραφίας</string>
     <string name="manual_entry_option">✏️  Χειροκίνητη καταχώριση</string>
@@ -42,6 +45,7 @@
     <string name="sort_name">Όνομα</string>
     <string name="sort_brand">Μάρκα</string>
     <string name="sort_console">Κονσόλα</string>
+    <string name="console_group_unknown">Απροσδιόριστη κονσόλα</string>
     <string name="sort_price_desc">Τιμή (υψηλή → χαμηλή)</string>
     <string name="sort_price_asc">Τιμή (χαμηλή → υψηλή)</string>
     <string name="sort_release">Ημερομηνία κυκλοφορίας (παλιά → νέα)</string>
@@ -137,6 +141,7 @@
     <string name="search_more_results">Εμφάνιση περισσότερων αποτελεσμάτων</string>
 
     <string name="remove_photo_button">Αφαίρεση φωτογραφίας</string>
+    <string name="photo_saving">Αποθήκευση φωτογραφίας…</string>
 
     <string name="search_console_count">Αναζήτηση κονσόλας (%1$d)</string>
     <string name="cpu_label">CPU: %1$s</string>

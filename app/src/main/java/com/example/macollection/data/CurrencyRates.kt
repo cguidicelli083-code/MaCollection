@@ -20,6 +20,7 @@ object CurrencyRates {
     private val api: RatesApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://open.er-api.com/")
+            .client(NetworkClient.http)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RatesApi::class.java)

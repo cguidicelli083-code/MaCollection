@@ -5,6 +5,9 @@
     <string name="cancel">Cancelar</string>
     <string name="close">Fechar</string>
     <string name="scan_barcode_option">📷  Digitalizar um código de barras de jogo</string>
+    <string name="scan_not_found_title">Nada encontrado</string>
+    <string name="scan_not_found_message">Código de barras ilegível ou nenhuma correspondência encontrada.</string>
+    <string name="retry">🔄 Tentar novamente</string>
     <string name="choose_photo_option">🖼️  Escolher uma foto</string>
     <string name="take_photo_option">📸  Tirar uma foto</string>
     <string name="manual_entry_option">✏️  Entrada manual</string>
@@ -42,6 +45,7 @@
     <string name="sort_name">Nome</string>
     <string name="sort_brand">Marca</string>
     <string name="sort_console">Console</string>
+    <string name="console_group_unknown">Console não especificado</string>
     <string name="sort_price_desc">Preço (alto → baixo)</string>
     <string name="sort_price_asc">Preço (baixo → alto)</string>
     <string name="sort_release">Data de lançamento (antigo → novo)</string>
@@ -137,6 +141,7 @@
     <string name="search_more_results">Mostrar mais resultados</string>
 
     <string name="remove_photo_button">Remover a foto</string>
+    <string name="photo_saving">A guardar a foto…</string>
 
     <string name="search_console_count">Pesquisar uma consola (%1$d)</string>
     <string name="cpu_label">CPU: %1$s</string>
