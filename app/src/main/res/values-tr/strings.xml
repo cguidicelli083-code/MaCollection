@@ -248,6 +248,9 @@
     <string name="batch_saving">%1$d öğe ekleniyor…</string>
     <string name="batch_selected_count">%1$d / %2$d seçildi</string>
     <string name="batch_validate">Gruba eklemeyi onayla</string>
+    <string name="platform_picker_title">Hangi konsol(lar)da?</string>
+    <string name="platform_picker_message">Bu oyun birden fazla konsolda çıktı. Gerçekten sahip olduğun konsol(lar)ı işaretle.</string>
+    <string name="platform_picker_confirm">Onayla</string>
     <string name="edit_custom_preset_title">Kaydı düzenle</string>
     <string name="encyclo_mode_accessories">🎮 Aksesuarlar</string>
     <string name="encyclo_mode_consoles">📟 Konsollar</string>

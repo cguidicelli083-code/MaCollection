@@ -248,6 +248,9 @@
     <string name="batch_saving">Добавление предметов: %1$d…</string>
     <string name="batch_selected_count">Выбрано: %1$d / %2$d</string>
     <string name="batch_validate">Подтвердить добавление партии</string>
+    <string name="platform_picker_title">На какой консоли(ях)?</string>
+    <string name="platform_picker_message">Эта игра вышла на нескольких консолях. Отметь ту(и), которой(ыми) ты действительно владеешь.</string>
+    <string name="platform_picker_confirm">Подтвердить</string>
     <string name="edit_custom_preset_title">Изменить карточку</string>
     <string name="encyclo_mode_accessories">🎮 Аксессуары</string>
     <string name="encyclo_mode_consoles">📟 Консоли</string>

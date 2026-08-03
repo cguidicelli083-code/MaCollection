@@ -82,6 +82,7 @@ fun GamesHubScreen(
     onOpenPong: () -> Unit,
     onOpenArcade: (String) -> Unit,
     onOpenShop: () -> Unit,
+    onOpenPaywall: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val points by vm.points.collectAsState()
@@ -158,6 +159,27 @@ fun GamesHubScreen(
                     actionLabel = "Jouer",
                     onAction = onOpenPong
                 )
+
+                if (!isPremium) {
+                    Spacer(Modifier.height(20.dp))
+                    Card(
+                        modifier = Modifier.fillMaxWidth().clickableCard(onOpenPaywall),
+                        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Row(
+                            Modifier.fillMaxWidth().background(CardGradient).padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text("✨", fontSize = 22.sp)
+                            Spacer(Modifier.width(10.dp))
+                            Column(Modifier.weight(1f)) {
+                                Text("Débloque tout instantanément avec Premium", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                Text("Tous les mini-jeux et tous les thèmes, sans passer par les points.", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                            }
+                        }
+                    }
+                }
 
                 Spacer(Modifier.height(20.dp))
                 Text("Jeux d'arcade à débloquer", color = Color.White.copy(alpha = 0.8f), fontWeight = FontWeight.Bold)

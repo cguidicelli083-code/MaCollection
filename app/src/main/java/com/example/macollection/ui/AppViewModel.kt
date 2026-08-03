@@ -36,6 +36,9 @@ import com.example.macollection.data.PriceHistory
 import com.example.macollection.data.RetroNewsEntry
 import com.example.macollection.data.RetroNewsRepository
 import com.example.macollection.data.TavilyPriceEstimate
+import com.example.macollection.data.combinedPremiumFlow
+import com.example.macollection.data.verifiedUnlockedItemIds
+import com.example.macollection.ui.billing.BillingManager
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -53,6 +56,15 @@ import kotlinx.coroutines.sync.withPermit
 
 /** Plafond d'objets de collection dans la variante TEST (voir BuildConfig.IS_TEST). */
 const val TEST_ITEM_LIMIT = 10
+
+/**
+ * Plafond DE BASE d'objets de collection en compte GRATUIT (hors variante TEST) : consoles +
+ * jeux + accessoires cumulés, souhaits non comptés (même convention que [TEST_ITEM_LIMIT]).
+ * Quota RÉEL = [FREE_COLLECTION_LIMIT] + [AppPrefs.extraCollectionSlots] (+5 par pub récompensée
+ * visionnée en entier, cumulable). Passer Premium (abonnement, achat à vie ou points, voir
+ * [com.example.macollection.data.combinedPremiumFlow]) lève cette limite entièrement.
+ */
+const val FREE_COLLECTION_LIMIT = 50
 
 /** Concurrence bornée pour les phases réseau de [AppViewModel.saveBatch] : assez pour accélérer
  *  un gros lot sans bombarder eBay/Tavily/Groq de requêtes simultanées (quotas par minute bas). */
@@ -77,6 +89,18 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     private val customPresetDao = db.customPresetDao()
     private val photoOverrideDao = db.presetPhotoOverrideDao()
     private val retroNewsDao = db.retroNewsDao()
+    private val unlockedItemDao = db.unlockedItemDao()
+
+    private val billing = BillingManager.get(app)
+
+    /**
+     * Statut Premium unifié (voir [combinedPremiumFlow]) : lève le plafond gratuit de
+     * [FREE_COLLECTION_LIMIT] objets. Même définition EXACTE que [GameViewModel.isPremiumAllAccess]
+     * (même helper partagé), pour que la Collection et l'onglet Jeux ne divergent jamais.
+     */
+    val isPremium: StateFlow<Boolean> =
+        combinedPremiumFlow(verifiedUnlockedItemIds(unlockedItemDao), billing)
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
     /** Fiches de catalogue ajoutées manuellement par l'utilisateur (console/accessoire). */
     val customPresets: StateFlow<List<CustomPreset>> =
@@ -480,6 +504,15 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         if (BuildConfig.IS_TEST && item.id == 0L && !item.isWishlist) {
             val collectionCount = collectionDao.observeAll().first().count { !it.isWishlist }
             if (collectionCount >= TEST_ITEM_LIMIT) return null
+        }
+        // Compte gratuit (hors variante TEST) : plafond de FREE_COLLECTION_LIMIT + bonus pubs
+        // récompensées, appliqué ici en dernier rempart (en plus du contrôle côté UI dans
+        // MainActivity avant même d'ouvrir le formulaire) pour qu'aucun chemin d'ajout (lot,
+        // import, presets Encyclo...) ne le contourne. Passer Premium lève ce plafond entièrement.
+        if (!BuildConfig.IS_TEST && item.id == 0L && !item.isWishlist && !isPremium.value) {
+            val quota = FREE_COLLECTION_LIMIT + AppPrefs.extraCollectionSlots.value
+            val collectionCount = collectionDao.observeAll().first().count { !it.isWishlist }
+            if (collectionCount >= quota) return null
         }
         val id: Long
         val stored: CollectionItem

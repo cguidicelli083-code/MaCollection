@@ -115,7 +115,9 @@ import com.example.macollection.ui.OnboardingScreen
 import com.example.macollection.ui.games.engine.GameIntroScreen
 import com.example.macollection.ui.TotalScreen
 import com.example.macollection.ui.TEST_ITEM_LIMIT
+import com.example.macollection.ui.FREE_COLLECTION_LIMIT
 import com.example.macollection.ui.games.GamesHubScreen
+import com.example.macollection.ui.games.PaywallScreen
 import com.example.macollection.ui.games.ShopScreen
 import com.example.macollection.ui.games.arkanoid.ArkanoidScreen
 import com.example.macollection.ui.games.centipede.CentipedeScreen
@@ -209,6 +211,23 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     val testCollectionItems by vm.allOwnedItems.collectAsState()
     val testLimitReached = BuildConfig.IS_TEST && testCollectionItems.size >= TEST_ITEM_LIMIT
     var showTestLimitDialog by remember { mutableStateOf(false) }
+    // Compte gratuit (hors variante TEST) : plafond de FREE_COLLECTION_LIMIT + bonus de pubs
+    // récompensées (+5 chacune, voir AppPrefs.extraCollectionSlots). Même convention que
+    // testLimitReached ci-dessus (compté sur la collection complète, pas le filtre affiché).
+    // Passer Premium (isPremium, déjà collecté plus haut) lève ce plafond entièrement.
+    val extraCollectionSlots by AppPrefs.extraCollectionSlots
+    val freeCollectionQuota = FREE_COLLECTION_LIMIT + extraCollectionSlots
+    val freeLimitReached = !BuildConfig.IS_TEST && !isPremium && testCollectionItems.size >= freeCollectionQuota
+    var showPaywall by remember { mutableStateOf(false) }
+    // Point d'entrée UNIQUE pour tous les déclencheurs d'ajout d'objet ci-dessous : renvoie true
+    // (et ouvre le bon dialogue/Paywall) si l'ajout doit être bloqué, false sinon. Centralisé pour
+    // qu'aucun des points d'ajout (FAB, Encyclopédie simple/groupée, souhait -> collection) ne
+    // puisse oublier l'une des deux vérifications.
+    fun blockedByCollectionLimit(): Boolean = when {
+        testLimitReached -> { showTestLimitDialog = true; true }
+        freeLimitReached -> { showPaywall = true; true }
+        else -> false
+    }
     var editor by remember { mutableStateOf<CollectionEditor?>(null) }
     var viewing by remember { mutableStateOf<CollectionItem?>(null) }
     // Hissés ici (avant les branches editor/viewing ET le when(tab) plus bas) pour que la
@@ -498,8 +517,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             onDelete = { vm.deleteCollectionItem(item); viewing = null },
             onBack = { viewing = null },
             canMoveToCollection = {
-                // Variante TEST : déplacer un souhait vers la collection est aussi plafonné.
-                if (testLimitReached) { showTestLimitDialog = true; false } else true
+                // Variante TEST / compte gratuit : déplacer un souhait vers la collection est aussi plafonné.
+                !blockedByCollectionLimit()
             }
         )
         return
@@ -515,10 +534,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             vm = vm,
             preset = preset,
             onAddToCollection = {
-                // Variante TEST : l'ajout depuis l'encyclopédie est aussi plafonné.
-                if (testLimitReached) {
-                    showTestLimitDialog = true
-                } else {
+                // Variante TEST / compte gratuit : l'ajout depuis l'encyclopédie est aussi plafonné.
+                if (!blockedByCollectionLimit()) {
                     editor = CollectionEditor(presetName = preset.name, isWishlist = false)
                     encyclo = null; encycloCustom = null
                 }
@@ -528,10 +545,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 encyclo = null; encycloCustom = null
             },
             onAddGameToCollection = { game ->
-                // Variante TEST : l'ajout depuis l'encyclopédie est aussi plafonné.
-                if (testLimitReached) {
-                    showTestLimitDialog = true
-                } else {
+                // Variante TEST / compte gratuit : l'ajout depuis l'encyclopédie est aussi plafonné.
+                if (!blockedByCollectionLimit()) {
                     editor = CollectionEditor(gameMatch = game, gameConsoleHint = preset.name, isWishlist = false)
                     encyclo = null; encycloCustom = null
                 }
@@ -592,7 +607,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             GamesSubScreen.MINER -> MinerScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.ORCHARD -> OrchardScreen(vm = gameVm, onExit = { gamesSubScreen = null })
             GamesSubScreen.BOMB_HUNTER -> BombHunterScreen(vm = gameVm, onExit = { gamesSubScreen = null })
-            GamesSubScreen.SHOP -> ShopScreen(vm = gameVm, onBack = { gamesSubScreen = null })
+            GamesSubScreen.SHOP -> ShopScreen(vm = gameVm, onBack = { gamesSubScreen = null }, onOpenPaywall = { showPaywall = true })
         }
         return
     }
@@ -655,6 +670,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 offerFullScan(code)
             }
         }
+    }
+
+    // --- Paywall Premium (abonnements + achat à vie) ---
+    if (showPaywall) {
+        BackHandler { showPaywall = false }
+        PaywallScreen(vm = gameVm, onClose = { showPaywall = false })
+        return
     }
 
     // --- Menu d'ajout (onglet Collection) ---
@@ -902,10 +924,10 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                                     AppPrefs.setSelectedTheme(context, theme.id)
                                     showThemeDialog = false
                                 } else {
-                                    // Verrouillé : on emmène directement à la Boutique.
+                                    // Verrouillé : invitation à passer Premium (le thème reste
+                                    // aussi déblocable via la Boutique à points, inchangée).
                                     showThemeDialog = false
-                                    tab = Tab.GAMES
-                                    gamesSubScreen = GamesSubScreen.SHOP
+                                    showPaywall = true
                                 }
                             },
                             modifier = Modifier.fillMaxWidth()
@@ -1191,10 +1213,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             when (tab) {
                                 Tab.WISHLIST -> { chooserForWishlist = true; showChooser = true }
                                 Tab.ENCYCLO -> addingCustomPreset = true
-                                // Onglet Collection : bloqué au plafond dans la variante TEST.
+                                // Onglet Collection : bloqué au plafond (variante TEST ou quota gratuit).
                                 else -> {
-                                    if (testLimitReached) showTestLimitDialog = true
-                                    else { chooserForWishlist = false; showChooser = true }
+                                    if (!blockedByCollectionLimit()) { chooserForWishlist = false; showChooser = true }
                                 }
                             }
                         },
@@ -1253,10 +1274,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     onModeChange = { encycloMode = it },
                     onOpenConsole = { preset, custom -> encyclo = preset; encycloCustom = custom },
                     onAddAccessory = { preset, isWishlist ->
-                        // Variante TEST : l'ajout depuis l'encyclopédie est aussi plafonné.
-                        if (!isWishlist && testLimitReached) {
-                            showTestLimitDialog = true
-                        } else {
+                        // Variante TEST / compte gratuit : l'ajout depuis l'encyclopédie est aussi plafonné.
+                        if (isWishlist || !blockedByCollectionLimit()) {
                             editor = CollectionEditor(accessoryName = preset.name, isWishlist = isWishlist)
                         }
                     },
@@ -1266,10 +1285,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     selectionMode = encycloSelectionMode,
                     onToggleSelectionMode = { encycloSelectionMode = !encycloSelectionMode },
                     onAddSelectedToCollection = { consoles, accessories, isWishlist ->
-                        // Variante TEST : l'ajout groupé depuis l'encyclopédie est aussi plafonné.
-                        if (!isWishlist && testLimitReached) {
-                            showTestLimitDialog = true
-                        } else {
+                        // Variante TEST / compte gratuit : l'ajout groupé depuis l'encyclopédie est aussi plafonné.
+                        if (isWishlist || !blockedByCollectionLimit()) {
                             vm.addPresetsToCollection(consoles, accessories, isWishlist)
                             encycloSelectionMode = false
                         }
@@ -1313,6 +1330,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         }
                     },
                     onOpenShop = { gamesSubScreen = GamesSubScreen.SHOP },
+                    onOpenPaywall = { showPaywall = true },
                     modifier = Modifier.padding(padding)
                 )
                 Tab.BACKUP -> BackupScreen(

@@ -248,6 +248,9 @@
     <string name="batch_saving">%1$d件のアイテムを追加しています…</string>
     <string name="batch_selected_count">%2$d件中%1$d件を選択</string>
     <string name="batch_validate">まとめて追加を確定</string>
+    <string name="platform_picker_title">どの機種？</string>
+    <string name="platform_picker_message">このゲームは複数の機種で発売されています。実際に持っている機種にチェックを入れてください。</string>
+    <string name="platform_picker_confirm">確定</string>
     <string name="edit_custom_preset_title">情報を編集</string>
     <string name="encyclo_mode_accessories">🎮 アクセサリー</string>
     <string name="encyclo_mode_consoles">📟 コンソール</string>

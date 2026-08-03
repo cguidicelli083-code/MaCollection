@@ -248,6 +248,9 @@
     <string name="batch_saving">Aggiunta di %1$d articolo/i in corso…</string>
     <string name="batch_selected_count">%1$d / %2$d selezionato/i</string>
     <string name="batch_validate">Conferma l\'aggiunta al lotto</string>
+    <string name="platform_picker_title">Su quale/i console?</string>
+    <string name="platform_picker_message">Questo gioco è uscito su più console. Seleziona quella/e che possiedi davvero.</string>
+    <string name="platform_picker_confirm">Conferma</string>
     <string name="edit_custom_preset_title">Modifica la scheda</string>
     <string name="encyclo_mode_accessories">🎮 Accessori</string>
     <string name="encyclo_mode_consoles">📟 Console</string>

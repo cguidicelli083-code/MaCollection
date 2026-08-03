@@ -8,6 +8,11 @@ local.properties
 .DS_Store
 *.lnk
 
+# Jamais de clé de signature dans le dépôt (même privé) : le keystore de release ne doit exister
+# que hors du repo (voir C:\Users\Nawash\AndroidKeystores) + une sauvegarde perso à toi.
+*.jks
+*.keystore
+
 # Base SQLite locale utilisee par les tests manuels du scraper (celle du workflow CI
 # est generee/committee automatiquement par .github/workflows/scrape.yml)
 scripts/*.sqlite3

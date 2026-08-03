@@ -171,6 +171,9 @@
     <string name="batch_analyzing">Analyse de votre lot en cours…</string>
     <string name="batch_detected_title">%1$d article(s) détecté(s)</string>
     <string name="batch_validate">Valider l\'ajout au lot</string>
+    <string name="platform_picker_title">Sur quelle(s) console(s) ?</string>
+    <string name="platform_picker_message">Ce jeu est sorti sur plusieurs consoles. Coche celle(s) que tu possèdes réellement.</string>
+    <string name="platform_picker_confirm">Valider</string>
     <string name="batch_none">Aucun article détecté sur la photo.</string>
     <string name="batch_unavailable">Analyse IA momentanément indisponible (limite quotidienne atteinte ou connexion). Réessayez plus tard.</string>
     <string name="ad_unavailable">Publicité momentanément indisponible. Réessayez plus tard.</string>

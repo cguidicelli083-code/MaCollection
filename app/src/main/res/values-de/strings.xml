@@ -248,6 +248,9 @@
     <string name="batch_saving">%1$d Artikel werden hinzugefügt…</string>
     <string name="batch_selected_count">%1$d / %2$d ausgewählt</string>
     <string name="batch_validate">Hinzufügen zum Stapel bestätigen</string>
+    <string name="platform_picker_title">Für welche Konsole(n)?</string>
+    <string name="platform_picker_message">Dieses Spiel ist für mehrere Konsolen erschienen. Wähle die aus, die du wirklich besitzt.</string>
+    <string name="platform_picker_confirm">Bestätigen</string>
     <string name="edit_custom_preset_title">Eintrag bearbeiten</string>
     <string name="encyclo_mode_accessories">🎮 Zubehör</string>
     <string name="encyclo_mode_consoles">📟 Konsolen</string>

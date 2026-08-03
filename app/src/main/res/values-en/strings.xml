@@ -250,6 +250,9 @@
     <string name="batch_saving">Adding %1$d item(s)…</string>
     <string name="batch_selected_count">%1$d / %2$d selected</string>
     <string name="batch_validate">Confirm batch add</string>
+    <string name="platform_picker_title">Which console(s)?</string>
+    <string name="platform_picker_message">This game was released on several consoles. Check the one(s) you actually own.</string>
+    <string name="platform_picker_confirm">Confirm</string>
     <string name="edit_custom_preset_title">Edit entry</string>
     <string name="encyclo_mode_accessories">🎮 Accessories</string>
     <string name="encyclo_mode_consoles">📟 Consoles</string>

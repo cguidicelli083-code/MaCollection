@@ -12,6 +12,8 @@ import com.example.macollection.data.IntegrityGuard
 import com.example.macollection.data.ShopItemCategory
 import com.example.macollection.data.PlayerProgress
 import com.example.macollection.data.UnlockedItem
+import com.example.macollection.data.combinedPremiumFlow
+import com.example.macollection.data.verifiedUnlockedItemIds
 import com.example.macollection.ui.billing.BillingManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -32,7 +34,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     private val unlockedDao = db.unlockedItemDao()
     private val highScoreDao = db.gameHighScoreDao()
 
-    private val billing = BillingManager(app)
+    private val billing = BillingManager.get(app)
 
     /** Ligne de progression si son empreinte est valide, sinon null (voir [IntegrityGuard]) —
      *  une ligne modifiée directement dans la base (root + éditeur SQLite) n'est jamais créditée. */
@@ -48,10 +50,8 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val unlockedItemIds: StateFlow<Set<String>> =
-        unlockedDao.observeAll().map { list ->
-            list.filter { IntegrityGuard.signUnlock(it.itemId, it.unlockedAt) == it.checksum }
-                .map { it.itemId }.toSet()
-        }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet())
+        verifiedUnlockedItemIds(unlockedDao)
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet())
 
     /** Ligne de progression courante, réinitialisée si son empreinte a été altérée hors de l'appli. */
     private suspend fun verifiedProgress(): PlayerProgress =
@@ -65,17 +65,23 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         highScoreDao.observeAll().map { list -> list.associate { it.gameId to it.bestScore } }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap())
 
-    /** true si l'accès total a été payé en points OU acheté réellement via Google Play. */
+    /** true si l'accès total a été payé en points OU acheté réellement via Google Play (voir [combinedPremiumFlow]). */
     val isPremiumAllAccess: StateFlow<Boolean> =
-        combine(unlockedItemIds, billing.premiumPurchased) { unlocked, purchased ->
-            // Variante TEST : jamais Premium (aucun achat possible) — blocage incontournable.
-            if (BuildConfig.IS_TEST) false
-            // Édition V2SP (UNLOCK_ALL) : accès total, tous les verrous levés.
-            else BuildConfig.UNLOCK_ALL || unlocked.contains(GameShopCatalog.PREMIUM_ALL_ACCESS) || purchased
-        }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
+        combinedPremiumFlow(unlockedItemIds, billing)
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
-    /** true seulement si le produit Google Play réel est configuré côté Play Console (sinon "Bientôt disponible"). */
-    val isRealPremiumPurchaseAvailable: StateFlow<Boolean> = billing.productAvailable
+    /** Ids parmi les 3 offres réelles (abonnements + à vie) configurés côté Play Console. */
+    val availablePremiumProductIds: StateFlow<Set<String>> = billing.availableProductIds
+
+    /** Détails (dont prix localisé réel) des offres Premium trouvées côté Play Console. */
+    val premiumProductDetails: StateFlow<Map<String, com.android.billingclient.api.ProductDetails>> = billing.productDetails
+
+    /** [BillingManager.SUB_MONTHLY] ou [BillingManager.SUB_YEARLY] si un abonnement est actif. */
+    val activePremiumSubscriptionId: StateFlow<String?> = billing.activeSubscriptionId
+
+    val hasLifetimePremium: StateFlow<Boolean> = billing.hasLifetime
+
+    val premiumSubscriptionWillNotRenew: StateFlow<Boolean> = billing.subscriptionWillNotRenew
 
     /** Jeux d'arcade jouables : Pong offert d'origine + ceux débloqués + tous si Premium. */
     val unlockedGameIds: StateFlow<Set<String>> =
@@ -175,6 +181,18 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
 
     fun recordBackupExport() = AppPrefs.recordBackupExport(getApplication())
 
-    /** Lance le flux d'achat Premium réel (Google Play). Voir [BillingManager] : no-op si le produit n'est pas encore configuré. */
-    fun launchRealPremiumPurchase(activity: android.app.Activity) = billing.launchPurchase(activity)
+    /**
+     * Lance le flux d'achat réel (Google Play) pour [productId] ([BillingManager.SUB_MONTHLY],
+     * [BillingManager.SUB_YEARLY] ou [BillingManager.LIFETIME]). Voir [BillingManager] : no-op si
+     * ce produit n'est pas encore configuré côté Play Console.
+     */
+    fun launchRealPremiumPurchase(activity: android.app.Activity, productId: String) =
+        billing.launchPurchase(activity, productId)
+
+    /**
+     * Revérifie manuellement les achats/abonnements réels auprès de Google Play (bouton
+     * "Restaurer mes achats" du Paywall) — même mécanisme que la vérification automatique au
+     * lancement, rejouable à la demande (changement de téléphone, réinstallation...).
+     */
+    fun restorePremiumPurchases(onDone: (foundAny: Boolean) -> Unit = {}) = billing.refreshPurchases(onDone)
 }

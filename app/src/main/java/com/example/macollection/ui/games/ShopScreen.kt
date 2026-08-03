@@ -1,6 +1,5 @@
 package com.example.macollection.ui.games
 
-import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,7 +32,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,13 +52,11 @@ import com.example.macollection.ui.theme.NeonPurple
  * (placeholder "Bientôt disponible" tant que le produit n'est pas configuré côté Play Console).
  */
 @Composable
-fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, modifier: Modifier = Modifier) {
+fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, onOpenPaywall: () -> Unit, modifier: Modifier = Modifier) {
     val points by vm.points.collectAsState()
     val unlockedItemIds by vm.unlockedItemIds.collectAsState()
     val isPremium by vm.isPremiumAllAccess.collectAsState()
-    val realPremiumAvailable by vm.isRealPremiumPurchaseAvailable.collectAsState()
     val extraBackupPacks by AppPrefs.extraBackupPacks
-    val context = LocalContext.current
     var showTestBlocked by remember { mutableStateOf(false) }
     if (showTestBlocked) TestBlockedDialog { showTestBlocked = false }
 
@@ -138,24 +134,22 @@ fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, modifier: Modifier = Modif
                     Text("Premium via Google Play (argent réel)", color = Color.White, fontWeight = FontWeight.Bold)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        "Débloque tout instantanément sans dépenser de points.",
+                        "Débloque tout instantanément sans dépenser de points : abonnement mensuel, annuel, ou pass à vie.",
                         color = Color.White.copy(alpha = 0.75f),
                         fontSize = 13.sp
                     )
                     Spacer(Modifier.height(12.dp))
-                    when {
-                        isPremium -> Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (isPremium) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(Icons.Filled.CheckCircle, contentDescription = null, tint = NeonCyan)
                             Spacer(Modifier.width(6.dp))
                             Text("Déjà débloqué", color = NeonCyan)
                         }
-                        realPremiumAvailable -> Button(
-                            onClick = { (context as? Activity)?.let { vm.launchRealPremiumPurchase(it) } },
+                    } else {
+                        Button(
+                            onClick = onOpenPaywall,
                             colors = ButtonDefaults.buttonColors(containerColor = NeonPurple)
-                        ) { Text("Passer Premium") }
-                        else -> OutlinedButton(onClick = {}, enabled = false) {
-                            Text(if (BuildConfig.IS_TEST) "Indisponible (version test)" else "Bientôt disponible")
-                        }
+                        ) { Text("Voir les offres Premium") }
                     }
                 }
             }

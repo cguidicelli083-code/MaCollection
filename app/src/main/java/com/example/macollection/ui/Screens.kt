@@ -224,6 +224,20 @@ fun CollectionScreen(
             placeholder = stringResource(if (wishlist) R.string.wishlist_search_label else R.string.collection_search_label)
         )
         Spacer(Modifier.height(8.dp))
+        if (!wishlist) {
+            val isPremium by vm.isPremium.collectAsState()
+            if (!isPremium && !BuildConfig.IS_TEST) {
+                val ownedCount by vm.allOwnedItems.collectAsState()
+                val extraSlots by AppPrefs.extraCollectionSlots
+                val quota = FREE_COLLECTION_LIMIT + extraSlots
+                Text(
+                    "${ownedCount.size}/$quota objets (compte gratuit)",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (ownedCount.size >= quota) NeonPink else MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(8.dp))
+            }
+        }
         TypeFilterDropdown(filter) { vm.setTypeFilter(it) }
         Spacer(Modifier.height(8.dp))
         SortDropdown(sort, filter) { vm.setSort(it) }
@@ -1229,6 +1243,11 @@ fun AddCollectionForm(
     var showAccessoryCatalog by remember { mutableStateOf(false) }
     var showOnlinePresetSearch by remember { mutableStateOf(false) }
     var pendingEncyclopediaAdd by remember { mutableStateOf<WikiPresetResult?>(null) }
+    // Non nul quand une recherche en ligne (GameSearchDialog) renvoie un jeu disponible sur
+    // PLUSIEURS consoles : au lieu de tout empiler automatiquement dans "Console associée", on
+    // demande à l'utilisateur de cocher celle(s) qu'il possède réellement (même principe que le
+    // scan de lot, voir BatchScanDialog/PlatformPickerDialog).
+    var pendingPlatformChoice by remember { mutableStateOf<List<String>?>(null) }
     var retryingScan by remember { mutableStateOf(false) }
     // Enregistrement d'une photo (galerie/caméra) juste après recadrage : sans indicateur, l'appli
     // pouvait sembler figée le temps de copier le fichier recadré en stockage interne.
@@ -1616,7 +1635,11 @@ fun AddCollectionForm(
                 game.releaseYear?.let { year = it.toString() }
                 if (game.description.isNotBlank()) description = game.description
                 game.publisher?.let { brand = it }
-                if (game.platforms.isNotBlank()) platform = game.platforms
+                val platformOptions = game.platforms.split(",").map { it.trim() }.filter { it.isNotBlank() }
+                when {
+                    platformOptions.size > 1 -> pendingPlatformChoice = platformOptions
+                    platformOptions.size == 1 -> platform = platformOptions.first()
+                }
                 if (!photoManuallySet) {
                     // Jaquette IGDB déjà = vraie couverture ; sinon (résultat RAWG = capture de
                     // gameplay, ou Wikipédia) on va chercher la jaquette IGDB correspondante.
@@ -1632,6 +1655,16 @@ fun AddCollectionForm(
                 showGameSearch = false
             },
             onDismiss = { showGameSearch = false }
+        )
+    }
+    pendingPlatformChoice?.let { options ->
+        PlatformPickerDialog(
+            platforms = options,
+            onConfirm = { selected ->
+                platform = selected.joinToString(", ")
+                pendingPlatformChoice = null
+            },
+            onDismiss = { pendingPlatformChoice = null }
         )
     }
 
@@ -3640,6 +3673,61 @@ private fun GameSearchDialog(
             }
         }
     }
+}
+
+// ---------------------------------------------------------------------------
+// Choix de console(s) quand une recherche en ligne renvoie un jeu multi-plateformes
+// ---------------------------------------------------------------------------
+
+/**
+ * Un jeu trouvé en ligne (RAWG/IGDB) est souvent sorti sur plusieurs consoles à la fois : plutôt
+ * que d'empiler automatiquement toutes les plateformes dans "Console associée", on demande ici
+ * laquelle/lesquelles l'utilisateur possède réellement — même principe (cases à cocher) que
+ * [BatchScanDialog] pour le scan de lot.
+ */
+@Composable
+private fun PlatformPickerDialog(
+    platforms: List<String>,
+    onConfirm: (List<String>) -> Unit,
+    onDismiss: () -> Unit
+) {
+    // Rien de coché par défaut : contrairement au scan de lot (où chaque ligne est un objet
+    // distinct, tout présélectionné), ici il s'agit d'UN SEUL jeu sur plusieurs supports
+    // possibles — le forcer à choisir évite qu'il valide par réflexe une console qu'il n'a pas.
+    val checked = remember(platforms) { mutableStateListOf<Boolean>().apply { repeat(platforms.size) { add(false) } } }
+    val selectedCount = checked.count { it }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.platform_picker_title)) },
+        text = {
+            Column {
+                Text(
+                    stringResource(R.string.platform_picker_message),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(8.dp))
+                LazyColumn(Modifier.heightIn(max = 380.dp)) {
+                    itemsIndexed(platforms) { i, name ->
+                        Row(
+                            Modifier.fillMaxWidth().clickable { checked[i] = !checked[i] }.padding(vertical = 2.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Checkbox(checked = checked[i], onCheckedChange = { checked[i] = it })
+                            Text(name, color = Color.White, modifier = Modifier.weight(1f))
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(
+                onClick = { onConfirm(platforms.filterIndexed { i, _ -> checked[i] }) },
+                enabled = selectedCount > 0
+            ) { Text(stringResource(R.string.platform_picker_confirm)) }
+        },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) } }
+    )
 }
 
 // ---------------------------------------------------------------------------

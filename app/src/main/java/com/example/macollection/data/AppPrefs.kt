@@ -20,6 +20,7 @@ object AppPrefs {
     private const val KEY_RATES_AT = "currencyRatesAt"
     private const val KEY_BACKUP_EXPORT_COUNT = "backupExportCount"
     private const val KEY_EXTRA_BACKUP_PACKS = "extraBackupPacks"
+    private const val KEY_EXTRA_COLLECTION_SLOTS = "extraCollectionSlots"
     private const val KEY_QUIZ_SESSIONS = "quizSessionsCompleted"
     private const val KEY_QUIZ_LEVEL = "quizLevel"
     private const val KEY_THEME = "selectedTheme"
@@ -82,6 +83,14 @@ object AppPrefs {
      * + extraBackupPacks * 5.
      */
     val extraBackupPacks = mutableStateOf(0)
+
+    /**
+     * Objets de collection supplémentaires débloqués en compte gratuit via une pub récompensée
+     * (+5 par pub, cumulable sans limite — contrairement aux packs de sauvegardes, il n'y a pas
+     * d'équivalent payable en points pour ce quota). S'ajoute à
+     * [com.example.macollection.ui.FREE_COLLECTION_LIMIT] ; ignoré si Premium (déjà illimité).
+     */
+    val extraCollectionSlots = mutableStateOf(0)
 
     /** Sessions de quiz terminées (statistique). */
     val quizSessionsCompleted = mutableStateOf(0)
@@ -151,6 +160,7 @@ object AppPrefs {
         } ?: emptyMap()
         backupExportCount.value = p.getInt(KEY_BACKUP_EXPORT_COUNT, 0)
         extraBackupPacks.value = p.getInt(KEY_EXTRA_BACKUP_PACKS, 0)
+        extraCollectionSlots.value = p.getInt(KEY_EXTRA_COLLECTION_SLOTS, 0)
         quizSessionsCompleted.value = p.getInt(KEY_QUIZ_SESSIONS, 0)
         quizLevel.value = p.getInt(KEY_QUIZ_LEVEL, 1)
         selectedTheme.value = p.getString(KEY_THEME, "default") ?: "default"
@@ -302,6 +312,17 @@ object AppPrefs {
         extraBackupPacks.value = updated
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit().putInt(KEY_EXTRA_BACKUP_PACKS, updated).apply()
+    }
+
+    /**
+     * Crédite +5 objets de collection gratuits après le visionnage COMPLET confirmé d'une pub
+     * récompensée (jamais sur un simple clic) — cumulable sans limite de rachat.
+     */
+    fun addExtraCollectionSlots(context: Context, amount: Int = 5) {
+        val updated = extraCollectionSlots.value + amount
+        extraCollectionSlots.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putInt(KEY_EXTRA_COLLECTION_SLOTS, updated).apply()
     }
 
     /** Choix explicite de l'utilisateur (réglages) : prime désormais sur la langue à tout jamais. */
