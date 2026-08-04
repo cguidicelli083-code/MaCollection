@@ -659,8 +659,16 @@ private fun ebayHostForLanguage(lang: String): String = when (lang) {
  * jamais une partie du titre officiel du jeu/console, qui peut faire tomber le nombre de
  * résultats à zéro (constaté en conditions réelles). Jamais appliqué au nom affiché ailleurs
  * dans l'appli (fiche, liste...), seulement à cette recherche.
+ *
+ * Marque ajoutée en préfixe UNIQUEMENT quand le nom commence par un chiffre (ex. "1040 STF" ->
+ * "Atari 1040 STF", "2600" -> "Atari 2600", "3DO" -> "Panasonic 3DO") : un nom purement numérique
+ * ou débutant par un chiffre est trop ambigu seul pour une recherche (rien n'indique qu'il s'agit
+ * d'une console), contrairement à un nom alphabétique déjà distinctif ("Dreamcast", "Game Boy
+ * Advance") où ajouter la marque n'apporte rien et risque plutôt de réduire les résultats (déjà
+ * constaté cette session avec des requêtes trop longues) — on ne l'ajoute donc QUE dans ce cas
+ * précis, jamais partout.
  */
-private fun offersSearchQuery(name: String, platform: String?): String {
+private fun offersSearchQuery(name: String, brand: String, platform: String?): String {
     val cleanName = name.trim()
     val shortPlatform = platform
         ?.let { Regex("\\(([^)]+)\\)").find(it)?.groupValues?.get(1) ?: it }
@@ -669,11 +677,20 @@ private fun offersSearchQuery(name: String, platform: String?): String {
         .replace(Regex("\\s+"), " ")
         .trim()
         .ifBlank { cleanName }
-    return listOfNotNull(shortPlatform?.takeIf { it.isNotBlank() }, nameWithoutParens).joinToString(" ")
+    val brandTrim = brand.trim()
+    val nameWithBrand = if (nameWithoutParens.firstOrNull()?.isDigit() == true &&
+        brandTrim.isNotBlank() && !nameWithoutParens.contains(brandTrim, ignoreCase = true)
+    ) {
+        "$brandTrim $nameWithoutParens"
+    } else {
+        nameWithoutParens
+    }
+    return listOfNotNull(shortPlatform?.takeIf { it.isNotBlank() }, nameWithBrand).joinToString(" ")
 }
 
 fun wishlistOffersUrl(
     name: String,
+    brand: String,
     platform: String?,
     sourceUrl: String?,
     verifiedEbayQuery: String?,
@@ -681,7 +698,7 @@ fun wishlistOffersUrl(
 ): String? {
     val cleanName = name.trim()
     if (cleanName.isBlank()) return null
-    val query = offersSearchQuery(cleanName, platform)
+    val query = offersSearchQuery(cleanName, brand, platform)
 
     val directEbayUrl = sourceUrl?.trim()?.takeIf { it.isNotBlank() }
         ?.takeIf { runCatching { Uri.parse(it).host?.contains("ebay", ignoreCase = true) == true }.getOrDefault(false) }
@@ -904,7 +921,7 @@ fun ItemDetailScreen(
                         // vérifiée : reconstruire une requête différente (ex. à partir du nom complet)
                         // ici rouvrirait potentiellement une recherche vide, cf. doc de [wishlistOffersUrl].
                         val verifiedEbayQuery = if (hasStoredEbayPrice) {
-                            offersSearchQuery(item.name, item.platform)
+                            offersSearchQuery(item.name, item.brand, item.platform)
                         } else {
                             runCatching {
                                 EbayPrices.findWorkingEbayQuery(item.type, item.brand, item.name, item.platform)
@@ -912,7 +929,7 @@ fun ItemDetailScreen(
                         }
                         android.util.Log.d("WishlistOffers", "hasStoredEbayPrice=$hasStoredEbayPrice verifiedEbayQuery=$verifiedEbayQuery")
                         offersUrl = wishlistOffersUrl(
-                            item.name, item.platform, item.sourceUrl,
+                            item.name, item.brand, item.platform, item.sourceUrl,
                             verifiedEbayQuery = verifiedEbayQuery,
                             uiLanguage = currentLang
                         )

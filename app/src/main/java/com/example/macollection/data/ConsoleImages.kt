@@ -12,9 +12,8 @@ object ConsoleImages {
         "Channel F" to "file:///android_asset/console_photos/channel_f.webp",
         // Photo fournie par l'utilisateur (2026-07-13) : remplace le rendu 3D Sketchfab par une
         // vraie photo du modèle « wood-grain » emblématique.
-        "2600 (VCS)" to "file:///android_asset/console_photos/atari_2600_vcs.webp",
-        "2600 (bois)" to "file:///android_asset/console_photos/atari_2600_vcs.webp",
-        "2600 (noire, sans bois)" to "file:///android_asset/console_photos/2600_noire_sans_bois.webp",
+        "2600 (VCS)" to "file:///android_asset/console_photos/2600_noire_sans_bois.webp",
+        "2600 Woody" to "file:///android_asset/console_photos/atari_2600_vcs.webp",
         "TheC64 Mini" to "file:///android_asset/console_photos/thec64_mini.webp",
         "THE400 Mini" to "file:///android_asset/console_photos/the400_mini.webp",
         // Pas de photo libre de droits (Wikimedia Commons) trouvée pour ces 4 modèles : photo
