@@ -317,4 +317,62 @@ object ConsoleRecognition {
         return normalizedAliasesByName.entries
             .firstOrNull { (_, aliases) -> aliases.any { it == q } }?.key
     }
+
+    /**
+     * Nom de preset canonique par forme normalisée, avec ET sans espaces (ex. « playstation 3 »
+     * ET « playstation3 » -> « PlayStation 3 »), pour reconnaître aussi bien une abréviation
+     * (« ps3 »), le nom complet correctement écrit (« PlayStation 3 ») que des variantes collées/
+     * mal espacées (« PlayStation3 », « ps 3 »).
+     */
+    private val canonicalNameByNormalized: Map<String, String> by lazy {
+        val map = mutableMapOf<String, String>()
+        fun register(text: String, name: String) {
+            val n = normalize(text)
+            if (n.isEmpty()) return
+            map[n] = name
+            map[n.replace(" ", "")] = name
+        }
+        for ((keys, name) in rules) {
+            keys.forEach { register(it, name) }
+            register(name, name)
+        }
+        map
+    }
+
+    /**
+     * Comme [canonicalize], mais renvoie null (au lieu de [raw] recadré) quand aucune variante
+     * connue ne correspond — pour un appelant qui veut garder LUI-MÊME le texte brut d'origine
+     * dans ce cas (ex. saisie live où on ne doit pas altérer un texte en cours de frappe qui ne
+     * matche encore rien).
+     */
+    fun canonicalizeOrNull(raw: String): String? {
+        val trimmed = raw.trim()
+        if (trimmed.isEmpty()) return null
+        val norm = normalize(trimmed)
+        return canonicalNameByNormalized[norm] ?: canonicalNameByNormalized[norm.replace(" ", "")]
+    }
+
+    /**
+     * Ramène [raw] à son nom de preset canonique quand c'est une variante connue (abréviation ou
+     * nom complet, quels que soient casse/accents/espaces — « ps3 », « PlayStation3 »,
+     * « playstation 3 » donnent tous « PlayStation 3 »), pour que deux jeux de la même console ne
+     * se retrouvent jamais sous deux intitulés différents (tri/regroupement par console, voir
+     * [AppViewModel] et [Screens.groupConsecutiveBy]). Renvoie [raw] simplement recadré (trim) si
+     * aucune variante connue ne correspond — jamais d'échec, juste pas de fusion possible.
+     */
+    fun canonicalize(raw: String): String = canonicalizeOrNull(raw) ?: raw.trim()
+
+    /**
+     * Applique [canonicalize] à chaque plateforme d'une valeur `platform` pouvant contenir
+     * plusieurs consoles séparées par des virgules (ex. brut RAWG/IGDB "PS3, Xbox 360", ou une
+     * sélection multi-plateformes de [PlatformPickerDialog]), en dédoublonnant les entrées qui se
+     * retrouvent sur le même nom canonique (ex. "PS3, PlayStation 3" -> "PlayStation 3").
+     */
+    fun canonicalizePlatformList(raw: String): String =
+        raw.split(",")
+            .map { it.trim() }
+            .filter { it.isNotEmpty() }
+            .map { canonicalize(it) }
+            .distinct()
+            .joinToString(", ")
 }

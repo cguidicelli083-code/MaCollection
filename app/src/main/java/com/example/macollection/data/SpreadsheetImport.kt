@@ -290,7 +290,7 @@ object SpreadsheetImport {
             hasManual = parseBool(cell(row, mapping, ImportField.HAS_MANUAL), default = true),
             releaseYear = cell(row, mapping, ImportField.YEAR)?.toIntOrNull(),
             genre = cell(row, mapping, ImportField.GENRE),
-            platform = cell(row, mapping, ImportField.PLATFORM),
+            platform = cell(row, mapping, ImportField.PLATFORM)?.let { ConsoleRecognition.canonicalizePlatformList(it) },
             priceCents = priceCents,
             priceIsManual = priceCents != null,
             barcode = cell(row, mapping, ImportField.BARCODE),

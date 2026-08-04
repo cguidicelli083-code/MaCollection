@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 在PriceCharting上查找价格</string>
     <string name="edit_price_button">✏️ 编辑价格</string>
     <string name="move_to_collection_button">📦 标记为已购买（移至收藏）</string>
+    <string name="wishlist_offers_button">🛒 查看优惠</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">备份</string>
     <string name="title_backup">💾 备份</string>

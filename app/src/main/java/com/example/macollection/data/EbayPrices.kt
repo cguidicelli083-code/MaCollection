@@ -155,6 +155,7 @@ object EbayPrices {
         } catch (e: CancellationException) {
             throw e
         } catch (e: retrofit2.HttpException) {
+            android.util.Log.d("WishlistOffers", "searchOrFallback: HTTP ${e.code()} usingBackupKey=$usingBackupKey hasBackupKey=${hasBackupKey()}")
             if (e.code() == 429 && hasBackupKey() && !usingBackupKey) {
                 switchToBackupKey()
                 val retryTok = token() ?: return null
@@ -163,10 +164,12 @@ object EbayPrices {
                 } catch (e2: CancellationException) {
                     throw e2
                 } catch (e2: Exception) {
+                    android.util.Log.e("WishlistOffers", "searchOrFallback: échec après bascule sur clé de secours: ${e2.javaClass.simpleName}: ${e2.message}")
                     null
                 }
             } else null
         } catch (e: Exception) {
+            android.util.Log.e("WishlistOffers", "searchOrFallback: ${e.javaClass.simpleName}: ${e.message}")
             null
         }
     }
@@ -327,6 +330,62 @@ object EbayPrices {
     }
 
     /**
+     * Requête eBay qui trouve AU MOINS UNE annonce pour cet objet (ou null si vraiment rien),
+     * TOUTES annonces confondues (enchères comprises) — contrairement à [lookup], qui filtre sur
+     * achat immédiat (`buyingOptions:{FIXED_PRICE}`) + état déclaré pour calculer une cote FIABLE
+     * (une médiane n'a pas de sens sur des prix d'enchères en cours). Un objet rare peut n'avoir
+     * que 1-2 annonces AUX ENCHÈRES, qu'[lookup] écarte à raison pour le calcul de cote (constaté
+     * en conditions réelles : "Sega Game Gear Magic Knight Rayearth" trouve 2 annonces sans
+     * filtre, 1 avec la catégorie seule, 0 avec le filtre achat immédiat + état d'[lookup]) —
+     * mais ces annonces restent bien réelles et valent la peine d'être montrées (cf. bouton
+     * "Voir les offres" des Souhaits, [com.example.macollection.ui.wishlistOffersUrl]).
+     *
+     * Repli progressif si la requête complète ne trouve rien : un descriptif fidèle mais trop
+     * précis (ex. "Nintendo 64 Jusco 30e Anniversaire" — le nom OFFICIEL complet de cette édition
+     * commémorative rare) ne figure souvent PAS tel quel dans le titre des annonces, bien plus
+     * sobres ("N64 Jusco Clear Gray") : constaté en conditions réelles, "...Jusco 30e Anniversaire
+     * console" trouve 0 annonce à chaque étape, mais retirer "30e Anniversaire" en retrouve 6. On
+     * retire donc les mots un par un DEPUIS LA FIN (jamais le nom stocké/affiché, seulement cette
+     * requête) jusqu'à trouver quelque chose ou tomber à 2 mots — même principe que le repli déjà
+     * utilisé pour IGDB côté scan de code-barres, cf. [com.example.macollection.data.ScanTools.identifyFromBarcode].
+     *
+     * IMPORTANT : on renvoie la requête GAGNANTE (pas juste un booléen "ça existe quelque part") —
+     * un bug constaté en conditions réelles sur cette même console Jusco : renvoyer seulement
+     * `true` puis rouvrir l'URL construite depuis le nom COMPLET d'origine rouvrait "...30e
+     * Anniversaire", qui ne trouve justement RIEN ; l'appelant doit chercher avec les MÊMES mots
+     * que ceux qui ont réellement trouvé quelque chose ici.
+     */
+    suspend fun findWorkingEbayQuery(type: ItemType, brand: String, name: String, platform: String?): String? {
+        if (!isConfigured()) {
+            android.util.Log.d("WishlistOffers", "findWorkingEbayQuery($name): pas configuré (clé eBay manquante)")
+            return null
+        }
+        if (token() == null) {
+            android.util.Log.d("WishlistOffers", "findWorkingEbayQuery($name): token eBay indisponible (clé principale ET secours en échec ?)")
+            return null
+        }
+        val category = when (type) {
+            ItemType.CONSOLE -> CAT_CONSOLES
+            ItemType.JEU -> CAT_GAMES
+            ItemType.ACCESSOIRE -> null
+        }
+        var words = buildQuery(type, brand, name, platform, condition = null)
+            .split(Regex("\\s+")).filter { it.isNotBlank() }
+        while (words.isNotEmpty()) {
+            val q = words.joinToString(" ")
+            val items = searchOrFallback { bearer ->
+                api.search(bearer, MARKET, q = q, categoryIds = category, limit = 1)
+            }?.itemSummaries.orEmpty()
+            android.util.Log.d("WishlistOffers", "findWorkingEbayQuery: q=\"$q\" category=$category usingBackupKey=$usingBackupKey -> ${items.size} résultat(s)")
+            if (items.isNotEmpty()) return q
+            if (words.size <= 2) break
+            words = words.dropLast(1)
+        }
+        android.util.Log.d("WishlistOffers", "findWorkingEbayQuery($name): AUCUN résultat après repli complet")
+        return null
+    }
+
+    /**
      * Vrai si le titre ressemble à une carte électronique, une pièce détachée ou du matériel
      * de réparation plutôt qu'à un jeu/console complet — certains vendeurs classent ça dans
      * « Jeux vidéo » malgré tout (ex. une carte mère d'arcade CPS-1 au prix d'une pièce rare,
@@ -386,8 +445,14 @@ object EbayPrices {
         platform: String?,
         condition: Condition?
     ): String {
-        // Évite de dupliquer la marque (ex. "Nintendo Nintendo 3DS").
-        val base = if (brand.isBlank() || name.lowercase().contains(brand.lowercase())) {
+        // Évite de dupliquer la marque (ex. "Nintendo Nintendo 3DS"). Certains presets ont une
+        // marque à double fabricant ("Nintendo / Jusco", "Nintendo / Konami"...) : on compare
+        // chaque partie séparément, sinon "Nintendo / Jusco" n'est jamais reconnu comme déjà
+        // présent dans un nom qui contient "Nintendo" et "Jusco" mais pas le "/" littéral, et on
+        // obtient une requête doublée ("Nintendo / Jusco Nintendo 64 Jusco...") qui gêne la
+        // recherche eBay (constaté en conditions réelles).
+        val brandParts = brand.split("/", ",").map { it.trim() }.filter { it.isNotBlank() }
+        val base = if (brandParts.isEmpty() || brandParts.any { name.lowercase().contains(it.lowercase()) }) {
             name
         } else {
             "$brand $name"

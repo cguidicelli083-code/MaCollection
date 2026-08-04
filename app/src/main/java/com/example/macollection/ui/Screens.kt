@@ -58,6 +58,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -121,6 +122,7 @@ import com.example.macollection.data.ConsoleRepairLinks
 import com.example.macollection.data.ConsoleWikipediaLinks
 import com.example.macollection.data.CurrencyOptions
 import com.example.macollection.data.CustomPreset
+import com.example.macollection.data.EbayPrices
 import com.example.macollection.data.GameCatalog
 import com.example.macollection.data.GeminiVision
 import com.example.macollection.data.GroqVision
@@ -153,7 +155,13 @@ import android.hardware.SensorManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.DisposableEffect
@@ -606,6 +614,95 @@ fun priceChartingSearchUrl(name: String, platform: String? = null): String {
     return "https://www.pricecharting.com/search-products?q=" + java.net.URLEncoder.encode(query, "UTF-8") + "&type=videogames"
 }
 
+/**
+ * Domaine eBay à utiliser, choisi selon la LANGUE de l'appli (pas la position géographique
+ * réelle de l'utilisateur, invérifiable depuis ici) : un Français en déplacement à l'étranger
+ * avec l'appli restée en français doit quand même arriver sur le site FR, pas sur celui du
+ * pays où il se trouve. eBay n'a pas de site dédié pour toutes les langues supportées (grec,
+ * japonais, russe, turc, chinois...) : on retombe alors sur ebay.com (site international,
+ * toujours en anglais) plutôt que d'imposer le français à qui ne le lit pas.
+ */
+private fun ebayHostForLanguage(lang: String): String = when (lang) {
+    "fr" -> "www.ebay.fr"
+    "de" -> "www.ebay.de"
+    "es" -> "www.ebay.es"
+    "it" -> "www.ebay.it"
+    else -> "www.ebay.com"
+}
+
+/**
+ * Lien "voir les offres" pour un objet des Souhaits : eBay en priorité (mieux indexé que
+ * Rakuten/Google Shopping sur le rétro-gaming de niche, constaté sur les recherches par
+ * code-barres de cette appli), avec repli en cascade si une étape échoue à produire une URL —
+ * jamais un simple bouton désactivé tant qu'un nom est disponible.
+ * - Priorité 1 : le lien source de la fiche s'il pointe déjà vers eBay (import URL précis, TOUJOURS
+ *   respecté tel quel), sinon une recherche eBay avec [verifiedEbayQuery] SI ELLE EST FOURNIE —
+ *   c'est à l'appelant de vérifier au préalable (cote confirmée sur la fiche, ou
+ *   [EbayPrices.findWorkingEbayQuery]) que cette requête précise trouve bien quelque chose. BUG
+ *   constaté en conditions réelles avant ce paramètre : reconstruire la requête ici à partir du
+ *   nom COMPLET (ex. "Nintendo 64 Jusco 30e Anniversaire") rouvrait une recherche VIDE alors même
+ *   que l'appelant avait confirmé qu'une version raccourcie ("Nintendo 64 Jusco") trouvait bien
+ *   une annonce — la requête utilisée ici doit être EXACTEMENT celle qui a été vérifiée, jamais
+ *   reconstruite indépendamment.
+ * - Priorité 2 : recherche Google Shopping, si eBay n'a pas de résultat connu (ou si la
+ *   construction de son URL a échoué). Constaté en conditions réelles (bloqué par Cloudflare/
+ *   DataDome pour une vérification automatisée directe, cf. session) que Rakuten est nettement
+ *   moins fiable que Google Shopping sur le rétro-gaming de niche — Google reste en pratique la
+ *   seule des deux qui retrouve presque toujours quelque chose.
+ * - Priorité 3 : recherche Rakuten, dernier recours si même Google Shopping a échoué.
+ * Renvoie null seulement si [name] est vide (cf. bouton masqué dans [ItemDetailScreen]).
+ */
+/**
+ * Texte de recherche "propre" pour un objet des Souhaits : plateforme courte (contenu entre
+ * parenthèses si présent) + nom, DÉBARRASSÉ de ses propres parenthèses (ex. "Sonic the Hedgehog
+ * (Édition Collector)", "Zelda (import japonais)") — un simple complément d'info sur la fiche,
+ * jamais une partie du titre officiel du jeu/console, qui peut faire tomber le nombre de
+ * résultats à zéro (constaté en conditions réelles). Jamais appliqué au nom affiché ailleurs
+ * dans l'appli (fiche, liste...), seulement à cette recherche.
+ */
+private fun offersSearchQuery(name: String, platform: String?): String {
+    val cleanName = name.trim()
+    val shortPlatform = platform
+        ?.let { Regex("\\(([^)]+)\\)").find(it)?.groupValues?.get(1) ?: it }
+        ?.trim()
+    val nameWithoutParens = cleanName.replace(Regex("\\([^)]*\\)"), " ")
+        .replace(Regex("\\s+"), " ")
+        .trim()
+        .ifBlank { cleanName }
+    return listOfNotNull(shortPlatform?.takeIf { it.isNotBlank() }, nameWithoutParens).joinToString(" ")
+}
+
+fun wishlistOffersUrl(
+    name: String,
+    platform: String?,
+    sourceUrl: String?,
+    verifiedEbayQuery: String?,
+    uiLanguage: String
+): String? {
+    val cleanName = name.trim()
+    if (cleanName.isBlank()) return null
+    val query = offersSearchQuery(cleanName, platform)
+
+    val directEbayUrl = sourceUrl?.trim()?.takeIf { it.isNotBlank() }
+        ?.takeIf { runCatching { Uri.parse(it).host?.contains("ebay", ignoreCase = true) == true }.getOrDefault(false) }
+
+    val ebayUrl = directEbayUrl ?: verifiedEbayQuery?.takeIf { it.isNotBlank() }?.let { vq ->
+        runCatching {
+            "https://${ebayHostForLanguage(uiLanguage)}/sch/i.html?_nkw=" + java.net.URLEncoder.encode(vq, "UTF-8")
+        }.getOrNull()
+    }
+    if (ebayUrl != null) return ebayUrl
+
+    val googleUrl = runCatching {
+        "https://www.google.com/search?tbm=shop&q=" + java.net.URLEncoder.encode(query, "UTF-8")
+    }.getOrNull()
+    if (googleUrl != null) return googleUrl
+
+    return runCatching {
+        "https://fr.shopping.rakuten.com/search/mo/" + java.net.URLEncoder.encode(query, "UTF-8")
+    }.getOrNull()
+}
+
 /** Petit lecteur vidéo (extrait RAWG) façon Batocera/Recalbox, lecture automatique en boucle muette. */
 @Composable
 fun GameTrailerPlayer(url: String, modifier: Modifier = Modifier) {
@@ -791,6 +888,51 @@ fun ItemDetailScreen(
                     Text(stringResource(R.string.edit_price_button))
                 }
                 if (item.isWishlist) {
+                    // La cote déjà stockée sur la fiche (item.priceCents confirmé, pas une
+                    // estimation IA) suffit dans la plupart des cas — mais elle vient d'[EbayPrices.lookup],
+                    // filtré sur achat immédiat + état pour une cote FIABLE, qui écarte à tort les
+                    // objets rares n'ayant que des annonces aux enchères (constaté en conditions
+                    // réelles sur "Sega Game Gear Magic Knight Rayearth"). Sans cote confirmée, on
+                    // revérifie donc en direct avec [EbayPrices.hasAnyListing] (aucun filtre
+                    // achat immédiat/état, juste "eBay a-t-il AU MOINS une annonce ?") avant de
+                    // conclure qu'il n'y a rien et de passer à Google.
+                    var offersUrl by remember(item.id) { mutableStateOf<String?>(null) }
+                    val hasStoredEbayPrice = item.priceCents != null && !item.priceIsAiEstimate
+                    LaunchedEffect(item.id, item.name, item.platform, item.sourceUrl, hasStoredEbayPrice, currentLang) {
+                        android.util.Log.d("WishlistOffers", "fiche: type=${item.type} brand=\"${item.brand}\" name=\"${item.name}\" platform=\"${item.platform}\" priceCents=${item.priceCents} priceIsAiEstimate=${item.priceIsAiEstimate}")
+                        // La requête utilisée pour ouvrir eBay doit être EXACTEMENT celle qui a été
+                        // vérifiée : reconstruire une requête différente (ex. à partir du nom complet)
+                        // ici rouvrirait potentiellement une recherche vide, cf. doc de [wishlistOffersUrl].
+                        val verifiedEbayQuery = if (hasStoredEbayPrice) {
+                            offersSearchQuery(item.name, item.platform)
+                        } else {
+                            runCatching {
+                                EbayPrices.findWorkingEbayQuery(item.type, item.brand, item.name, item.platform)
+                            }.getOrNull()
+                        }
+                        android.util.Log.d("WishlistOffers", "hasStoredEbayPrice=$hasStoredEbayPrice verifiedEbayQuery=$verifiedEbayQuery")
+                        offersUrl = wishlistOffersUrl(
+                            item.name, item.platform, item.sourceUrl,
+                            verifiedEbayQuery = verifiedEbayQuery,
+                            uiLanguage = currentLang
+                        )
+                        android.util.Log.d("WishlistOffers", "URL finale = $offersUrl")
+                    }
+                    if (offersUrl != null) {
+                        // Couleur "secondary" du thème actif (pas une couleur figée) : reste
+                        // cohérent si l'utilisateur a débloqué un autre skin (Retour vers le
+                        // Futur, Star Wars...), tout en se distinguant nettement du bouton
+                        // "Marquer comme acquis" juste en dessous (couleur "primary").
+                        Button(
+                            onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(offersUrl))) },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.secondary,
+                                contentColor = MaterialTheme.colorScheme.onSecondary
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        ) { Text(stringResource(R.string.wishlist_offers_button)) }
+                        Spacer(Modifier.height(8.dp))
+                    }
                     Button(
                         onClick = {
                             if (canMoveToCollection()) {
@@ -1345,7 +1487,7 @@ fun AddCollectionForm(
                     detailed.releaseYear?.let { year = it.toString() }
                     if (detailed.description.isNotBlank()) description = detailed.description
                     detailed.publisher?.let { brand = it }
-                    if (detailed.platforms.isNotBlank()) platform = detailed.platforms
+                    if (detailed.platforms.isNotBlank()) platform = ConsoleRecognition.canonicalizePlatformList(detailed.platforms)
                     if (!photoManuallySet) {
                         // La photo principale d'un jeu doit être sa JAQUETTE. RAWG ne renvoie
                         // qu'une capture de gameplay (background_image) : on tente d'abord la vraie
@@ -1423,7 +1565,8 @@ fun AddCollectionForm(
                 // Liste complète des consoles compatibles (IGDB/RAWG) si connue ; sinon on garde
                 // au moins la console repérée sur la boîte/cartouche (OCR/IA), qui peut être la
                 // seule info disponible pour un jeu absent de ces catalogues.
-                platform = r.gameMatch.platforms.takeIf { it.isNotBlank() } ?: r.gameConsoleHint ?: platform
+                platform = r.gameMatch.platforms.takeIf { it.isNotBlank() }?.let { ConsoleRecognition.canonicalizePlatformList(it) }
+                    ?: r.gameConsoleHint ?: platform
                 rawgId = r.gameMatch.sourceId
             }
             r?.consolePresetName != null -> {
@@ -1635,7 +1778,11 @@ fun AddCollectionForm(
                 game.releaseYear?.let { year = it.toString() }
                 if (game.description.isNotBlank()) description = game.description
                 game.publisher?.let { brand = it }
-                val platformOptions = game.platforms.split(",").map { it.trim() }.filter { it.isNotBlank() }
+                val platformOptions = game.platforms.split(",")
+                    .map { it.trim() }
+                    .filter { it.isNotBlank() }
+                    .map { ConsoleRecognition.canonicalize(it) }
+                    .distinct()
                 when {
                     platformOptions.size > 1 -> pendingPlatformChoice = platformOptions
                     platformOptions.size == 1 -> platform = platformOptions.first()
@@ -1913,10 +2060,11 @@ fun AddCollectionForm(
                 label = if (type == ItemType.JEU) stringResource(R.string.field_platforms)
                     else stringResource(R.string.field_associated_console),
                 suggestions = consoleOptions,
-                // Résout une abréviation tapée en toutes lettres (ex. "ps2" -> "PlayStation 2") :
-                // sans ça, la plateforme restait l'abréviation brute, qui ne matchait ensuite ni
-                // le catalogue ni la recherche de cote (eBay/IA), qui ne connaissent que le nom complet.
-                onValueChange = { platform = ConsoleRecognition.exactAliasMatch(it.trim()) ?: it }
+                // Résout une abréviation ou variante d'orthographe tapée (ex. "ps2", "playstation2")
+                // vers le nom canonique du preset ("PlayStation 2") : sans ça, la plateforme restait
+                // telle quelle, ce qui la faisait échapper au catalogue, à la recherche de cote
+                // (eBay/IA) et au regroupement par console (deux libellés pour la même console).
+                onValueChange = { platform = ConsoleRecognition.canonicalizeOrNull(it.trim()) ?: it }
             )
             if (type == ItemType.JEU) {
                 Field(genre, stringResource(R.string.field_genre)) { genre = it }
@@ -2118,6 +2266,122 @@ fun OnboardingScreen(onFinish: () -> Unit) {
                     }
                 }) {
                     Text(if (pagerState.currentPage < pages.lastIndex) stringResource(R.string.onboarding_next) else stringResource(R.string.onboarding_finish))
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Tutoriel de premier lancement, version courte/visuelle (7 étapes, 1 phrase par étape) — remplace
+ * [OnboardingScreen] (14 pages de texte dense, retour utilisateur : trop de lecture, personne ne
+ * prend le temps de tout lire). Idée : un gros pictogramme animé (pulsation) plutôt qu'un mur de
+ * texte, une seule phrase courte par étape ; les fonctionnalités avancées (import Excel, import URL,
+ * astuce Game &amp; Watch, sélection multiple...) ne sont plus détaillées ici, seulement mentionnées
+ * comme "à découvrir dans les Réglages" — elles restent couvertes par l'onglet Astuces existant.
+ *
+ * ISOLÉ à l'édition `restricted` (V2test) tant qu'il n'est pas validé, cf. appel conditionné par
+ * `BuildConfig.IS_TEST` dans [MainActivity] : `full` et `noads` (V2SP) continuent d'utiliser
+ * l'ancien [OnboardingScreen], inchangé.
+ */
+private data class OnboardingLightStep(val emoji: String, val titleRes: Int, val textRes: Int)
+
+@Composable
+fun OnboardingScreenLight(onFinish: () -> Unit) {
+    val steps = listOf(
+        OnboardingLightStep("🎮", R.string.onboarding_light_step1_title, R.string.onboarding_light_step1_text),
+        OnboardingLightStep("📷", R.string.onboarding_light_step2_title, R.string.onboarding_light_step2_text),
+        OnboardingLightStep("📚", R.string.onboarding_light_step3_title, R.string.onboarding_light_step3_text),
+        OnboardingLightStep("💎", R.string.onboarding_light_step4_title, R.string.onboarding_light_step4_text),
+        OnboardingLightStep("🕹️", R.string.onboarding_light_step5_title, R.string.onboarding_light_step5_text),
+        OnboardingLightStep("⚙️", R.string.onboarding_light_step6_title, R.string.onboarding_light_step6_text),
+        OnboardingLightStep("🚀", R.string.onboarding_light_step7_title, R.string.onboarding_light_step7_text)
+    )
+    val pagerState = rememberPagerState(pageCount = { steps.size })
+    val scope = rememberCoroutineScope()
+
+    // Légère pulsation continue du pictogramme (halo + emoji) : donne un côté "vivant"/ludique
+    // sans avoir besoin d'assets image ou vidéo (hors de portée ici, cf. discussion).
+    val pulse = rememberInfiniteTransition(label = "onboarding_pulse")
+    val pulseScale by pulse.animateFloat(
+        initialValue = 0.94f,
+        targetValue = 1.06f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1400, easing = LinearOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "onboarding_pulse_scale"
+    )
+
+    GamerScreenBackground {
+        Column(
+            Modifier.fillMaxSize().padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier.weight(1f).fillMaxWidth()
+            ) { page ->
+                val step = steps[page]
+                Column(
+                    Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Box(
+                        Modifier.size(180.dp).graphicsLayer { scaleX = pulseScale; scaleY = pulseScale },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Box(
+                            Modifier
+                                .size(180.dp)
+                                .clip(RoundedCornerShape(90.dp))
+                                .background(
+                                    Brush.radialGradient(
+                                        listOf(NeonPurple.copy(alpha = 0.5f), Color.Transparent)
+                                    )
+                                )
+                        )
+                        Text(step.emoji, fontSize = 76.sp)
+                    }
+                    Spacer(Modifier.height(28.dp))
+                    Text(
+                        stringResource(step.titleRes),
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        stringResource(step.textRes),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(horizontal = 12.dp)
+                    )
+                }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(bottom = 20.dp)) {
+                steps.indices.forEach { i ->
+                    Box(
+                        Modifier
+                            .size(if (i == pagerState.currentPage) 10.dp else 7.dp)
+                            .clip(RoundedCornerShape(50))
+                            .background(if (i == pagerState.currentPage) NeonCyan else Color.White.copy(alpha = 0.25f))
+                    )
+                }
+            }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                TextButton(onClick = onFinish) { Text(stringResource(R.string.onboarding_skip)) }
+                Button(onClick = {
+                    if (pagerState.currentPage < steps.lastIndex) {
+                        scope.launch { pagerState.animateScrollToPage(pagerState.currentPage + 1) }
+                    } else {
+                        onFinish()
+                    }
+                }) {
+                    Text(if (pagerState.currentPage < steps.lastIndex) stringResource(R.string.onboarding_next) else stringResource(R.string.onboarding_finish))
                 }
             }
         }
@@ -2511,7 +2775,7 @@ fun AddCustomPresetForm(
                 value = consoleOrKind,
                 label = stringResource(R.string.field_associated_console),
                 suggestions = remember { consolePresets.map { it.name } },
-                onValueChange = { consoleOrKind = ConsoleRecognition.exactAliasMatch(it.trim()) ?: it }
+                onValueChange = { consoleOrKind = ConsoleRecognition.canonicalizeOrNull(it.trim()) ?: it }
             )
         }
         OutlinedTextField(

@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 Уточнить цену на PriceCharting</string>
     <string name="edit_price_button">✏️ Изменить цену</string>
     <string name="move_to_collection_button">📦 Отметить как приобретённое (переместить в Коллекцию)</string>
+    <string name="wishlist_offers_button">🛒 Посмотреть предложения</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">Резервная копия</string>
     <string name="title_backup">💾 Резервная копия</string>

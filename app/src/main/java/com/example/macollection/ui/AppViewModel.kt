@@ -134,6 +134,20 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             RetroNewsRepository.fetchLatest()?.let { retroNewsDao.upsertAll(it) }
         }
+        // Fusionne les fiches déjà en base dont la console associée a été enregistrée sous deux
+        // libellés différents avant l'ajout de ConsoleRecognition.canonicalize (ex. "PS3" et
+        // "PlayStation 3" traités comme deux consoles distinctes au tri/regroupement) : une
+        // passe silencieuse, une fois au démarrage, ne touche que les lignes dont la valeur change
+        // réellement une fois canonicalisée.
+        viewModelScope.launch {
+            collectionDao.observeAll().first().forEach { item ->
+                val raw = item.platform
+                if (!raw.isNullOrBlank()) {
+                    val canonical = ConsoleRecognition.canonicalizePlatformList(raw)
+                    if (canonical != raw) collectionDao.update(item.copy(platform = canonical))
+                }
+            }
+        }
     }
 
     fun setPresetPhoto(presetName: String, photoUri: String) = viewModelScope.launch {
@@ -423,7 +437,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             brand = match?.publisher ?: "",
             region = Region.PAL, condition = Condition.BON,
             hasBox = true, hasManual = true,
-            platform = batchItem.console,
+            platform = batchItem.console?.let { ConsoleRecognition.canonicalizePlatformList(it) },
             releaseYear = match?.releaseYear,
             genre = match?.genres?.takeIf { it.isNotBlank() },
             description = match?.description?.takeIf { it.isNotBlank() },

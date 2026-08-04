@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 PriceChartingで価格を調べる</string>
     <string name="edit_price_button">✏️ 価格を編集</string>
     <string name="move_to_collection_button">📦 購入済みにする（コレクションに移動）</string>
+    <string name="wishlist_offers_button">🛒 オファーを見る</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">バックアップ</string>
     <string name="title_backup">💾 バックアップ</string>

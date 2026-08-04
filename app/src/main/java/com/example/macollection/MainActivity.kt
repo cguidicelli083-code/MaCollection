@@ -112,6 +112,7 @@ import com.example.macollection.data.GameShopCatalog
 import com.example.macollection.ui.GameViewModel
 import com.example.macollection.ui.GamerScreenBackground
 import com.example.macollection.ui.OnboardingScreen
+import com.example.macollection.ui.OnboardingScreenLight
 import com.example.macollection.ui.games.engine.GameIntroScreen
 import com.example.macollection.ui.TotalScreen
 import com.example.macollection.ui.TEST_ITEM_LIMIT
@@ -433,10 +434,22 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 }
             )
         } else {
-            OnboardingScreen(onFinish = {
-                AppPrefs.setOnboardingSeen(context)
-                showOnboarding = false
-            })
+            // Nouveau tutoriel court/visuel : ISOLÉ à l'édition "restricted" (V2test) tant qu'il
+            // n'est pas validé avec l'utilisateur — `full` et `noads` (V2SP) gardent l'ancien
+            // OnboardingScreen (14 pages) inchangé. BuildConfig.IS_TEST étant une constante de
+            // compilation, R8 supprime la variante non utilisée de chaque APK (même principe que
+            // les autres bascules IS_TEST du projet).
+            if (BuildConfig.IS_TEST) {
+                OnboardingScreenLight(onFinish = {
+                    AppPrefs.setOnboardingSeen(context)
+                    showOnboarding = false
+                })
+            } else {
+                OnboardingScreen(onFinish = {
+                    AppPrefs.setOnboardingSeen(context)
+                    showOnboarding = false
+                })
+            }
         }
         return
     }

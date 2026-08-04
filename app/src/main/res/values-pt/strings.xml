@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 Refinar a cotação no PriceCharting</string>
     <string name="edit_price_button">✏️ Editar preço</string>
     <string name="move_to_collection_button">📦 Marcar como adquirido (mover para a Coleção)</string>
+    <string name="wishlist_offers_button">🛒 Ver as ofertas</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">Cópia</string>
     <string name="title_backup">💾 Cópia de segurança</string>

@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 PriceCharting\'te fiyatı iyileştir</string>
     <string name="edit_price_button">✏️ Fiyatı düzenle</string>
     <string name="move_to_collection_button">📦 Edinildi olarak işaretle (Koleksiyona taşı)</string>
+    <string name="wishlist_offers_button">🛒 Teklifleri gör</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">Yedek</string>
     <string name="title_backup">💾 Yedekleme</string>

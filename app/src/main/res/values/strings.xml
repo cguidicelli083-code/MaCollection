@@ -218,6 +218,7 @@
     <string name="pricecharting_button">🔍 Affiner la cote sur PriceCharting</string>
     <string name="edit_price_button">✏️ Modifier le prix</string>
     <string name="move_to_collection_button">📦 Marquer comme acquis (déplacer vers la Collection)</string>
+    <string name="wishlist_offers_button">🛒 Voir les offres</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">Sauvegarde</string>
     <string name="title_backup">💾 Sauvegarde</string>
@@ -277,6 +278,23 @@
     <string name="onboarding_page13_text">Depuis les réglages (engrenage) → Sauvegarde, importe un fichier Excel (.xlsx) ou CSV d\'une collection existante, même si ses colonnes ne correspondent pas au format de l\'appli : indique simplement à quelle colonne correspond chaque champ (nom, plateforme, état, prix…), vérifie l\'aperçu des objets détectés, puis valide l\'import.</string>
     <string name="onboarding_page14_title">✅ Sélection multiple dans l’Encyclopédie</string>
     <string name="onboarding_page14_text">Dans l’Encyclopédie, appuie sur l’icône ✅ en haut à droite pour activer la sélection multiple : coche plusieurs consoles ou accessoires, puis ajoute-les tous d’un coup à ta collection ou à tes souhaits grâce au bandeau qui apparaît en bas.</string>
+
+    <!-- Nouveau tutoriel court/visuel (V2test uniquement pour l'instant) : 1 phrase courte par
+         étape au lieu d'un paragraphe, gros pictogramme animé plutôt qu'un mur de texte. -->
+    <string name="onboarding_light_step1_title">Bienvenue !</string>
+    <string name="onboarding_light_step1_text">Catalogue tes jeux, consoles et accessoires rétro en quelques secondes.</string>
+    <string name="onboarding_light_step2_title">Ajoute un objet</string>
+    <string name="onboarding_light_step2_text">Scanne un code-barres, prends une photo, ou choisis dans ta galerie — l\'IA remplit le reste.</string>
+    <string name="onboarding_light_step3_title">Explore l\'Encyclopédie</string>
+    <string name="onboarding_light_step3_text">Plus de 600 consoles à découvrir, ajoutables en un tap à ta collection ou tes souhaits.</string>
+    <string name="onboarding_light_step4_title">Souhaits &amp; valeur</string>
+    <string name="onboarding_light_step4_text">Suis les objets que tu vises, et la valeur totale de ta collection, calculée automatiquement.</string>
+    <string name="onboarding_light_step5_title">Joue &amp; gagne des points</string>
+    <string name="onboarding_light_step5_text">Des mini-jeux rétro t\'attendent dans l\'onglet Jeux — gagne des points, débloque des thèmes.</string>
+    <string name="onboarding_light_step6_title">Toujours un doute ?</string>
+    <string name="onboarding_light_step6_text">Sauvegarde, import Excel, astuces avancées : tout est dans les Réglages (⚙️), accessible à tout moment.</string>
+    <string name="onboarding_light_step7_title">C\'est parti !</string>
+    <string name="onboarding_light_step7_text">À toi de jouer — ajoute ton premier objet quand tu veux.</string>
 
     <!-- Menu réglages (icône engrenage) -->
     <string name="options_menu_title">Réglages</string>

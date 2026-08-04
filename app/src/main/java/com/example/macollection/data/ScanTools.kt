@@ -109,19 +109,40 @@ object ScanTools {
         // résultat d'une autre) : lancées en parallèle plutôt que l'une après l'autre, pour ne
         // jamais attendre plus longtemps que la plus lente des quatre (au lieu de la somme des
         // quatre, potentiellement plus de 20s si l'une d'elles est au ralenti).
+        var upcResult: UpcLookupResult? = null
         val titles = coroutineScope {
-            val upcDeferred = if (allowQuotaLimitedSources) async { runCatching { UpcItemDb.lookupTitle(barcode) }.getOrNull() } else null
+            val upcDeferred = if (allowQuotaLimitedSources) async { runCatching { UpcItemDb.lookup(barcode) }.getOrNull() } else null
             val barcodeLookupDeferred = if (allowQuotaLimitedSources) async { runCatching { BarcodeLookupApi.lookupTitle(barcode) }.getOrNull() } else null
             val barcodeSpiderDeferred = if (allowQuotaLimitedSources) async { runCatching { BarcodeSpiderApi.lookupTitle(barcode) }.getOrNull() } else null
             val ebayDeferred = async { runCatching { EbayPrices.titlesForBarcode(barcode) }.getOrNull().orEmpty() }
-            val upcTitle = upcDeferred?.await()
+            upcResult = upcDeferred?.await()
+            val upcTitle = upcResult?.title
             val barcodeLookupTitle = barcodeLookupDeferred?.await()
             val barcodeSpiderTitle = barcodeSpiderDeferred?.await()
             val ebayTitles = ebayDeferred.await()
-            Log.d("ScanBarcode", "barcode=$barcode allowQuotaLimited=$allowQuotaLimitedSources upcTitle=$upcTitle barcodeLookupTitle=$barcodeLookupTitle barcodeSpiderTitle=$barcodeSpiderTitle ebayTitles=$ebayTitles")
+            Log.d("ScanBarcode", "barcode=$barcode allowQuotaLimited=$allowQuotaLimitedSources upcTitle=$upcTitle upcCategory=${upcResult?.category} barcodeLookupTitle=$barcodeLookupTitle barcodeSpiderTitle=$barcodeSpiderTitle ebayTitles=$ebayTitles")
             listOfNotNull(upcTitle, barcodeLookupTitle, barcodeSpiderTitle) + ebayTitles
         }
         if (titles.isEmpty()) return ScanResult(barcode, null)
+
+        // Signal STRUCTUREL de console (pas un deviné depuis le texte du titre, contrairement au
+        // piège documenté plus bas avec [consoleName]) : UPCitemdb classe lui-même le produit
+        // "Electronics > Video Game Consoles" quand c'est une vraie console — un JEU y est
+        // TOUJOURS classé "Video Games", jamais "Consoles", quel que soit le nom de console
+        // mentionné dans SON titre à lui (ex. "Resident Evil 6 (Xbox 360)" reste catégorie "Video
+        // Games"). Contrairement à la reconnaissance de nom de console dans le texte du titre
+        // (qui matchait à tort presque tous les jeux, cf. plus bas), ce champ dédié à la catégorie
+        // ne se déclenche jamais sur un jeu. Vérifié en conditions réelles (console Game Boy
+        // Advance blanche, code-barres 045496712112).
+        upcResult?.let { r ->
+            if (r.category?.contains("console", ignoreCase = true) == true) {
+                matchConsolePreset(r.title)?.let { preset ->
+                    Log.d("ScanBarcode", "RESULT (UPCitemdb catégorie console) preset=${preset.name}")
+                    return ScanResult(barcode, preset.name, consolePresetName = preset.name)
+                }
+            }
+        }
+
         val title = titles.firstOrNull()
 
         // Une boîte/cartouche de JEU porte presque toujours aussi le nom de sa console (mention
@@ -164,6 +185,13 @@ object ScanTools {
                 launch {
                     val cleaned = cleanListingTitle(t).ifBlank { t }
                     var scored = firstGameMatchScored(cleaned, platformId)
+                    // Requête la plus réduite déjà tentée (met à jour au fil des replis ci-dessous) :
+                    // le repli suivant part toujours de la dernière version essayée, jamais de la
+                    // requête d'origine, sinon un chiffre isolé retiré par le 1er repli (ex. le "1"
+                    // de "Saints Row 1 EX") réapparaissait dans le 2e repli en repartant de zéro
+                    // (ex. "Saints Row EX" -> enlève "EX" -> "Saints Row 1", le "1" isolé qui bloquait
+                    // déjà tout repose problème).
+                    var reduced = cleaned
                     if (scored == null) {
                         // Repli : IGDB échoue parfois sur un seul chiffre/tiret/lettre isolée resté
                         // après nettoyage (ex. un "2" résiduel de "Playstation 2", ou un "U" résiduel
@@ -179,6 +207,23 @@ object ScanTools {
                             // chiffres/tirets isolés, donc le risque de faux positif générique
                             // ("2 pc"...) qui justifiait le seuil de 3 ne s'applique plus ici.
                             scored = firstGameMatchScored(stripped, platformId, minQueryWords = 2)
+                            reduced = stripped
+                        }
+                    }
+                    if (scored == null) {
+                        // Dernier repli : sous-titre régional absent du nom IGDB (ex. l'édition PAL
+                        // "Split/Second: Velocity" n'existe sur IGDB que sous "Split/Second", ou un
+                        // numéro de seller ajouté pour distinguer un opus non numéroté officiellement
+                        // — ex. "Saints Row 1 EX" : IGDB ne connaît que "Saints Row" tout court, sans
+                        // "1". IGDB fait une recherche par PHRASE si stricte qu'UN SEUL mot en trop
+                        // fait tomber TOUS les résultats à zéro (constaté en conditions réelles). On
+                        // ne retire que le DERNIER mot de la requête déjà la plus réduite ([reduced]),
+                        // et seulement si les tentatives précédentes ont échoué : les seuils de score
+                        // (minQueryWords=2 + ratios élevés dans gameMatchScore) restent la seule
+                        // protection contre un faux positif sur un titre plus court mais différent.
+                        val withoutLastWord = reduced.split(Regex("\\s+")).let { if (it.size > 2) it.dropLast(1) else it }.joinToString(" ").trim()
+                        if (withoutLastWord.isNotBlank() && withoutLastWord != reduced) {
+                            scored = firstGameMatchScored(withoutLastWord, platformId, minQueryWords = 2)
                         }
                     }
                     Log.d("ScanBarcode", "firstGameMatch(\"$cleaned\") -> ${scored?.first?.name} (score=${scored?.second})")
@@ -216,12 +261,33 @@ object ScanTools {
         // identifié, comme si une console avait été scannée. Sans correspondance fiable (jeu ou
         // accessoire), mieux vaut ne rien proposer (saisie manuelle) qu'un résultat sûrement faux.
         // Un VRAI code-barres de console reste identifié correctement plus haut, via
-        // [knownConsoleBarcodes] (liste dédiée, jamais par ce repli).
+        // [knownConsoleBarcodes] ou la catégorie UPCitemdb (liste/champ dédiés, jamais par ce repli).
         val suggestedName = gameMatch?.name ?: accessoryName
         val gameConsoleHint = if (gameMatch != null) consoleName else null
 
         Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName")
         return ScanResult(barcode, suggestedName, accessoryName = accessoryName, gameMatch = gameMatch, gameConsoleHint = gameConsoleHint)
+    }
+
+    /**
+     * Associe un titre déjà classé "console" par UPCitemdb (cf. ci-dessus) à une fiche du
+     * catalogue [consolePresets] : tous les mots du nom du preset doivent apparaître dans le
+     * titre, et le preset avec le PLUS de mots l'emporte (le plus spécifique disponible, ex. un
+     * coloris précis plutôt que le modèle générique) — sans correspondance, on ne force rien
+     * (repli sur la suite normale : jeu/accessoire/saisie manuelle).
+     */
+    private fun matchConsolePreset(title: String): ConsolePreset? {
+        fun words(s: String) = s.lowercase()
+            .replace(Regex("[^a-z0-9à-ÿ]+"), " ")
+            .trim()
+            .split(" ")
+            .filter { it.isNotBlank() }
+            .toSet()
+        val titleWords = words(title)
+        if (titleWords.isEmpty()) return null
+        return consolePresets
+            .filter { preset -> words(preset.name).all { it in titleWords } }
+            .maxByOrNull { words(it.name).size }
     }
 
     /**
@@ -583,7 +649,15 @@ object ScanTools {
         "vita", "psvita", "psone", "ps", "ps1", "ps2", "ps3", "ps4", "ps5", "psp",
         "3ds", "2ds", "ds", "dsi", "dsl", "nds", "gba", "gbc", "gbp", "gb", "n64",
         "snes", "nes", "megadrive", "md", "dreamcast", "dc", "saturn", "gc",
-        "x360", "xb1", "xbone", "series"
+        "x360", "xb1", "xbone", "series",
+        // "x-box" (avec tiret) : le tiret n'est pas séparé en mots par noSymbols (conservé comme
+        // caractère de mot), donc ce variant de graphie de "xbox" ne matchait pas l'entrée ci-dessus
+        // et restait comme bruit résiduel (constaté : "Kingdom Under Fire ... X-box 360 In French
+        // Language" ne retrouvait RIEN, un seul mot en trop suffisant à faire échouer IGDB).
+        "x-box", "360",
+        // Mentions de langue/version très fréquentes sur les fiches UPCitemdb/Barcode Lookup
+        // anglophones (ex. "In French Language" sur une release PAL FR), jamais un mot du titre.
+        "french", "language", "version"
     )
 
     /**
@@ -639,12 +713,21 @@ object ScanTools {
      */
     internal fun cleanListingTitle(title: String): String {
         val noBrackets = title.replace(Regex("\\[[^]]*]"), " ")
+        // Une parenthèse contenant au moins un chiffre est quasi toujours un repère technique
+        // (référence vendeur "(n°6854S)", modèle de console "(Microsoft X-box 360)", ASIN...),
+        // jamais un mot du titre du jeu lui-même — contrairement à une parenthèse SANS chiffre
+        // (ex. juste "(Nintendo Switch)"), laissée à noSymbols/listingNoiseWords ci-dessous qui la
+        // nettoie déjà correctement mot par mot. IGDB fait une recherche par PHRASE très stricte :
+        // un seul token résiduel de ce genre suffit à faire tomber tout résultat à zéro (constaté
+        // en conditions réelles : "Resident Evil 6 n 6854S" -> aucun résultat, "Resident Evil 6"
+        // seul -> trouvé immédiatement).
+        val noRefParens = Regex("\\([^)]*\\d[^)]*\\)").replace(noBrackets, " ")
         // UPCitemdb formate souvent ses titres "Nom Du Jeu by Éditeur (CODE-SKU)" : tout ce qui suit
         // " by " est du bruit (nom d'éditeur + code produit alphanumérique type ASIN), qui allonge
         // la requête sans rien apporter et fait chuter le ratio de couverture sous le seuil de
         // confiance même pour un match par ailleurs parfait (ex. "Lara Croft Temple of Osiris PS4
         // by Square Enix (B00TPWPDHO)" ne retrouvait pas "Lara Croft and the Temple of Osiris").
-        val noPublisherSuffix = Regex("(?i)\\bby\\b.*$").replace(noBrackets, "")
+        val noPublisherSuffix = Regex("(?i)\\bby\\b.*$").replace(noRefParens, "")
         val noEdition = GameCatalog.stripEditionKeywords(noPublisherSuffix)
         val noSymbols = noEdition.replace(Regex("[^\\p{L}\\p{Nd}' -]"), " ")
         val tokens = noSymbols.split(Regex("\\s+")).filter { it.isNotBlank() }

@@ -151,6 +151,7 @@
     <string name="pricecharting_button">🔍 Βελτίωση τιμής στο PriceCharting</string>
     <string name="edit_price_button">✏️ Επεξεργασία τιμής</string>
     <string name="move_to_collection_button">📦 Σήμανση ως αποκτημένο (μεταφορά στη Συλλογή)</string>
+    <string name="wishlist_offers_button">🛒 Δες τις προσφορές</string>
     <string name="tag_loose">Loose</string>
     <string name="nav_backup">Αντίγραφο</string>
     <string name="title_backup">💾 Αντίγραφο ασφαλείας</string>
