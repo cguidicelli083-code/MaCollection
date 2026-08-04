@@ -1,5 +1,974 @@
 [
   {
+    "id": "d4dbc47b2d9d5bec774962677dcb07718f2c3060",
+    "title": "The Legend of Dark Witch Episode 4 coming to PS5 on August 6",
+    "summary": "Inside System will release a PlayStation 5 version of side-scrolling action game The Legend of &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/the-legend-of-dark-witch-episode-4-coming-to-ps5-on-august-6",
+    "imageUrl": "",
+    "publishedAt": "2026-08-04T04:16:26+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999177+00:00",
+    "translations": {
+      "en": {
+        "title": "The Legend of Dark Witch Episode 4 coming to PS5 on August 6",
+        "summary": "Inside System will release a PlayStation 5 version of side-scrolling action game The Legend of &hellip;"
+      },
+      "fr": {
+        "title": "L'épisode 4 de The Legend of Dark Witch arrive sur PS5 le 6 août",
+        "summary": "Inside System sortira une version PlayStation 5 du jeu d'action à défilement latéral The Legend of &hellip;"
+      },
+      "es": {
+        "title": "El episodio 4 de The Legend of Dark Witch llegará a PS5 el 6 de agosto",
+        "summary": "Inside System lanzará una versión para PlayStation 5 del juego de acción de desplazamiento lateral The Legend of &hellip;"
+      },
+      "it": {
+        "title": "L'episodio 4 di The Legend of Dark Witch sarà disponibile su PS5 il 6 agosto",
+        "summary": "Inside System rilascerà una versione per PlayStation 5 del gioco d'azione a scorrimento laterale The Legend of &hellip;"
+      },
+      "de": {
+        "title": "Episode 4 von The Legend of Dark Witch erscheint am 6. August für PS5",
+        "summary": "Inside System wird eine PlayStation 5-Version des Side-Scrolling-Actionspiels The Legend of &hellip; veröffentlichen."
+      },
+      "pt": {
+        "title": "The Legend of Dark Witch Episódio 4 chegando ao PS5 em 6 de agosto",
+        "summary": "Inside System lançará uma versão para PlayStation 5 do jogo de ação side-scrolling The Legend of &hellip;"
+      },
+      "ru": {
+        "title": "Эпизод 4 The Legend of Dark Witch выйдет на PS5 6 августа",
+        "summary": "Inside System выпустит версию экшена The Legend of &hellip; с боковой прокруткой для PlayStation 5."
+      },
+      "el": {
+        "title": "Το The Legend of Dark Witch Episode 4 έρχεται στο PS5 στις 6 Αυγούστου",
+        "summary": "Το Inside System θα κυκλοφορήσει μια έκδοση PlayStation 5 του παιχνιδιού δράσης side-scrolling The Legend of &hellip;"
+      },
+      "tr": {
+        "title": "The Legend of Dark Witch 4. Bölüm 6 Ağustos'ta PS5'e geliyor",
+        "summary": "Inside System, yandan kaydırmalı aksiyon oyunu The Legend of &hellip;'in PlayStation 5 versiyonunu yayınlayacak."
+      },
+      "ja": {
+        "title": "レジェンド オブ ダークウィッチ エピソード 4 が 8 月 6 日に PS5 に登場",
+        "summary": "インサイドシステムは、横スクロールアクションゲーム『The Legend of &hellip;』のPlayStation 5版を発売します。"
+      },
+      "zh": {
+        "title": "《黑暗女巫传奇》第 4 集将于 8 月 6 日登陆 PS5",
+        "summary": "Inside System 将发布横向卷轴动作游戏 The Legend of 的 PlayStation 5 版本……"
+      }
+    }
+  },
+  {
+    "id": "083f9a1f4bd3e9fbbbe9d0ebd71d48fab3e331e1",
+    "title": "Two Cancelled Virtual Boy Games Join 'Nintendo Classics' Today",
+    "summary": "Retro revival. : Since joining the Nintendo Classics service earlier this year, the Virtual Boy library has been receiving regular game updates. Read the full article on nintendolife.com",
+    "category": "REISSUE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/two-cancelled-virtual-boy-games-join-nintendo-classics-today",
+    "imageUrl": "https://images.nintendolife.com/fc473debfb913/large.jpg",
+    "publishedAt": "2026-08-04T00:30:00+00:00",
+    "scrapedAt": "2026-08-04T05:54:47.562540+00:00",
+    "translations": {
+      "en": {
+        "title": "Two Cancelled Virtual Boy Games Join 'Nintendo Classics' Today",
+        "summary": "Retro revival. : Since joining the Nintendo Classics service earlier this year, the Virtual Boy library has been receiving regular game updates. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Deux jeux Virtual Boy annulés rejoignent les « Nintendo Classics » aujourd'hui",
+        "summary": "Renaissance du rétro. : Depuis qu'elle a rejoint le service Nintendo Classics plus tôt cette année, la bibliothèque Virtual Boy a reçu des mises à jour régulières des jeux. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Dos juegos virtuales para niños cancelados se unen hoy a los 'Clásicos de Nintendo'",
+        "summary": "Renacimiento retro. : Desde que se unió al servicio Nintendo Classics a principios de este año, la biblioteca de Virtual Boy ha estado recibiendo actualizaciones periódicas de juegos. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Due giochi per ragazzi virtuali annullati si uniscono oggi a \"Nintendo Classics\".",
+        "summary": "Revival retrò. : Da quando si è unito al servizio Nintendo Classics all'inizio di quest'anno, la libreria Virtual Boy ha ricevuto aggiornamenti regolari dei giochi. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Zwei abgesagte Virtual Boy-Spiele schließen sich heute den „Nintendo Classics“ an",
+        "summary": "Retro-Revival. : Seit dem Beitritt zum Nintendo Classics-Dienst Anfang des Jahres erhält die Virtual Boy-Bibliothek regelmäßig Spielaktualisierungen. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Dois jogos virtuais de meninos cancelados juntam-se hoje aos ‘Nintendo Classics’",
+        "summary": "Renascimento retrô. : Desde que ingressou no serviço Nintendo Classics no início deste ano, a biblioteca Virtual Boy tem recebido atualizações regulares de jogos. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Две отмененные игры Virtual Boy присоединяются сегодня к Nintendo Classics",
+        "summary": "Ретро возрождение. : С момента присоединения к сервису Nintendo Classics в начале этого года библиотека Virtual Boy регулярно получает обновления игр. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Δύο εικονικά παιχνίδια για αγόρια που ακυρώθηκαν, εγγραφείτε στο «Nintendo Classics» σήμερα",
+        "summary": "Ρετρό αναβίωση. : Από τότε που έγινε μέλος της υπηρεσίας Nintendo Classics νωρίτερα φέτος, η βιβλιοθήκη Virtual Boy λαμβάνει τακτικές ενημερώσεις παιχνιδιών. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "İptal Edilen İki Sanal Çocuk Oyunu Bugün 'Nintendo Classics'e Katılıyor",
+        "summary": "Retro canlanma. : Bu yılın başlarında Nintendo Classics hizmetine katıldığından beri Virtual Boy kütüphanesi düzenli olarak oyun güncellemeleri alıyor. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "キャンセルされた 2 つのバーチャルボーイ ゲームが本日「ニンテンドー クラシック」に参加",
+        "summary": "レトロ復活。 ：今年初めにニンテンドー クラシック サービスに参加して以来、バーチャルボーイ ライブラリは定期的にゲームのアップデートを受信して​​います。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "两款被取消的 Virtual Boy 游戏今天加入“任天堂经典”",
+        "summary": "复古复兴。 ：自从今年早些时候加入 Nintendo Classics 服务以来，Virtual Boy 库一直在定期接收游戏更新。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
+    "id": "5b5ee4a2b597ab8cbf81dc46c85eb408863ba962",
+    "title": "1 Year 5 Months Later, Customers Still Haven't Received Their Croc Remastered Physical Order",
+    "summary": "&#x1f91d; Don&apos;t want to see ads? Become a premium member for $3 a month and support an independent publication today! There seems to be a trend in the retro gaming space recently. One where customers of physical re-releases and limited edition versions get disrespected, so much so",
+    "category": "COLLECTOR_PACK",
+    "sourceName": "RetroDodo",
+    "sourceUrl": "https://retrododo.com/1-year-5-months-later-customers-still-havent-received-their-croc-remastered-physical-order/",
+    "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/CROC-SCAM.webp",
+    "publishedAt": "2026-08-03T19:44:11+00:00",
+    "scrapedAt": "2026-08-04T05:54:33.026831+00:00",
+    "translations": {
+      "en": {
+        "title": "1 Year 5 Months Later, Customers Still Haven't Received Their Croc Remastered Physical Order",
+        "summary": "&#x1f91d; Don&apos;t want to see ads? Become a premium member for $3 a month and support an independent publication today! There seems to be a trend in the retro gaming space recently. One where customers of physical re-releases and limited edition versions get disrespected, so much so"
+      },
+      "fr": {
+        "title": "1 an et 5 mois plus tard, les clients n'ont toujours pas reçu leur commande physique Croc Remastered",
+        "summary": "&#x1f91d; Vous ne souhaitez pas voir de publicités ? Devenez membre premium pour 3 $ par mois et soutenez une publication indépendante dès aujourd’hui ! Il semble y avoir une tendance dans le domaine des jeux rétro récemment. Celui où les clients des rééditions physiques et des versions en édition limitée ne sont pas respectés, à tel point"
+      },
+      "es": {
+        "title": "1 año y 5 meses después, los clientes aún no han recibido su pedido físico de Croc Remastered",
+        "summary": "&#x1f91d; ¿No quieres ver anuncios? ¡Conviértase en miembro premium por $3 al mes y apoye una publicación independiente hoy! Parece haber una tendencia recientemente en el espacio de los juegos retro. Uno en el que a los clientes de relanzamientos físicos y versiones de edición limitada se les falta el respeto, tanto es así."
+      },
+      "it": {
+        "title": "1 anno e 5 mesi dopo, i clienti non hanno ancora ricevuto l'ordine fisico rimasterizzato di Croc",
+        "summary": "&#x1f91d; Non vuoi vedere gli annunci? Diventa un membro premium per $ 3 al mese e sostieni una pubblicazione indipendente oggi stesso! Sembra che recentemente ci sia una tendenza nello spazio dei giochi retrò. Uno in cui i clienti delle riedizioni fisiche e delle versioni in edizione limitata vengono mancati di rispetto, tanto"
+      },
+      "de": {
+        "title": "1 Jahr und 5 Monate später haben Kunden ihre physische Croc Remastered-Bestellung immer noch nicht erhalten",
+        "summary": "&#x1f91d; Sie möchten keine Werbung sehen? Werden Sie Premium-Mitglied für 3 US-Dollar pro Monat und unterstützen Sie noch heute eine unabhängige Publikation! Es scheint in letzter Zeit einen Trend im Retro-Gaming-Bereich zu geben. Eines, bei dem Kunden von physischen Neuveröffentlichungen und limitierten Auflagen respektlos behandelt werden, und zwar im wahrsten Sinne des Wortes"
+      },
+      "pt": {
+        "title": "1 ano, 5 meses depois, os clientes ainda não receberam seu pedido físico remasterizado do Croc",
+        "summary": "&#x1f91d; Não quer ver anúncios? Torne-se um membro premium por US$ 3 por mês e apoie uma publicação independente hoje mesmo! Parece haver uma tendência no espaço de jogos retrô recentemente. Aquele onde os clientes de relançamentos físicos e versões de edição limitada são desrespeitados, tanto"
+      },
+      "ru": {
+        "title": "1 год и 5 месяцев спустя клиенты все еще не получили физический заказ на обновленную версию Croc",
+        "summary": "&#x1f91d; Не хотите видеть рекламу? Станьте премиум-участником за 3 доллара в месяц и поддержите независимое издание уже сегодня! Кажется, в последнее время в пространстве ретро-игр наметилась тенденция. Тот, где покупатели физических переизданий и версий с ограниченным тиражом подвергаются неуважению, настолько сильному"
+      },
+      "el": {
+        "title": "1 έτος και 5 μήνες αργότερα, οι πελάτες δεν έχουν λάβει ακόμη τη φυσική παραγγελία τους Croc Remastered",
+        "summary": "&#x1f91d; Δεν θέλετε να βλέπετε διαφημίσεις; Γίνετε premium μέλος με 3 $ το μήνα και υποστηρίξτε μια ανεξάρτητη δημοσίευση σήμερα! Φαίνεται να υπάρχει μια τάση στον χώρο των ρετρό παιχνιδιών πρόσφατα. Ένα μέρος όπου οι πελάτες φυσικών επανακυκλοφοριών και εκδόσεων περιορισμένης έκδοσης δεν γίνονται σεβαστοί, τόσο πολύ"
+      },
+      "tr": {
+        "title": "1 Yıl 5 Ay Sonra Müşteriler Croc Remastered Fiziksel Siparişlerini Hala Alamadılar",
+        "summary": "&#x1f91d; Reklam görmek istemiyor musunuz? Aylık 3$ karşılığında premium üye olun ve bugün bağımsız bir yayını destekleyin! Son zamanlarda retro oyun alanında bir trend var gibi görünüyor. Fiziksel yeniden sürümlerin ve sınırlı sürüm sürümlerinin müşterilerinin saygısızlığa uğradığı bir yer, öyle ki"
+      },
+      "ja": {
+        "title": "1 年 5 か月経っても、顧客はまだ Croc Remastered 物理注文を受け取っていません",
+        "summary": "&#x1f91d;広告を見たくないですか?月額 3 ドルのプレミアム メンバーになって、今すぐ独立出版物をサポートしてください!最近、レトロゲーム界隈が流行っているようです。物理的な再リリース版や限定版の顧客が軽視されるような状況です。"
+      },
+      "zh": {
+        "title": "1 年 5 个月后，顾客仍未收到 Croc Remastered 实体订单",
+        "summary": "&#x1f91d;不想看广告？每月支付 3 美元即可成为高级会员并支持独立出版物！最近，复古游戏领域似乎出现了一种趋势。物理重新发行版和限量版版本的客户受到不尊重的一种情况，如此严重"
+      }
+    }
+  },
+  {
+    "id": "fa9c30dc92620c2bb09f847372cdae336a5024d5",
+    "title": "Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles",
+    "summary": "ActuGaming.net Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles Après avoir confirmé son lancement durant l’hiver, Koei Tecmo précise désormais la date de sortie [&#8230;] L'article Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles est disponible sur ActuGaming.net",
+    "category": "GAME_RELEASE",
+    "sourceName": "ActuGaming",
+    "sourceUrl": "https://www.actugaming.net/attack-on-titan-3-date-sortie-10-decembre-814240/",
+    "imageUrl": "https://static.actugaming.net/media/2026/08/attack-on-titan-3-precommande.jpg",
+    "publishedAt": "2026-08-03T17:33:02+00:00",
+    "scrapedAt": "2026-08-04T05:57:05.190715+00:00",
+    "translations": {
+      "fr": {
+        "title": "Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles",
+        "summary": "ActuGaming.net Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles Après avoir confirmé son lancement durant l’hiver, Koei Tecmo précise désormais la date de sortie [&#8230;] L'article Attack on Titan 3 sortira le 10 décembre prochain sur PC et consoles est disponible sur ActuGaming.net"
+      },
+      "en": {
+        "title": "Attack on Titan 3 will be released on December 10 on PC and consoles",
+        "summary": "ActuGaming.net Attack on Titan 3 will be released on December 10 on PC and consoles After confirming its launch during the winter, Koei Tecmo now specifies the release date [&#8230;] The article Attack on Titan 3 will be released on December 10 on PC and consoles is available on ActuGaming.net"
+      },
+      "es": {
+        "title": "Attack on Titan 3 se lanzará el 10 de diciembre en PC y consolas",
+        "summary": "ActuGaming.net Attack on Titan 3 se lanzará el 10 de diciembre en PC y consolas Después de confirmar su lanzamiento durante el invierno, Koei Tecmo ahora especifica la fecha de lanzamiento [&#8230;] El artículo Attack on Titan 3 se lanzará el 10 de diciembre en PC y consolas está disponible en ActuGaming.net"
+      },
+      "it": {
+        "title": "Attack on Titan 3 uscirà il 10 dicembre su PC e console",
+        "summary": "ActuGaming.net Attack on Titan 3 uscirà il 10 dicembre su PC e console Dopo aver confermato il suo lancio durante l'inverno, Koei Tecmo specifica ora la data di uscita [&#8230;] L'articolo Attack on Titan 3 uscirà il 10 dicembre su PC e console è disponibile su ActuGaming.net"
+      },
+      "de": {
+        "title": "Attack on Titan 3 erscheint am 10. Dezember für PC und Konsolen",
+        "summary": "ActuGaming.net Attack on Titan 3 wird am 10. Dezember auf PC und Konsolen veröffentlicht Nachdem Koei Tecmo den Start im Winter bestätigt hat, gibt er nun das Veröffentlichungsdatum an [&#8230;] Der Artikel Attack on Titan 3 wird am 10. Dezember auf PC und Konsolen veröffentlicht ist auf ActuGaming.net verfügbar"
+      },
+      "pt": {
+        "title": "Attack on Titan 3 será lançado em 10 de dezembro para PC e consoles",
+        "summary": "ActuGaming.net Attack on Titan 3 será lançado em 10 de dezembro para PC e consoles Depois de confirmar seu lançamento durante o inverno, Koei Tecmo agora especifica a data de lançamento [&#8230;] O artigo Attack on Titan 3 será lançado em 10 de dezembro para PC e consoles está disponível em ActuGaming.net"
+      },
+      "ru": {
+        "title": "Attack on Titan 3 выйдет 10 декабря на ПК и консолях",
+        "summary": "ActuGaming.net Attack on Titan 3 выйдет 10 декабря на ПК и консолях. После подтверждения запуска зимой Koei Tecmo теперь указывает дату релиза [&#8230;] Статья Attack on Titan 3 выйдет 10 декабря на ПК и консолях доступна на ActuGaming.net"
+      },
+      "el": {
+        "title": "Το Attack on Titan 3 θα κυκλοφορήσει στις 10 Δεκεμβρίου σε PC και κονσόλες",
+        "summary": "Το ActuGaming.net Attack on Titan 3 θα κυκλοφορήσει στις 10 Δεκεμβρίου σε PC και κονσόλες Μετά την επιβεβαίωση της κυκλοφορίας του κατά τη διάρκεια του χειμώνα, το Koei Tecmo καθορίζει τώρα την ημερομηνία κυκλοφορίας [&#8230;] Το άρθρο Το Attack on Titan 3 θα κυκλοφορήσει στις 10 Δεκεμβρίου σε υπολογιστή και οι κονσόλες είναι διαθέσιμες στο ActuGaming.net"
+      },
+      "tr": {
+        "title": "Attack on Titan 3, 10 Aralık'ta PC ve konsollara çıkacak",
+        "summary": "ActuGaming.net Attack on Titan 3 PC ve konsollarda 10 Aralık'ta yayınlanacak Kış aylarında çıkışını onayladıktan sonra Koei Tecmo şimdi çıkış tarihini belirliyor [&#8230;] Attack on Titan 3'ün PC ve konsollarda 10 Aralık'ta yayınlanacak makalesi ActuGaming.net'te mevcut"
+      },
+      "ja": {
+        "title": "『進撃の巨人 3』は PC とコンソールで 12 月 10 日にリリースされます",
+        "summary": "ActuGaming.net 進撃の巨人 3 は PC とコンソールで 12 月 10 日にリリースされます 冬中の発売を確認した後、コーエーテクモはリリース日を指定しました [&#8230;] 記事「進撃の巨人 3 は PC とコンソールで 12 月 10 日にリリースされます」が ActuGaming.net で入手可能です"
+      },
+      "zh": {
+        "title": "《进击的泰坦 3》将于 12 月 10 日在 PC 和游戏机上发布",
+        "summary": "ActuGaming.net 《进击的巨人 3》将于 12 月 10 日在 PC 和游戏机上发布 在确认冬季推出后，Koei Tecmo 现在指定了发布日期 [&#8230;] 《进击的巨人 3》将于 12 月 10 日在 PC 和游戏机上发布一文，可在 ActuGaming.net 上找到"
+      }
+    }
+  },
+  {
+    "id": "5f0abecfd45ae87e561522696dfe2ee07f689cf0",
+    "title": "Cyberpunk shopkeeping simulator Probably Stolen announced for PC",
+    "summary": "Publisher tinyBuild and developer Questing Goose Studio have announced Probably Stolen, a cyberpunk shopkeeping simulator &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/cyberpunk-shopkeeping-simulator-probably-stolen-announced-for-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-03T17:00:30+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999239+00:00",
+    "translations": {
+      "en": {
+        "title": "Cyberpunk shopkeeping simulator Probably Stolen announced for PC",
+        "summary": "Publisher tinyBuild and developer Questing Goose Studio have announced Probably Stolen, a cyberpunk shopkeeping simulator &hellip;"
+      },
+      "fr": {
+        "title": "Le simulateur de magasinage Cyberpunk Probably Stolen annoncé pour PC",
+        "summary": "L'éditeur tinyBuild et le développeur Questing Goose Studio ont annoncé Probably Stolen, un simulateur de magasinage cyberpunk &hellip;"
+      },
+      "es": {
+        "title": "El simulador de comercio Cyberpunk Probably Stolen anunciado para PC",
+        "summary": "El editor tinyBuild y el desarrollador Questing Goose Studio han anunciado Probably Stolen, un simulador de comercio cyberpunk &hellip;"
+      },
+      "it": {
+        "title": "Simulatore di negozi cyberpunk Probabilmente Stolen annunciato per PC",
+        "summary": "L'editore tinyBuild e lo sviluppatore Questing Goose Studio hanno annunciato Probabilmente Stolen, un simulatore di negozi cyberpunk &hellip;"
+      },
+      "de": {
+        "title": "Cyberpunk-Ladensimulator „Wahrscheinlich Stolen“ für PC angekündigt",
+        "summary": "Der Herausgeber tinyBuild und der Entwickler Questing Goose Studio haben „Probly Stolen“ angekündigt, einen Cyberpunk-Ladensimulator &hellip;"
+      },
+      "pt": {
+        "title": "Simulador de loja Cyberpunk Provavelmente Roubado anunciado para PC",
+        "summary": "A editora tinyBuild e a desenvolvedora Questing Goose Studio anunciaram Provavelmente Stolen, um simulador de loja cyberpunk &hellip;"
+      },
+      "ru": {
+        "title": "Киберпанк-симулятор торговца Вероятно Stolen анонсирован для ПК",
+        "summary": "Издатель tinyBuild и разработчик Questing Goose Studio анонсировали «Вероятно Stolen», симулятор торговцев в стиле киберпанк &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε ο προσομοιωτής Cyberpunk shopkeeping Probably Stolen για υπολογιστή",
+        "summary": "Ο εκδότης tinyBuild και ο προγραμματιστής Questing Goose Studio ανακοίνωσαν το Probably Stolen, έναν προσομοιωτή καταστημάτων στον κυβερνοπάνκ &hellip;"
+      },
+      "tr": {
+        "title": "Cyberpunk mağazacılık simülatörü Muhtemelen Çalıntı PC için duyuruldu",
+        "summary": "Yayıncı TinyBuild ve geliştirici Questing Goose Studio, siberpunk mağazacılık simülatörü Muhtemelen Stolen'ı duyurdu &hellip;"
+      },
+      "ja": {
+        "title": "サイバーパンク商店街シミュレーター「おそらく盗まれた」がPC向けに発表",
+        "summary": "パブリッシャー tinyBuild とデベロッパー Questing Goose Studio は、サイバーパンクな商店街シミュレーター「Everyone」を発表しました。"
+      },
+      "zh": {
+        "title": "赛博朋克店员模拟器《可能被盗》宣布推出 PC 版",
+        "summary": "发行商tinyBuild 和开发商Questing Goose Studio 宣布推出一款赛博朋克店面模拟器“Probability Stolen”……"
+      }
+    }
+  },
+  {
+    "id": "94c5f52e4dfc4a5b8ecd4e009e66f0c7c4cedda3",
+    "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+    "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/attack-on-titan-3-avoids-the-gta-6-chaos-on-ps5-locks-in-december-release-date",
+    "imageUrl": "https://images.pushsquare.com/81c887d46cdb8/large.jpg",
+    "publishedAt": "2026-08-03T16:15:00+00:00",
+    "scrapedAt": "2026-08-04T05:55:14.849505+00:00",
+    "translations": {
+      "en": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "es": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "it": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "de": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "pt": {
+        "title": "Attack on Titan 3 evita o caos do GTA 6 no PS5, trava na data de lançamento em dezembro",
+        "summary": "Além das paredes. Attack on Titan 3 será realmente lançado este ano – mas não entrará em briga com GTA 6, ou qualquer um dos muitos jogos PS5 que serão lançados em setembro e outubro. Em vez disso, optou-se por uma data de 10 de dezembro, o que me parece uma decisão bastante sábia. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "Attack on Titan 3 позволяет избежать хаоса GTA 6 на PS5 и фиксирует дату выпуска в декабре",
+        "summary": "За стенами. Attack on Titan 3 действительно выйдет в этом году, но она не будет конкурировать с GTA 6 или какой-либо из многих игр для PS5, которые выйдут в сентябре и октябре. Вместо этого была выбрана дата 10 декабря, что мне кажется довольно мудрым решением. Полную версию статьи можно прочитать на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "tr": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "ja": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      },
+      "zh": {
+        "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
+        "summary": "Beyond the walls. Attack on Titan 3 will indeed release this year — but it's not going to get into a fight with GTA 6 , or any of the many PS5 games that are launching in September and October. Instead, it's opted for a 10th December date, which seems like a pretty wise decision to me. Read the full article on pushsquare.com"
+      }
+    }
+  },
+  {
+    "id": "1b67ed340acc3f3e3b94b325bcbbbb7789a53482",
+    "title": "Attack on Titan 3 Launches on December 10th for $70",
+    "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2.",
+    "category": "GAME_RELEASE",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/attack-on-titan-3-launches-on-december-10th-for-70",
+    "imageUrl": "",
+    "publishedAt": "2026-08-03T15:24:48+00:00",
+    "scrapedAt": "2026-08-04T05:56:43.450739+00:00",
+    "translations": {
+      "en": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "fr": {
+        "title": "L'Attaque des Titans 3 sera lancé le 10 décembre pour 70 $",
+        "summary": "Vivez toute la saga lorsque la suite d'Omega Force sera lancée cet hiver sur Xbox Series X/S, PS5, PC et Nintendo Switch 2."
+      },
+      "es": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "it": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "de": {
+        "title": "Attack on Titan 3 erscheint am 10. Dezember für 70 $",
+        "summary": "Erleben Sie die gesamte Saga, wenn die Fortsetzung von Omega Force diesen Winter auf Xbox Series X/S, PS5, PC und Nintendo Switch 2 erscheint."
+      },
+      "pt": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "ru": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "el": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "tr": {
+        "title": "Attack on Titan 3 Launches on December 10th for $70",
+        "summary": "Experience the entire saga when Omega Force's sequel launches this Winter on Xbox Series X/S, PS5, PC, and Nintendo Switch 2."
+      },
+      "ja": {
+        "title": "『進撃の巨人 3』は 12 月 10 日に 70 ドルで発売",
+        "summary": "オメガ フォースの続編がこの冬、Xbox Series X/S、PS5、PC、Nintendo Switch 2 で発売され、物語全体を体験してください。"
+      },
+      "zh": {
+        "title": "《进击的巨人 3》将于 12 月 10 日发售，售价 70 美元",
+        "summary": "当 Omega Force 的续作今年冬天在 Xbox Series X/S、PS5、PC 和 Nintendo Switch 2 上推出时，体验整个传奇故事。"
+      }
+    }
+  },
+  {
+    "id": "16a27dab1385378a6b43d02e05b6473e63a6c8f6",
+    "title": "New Patch Unlocks WipEout 3's Euro-Only 'Special Edition' Content For U.S. And Japanese Players",
+    "summary": "Speed boost. WipEout fans will be aware that the third game in the series launched in two different versions; the standard edition arrived in all territories, but the enhanced 'Special Edition' was exclusive to Europe. This updated version showcased altered physics, AI fixes, new circuits and four-person multiplayer via two consoles and two televisions. On the downside, because it was intended for PAL regions, the game runs slower. Read the full article on timeextension.com",
+    "category": "COLLECTOR_PACK",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/08/new-patch-unlocks-wipeout-3s-euro-only-special-edition-content-for-u-s-and-japanese-players",
+    "imageUrl": "https://images.timeextension.com/09bd8e26d3fbb/large.jpg",
+    "publishedAt": "2026-08-03T14:30:00+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.758236+00:00",
+    "translations": {
+      "en": {
+        "title": "New Patch Unlocks WipEout 3's Euro-Only 'Special Edition' Content For U.S. And Japanese Players",
+        "summary": "Speed boost. WipEout fans will be aware that the third game in the series launched in two different versions; the standard edition arrived in all territories, but the enhanced 'Special Edition' was exclusive to Europe. This updated version showcased altered physics, AI fixes, new circuits and four-person multiplayer via two consoles and two televisions. On the downside, because it was intended for PAL regions, the game runs slower. Read the full article on timeextension.com"
+      },
+      "fr": {
+        "title": "Un nouveau patch débloque le contenu « édition spéciale » de WipEout 3 uniquement en Europe pour les joueurs américains et japonais",
+        "summary": "Augmentation de la vitesse. Les fans de WipEout sauront que le troisième jeu de la série est lancé en deux versions différentes ; l'édition standard est arrivée dans tous les territoires, mais l'« édition spéciale » améliorée était exclusive à l'Europe. Cette version mise à jour présentait une physique modifiée, des correctifs d'IA, de nouveaux circuits et un mode multijoueur à quatre via deux consoles et deux téléviseurs. Par contre, comme il était destiné aux régions PAL, le jeu tourne plus lentement. Lire l'article complet sur timeextension.com"
+      },
+      "es": {
+        "title": "El nuevo parche desbloquea el contenido de la 'edición especial' exclusiva para Europa de WipEout 3 para jugadores estadounidenses y japoneses",
+        "summary": "Aumento de velocidad. Los fanáticos de WipEout sabrán que el tercer juego de la serie se lanzó en dos versiones diferentes; la edición estándar llegó a todos los territorios, pero la 'Edición Especial' mejorada era exclusiva de Europa. Esta versión actualizada mostró física alterada, correcciones de IA, nuevos circuitos y modo multijugador para cuatro personas a través de dos consolas y dos televisores. La desventaja es que, debido a que fue diseñado para regiones PAL, el juego se ejecuta más lento. Lea el artículo completo en timeextension.com"
+      },
+      "it": {
+        "title": "La nuova patch sblocca i contenuti \"Special Edition\" di WipEout 3 riservati esclusivamente ai giocatori statunitensi e giapponesi",
+        "summary": "Aumento di velocità. I fan di WipEout sapranno che il terzo gioco della serie è stato lanciato in due diverse versioni; l'edizione standard è arrivata in tutti i territori, ma la \"Special Edition\" migliorata era esclusiva per l'Europa. Questa versione aggiornata mostrava fisica modificata, correzioni IA, nuovi circuiti e multiplayer per quattro persone tramite due console e due televisori. Lo svantaggio è che, essendo destinato alle regioni PAL, il gioco funziona più lentamente. Leggi l'articolo completo su timeextension.com"
+      },
+      "de": {
+        "title": "Neuer Patch schaltet die nur für Europa erhältlichen „Special Edition“-Inhalte von WipEout 3 für US-amerikanische und japanische Spieler frei",
+        "summary": "Geschwindigkeitsschub. WipEout-Fans werden wissen, dass das dritte Spiel der Serie in zwei verschiedenen Versionen erschien; Die Standardausgabe war in allen Gebieten erhältlich, die erweiterte „Sonderausgabe“ war jedoch exklusiv in Europa erhältlich. Diese aktualisierte Version zeigte veränderte Physik, KI-Korrekturen, neue Schaltkreise und einen Vier-Personen-Mehrspielermodus über zwei Konsolen und zwei Fernseher. Der Nachteil ist, dass das Spiel langsamer läuft, da es für PAL-Regionen gedacht war. Lesen Sie den vollständigen Artikel auf timeextension.com"
+      },
+      "pt": {
+        "title": "Novo patch desbloqueia conteúdo de ‘edição especial’ somente euro do WipEout 3 para jogadores dos EUA e do Japão",
+        "summary": "Aumento de velocidade. Os fãs de WipEout saberão que o terceiro jogo da série foi lançado em duas versões diferentes; a edição padrão chegou a todos os territórios, mas a 'Edição Especial' aprimorada era exclusiva da Europa. Esta versão atualizada apresentou física alterada, correções de IA, novos circuitos e multijogador para quatro pessoas por meio de dois consoles e duas televisões. Por outro lado, por ser destinado a regiões PAL, o jogo roda mais devagar. Leia o artigo completo em timeextension.com"
+      },
+      "ru": {
+        "title": "Новый патч открывает доступ к европейскому контенту WipEout 3 для игроков из США и Японии",
+        "summary": "Повышение скорости. Поклонники WipEout знают, что третья игра в серии выпущена в двух разных версиях; стандартная версия поступила на все территории, но расширенная «Специальная версия» была эксклюзивной для Европы. В этой обновленной версии была продемонстрирована измененная физика, исправления искусственного интеллекта, новые схемы и многопользовательская игра для четырех человек на двух консолях и двух телевизорах. С другой стороны, поскольку игра была предназначена для регионов PAL, игра работает медленнее. Полную версию статьи можно прочитать на сайте timeextension.com."
+      },
+      "el": {
+        "title": "Νέα ενημερωμένη έκδοση κώδικα ξεκλειδώνει το περιεχόμενο «Ειδική Έκδοση» μόνο για ευρώ του WipEout 3 για παίκτες από τις ΗΠΑ και την Ιάπωνα",
+        "summary": "Αύξηση ταχύτητας. Οι θαυμαστές του WipEout θα γνωρίζουν ότι το τρίτο παιχνίδι της σειράς κυκλοφόρησε σε δύο διαφορετικές εκδόσεις. η τυπική έκδοση έφτασε σε όλες τις περιοχές, αλλά η βελτιωμένη «Ειδική Έκδοση» ήταν αποκλειστική για την Ευρώπη. Αυτή η ενημερωμένη έκδοση παρουσίασε τροποποιημένη φυσική, επιδιορθώσεις τεχνητής νοημοσύνης, νέα κυκλώματα και παιχνίδι πολλών παικτών τεσσάρων ατόμων μέσω δύο κονσολών και δύο τηλεοράσεων. Στα αρνητικά, επειδή προοριζόταν για περιοχές PAL, το παιχνίδι τρέχει πιο αργά. Διαβάστε το πλήρες άρθρο στο timeextension.com"
+      },
+      "tr": {
+        "title": "Yeni Yama, WipEout 3'ün ABD ve Japon Oyunculara Yönelik Yalnızca Avrupa'ya Özel 'Özel Sürüm' İçeriğinin Kilidini Açıyor",
+        "summary": "Hız artışı. WipEout hayranları serinin üçüncü oyununun iki farklı versiyonla piyasaya sürüldüğünü bilecekler; standart sürüm tüm bölgelere ulaştı, ancak geliştirilmiş 'Özel Sürüm' Avrupa'ya özeldi. Bu güncellenmiş sürüm, iki konsol ve iki televizyon aracılığıyla değiştirilmiş fizik, yapay zeka düzeltmeleri, yeni devreler ve dört kişilik çok oyunculu oyunu sergiledi. Olumsuz tarafı ise PAL bölgelerine yönelik olması nedeniyle oyun daha yavaş çalışıyor. Makalenin tamamını timeextension.com'da okuyun"
+      },
+      "ja": {
+        "title": "新しいパッチにより、米国と日本のプレイヤー向けに WipEout 3 のユーロ限定「スペシャル エディション」コンテンツのロックが解除されます",
+        "summary": "スピードブースト。 WipEout ファンは、シリーズの 3 番目のゲームが 2 つの異なるバージョンで発売されたことをご存知でしょう。標準版はすべての地域で配信されましたが、強化された「特別版」はヨーロッパ限定でした。この更新されたバージョンでは、物理学の変更、AI の修正、新しい回路、および 2 台のコンソールと 2 台のテレビを介した 4 人マルチプレイヤーが紹介されました。欠点としては、PAL 地域向けに作られているため、ゲームの動作が遅くなるという点です。 timeextension.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "新补丁为美国和日本玩家解锁了 WipEout 3 仅限欧洲的“特别版”内容",
+        "summary": "速度提升。 WipEout 粉丝会知道该系列的第三款游戏以两个不同的版本推出；标准版已在所有地区上市，但增强版“特别版”仅在欧洲发售。这个更新版本展示了物理变化、人工智能修复、新电路和通过两个控制台和两台电视进行的四人多人游戏。缺点是，由于它是针对 PAL 地区的，因此游戏运行速度较慢。在 timeextension.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "38845e2748987f7d3c6ecdc9ed8513b4bc7c806a",
+    "title": "Ladder-themed precision platformer Ladder Lad announced for Switch, PC",
+    "summary": "Publisher and developer BUCK Games, and developer Antfood have announced Ladder Lad, a &#8220;100 percent &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/ladder-themed-precision-platformer-ladder-lad-announced-for-switch-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-03T14:20:29+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999311+00:00",
+    "translations": {
+      "en": {
+        "title": "Ladder-themed precision platformer Ladder Lad announced for Switch, PC",
+        "summary": "Publisher and developer BUCK Games, and developer Antfood have announced Ladder Lad, a &#8220;100 percent &hellip;"
+      },
+      "fr": {
+        "title": "Ladder Lad, un jeu de plateforme de précision sur le thème de l'échelle, annoncé sur Switch et PC",
+        "summary": "L'éditeur et développeur BUCK Games et le développeur Antfood ont annoncé Ladder Lad, un jeu « 100 % &hellip;"
+      },
+      "es": {
+        "title": "Se anuncia el juego de plataformas de precisión Ladder Lad para Switch y PC",
+        "summary": "El editor y desarrollador BUCK Games y el desarrollador Antfood han anunciado Ladder Lad, un juego &#8220;100 por ciento &hellip;"
+      },
+      "it": {
+        "title": "Il platform di precisione a tema Ladder Ladder Lad annunciato per Switch, PC",
+        "summary": "L'editore e sviluppatore BUCK Games e lo sviluppatore Antfood hanno annunciato Ladder Lad, un &#8220;100% &hellip;"
+      },
+      "de": {
+        "title": "Der Präzisionsplattformer Ladder Lad im Leiter-Stil wurde für Switch und PC angekündigt",
+        "summary": "Der Herausgeber und Entwickler BUCK Games und der Entwickler Antfood haben Ladder Lad angekündigt, ein „100-prozentiges &hellip;“-Spiel."
+      },
+      "pt": {
+        "title": "Ladder Lad, jogo de plataforma de precisão com tema de escada, anunciado para Switch e PC",
+        "summary": "A editora e desenvolvedora BUCK Games e a desenvolvedora Antfood anunciaram Ladder Lad, um jogo &#8220;100% &hellip;"
+      },
+      "ru": {
+        "title": "Прецизионный платформер Ladder Lad на тему лестниц анонсирован для Switch и ПК",
+        "summary": "Издатель и разработчик BUCK Games и разработчик Antfood анонсировали Ladder Lad, «100-процентную игру &hellip;"
+      },
+      "el": {
+        "title": "Η πλατφόρμα ακριβείας Ladder Lad ανακοινώθηκε για το Switch, PC",
+        "summary": "Ο εκδότης και προγραμματιστής BUCK Games και ο προγραμματιστής Antfood ανακοίνωσαν το Ladder Lad, ένα &#8220;100 τοις εκατό &hellip;"
+      },
+      "tr": {
+        "title": "Ladder-themed precision platformer Ladder Lad announced for Switch, PC",
+        "summary": "Publisher and developer BUCK Games, and developer Antfood have announced Ladder Lad, a &#8220;100 percent &hellip;"
+      },
+      "ja": {
+        "title": "Ladder-themed precision platformer Ladder Lad announced for Switch, PC",
+        "summary": "Publisher and developer BUCK Games, and developer Antfood have announced Ladder Lad, a &#8220;100 percent &hellip;"
+      },
+      "zh": {
+        "title": "以天梯为主题的精准平台游戏 Ladder Lad 宣布登陆 Switch、PC",
+        "summary": "发行商兼开发商 BUCK Games 和开发商 Antfood 宣布，《Ladder Lad》将成为“100%”的游戏……"
+      }
+    }
+  },
+  {
+    "id": "d0d595958ac0860de26d899f3d4fbc92111b97ff",
+    "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+    "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-direct-for-fire-emblem-fortunes-weave-announced",
+    "imageUrl": "https://images.nintendolife.com/bc6f16132e068/large.jpg",
+    "publishedAt": "2026-08-03T14:10:00+00:00",
+    "scrapedAt": "2026-08-04T05:54:47.562718+00:00",
+    "translations": {
+      "en": {
+        "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+        "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Nintendo Direct pour Fire Emblem: Fortune's Weave annoncé",
+        "summary": "La fortune sourit au tissage. Nintendo a annoncé une nouvelle présentation Direct axée sur Fire Emblem : Fortunes Weave pour la Switch 2. Elle aura lieu le mardi 4 août 2026 à 15 heures BST. Voici les détails exacts de votre région et de votre fuseau horaire : Lisez l’article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Se anuncia el Nintendo Direct para Fire Emblem: Fortune's Weave",
+        "summary": "La fortuna favorece el tejido. Nintendo ha anunciado una nueva presentación directa centrada en Fire Emblem: Fortunes Weave para Switch 2. Tendrá lugar el martes 4 de agosto de 2026 a las 3 p.m. BST. Aquí tienes los detalles exactos para tu región y zona horaria: Lee el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+        "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com"
+      },
+      "de": {
+        "title": "Nintendo Direct für Fire Emblem: Fortune's Weave angekündigt",
+        "summary": "Das Glück begünstigt das Weben. Nintendo hat eine neue Direct-Präsentation mit Schwerpunkt auf Fire Emblem: Fortunes Weave für die Switch 2 angekündigt. Sie findet am Dienstag, den 4. August 2026 um 15:00 Uhr BST statt. Hier sind die genauen Details für Ihre Region und Zeitzone: Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Nintendo Direct para Fire Emblem: Fortune's Weave anunciado",
+        "summary": "A fortuna favorece a trama. A Nintendo anunciou uma nova apresentação Direct focada em Fire Emblem: Fortunes Weave para o Switch 2. Ela acontecerá na terça-feira, 4 de agosto de 2026 às 15h BST. Aqui estão os detalhes exatos para sua região e fuso horário: Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+        "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com"
+      },
+      "el": {
+        "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+        "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com"
+      },
+      "tr": {
+        "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
+        "summary": "Fortune favours the weave. Nintendo has announced a new Direct presentation focused on Fire Emblem: Fortunes Weave for the Switch 2. It will take place on Tuesday, 4th August 2026 at 3pm BST . Here are the exact details for your region and timezone: Read the full article on nintendolife.com"
+      },
+      "ja": {
+        "title": "ファイアーエムブレム フォーチュンウィーブのニンテンドーダイレクトが発表",
+        "summary": "幸運は織物に有利です。任天堂は、Switch 2 向け『ファイアーエムブレム フォーチュン ウィーブ』に焦点を当てた新しいダイレクト プレゼンテーションを発表しました。これは、2026 年 8 月 4 日火曜日午後 3 時 (BST) に開催されます。お住まいの地域とタイムゾーンの正確な詳細は次のとおりです: nintendolife.com で記事全文をお読みください。"
+      },
+      "zh": {
+        "title": "《火焰之纹章：财富的编织》任天堂直面会宣布",
+        "summary": "命运眷顾编织。任天堂宣布将在 Switch 2 上举办一场以《火焰之纹章：财富编织》为重点的新直面演示。该演示将于 2026 年 8 月 4 日星期二下午 3 点（英国夏令时）举行。以下是您所在地区和时区的具体详细信息：阅读 nintendolife.com 上的完整文章"
+      }
+    }
+  },
+  {
+    "id": "5d740c0d0d2c60e1612b913fc99724d843460a31",
+    "title": "Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow",
+    "summary": "Nintendo has announced that it will be holding a special Fire Emblem Fortunes Weave-themed Nintendo Direct for tomorrow 4th August. The Nintendo Direct kicks off at 3pm UK time / 7am PT. The event will be the perfect time for Nintendo to reveal more information about the upcoming strategic JRPG. Thanks to MrFrost64 and swordsmanoftime3001&#8230;&#160; Read More &#187; Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/08/03/fire-emblem-fortunes-weave-nintendo-direct-has-been-announced-for-tomorrow/",
+    "imageUrl": "",
+    "publishedAt": "2026-08-03T14:04:58+00:00",
+    "scrapedAt": "2026-08-04T05:55:43.105966+00:00",
+    "translations": {
+      "en": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow",
+        "summary": "Nintendo has announced that it will be holding a special Fire Emblem Fortunes Weave-themed Nintendo Direct for tomorrow 4th August. The Nintendo Direct kicks off at 3pm UK time / 7am PT. The event will be the perfect time for Nintendo to reveal more information about the upcoming strategic JRPG. Thanks to MrFrost64 and swordsmanoftime3001&#8230;&#160; Read More &#187; Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow Source"
+      },
+      "fr": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct a été annoncé pour demain",
+        "summary": "Nintendo a annoncé qu'elle organiserait un Nintendo Direct spécial sur le thème de Fire Emblem Fortunes Weave demain, le 4 août. Le Nintendo Direct démarre à 15 heures, heure du Royaume-Uni / 7 heures du matin, heure du Pacifique. L'événement sera le moment idéal pour Nintendo de révéler plus d'informations sur le prochain JRPG stratégique. Merci à MrFrost64 et Swordsmanoftime3001&#8230;&#160; Lire la suite &#187; Fire Emblem Fortunes Weave Nintendo Direct a été annoncé pour demain Source"
+      },
+      "es": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow",
+        "summary": "Nintendo has announced that it will be holding a special Fire Emblem Fortunes Weave-themed Nintendo Direct for tomorrow 4th August. The Nintendo Direct kicks off at 3pm UK time / 7am PT. The event will be the perfect time for Nintendo to reveal more information about the upcoming strategic JRPG. Thanks to MrFrost64 and swordsmanoftime3001&#8230;&#160; Read More &#187; Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow Source"
+      },
+      "it": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct è stato annunciato per domani",
+        "summary": "Nintendo ha annunciato che terrà uno speciale Nintendo Direct a tema Fire Emblem Fortunes Weave per domani 4 agosto. Il Nintendo Direct inizia alle 15:00 ora del Regno Unito / 7:00 PT. L'evento sarà il momento perfetto per Nintendo per rivelare maggiori informazioni sul prossimo JRPG strategico. Grazie a MrFrost64 e Swordsmanoftime3001&#8230;&#160; Leggi di più &#187; Fire Emblem Fortunes Weave Nintendo Direct è stato annunciato per domani Source"
+      },
+      "de": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct wurde für morgen angekündigt",
+        "summary": "Nintendo hat angekündigt, dass es für morgen, den 4. August, eine spezielle Nintendo Direct zum Thema „Fire Emblem Fortunes Weave“ veranstalten wird. Der Nintendo Direct startet um 15:00 Uhr britischer Zeit / 7:00 Uhr PT. Die Veranstaltung wird für Nintendo der perfekte Zeitpunkt sein, weitere Informationen über das kommende strategische JRPG zu enthüllen. Danke an MrFrost64 und Swordsmanoftime3001&#8230;&#160; Weiterlesen &#187; Fire Emblem Fortunes Weave Nintendo Direct wurde für morgen angekündigt Quelle"
+      },
+      "pt": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct foi anunciado para amanhã",
+        "summary": "A Nintendo anunciou que realizará um Nintendo Direct especial com o tema Fire Emblem Fortunes Weave para amanhã, 4 de agosto. O Nintendo Direct começa às 15h, horário do Reino Unido/7h PT. O evento será o momento perfeito para a Nintendo revelar mais informações sobre o próximo JRPG estratégico. Agradecimentos a MrFrost64 e espadachimoftime3001&#8230;&#160; Leia mais &#187; Fire Emblem Fortunes Weave Nintendo Direct foi anunciado para amanhã Fonte"
+      },
+      "ru": {
+        "title": "Завтра выйдет Fire Emblem Fortunes Weave Nintendo Direct",
+        "summary": "Nintendo объявила, что завтра, 4 августа, проведет специальную конференцию Nintendo Direct на тему Fire Emblem Fortunes Weave. Nintendo Direct начнется в 15:00 по британскому времени / 7:00 по тихоокеанскому времени. Это мероприятие станет идеальным временем для Nintendo, чтобы раскрыть больше информации о предстоящей стратегической JRPG. Спасибо MrFrost64 и Swordsmanoftime3001&#8230;&#160; Читать далее &#187; Завтра выйдет Fire Emblem Fortunes Weave Nintendo Direct Источник"
+      },
+      "el": {
+        "title": "Το Fire Emblem Fortunes Weave Nintendo Direct ανακοινώθηκε για αύριο",
+        "summary": "Η Nintendo ανακοίνωσε ότι θα κρατήσει ένα ειδικό Fire Emblem Fortunes Weave με θέμα το Nintendo Direct για αύριο, 4 Αυγούστου. Το Nintendo Direct ξεκινά στις 3 μ.μ. ώρα Η.Β. / 7 π.μ. PT. Η εκδήλωση θα είναι η ιδανική στιγμή για τη Nintendo να αποκαλύψει περισσότερες πληροφορίες σχετικά με το επερχόμενο στρατηγικό JRPG. Χάρη στον MrFrost64 και στον swordsmanoftime3001&#8230;&#160; Διαβάστε περισσότερα &#187; Το Fire Emblem Fortunes Weave Nintendo Direct ανακοινώθηκε για αύριο Πηγή"
+      },
+      "tr": {
+        "title": "Fire Emblem Fortunes Weave Nintendo Direct yarın için duyuruldu",
+        "summary": "Nintendo, yarın 4 Ağustos'ta özel bir Fire Emblem Fortunes Weave temalı Nintendo Direct düzenleyeceğini duyurdu. Nintendo Direct, İngiltere saatiyle 15:00 / PT ile 07:00'da başlıyor. Etkinlik, Nintendo'nun yaklaşmakta olan stratejik JRPG hakkında daha fazla bilgi açıklaması için mükemmel bir zaman olacak. MrFrost64 ve Swordsmanoftime3001&#8230;&#160'a teşekkürler. Devamını Okuyun &#187; Fire Emblem Fortunes Weave Nintendo Direct yarın için duyuruldu Kaynak"
+      },
+      "ja": {
+        "title": "ファイアーエムブレム フォーチュンウィーヴ Nintendo Directが明日発表される",
+        "summary": "任天堂は、明日8月4日に「ファイアーエムブレム フォーチュンウィーブ」をテーマにした特別なNintendo Directを開催すると発表しました。 Nintendo Direct は英国時間午後 3 時 / 太平洋時間午前 7 時に始まります。このイベントは、任天堂にとって今後の戦略的 JRPG に関するさらなる情報を明らかにする絶好の機会となるでしょう。 MrFrost64 と Swordsmanoftime3001&#8230;&#160; に感謝します。続きを読む &#187;ファイアーエムブレム フォーチュンウィーブ Nintendo Directが明日発表される"
+      },
+      "zh": {
+        "title": "《火焰纹章：财富编织》任天堂直面会已于明天宣布",
+        "summary": "任天堂宣布将于明天 8 月 4 日举办一场以《火焰纹章：财富编织》为主题的特别任天堂直面会。 Nintendo Direct 于英国时间下午 3 点/太平洋时间上午 7 点开始。这次活动将是任天堂透露有关即将推出的战略 JRPG 的更多信息的最佳时机。感谢MrFrost64和剑客3001……阅读更多内容 &#187; 《火焰纹章：财富编织》任天堂直面会将于明天举行"
+      }
+    }
+  },
+  {
+    "id": "53c6e0ac42cb4c25ba67120d31a335fd287d4101",
+    "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+    "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/valkyrie-tune-synthesis-of-souls-coming-to-switch",
+    "imageUrl": "",
+    "publishedAt": "2026-08-03T13:19:31+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999383+00:00",
+    "translations": {
+      "en": {
+        "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+        "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;"
+      },
+      "fr": {
+        "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+        "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;"
+      },
+      "es": {
+        "title": "Valkyrie Tune: Synthesis of Souls llegará a Switch",
+        "summary": "El editor Good Smile Company y el desarrollador Frontwing lanzarán una versión Switch de la novela visual &hellip;"
+      },
+      "it": {
+        "title": "Valkyrie Tune: Synthesis of Souls in arrivo su Switch",
+        "summary": "L'editore Good Smile Company e lo sviluppatore Frontwing rilasceranno una versione Switch della visual novel &hellip;"
+      },
+      "de": {
+        "title": "Valkyrie Tune: Synthesis of Souls erscheint für Switch",
+        "summary": "Der Herausgeber Good Smile Company und der Entwickler Frontwing werden eine Switch-Version des visuellen Romans &hellip; veröffentlichen."
+      },
+      "pt": {
+        "title": "Valkyrie Tune: Synthesis of Souls chegando ao Switch",
+        "summary": "A editora Good Smile Company e a desenvolvedora Frontwing lançarão uma versão Switch do romance visual &hellip;"
+      },
+      "ru": {
+        "title": "Valkyrie Tune: Synthesis of Souls выйдет на Switch",
+        "summary": "Издательство Good Smile Company и разработчик Frontwing выпустят Switch-версию визуального романа &hellip;"
+      },
+      "el": {
+        "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+        "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;"
+      },
+      "tr": {
+        "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+        "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;"
+      },
+      "ja": {
+        "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
+        "summary": "Publisher Good Smile Company and developer Frontwing will release a Switch version of visual novel &hellip;"
+      },
+      "zh": {
+        "title": "《瓦尔基里曲调：灵魂合成》即将登陆 Switch",
+        "summary": "发行商 Good Smile Company 和开发商 Frontwing 将发布视觉小说的 Switch 版本……"
+      }
+    }
+  },
+  {
+    "id": "00ec3d119a42c850d8369230ae45b460b10abc54",
+    "title": "Feature: All New Games Coming To Xbox In August 2026",
+    "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/features/all-new-games-coming-to-xbox-in-august-2026",
+    "imageUrl": "https://images.purexbox.com/27d786ea840fc/large.jpg",
+    "publishedAt": "2026-08-03T13:00:00+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.765614+00:00",
+    "translations": {
+      "en": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "fr": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "es": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "it": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "de": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "pt": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "ru": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "el": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "tr": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "ja": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      },
+      "zh": {
+        "title": "Feature: All New Games Coming To Xbox In August 2026",
+        "summary": "Release dates for every August Xbox launch. Welcome to our roundup of all new Xbox games coming out in August 2026 ! Below, we've listed every Xbox game with a August 2026 release date, including all confirmed Xbox Game Pass titles for August 2026 so far. Without further ado, here are all the new games coming to Xbox in August 2026: Read the full article on purexbox.com"
+      }
+    }
+  },
+  {
+    "id": "96ba8af8bbfa8b78b260abdf57955d5bc31c4399",
+    "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+    "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/street-fighter-6s-new-season-is-underway-on-ps5-now-even-if-it-all-feels-a-bit-low-key",
+    "imageUrl": "https://images.pushsquare.com/5b4985e80e76a/large.jpg",
+    "publishedAt": "2026-08-03T12:30:00+00:00",
+    "scrapedAt": "2026-08-04T05:55:14.850027+00:00",
+    "translations": {
+      "en": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "es": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "it": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "de": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "pt": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "ru": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "el": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "tr": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "ja": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      },
+      "zh": {
+        "title": "Street Fighter 6's New Season Is Underway on PS5 Now, Even if It All Feels a Bit Low-Key",
+        "summary": "Balance changes also out now. Perhaps it’s because my focus has been on Marvel Tokon: Fighting Souls of late, but I don’t feel like there’s much hype for Street Fighter 6’s new season at all. Yasmine is out today, kickstarting the uber-popular fighter’s Year 4 Character Pass, with more fighters to follow, including Final Fantasy’s Tifa. Read the full article on pushsquare.com"
+      }
+    }
+  },
+  {
+    "id": "3697dd7b4db3562b4cc293e7c31332108453812d",
+    "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+    "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com",
+    "category": "UPCOMING_CONSOLE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/heres-a-breakdown-of-the-new-prices-for-xbox-series-xs-consoles-as-of-august-2026",
+    "imageUrl": "https://images.purexbox.com/d64e0956dfac6/large.jpg",
+    "publishedAt": "2026-08-03T12:05:00+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.765665+00:00",
+    "translations": {
+      "en": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "fr": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "es": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "it": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "de": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "pt": {
+        "title": "Aqui está um detalhamento dos novos preços dos consoles Xbox Series X | S a partir de agosto de 2026",
+        "summary": "Especificamente os preços do Reino Unido, EUA, Canadá, Europa e Austrália. Os tempos estão difíceis para nós, consoles, pois o custo de, bem, quase tudo dispara. É realmente sombrio. Se você está procurando uma nova peça de hardware Xbox, pode ter um pequeno choque, pois os últimos aumentos de preços da Microsoft começaram oficialmente em 1º de agosto de 2026. Achamos que seria uma boa ideia dividir os preços dos novos consoles em várias regiões – cinco para ser exato. Leia o artigo completo em purexbox.com"
+      },
+      "ru": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "el": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "tr": {
+        "title": "İşte Ağustos 2026 İtibarıyla Xbox Series X|S Konsollarının Yeni Fiyatlarına İlişkin Döküm",
+        "summary": "Özellikle İngiltere, ABD, Kanada, Avrupa ve Avustralya fiyatları. Hemen hemen her şeyin maliyeti hızla arttığından, konsol grubumuz için zor zamanlar yaşanıyor. Tam anlamıyla acımasız. Yeni bir Xbox donanımı arayışındaysanız, Microsoft'un en son fiyat artışları resmi olarak 1 Ağustos 2026'da başladığında küçük bir şokla karşı karşıya olabilirsiniz. Yeni konsol fiyatlarını birden fazla bölgeye (tam olarak beş) ayırmanın iyi bir fikir olduğunu düşündük. Makalenin tamamını purexbox.com'da okuyun"
+      },
+      "ja": {
+        "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
+        "summary": "Specifically the UK, US, Canada, Europe and Australian prices. Times is hard for us console lot, as the cost of, well, pretty much everything skyrockets. It's proper grim. If you're in the market for a new piece of Xbox hardware, you may be in for a wee shock as Microsoft's latest price hikes officially kicked off August 1st, 2026. We thought it was a good idea to break down the new console prices across multiple regions - five to be exact. Read the full article on purexbox.com"
+      },
+      "zh": {
+        "title": "以下是截至 2026 年 8 月的 Xbox Series X|S 游戏机新价格明细",
+        "summary": "特别是英国、美国、加拿大、欧洲和澳大利亚的价格。对于我们游戏机行业来说，日子过得很艰难，因为几乎所有东西的成本都在飙升。确实很严峻。如果您正在市场上购买新的 Xbox 硬件，那么您可能会感到有点震惊，因为微软最新的涨价正式于 2026 年 8 月 1 日开始。我们认为，在多个地区（确切地说是五个地区）细分新主机价格是个好主意。在 purexbox.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "4136af53520e177e5986d33c98573c84830a3893",
+    "title": "Random: \"What In The Name Of Copyright Infringement Is This Madness?\" - Intellivision Amico Box Showcasing Nintendo Art Surfaces Online",
+    "summary": "\"We didn't design it, I swear\". The Intellivision Amico is never coming out – that much should be clear by now, given that the money raised by its pre-order drive has long since been spent, controversial figurehead Tommy Tallarico has stepped away, key exclusives have turned out to be vaporware , and the console can't even use the Intellivision branding any more. Amazingly, some retailers still have the console listed on their websites, and one such online store has caused a healthy amount of co",
+    "category": "GAME_RELEASE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/08/random-what-in-the-name-of-copyright-infringement-is-this-madness-intellivision-amico-box-showcasing-nintendo-art-surfaces-online",
+    "imageUrl": "https://images.timeextension.com/f5d9a90578741/large.jpg",
+    "publishedAt": "2026-08-03T10:30:00+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.758605+00:00",
+    "translations": {
+      "en": {
+        "title": "Random: \"What In The Name Of Copyright Infringement Is This Madness?\" - Intellivision Amico Box Showcasing Nintendo Art Surfaces Online",
+        "summary": "\"We didn't design it, I swear\". The Intellivision Amico is never coming out – that much should be clear by now, given that the money raised by its pre-order drive has long since been spent, controversial figurehead Tommy Tallarico has stepped away, key exclusives have turned out to be vaporware , and the console can't even use the Intellivision branding any more. Amazingly, some retailers still have the console listed on their websites, and one such online store has caused a healthy amount of co"
+      },
+      "fr": {
+        "title": "Random : \"Au nom de la violation du droit d'auteur, qu'est-ce que c'est que cette folie ?\" - Intellivision Amico Box présentant les Nintendo Art Surfaces en ligne",
+        "summary": "\"Nous ne l'avons pas conçu, je le jure\". L'Intellivision Amico ne sortira jamais – cela devrait être clair maintenant, étant donné que l'argent récolté grâce à sa campagne de précommande a été dépensé depuis longtemps, la figure de proue controversée Tommy Tallarico s'est retiré, les exclusivités clés se sont révélées être des vaporwares, et la console ne peut même plus utiliser la marque Intellivision. Étonnamment, certains détaillants ont toujours la console répertoriée sur leurs sites Web, et l'une de ces boutiques en ligne a provoqué une bonne quantité de co"
+      },
+      "es": {
+        "title": "Aleatorio: \"¿Qué es esta locura en nombre de la infracción de derechos de autor?\" - Intellivision Amico Box que muestra las superficies artísticas de Nintendo en línea",
+        "summary": "\"No lo diseñamos nosotros, lo juro\". El Intellivision Amico nunca saldrá; eso ya debería estar claro, dado que el dinero recaudado por su campaña de pedidos anticipados hace tiempo que se gastó, el controvertido testaferro Tommy Tallarico se alejó, las exclusivas clave resultaron ser vaporware y la consola ya ni siquiera puede usar la marca Intellivision. Sorprendentemente, algunos minoristas todavía tienen la consola en sus sitios web, y una de esas tiendas en línea ha causado una gran cantidad de comentarios."
+      },
+      "it": {
+        "title": "Casuale: \"In nome della violazione del copyright, cos'è questa follia?\" - Intellivision Amico Box che mostra le superfici Nintendo Art online",
+        "summary": "\"Non l'abbiamo progettato noi, lo giuro\". L'Intellivision Amico non uscirà mai: questo dovrebbe essere ormai chiaro, dato che i soldi raccolti con i preordini sono stati spesi da tempo, il controverso prestanome Tommy Tallarico si è fatto da parte, le esclusive chiave si sono rivelate vaporware e la console non può nemmeno più utilizzare il marchio Intellivision. Sorprendentemente, alcuni rivenditori hanno ancora la console elencata sui loro siti Web e uno di questi negozi online ha causato una buona quantità di co"
+      },
+      "de": {
+        "title": "Random: „Was zum Teufel ist das für ein Wahnsinn?“ - Intellivision Amico Box mit Nintendo Art Surfaces Online",
+        "summary": "„Wir haben es nicht entworfen, ich schwöre.“ Der Intellivision Amico wird nie auf den Markt kommen – so viel sollte mittlerweile klar sein, wenn man bedenkt, dass das durch die Vorbestellungsaktion gesammelte Geld längst ausgegeben wurde, das umstrittene Aushängeschild Tommy Tallarico zurückgetreten ist, sich wichtige Exklusivprodukte als Vaporware herausgestellt haben und die Konsole nicht einmal mehr das Intellivision-Branding tragen kann. Erstaunlicherweise ist die Konsole bei einigen Einzelhändlern immer noch auf ihren Websites gelistet, und ein solcher Online-Shop hat eine Menge Ärger verursacht"
+      },
+      "pt": {
+        "title": "Aleatório: \"O que em nome da violação de direitos autorais é essa loucura?\" - Intellivision Amico Box apresentando Nintendo Art Surfaces Online",
+        "summary": "“Não fomos nós que desenhamos, eu juro”. O Intellivision Amico nunca será lançado – isso já deve estar claro, dado que o dinheiro arrecadado por sua campanha de pré-encomenda já foi gasto há muito tempo, a controversa figura de proa Tommy Tallarico se afastou, os principais exclusivos acabaram sendo vaporware e o console não pode mais usar a marca Intellivision. Surpreendentemente, alguns varejistas ainda têm o console listado em seus sites, e uma dessas lojas online causou uma grande quantidade de comentários."
+      },
+      "ru": {
+        "title": "Случайный: «Что это за безумие, во имя нарушения авторских прав?» - Intellivision Amico Box с онлайн-презентацией Nintendo Art Surfaces",
+        "summary": "«Клянусь, это не мы придумали». Intellivision Amico так и не выйдет – это уже должно быть ясно, учитывая, что деньги, полученные от предзаказа, уже давно потрачены, скандальный номинальный лидер Томми Талларико ушел в отставку, ключевые эксклюзивы оказались пустым звуком, а консоль больше не может даже использовать бренд Intellivision. Удивительно, но некоторые розничные продавцы до сих пор размещают консоль на своих веб-сайтах, и один из таких интернет-магазинов вызвал значительное количество клиентов."
+      },
+      "el": {
+        "title": "Τυχαία: \"Τι είναι αυτή η τρέλα στο όνομα της παραβίασης πνευματικών δικαιωμάτων;\" - Το Intellivision Amico Box παρουσιάζει διαδικτυακές επιφάνειες τέχνης Nintendo",
+        "summary": "«Δεν το σχεδιάσαμε, το ορκίζομαι». Το Intellivision Amico δεν βγαίνει ποτέ – αυτό θα πρέπει να είναι ξεκάθαρο μέχρι τώρα, δεδομένου ότι τα χρήματα που συγκεντρώθηκαν από την προπαραγγελία του έχουν δαπανηθεί εδώ και πολύ καιρό, ο αμφιλεγόμενος Tommy Tallarico έχει απομακρυνθεί, οι βασικές αποκλειστικότητες έχουν αποδειχθεί ότι είναι vaporware και η κονσόλα δεν μπορεί να χρησιμοποιήσει πια την επωνυμία Intellivision. Παραδόξως, ορισμένοι λιανοπωλητές εξακολουθούν να έχουν την κονσόλα καταχωρημένη στους ιστότοπούς τους και ένα τέτοιο ηλεκτρονικό κατάστημα έχει προκαλέσει ένα υγιές ποσό συν"
+      },
+      "tr": {
+        "title": "Random: \"Telif Hakkı İhlali Adına Nedir Bu Delilik?\" - Intellivision Amico Box, Nintendo Sanat Yüzeylerini Çevrimiçi Sergiliyor",
+        "summary": "\"Bunu biz tasarlamadık, yemin ederim\". Intellivision Amico asla çıkmayacak; ön sipariş kampanyasından elde edilen paranın çoktan harcandığı, tartışmalı lider Tommy Tallarico'nun ayrıldığı, önemli ayrıcalıkların buhar yazılımı olduğu ortaya çıktığı ve konsolun artık Intellivision markasını bile kullanamadığı göz önüne alındığında, bu artık açık olmalı. Şaşırtıcı bir şekilde, bazı perakendeciler konsolu hâlâ web sitelerinde listeliyor ve böyle bir çevrimiçi mağaza, sağlıklı miktarda alışverişe neden oldu."
+      },
+      "ja": {
+        "title": "ランダム: 「著作権侵害という名のこの狂気は何ですか?」 - 任天堂のアート サーフェスをオンラインで展示する Intellivision Amico ボックス",
+        "summary": "「私たちがデザインしたわけではありません、誓います。」 Intellivision Amico は決して発売されません。そのプレオーダー ドライブによって集められた資金はとうの昔に使い尽くされ、物議を醸した看板の Tommy Tallarico は退任し、主要な独占製品は Vaporware であることが判明し、コンソールは Intellivision ブランドを使用することさえできなくなったことを考えると、もう多くのことが明らかになっています。驚くべきことに、一部の小売業者は依然としてそのコンソールをウェブサイトに掲載しており、そのようなオンライン ストアの 1 つはかなりの量の損害を引き起こしています。"
+      },
+      "zh": {
+        "title": "随机：“以侵犯版权的名义，这是什么疯狂的行为？” - Intellivision Amico Box 在线展示任天堂 Art Surfaces",
+        "summary": "“我发誓，它不是我们设计的”。 Intellivision Amico 永远不会问世——这一点现在应该很清楚了，因为预购筹集的资金早已花完，有争议的人物汤米·塔拉里科 (Tommy Tallarico) 已经离开，关键的独家产品已被证明是蒸汽软件，而且该游戏机甚至不能再使用 Intellivision 品牌。令人惊讶的是，一些零售商的网站上仍然列出了该游戏机，并且这样的一家在线商店已经引起了大量的关注"
+      }
+    }
+  },
+  {
+    "id": "ef05c837bd501960c8c194b24e7b58138a6f20ac",
+    "title": "A New N64 EverDrive Flash Cart Has Been Released With A Dedicated 64DD Core",
+    "summary": "EverDrive-64 Pro is shipping in the next few weeks. EverDrive maker Krikzz has revealed that he has created a new flash cart for the Nintendo 64 console. The EverDrive-64 Pro is an upgrade on the existing EverDrive-64 X7, and benefits from a faster Cyclone 10 FPGA chipset, more memory, speedier USB data access and a dedicated 64DD core. The 64DD was a Japan-only bolt-on storage device for the console that played games on magnetic rewritable discs. Read the full article on timeextension.com",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/08/a-new-n64-everdrive-flash-cart-has-been-released-with-a-dedicated-64dd-core",
+    "imageUrl": "https://images.timeextension.com/f8f99eee9bc40/large.jpg",
+    "publishedAt": "2026-08-03T09:30:00+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.758678+00:00",
+    "translations": {
+      "en": {
+        "title": "A New N64 EverDrive Flash Cart Has Been Released With A Dedicated 64DD Core",
+        "summary": "EverDrive-64 Pro is shipping in the next few weeks. EverDrive maker Krikzz has revealed that he has created a new flash cart for the Nintendo 64 console. The EverDrive-64 Pro is an upgrade on the existing EverDrive-64 X7, and benefits from a faster Cyclone 10 FPGA chipset, more memory, speedier USB data access and a dedicated 64DD core. The 64DD was a Japan-only bolt-on storage device for the console that played games on magnetic rewritable discs. Read the full article on timeextension.com"
+      },
+      "fr": {
+        "title": "Un nouveau chariot Flash N64 EverDrive a été lancé avec un cœur 64DD dédié",
+        "summary": "EverDrive-64 Pro sera expédié dans les prochaines semaines. Le créateur d'EverDrive, Krikzz, a révélé qu'il avait créé un nouveau chariot flash pour la console Nintendo 64. L'EverDrive-64 Pro est une mise à niveau de l'EverDrive-64 X7 existant et bénéficie d'un chipset Cyclone 10 FPGA plus rapide, de plus de mémoire, d'un accès aux données USB plus rapide et d'un cœur 64DD dédié. Le 64DD était un périphérique de stockage boulonné uniquement au Japon pour la console qui permettait de jouer à des jeux sur des disques magnétiques réinscriptibles. Lire l'article complet sur timeextension.com"
+      },
+      "es": {
+        "title": "Se ha lanzado un nuevo carro flash N64 EverDrive con un núcleo 64DD dedicado",
+        "summary": "EverDrive-64 Pro se enviará en las próximas semanas. El fabricante de EverDrive, Krikzz, ha revelado que ha creado un nuevo flash cart para la consola Nintendo 64. El EverDrive-64 Pro es una actualización del EverDrive-64 X7 existente y se beneficia de un chipset FPGA Cyclone 10 más rápido, más memoria, acceso a datos USB más rápido y un núcleo 64DD dedicado. El 64DD era un dispositivo de almacenamiento atornillable exclusivo de Japón para la consola que jugaba en discos magnéticos regrabables. Lea el artículo completo en timeextension.com"
+      },
+      "it": {
+        "title": "È stato rilasciato un nuovo carrello flash N64 EverDrive con un core 64DD dedicato",
+        "summary": "EverDrive-64 Pro verrà spedito nelle prossime settimane. Il produttore di EverDrive Krikzz ha rivelato di aver creato un nuovo flash cart per la console Nintendo 64. EverDrive-64 Pro è un aggiornamento dell'EverDrive-64 X7 esistente e beneficia di un chipset FPGA Cyclone 10 più veloce, più memoria, accesso ai dati USB più rapido e un core 64DD dedicato. Il 64DD era un dispositivo di archiviazione imbullonato solo per il Giappone per la console che riproduceva giochi su dischi magnetici riscrivibili. Leggi l'articolo completo su timeextension.com"
+      },
+      "de": {
+        "title": "Ein neuer N64 EverDrive Flash Cart mit einem dedizierten 64DD-Kern wurde veröffentlicht",
+        "summary": "EverDrive-64 Pro wird in den nächsten Wochen ausgeliefert. EverDrive-Hersteller Krikzz hat bekannt gegeben, dass er einen neuen Flash-Cart für die Nintendo 64-Konsole entwickelt hat. Der EverDrive-64 Pro ist ein Upgrade des bestehenden EverDrive-64 X7 und profitiert von einem schnelleren Cyclone 10 FPGA-Chipsatz, mehr Speicher, schnellerem USB-Datenzugriff und einem dedizierten 64DD-Kern. Das 64DD war ein nur in Japan erhältliches, anschraubbares Speichergerät für die Konsole, das Spiele auf magnetischen wiederbeschreibbaren Datenträgern abspielte. Lesen Sie den vollständigen Artikel auf timeextension.com"
+      },
+      "pt": {
+        "title": "Um novo carrinho flash N64 EverDrive foi lançado com um núcleo 64DD dedicado",
+        "summary": "EverDrive-64 Pro será lançado nas próximas semanas. O fabricante do EverDrive, Krikzz, revelou que criou um novo flash cart para o console Nintendo 64. O EverDrive-64 Pro é uma atualização do EverDrive-64 X7 existente e se beneficia de um chipset FPGA Cyclone 10 mais rápido, mais memória, acesso mais rápido a dados USB e um núcleo 64DD dedicado. O 64DD era um dispositivo de armazenamento exclusivo do Japão para o console que reproduzia jogos em discos magnéticos regraváveis. Leia o artigo completo em timeextension.com"
+      },
+      "ru": {
+        "title": "Выпущена новая флэш-карта N64 EverDrive со выделенным ядром 64DD",
+        "summary": "EverDrive-64 Pro поступит в продажу в ближайшие несколько недель. Производитель EverDrive Krikzz сообщил, что он создал новую флэш-карту для консоли Nintendo 64. EverDrive-64 Pro представляет собой обновление существующей модели EverDrive-64 X7 и имеет более быстрый набор микросхем Cyclone 10 FPGA, больший объем памяти, более быстрый доступ к данным через USB и выделенное ядро ​​64DD. 64DD было единственным в Японии прикрепляемым запоминающим устройством для консоли, на которой можно было играть в игры на магнитных перезаписываемых дисках. Полную версию статьи можно прочитать на сайте timeextension.com."
+      },
+      "el": {
+        "title": "Κυκλοφόρησε ένα νέο N64 EverDrive Flash Cart με έναν αποκλειστικό πυρήνα 64DD",
+        "summary": "Το EverDrive-64 Pro αποστέλλεται τις επόμενες εβδομάδες. Ο κατασκευαστής του EverDrive, Krikzz, αποκάλυψε ότι δημιούργησε ένα νέο flash cart για την κονσόλα Nintendo 64. Το EverDrive-64 Pro είναι μια αναβάθμιση του υπάρχοντος EverDrive-64 X7 και επωφελείται από ένα ταχύτερο chipset Cyclone 10 FPGA, περισσότερη μνήμη, ταχύτερη πρόσβαση δεδομένων USB και έναν αποκλειστικό πυρήνα 64DD. Το 64DD ήταν μια συσκευή αποθήκευσης με μπουλόνι μόνο στην Ιαπωνία για την κονσόλα που έπαιζε παιχνίδια σε μαγνητικούς επανεγγράψιμους δίσκους. Διαβάστε το πλήρες άρθρο στο timeextension.com"
+      },
+      "tr": {
+        "title": "Özel 64DD Çekirdeğe Sahip Yeni Bir N64 EverDrive Flash Cart Piyasaya Sürüldü",
+        "summary": "EverDrive-64 Pro önümüzdeki birkaç hafta içinde gönderilecek. EverDrive'ın yapımcısı Krikzz, Nintendo 64 konsolu için yeni bir flaş araba oluşturduğunu açıkladı. EverDrive-64 Pro, mevcut EverDrive-64 X7'nin bir yükseltmesidir ve daha hızlı bir Cyclone 10 FPGA yonga seti, daha fazla bellek, daha hızlı USB veri erişimi ve özel bir 64DD çekirdeğinden yararlanır. 64DD, manyetik yeniden yazılabilir disklerde oyun oynayan konsol için yalnızca Japonya'da bulunan cıvata bağlantılı bir depolama cihazıydı. Makalenin tamamını timeextension.com'da okuyun"
+      },
+      "ja": {
+        "title": "専用の 64DD コアを搭載した新しい N64 EverDrive フラッシュ カートがリリースされました",
+        "summary": "EverDrive-64 Pro は今後数週間以内に出荷されます。 EverDrive メーカーの Krikzz は、Nintendo 64 コンソール用の新しいフラッシュ カートを作成したことを明らかにしました。 EverDrive-64 Pro は既存の EverDrive-64 X7 のアップグレードであり、より高速な Cyclone 10 FPGA チップセット、より多くのメモリ、より高速な USB データ アクセス、および専用 64DD コアの恩恵を受けています。 64DD は、磁気書き換え可能ディスクでゲームをプレイするコンソール用の日本限定のボルトオン ストレージ デバイスでした。 timeextension.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "全新 N64 EverDrive 闪存卡已发布，配备专用 64DD 核心",
+        "summary": "EverDrive-64 Pro 将在未来几周内发货。 EverDrive 制造商 Krikzz 透露，他已经为 Nintendo 64 游戏机创建了一款新的闪存车。 EverDrive-64 Pro 是现有 EverDrive-64 X7 的升级版，受益于更快的 Cyclone 10 FPGA 芯片组、更多内存、更快的 USB 数据访问和专用 64DD 内核。 64DD 是日本独有的螺栓固定式存储设备，适用于在磁性可重写光盘上玩游戏的游戏机。在 timeextension.com 上阅读全文"
+      }
+    }
+  },
+  {
     "id": "cdfdd85c162d66e20e160b760d83aaf933d43820",
     "title": "Palworld Online announced for iOS, Android",
     "summary": "Garena has announced Palworld Online, a &#8220;large-scale&#8221; multiplayer survival adventure game currently in development under licensing &hellip;",
@@ -8,7 +977,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/palworld-online-announced-for-ios-android",
     "imageUrl": "",
     "publishedAt": "2026-08-03T03:00:50+00:00",
-    "scrapedAt": "2026-08-03T06:29:56.358733+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999562+00:00",
     "translations": {
       "en": {
         "title": "Palworld Online announced for iOS, Android",
@@ -65,7 +1034,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/02/summer-nights-splatfest-taking-place-this-month/",
     "imageUrl": "",
     "publishedAt": "2026-08-02T19:39:49+00:00",
-    "scrapedAt": "2026-08-03T06:29:37.313282+00:00",
+    "scrapedAt": "2026-08-04T05:55:43.106195+00:00",
     "translations": {
       "en": {
         "title": "Summer Nights Splatfest taking place this month",
@@ -122,7 +1091,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/what-a-year-its-been-commodore-celebrates-its-birthday-with-a-new-game-initiative-for-the-c64-ultimate",
     "imageUrl": "https://images.timeextension.com/f778a911c808f/large.jpg",
     "publishedAt": "2026-08-01T16:30:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:13.478752+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.758765+00:00",
     "translations": {
       "en": {
         "title": "\"What A Year It's Been\" - Commodore Celebrates Its Birthday With A New Game Initiative For The C64 Ultimate",
@@ -179,7 +1148,7 @@
     "sourceUrl": "https://www.purexbox.com/guides/xbox-game-pass-all-games-coming-soon-in-august-2026",
     "imageUrl": "https://images.purexbox.com/5d26bd965049d/large.jpg",
     "publishedAt": "2026-08-01T13:30:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:37.104169+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.766124+00:00",
     "translations": {
       "en": {
         "title": "Guide: Xbox Game Pass: All Games Coming Soon In August 2026",
@@ -236,7 +1205,7 @@
     "sourceUrl": "https://www.nintendolife.com/features/talking-point-what-are-you-playing-this-weekend-1st-august",
     "imageUrl": "https://images.nintendolife.com/fe50561c93f0f/large.jpg",
     "publishedAt": "2026-08-01T09:00:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:16.302007+00:00",
+    "scrapedAt": "2026-08-04T05:54:47.563861+00:00",
     "translations": {
       "en": {
         "title": "Talking Point: What Are You Playing This Weekend? (1st August)",
@@ -293,7 +1262,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/waterpark-simulator-1-0-is-out-now-on-xbox-after-overwhelmingly-positive-pc-early-access",
     "imageUrl": "https://images.purexbox.com/3d76de6ad91bc/large.jpg",
     "publishedAt": "2026-07-31T16:30:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:37.104465+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.766510+00:00",
     "translations": {
       "en": {
         "title": "Waterpark Simulator 1.0 Is Out Now On Xbox, After 'Overwhelmingly Positive' PC Early Access",
@@ -456,6 +1425,63 @@
     }
   },
   {
+    "id": "a7e7bf64d8f91ac3b51dbb9f2cedb0bf402516f2",
+    "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+    "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/guides/gears-of-war-e-day-open-beta-dates-early-access-and-xbox-game-pass-details",
+    "imageUrl": "https://images.purexbox.com/0045fe8cf386d/large.jpg",
+    "publishedAt": "2026-07-31T15:00:00+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.766568+00:00",
+    "translations": {
+      "en": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "fr": {
+        "title": "Guide : Gears Of War : dates de bêta ouverte E-Day, accès anticipé et détails du Xbox Game Pass",
+        "summary": "Tout ce que vous devez savoir sur la version bêta de Gears E-Day. La bêta ouverte de Gears of War: E-Day est officiellement à nos portes ! De nombreux joueurs auront la chance de découvrir le nouveau mode multijoueur de Gears dans quelques jours seulement, avec des objets exclusifs si vous précommandez également le jeu. Voici donc un aperçu de tout ce que vous devez savoir sur Gears of War : Bêta ouverte E-Day : Lisez l'article complet sur purexbox.com"
+      },
+      "es": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "it": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "de": {
+        "title": "Leitfaden: Gears Of War: E-Day Open Beta-Termine, Early Access und Details zum Xbox Game Pass",
+        "summary": "Alles, was Sie über die Gears E-Day Beta wissen müssen. Die offene Beta von Gears of War: E-Day steht offiziell vor der Tür! Viele Spieler werden in wenigen Tagen die Chance bekommen, den neuen Gears-Multiplayer auszuprobieren, komplett mit einigen exklusiven Gegenständen, wenn Sie das Spiel auch vorbestellen. Hier finden Sie alles, was Sie über die offene Beta von Gears of War: E-Day wissen müssen: Lesen Sie den vollständigen Artikel auf purexbox.com"
+      },
+      "pt": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "ru": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "el": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "tr": {
+        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
+        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
+      },
+      "ja": {
+        "title": "ガイド: Gears Of War: E-Day オープン ベータの日付、早期アクセス、Xbox ゲーム パスの詳細",
+        "summary": "Gears E-Day ベータ版について知っておくべきことすべて。 Gears of War: E-Day のオープン ベータが正式に始まります!数日以内に多くのプレイヤーが新しい Gears マルチプレイヤーをチェックする機会が得られます。ゲームを事前注文すると、いくつかの限定アイテムも付属します。そこで、Gears of War: E-Day オープン ベータについて知っておくべきことをすべて見てみましょう: purexbox.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "指南：战争机器：E-Day 公开测试日期、抢先体验和 Xbox Game Pass 详细信息",
+        "summary": "关于 Gears E-Day Beta 您需要了解的一切。 Gears of War: E-Day 的公开测试版正式上线！几天后，大量玩家将有机会体验新的《战争机器》多人游戏，如果您也预订了游戏，还可以享受一些独家物品。因此，以下是您需要了解的有关 Gears of War: E-Day Open Beta 的所有信息：阅读 purexbox.com 上的完整文章"
+      }
+    }
+  },
+  {
     "id": "b2d2020e9a32b5d918440d43f5e4575f093097cb",
     "title": "Mortal Shell 2 Beta is Out Now on PS5 and Xbox Series X/S",
     "summary": "Play through the first three hours of the upcoming Souls-like with its first Shell, Tiel the Acolyte, ahead of its August launch.",
@@ -521,7 +1547,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/07/cloverpit-coming-to-ps5-switch-2-ps4-and-switch-on-august-13",
     "imageUrl": "",
     "publishedAt": "2026-07-31T13:42:02+00:00",
-    "scrapedAt": "2026-08-03T06:29:56.358950+00:00",
+    "scrapedAt": "2026-08-04T05:55:56.999767+00:00",
     "translations": {
       "en": {
         "title": "CloverPit coming to PS5, Switch 2, PS4, and Switch on August 13",
@@ -635,7 +1661,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/love-etrian-odyssey-wizardy-and-shin-megami-tensei-this-new-dungeon-rpg-could-be-right-up-your-street",
     "imageUrl": "https://images.timeextension.com/51b6ee47881f3/large.jpg",
     "publishedAt": "2026-07-31T12:00:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:13.479104+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.759093+00:00",
     "translations": {
       "en": {
         "title": "Love Etrian Odyssey, Wizardy, & Shin Megami Tensei? This New Dungeon RPG Could Be Right Up Your Street",
@@ -692,7 +1718,7 @@
     "sourceUrl": "https://www.timeextension.com/features/hands-on-taki-udons-console-mode-finally-gives-mister-fpga-the-accessibility-ive-always-craved",
     "imageUrl": "https://images.timeextension.com/6b632aa6117b1/large.jpg",
     "publishedAt": "2026-07-31T11:00:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:13.479225+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.759228+00:00",
     "translations": {
       "en": {
         "title": "Hands On: Taki Udon's Console Mode Finally Gives MiSTer FPGA the Accessibility I've Always Craved",
@@ -863,7 +1889,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/07/31/two-cancelled-virtual-boy-games-announced-for-nintendo-classics/",
     "imageUrl": "",
     "publishedAt": "2026-07-31T02:41:52+00:00",
-    "scrapedAt": "2026-08-03T06:29:37.314050+00:00",
+    "scrapedAt": "2026-08-04T05:55:43.106933+00:00",
     "translations": {
       "en": {
         "title": "Two cancelled Virtual Boy games announced for Nintendo Classics",
@@ -977,7 +2003,7 @@
     "sourceUrl": "https://www.purexbox.com/features/talking-point-what-was-the-first-gears-of-war-game-you-ever-played",
     "imageUrl": "https://images.purexbox.com/c836b4302580a/large.jpg",
     "publishedAt": "2026-07-30T17:30:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:37.104792+00:00",
+    "scrapedAt": "2026-08-04T05:55:24.766821+00:00",
     "translations": {
       "en": {
         "title": "Talking Point: What Was The First Gears Of War Game You Ever Played?",
@@ -1034,7 +2060,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/stupid-never-dies-le-jeu-d-action-des-anciens-de-capcom-tient-sa-date-de-sortie-3050871469.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871469/stupid-never-dies-l-action-rpg-des-anciens-de-capcom-tient-sa-date-de-sortie-b2beeec3__800_800__529-0-2689-2160.jpg",
     "publishedAt": "2026-07-30T17:10:00+00:00",
-    "scrapedAt": "2026-08-03T06:30:17.545805+00:00",
+    "scrapedAt": "2026-08-04T05:56:56.349765+00:00",
     "translations": {
       "fr": {
         "title": "Stupid Never Dies : le jeu d'action des anciens de Capcom tient sa date de sortie",
@@ -1148,7 +2174,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/30/out-now-in-japan-one-piece-demon-slayer/",
     "imageUrl": "",
     "publishedAt": "2026-07-30T14:36:01+00:00",
-    "scrapedAt": "2026-08-03T06:29:15.385416+00:00",
+    "scrapedAt": "2026-08-04T05:54:32.677650+00:00",
     "translations": {
       "en": {
         "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
@@ -1376,7 +2402,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/dont-worry-the-neo-geo-aesplus-hasnt-been-delayed",
     "imageUrl": "https://images.timeextension.com/bd02522383a11/large.jpg",
     "publishedAt": "2026-07-30T12:30:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:13.479810+00:00",
+    "scrapedAt": "2026-08-04T05:53:43.759806+00:00",
     "translations": {
       "en": {
         "title": "Don't Worry, The Neo Geo AES+ Hasn't Been Delayed",
@@ -2060,7 +3086,7 @@
     "sourceUrl": "https://the-retrogamer.com/vectaguard-sur-pc-le-vectoriel-ressuscite-par-tony-barnes/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T12:50:36+00:00",
-    "scrapedAt": "2026-08-03T06:30:14.068327+00:00",
+    "scrapedAt": "2026-08-04T05:56:53.669144+00:00",
     "translations": {
       "fr": {
         "title": "VectaGuard sur PC : Le vectoriel ressuscité par Tony Barnes",
@@ -3200,7 +4226,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/27/dungeon-crawler-carl-enders-game/",
     "imageUrl": "",
     "publishedAt": "2026-07-27T19:38:22+00:00",
-    "scrapedAt": "2026-08-03T06:29:15.385694+00:00",
+    "scrapedAt": "2026-08-04T05:54:32.677918+00:00",
     "translations": {
       "en": {
         "title": "Dungeon Crawler Carl & Ender’s Game Become Pinball Machines Thanks To Multimorphic",
@@ -4682,7 +5708,7 @@
     "sourceUrl": "https://the-retrogamer.com/arcade1up-devoile-sa-borne-outrun-supreme-le-volant-et-le-pedalier-enfin-de-retour/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T08:52:29+00:00",
-    "scrapedAt": "2026-08-03T06:30:14.068509+00:00",
+    "scrapedAt": "2026-08-04T05:56:53.669316+00:00",
     "translations": {
       "fr": {
         "title": "Arcade1Up dévoile sa borne OutRun Supreme : le volant et le pédalier enfin de retour",
