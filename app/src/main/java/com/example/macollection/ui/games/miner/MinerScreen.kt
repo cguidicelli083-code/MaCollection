@@ -68,11 +68,28 @@ private enum class Cell { EMPTY, DIRT, WALL, BOULDER, DIAMOND, EXIT }
 private data class Mover(val col: Int, val row: Int, val dir: Dir, val progress: Float)
 
 /**
+ * Photo de l'état du jeu juste AVANT le dernier changement réel (mineur qui franchit une case,
+ * rocher/diamant qui tombe, écrasement...), pour permettre d'« annuler le dernier coup » si ce
+ * changement s'avère bloquant (ex. rocher tombé pile devant la seule sortie possible). Un seul
+ * niveau d'annulation (pas d'historique complet) : chaque nouveau changement réel écrase l'ancien.
+ */
+private data class MinerSnapshot(
+    val grid: Array<Array<Cell>>,
+    val miner: Mover,
+    val exitOpen: Boolean,
+    val diamondsHeld: Int,
+    val score: Int,
+    val lives: Int,
+    val fallingCells: Set<Int>
+)
+
+/**
  * Mineur : labyrinthe de terre à creuser. Glisser dans une direction pour orienter le mineur ;
  * il creuse la terre en avançant (aucun point) et ramasse les diamants (+25). Les rochers peuvent
  * être poussés horizontalement s'il y a de la place derrière, mais jamais verticalement. Sans
- * appui en dessous, rochers et diamants TOMBENT d'une case — se faire écraser par une chute coûte
- * une vie. Ramasse assez de diamants pour ouvrir la sortie (case verte) et terminer le niveau.
+ * appui en dessous, rochers et diamants TOMBENT d'une case — se faire écraser par un ROCHER qui
+ * tombe coûte une vie (un diamant qui tombe sur le mineur est ramassé automatiquement, sans
+ * danger). Ramasse assez de diamants pour ouvrir la sortie (case verte) et terminer le niveau.
  */
 @Composable
 fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
@@ -104,6 +121,7 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
     var continueOffer by remember { mutableStateOf<ContinueOffer?>(null) }
     var multiplierClaimed by remember { mutableStateOf(false) }
     var multiplierBonus by remember { mutableIntStateOf(0) }
+    var undoSnapshot by remember { mutableStateOf<MinerSnapshot?>(null) }
     val bestScores by vm.highScores.collectAsState()
     val context = LocalContext.current
     val isPremium by vm.isPremiumAllAccess.collectAsState()
@@ -153,22 +171,46 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
             val (c, r) = randomInteriorCell()
             if (g[r][c] == Cell.DIRT) g[r][c] = Cell.DIAMOND
         }
+        // Un diamant totalement encerclé de murs indestructibles (aucun côté creusable/franchissable)
+        // ne pourra jamais être atteint : on le retire plutôt que de compter un objectif impossible
+        // (voir aussi diamondCount(), qui recalcule diamondsNeeded d'après le résultat final ici).
+        for (row in 1 until HEIGHT - 1) for (col in 1 until WIDTH - 1) {
+            if (g[row][col] != Cell.DIAMOND) continue
+            val fullyWalled = listOf(col - 1 to row, col + 1 to row, col to row - 1, col to row + 1)
+                .all { (c, r) -> g[r][c] == Cell.WALL }
+            if (fullyWalled) g[row][col] = Cell.WALL
+        }
         // Poche de départ toujours dégagée (jamais de rocher/mur piégeant le mineur au lancement).
         for (dc in 0..2) for (dr in 0..2) {
             if (1 + dc < WIDTH - 1 && 1 + dr < HEIGHT - 1) g[1 + dr][1 + dc] = Cell.EMPTY
         }
-        val ex = WIDTH - 2
-        val ey = HEIGHT - 2
+        // Sortie décalée d'un cran par rapport au coin (au lieu de collée aux 2 murs de bordure) :
+        // garantit 4 angles d'approche possibles plutôt que 2 seulement. Ses 4 cases voisines sont
+        // forcées en terre normale (jamais un mur ni un rocher/diamant déjà posé), pour qu'un rocher
+        // tombé plus tard ne puisse bloquer qu'UN SEUL des 4 accès, jamais tous à la fois comme dans
+        // un coin à 2 accès (voir signalement utilisateur : sortie/diamant bloqués sans recours).
+        val ex = WIDTH - 3
+        val ey = HEIGHT - 3
         g[ey][ex] = Cell.EXIT
         exitPos = ex to ey
+        listOf(ex - 1 to ey, ex + 1 to ey, ex to ey - 1, ex to ey + 1).forEach { (c, r) -> g[r][c] = Cell.DIRT }
         return g
     }
+
+    /**
+     * Nombre de diamants RÉELLEMENT présents sur la grille générée. Les murs/rochers déjà posés
+     * (collisions aléatoires), la poche de départ dégagée après-coup et la case de sortie peuvent
+     * tous supprimer des diamants tirés au sort par [generateCave] : sans ce recomptage, l'objectif
+     * [diamondsNeeded] pouvait dépasser le nombre de diamants réellement atteignables, rendant le
+     * niveau impossible à terminer (sortie qui ne s'ouvre jamais malgré tous les diamants ramassés).
+     */
+    fun Array<Array<Cell>>.diamondCount(): Int = sumOf { row -> row.count { it == Cell.DIAMOND } }
 
     fun resetGame(size: IntSize) {
         if (size.width <= 0 || size.height <= 0) return
         level = 1
-        diamondsNeeded = 6
         grid = generateCave(level)
+        diamondsNeeded = 6.coerceAtMost(grid.diamondCount()).coerceAtLeast(1)
         miner = Mover(1, 1, Dir.NONE, 0f)
         desiredDir = Dir.NONE
         exitOpen = false
@@ -186,20 +228,40 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
         gameOver = false
         scoreRecorded = false
         initialized = true
+        undoSnapshot = null
         countdownKey++
     }
 
     fun startNextLevel() {
         level++
-        diamondsNeeded = (5 + level).coerceAtMost(12)
         grid = generateCave(level)
+        diamondsNeeded = (5 + level).coerceAtMost(12).coerceAtMost(grid.diamondCount()).coerceAtLeast(1)
         miner = Mover(1, 1, Dir.NONE, 0f)
         desiredDir = Dir.NONE
         exitOpen = false
         diamondsHeld = 0
         fallAccum = 0f
         fallingCells = emptySet()
+        undoSnapshot = null
         countdownKey++
+    }
+
+    /**
+     * Restaure l'état juste avant le dernier changement réel (voir [MinerSnapshot]) : utile quand
+     * ce changement bloque la partie (ex. rocher tombé sans issue devant le mineur). Un seul niveau
+     * d'annulation disponible à la fois.
+     */
+    fun undoLastAction() {
+        val snap = undoSnapshot ?: return
+        grid = snap.grid
+        miner = snap.miner
+        desiredDir = Dir.NONE
+        exitOpen = snap.exitOpen
+        diamondsHeld = snap.diamondsHeld
+        score = snap.score
+        lives = snap.lives
+        fallingCells = snap.fallingCells
+        undoSnapshot = null
     }
 
     LaunchedEffect(canvasSize) {
@@ -229,6 +291,18 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
         val g = grid
         if (g.isEmpty()) return@GameLoop
 
+        // Photo de l'état AVANT toute mutation de cette frame, pour "annuler la dernière action"
+        // (voir undoLastAction) : conservée dans undoSnapshot seulement si [changed] passe à vrai
+        // (un vrai changement a lieu cette frame), pas à chaque frame sans effet.
+        val preGrid = Array(HEIGHT) { r -> g[r].copyOf() }
+        val preMiner = miner
+        val preExitOpen = exitOpen
+        val preDiamondsHeld = diamondsHeld
+        val preScore = score
+        val preLives = lives
+        val preFallingCells = fallingCells
+        var changed = false
+
         fun cellAt(col: Int, row: Int): Cell =
             if (col in 0 until WIDTH && row in 0 until HEIGHT) g[row][col] else Cell.WALL
 
@@ -247,7 +321,7 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
          *  pousse un rocher. Appelé une seule fois, au moment où la case est réellement franchie. */
         fun applyEntry(col: Int, row: Int, dir: Dir) {
             when (cellAt(col, row)) {
-                Cell.DIRT -> { g[row][col] = Cell.EMPTY; GameFx.hop() }
+                Cell.DIRT -> { g[row][col] = Cell.EMPTY; GameFx.hop(); changed = true }
                 Cell.DIAMOND -> {
                     g[row][col] = Cell.EMPTY
                     diamondsHeld++
@@ -257,10 +331,12 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
                         exitOpen = true
                         GameFx.win()
                     }
+                    changed = true
                 }
                 Cell.BOULDER -> {
                     g[row][col] = Cell.EMPTY
                     g[row + dir.dy][col + dir.dx] = Cell.BOULDER
+                    changed = true
                 }
                 Cell.EXIT -> { /* ouverte : simple passage, la victoire est gérée après le déplacement */ }
                 else -> {}
@@ -324,12 +400,28 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
                         continue
                     }
                     // Déjà instable depuis au moins un tic : chute réelle.
-                    if (row + 1 == miner.row && col == miner.col) {
+                    val landsOnMiner = row + 1 == miner.row && col == miner.col
+                    if (landsOnMiner && c == Cell.DIAMOND) {
+                        // Un diamant qui tombe sur le mineur est ramassé automatiquement au lieu
+                        // de l'écraser : seuls les rochers sont mortels en tombant.
+                        g[row][col] = Cell.EMPTY
+                        diamondsHeld++
+                        score += DIAMOND_SCORE
+                        GameFx.eat()
+                        if (diamondsHeld >= diamondsNeeded && !exitOpen) {
+                            exitOpen = true
+                            GameFx.win()
+                        }
+                        changed = true
+                        continue
+                    }
+                    if (landsOnMiner) {
                         crushed = true
                     }
                     g[row + 1][col] = c
                     g[row][col] = Cell.EMPTY
                     stillUnstable.add((row + 1) * WIDTH + col)
+                    changed = true
                 }
             }
             fallingCells = stillUnstable
@@ -350,6 +442,10 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
                 }
             }
         }
+
+        if (changed) {
+            undoSnapshot = MinerSnapshot(preGrid, preMiner, preExitOpen, preDiamondsHeld, preScore, preLives, preFallingCells)
+        }
     }
 
     GameScaffold(
@@ -360,6 +456,8 @@ fun MinerScreen(vm: GameViewModel, onExit: () -> Unit) {
         pointsEarned = levelsWon * POINTS_PER_LEVEL + multiplierBonus,
         bestScore = bestScores[MINER_GAME_ID] ?: 0,
         onRestart = { resetGame(canvasSize) },
+        onResetLevel = { resetGame(canvasSize) },
+        onUndoLastAction = if (undoSnapshot != null) { { undoLastAction() } } else null,
         continueOffer = continueOffer,
         onWatchAdForMultiplier = if (BuildConfig.ADS_ENABLED && adsEnabled && !multiplierClaimed && levelsWon * POINTS_PER_LEVEL > 0) {
             {

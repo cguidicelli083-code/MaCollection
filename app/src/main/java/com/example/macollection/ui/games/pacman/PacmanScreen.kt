@@ -37,6 +37,7 @@ import kotlin.math.abs
 import kotlin.math.hypot
 import kotlin.math.min
 import kotlin.math.sin
+import kotlin.random.Random
 
 private const val WIDTH = 11
 private const val HEIGHT = 15
@@ -50,6 +51,11 @@ private const val POINTS_PER_LEVEL = 10
 private const val FRIGHT_TIME = 6f
 private const val PAC_SPEED = 5.5f
 private const val GHOST_SPEED = 4.6f
+// Probabilité qu'un fantôme (hors mode apeuré) choisisse une direction au hasard plutôt que la
+// meilleure vers Pacman : sans ça, il fonçait TOUJOURS droit dessus à chaque intersection (trop
+// prévisible/dirigé). Garde une vraie menace (se rapproche globalement) sans être parfaitement
+// dirigé à chaque choix.
+private const val GHOST_RANDOM_CHANCE = 0.35f
 
 private val WallBlue = Color(0xFF3B4CFF)
 private val DotColor = Color(0xFFFFE08A)
@@ -318,8 +324,11 @@ fun PacmanScreen(vm: GameViewModel, onExit: () -> Unit) {
                 val choices = if (opts.isNotEmpty()) opts
                 else listOf(dir.opposite()).filter { isOpen(col + it.dx, row + it.dy) }
                 if (choices.isNotEmpty()) {
-                    dir = if (fright) choices.maxByOrNull { manhattan(col + it.dx, row + it.dy, pacTile) }!!
-                    else choices.minByOrNull { manhattan(col + it.dx, row + it.dy, pacTile) }!!
+                    dir = when {
+                        fright -> choices.maxByOrNull { manhattan(col + it.dx, row + it.dy, pacTile) }!!
+                        Random.nextFloat() < GHOST_RANDOM_CHANCE -> choices.random()
+                        else -> choices.minByOrNull { manhattan(col + it.dx, row + it.dy, pacTile) }!!
+                    }
                 }
             }
             g.copy(mover = Mover(col, row, dir, progress))

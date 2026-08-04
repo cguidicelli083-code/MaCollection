@@ -51,6 +51,7 @@ private const val JUMP_IMPULSE = 0.58f     // hauteur d'écran / s (vers le haut
 private const val MAX_FALL_SPEED = 0.62f   // vitesse de chute plafonnée (vol plané façon Artificier)
 private const val MOVE_SPEED = 0.42f       // largeurs d'écran / s
 private const val PLAYER_RADIUS = 0.032f   // fraction de la largeur
+private const val DOUBLE_TAP_WINDOW_MS = 300L // délai max entre 2 frappes pour déclencher un saut
 
 private val PlatformColor = Color(0xFF3B3B55)
 private val BombColor = Color(0xFFECEFF4)
@@ -241,6 +242,12 @@ fun BombHunterScreen(vm: GameViewModel, onExit: () -> Unit) {
             }
         }
         if (py - PLAYER_RADIUS < 0f) { py = PLAYER_RADIUS; vy = 0f }
+        // Filet de sécurité : la plateforme du bas laisse une marge de 5% de chaque côté (xMin=0.05,
+        // xMax=0.95) sans rien en dessous. Sans cette limite, un joueur qui tombe dans cette marge
+        // (ou pile après un franchissement de bord) continuait de chuter sous l'écran indéfiniment
+        // (invisible, remontable seulement en sautant à l'aveugle) faute de toute autre plateforme
+        // pour l'arrêter.
+        if (py + PLAYER_RADIUS > 1f) { py = 1f - PLAYER_RADIUS; vy = 0f }
 
         // --- Gardiens : patrouille horizontale avec un léger flottement vertical sinusoïdal. ---
         enemies = enemies.map { e ->
@@ -312,10 +319,21 @@ fun BombHunterScreen(vm: GameViewModel, onExit: () -> Unit) {
                 .fillMaxSize()
                 .onSizeChanged { canvasSize = it }
                 .pointerInput(Unit) {
+                    // Seul un DOUBLE tap (2 appuis rapprochés de moins de DOUBLE_TAP_WINDOW_MS)
+                    // déclenche un saut ; un simple appui ne fait qu'orienter le déplacement
+                    // horizontal (comme avant). `lastTapUptime` vit dans cette coroutine (pas un
+                    // état Compose) : awaitEachGesture boucle indéfiniment sur de nouveaux gestes
+                    // sans jamais quitter ce bloc, donc la variable survit d'un appui à l'autre.
+                    var lastTapUptime = 0L
                     awaitEachGesture {
                         val down = awaitFirstDown()
-                        vy = -JUMP_IMPULSE
-                        GameFx.hop()
+                        if (down.uptimeMillis - lastTapUptime <= DOUBLE_TAP_WINDOW_MS) {
+                            vy = -JUMP_IMPULSE
+                            GameFx.hop()
+                            lastTapUptime = 0L
+                        } else {
+                            lastTapUptime = down.uptimeMillis
+                        }
                         moveDir = if (down.position.x < size.width / 2f) HDir.LEFT else HDir.RIGHT
                         drag(down.id) { change ->
                             moveDir = if (change.position.x < size.width / 2f) HDir.LEFT else HDir.RIGHT

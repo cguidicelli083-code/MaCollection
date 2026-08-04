@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -20,7 +22,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -52,6 +59,15 @@ data class ContinueOffer(
  * fin de partie (Multiplicateur de Score) : l'appelant lance la pub récompensée et crédite le
  * bonus lui-même, puis repasse ce paramètre à null (ex. via un état "déjà réclamé" pour cette
  * partie) pour faire disparaître le bouton une fois utilisé.
+ *
+ * [onResetLevel], si non nul, affiche une icône dans l'en-tête (à côté du retour), utilisable
+ * PENDANT la partie (contrairement à [onRestart], réservé à l'écran de fin) : pour les jeux où un
+ * élément physique peut immobiliser le joueur sans issue (ex. un rocher tombé dans le Mineur,
+ * bloquant l'accès sans pouvoir être poussé ni détruit), c'est la porte de sortie si la partie en
+ * cours est bloquée. Ouvre un choix entre recommencer la partie (perte du score en cours) et, si
+ * [onUndoLastAction] est également non nul, annuler seulement le dernier changement (rocher/
+ * diamant qui vient de tomber, dernier déplacement...) sans tout reperdre — utile quand seule la
+ * toute dernière action a bloqué la partie.
  */
 @Composable
 fun GameScaffold(
@@ -64,8 +80,11 @@ fun GameScaffold(
     onRestart: () -> Unit,
     continueOffer: ContinueOffer? = null,
     onWatchAdForMultiplier: (() -> Unit)? = null,
+    onResetLevel: (() -> Unit)? = null,
+    onUndoLastAction: (() -> Unit)? = null,
     content: @Composable BoxScope.() -> Unit
 ) {
+    var showResetConfirm by remember { mutableStateOf(false) }
     Box(Modifier.fillMaxSize().background(themedGradient())) {
         Column(Modifier.fillMaxSize()) {
             Row(
@@ -73,8 +92,15 @@ fun GameScaffold(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(onClick = onExit) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = null, tint = Color.White)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    IconButton(onClick = onExit) {
+                        Icon(Icons.Filled.ArrowBack, contentDescription = null, tint = Color.White)
+                    }
+                    if (onResetLevel != null) {
+                        IconButton(onClick = { showResetConfirm = true }) {
+                            Icon(Icons.Filled.Refresh, contentDescription = "Bloqué ? Recommencer ou annuler le dernier coup", tint = Color.White)
+                        }
+                    }
                 }
                 Text(title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                 Text("Score : $score", color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.Bold, fontSize = 16.sp)
@@ -82,6 +108,31 @@ fun GameScaffold(
             Box(Modifier.weight(1f).fillMaxWidth()) {
                 content()
             }
+        }
+        if (showResetConfirm) {
+            AlertDialog(
+                onDismissRequest = { showResetConfirm = false },
+                title = { Text("Bloqué ?") },
+                text = {
+                    Text(
+                        if (onUndoLastAction != null)
+                            "Annulez juste le dernier changement (ex. un rocher qui vient de tomber), ou recommencez la partie entière (score et progression actuels perdus)."
+                        else
+                            "Recommencer la partie ? Le score et la progression actuels seront perdus."
+                    )
+                },
+                confirmButton = {
+                    TextButton(onClick = { showResetConfirm = false; onResetLevel?.invoke() }) { Text("Recommencer la partie") }
+                },
+                dismissButton = {
+                    Row {
+                        if (onUndoLastAction != null) {
+                            TextButton(onClick = { showResetConfirm = false; onUndoLastAction.invoke() }) { Text("Revenir en arrière") }
+                        }
+                        TextButton(onClick = { showResetConfirm = false }) { Text("Annuler") }
+                    }
+                }
+            )
         }
         if (continueOffer != null) {
             Box(

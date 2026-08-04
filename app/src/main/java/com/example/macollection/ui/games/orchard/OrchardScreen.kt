@@ -52,12 +52,23 @@ private const val BUG_DIG_SPEED = 2.1f     // plus lent quand l'insecte doit cre
 private const val APPLE_ROLL_STEP = 0.09f  // secondes entre deux cases pour une pomme qui roule (rapide)
 private const val BALL_STEP = 0.045f       // secondes entre deux cases pour la bille lancée (très rapide)
 private const val BALL_COOLDOWN = 4f
+// Probabilité qu'un insecte choisisse une direction au hasard plutôt que la meilleure vers Frank :
+// avec 0 (comportement d'origine), l'insecte fonçait TOUJOURS droit sur le joueur (trop prévisible/
+// dirigé) ; ce taux garde une vraie menace (il continue globalement de se rapprocher) sans être
+// un rabatteur parfait à chaque intersection.
+private const val BUG_RANDOM_CHANCE = 0.4f
 
 private val DirtColor = Color(0xFF2E5C3A)
 private val DirtDark = Color(0xFF24492E)
-private val WallColor = Color(0xFF16321F)
+private val WallColor = Color(0xFF5D4037)
 private val FruitRed = Color(0xFFFF3B3B)
 private val FruitPale = Color(0xFFFFE9A8)
+private val OrangeColor = Color(0xFFFF8F1F)
+private val OrangePale = Color(0xFFFFD199)
+private val BananaColor = Color(0xFFFFD93B)
+private val BananaDark = Color(0xFFE0B400)
+private val CherryColor = Color(0xFFC62828)
+private val CherryLeaf = Color(0xFF2E7D32)
 private val AppleColor = Color(0xFFE0433B)
 private val AppleLeaf = Color(0xFF2E7D32)
 private val FrankColor = Color(0xFFFF9F1C)
@@ -69,7 +80,10 @@ private enum class Dir(val dx: Int, val dy: Int) {
     fun opposite() = when (this) { UP -> DOWN; DOWN -> UP; LEFT -> RIGHT; RIGHT -> LEFT; NONE -> NONE }
 }
 
-private enum class Cell { EMPTY, DIRT, WALL, FRUIT }
+// FRUIT = pomme rouge d'origine ; les 3 autres sont purement cosmétiques (même score, même
+// comportement) pour varier les couleurs, comme demandé. Voir FRUIT_CELLS pour les traiter en bloc.
+private enum class Cell { EMPTY, DIRT, WALL, FRUIT, FRUIT_ORANGE, FRUIT_BANANA, FRUIT_CHERRY }
+private val FRUIT_CELLS = setOf(Cell.FRUIT, Cell.FRUIT_ORANGE, Cell.FRUIT_BANANA, Cell.FRUIT_CHERRY)
 
 private data class Mover(val col: Int, val row: Int, val dir: Dir, val progress: Float)
 private data class Bug(val mover: Mover, val color: Color)
@@ -152,7 +166,7 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
         }
         repeat(fruitCount) {
             val (c, r) = randomInteriorCell()
-            if (g[r][c] == Cell.DIRT) g[r][c] = Cell.FRUIT
+            if (g[r][c] == Cell.DIRT) g[r][c] = FRUIT_CELLS.random(rnd)
         }
         for (dc in 0..2) for (dr in 0..2) {
             if (1 + dc < WIDTH - 1 && 1 + dr < HEIGHT - 1) g[1 + dr][1 + dc] = Cell.EMPTY
@@ -182,7 +196,7 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
 
     fun countFruit(g: Array<Array<Cell>>): Int {
         var n = 0
-        for (row in g) for (c in row) if (c == Cell.FRUIT) n++
+        for (row in g) for (c in row) if (c in FRUIT_CELLS) n++
         return n
     }
 
@@ -301,9 +315,10 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
                 progress -= 1f
                 col += dir.dx
                 row += dir.dy
-                when (g[row][col]) {
-                    Cell.DIRT -> { g[row][col] = Cell.EMPTY; GameFx.chomp(true) }
-                    Cell.FRUIT -> {
+                val entered = g[row][col]
+                when {
+                    entered == Cell.DIRT -> { g[row][col] = Cell.EMPTY; GameFx.chomp(true) }
+                    entered in FRUIT_CELLS -> {
                         g[row][col] = Cell.EMPTY
                         score += FRUIT_SCORE
                         fruitLeft--
@@ -332,7 +347,10 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
                 val opts = listOf(Dir.UP, Dir.DOWN, Dir.LEFT, Dir.RIGHT).filter {
                     cellAt(m.col + it.dx, m.row + it.dy) != Cell.WALL && appleAt(m.col + it.dx, m.row + it.dy) == null
                 }
-                if (opts.isNotEmpty()) m = m.copy(dir = opts.minByOrNull { abs(m.col + it.dx - frankTile.first) + abs(m.row + it.dy - frankTile.second) }!!)
+                if (opts.isNotEmpty()) {
+                    m = m.copy(dir = if (Random.nextFloat() < BUG_RANDOM_CHANCE) opts.random()
+                        else opts.minByOrNull { abs(m.col + it.dx - frankTile.first) + abs(m.row + it.dy - frankTile.second) }!!)
+                }
             }
             val speed = if (cellAt(m.col + m.dir.dx, m.row + m.dir.dy) == Cell.DIRT) BUG_DIG_SPEED else BUG_TUNNEL_SPEED
             var progress = m.progress + speed * (1f + 0.05f * (level - 1)) * dt
@@ -350,7 +368,8 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
                 val choices = if (opts.isNotEmpty()) opts
                 else listOf(Dir.UP, Dir.DOWN, Dir.LEFT, Dir.RIGHT).filter { cellAt(col + it.dx, row + it.dy) != Cell.WALL && appleAt(col + it.dx, row + it.dy) == null }
                 if (choices.isNotEmpty()) {
-                    dir = choices.minByOrNull { abs(col + it.dx - frankTile.first) + abs(row + it.dy - frankTile.second) }!!
+                    dir = if (Random.nextFloat() < BUG_RANDOM_CHANCE) choices.random()
+                        else choices.minByOrNull { abs(col + it.dx - frankTile.first) + abs(row + it.dy - frankTile.second) }!!
                 }
             }
             b.copy(mover = Mover(col, row, dir, progress))
@@ -510,6 +529,28 @@ fun OrchardScreen(vm: GameViewModel, onExit: () -> Unit) {
                         val fc = cx(col.toFloat()); val fcy = cy(row.toFloat()); val r = tile * 0.3f
                         drawCircle(FruitRed, r, Offset(fc, fcy))
                         drawCircle(FruitPale, r * 0.55f, Offset(fc - r * 0.25f, fcy - r * 0.25f))
+                    }
+                    Cell.FRUIT_ORANGE -> {
+                        drawRect(DirtColor, Offset(left, top), Size(tile, tile))
+                        val fc = cx(col.toFloat()); val fcy = cy(row.toFloat()); val r = tile * 0.3f
+                        drawCircle(OrangeColor, r, Offset(fc, fcy))
+                        drawCircle(OrangePale, r * 0.5f, Offset(fc - r * 0.22f, fcy - r * 0.22f))
+                    }
+                    Cell.FRUIT_BANANA -> {
+                        drawRect(DirtColor, Offset(left, top), Size(tile, tile))
+                        val fc = cx(col.toFloat()); val fcy = cy(row.toFloat()); val r = tile * 0.3f
+                        // Forme incurvée simplifiée : deux disques décalés en diagonale + un petit
+                        // bout foncé, plus lisible qu'un arc dessiné sur une aussi petite case.
+                        drawCircle(BananaColor, r * 0.62f, Offset(fc - r * 0.28f, fcy - r * 0.18f))
+                        drawCircle(BananaColor, r * 0.62f, Offset(fc + r * 0.28f, fcy + r * 0.18f))
+                        drawCircle(BananaDark, r * 0.12f, Offset(fc + r * 0.5f, fcy + r * 0.35f))
+                    }
+                    Cell.FRUIT_CHERRY -> {
+                        drawRect(DirtColor, Offset(left, top), Size(tile, tile))
+                        val fc = cx(col.toFloat()); val fcy = cy(row.toFloat()); val r = tile * 0.22f
+                        drawCircle(CherryColor, r, Offset(fc - r * 0.65f, fcy + r * 0.4f))
+                        drawCircle(CherryColor, r, Offset(fc + r * 0.65f, fcy + r * 0.4f))
+                        drawCircle(CherryLeaf, r * 0.5f, Offset(fc, fcy - r * 0.9f))
                     }
                     Cell.EMPTY -> {}
                 }
