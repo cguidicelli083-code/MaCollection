@@ -1,5 +1,575 @@
 [
   {
+    "id": "0e0e1644104897d81600961653b9789d80a65198",
+    "title": "PSA: Final Fantasy XIV Getting Switch 2 Update To Address Prolonged Loading",
+    "summary": "An updated version is already in testing. Final Fantasy XIV Online is out now for the Switch 2, and like all good MMO launches, it seems there are some teething issues. Square Enix has identified a prolonged loading bug in this version of the game, with a notice on the official game website detailing how it \"may take longer than usual\" when the screen fades to black in instanced duties. Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/psa-final-fantasy-xiv-getting-switch-2-update-to-address-prolonged-loading",
+    "imageUrl": "https://images.nintendolife.com/1ad359a8b74f6/large.jpg",
+    "publishedAt": "2026-08-04T23:55:00+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.748616+00:00",
+    "translations": {
+      "en": {
+        "title": "PSA: Final Fantasy XIV Getting Switch 2 Update To Address Prolonged Loading",
+        "summary": "An updated version is already in testing. Final Fantasy XIV Online is out now for the Switch 2, and like all good MMO launches, it seems there are some teething issues. Square Enix has identified a prolonged loading bug in this version of the game, with a notice on the official game website detailing how it \"may take longer than usual\" when the screen fades to black in instanced duties. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "PSA : Final Fantasy XIV obtient la mise à jour Switch 2 pour résoudre le chargement prolongé",
+        "summary": "Une version mise à jour est déjà en test. Final Fantasy XIV Online est maintenant disponible sur Switch 2, et comme tous les bons lancements de MMO, il semble y avoir quelques problèmes de jeunesse. Square Enix a identifié un bug de chargement prolongé dans cette version du jeu, avec un avis sur le site officiel du jeu détaillant comment cela « peut prendre plus de temps que d'habitude » lorsque l'écran devient noir lors de tâches instanciées. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "PSA: Final Fantasy XIV Getting Switch 2 Update To Address Prolonged Loading",
+        "summary": "An updated version is already in testing. Final Fantasy XIV Online is out now for the Switch 2, and like all good MMO launches, it seems there are some teething issues. Square Enix has identified a prolonged loading bug in this version of the game, with a notice on the official game website detailing how it \"may take longer than usual\" when the screen fades to black in instanced duties. Read the full article on nintendolife.com"
+      },
+      "it": {
+        "title": "PSA: Final Fantasy XIV riceve l'aggiornamento Switch 2 per risolvere il caricamento prolungato",
+        "summary": "Una versione aggiornata è già in fase di test. Final Fantasy XIV Online è ora disponibile per Switch 2 e, come tutti i lanci di un buon MMO, sembra che ci siano alcuni problemi iniziali. Square Enix ha identificato un bug di caricamento prolungato in questa versione del gioco, con un avviso sul sito ufficiale del gioco che spiega in dettaglio come \"potrebbe richiedere più tempo del solito\" quando lo schermo diventa nero nei compiti istanziati. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "PSA: Final Fantasy XIV erhält Switch 2-Update, um längeres Laden zu beheben",
+        "summary": "Eine aktualisierte Version befindet sich bereits im Test. Final Fantasy Square Enix hat in dieser Version des Spiels einen Fehler beim längeren Laden festgestellt. Auf der offiziellen Website des Spiels wurde darauf hingewiesen, dass es „länger als üblich dauern kann“, wenn der Bildschirm bei instanzierten Aufgaben schwarz wird. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "PSA: Final Fantasy XIV recebendo atualização do switch 2 para lidar com carregamento prolongado",
+        "summary": "Uma versão atualizada já está em testes. Final Fantasy XIV Online já foi lançado para o Switch 2 e, como todos os bons lançamentos de MMO, parece que há alguns problemas iniciais. A Square Enix identificou um bug de carregamento prolongado nesta versão do jogo, com um aviso no site oficial do jogo detalhando como “pode demorar mais do que o normal” quando a tela escurece em tarefas instanciadas. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "PSA: Final Fantasy XIV получает обновление Switch 2 для решения проблемы длительной загрузки",
+        "summary": "Обновленная версия уже находится в тестировании. Final Fantasy XIV Online вышла на Switch 2, и, как и во всех хороших MMO-играх, похоже, здесь есть некоторые проблемы с прорезыванием зубов. Square Enix обнаружила ошибку длительной загрузки в этой версии игры, разместив на официальном сайте игры уведомление, в котором подробно описывается, что это «может занять больше времени, чем обычно», когда экран становится черным во время выполнения отдельных задач. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Ενημέρωση PSA: Final Fantasy XIV Getting Switch 2 για αντιμετώπιση παρατεταμένης φόρτωσης",
+        "summary": "Μια ενημερωμένη έκδοση βρίσκεται ήδη σε δοκιμή. Το Final Fantasy XIV Online κυκλοφορεί τώρα για το Switch 2, και όπως όλες οι καλές εκδόσεις MMO, φαίνεται ότι υπάρχουν κάποια προβλήματα. Η Square Enix εντόπισε ένα σφάλμα παρατεταμένης φόρτωσης σε αυτήν την έκδοση του παιχνιδιού, με μια ειδοποίηση στον επίσημο ιστότοπο του παιχνιδιού που περιγράφει λεπτομερώς πώς \"μπορεί να διαρκέσει περισσότερο από το συνηθισμένο\" όταν η οθόνη ξεθωριάζει σε μαύρη κατά την εκτέλεση εργασιών. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "PSA: Final Fantasy XIV, Uzun Süreli Yükleme Sorununu Çözmek İçin Switch 2 Güncellemesini Alıyor",
+        "summary": "Güncellenmiş bir sürüm zaten test aşamasındadır. Final Fantasy XIV Online şu anda Switch 2 için çıktı ve tüm iyi MMO lansmanları gibi bazı diş çıkarma sorunları var gibi görünüyor. Square Enix, oyunun bu sürümünde uzun süreli bir yükleme hatası tespit etti ve resmi oyun web sitesinde, anlık görevlerde ekranın kararmasının nasıl \"normalden daha uzun sürebileceğini\" ayrıntılarıyla anlatan bir bildirim yer aldı. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "PSA：ファイナルファンタジーXIV、長時間のロードに対処するためにSwitch 2アップデートを取得",
+        "summary": "更新されたバージョンはすでにテスト中です。ファイナルファンタジー XIV オンラインは現在 Switch 2 向けにリリースされていますが、すべての優れた MMO リリースと同様に、いくつかの問題があるようです。スクウェア・エニックスは、このバージョンのゲームでロード時間が長くなるバグを特定し、公式ゲーム Web サイトに、インスタンス化された任務で画面が黒くなったときに「通常よりも時間がかかる可能性がある」という詳細な通知を掲載しました。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "PSA：《最终幻想 XIV》获得 Switch 2 更新以解决长时间加载问题",
+        "summary": "更新版本已经在测试中。 《最终幻想 XIV Online》现已在 Switch 2 上推出，与所有优秀的 MMO 游戏一样，似乎也存在一些初期问题。 Square Enix 发现了该版本游戏中的一个长时间加载错误，并在官方游戏网站上发布了一份通知，详细说明了在实例任务中屏幕变黑时“可能需要比平时更长的时间”。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
+    "id": "905faab385dbcfa862cc0e1ce2b625269f4506b0",
+    "title": "Video: 10 Exciting Games Coming To Switch And Switch 2 In August 2026",
+    "summary": "Metal Gear?! We're quickly approaching the Autumn season of 2026 (crikey), which means the rate of game releases is slowly but surely starting to ramp up. August is packed with some pretty big-hitters too, including the likes of Elden Ring: Tarnished Edition , Metal Gear Solid: Master Collection Vol. 2 , and The Elder Scrolls IV: Oblivion Remastered . Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/video-10-exciting-games-coming-to-switch-and-switch-2-in-august-2026",
+    "imageUrl": "https://images.nintendolife.com/11cecf3b27e2f/large.jpg",
+    "publishedAt": "2026-08-04T17:15:00+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.748745+00:00",
+    "translations": {
+      "en": {
+        "title": "Video: 10 Exciting Games Coming To Switch And Switch 2 In August 2026",
+        "summary": "Metal Gear?! We're quickly approaching the Autumn season of 2026 (crikey), which means the rate of game releases is slowly but surely starting to ramp up. August is packed with some pretty big-hitters too, including the likes of Elden Ring: Tarnished Edition , Metal Gear Solid: Master Collection Vol. 2 , and The Elder Scrolls IV: Oblivion Remastered . Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Vidéo : 10 jeux passionnants à venir sur Switch et Switch 2 en août 2026",
+        "summary": "Équipement métallique ?! Nous approchons rapidement de la saison d’automne 2026 (crikey), ce qui signifie que le rythme des sorties de jeux commence lentement mais sûrement à s’accélérer. Le mois d'août regorge également de gros succès, notamment Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2 et The Elder Scrolls IV : Oblivion Remastered. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Vídeo: 10 juegos emocionantes que llegarán a Switch y Switch 2 en agosto de 2026",
+        "summary": "¿Metal Gear? Nos acercamos rápidamente a la temporada de otoño de 2026 (crikey), lo que significa que el ritmo de lanzamientos de juegos está empezando a aumentar de forma lenta pero segura. Agosto también está repleto de grandes éxitos, como Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2, y The Elder Scrolls IV: Oblivion Remastered. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Video: 10 giochi entusiasmanti in arrivo su Switch e Switch 2 nell'agosto 2026",
+        "summary": "Ingranaggio metallico?! Ci stiamo rapidamente avvicinando alla stagione autunnale del 2026 (crikey), il che significa che il tasso di rilascio dei giochi sta lentamente ma inesorabilmente iniziando ad aumentare. Agosto è anche ricco di grandi successi, tra cui Elden Ring: Tarnish Edition, Metal Gear Solid: Master Collection Vol. 2 e The Elder Scrolls IV: Oblivion Remastered. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Video: 10 spannende Spiele für Switch und Switch 2 im August 2026",
+        "summary": "Metal Gear?! Wir nähern uns schnell der Herbstsaison 2026 (crikey), was bedeutet, dass die Zahl der Spielveröffentlichungen langsam aber sicher zu steigen beginnt. Auch der August ist vollgepackt mit einigen ziemlich großen Hits, darunter Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2 und The Elder Scrolls IV: Oblivion Remastered. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Vídeo: 10 jogos emocionantes chegando ao Switch e ao Switch 2 em agosto de 2026",
+        "summary": "Engrenagem Metálica?! Estamos nos aproximando rapidamente da temporada de outono de 2026 (caramba), o que significa que a taxa de lançamentos de jogos está lenta mas seguramente começando a aumentar. Agosto também está repleto de grandes sucessos, incluindo nomes como Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2, e The Elder Scrolls IV: Oblivion Remastered. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Видео: 10 захватывающих игр, которые выйдут на Switch и Switch 2 в августе 2026 года",
+        "summary": "Метал Гир?! Мы быстро приближаемся к осеннему сезону 2026 года (черт возьми), а это значит, что скорость выпуска игр медленно, но верно начинает расти. Август также полон довольно успешных игр, в том числе таких, как Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2 и The Elder Scrolls IV: Oblivion Remastered. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Βίντεο: 10 συναρπαστικά παιχνίδια που έρχονται στο Switch And Switch 2 τον Αύγουστο του 2026",
+        "summary": "Metal Gear;! Πλησιάζουμε γρήγορα τη σεζόν του φθινοπώρου του 2026 (κρίμα), που σημαίνει ότι ο ρυθμός των κυκλοφοριών παιχνιδιών αρχίζει αργά αλλά σταθερά να αυξάνεται. Ο Αύγουστος είναι γεμάτος και με μερικούς αρκετά μεγάλους παίκτες, όπως το Elden Ring: Tarnished Edition , το Metal Gear Solid: Master Collection Vol. 2 και The Elder Scrolls IV: Oblivion Remastered . Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "Video: Ağustos 2026'da Switch And Switch 2'ye Gelecek 10 Heyecan Verici Oyun",
+        "summary": "Metal Dişli mi? Hızla 2026 Sonbahar sezonuna yaklaşıyoruz (kritik), bu da oyun çıkış oranının yavaş ama emin adımlarla artmaya başladığı anlamına geliyor. Ağustos ayı, Elden Ring: Tarnished Edition, Metal Gear Solid: Master Collection Vol. 2 ve The Elder Scrolls IV: Oblivion Remastered. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "ビデオ: 2026 年 8 月に Switch と Switch 2 に登場する 10 のエキサイティングなゲーム",
+        "summary": "メタルギア？！ 2026 年の秋シーズン (クリキー) が間もなく近づいており、ゲームのリリース率がゆっくりと、しかし確実に増加し始めていることを意味します。 8 月には、『Elden Ring: Tarnished Edition』、『Metal Gear Solid: Master Collection Vol. 2』など、かなりの大物も目白押しです。 2 、および TheElderScrollsIV:OblivionRemastered 。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "视频：将于 2026 年 8 月登陆 Switch 和 Switch 2 的 10 款精彩游戏",
+        "summary": "合金装备？！我们很快就将迎来 2026 年秋季（crkey），这意味着游戏发布速度正在缓慢但肯定地开始加快。八月也充满了一些相当大的热门作品，包括《Elden Ring: Tarnished Edition》、《Metal Gear Solid: Master Collection Vol》等。 2、以及《上古卷轴 IV：湮灭重制版》。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
+    "id": "6d1acf832a685160d5ffd477af2290f1af7a9d40",
+    "title": "Announced for PS5 at State of Play, Gothic Action RPG Crimson Moon Finally Has a Release Date",
+    "summary": "And it's soon. Crimson Moon , a cool-looking, gothic-styled action RPG that was announced for PS5 during February's State of Play broadcast, has finally locked in its release date. Previously, the title was down for a vague 'September' launch, but now it's fully committed to the 1st September. It'll be here before you know it. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/announced-for-ps5-at-state-of-play-gothic-action-rpg-crimson-moon-finally-has-a-release-date",
+    "imageUrl": "https://images.pushsquare.com/cf43efdbb0fa6/large.jpg",
+    "publishedAt": "2026-08-04T17:00:00+00:00",
+    "scrapedAt": "2026-08-05T05:52:13.749232+00:00",
+    "translations": {
+      "en": {
+        "title": "Announced for PS5 at State of Play, Gothic Action RPG Crimson Moon Finally Has a Release Date",
+        "summary": "And it's soon. Crimson Moon , a cool-looking, gothic-styled action RPG that was announced for PS5 during February's State of Play broadcast, has finally locked in its release date. Previously, the title was down for a vague 'September' launch, but now it's fully committed to the 1st September. It'll be here before you know it. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Annoncé sur PS5 lors du State of Play, le RPG d'action gothique Crimson Moon a enfin une date de sortie",
+        "summary": "Et c'est bientôt. Crimson Moon, un RPG d'action au look gothique et cool annoncé sur PS5 lors de la diffusion State of Play de février, a finalement fixé sa date de sortie. Auparavant, le titre était prévu pour un vague lancement en « septembre », mais il est désormais pleinement engagé pour le 1er septembre. Il sera là avant que vous le sachiez. Lire l'article complet sur pushsquare.com"
+      },
+      "es": {
+        "title": "Anunciado para PS5 en State of Play, el RPG de acción gótico Crimson Moon finalmente tiene fecha de lanzamiento",
+        "summary": "Y es pronto. Crimson Moon, un atractivo juego de rol de acción de estilo gótico que se anunció para PS5 durante la transmisión State of Play de febrero, finalmente ha fijado su fecha de lanzamiento. Anteriormente, el título estaba reservado para un vago lanzamiento en 'septiembre', pero ahora está totalmente comprometido para el 1 de septiembre. Estará aquí antes de que te des cuenta. Lea el artículo completo en pushsquare.com"
+      },
+      "it": {
+        "title": "Annunciato per PS5 allo State of Play, il gioco di ruolo d'azione gotico Crimson Moon ha finalmente una data di uscita",
+        "summary": "Ed è presto. Crimson Moon, un gioco di ruolo d'azione dall'aspetto accattivante e in stile gotico annunciato per PS5 durante la trasmissione State of Play di febbraio, ha finalmente fissato la sua data di uscita. In precedenza, il titolo era stato pubblicato per un vago lancio \"settembre\", ma ora è completamente dedicato al 1° settembre. Sarà qui prima che tu te ne accorga. Leggi l'articolo completo su pushsquare.com"
+      },
+      "de": {
+        "title": "Das bei State of Play für PS5 angekündigte Gothic-Action-Rollenspiel Crimson Moon hat endlich einen Veröffentlichungstermin",
+        "summary": "Und es ist bald. Crimson Moon, ein cool aussehendes Action-Rollenspiel im Gothic-Stil, das während der State of Play-Übertragung im Februar für PS5 angekündigt wurde, hat endlich seinen Veröffentlichungstermin festgelegt. Zuvor war der Titel für eine vage „September“-Veröffentlichung vorgesehen, aber jetzt ist er vollständig auf den 1. September festgelegt. Es wird hier sein, bevor Sie es wissen. Lesen Sie den vollständigen Artikel auf pushsquare.com"
+      },
+      "pt": {
+        "title": "Anunciado para PS5 no State of Play, RPG de ação gótica Crimson Moon finalmente tem data de lançamento",
+        "summary": "E é em breve. Crimson Moon, um RPG de ação de estilo gótico que foi anunciado para PS5 durante a transmissão State of Play de fevereiro, finalmente definiu sua data de lançamento. Anteriormente, o título estava fora do ar para um lançamento vago em “setembro”, mas agora está totalmente comprometido com 1º de setembro. Estará aqui antes que você perceba. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "Анонсированная для PS5 на State of Play, готическая ролевая игра Crimson Moon наконец-то получила дату выхода",
+        "summary": "И это скоро. Crimson Moon, классная ролевая игра в готическом стиле, анонсированная для PS5 во время февральской трансляции State of Play, наконец-то определила дату своего выпуска. Раньше название было указано для неопределенного запуска «сентября», но теперь оно полностью привязано к 1 сентября. Оно будет здесь прежде, чем вы это заметите. Полную версию статьи читайте на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "Ανακοινώθηκε για το PS5 στο State of Play, το Gothic Action RPG Crimson Moon επιτέλους έχει ημερομηνία κυκλοφορίας",
+        "summary": "Και είναι σύντομα. Το Crimson Moon, ένα δροσερό RPG δράσης σε γοτθικό στιλ που ανακοινώθηκε για το PS5 κατά τη διάρκεια της μετάδοσης State of Play τον Φεβρουάριο, έκλεισε επιτέλους την ημερομηνία κυκλοφορίας του. Προηγουμένως, ο τίτλος ήταν κλειστός για ένα ασαφές λανσάρισμα \"Σεπτέμβριος\", αλλά τώρα είναι πλήρως αφοσιωμένος στην 1η Σεπτεμβρίου. Θα είναι εδώ πριν το καταλάβεις. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
+      },
+      "tr": {
+        "title": "State of Play'de PS5 için Duyurusu Yapılan Gotik Aksiyon RPG Crimson Moon'un Nihayet Çıkış Tarihi Var",
+        "summary": "Ve yakında. Şubat ayındaki State of Play yayını sırasında PS5 için duyurulan havalı görünümlü, gotik tarzdaki aksiyon RPG'si Crimson Moon nihayet çıkış tarihine kilitlendi. Daha önce, başlık belirsiz bir 'Eylül' lansmanı için yayınlanıyordu, ancak şimdi tamamen 1 Eylül'e bağlı. Siz farkına bile varmadan burada olacak. Makalenin tamamını pushsquare.com'da okuyun"
+      },
+      "ja": {
+        "title": "State of PlayでPS5向けに発表、ゴシックアクションRPG『Crimson Moon』ついに発売日決定",
+        "summary": "そしてもうすぐです。 Crimson Moon は、2 月の State of Play ブロードキャスト中に PS5 向けに発表されたクールな見た目のゴシック スタイルのアクション RPG で、ついに発売日が確定しました。以前は、このタイトルは漠然と「9月」発売予定だったが、現在は9月1日に完全にコミットしている。それはあなたが知らないうちにここに来ます。 Pushsquare.comで記事全文を読む"
+      },
+      "zh": {
+        "title": "State of Play 宣布登陆 PS5，哥特式动作角色扮演游戏《Crimson Moon》终于确定发售日期",
+        "summary": "而且很快了。 《Crimson Moon》是一款外观酷炫的哥特式动作角色扮演游戏，在 2 月份的 State of Play 广播中宣布推出 PS5 版，现在终于确定了发布日期。此前，该游戏的发布时间是模糊的“9 月”，但现在它完全承诺在 9 月 1 日发布。在你意识到之前它就会在这里。在pushsquare.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "ac3cfd06962d65559db849c49f65fc276e7399c3",
+    "title": "Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series",
+    "summary": "ActuGaming.net Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series Révélé lors d&#8217;un State of Play au printemps, Crimson Moon nous a tout de suite [&#8230;] L'article Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series est disponible sur ActuGaming.net",
+    "category": "GAME_RELEASE",
+    "sourceName": "ActuGaming",
+    "sourceUrl": "https://www.actugaming.net/crimson-moon-le-soulslike-gothique-de-probablymonsters-sortira-le-1er-septembre-sur-pc-ps5-et-xbox-series-814164/",
+    "imageUrl": "https://static.actugaming.net/media/2026/08/crimson-moon-official-screenshot-3.jpg",
+    "publishedAt": "2026-08-04T16:18:49+00:00",
+    "scrapedAt": "2026-08-05T05:53:58.055663+00:00",
+    "translations": {
+      "fr": {
+        "title": "Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series",
+        "summary": "ActuGaming.net Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series Révélé lors d&#8217;un State of Play au printemps, Crimson Moon nous a tout de suite [&#8230;] L'article Crimson Moon, le Soulslike gothique de ProbablyMonsters, sortira le 1er septembre sur PC, PS5 et Xbox Series est disponible sur ActuGaming.net"
+      },
+      "en": {
+        "title": "Crimson Moon, the gothic soulslike from ProbablyMonsters, will be released on September 1 on PC, PS5 and Xbox Series",
+        "summary": "News"
+      },
+      "es": {
+        "title": "Crimson Moon, el soul gótico de ProbablyMonsters, se lanzará el 1 de septiembre en PC, PS5 y Xbox Series",
+        "summary": "Noticias"
+      },
+      "it": {
+        "title": "Crimson Moon, il soulslike gotico di ProbabilmenteMonsters, uscirà l'1 settembre su PC, PS5 e Xbox Series",
+        "summary": "Notizia"
+      },
+      "de": {
+        "title": "Crimson Moon, das Gothic-Soullike von MaybeMonsters, erscheint am 1. September für PC, PS5 und Xbox Series",
+        "summary": "Nachricht"
+      },
+      "pt": {
+        "title": "Crimson Moon, o soulslike gótico de ProvavelmenteMonsters, será lançado em 1º de setembro para PC, PS5 e Xbox Series",
+        "summary": "Notícias"
+      },
+      "ru": {
+        "title": "Crimson Moon, готический соулслайк от MaybeMonsters, выйдет 1 сентября на ПК, PS5 и Xbox Series.",
+        "summary": "Новости"
+      },
+      "el": {
+        "title": "Το Crimson Moon, το gothic soulslike από το ProbablyMonsters, θα κυκλοφορήσει την 1η Σεπτεμβρίου σε PC, PS5 και Xbox Series",
+        "summary": "Νέα"
+      },
+      "tr": {
+        "title": "MuhtemelenMonsters'ın gotik ruhuna benzeyen Crimson Moon, 1 Eylül'de PC, PS5 ve Xbox Series'de piyasaya sürülecek",
+        "summary": "Haberler"
+      },
+      "ja": {
+        "title": "おそらくモンスターズに登場するゴシックソウル風のクリムゾンムーンは、PC、PS5、Xbox シリーズで 9 月 1 日にリリースされます",
+        "summary": "ニュース"
+      },
+      "zh": {
+        "title": "《ProblemMonsters》中的哥特式灵魂游戏《Crimson Moon》将于 9 月 1 日在 PC、PS5 和 Xbox Series 上发布",
+        "summary": "消息"
+      }
+    }
+  },
+  {
+    "id": "04bd5d4371fbc37a44b5f255a1b4b0dc0d517c5c",
+    "title": "Feature: As Physical Media Rides Off Into The Sunset, MiSTer FPGA Is Helping Me Value My Collection More Than Ever",
+    "summary": "Disc-cuss. I'm sure I don't need to make you aware of physical media's continued decline within the world of gaming. Most players now purchase their games digitally, and hardware manufacturers are even going as far as to pull support for discs in their current and future consoles as a result of this dramatic shift in purchasing habits. We will soon live in a world where physical games can no longer be obtained (unless you play exclusively on the Evercade , of course), which is why it's quite a w",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/features/as-physical-media-rides-off-into-the-sunset-mister-fpga-is-helping-me-value-my-collection-more-than-ever",
+    "imageUrl": "https://images.timeextension.com/eb2433af0bd73/large.jpg",
+    "publishedAt": "2026-08-04T16:00:00+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.413366+00:00",
+    "translations": {
+      "en": {
+        "title": "Feature: As Physical Media Rides Off Into The Sunset, MiSTer FPGA Is Helping Me Value My Collection More Than Ever",
+        "summary": "Disc-cuss. I'm sure I don't need to make you aware of physical media's continued decline within the world of gaming. Most players now purchase their games digitally, and hardware manufacturers are even going as far as to pull support for discs in their current and future consoles as a result of this dramatic shift in purchasing habits. We will soon live in a world where physical games can no longer be obtained (unless you play exclusively on the Evercade , of course), which is why it's quite a w"
+      },
+      "fr": {
+        "title": "Fonctionnalité : Alors que les médias physiques s'éloignent au coucher du soleil, MiSTer FPGA m'aide à valoriser ma collection plus que jamais",
+        "summary": "Discutez. Je suis sûr que je n'ai pas besoin de vous faire prendre conscience du déclin continu des supports physiques dans le monde du jeu vidéo. La plupart des joueurs achètent désormais leurs jeux sous forme numérique, et les fabricants de matériel vont même jusqu'à supprimer la prise en charge des disques dans leurs consoles actuelles et futures en raison de ce changement radical dans les habitudes d'achat. Nous vivrons bientôt dans un monde où les jeux physiques ne pourront plus être obtenus (à moins de jouer exclusivement sur Evercade, bien sûr), c'est pourquoi c'est tout un monde."
+      },
+      "es": {
+        "title": "Reportaje: Mientras los medios físicos se alejan hacia el atardecer, MiSTer FPGA me ayuda a valorar mi colección más que nunca",
+        "summary": "Discusión. Estoy seguro de que no necesito informarles sobre el continuo declive de los medios físicos en el mundo de los juegos. La mayoría de los jugadores ahora compran sus juegos digitalmente, y los fabricantes de hardware incluso están llegando a retirar el soporte para discos en sus consolas actuales y futuras como resultado de este cambio dramático en los hábitos de compra. Pronto viviremos en un mundo donde ya no se podrán obtener juegos físicos (a menos que juegues exclusivamente en Evercade, por supuesto), razón por la cual es bastante w"
+      },
+      "it": {
+        "title": "Caratteristica: Mentre i media fisici si allontanano verso il tramonto, MiSTer FPGA mi aiuta a valorizzare la mia collezione più che mai",
+        "summary": "Discuss. Sono sicuro di non aver bisogno di renderti consapevole del continuo declino dei media fisici nel mondo dei giochi. La maggior parte dei giocatori ora acquista i propri giochi in formato digitale e i produttori di hardware stanno addirittura arrivando al punto di eliminare il supporto per i dischi nelle loro console attuali e future come risultato di questo drammatico cambiamento nelle abitudini di acquisto. Presto vivremo in un mondo in cui non sarà più possibile ottenere giochi fisici (a meno che non si giochi esclusivamente su Evercade, ovviamente), motivo per cui è piuttosto interessante"
+      },
+      "de": {
+        "title": "Feature: Während physische Medien dem Untergang entgegengehen, hilft mir MiSTer FPGA dabei, meine Sammlung mehr denn je aufzuwerten",
+        "summary": "Diskutieren. Ich muss Sie sicher nicht auf den anhaltenden Rückgang physischer Medien in der Gaming-Welt aufmerksam machen. Die meisten Spieler kaufen ihre Spiele mittlerweile digital, und Hardwarehersteller gehen aufgrund dieser dramatischen Veränderung der Kaufgewohnheiten sogar so weit, die Unterstützung für Discs in ihren aktuellen und zukünftigen Konsolen einzustellen. Wir werden bald in einer Welt leben, in der physische Spiele nicht mehr erhältlich sind (es sei denn, Sie spielen natürlich ausschließlich auf dem Evercade), weshalb es ein ziemliches Problem ist"
+      },
+      "pt": {
+        "title": "Recurso: À medida que a mídia física se aproxima do pôr do sol, o MiSTer FPGA está me ajudando a valorizar minha coleção mais do que nunca",
+        "summary": "Discuta. Tenho certeza de que não preciso alertá-lo sobre o declínio contínuo da mídia física no mundo dos jogos. A maioria dos jogadores agora compra seus jogos digitalmente, e os fabricantes de hardware estão chegando ao ponto de retirar o suporte para discos em seus consoles atuais e futuros, como resultado dessa mudança dramática nos hábitos de compra. Em breve viveremos em um mundo onde os jogos físicos não poderão mais ser obtidos (a menos que você jogue exclusivamente no Evercade, é claro), e é por isso que é bastante difícil."
+      },
+      "ru": {
+        "title": "Функция: Пока физические носители уходят в закат, MiSTer FPGA помогает мне ценить мою коллекцию больше, чем когда-либо",
+        "summary": "Диск-ругань. Я уверен, что мне не нужно сообщать вам о продолжающемся упадке физических носителей в мире игр. Большинство игроков теперь покупают свои игры в цифровом формате, а производители оборудования даже заходят так далеко, что прекращают поддержку дисков в своих нынешних и будущих консолях в результате такого резкого изменения покупательских привычек. Скоро мы будем жить в мире, где физические игры больше нельзя будет получить (если, конечно, вы не играете исключительно на Evercade), поэтому это довольно неприятно."
+      },
+      "el": {
+        "title": "Χαρακτηριστικό: Καθώς τα φυσικά μέσα μεταβαίνουν στο ηλιοβασίλεμα, το MiSTer FPGA με βοηθά να εκτιμώ τη συλλογή μου περισσότερο από ποτέ",
+        "summary": "Δίσκος συζήτηση. Είμαι βέβαιος ότι δεν χρειάζεται να σας ενημερώσω για τη συνεχιζόμενη πτώση των φυσικών μέσων στον κόσμο του gaming. Οι περισσότεροι παίκτες αγοράζουν πλέον τα παιχνίδια τους ψηφιακά και οι κατασκευαστές υλικού φτάνουν ακόμη και στο να τραβήξουν την υποστήριξη για δίσκους στις τρέχουσες και μελλοντικές τους κονσόλες ως αποτέλεσμα αυτής της δραματικής αλλαγής στις αγοραστικές συνήθειες. Σύντομα θα ζήσουμε σε έναν κόσμο όπου δεν θα μπορείτε πλέον να αποκτήσετε φυσικά παιχνίδια (εκτός αν παίζετε αποκλειστικά στο Evercade, φυσικά), γι' αυτό είναι αρκετά μεγάλο"
+      },
+      "tr": {
+        "title": "Özellik: Fiziksel Medya Gün Batımına Doğru Yol Alırken, MiSTer FPGA Koleksiyonuma Her zamankinden Daha Fazla Değer Vermeme Yardımcı Oluyor",
+        "summary": "Tartışma. Eminim oyun dünyasında fiziksel medyanın düşüşünün devam ettiğini size bildirmeme gerek yok. Artık çoğu oyuncu oyunlarını dijital olarak satın alıyor ve donanım üreticileri, satın alma alışkanlıklarındaki bu dramatik değişimin bir sonucu olarak mevcut ve gelecekteki konsollarında disk desteğini çekecek kadar ileri gidiyor. Yakında fiziksel oyunların artık elde edilemeyeceği bir dünyada yaşayacağız (elbette yalnızca Evercade'de oynamadığınız sürece), bu yüzden bu oldukça zor."
+      },
+      "ja": {
+        "title": "特集: 物理メディアが日没に向かう中、MiSTer FPGA は私のコレクションをこれまで以上に大切にするのに役立っています",
+        "summary": "ディスクカス。ゲームの世界で物理メディアが衰退し続けていることを、私が皆さんに認識させる必要はないと思います。現在、ほとんどのプレーヤーはゲームをデジタルで購入しており、この購入習慣の劇的な変化の結果として、ハードウェア メーカーは現在および将来のコンソールでディスクのサポートを廃止するところまで行っています。私たちは間もなく、物理的なゲームを入手できなくなる世界に住むことになるでしょう (もちろん、Evercade だけでプレイする場合は別ですが)。"
+      },
+      "zh": {
+        "title": "专题：随着物理媒体逐渐消逝，MiSTer FPGA 帮助我比以往更加珍惜我的收藏",
+        "summary": "讨论。我确信我不需要让您意识到物理媒体在游戏世界中的持续衰落。现在，大多数玩家都以数字方式购买游戏，由于购买习惯发生巨大转变，硬件制造商甚至在当前和未来的游戏机中取消对光盘的支持。我们很快就会生活在一个无法再获得实体游戏的世界（当然，除非你只在 Evercade 上玩），这就是为什么它是一个相当糟糕的世界。"
+      }
+    }
+  },
+  {
+    "id": "0fa0c62ce2899ce4cf3292e925d54665da177bfd",
+    "title": "Nintendo Music Adds Fire Emblem: Fortune's Weave As A Special Release",
+    "summary": "Plus, grab a new theme for Nintendo Today. Nintendo has added tracks from Fire Emblem: Fortune's Weave to Nintendo Music as a special release, giving you a taste of what's to come when the game launches on 17th September 2026 . There are 10 tracks clocking in at 30 minutes in total. We've quickly scanned through them, and they sound equal parts catchy and epic, so about what you'd expect from a new Fire Emblem. Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-music-adds-fire-emblem-fortunes-weave-as-a-special-release",
+    "imageUrl": "https://images.nintendolife.com/a1abef6c37a1a/large.jpg",
+    "publishedAt": "2026-08-04T15:30:00+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.748890+00:00",
+    "translations": {
+      "en": {
+        "title": "Nintendo Music Adds Fire Emblem: Fortune's Weave As A Special Release",
+        "summary": "Plus, grab a new theme for Nintendo Today. Nintendo has added tracks from Fire Emblem: Fortune's Weave to Nintendo Music as a special release, giving you a taste of what's to come when the game launches on 17th September 2026 . There are 10 tracks clocking in at 30 minutes in total. We've quickly scanned through them, and they sound equal parts catchy and epic, so about what you'd expect from a new Fire Emblem. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Nintendo Music ajoute Fire Emblem: Fortune's Weave en version spéciale",
+        "summary": "De plus, procurez-vous un nouveau thème pour Nintendo Today. Nintendo a ajouté des morceaux de Fire Emblem : Fortune's Weave à Nintendo Music en tant que version spéciale, vous donnant un avant-goût de ce qui vous attend lors du lancement du jeu le 17 septembre 2026. Il y a 10 morceaux d’une durée totale de 30 minutes. Nous les avons rapidement parcourus, et ils semblent à la fois accrocheurs et épiques, donc à peu près ce que vous attendez d'un nouveau Fire Emblem. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Nintendo Music agrega Fire Emblem: Fortune's Weave como lanzamiento especial",
+        "summary": "Además, consigue un nuevo tema para Nintendo Today. Nintendo ha agregado pistas de Fire Emblem: Fortune's Weave a Nintendo Music como un lanzamiento especial, dándote una idea de lo que vendrá cuando el juego se lance el 17 de septiembre de 2026. Hay 10 pistas que duran 30 minutos en total. Los analizamos rápidamente y suenan a partes iguales pegadizos y épicos, así que más o menos lo que esperarías de un nuevo Fire Emblem. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Nintendo Music aggiunge Fire Emblem: Fortune's Weave come uscita speciale",
+        "summary": "Inoltre, prendi un nuovo tema per Nintendo oggi. Nintendo ha aggiunto brani di Fire Emblem: Fortune's Weave a Nintendo Music come versione speciale, dandoti un assaggio di ciò che accadrà quando il gioco verrà lanciato il 17 settembre 2026. Ci sono 10 tracce che durano 30 minuti in totale. Li abbiamo esaminati rapidamente e sembrano in parti uguali accattivanti ed epici, quindi più o meno quello che ti aspetteresti da un nuovo Fire Emblem. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Nintendo Music fügt Fire Emblem: Fortune's Weave als Sonderveröffentlichung hinzu",
+        "summary": "Schnappen Sie sich außerdem noch heute ein neues Thema für Nintendo. Nintendo hat Titel von Fire Emblem: Fortune's Weave als Sonderveröffentlichung zu Nintendo Music hinzugefügt und gibt Ihnen einen Vorgeschmack darauf, was Sie erwartet, wenn das Spiel am 17. September 2026 erscheint. Es gibt 10 Titel mit einer Gesamtdauer von 30 Minuten. Wir haben sie schnell durchgesehen und sie klingen zu gleichen Teilen eingängig und episch, also ungefähr das, was man von einem neuen Fire Emblem erwarten würde. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Nintendo Music adiciona Fire Emblem: Fortune's Weave como lançamento especial",
+        "summary": "Além disso, pegue um novo tema para o Nintendo Today. A Nintendo adicionou faixas de Fire Emblem: Fortune's Weave ao Nintendo Music como um lançamento especial, dando a você uma amostra do que está por vir quando o jogo for lançado em 17 de setembro de 2026. São 10 faixas com duração de 30 minutos no total. Nós os examinamos rapidamente e eles parecem igualmente cativantes e épicos, então o que você esperaria de um novo Fire Emblem. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Nintendo Music добавляет Fire Emblem: Fortune's Weave в качестве специального выпуска",
+        "summary": "Кроме того, получите новую тему для Nintendo Today. Nintendo добавила треки из Fire Emblem: Fortune's Weave в Nintendo Music в качестве специального выпуска, давая вам представление о том, что будет, когда игра выйдет 17 сентября 2026 года. Всего 10 треков общей продолжительностью 30 минут. Мы быстро их просмотрели, и они звучат в равной степени запоминающе и эпично — примерно то, что вы ожидаете от новой Fire Emblem. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Η Nintendo Music προσθέτει το Fire Emblem: Fortune's Weave ως ειδική κυκλοφορία",
+        "summary": "Επιπλέον, αποκτήστε ένα νέο θέμα για το Nintendo Today. Η Nintendo πρόσθεσε κομμάτια από το Fire Emblem: Fortune's Weave στη Nintendo Music ως ειδική κυκλοφορία, δίνοντάς σας μια γεύση για το τι πρόκειται να γίνει όταν το παιχνίδι κυκλοφορήσει στις 17 Σεπτεμβρίου 2026. Υπάρχουν 10 κομμάτια σε 30 λεπτά συνολικά. Τα σαρώσαμε γρήγορα και ακούγονται ισάξια πιασάρικα και επικά, περίπου τι θα περιμένατε από ένα νέο Fire Emblem. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "Nintendo Music, Fire Emblem'i Ekliyor: Fortune's Weave'i Özel Bir Sürüm Olarak Ekliyor",
+        "summary": "Ayrıca Nintendo Today için yeni bir tema edinin. Nintendo, Fire Emblem: Fortune's Weave'den parçaları Nintendo Music'e özel bir sürüm olarak ekleyerek, oyun 17 Eylül 2026'da çıktığında neler olacağına dair size bir fikir veriyor. Toplamda 30 dakikada ilerleyen 10 parça var. Bunları hızlı bir şekilde taradık ve kulağa eşit derecede akılda kalıcı ve destansı geliyorlar, yani yeni bir Fire Emblem'den ne bekleyeceğiniz hakkında. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "Nintendo Music が特別リリースとして「ファイアーエムブレム 運命の織り方」を追加",
+        "summary": "さらに、Nintendo Today の新しいテーマも手に入れましょう。任天堂は特別リリースとして『ファイアーエムブレム フォーチュン ウィーブ』のトラックを Nintendo Music に追加し、2026 年 9 月 17 日のゲーム発売時に何が起こるかを体験していただけます。合計 30 分のトラックが 10 曲あります。私たちはそれらをざっと調べてみましたが、キャッチーで壮大な部分が等しく聞こえ、新しいファイアーエムブレムに期待されるものとほぼ同じです。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "任天堂音乐新增《火焰之纹章：财富的编织》特别发行版",
+        "summary": "另外，为《今日任天堂》选择一个新主题。任天堂已将《火焰之纹章：财富的编织》中的曲目作为特别版本添加到 Nintendo Music，让您体验游戏于 2026 年 9 月 17 日发布时将会发生的事情。共有10首曲目，总共30分钟。我们快速浏览了它们，它们听起来同样朗朗上口，史诗般，这就是你对新火焰之纹章的期望。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
+    "id": "ce6b073685e311608405cfb33613c90cabb811a0",
+    "title": "Ice cream / drugs salesperson simulator Mr Trippy announced for PC",
+    "summary": "Publisher Silver Lining Interactive and newly revealed development subsidiary Silver Bullet have announced Mr Trippy, &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/ice-cream-drugs-salesperson-simulator-mr-trippy-announced-for-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-04T14:12:43+00:00",
+    "scrapedAt": "2026-08-05T05:53:06.063079+00:00",
+    "translations": {
+      "en": {
+        "title": "Ice cream / drugs salesperson simulator Mr Trippy announced for PC",
+        "summary": "Publisher Silver Lining Interactive and newly revealed development subsidiary Silver Bullet have announced Mr Trippy, &hellip;"
+      },
+      "fr": {
+        "title": "Le simulateur de vendeur de glaces/drogues Mr Trippy annoncé pour PC",
+        "summary": "L'éditeur Silver Lining Interactive et la nouvelle filiale de développement Silver Bullet ont annoncé que M. Trippy, &hellip;"
+      },
+      "es": {
+        "title": "Simulador de vendedor de helados/drogas Mr Trippy anunciado para PC",
+        "summary": "El editor Silver Lining Interactive y la recientemente revelada filial de desarrollo Silver Bullet han anunciado que Mr Trippy, &hellip;"
+      },
+      "it": {
+        "title": "Mr Trippy, simulatore di venditori di gelati e farmaci, annunciato per PC",
+        "summary": "L'editore Silver Lining Interactive e la filiale di sviluppo recentemente rivelata Silver Bullet hanno annunciato che Mr Trippy, &hellip;"
+      },
+      "de": {
+        "title": "Eiscreme-/Drogenverkäufer-Simulator Mr. Trippy für PC angekündigt",
+        "summary": "Der Herausgeber Silver Lining Interactive und die neu eröffnete Entwicklungstochter Silver Bullet haben Mr. Trippy, &hellip;"
+      },
+      "pt": {
+        "title": "Simulador de vendedor de sorvetes/drogas Mr Trippy anunciado para PC",
+        "summary": "A editora Silver Lining Interactive e a recém-revelada subsidiária de desenvolvimento Silver Bullet anunciaram o Sr. Trippy, &hellip;"
+      },
+      "ru": {
+        "title": "Симулятор продавца мороженого и наркотиков Mr Trippy анонсирован для ПК",
+        "summary": "Издательство Silver Lining Interactive и недавно открытая дочерняя компания Silver Bullet объявили о том, что г-н Триппи, &hellip;"
+      },
+      "el": {
+        "title": "Ο προσομοιωτής πωλητή παγωτού / ναρκωτικών Mr Trippy ανακοίνωσε για υπολογιστή",
+        "summary": "Η Publisher Silver Lining Interactive και η πρόσφατα αποκαλυφθείσα θυγατρική ανάπτυξη Silver Bullet ανακοίνωσαν τον Mr Trippy, &hellip;"
+      },
+      "tr": {
+        "title": "Dondurma / ilaç satıcısı simülatörü Mr Trippy PC için duyuruldu",
+        "summary": "Yayıncı Silver Lining Interactive ve yeni ortaya çıkan geliştirme yan kuruluşu Silver Bullet, Bay Trippy'nin &hellip;"
+      },
+      "ja": {
+        "title": "アイスクリーム・薬品販売員シミュレーターMr TrippyがPC向けに発表",
+        "summary": "パブリッシャーのSilver Lineing Interactiveと新たに明らかになった開発子会社Silver Bulletは、Trippy氏を発表した。"
+      },
+      "zh": {
+        "title": "冰淇淋/药品销售员模拟器 Mr Trippy 宣布推出 PC 版",
+        "summary": "发行商 Silver Lining Interactive 和新近公布的开发子公司 Silver Bullet 宣布 Trippy 先生..."
+      }
+    }
+  },
+  {
+    "id": "af84f4f6b601b8bfb4411c810e4b59411f6a9076",
+    "title": "Beast of Reincarnation is Out Now, PC Version Receives “Mixed” Rating on Steam",
+    "summary": "Despite a relatively solid critical reception, Game Freak's latest title falters on PC amid technical shortcomings and other issues.",
+    "category": "GAME_RELEASE",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/beast-of-reincarnation-is-out-now-pc-version-receives-mixed-rating-on-steam",
+    "imageUrl": "",
+    "publishedAt": "2026-08-04T13:56:04+00:00",
+    "scrapedAt": "2026-08-05T05:53:19.529326+00:00",
+    "translations": {
+      "en": {
+        "title": "Beast of Reincarnation is Out Now, PC Version Receives “Mixed” Rating on Steam",
+        "summary": "Despite a relatively solid critical reception, Game Freak's latest title falters on PC amid technical shortcomings and other issues."
+      },
+      "fr": {
+        "title": "Beast of Reincarnation est maintenant disponible, la version PC reçoit une note « mixte » sur Steam",
+        "summary": "Malgré un accueil critique relativement solide, le dernier titre de Game Freak vacille sur PC en raison de lacunes techniques et d'autres problèmes."
+      },
+      "es": {
+        "title": "Beast of Reincarnation ya está disponible, la versión para PC recibe calificación \"mixta\" en Steam",
+        "summary": "A pesar de una recepción crítica relativamente sólida, el último título de Game Freak flaquea en PC debido a deficiencias técnicas y otros problemas."
+      },
+      "it": {
+        "title": "Beast of Reincarnation è ora disponibile, la versione PC riceve la valutazione \"mista\" su Steam",
+        "summary": "Nonostante un'accoglienza critica relativamente solida, l'ultimo titolo di Game Freak vacilla su PC a causa di carenze tecniche e altri problemi."
+      },
+      "de": {
+        "title": "Beast of Reincarnation ist jetzt erhältlich, die PC-Version erhält auf Steam die Bewertung „Gemischt“.",
+        "summary": "Obwohl der neueste Titel von Game Freak von den Kritikern relativ gut aufgenommen wurde, scheitert er auf dem PC aufgrund technischer Mängel und anderer Probleme."
+      },
+      "pt": {
+        "title": "Beast of Reincarnation já foi lançado, versão para PC recebe classificação “mista” no Steam",
+        "summary": "Apesar de uma recepção crítica relativamente sólida, o último título da Game Freak vacila no PC devido a deficiências técnicas e outros problemas."
+      },
+      "ru": {
+        "title": "Beast of Reincarnation уже вышла, версия для ПК получила «смешанную» оценку в Steam",
+        "summary": "Несмотря на относительно хорошие отзывы критиков, последняя игра Game Freak на ПК не работает из-за технических недостатков и других проблем."
+      },
+      "el": {
+        "title": "Το Beast of Reincarnation κυκλοφόρησε τώρα, η έκδοση για υπολογιστή λαμβάνει «μικτή» βαθμολογία στο Steam",
+        "summary": "Παρά τη σχετικά σταθερή κριτική υποδοχή, ο τελευταίος τίτλος του Game Freak παραπαίει στον υπολογιστή εν μέσω τεχνικών ελλείψεων και άλλων ζητημάτων."
+      },
+      "tr": {
+        "title": "Beast of Reincarnation Çıktı, PC Versiyonu Steam'de \"Karışık\" Derecelendirme Aldı",
+        "summary": "Nispeten sağlam eleştiriler almasına rağmen Game Freak'in son oyunu, teknik eksiklikler ve diğer sorunlar nedeniyle PC'de bocalıyor."
+      },
+      "ja": {
+        "title": "Beast of Reinationnがリリース中、PC版はSteamで「混合」評価を獲得",
+        "summary": "比較的堅実な批評家からの評価にもかかわらず、ゲーム フリークの最新タイトルは、技術的な欠陥やその他の問題のせいで PC では低迷しています。"
+      },
+      "zh": {
+        "title": "《轮回之兽》现已发售，PC 版在 Steam 上获得“混合”评级",
+        "summary": "尽管《Game Freak》的好评度相对较高，但由于技术缺陷和其他问题，《Game Freak》的最新游戏在 PC 上表现不佳。"
+      }
+    }
+  },
+  {
+    "id": "ef98143816781f20213e224d59faa82015b0835b",
+    "title": "Gears Of War: E-Day Preload Now Live Ahead Of Multiplayer Beta",
+    "summary": "Install today with Xbox Game Pass! Who wants toast?! Oh yeah, the highly anticipated Gears of War: E-Day Multiplayer Beta is almost upon us, and preloads are now live for Ultimate and PC Game Pass subscribers, as well as for those of you who pre-ordered the Xbox console exclusive. Clocking in at just a little over 62GB on Series X, The Coalition's upcoming E-Day Beta can now be installed on console, and via the Xbox PC app. Here's a look at what makes up the gigas: Read the full article on purex",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/gears-of-war-e-day-preload-now-live-ahead-of-multiplayer-beta",
+    "imageUrl": "https://images.purexbox.com/8a852bff72fbe/large.jpg",
+    "publishedAt": "2026-08-04T12:00:00+00:00",
+    "scrapedAt": "2026-08-05T05:52:49.026557+00:00",
+    "translations": {
+      "en": {
+        "title": "Gears Of War: E-Day Preload Now Live Ahead Of Multiplayer Beta",
+        "summary": "Install today with Xbox Game Pass! Who wants toast?! Oh yeah, the highly anticipated Gears of War: E-Day Multiplayer Beta is almost upon us, and preloads are now live for Ultimate and PC Game Pass subscribers, as well as for those of you who pre-ordered the Xbox console exclusive. Clocking in at just a little over 62GB on Series X, The Coalition's upcoming E-Day Beta can now be installed on console, and via the Xbox PC app. Here's a look at what makes up the gigas: Read the full article on purex"
+      },
+      "fr": {
+        "title": "Gears Of War : le préchargement E-Day est désormais disponible avant la bêta multijoueur",
+        "summary": "Installez-le dès aujourd'hui avec Xbox Game Pass ! Qui veut des toasts ?! Oh oui, la très attendue version bêta multijoueur de Gears of War: E-Day est presque à nos portes, et les préchargements sont désormais en ligne pour les abonnés Ultimate et PC Game Pass, ainsi que pour ceux d'entre vous qui ont précommandé l'exclusivité de la console Xbox. Avec un peu plus de 62 Go sur la série X, la prochaine version bêta E-Day de The Coalition peut désormais être installée sur console et via l'application Xbox PC. Voici un aperçu de ce qui compose les gigas : Lire l'article complet sur purex"
+      },
+      "es": {
+        "title": "La precarga de Gears Of War: E-Day ya está disponible antes de la beta multijugador",
+        "summary": "¡Instálalo hoy con Xbox Game Pass! ¿Quién quiere tostadas? Ah, sí, la tan esperada beta multijugador de Gears of War: E-Day ya casi está aquí, y las precargas ya están disponibles para los suscriptores de Ultimate y PC Game Pass, así como para aquellos de ustedes que reservaron la consola Xbox exclusiva. Con poco más de 62 GB en la Serie X, la próxima Beta del E-Day de The Coalition ahora se puede instalar en la consola y a través de la aplicación Xbox para PC. He aquí un vistazo a lo que compone los gigas: Lea el artículo completo sobre purex"
+      },
+      "it": {
+        "title": "Gears Of War: il precaricamento E-Day è ora disponibile in vista della beta multigiocatore",
+        "summary": "Installalo oggi con Xbox Game Pass! Chi vuole un toast?! Oh sì, l'attesissima beta multigiocatore di Gears of War: E-Day è quasi alle porte e i precaricamenti sono ora disponibili per gli abbonati Ultimate e PC Game Pass, così come per quelli di voi che hanno preordinato l'esclusiva per console Xbox. Con poco più di 62 GB su Series X, l'imminente E-Day Beta di The Coalition può ora essere installato su console e tramite l'app Xbox per PC. Ecco uno sguardo a ciò che costituisce i gigas: Leggi l'articolo completo su purex"
+      },
+      "de": {
+        "title": "Gears Of War: E-Day Preload jetzt live vor der Multiplayer-Beta",
+        "summary": "Installieren Sie es noch heute mit dem Xbox Game Pass! Wer will Toast?! Oh ja, die mit Spannung erwartete Multiplayer-Beta von Gears of War: E-Day steht vor der Tür und die Vorabversionen sind jetzt für Ultimate- und PC Game Pass-Abonnenten sowie für diejenigen unter Ihnen, die die exklusive Xbox-Konsole vorbestellt haben, live. Die kommende E-Day-Beta von The Coalition ist mit etwas mehr als 62 GB auf der Series Hier ist ein Blick darauf, was die Gigas ausmacht: Lesen Sie den vollständigen Artikel über Purex"
+      },
+      "pt": {
+        "title": "Gears Of War: E-Day Preload agora ao vivo antes do multijogador beta",
+        "summary": "Instale hoje com o Xbox Game Pass! Quem quer brinde?! Ah, sim, o tão aguardado Gears of War: E-Day Multiplayer Beta está quase chegando, e os pré-carregamentos agora estão disponíveis para assinantes do Ultimate e PC Game Pass, bem como para aqueles que encomendaram o console Xbox exclusivo. Com pouco mais de 62 GB na Série X, o próximo E-Day Beta da The Coalition agora pode ser instalado no console e por meio do aplicativo Xbox PC. Aqui está uma olhada no que compõe os gigas: Leia o artigo completo sobre purex"
+      },
+      "ru": {
+        "title": "Gears Of War: предварительная загрузка E-Day уже в преддверии многопользовательской бета-версии",
+        "summary": "Установите сегодня с Xbox Game Pass! Кто хочет тост?! О да, долгожданная бета-версия многопользовательской игры Gears of War: E-Day уже почти на подходе, и предварительные загрузки теперь доступны для подписчиков Ultimate и PC Game Pass, а также для тех из вас, кто предварительно заказал эксклюзивную консоль Xbox. Предстоящую бета-версию E-Day от The Coalition, занимающую чуть более 62 ГБ на Series X, теперь можно установить на консоль или через приложение Xbox для ПК. Вот из чего состоит гигас: прочитайте полную статью о чистоте"
+      },
+      "el": {
+        "title": "Gears Of War: E-Day Preload Now Live Ahead Of Multiplayer Beta",
+        "summary": "Εγκαταστήστε σήμερα με το Xbox Game Pass! Ποιος θέλει τοστ;! Ω, ναι, το πολυαναμενόμενο Gears of War: E-Day Multiplayer Beta είναι σχεδόν έτοιμο και οι προφορτώσεις είναι πλέον ζωντανές για τους συνδρομητές Ultimate και PC Game Pass, καθώς και για όσους από εσάς προπαραγγείλατε την αποκλειστική κονσόλα Xbox. Έχοντας μόλις λίγο περισσότερα από 62 GB στη Series X, η επερχόμενη E-Day Beta του The Coalition μπορεί τώρα να εγκατασταθεί στην κονσόλα και μέσω της εφαρμογής Xbox PC. Δείτε τι αποτελείται από τα gigas: Διαβάστε το πλήρες άρθρο για το purex"
+      },
+      "tr": {
+        "title": "Gears Of War: E-Day Ön Yüklemesi Şimdi Çok Oyunculu Beta Öncesinde Yayında",
+        "summary": "Xbox Game Pass ile bugün yükleyin! Kim kızarmış ekmek ister? Evet, merakla beklenen Gears of War: E-Day Çok Oyunculu Beta neredeyse yaklaşıyor ve Ultimate ve PC Game Pass abonelerinin yanı sıra Xbox konsoluna özel ön sipariş verenler için de ön yüklemeler artık yayında. Series X'te 62 GB'ın biraz üzerinde bir hıza ulaşan The Coalition'ın yaklaşan E-Day Beta'sı artık konsola ve Xbox PC uygulaması aracılığıyla yüklenebiliyor. İşte gigaları neyin oluşturduğuna bir bakış: Purex hakkındaki makalenin tamamını okuyun"
+      },
+      "ja": {
+        "title": "Gears Of War: マルチプレイヤー ベータに先駆けて E-Day プリロードが公開されました",
+        "summary": "Xbox Game Pass を使って今すぐインストールしてください!乾杯したい人は誰ですか？そうそう、待望の Gears of War: E-Day マルチプレイヤー ベータ版がもうすぐ始まり、Ultimate および PC Game Pass の加入者と、Xbox コンソール限定版を予約注文した人向けにプリロードが開始されています。シリーズ X で 62 GB をわずかに超える容量を備えた The Coalition の今後の E-Day ベータ版は、コンソールおよび Xbox PC アプリ経由でインストールできるようになりました。ギガスの構成要素については次のとおりです。purex に関する記事全文を読む"
+      },
+      "zh": {
+        "title": "战争机器：E-Day 现已在多人测试版之前预载",
+        "summary": "立即使用 Xbox Game Pass 安装！谁要吐司？！哦，是的，备受期待的《战争机器：E-Day 多人测试版》即将推出，Ultimate 和 PC Game Pass 订阅者以及预购 Xbox 主机独占版的用户现已可以预载。 The Coalition 即将推出的 E-Day Beta 在 Series X 上的容量仅略高于 62GB，现在可以通过 Xbox PC 应用程序安装在主机上。以下是千兆的组成部分：阅读有关 purex 的完整文章"
+      }
+    }
+  },
+  {
+    "id": "aeb1c3a37b9e37ff7cac60f17abf540bde3bba12",
+    "title": "Attack on Titan 3 : Omega Force confirme la date de sortie et détaille les différentes éditions du jeu",
+    "summary": "Omega Force et Koei Tecmo s'apprêtent à boucler la fresque dédiée au manga d'Hajime Isayama. Après deux épisodes principaux et leurs déclinaisons, l'éditeur a fini par fixer la date de sortie d'Attack on Titan 3 à la fin d'année 2026.",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gamekult",
+    "sourceUrl": "https://www.gamekult.com/actualite/attack-on-titan-3-omega-force-confirme-la-date-de-sortie-et-detaille-les-differentes-editions-du-jeu-3050871515.html",
+    "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871515/attack-on-titan-3-omega-force-confirme-la-date-de-sortie-et-detaille-les-differentes-editions-du-jeu-6d8336c2__800_800__418-0-1473-1057.jpg",
+    "publishedAt": "2026-08-04T08:56:00+00:00",
+    "scrapedAt": "2026-08-05T05:53:38.713061+00:00",
+    "translations": {
+      "fr": {
+        "title": "Attack on Titan 3 : Omega Force confirme la date de sortie et détaille les différentes éditions du jeu",
+        "summary": "Omega Force et Koei Tecmo s'apprêtent à boucler la fresque dédiée au manga d'Hajime Isayama. Après deux épisodes principaux et leurs déclinaisons, l'éditeur a fini par fixer la date de sortie d'Attack on Titan 3 à la fin d'année 2026."
+      },
+      "en": {
+        "title": "Attack on Titan 3: Omega Force confirms release date and details the different editions of the game",
+        "summary": "Omega Force and Koei Tecmo are preparing to complete the fresco dedicated to Hajime Isayama's manga. After two main episodes and their variations, the publisher ended up setting the release date of Attack on Titan 3 at the end of 2026."
+      },
+      "es": {
+        "title": "Attack on Titan 3: Omega Force confirma fecha de lanzamiento y detalla las diferentes ediciones del juego",
+        "summary": "Omega Force y Koei Tecmo se preparan para completar el fresco dedicado al manga de Hajime Isayama. Después de dos episodios principales y sus variaciones, el editor acabó fijando la fecha de lanzamiento de Attack on Titan 3 a finales de 2026."
+      },
+      "it": {
+        "title": "Attack on Titan 3: Omega Force conferma la data di uscita e descrive in dettaglio le diverse edizioni del gioco",
+        "summary": "Omega Force e Koei Tecmo si preparano a completare l'affresco dedicato al manga di Hajime Isayama. Dopo due episodi principali e le relative varianti, l'editore ha finito per fissare la data di uscita di Attack on Titan 3 alla fine del 2026."
+      },
+      "de": {
+        "title": "Attack on Titan 3: Omega Force bestätigt das Veröffentlichungsdatum und beschreibt die verschiedenen Editionen des Spiels",
+        "summary": "Omega Force und Koei Tecmo bereiten sich auf die Fertigstellung des Freskos vor, das dem Manga von Hajime Isayama gewidmet ist. Nach zwei Hauptepisoden und deren Variationen legte der Verlag schließlich den Veröffentlichungstermin von Attack on Titan 3 auf Ende 2026 fest."
+      },
+      "pt": {
+        "title": "Attack on Titan 3: Omega Force confirma data de lançamento e detalha as diferentes edições do jogo",
+        "summary": "Omega Force e Koei Tecmo estão se preparando para completar o afresco dedicado ao mangá de Hajime Isayama. Após dois episódios principais e suas variações, a editora acabou marcando a data de lançamento de Attack on Titan 3 para o final de 2026."
+      },
+      "ru": {
+        "title": "Attack on Titan 3: Omega Force подтверждает дату выхода и подробно описывает различные издания игры",
+        "summary": "Omega Force и Koei Tecmo готовятся завершить фреску, посвящённую манге Хадзиме Исаямы. После двух основных эпизодов и их вариаций издатель в итоге назначил дату выхода «Атаки Титанов 3» на конец 2026 года."
+      },
+      "el": {
+        "title": "Το Attack on Titan 3: Omega Force επιβεβαιώνει την ημερομηνία κυκλοφορίας και αναφέρει λεπτομερώς τις διαφορετικές εκδόσεις του παιχνιδιού",
+        "summary": "Η Omega Force και η Koei Tecmo ετοιμάζονται να ολοκληρώσουν την τοιχογραφία αφιερωμένη στο manga του Hajime Isayama. Μετά από δύο κύρια επεισόδια και τις παραλλαγές τους, ο εκδότης κατέληξε να ορίζει την ημερομηνία κυκλοφορίας του Attack on Titan 3 στα τέλη του 2026."
+      },
+      "tr": {
+        "title": "Attack on Titan 3: Omega Force, çıkış tarihini doğruladı ve oyunun farklı sürümlerinin ayrıntılarını verdi",
+        "summary": "Omega Force ve Koei Tecmo, Hajime Isayama'nın mangasına ithaf edilen freskleri tamamlamaya hazırlanıyor. İki ana bölüm ve bunların varyasyonlarından sonra yayıncı, Attack on Titan 3'ün çıkış tarihini 2026'nın sonu olarak belirledi."
+      },
+      "ja": {
+        "title": "『進撃の巨人 3: オメガ フォース』発売日とゲームのさまざまなエディションの詳細を確認",
+        "summary": "オメガフォースとコーエーテクモは、諫山創のマンガに捧げられたフレスコ画の完成に向けて準備を進めている。 2 つのメイン エピソードとそのバリエーションを経て、出版社は最終的に『進撃の巨人 3』の発売日を 2026 年末に設定しました。"
+      },
+      "zh": {
+        "title": "《进击的巨人 3：欧米茄力量》确认了发行日期并详细介绍了游戏的不同版本",
+        "summary": "Omega Force 和 Koei Tecmo 正准备完成谏山创漫画的壁画。在完成两集主要剧集及其变体之后，发行商最终将《进击的巨人 3》的发行日期定为 2026 年底。"
+      }
+    }
+  },
+  {
     "id": "d4dbc47b2d9d5bec774962677dcb07718f2c3060",
     "title": "The Legend of Dark Witch Episode 4 coming to PS5 on August 6",
     "summary": "Inside System will release a PlayStation 5 version of side-scrolling action game The Legend of &hellip;",
@@ -8,7 +578,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/the-legend-of-dark-witch-episode-4-coming-to-ps5-on-august-6",
     "imageUrl": "",
     "publishedAt": "2026-08-04T04:16:26+00:00",
-    "scrapedAt": "2026-08-04T05:55:56.999177+00:00",
+    "scrapedAt": "2026-08-05T05:53:06.063157+00:00",
     "translations": {
       "en": {
         "title": "The Legend of Dark Witch Episode 4 coming to PS5 on August 6",
@@ -65,7 +635,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/two-cancelled-virtual-boy-games-join-nintendo-classics-today",
     "imageUrl": "https://images.nintendolife.com/fc473debfb913/large.jpg",
     "publishedAt": "2026-08-04T00:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:54:47.562540+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.749500+00:00",
     "translations": {
       "en": {
         "title": "Two Cancelled Virtual Boy Games Join 'Nintendo Classics' Today",
@@ -122,7 +692,7 @@
     "sourceUrl": "https://retrododo.com/1-year-5-months-later-customers-still-havent-received-their-croc-remastered-physical-order/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/CROC-SCAM.webp",
     "publishedAt": "2026-08-03T19:44:11+00:00",
-    "scrapedAt": "2026-08-04T05:54:33.026831+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.005649+00:00",
     "translations": {
       "en": {
         "title": "1 Year 5 Months Later, Customers Still Haven't Received Their Croc Remastered Physical Order",
@@ -236,7 +806,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/cyberpunk-shopkeeping-simulator-probably-stolen-announced-for-pc",
     "imageUrl": "",
     "publishedAt": "2026-08-03T17:00:30+00:00",
-    "scrapedAt": "2026-08-04T05:55:56.999239+00:00",
+    "scrapedAt": "2026-08-05T05:53:06.063182+00:00",
     "translations": {
       "en": {
         "title": "Cyberpunk shopkeeping simulator Probably Stolen announced for PC",
@@ -293,7 +863,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/attack-on-titan-3-avoids-the-gta-6-chaos-on-ps5-locks-in-december-release-date",
     "imageUrl": "https://images.pushsquare.com/81c887d46cdb8/large.jpg",
     "publishedAt": "2026-08-03T16:15:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:14.849505+00:00",
+    "scrapedAt": "2026-08-05T05:52:13.750093+00:00",
     "translations": {
       "en": {
         "title": "Attack on Titan 3 Avoids the GTA 6 Chaos on PS5, Locks in December Release Date",
@@ -407,7 +977,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/new-patch-unlocks-wipeout-3s-euro-only-special-edition-content-for-u-s-and-japanese-players",
     "imageUrl": "https://images.timeextension.com/09bd8e26d3fbb/large.jpg",
     "publishedAt": "2026-08-03T14:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.758236+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.413981+00:00",
     "translations": {
       "en": {
         "title": "New Patch Unlocks WipEout 3's Euro-Only 'Special Edition' Content For U.S. And Japanese Players",
@@ -464,7 +1034,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/ladder-themed-precision-platformer-ladder-lad-announced-for-switch-pc",
     "imageUrl": "",
     "publishedAt": "2026-08-03T14:20:29+00:00",
-    "scrapedAt": "2026-08-04T05:55:56.999311+00:00",
+    "scrapedAt": "2026-08-05T05:53:06.063245+00:00",
     "translations": {
       "en": {
         "title": "Ladder-themed precision platformer Ladder Lad announced for Switch, PC",
@@ -521,7 +1091,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-direct-for-fire-emblem-fortunes-weave-announced",
     "imageUrl": "https://images.nintendolife.com/bc6f16132e068/large.jpg",
     "publishedAt": "2026-08-03T14:10:00+00:00",
-    "scrapedAt": "2026-08-04T05:54:47.562718+00:00",
+    "scrapedAt": "2026-08-05T05:51:22.749635+00:00",
     "translations": {
       "en": {
         "title": "Nintendo Direct For Fire Emblem: Fortune's Weave Announced",
@@ -578,7 +1148,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/03/fire-emblem-fortunes-weave-nintendo-direct-has-been-announced-for-tomorrow/",
     "imageUrl": "",
     "publishedAt": "2026-08-03T14:04:58+00:00",
-    "scrapedAt": "2026-08-04T05:55:43.105966+00:00",
+    "scrapedAt": "2026-08-05T05:53:05.656523+00:00",
     "translations": {
       "en": {
         "title": "Fire Emblem Fortunes Weave Nintendo Direct has been announced for tomorrow",
@@ -635,7 +1205,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/valkyrie-tune-synthesis-of-souls-coming-to-switch",
     "imageUrl": "",
     "publishedAt": "2026-08-03T13:19:31+00:00",
-    "scrapedAt": "2026-08-04T05:55:56.999383+00:00",
+    "scrapedAt": "2026-08-05T05:53:06.063296+00:00",
     "translations": {
       "en": {
         "title": "Valkyrie Tune: Synthesis of Souls coming to Switch",
@@ -692,7 +1262,7 @@
     "sourceUrl": "https://www.purexbox.com/features/all-new-games-coming-to-xbox-in-august-2026",
     "imageUrl": "https://images.purexbox.com/27d786ea840fc/large.jpg",
     "publishedAt": "2026-08-03T13:00:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:24.765614+00:00",
+    "scrapedAt": "2026-08-05T05:52:49.026952+00:00",
     "translations": {
       "en": {
         "title": "Feature: All New Games Coming To Xbox In August 2026",
@@ -806,7 +1376,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/heres-a-breakdown-of-the-new-prices-for-xbox-series-xs-consoles-as-of-august-2026",
     "imageUrl": "https://images.purexbox.com/d64e0956dfac6/large.jpg",
     "publishedAt": "2026-08-03T12:05:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:24.765665+00:00",
+    "scrapedAt": "2026-08-05T05:52:49.026989+00:00",
     "translations": {
       "en": {
         "title": "Here's A Breakdown Of The New Prices For Xbox Series X|S Consoles As Of August 2026",
@@ -863,7 +1433,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/random-what-in-the-name-of-copyright-infringement-is-this-madness-intellivision-amico-box-showcasing-nintendo-art-surfaces-online",
     "imageUrl": "https://images.timeextension.com/f5d9a90578741/large.jpg",
     "publishedAt": "2026-08-03T10:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.758605+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.414261+00:00",
     "translations": {
       "en": {
         "title": "Random: \"What In The Name Of Copyright Infringement Is This Madness?\" - Intellivision Amico Box Showcasing Nintendo Art Surfaces Online",
@@ -920,7 +1490,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/a-new-n64-everdrive-flash-cart-has-been-released-with-a-dedicated-64dd-core",
     "imageUrl": "https://images.timeextension.com/f8f99eee9bc40/large.jpg",
     "publishedAt": "2026-08-03T09:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.758678+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.414318+00:00",
     "translations": {
       "en": {
         "title": "A New N64 EverDrive Flash Cart Has Been Released With A Dedicated 64DD Core",
@@ -1034,7 +1604,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/02/summer-nights-splatfest-taking-place-this-month/",
     "imageUrl": "",
     "publishedAt": "2026-08-02T19:39:49+00:00",
-    "scrapedAt": "2026-08-04T05:55:43.106195+00:00",
+    "scrapedAt": "2026-08-05T05:53:05.656689+00:00",
     "translations": {
       "en": {
         "title": "Summer Nights Splatfest taking place this month",
@@ -1091,7 +1661,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/what-a-year-its-been-commodore-celebrates-its-birthday-with-a-new-game-initiative-for-the-c64-ultimate",
     "imageUrl": "https://images.timeextension.com/f778a911c808f/large.jpg",
     "publishedAt": "2026-08-01T16:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.758765+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.414383+00:00",
     "translations": {
       "en": {
         "title": "\"What A Year It's Been\" - Commodore Celebrates Its Birthday With A New Game Initiative For The C64 Ultimate",
@@ -1148,7 +1718,7 @@
     "sourceUrl": "https://www.purexbox.com/guides/xbox-game-pass-all-games-coming-soon-in-august-2026",
     "imageUrl": "https://images.purexbox.com/5d26bd965049d/large.jpg",
     "publishedAt": "2026-08-01T13:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:24.766124+00:00",
+    "scrapedAt": "2026-08-05T05:52:49.027347+00:00",
     "translations": {
       "en": {
         "title": "Guide: Xbox Game Pass: All Games Coming Soon In August 2026",
@@ -1262,7 +1832,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/07/waterpark-simulator-1-0-is-out-now-on-xbox-after-overwhelmingly-positive-pc-early-access",
     "imageUrl": "https://images.purexbox.com/3d76de6ad91bc/large.jpg",
     "publishedAt": "2026-07-31T16:30:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:24.766510+00:00",
+    "scrapedAt": "2026-08-05T05:52:49.027636+00:00",
     "translations": {
       "en": {
         "title": "Waterpark Simulator 1.0 Is Out Now On Xbox, After 'Overwhelmingly Positive' PC Early Access",
@@ -1661,7 +2231,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/07/love-etrian-odyssey-wizardy-and-shin-megami-tensei-this-new-dungeon-rpg-could-be-right-up-your-street",
     "imageUrl": "https://images.timeextension.com/51b6ee47881f3/large.jpg",
     "publishedAt": "2026-07-31T12:00:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.759093+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.414631+00:00",
     "translations": {
       "en": {
         "title": "Love Etrian Odyssey, Wizardy, & Shin Megami Tensei? This New Dungeon RPG Could Be Right Up Your Street",
@@ -1718,7 +2288,7 @@
     "sourceUrl": "https://www.timeextension.com/features/hands-on-taki-udons-console-mode-finally-gives-mister-fpga-the-accessibility-ive-always-craved",
     "imageUrl": "https://images.timeextension.com/6b632aa6117b1/large.jpg",
     "publishedAt": "2026-07-31T11:00:00+00:00",
-    "scrapedAt": "2026-08-04T05:53:43.759228+00:00",
+    "scrapedAt": "2026-08-05T05:51:00.414726+00:00",
     "translations": {
       "en": {
         "title": "Hands On: Taki Udon's Console Mode Finally Gives MiSTer FPGA the Accessibility I've Always Craved",
@@ -2174,7 +2744,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/30/out-now-in-japan-one-piece-demon-slayer/",
     "imageUrl": "",
     "publishedAt": "2026-07-30T14:36:01+00:00",
-    "scrapedAt": "2026-08-04T05:54:32.677650+00:00",
+    "scrapedAt": "2026-08-05T05:51:21.589989+00:00",
     "translations": {
       "en": {
         "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
@@ -3086,7 +3656,7 @@
     "sourceUrl": "https://the-retrogamer.com/vectaguard-sur-pc-le-vectoriel-ressuscite-par-tony-barnes/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T12:50:36+00:00",
-    "scrapedAt": "2026-08-04T05:56:53.669144+00:00",
+    "scrapedAt": "2026-08-05T05:53:35.244562+00:00",
     "translations": {
       "fr": {
         "title": "VectaGuard sur PC : Le vectoriel ressuscité par Tony Barnes",
@@ -4226,7 +4796,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/27/dungeon-crawler-carl-enders-game/",
     "imageUrl": "",
     "publishedAt": "2026-07-27T19:38:22+00:00",
-    "scrapedAt": "2026-08-04T05:54:32.677918+00:00",
+    "scrapedAt": "2026-08-05T05:51:21.590190+00:00",
     "translations": {
       "en": {
         "title": "Dungeon Crawler Carl & Ender’s Game Become Pinball Machines Thanks To Multimorphic",
@@ -5708,7 +6278,7 @@
     "sourceUrl": "https://the-retrogamer.com/arcade1up-devoile-sa-borne-outrun-supreme-le-volant-et-le-pedalier-enfin-de-retour/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T08:52:29+00:00",
-    "scrapedAt": "2026-08-04T05:56:53.669316+00:00",
+    "scrapedAt": "2026-08-05T05:53:35.244677+00:00",
     "translations": {
       "fr": {
         "title": "Arcade1Up dévoile sa borne OutRun Supreme : le volant et le pédalier enfin de retour",
