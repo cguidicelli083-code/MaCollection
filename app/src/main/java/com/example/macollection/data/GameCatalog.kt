@@ -254,7 +254,7 @@ object GameCatalog {
         "collector", "platinum", "greatest hits", "player's choice", "players choice",
         "director's cut", "directors cut", "deluxe", "goty", "game of the year",
         "complete edition", "definitive edition", "special edition", "limited edition",
-        "day one", "ultimate edition", "essentials", "classics", "premium edition"
+        "day one", "ultimate edition", "essentials", "classics", "premium edition", "import"
     )
 
     /**

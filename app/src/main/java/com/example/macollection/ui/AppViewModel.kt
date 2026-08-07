@@ -447,49 +447,6 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         )
     }
 
-    /** Vrai pendant [fillMissingWishlistPhotos], pour désactiver son bouton et afficher un indicateur. */
-    val fillingWishlistPhotos = MutableStateFlow(false)
-
-    /**
-     * Relance automatiquement une recherche en ligne (IGDB/RAWG/Wikipédia/Wikidata, même logique
-     * que [saveBatch]) pour chaque JEU des souhaits qui n'a pas encore de jaquette, et applique le
-     * meilleur résultat trouvé sans repasser par « Modifier » un par un. N'écrase jamais un champ
-     * déjà renseigné (description/genre/année/éditeur) : ne comble que ce qui manque.
-     */
-    fun fillMissingWishlistPhotos() {
-        if (fillingWishlistPhotos.value) return
-        viewModelScope.launch {
-            fillingWishlistPhotos.value = true
-            try {
-                val missing = collectionDao.observeAll().first()
-                    .filter { it.isWishlist && it.type == ItemType.JEU && it.imageUri.isNullOrBlank() }
-                for (item in missing) {
-                    val platformId = item.platform?.let { ConsolePlatforms.platformId(it) }
-                    val match = runCatching {
-                        HybridGameSearch(item.name, platformId, item.platform).loadFirst().firstOrNull()
-                    }.getOrNull() ?: continue
-
-                    var coverUrl = match.coverUrl
-                    if (match.source != "igdb") {
-                        coverUrl = runCatching { IgdbCatalog.coverUrlFor(match.name, match.releaseYear) }.getOrNull() ?: coverUrl
-                    }
-                    if (coverUrl.isNullOrBlank()) continue
-
-                    collectionDao.update(item.copy(
-                        imageUri = coverUrl,
-                        brand = item.brand.ifBlank { match.publisher ?: "" },
-                        releaseYear = item.releaseYear ?: match.releaseYear,
-                        genre = item.genre?.takeIf { it.isNotBlank() } ?: match.genres?.takeIf { it.isNotBlank() },
-                        description = item.description?.takeIf { it.isNotBlank() } ?: match.description?.takeIf { it.isNotBlank() },
-                        rawgId = item.rawgId ?: match.sourceId
-                    ))
-                }
-            } finally {
-                fillingWishlistPhotos.value = false
-            }
-        }
-    }
-
     fun saveCollectionItem(item: CollectionItem, newPhotoUris: List<String> = emptyList()) =
         viewModelScope.launch { saveCollectionItemInternal(item, newPhotoUris) }
 
@@ -587,6 +544,24 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         photoDao.observeForItem(item.id).first().forEach { MediaUtils.deleteFile(it.uri) }
         photoDao.deleteForItem(item.id)
         collectionDao.delete(item)
+    }
+
+    /** Suppression groupée : même nettoyage des photos que [deleteCollectionItem], objet par objet, puis un seul DELETE en base. */
+    fun bulkDeleteItems(items: List<CollectionItem>) = viewModelScope.launch {
+        for (item in items) {
+            photoDao.observeForItem(item.id).first().forEach { MediaUtils.deleteFile(it.uri) }
+            photoDao.deleteForItem(item.id)
+        }
+        collectionDao.deleteAll(items)
+    }
+
+    /**
+     * Transfert groupé souhaits -> collection : simple bascule de [CollectionItem.isWishlist],
+     * sans repasser par [saveCollectionItem] (qui relancerait une résolution de prix eBay/IA pour
+     * chaque objet alors que sa cote est déjà connue).
+     */
+    fun bulkTransferToCollection(items: List<CollectionItem>) = viewModelScope.launch {
+        collectionDao.updateAll(items.map { it.copy(isWishlist = false) })
     }
 
     /** Photos de galerie d'un objet (en plus de sa photo principale), dans l'ordre d'ajout. */

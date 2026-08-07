@@ -139,6 +139,8 @@ import com.example.macollection.ui.theme.AppTheme
 import com.example.macollection.ui.theme.themedGradient
 import com.example.macollection.ui.theme.SurfaceBg
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -228,6 +230,14 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         freeLimitReached -> { showPaywall = true; true }
         else -> false
     }
+    // Transfert par lot Souhaits -> Collection : combien d'objets peuvent encore être ajoutés
+    // avant d'atteindre le plafond TEST/gratuit (Premium/V2SP = illimité). Même base de calcul
+    // que blockedByCollectionLimit ci-dessus, pour un contrôle groupé cohérent avec le plafond unitaire.
+    fun remainingCollectionSlots(): Int = when {
+        BuildConfig.IS_TEST -> (TEST_ITEM_LIMIT - testCollectionItems.size).coerceAtLeast(0)
+        isPremium -> Int.MAX_VALUE
+        else -> (freeCollectionQuota - testCollectionItems.size).coerceAtLeast(0)
+    }
     var editor by remember { mutableStateOf<CollectionEditor?>(null) }
     var viewing by remember { mutableStateOf<CollectionItem?>(null) }
     // Hissés ici (avant les branches editor/viewing ET le when(tab) plus bas) pour que la
@@ -276,6 +286,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     var scanning by remember { mutableStateOf(false) }
     var deepScanning by remember { mutableStateOf(false) }
     var batchScanning by remember { mutableStateOf(false) }
+    // Recherche en cours (code-barres, photo recadrée ou lot) : conservée pour pouvoir l'annuler
+    // depuis le bouton de l'écran de chargement ci-dessous (cf. section "scanning").
+    var currentScanJob: Job? by remember { mutableStateOf(null) }
+    fun cancelCurrentScan() {
+        currentScanJob?.cancel()
+        scanning = false; batchScanning = false; deepScanning = false
+    }
     var batchResults by remember { mutableStateOf<List<GeminiVision.BatchItem>?>(null) }
     // Vrai quand l'analyse IA a échoué (quota atteint, réseau…) — à distinguer d'un lot vide.
     var batchError by remember { mutableStateOf(false) }
@@ -284,18 +301,21 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     // Scan multiple : photo de lot envoyée telle quelle à Gemini (pas de recadrage restrictif).
     // Partagé entre la galerie et la prise de photo directe (cf. [batchPhotoLauncher] et
     // [batchCameraLauncher] ci-dessous), pour ne pas dupliquer cette logique deux fois.
-    fun processBatchPhoto(uri: Uri) = scope.launch {
-        scanning = true; batchScanning = true; batchError = false
-        // Gemini d'abord : meilleure qualité de reconnaissance que Groq (Qwen3.6, vérifié en
-        // conditions réelles), et le scan par lot ne coûte qu'UN SEUL appel Gemini par photo
-        // (quel que soit le nombre d'articles détectés dessus) — l'inverser pour économiser le
-        // quota Gemini (20 requêtes/jour) n'apportait donc quasiment rien, tout en dégradant la
-        // détection. Repli sur Groq si Gemini échoue (quota atteint, réseau…).
-        // null = échec des deux ; liste vide = analyse OK mais rien détecté.
-        val res = runCatching { GeminiVision.identifyBatch(context, uri) }.getOrNull()
-            ?: runCatching { GroqVision.identifyBatch(context, uri) }.getOrNull()
-        scanning = false; batchScanning = false
-        if (res == null) batchError = true else batchResults = res
+    fun processBatchPhoto(uri: Uri) {
+        currentScanJob = scope.launch {
+            scanning = true; batchScanning = true; batchError = false
+            // Gemini d'abord : meilleure qualité de reconnaissance que Groq (Qwen3.6, vérifié en
+            // conditions réelles), et le scan par lot ne coûte qu'UN SEUL appel Gemini par photo
+            // (quel que soit le nombre d'articles détectés dessus) — l'inverser pour économiser le
+            // quota Gemini (20 requêtes/jour) n'apportait donc quasiment rien, tout en dégradant la
+            // détection. Repli sur Groq si Gemini échoue (quota atteint, réseau…).
+            // null = échec des deux ; liste vide = analyse OK mais rien détecté.
+            val res = runCatching { GeminiVision.identifyBatch(context, uri) }.getOrNull()
+                ?: runCatching { GroqVision.identifyBatch(context, uri) }.getOrNull()
+            if (!isActive) return@launch
+            scanning = false; batchScanning = false
+            if (res == null) batchError = true else batchResults = res
+        }
     }
     val batchPhotoLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.PickVisualMedia()
@@ -334,9 +354,10 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         if (result.isSuccessful) {
             val croppedUri = result.uriContent
             if (croppedUri != null) {
-                scope.launch {
+                currentScanJob = scope.launch {
                     scanning = true; deepScanning = false
                     val r = runCatching { ScanTools.scanImage(context, croppedUri) { deepScanning = true } }.getOrNull()
+                    if (!isActive) return@launch
                     val saved = withContext(Dispatchers.IO) { MediaUtils.copyToInternal(context, croppedUri) }
                     // Garde une copie stable de la photo AVANT ce recadrage : le bouton
                     // « Recadrer » du formulaire doit repartir de la vraie source, pas recadrer
@@ -445,6 +466,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     }
 
     if (scanning) {
+        BackHandler { cancelCurrentScan() }
         Box(Modifier.fillMaxSize().background(themedGradient()), contentAlignment = Alignment.Center) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 CircularProgressIndicator(color = NeonCyan)
@@ -457,6 +479,10 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     }),
                     color = Color.White
                 )
+                Spacer(Modifier.height(20.dp))
+                TextButton(onClick = { cancelCurrentScan() }) {
+                    Text(stringResource(R.string.cancel), color = Color.White)
+                }
             }
         }
         return
@@ -641,10 +667,11 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         // pas atteint (Premium/V2SP toujours illimités), sinon pub récompensée pour débloquer un
         // scan de plus (cf. GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
         fun runFullScan(code: String) {
-            scope.launch {
+            currentScanJob = scope.launch {
                 AppPrefs.recordBarcodeScanUsed(context)
                 scanning = true
                 val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
+                if (!isActive) return@launch
                 scanning = false
                 if (isUseful(r)) applyResult(code, r) else showScanFailedDialog = true
             }
@@ -660,12 +687,13 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 )
             }
         }
-        scope.launch {
+        currentScanJob = scope.launch {
             val code = runCatching { ScanTools.scanCamera(context) }.getOrNull() ?: return@launch
             // Premier essai TOUJOURS gratuit (ScanDex + eBay, pas de quota partagé) : la plupart
             // des jeux se résolvent déjà ici, sans jamais avoir besoin du quota limité ni d'une pub.
             scanning = true
             val free = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = false) }.getOrNull()
+            if (!isActive) return@launch
             scanning = false
             if (isUseful(free)) {
                 applyResult(code, free)
@@ -1269,7 +1297,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     onEdit = { editor = CollectionEditor(existing = it) },
                     modifier = Modifier.padding(padding),
                     wishlist = true,
-                    listState = wishlistListState
+                    listState = wishlistListState,
+                    remainingCollectionSlots = { remainingCollectionSlots() },
+                    onBlockedByCollectionLimit = { blockedByCollectionLimit() }
                 )
                 Tab.ENCYCLO -> EncyclopediaScreen(
                     vm = vm,

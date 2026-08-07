@@ -25,7 +25,7 @@ Scanne un code-barres (jeux), prends une photo (jeux, consoles et accessoires, r
 Plus de 600 consoles et 80 accessoires, fiches détaillées (specs, année, fabricant, vrai rendu 3D avec changement de couleur), catalogue de jeux en ligne par console. Ajoute directement une fiche à ta collection ou à tes souhaits.
 
 ❤️ SOUHAITS & 💎 VALEUR TOTALE
-Garde un œil sur les objets que tu vises, et suis la valeur estimée de toute ta collection, mise à jour automatiquement.
+Garde un œil sur les objets que tu vises, transfère-les d'un coup vers ta collection (sélection multiple), et suis la valeur estimée de toute ta collection, mise à jour automatiquement.
 
 📊 ESTIMATION DES COTES
 Estimation automatique basée sur les annonces eBay comparables (état, boîte, notice pris en compte), avec repli sur une estimation par IA si besoin.
@@ -57,7 +57,7 @@ Scan a barcode (games), take a photo (games, consoles and accessories, automatic
 Over 600 consoles and 80 accessories, detailed entries (specs, year, manufacturer, real 3D rendering with color swaps), online game catalog per console. Add an entry straight to your collection or wishlist.
 
 ❤️ WISHLIST & 💎 TOTAL VALUE
-Keep track of the items you're after, and follow the estimated value of your whole collection, updated automatically.
+Keep track of the items you're after, transfer several at once to your collection (multi-select), and follow the estimated value of your whole collection, updated automatically.
 
 📊 PRICE ESTIMATES
 Automatic estimate based on comparable eBay listings (condition, box, manual taken into account), with an AI-based fallback estimate when needed.

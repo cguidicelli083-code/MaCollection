@@ -22,7 +22,9 @@ interface CollectionDao {
     @Insert suspend fun insert(item: CollectionItem): Long
     @Insert suspend fun insertAll(items: List<CollectionItem>)
     @Update suspend fun update(item: CollectionItem)
+    @Update suspend fun updateAll(items: List<CollectionItem>)
     @Delete suspend fun delete(item: CollectionItem)
+    @Delete suspend fun deleteAll(items: List<CollectionItem>)
 }
 
 @Dao

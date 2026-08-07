@@ -46,6 +46,15 @@
     <string name="sort_brand">Marca</string>
     <string name="sort_console">Consola</string>
     <string name="console_group_unknown">Consola no especificada</string>
+    <string name="console_group_summary">%1$d objetos · %2$s</string>
+    <string name="selection_mode_toggle">Modo selección</string>
+    <string name="selection_mode_select_all">Seleccionar todo</string>
+    <string name="selection_mode_cancel">Cancelar</string>
+    <string name="selection_count_value">%1$d seleccionado(s) · %2$s</string>
+    <string name="bulk_delete_button">Eliminar</string>
+    <string name="bulk_delete_confirm_title">¿Eliminar %1$d objetos?</string>
+    <string name="bulk_delete_confirm_message">Esta acción no se puede deshacer.</string>
+    <string name="bulk_transfer_button">📦 A la Colección</string>
     <string name="sort_price_desc">Precio (alto → bajo)</string>
     <string name="sort_price_asc">Precio (bajo → alto)</string>
     <string name="sort_release">Fecha de lanzamiento (antiguo → nuevo)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d seleccionado(s)</string>
     <string name="encyclo_selection_mode_toggle">Selección múltiple</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Añadir a la lista de deseos</string>
-    <string name="fill_missing_photos_button">🖼️ Buscar las carátulas que faltan</string>
 
     <string name="console_catalog_title">Catálogo de consolas</string>
     <string name="search_name_or_brand">Buscar (nombre o marca)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Buscar</string>
     <string name="no_game_found">No se encontró ningún juego.</string>
     <string name="search_more_results">Mostrar más resultados</string>
+    <string name="search_deep_in_progress">Búsqueda avanzada en curso…</string>
+    <string name="search_retry_button">Reintentar</string>
+    <string name="search_no_results_retry_help">Comprueba la ortografía del nombre, o quita del campo las menciones secundarias (Edición Coleccionista, Steelbook, Import…) y vuelve a buscar.</string>
 
     <string name="remove_photo_button">Quitar la foto</string>
     <string name="photo_saving">Guardando la foto…</string>

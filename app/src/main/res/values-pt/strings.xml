@@ -46,6 +46,15 @@
     <string name="sort_brand">Marca</string>
     <string name="sort_console">Console</string>
     <string name="console_group_unknown">Console não especificado</string>
+    <string name="console_group_summary">%1$d itens · %2$s</string>
+    <string name="selection_mode_toggle">Modo de seleção</string>
+    <string name="selection_mode_select_all">Selecionar tudo</string>
+    <string name="selection_mode_cancel">Cancelar</string>
+    <string name="selection_count_value">%1$d selecionado(s) · %2$s</string>
+    <string name="bulk_delete_button">Eliminar</string>
+    <string name="bulk_delete_confirm_title">Eliminar %1$d itens?</string>
+    <string name="bulk_delete_confirm_message">Esta ação é irreversível.</string>
+    <string name="bulk_transfer_button">📦 Para a Coleção</string>
     <string name="sort_price_desc">Preço (alto → baixo)</string>
     <string name="sort_price_asc">Preço (baixo → alto)</string>
     <string name="sort_release">Data de lançamento (antigo → novo)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d selecionado(s)</string>
     <string name="encyclo_selection_mode_toggle">Seleção múltipla</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Adicionar à lista de desejos</string>
-    <string name="fill_missing_photos_button">🖼️ Procurar as capas em falta</string>
 
     <string name="console_catalog_title">Catálogo de consolas</string>
     <string name="search_name_or_brand">Pesquisar (nome ou marca)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Pesquisar</string>
     <string name="no_game_found">Nenhum jogo encontrado.</string>
     <string name="search_more_results">Mostrar mais resultados</string>
+    <string name="search_deep_in_progress">Busca avançada em andamento…</string>
+    <string name="search_retry_button">Tentar novamente</string>
+    <string name="search_no_results_retry_help">Verifique a ortografia do nome ou remova do campo as menções secundárias (Edição Collector, Steelbook, Import…) e pesquise novamente.</string>
 
     <string name="remove_photo_button">Remover a foto</string>
     <string name="photo_saving">A guardar a foto…</string>

@@ -46,6 +46,15 @@
     <string name="sort_brand">ブランド</string>
     <string name="sort_console">ゲーム機</string>
     <string name="console_group_unknown">機種未指定</string>
+    <string name="console_group_summary">%1$d 件 · %2$s</string>
+    <string name="selection_mode_toggle">選択モード</string>
+    <string name="selection_mode_select_all">すべて選択</string>
+    <string name="selection_mode_cancel">キャンセル</string>
+    <string name="selection_count_value">%1$d 件選択中 · %2$s</string>
+    <string name="bulk_delete_button">削除</string>
+    <string name="bulk_delete_confirm_title">%1$d 件を削除しますか？</string>
+    <string name="bulk_delete_confirm_message">この操作は元に戻せません。</string>
+    <string name="bulk_transfer_button">📦 コレクションへ移動</string>
     <string name="sort_price_desc">価格(高→低)</string>
     <string name="sort_price_asc">価格(低→高)</string>
     <string name="sort_release">発売日（古い → 新しい）</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d 件選択中</string>
     <string name="encyclo_selection_mode_toggle">複数選択</string>
     <string name="encyclo_add_to_wishlist_button">⭐ 欲しいものリストに追加</string>
-    <string name="fill_missing_photos_button">🖼️ 不足しているジャケットを検索</string>
 
     <string name="console_catalog_title">機種カタログ</string>
     <string name="search_name_or_brand">検索（名前またはブランド）</string>
@@ -139,6 +147,9 @@
     <string name="search_button">検索</string>
     <string name="no_game_found">ゲームが見つかりません。</string>
     <string name="search_more_results">さらに結果を表示</string>
+    <string name="search_deep_in_progress">詳細検索中…</string>
+    <string name="search_retry_button">再試行</string>
+    <string name="search_no_results_retry_help">名前のスペルを確認するか、欄から副次的な表記(コレクターズエディション、スチールブック、輸入版など)を削除して再検索してください。</string>
 
     <string name="remove_photo_button">写真を削除</string>
     <string name="photo_saving">写真を保存中…</string>

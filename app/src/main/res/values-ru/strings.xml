@@ -46,6 +46,15 @@
     <string name="sort_brand">Бренд</string>
     <string name="sort_console">Консоль</string>
     <string name="console_group_unknown">Консоль не указана</string>
+    <string name="console_group_summary">%1$d объектов · %2$s</string>
+    <string name="selection_mode_toggle">Режим выбора</string>
+    <string name="selection_mode_select_all">Выбрать всё</string>
+    <string name="selection_mode_cancel">Отмена</string>
+    <string name="selection_count_value">Выбрано: %1$d · %2$s</string>
+    <string name="bulk_delete_button">Удалить</string>
+    <string name="bulk_delete_confirm_title">Удалить %1$d объектов?</string>
+    <string name="bulk_delete_confirm_message">Это действие необратимо.</string>
+    <string name="bulk_transfer_button">📦 В коллекцию</string>
     <string name="sort_price_desc">Цена (выс. → низ.)</string>
     <string name="sort_price_asc">Цена (низ. → выс.)</string>
     <string name="sort_release">Дата выхода (старые → новые)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">Выбрано: %1$d</string>
     <string name="encyclo_selection_mode_toggle">Множественный выбор</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Добавить в желаемое</string>
-    <string name="fill_missing_photos_button">🖼️ Найти недостающие обложки</string>
 
     <string name="console_catalog_title">Каталог консолей</string>
     <string name="search_name_or_brand">Поиск (название или бренд)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Найти</string>
     <string name="no_game_found">Игра не найдена.</string>
     <string name="search_more_results">Показать больше результатов</string>
+    <string name="search_deep_in_progress">Выполняется расширенный поиск…</string>
+    <string name="search_retry_button">Повторить</string>
+    <string name="search_no_results_retry_help">Проверьте написание названия или удалите из поля второстепенные пометки (Collector\'s Edition, Steelbook, Import…) и повторите поиск.</string>
 
     <string name="remove_photo_button">Удалить фото</string>
     <string name="photo_saving">Сохранение фото…</string>

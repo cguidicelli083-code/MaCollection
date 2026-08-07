@@ -1,15 +1,18 @@
 # Checklist mise en ligne Play Store — Ma Collection V2
 
-## ✅ Fait automatiquement (2026-08-04)
+## ✅ Fait automatiquement (mise à jour 2026-08-07 — version 2.10 (14))
 - [x] Traduction complète de l'app en 11 langues (fr, en, es, it, de, pt, ru, el, tr, ja, zh) — sélecteur de langue dans Réglages.
 - [x] Keystore de release déjà généré et configuré : `C:\Users\Nawash\AndroidKeystores\macollectionv2-release.jks`, référencé dans `local.properties` (gitignore, jamais commit).
 - [x] AdMob déjà en IDs RÉELS (pas des IDs de test) : `AndroidManifest.xml` (APPLICATION_ID) et `AdsManager.kt` (bannière/interstitiel/récompensée) — contrairement à MaCollection WCF, rien à remplacer ici.
 - [x] R8/ProGuard actif sur le build release.
-- [x] Build de release testé : `./gradlew bundleFullRelease` réussi, `app/build/outputs/bundle/fullRelease/app-full-release.aab` généré et signé avec succès (39 Mo).
+- [x] Build de release testé : `./gradlew bundleFullRelease` réussi, `app/build/outputs/bundle/fullRelease/app-full-release.aab` généré et signé avec succès (version 2.10, code 14, ~39 Mo).
 - [x] Politique de confidentialité rédigée (fr + en) : `docs/privacy-policy.html`.
 - [x] Fiche Store (titre, descriptions courte/longue fr+en) rédigée : `docs/store/fiche-play-store.md`.
 - [x] Premium (2 abonnements + achat à vie, argent réel) déjà codé côté app : Google Play Billing (`BillingManager.kt`), scaffold fonctionnel mais INACTIF tant que les produits ne sont pas créés côté Play Console (affiche "Bientôt disponible").
-- [x] Nouveau tutoriel de premier lancement, plus visuel et concis (voir section dédiée plus bas) — testé uniquement sur l'édition `restricted` (V2test) pour l'instant, PAS encore répercuté sur `full` (production) ni `noads` (V2SP).
+- [x] Nouveau tutoriel de premier lancement, plus visuel et concis (voir section dédiée plus bas) — déployé sur les 3 éditions (`full`, `restricted`, `noads`), l'ancien tutoriel 14 pages n'est plus utilisé nulle part.
+- [x] Recherche en ligne résiliente (ajout/édition manuelle) : cascade automatique essai exact → titre nettoyé (retrait des mentions "Édition Collector", "Import"...) → traduction anglaise, avec bouton "Réessayer" et aide contextuelle si tout échoue. Voir `data/SearchCascade.kt`.
+- [x] Souhaits : sélection multiple avec suppression groupée et transfert groupé vers la Collection (respecte le plafond gratuit/TEST) — remplace l'ancien bouton "Rechercher les jaquettes manquantes" (un par un).
+- [x] Annulation d'un scan en cours (code-barres, photo, lot) via un bouton dédié pendant le chargement.
 
 ## ⚠️ À FAIRE PAR TOI avant de publier (nécessite ton compte / des captures d'écran)
 
@@ -41,6 +44,24 @@
 
 7. **Après publication** : pense à sauvegarder le keystore (`macollectionv2-release.jks`) et son mot de passe (dans `local.properties`) ailleurs que sur ce PC (gestionnaire de mots de passe, cloud chiffré...) — leur perte rendrait impossible toute future mise à jour de l'app.
 
-## 🎓 Tutoriel de premier lancement — refonte en cours
+## 🎓 Tutoriel de premier lancement — terminé
 
-L'ancien tutoriel (14 pages de texte, trop dense d'après ton retour) est remplacé par une version plus courte et visuelle, guidée pas à pas. Détails et statut : voir le message de la session, ou demande-moi un résumé.
+L'ancien tutoriel (14 pages de texte, trop dense d'après ton retour) est remplacé par `OnboardingScreenLight` : une version courte (7 étapes) et visuelle, guidée pas à pas, avec un premier écran de choix de langue pour que la suite s'affiche déjà traduite. Déployé sur les 3 éditions.
+
+## 📝 Notes de version 2.10 (14) — à coller dans Play Console → Notes de version
+
+Français :
+```
+🔎 Recherche en ligne plus fiable (jeux, consoles, accessoires) : nettoyage automatique du titre et traduction si besoin, avec un bouton Réessayer en cas d'échec.
+❤️ Souhaits : sélection multiple pour supprimer ou transférer plusieurs objets vers ta collection en un geste.
+⏹️ Possibilité d'annuler un scan en cours.
+Correctifs et améliorations de stabilité.
+```
+
+English :
+```
+🔎 More reliable online search (games, consoles, accessories): automatic title cleanup and translation fallback, with a Retry button if nothing is found.
+❤️ Wishlist: multi-select to delete or transfer several items to your collection at once.
+⏹️ You can now cancel an in-progress scan.
+Fixes and stability improvements.
+```

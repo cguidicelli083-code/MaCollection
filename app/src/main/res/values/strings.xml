@@ -65,6 +65,15 @@
     <string name="sort_brand">Marque</string>
     <string name="sort_console">Console</string>
     <string name="console_group_unknown">Console non précisée</string>
+    <string name="console_group_summary">%1$d objets · %2$s</string>
+    <string name="selection_mode_toggle">Mode sélection</string>
+    <string name="selection_mode_select_all">Tout sélectionner</string>
+    <string name="selection_mode_cancel">Annuler</string>
+    <string name="selection_count_value">%1$d sélectionné(s) · %2$s</string>
+    <string name="bulk_delete_button">Supprimer</string>
+    <string name="bulk_delete_confirm_title">Supprimer %1$d objets ?</string>
+    <string name="bulk_delete_confirm_message">Cette action est irréversible.</string>
+    <string name="bulk_transfer_button">📦 Vers la Collection</string>
     <string name="sort_price_desc">Prix (élevé → bas)</string>
     <string name="sort_price_asc">Prix (bas → élevé)</string>
     <string name="sort_release">Date de sortie (ancien → récent)</string>
@@ -153,7 +162,6 @@
     <string name="encyclo_selection_count">%1$d sélectionné(s)</string>
     <string name="encyclo_selection_mode_toggle">Sélection multiple</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Ajouter aux souhaits</string>
-    <string name="fill_missing_photos_button">🖼️ Rechercher les jaquettes manquantes</string>
 
     <!-- ConsolePickerDialog -->
     <string name="console_catalog_title">Catalogue des consoles</string>
@@ -189,6 +197,9 @@
     <string name="search_button">Chercher</string>
     <string name="no_game_found">Aucun jeu trouvé.</string>
     <string name="search_more_results">Proposer plus de résultats</string>
+    <string name="search_deep_in_progress">Recherche approfondie en cours…</string>
+    <string name="search_retry_button">Réessayer</string>
+    <string name="search_no_results_retry_help">Vérifiez l\'orthographe du nom, ou retirez du champ les mentions secondaires (Édition Collector, Steelbook, Import…) puis relancez la recherche.</string>
 
     <!-- Generic UI text -->
     <string name="remove_photo_button">Retirer la photo</string>

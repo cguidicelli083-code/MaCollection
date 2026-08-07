@@ -11,12 +11,14 @@ import android.os.Build
 import android.provider.DocumentsContract
 import android.content.pm.PackageManager
 import android.net.Uri
+import androidx.activity.compose.BackHandler
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.gestures.rememberTransformableState
 import androidx.compose.foundation.gestures.transformable
@@ -46,12 +48,15 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Checklist
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Delete
@@ -139,6 +144,7 @@ import com.example.macollection.data.KnownBrands
 import com.example.macollection.data.PriceHistory
 import com.example.macollection.data.Region
 import com.example.macollection.data.ScanTools
+import com.example.macollection.data.SearchCascade
 import com.example.macollection.data.SpreadsheetImport
 import com.example.macollection.data.UrlImport
 import com.example.macollection.data.consolePresets
@@ -198,12 +204,23 @@ fun CollectionScreen(
     // défilement chaque fois que cet écran est temporairement retiré de la composition (passage
     // par la fiche de détail/modification, ou changement d'onglet), puisqu'un état par défaut
     // (rememberLazyListState() interne) est alors recréé de zéro au retour.
-    listState: LazyListState = rememberLazyListState()
+    listState: LazyListState = rememberLazyListState(),
+    // Transfert par lot (Souhaits -> Collection uniquement, voir §3g) : mêmes vérifications de
+    // quota TEST/gratuit que le transfert unitaire (canMoveToCollection sur ItemDetailScreen).
+    remainingCollectionSlots: () -> Int = { Int.MAX_VALUE },
+    onBlockedByCollectionLimit: () -> Unit = {}
 ) {
     val allItems by (if (wishlist) vm.wishlist else vm.items).collectAsState()
     val sort by vm.sortOption.collectAsState()
     val filter by vm.typeFilter.collectAsState()
     var searchQuery by remember { mutableStateOf("") }
+    // Mode sélection multiple (case à cocher / appui long) : état local, pas besoin de survivre à
+    // un changement d'onglet (contrairement à listState ci-dessus).
+    var selectionMode by remember { mutableStateOf(false) }
+    var selectedIds by remember { mutableStateOf(setOf<Long>()) }
+    var confirmingBulkDelete by remember { mutableStateOf(false) }
+    fun exitSelectionMode() { selectionMode = false; selectedIds = emptySet() }
+    BackHandler(enabled = selectionMode) { exitSelectionMode() }
     val items = remember(allItems, searchQuery) {
         val q = searchQuery.trim().lowercase()
         if (q.isEmpty()) allItems
@@ -223,14 +240,32 @@ fun CollectionScreen(
         if (!groupByConsole) emptyList()
         else items.groupConsecutiveBy { it.platform?.trim()?.takeIf { p -> p.isNotBlank() } }
     }
+    // Sélection invalidée si la liste affichée change (filtre/tri/recherche/suppression ailleurs) :
+    // évite de garder cochée une fiche qui n'est plus visible et qu'on ne pourrait plus décocher.
+    LaunchedEffect(items) { selectedIds = selectedIds.intersect(items.map { it.id }.toSet()) }
+    val selectedItems = remember(items, selectedIds) { items.filter { it.id in selectedIds } }
+    val selectedTotalCents = remember(selectedItems) { selectedItems.sumOf { it.priceCents ?: 0 } }
 
     Column(modifier.fillMaxSize().padding(horizontal = 14.dp)) {
         Spacer(Modifier.height(8.dp))
-        ThemedSearchField(
-            value = searchQuery,
-            onValueChange = { searchQuery = it },
-            placeholder = stringResource(if (wishlist) R.string.wishlist_search_label else R.string.collection_search_label)
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.weight(1f)) {
+                ThemedSearchField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    placeholder = stringResource(if (wishlist) R.string.wishlist_search_label else R.string.collection_search_label)
+                )
+            }
+            IconButton(onClick = {
+                if (selectionMode) exitSelectionMode() else selectionMode = true
+            }) {
+                Icon(
+                    Icons.Filled.Checklist,
+                    contentDescription = stringResource(R.string.selection_mode_toggle),
+                    tint = if (selectionMode) NeonCyan else Color.White
+                )
+            }
+        }
         Spacer(Modifier.height(8.dp))
         if (!wishlist) {
             val isPremium by vm.isPremium.collectAsState()
@@ -251,22 +286,6 @@ fun CollectionScreen(
         SortDropdown(sort, filter) { vm.setSort(it) }
         Spacer(Modifier.height(10.dp))
 
-        if (wishlist) {
-            val filling by vm.fillingWishlistPhotos.collectAsState()
-            OutlinedButton(
-                onClick = { vm.fillMissingWishlistPhotos() },
-                enabled = !filling,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                if (filling) {
-                    CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
-                    Spacer(Modifier.width(8.dp))
-                }
-                Text(stringResource(R.string.fill_missing_photos_button))
-            }
-            Spacer(Modifier.height(10.dp))
-        }
-
         if (items.isEmpty()) {
             val message = when {
                 searchQuery.isNotBlank() -> stringResource(R.string.collection_search_no_results)
@@ -280,14 +299,24 @@ fun CollectionScreen(
                     if (groupByConsole) {
                         consoleGroups.forEach { (console, groupItems) ->
                             stickyHeader(key = "header_${console ?: "?"}") {
-                                ConsoleGroupHeader(console ?: stringResource(R.string.console_group_unknown))
+                                ConsoleGroupHeader(
+                                    console ?: stringResource(R.string.console_group_unknown),
+                                    itemCount = groupItems.size,
+                                    totalCents = groupItems.sumOf { it.priceCents ?: 0 }
+                                )
                             }
                             items(groupItems, key = { it.id }) { item ->
                                 CollectionCard(
                                     item = item,
                                     onOpen = { onOpen(item) },
                                     onEdit = { onEdit(item) },
-                                    onDelete = { vm.deleteCollectionItem(item) }
+                                    onDelete = { vm.deleteCollectionItem(item) },
+                                    selectionMode = selectionMode,
+                                    selected = item.id in selectedIds,
+                                    onToggleSelect = {
+                                        selectedIds = if (item.id in selectedIds) selectedIds - item.id else selectedIds + item.id
+                                    },
+                                    onLongPress = { selectionMode = true; selectedIds = selectedIds + item.id }
                                 )
                             }
                         }
@@ -297,7 +326,13 @@ fun CollectionScreen(
                                 item = item,
                                 onOpen = { onOpen(item) },
                                 onEdit = { onEdit(item) },
-                                onDelete = { vm.deleteCollectionItem(item) }
+                                onDelete = { vm.deleteCollectionItem(item) },
+                                selectionMode = selectionMode,
+                                selected = item.id in selectedIds,
+                                onToggleSelect = {
+                                    selectedIds = if (item.id in selectedIds) selectedIds - item.id else selectedIds + item.id
+                                },
+                                onLongPress = { selectionMode = true; selectedIds = selectedIds + item.id }
                             )
                         }
                     }
@@ -309,6 +344,82 @@ fun CollectionScreen(
                 )
             }
         }
+        if (selectionMode && selectedItems.isNotEmpty()) {
+            SelectionActionBar(
+                count = selectedItems.size,
+                totalCents = selectedTotalCents,
+                showTransfer = wishlist,
+                onSelectAll = { selectedIds = items.map { it.id }.toSet() },
+                onDelete = { confirmingBulkDelete = true },
+                onTransfer = {
+                    if (selectedItems.size > remainingCollectionSlots()) {
+                        onBlockedByCollectionLimit()
+                    } else {
+                        vm.bulkTransferToCollection(selectedItems)
+                        exitSelectionMode()
+                    }
+                },
+                onCancel = { exitSelectionMode() }
+            )
+        }
+    }
+
+    if (confirmingBulkDelete) {
+        AlertDialog(
+            onDismissRequest = { confirmingBulkDelete = false },
+            title = { Text(stringResource(R.string.bulk_delete_confirm_title, selectedItems.size)) },
+            text = { Text(stringResource(R.string.bulk_delete_confirm_message)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.bulkDeleteItems(selectedItems)
+                    confirmingBulkDelete = false
+                    exitSelectionMode()
+                }) { Text(stringResource(R.string.bulk_delete_button)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { confirmingBulkDelete = false }) { Text(stringResource(R.string.cancel)) }
+            }
+        )
+    }
+}
+
+/** Bandeau d'actions groupées affiché sous la liste Collection/Souhaits en mode sélection multiple. */
+@Composable
+private fun SelectionActionBar(
+    count: Int,
+    totalCents: Int,
+    showTransfer: Boolean,
+    onSelectAll: () -> Unit,
+    onDelete: () -> Unit,
+    onTransfer: () -> Unit,
+    onCancel: () -> Unit
+) {
+    Column(Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 4.dp)) {
+        Text(
+            stringResource(R.string.selection_count_value, count, formatPrice(totalCents)),
+            color = Color.White,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 6.dp)
+        )
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            OutlinedButton(onClick = onSelectAll, modifier = Modifier.weight(1f)) {
+                Text(stringResource(R.string.selection_mode_select_all))
+            }
+            Button(onClick = onDelete, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = NeonPink)) {
+                Text(stringResource(R.string.bulk_delete_button))
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            if (showTransfer) {
+                Button(onClick = onTransfer, modifier = Modifier.weight(1f)) {
+                    Text(stringResource(R.string.bulk_transfer_button))
+                }
+            }
+            OutlinedButton(onClick = onCancel, modifier = Modifier.weight(1f)) {
+                Text(stringResource(R.string.selection_mode_cancel))
+            }
+        }
     }
 }
 
@@ -317,11 +428,22 @@ private fun CollectionCard(
     item: CollectionItem,
     onOpen: () -> Unit,
     onEdit: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
+    selectionMode: Boolean = false,
+    selected: Boolean = false,
+    onToggleSelect: () -> Unit = {},
+    onLongPress: () -> Unit = {}
 ) {
-    GamerCard(onClick = onOpen) {
+    GamerCard(
+        onClick = { if (selectionMode) onToggleSelect() else onOpen() },
+        onLongClick = { if (!selectionMode) onLongPress() }
+    ) {
         Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
+            if (selectionMode) {
+                SelectionCheckbox(checked = selected, onCheckedChange = onToggleSelect)
+                Spacer(Modifier.width(10.dp))
+            }
             if (item.imageUri != null) {
                 AsyncImage(
                     model = item.imageUri,
@@ -398,15 +520,33 @@ private fun CollectionCard(
                 }
             }
         }
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-            IconButton(onClick = onEdit) {
-                Icon(Icons.Filled.Edit, stringResource(R.string.edit), tint = NeonPurple)
-            }
-            IconButton(onClick = onDelete) {
-                Icon(Icons.Filled.Delete, stringResource(R.string.delete), tint = NeonPink)
+        if (!selectionMode) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                IconButton(onClick = onEdit) {
+                    Icon(Icons.Filled.Edit, stringResource(R.string.edit), tint = NeonPurple)
+                }
+                IconButton(onClick = onDelete) {
+                    Icon(Icons.Filled.Delete, stringResource(R.string.delete), tint = NeonPink)
+                }
             }
         }
         }
+    }
+}
+
+/** Case à cocher ronde (sélection multiple Collection/Souhaits), même style que celle de l'Encyclopédie. */
+@Composable
+private fun SelectionCheckbox(checked: Boolean, onCheckedChange: () -> Unit, modifier: Modifier = Modifier) {
+    Box(
+        modifier
+            .size(26.dp)
+            .clip(CircleShape)
+            .background(if (checked) NeonPurple else Color.Transparent)
+            .border(2.dp, if (checked) NeonPurple else Color(0xFF7A7A96), CircleShape)
+            .clickable(onClick = onCheckedChange),
+        contentAlignment = Alignment.Center
+    ) {
+        if (checked) Icon(Icons.Filled.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
     }
 }
 
@@ -429,7 +569,7 @@ private fun <T, K> List<T>.groupConsecutiveBy(keySelector: (T) -> K): List<Pair<
 
 /** En-tête figé (sticky) au-dessus d'un groupe de jeux/accessoires partageant la même console. */
 @Composable
-private fun ConsoleGroupHeader(consoleName: String) {
+private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: Int) {
     Box(
         Modifier
             .fillMaxWidth()
@@ -447,12 +587,19 @@ private fun ConsoleGroupHeader(consoleName: String) {
         ) {
             Text(typeEmoji(ItemType.CONSOLE), fontSize = 16.sp)
             Spacer(Modifier.width(8.dp))
-            Text(
-                consoleName,
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
+            Column(Modifier.weight(1f)) {
+                Text(
+                    consoleName,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+                Text(
+                    stringResource(R.string.console_group_summary, itemCount, formatPrice(totalCents)),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
     }
 }
@@ -1790,7 +1937,16 @@ fun AddCollectionForm(
             consoleHint = platform.ifBlank { null },
             initialQuery = name,
             onPick = { game ->
-                name = GameCatalog.preserveEditionSuffix(name, game.name)
+                // Le titre déjà tapé n'est remplacé par celui du résultat choisi que s'ils
+                // partagent au moins un mot significatif : sinon, le résultat vient forcément
+                // d'une correspondance multilingue (alias connu de RAWG, ou traduction automatique
+                // de la cascade de recherche, cf. [SearchCascade]) — remplacer donnerait un titre
+                // dans une langue différente de celle voulue (ex. garder "Max et les monstres"
+                // plutôt que le "Where the Wild Things Are" qui a servi à le retrouver). Le reste
+                // de la fiche (genre/année/description/jaquette...) est complété dans tous les cas.
+                if (sharesSignificantWord(name, game.name)) {
+                    name = GameCatalog.preserveEditionSuffix(name, game.name)
+                }
                 if (game.genres.isNotBlank()) genre = game.genres
                 game.releaseYear?.let { year = it.toString() }
                 if (game.description.isNotBlank()) description = game.description
@@ -2903,6 +3059,7 @@ private fun ZoomableImage(uri: String, modifier: Modifier = Modifier) {
 @Composable
 private fun GamerCard(
     onClick: (() -> Unit)? = null,
+    onLongClick: (() -> Unit)? = null,
     content: @Composable () -> Unit
 ) {
     val shape = RoundedCornerShape(20.dp)
@@ -2911,7 +3068,11 @@ private fun GamerCard(
         .clip(shape)
         .background(CardGradient)
         .border(1.dp, NeonBorder, shape)
-    if (onClick != null) m = m.clickable { onClick() }
+    m = if (onLongClick != null) {
+        m.combinedClickable(onClick = { onClick?.invoke() }, onLongClick = onLongClick)
+    } else if (onClick != null) {
+        m.clickable { onClick() }
+    } else m
     Box(m.padding(14.dp)) { content() }
 }
 
@@ -3627,7 +3788,12 @@ private fun OnlinePresetSearchDialog(
     var loading by remember { mutableStateOf(false) }
     var searched by remember { mutableStateOf(false) }
     var searchJob by remember { mutableStateOf<Job?>(null) }
+    var currentStage by remember { mutableStateOf(SearchCascade.Stage.EXACT) }
+    var showRetryHelp by remember { mutableStateOf(false) }
 
+    // Recherche en cascade (cf. [SearchCascade]) : essai exact tel que tapé, puis nettoyé
+    // (mentions d'édition seulement — PAS le nettoyeur agressif des jeux, qui retirerait des mots
+    // comme "Switch"/"Nintendo", ici le sujet même de la recherche), puis traduit en anglais.
     fun runSearch() {
         if (query.isBlank()) return
         // Annule la recherche précédente encore en vol : sans ça, une vieille recherche lente
@@ -3637,9 +3803,16 @@ private fun OnlinePresetSearchDialog(
         searchJob?.cancel()
         searchJob = scope.launch {
             loading = true
-            val found = WikipediaPresetSearch.search(query.trim(), consoleHint)
+            showRetryHelp = false
+            val outcome = SearchCascade.run(
+                rawQuery = query,
+                cleaningCandidates = SearchCascade::presetCleaningCandidates,
+                translate = { GroqVision.translate(it, "en") },
+                onStageStart = { currentStage = it },
+                search = { q -> WikipediaPresetSearch.search(q, consoleHint) }
+            )
             if (!isActive) return@launch
-            results = found
+            results = outcome.items
             searched = true
             loading = false
         }
@@ -3669,7 +3842,17 @@ private fun OnlinePresetSearchDialog(
                 Spacer(Modifier.height(10.dp))
                 if (loading) {
                     Box(Modifier.fillMaxWidth().height(120.dp), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            CircularProgressIndicator()
+                            if (currentStage != SearchCascade.Stage.EXACT) {
+                                Spacer(Modifier.height(8.dp))
+                                Text(
+                                    stringResource(R.string.search_deep_in_progress),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
                     }
                 } else {
                     LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.weight(1f)) {
@@ -3716,7 +3899,19 @@ private fun OnlinePresetSearchDialog(
                         }
                         if (searched && results.isEmpty()) {
                             item {
-                                Text(stringResource(R.string.collection_search_no_results), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                Column {
+                                    Text(stringResource(R.string.collection_search_no_results), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    TextButton(onClick = { showRetryHelp = true }) {
+                                        Text(stringResource(R.string.search_retry_button))
+                                    }
+                                    if (showRetryHelp) {
+                                        Text(
+                                            stringResource(R.string.search_no_results_retry_help),
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
@@ -3745,27 +3940,36 @@ private fun GameSearchDialog(
     var searched by remember { mutableStateOf(false) }
     var searcher by remember { mutableStateOf<HybridGameSearch?>(null) }
     var searchJob by remember { mutableStateOf<Job?>(null) }
+    var currentStage by remember { mutableStateOf(SearchCascade.Stage.EXACT) }
+    var showRetryHelp by remember { mutableStateOf(false) }
     val platformId = remember(consoleHint) { consoleHint?.let { ConsolePlatforms.platformId(it) } }
     val anyApiConfigured = IgdbCatalog.isConfigured() || GameCatalog.isConfigured()
 
-    // Nouvelle saisie = nouvelle session hybride (IGDB d'abord, RAWG en complément/secours).
-    // La recherche précédente est annulée pour qu'un résultat lent n'écrase pas le nouveau.
+    // Recherche en cascade (cf. [SearchCascade]) : essai exact tel que tapé, puis nettoyé (bruit
+    // d'annonce/mentions d'édition, mot final retiré progressivement), puis traduit en anglais —
+    // ne passe à l'étape suivante que si la précédente n'a rien trouvé. La session HybridGameSearch
+    // gagnante est conservée dans [searcher] pour que "Plus de résultats" pagine la BONNE requête.
     fun runSearch(raw: String) {
-        val trimmed = raw.trim()
-        if (trimmed.isBlank()) return
-        // Nettoyage du bruit (état/complétude/marque déjà identifiée à part, ex. "jeu", "complet",
-        // "Switch"...) AVANT recherche, comme pour le scan code-barres (cf. [ScanTools.cleanListingTitle])
-        // : IGDB échoue sur le moindre mot en trop dans sa requête, or le nom peut déjà contenir ce
-        // genre de bruit (repris d'une reconnaissance photo ou tapé à la main en incluant la console).
-        val cleaned = ScanTools.cleanListingTitle(trimmed).ifBlank { trimmed }
+        if (raw.isBlank()) return
         searchJob?.cancel()
         searchJob = scope.launch {
             loading = true
-            val session = HybridGameSearch(cleaned, platformId, consoleHint)
-            val found = session.loadFirst()
+            showRetryHelp = false
+            var lastSession: HybridGameSearch? = null
+            val outcome = SearchCascade.run(
+                rawQuery = raw,
+                cleaningCandidates = SearchCascade::gameCleaningCandidates,
+                translate = { GroqVision.translate(it, "en") },
+                onStageStart = { currentStage = it },
+                search = { q ->
+                    val session = HybridGameSearch(q, platformId, consoleHint)
+                    lastSession = session
+                    session.loadFirst()
+                }
+            )
             if (!isActive) return@launch
-            searcher = session
-            results = found
+            searcher = lastSession
+            results = outcome.items
             searched = true
             loading = false
             loadingMore = false
@@ -3829,7 +4033,17 @@ private fun GameSearchDialog(
 
                     if (loading) {
                         Box(Modifier.fillMaxWidth().height(120.dp), contentAlignment = Alignment.Center) {
-                            CircularProgressIndicator()
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                CircularProgressIndicator()
+                                if (currentStage != SearchCascade.Stage.EXACT) {
+                                    Spacer(Modifier.height(8.dp))
+                                    Text(
+                                        stringResource(R.string.search_deep_in_progress),
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
                         }
                     } else {
                         LazyColumn(
@@ -3937,10 +4151,22 @@ private fun GameSearchDialog(
                             }
                             if (searched && results.isEmpty()) {
                                 item {
-                                    Text(
-                                        stringResource(R.string.no_game_found),
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
+                                    Column {
+                                        Text(
+                                            stringResource(R.string.no_game_found),
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        )
+                                        TextButton(onClick = { showRetryHelp = true }) {
+                                            Text(stringResource(R.string.search_retry_button))
+                                        }
+                                        if (showRetryHelp) {
+                                            Text(
+                                                stringResource(R.string.search_no_results_retry_help),
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                            )
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -4241,6 +4467,19 @@ private fun formatPrice(cents: Int?): String =
 
 private fun centsToText(cents: Int): String =
     String.format(Locale.FRANCE, "%.2f", (cents / 100.0) * currentCurrencyRate())
+
+/**
+ * Vrai si [a] et [b] partagent au moins un mot significatif (≥3 lettres) — ou si [a] n'en a aucun,
+ * auquel cas il n'y a rien à préserver. Sert à décider si le titre déjà tapé d'un jeu peut être
+ * remplacé par celui d'un résultat de recherche choisi (cf. [GameSearchDialog]) sans risquer de
+ * passer d'une langue à une autre (ex. "Max et les monstres" -> "Where the Wild Things Are").
+ */
+private fun sharesSignificantWord(a: String, b: String): Boolean {
+    fun words(s: String) = s.lowercase().replace(Regex("[^\\p{L}\\p{Nd} ]"), " ")
+        .split(" ").filter { it.length >= 3 }.toSet()
+    val wa = words(a)
+    return wa.isEmpty() || words(b).any { it in wa }
+}
 
 private fun parsePriceToCents(text: String): Int? {
     val cleaned = text.replace(",", ".").trim()

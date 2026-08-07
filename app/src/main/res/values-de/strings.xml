@@ -46,6 +46,15 @@
     <string name="sort_brand">Marke</string>
     <string name="sort_console">Konsole</string>
     <string name="console_group_unknown">Konsole nicht angegeben</string>
+    <string name="console_group_summary">%1$d Objekte · %2$s</string>
+    <string name="selection_mode_toggle">Auswahlmodus</string>
+    <string name="selection_mode_select_all">Alle auswählen</string>
+    <string name="selection_mode_cancel">Abbrechen</string>
+    <string name="selection_count_value">%1$d ausgewählt · %2$s</string>
+    <string name="bulk_delete_button">Löschen</string>
+    <string name="bulk_delete_confirm_title">%1$d Objekte löschen?</string>
+    <string name="bulk_delete_confirm_message">Diese Aktion ist unwiderruflich.</string>
+    <string name="bulk_transfer_button">📦 Zur Sammlung</string>
     <string name="sort_price_desc">Preis (hoch → niedrig)</string>
     <string name="sort_price_asc">Preis (niedrig → hoch)</string>
     <string name="sort_release">Erscheinungsdatum (alt → neu)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d ausgewählt</string>
     <string name="encyclo_selection_mode_toggle">Mehrfachauswahl</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Zur Wunschliste hinzufügen</string>
-    <string name="fill_missing_photos_button">🖼️ Fehlende Cover suchen</string>
 
     <string name="console_catalog_title">Konsolenkatalog</string>
     <string name="search_name_or_brand">Suchen (Name oder Marke)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Suchen</string>
     <string name="no_game_found">Kein Spiel gefunden.</string>
     <string name="search_more_results">Mehr Ergebnisse anzeigen</string>
+    <string name="search_deep_in_progress">Erweiterte Suche läuft…</string>
+    <string name="search_retry_button">Erneut versuchen</string>
+    <string name="search_no_results_retry_help">Überprüfe die Schreibweise des Namens oder entferne Zusatzangaben aus dem Feld (Collector\'s Edition, Steelbook, Import…) und starte die Suche erneut.</string>
 
     <string name="remove_photo_button">Foto entfernen</string>
     <string name="photo_saving">Foto wird gespeichert…</string>

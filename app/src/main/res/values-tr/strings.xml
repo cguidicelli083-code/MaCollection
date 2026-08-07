@@ -46,6 +46,15 @@
     <string name="sort_brand">Marka</string>
     <string name="sort_console">Konsol</string>
     <string name="console_group_unknown">Konsol belirtilmemiş</string>
+    <string name="console_group_summary">%1$d öğe · %2$s</string>
+    <string name="selection_mode_toggle">Seçim modu</string>
+    <string name="selection_mode_select_all">Tümünü seç</string>
+    <string name="selection_mode_cancel">İptal</string>
+    <string name="selection_count_value">%1$d seçildi · %2$s</string>
+    <string name="bulk_delete_button">Sil</string>
+    <string name="bulk_delete_confirm_title">%1$d öğe silinsin mi?</string>
+    <string name="bulk_delete_confirm_message">Bu işlem geri alınamaz.</string>
+    <string name="bulk_transfer_button">📦 Koleksiyona taşı</string>
     <string name="sort_price_desc">Fiyat (yüksek → düşük)</string>
     <string name="sort_price_asc">Fiyat (düşük → yüksek)</string>
     <string name="sort_release">Çıkış tarihi (eski → yeni)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d seçildi</string>
     <string name="encyclo_selection_mode_toggle">Çoklu seçim</string>
     <string name="encyclo_add_to_wishlist_button">⭐ İstek listesine ekle</string>
-    <string name="fill_missing_photos_button">🖼️ Eksik kapakları ara</string>
 
     <string name="console_catalog_title">Konsol kataloğu</string>
     <string name="search_name_or_brand">Ara (ad veya marka)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Ara</string>
     <string name="no_game_found">Oyun bulunamadı.</string>
     <string name="search_more_results">Daha fazla sonuç göster</string>
+    <string name="search_deep_in_progress">Detaylı arama yapılıyor…</string>
+    <string name="search_retry_button">Tekrar dene</string>
+    <string name="search_no_results_retry_help">Adın yazımını kontrol edin veya alandan ikincil ifadeleri (Koleksiyoncu Sürümü, Steelbook, İthal…) kaldırıp aramayı tekrar başlatın.</string>
 
     <string name="remove_photo_button">Fotoğrafı kaldır</string>
     <string name="photo_saving">Fotoğraf kaydediliyor…</string>

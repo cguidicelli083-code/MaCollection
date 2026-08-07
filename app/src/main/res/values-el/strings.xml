@@ -46,6 +46,15 @@
     <string name="sort_brand">Μάρκα</string>
     <string name="sort_console">Κονσόλα</string>
     <string name="console_group_unknown">Απροσδιόριστη κονσόλα</string>
+    <string name="console_group_summary">%1$d αντικείμενα · %2$s</string>
+    <string name="selection_mode_toggle">Λειτουργία επιλογής</string>
+    <string name="selection_mode_select_all">Επιλογή όλων</string>
+    <string name="selection_mode_cancel">Ακύρωση</string>
+    <string name="selection_count_value">%1$d επιλέχθηκαν · %2$s</string>
+    <string name="bulk_delete_button">Διαγραφή</string>
+    <string name="bulk_delete_confirm_title">Διαγραφή %1$d αντικειμένων;</string>
+    <string name="bulk_delete_confirm_message">Αυτή η ενέργεια είναι μη αναστρέψιμη.</string>
+    <string name="bulk_transfer_button">📦 Στη Συλλογή</string>
     <string name="sort_price_desc">Τιμή (υψηλή → χαμηλή)</string>
     <string name="sort_price_asc">Τιμή (χαμηλή → υψηλή)</string>
     <string name="sort_release">Ημερομηνία κυκλοφορίας (παλιά → νέα)</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">%1$d επιλεγμένα</string>
     <string name="encyclo_selection_mode_toggle">Πολλαπλή επιλογή</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Προσθήκη στις επιθυμίες</string>
-    <string name="fill_missing_photos_button">🖼️ Αναζήτηση εξωφύλλων που λείπουν</string>
 
     <string name="console_catalog_title">Κατάλογος κονσολών</string>
     <string name="search_name_or_brand">Αναζήτηση (όνομα ή μάρκα)</string>
@@ -139,6 +147,9 @@
     <string name="search_button">Αναζήτηση</string>
     <string name="no_game_found">Δεν βρέθηκε παιχνίδι.</string>
     <string name="search_more_results">Εμφάνιση περισσότερων αποτελεσμάτων</string>
+    <string name="search_deep_in_progress">Εκτενής αναζήτηση σε εξέλιξη…</string>
+    <string name="search_retry_button">Επανάληψη</string>
+    <string name="search_no_results_retry_help">Ελέγξτε την ορθογραφία του ονόματος ή αφαιρέστε δευτερεύουσες αναφορές από το πεδίο (Συλλεκτική Έκδοση, Steelbook, Import…) και επαναλάβετε την αναζήτηση.</string>
 
     <string name="remove_photo_button">Αφαίρεση φωτογραφίας</string>
     <string name="photo_saving">Αποθήκευση φωτογραφίας…</string>

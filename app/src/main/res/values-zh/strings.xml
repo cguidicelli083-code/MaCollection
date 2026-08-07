@@ -46,6 +46,15 @@
     <string name="sort_brand">品牌</string>
     <string name="sort_console">主机</string>
     <string name="console_group_unknown">未指定主机</string>
+    <string name="console_group_summary">%1$d 件 · %2$s</string>
+    <string name="selection_mode_toggle">选择模式</string>
+    <string name="selection_mode_select_all">全选</string>
+    <string name="selection_mode_cancel">取消</string>
+    <string name="selection_count_value">已选 %1$d 件 · %2$s</string>
+    <string name="bulk_delete_button">删除</string>
+    <string name="bulk_delete_confirm_title">删除 %1$d 件物品？</string>
+    <string name="bulk_delete_confirm_message">此操作无法撤销。</string>
+    <string name="bulk_transfer_button">📦 移入收藏</string>
     <string name="sort_price_desc">价格(高→低)</string>
     <string name="sort_price_asc">价格(低→高)</string>
     <string name="sort_release">发行日期（旧 → 新）</string>
@@ -127,7 +136,6 @@
     <string name="encyclo_selection_count">已选择 %1$d 项</string>
     <string name="encyclo_selection_mode_toggle">多选</string>
     <string name="encyclo_add_to_wishlist_button">⭐ 添加到心愿单</string>
-    <string name="fill_missing_photos_button">🖼️ 搜索缺失的封面</string>
 
     <string name="console_catalog_title">主机目录</string>
     <string name="search_name_or_brand">搜索（名称或品牌）</string>
@@ -139,6 +147,9 @@
     <string name="search_button">搜索</string>
     <string name="no_game_found">未找到游戏。</string>
     <string name="search_more_results">显示更多结果</string>
+    <string name="search_deep_in_progress">正在进行深度搜索…</string>
+    <string name="search_retry_button">重试</string>
+    <string name="search_no_results_retry_help">请检查名称拼写，或从输入框中删除次要说明(收藏版、Steelbook、进口版等)后重新搜索。</string>
 
     <string name="remove_photo_button">移除照片</string>
     <string name="photo_saving">正在保存照片…</string>

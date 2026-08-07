@@ -48,6 +48,15 @@
     <string name="sort_brand">Brand</string>
     <string name="sort_console">Console</string>
     <string name="console_group_unknown">Unspecified console</string>
+    <string name="console_group_summary">%1$d items · %2$s</string>
+    <string name="selection_mode_toggle">Selection mode</string>
+    <string name="selection_mode_select_all">Select all</string>
+    <string name="selection_mode_cancel">Cancel</string>
+    <string name="selection_count_value">%1$d selected · %2$s</string>
+    <string name="bulk_delete_button">Delete</string>
+    <string name="bulk_delete_confirm_title">Delete %1$d items?</string>
+    <string name="bulk_delete_confirm_message">This action cannot be undone.</string>
+    <string name="bulk_transfer_button">📦 Move to Collection</string>
     <string name="sort_price_desc">Price (high → low)</string>
     <string name="sort_price_asc">Price (low → high)</string>
     <string name="sort_release">Release date (old → new)</string>
@@ -129,7 +138,6 @@
     <string name="encyclo_selection_count">%1$d selected</string>
     <string name="encyclo_selection_mode_toggle">Multiple selection</string>
     <string name="encyclo_add_to_wishlist_button">⭐ Add to wishlist</string>
-    <string name="fill_missing_photos_button">🖼️ Search for missing covers</string>
 
     <string name="console_catalog_title">Console catalog</string>
     <string name="search_name_or_brand">Search (name or brand)</string>
@@ -141,6 +149,9 @@
     <string name="search_button">Search</string>
     <string name="no_game_found">No game found.</string>
     <string name="search_more_results">Show more results</string>
+    <string name="search_deep_in_progress">Deep search in progress…</string>
+    <string name="search_retry_button">Retry</string>
+    <string name="search_no_results_retry_help">Check the spelling of the name, or remove secondary mentions from the field (Collector\'s Edition, Steelbook, Import…) then search again.</string>
 
     <string name="remove_photo_button">Remove photo</string>
     <string name="photo_saving">Saving photo…</string>
