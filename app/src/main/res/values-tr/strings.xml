@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  Fotoğraf seç</string>
     <string name="take_photo_option">📸  Fotoğraf çek</string>
     <string name="manual_entry_option">✏️  Manuel giriş</string>
+    <string name="quick_estimate_content_description">Hızlı tahmin</string>
+    <string name="quick_estimate_chooser_title">Hızlı tahmin</string>
+    <string name="quick_estimate_loading">Fiyat aranıyor…</string>
+    <string name="quick_estimate_price_unknown">Fiyat bulunamadı</string>
+    <string name="quick_estimate_add_to_collection">+ Koleksiyona ekle</string>
+    <string name="quick_estimate_add_to_wishlist">+ İstek listesine ekle</string>
+    <string name="quick_estimate_not_recognized_title">Nesne tanınmadı</string>
+    <string name="quick_estimate_not_recognized_text">Daha net bir fotoğraf veya farklı bir barkodla tekrar dene.</string>
+    <string name="native_scanner_framing_hint">Barkodu çerçeveye al…</string>
+    <string name="set_as_main_photo_button">⭐ Ana fotoğraf olarak ayarla</string>
     <string name="lang_dialog_title">Uygulama dili</string>
     <string name="lang_dialog_rawg_note">Çevrimiçi alınan oyunların açıklamalarını ve türlerini de etkiler (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -45,6 +55,7 @@
     <string name="sort_name">Ad</string>
     <string name="sort_brand">Marka</string>
     <string name="sort_console">Konsol</string>
+    <string name="console_picker_title">Konsol seç</string>
     <string name="console_group_unknown">Konsol belirtilmemiş</string>
     <string name="console_group_summary">%1$d öğe · %2$s</string>
     <string name="selection_mode_toggle">Seçim modu</string>
@@ -54,6 +65,8 @@
     <string name="bulk_delete_button">Sil</string>
     <string name="bulk_delete_confirm_title">%1$d öğe silinsin mi?</string>
     <string name="bulk_delete_confirm_message">Bu işlem geri alınamaz.</string>
+    <string name="delete_confirm_title">\"%1$s\" silinsin mi?</string>
+    <string name="bulk_delete_confirm_hint">Saklamak istediğin nesnelerin işaretini kaldır.</string>
     <string name="bulk_transfer_button">📦 Koleksiyona taşı</string>
     <string name="sort_price_desc">Fiyat (yüksek → düşük)</string>
     <string name="sort_price_asc">Fiyat (düşük → yüksek)</string>
@@ -174,7 +187,7 @@
     <string name="backup_error_message">Yedekleme başarısız oldu.</string>
     <string name="restore_success_message">Koleksiyon başarıyla geri yüklendi.</string>
     <string name="restore_error_message">Geri yükleme başarısız: dosya geçersiz veya bozuk.</string>
-    <string name="excel_export_explainer">Tüm koleksiyonunu (ve isteklerini) her satırda bir fotoğrafla bir tablo olarak dışa aktarır — Excel\'de veya herhangi bir e-tablo uygulamasında okunabilir (Excel açılışta bir format uyarısı gösterecektir, sorun değil: "Evet"e tıkla).</string>
+    <string name="excel_export_explainer">Tüm koleksiyonunu (ve isteklerini) gerçek bir Excel dosyasına (.xlsx) aktarır: kategori başına bir sekme (Konsollar, Aksesuarlar, Oyunlar), filtreler etkin ve her satırda bir fotoğraf.</string>
     <string name="excel_export_button">📊 Excel tablosu olarak dışa aktar</string>
     <string name="excel_export_success_message">Excel tablosu başarıyla dışa aktarıldı.</string>
     <string name="excel_export_error_message">Excel tablosu dışa aktarılamadı.</string>

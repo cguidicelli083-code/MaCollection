@@ -122,7 +122,11 @@ object ConsoleRecognition {
         listOf("sega saturn", "saturn") to "Saturn",
         listOf("mega drive 2", "megadrive 2", "genesis 2", "md2") to "Mega Drive 2",
         listOf("mega drive", "megadrive", "genesis", "md") to "Mega Drive",
-        listOf("master system", "sms") to "Master System",
+        // "Master System II"/"Master System 2" fusionnés avec "Master System" à la demande de
+        // l'utilisateur (regroupement voulu pour le tri/filtre/export, même si ce sont des révisions
+        // matérielles distinctes) — pas de sous-chaîne, donc à lister explicitement en plus de la
+        // règle générique ci-dessous.
+        listOf("master system", "sms", "master system ii", "master system 2") to "Master System",
         listOf("game gear", "gg") to "Game Gear",
         listOf("mega cd 2", "sega cd 2", "sega cd v2", "mcd2") to "Mega CD 2",
         listOf("mega cd", "sega cd", "mcd") to "Mega CD",

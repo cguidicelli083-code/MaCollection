@@ -48,6 +48,14 @@ object GameShopCatalog {
      */
     const val FREE_DAILY_BARCODE_SCANS = 8
 
+    /**
+     * Nombre d'estimations rapides ("$", cf. QuickEstimateScreen) gratuites par jour avant de devoir
+     * regarder une pub récompensée pour continuer (voir [AppPrefs.canQuickEstimateFree]) — jamais
+     * Premium/V2SP, toujours illimité pour eux. Compteur séparé de [FREE_DAILY_BARCODE_SCANS] : une
+     * estimation via scan peut EN PLUS retomber sur ce quota de scan (2 paliers indépendants).
+     */
+    const val FREE_DAILY_QUICK_ESTIMATES = 3
+
     // Identifiants des jeux d'arcade (utilisés à la fois pour le déblocage et le high-score).
     const val PONG = "pong"
     const val ARKANOID = "arkanoid"

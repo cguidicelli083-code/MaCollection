@@ -44,6 +44,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SportsEsports
+import androidx.compose.material.icons.filled.AttachMoney
 import androidx.compose.material.icons.filled.Campaign
 import androidx.compose.material.icons.filled.Storefront
 import androidx.compose.material.icons.filled.VideogameAsset
@@ -87,6 +88,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.macollection.data.AppPrefs
 import com.example.macollection.data.CollectionItem
 import com.example.macollection.data.AccessoryPreset
+import com.example.macollection.data.accessoryPresets
+import com.example.macollection.data.consolePresets
 import com.example.macollection.data.ConsolePreset
 import com.example.macollection.data.GameInfo
 import com.example.macollection.data.GeminiVision
@@ -103,6 +106,9 @@ import com.example.macollection.ui.ConsoleEncyclopediaScreen
 import com.example.macollection.ui.EncyclopediaScreen
 import com.example.macollection.ui.EncycloMode
 import com.example.macollection.ui.ItemDetailScreen
+import com.example.macollection.ui.NativeBarcodeScannerScreen
+import com.example.macollection.ui.QuickEstimateData
+import com.example.macollection.ui.QuickEstimateResultScreen
 import com.example.macollection.ui.NewsScreen
 import com.example.macollection.ui.BackupScreen
 import com.example.macollection.ui.BatchScanDialog
@@ -175,7 +181,11 @@ data class CollectionEditor(
     val gameConsoleHint: String? = null,
     val coverUri: String? = null,
     val originalCoverUri: String? = null,
-    val isWishlist: Boolean = false
+    val isWishlist: Boolean = false,
+    // Pré-remplissage venant de l'estimation rapide ("$", cf. QuickEstimateScreen) : le prix reste
+    // modifiable dans la fiche, mais s'affiche déjà avec le tag "(IA)" si l'estimation en venait.
+    val initialPriceCents: Int? = null,
+    val initialPriceIsAiEstimate: Boolean = false
 )
 
 @Composable
@@ -206,6 +216,16 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     // futures) plutôt qu'un objet de la collection : même flux exact (scan/photo/manuel), la
     // seule différence est ce drapeau reporté sur l'objet créé (exclu de la valeur totale).
     var chooserForWishlist by remember { mutableStateOf(false) }
+    // Estimation rapide ("$" dans la TopAppBar) : choix photo/scan, comme le menu d'ajout normal,
+    // mais débouche sur un aperçu de prix (QuickEstimateResultScreen) au lieu d'ouvrir directement
+    // la fiche. quickEstimateMode fait dévier la suite du pipeline photo/scan EXISTANT (cropLauncher,
+    // applyBarcodeResult) vers cet aperçu au lieu du chemin normal, sans dupliquer la capture caméra/
+    // galerie/scan ni la logique d'identification.
+    var showQuickEstimateChooser by remember { mutableStateOf(false) }
+    var quickEstimateMode by remember { mutableStateOf(false) }
+    var quickEstimateLoadingPrice by remember { mutableStateOf(false) }
+    var quickEstimateResult by remember { mutableStateOf<QuickEstimateData?>(null) }
+    var quickEstimateFailed by remember { mutableStateOf(false) }
     // Variante TEST (BuildConfig.IS_TEST) : plafond de 10 objets de collection pour les testeurs.
     // Toujours compté sur la collection complète (vm.allOwnedItems), pas vm.items qui suit le
     // filtre par type affiché sur l'onglet Collection — sinon ce plafond semblait non atteint
@@ -293,6 +313,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         currentScanJob?.cancel()
         scanning = false; batchScanning = false; deepScanning = false
     }
+    // Scanner caméra natif (CameraX, cf. [NativeBarcodeScannerScreen]) réservé à l'édition TEST —
+    // voir [startBarcodeScan].
+    var showNativeScanner by remember { mutableStateOf(false) }
     var batchResults by remember { mutableStateOf<List<GeminiVision.BatchItem>?>(null) }
     // Vrai quand l'analyse IA a échoué (quota atteint, réseau…) — à distinguer d'un lot vide.
     var batchError by remember { mutableStateOf(false) }
@@ -350,10 +373,70 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             batchCameraPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
     }
+    // Résout type/marque/plateforme/nom à partir d'un résultat d'identification (photo OU scan),
+    // exactement comme AddCollectionForm le fait déjà pour recognized/recognizedAccessory
+    // (Screens.kt) — recognized?.name/recognizedAccessory?.name/gameMatch?.name sont par construction
+    // identiques à presetName/accessoryName/gameMatch?.name quand un match existe, donc ce nom
+    // résolu ici reste équivalent à celui que la fiche aurait dérivé elle-même. Puis lance
+    // AppViewModel.quickEstimatePrice et affiche QuickEstimateResultScreen. Déclarée AVANT
+    // cropLauncher/applyBarcodeResult (qui l'appellent tous les deux) : une fonction locale ne peut
+    // pas être référencée avant sa propre déclaration textuelle, contrairement aux fonctions
+    // top-level (cf. le commentaire historique sur ce même piège pour continueAfterBarcode plus bas).
+    fun startQuickEstimatePriceResolution(
+        barcode: String?,
+        presetName: String?,
+        accessoryName: String?,
+        gameMatch: GameInfo?,
+        gameConsoleHint: String?,
+        suggestedName: String?,
+        coverUri: String?,
+        originalCoverUri: String?
+    ) {
+        val recognizedPreset = presetName?.let { n -> consolePresets.firstOrNull { it.name == n } }
+        val recognizedAccessory = accessoryName?.let { n -> accessoryPresets.firstOrNull { it.name == n } }
+        val type = when {
+            presetName != null -> ItemType.CONSOLE
+            accessoryName != null -> ItemType.ACCESSOIRE
+            else -> ItemType.JEU
+        }
+        val brand = recognizedPreset?.brand ?: recognizedAccessory?.brand ?: gameMatch?.publisher ?: ""
+        val platform = gameConsoleHint ?: recognizedAccessory?.console
+        val finalName = presetName ?: accessoryName ?: gameMatch?.name ?: suggestedName.orEmpty()
+        if (finalName.isBlank()) {
+            quickEstimateFailed = true
+            return
+        }
+        currentScanJob = scope.launch {
+            quickEstimateLoadingPrice = true
+            val est = runCatching { vm.quickEstimatePrice(type, brand, finalName, platform) }.getOrNull()
+            if (!isActive) return@launch
+            quickEstimateLoadingPrice = false
+            quickEstimateResult = QuickEstimateData(
+                name = finalName,
+                brand = brand,
+                type = type,
+                platform = platform,
+                coverUri = coverUri,
+                originalCoverUri = originalCoverUri,
+                barcode = barcode,
+                presetName = presetName,
+                accessoryName = accessoryName,
+                gameMatch = gameMatch,
+                gameConsoleHint = gameConsoleHint,
+                priceCents = est?.priceCents,
+                priceIsAiEstimate = est?.isAiEstimate ?: false,
+                priceInfo = est?.info
+            )
+        }
+    }
     val cropLauncher = rememberLauncherForActivityResult(CropImageContract()) { result ->
         if (result.isSuccessful) {
             val croppedUri = result.uriContent
-            if (croppedUri != null) {
+            if (croppedUri == null) {
+                // Recadrage "réussi" sans URI exploitable : ne pas laisser quickEstimateMode actif
+                // pour une future capture normale (même raison que ci-dessous).
+                quickEstimateMode = false
+            } else {
                 currentScanJob = scope.launch {
                     scanning = true; deepScanning = false
                     val r = runCatching { ScanTools.scanImage(context, croppedUri) { deepScanning = true } }.getOrNull()
@@ -367,19 +450,36 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         withContext(Dispatchers.IO) { MediaUtils.copyToInternal(context, origUri) } ?: saved
                     } else saved
                     scanning = false
-                    editor = CollectionEditor(
-                        name = r?.suggestedName ?: "",
-                        barcode = r?.barcode,
-                        presetName = r?.consolePresetName,
-                        accessoryName = r?.accessoryName,
-                        gameMatch = r?.gameMatch,
-                        gameConsoleHint = r?.gameConsoleHint,
-                        coverUri = saved,
-                        originalCoverUri = originalSaved,
-                        isWishlist = chooserForWishlist
-                    )
+                    if (quickEstimateMode) {
+                        quickEstimateMode = false
+                        startQuickEstimatePriceResolution(
+                            barcode = r?.barcode,
+                            presetName = r?.consolePresetName,
+                            accessoryName = r?.accessoryName,
+                            gameMatch = r?.gameMatch,
+                            gameConsoleHint = r?.gameConsoleHint,
+                            suggestedName = r?.suggestedName,
+                            coverUri = saved,
+                            originalCoverUri = originalSaved
+                        )
+                    } else {
+                        editor = CollectionEditor(
+                            name = r?.suggestedName ?: "",
+                            barcode = r?.barcode,
+                            presetName = r?.consolePresetName,
+                            accessoryName = r?.accessoryName,
+                            gameMatch = r?.gameMatch,
+                            gameConsoleHint = r?.gameConsoleHint,
+                            coverUri = saved,
+                            originalCoverUri = originalSaved,
+                            isWishlist = chooserForWishlist
+                        )
+                    }
                 }
             }
+        } else {
+            // Recadrage annulé : idem, ne pas laisser le drapeau actif pour la prochaine capture.
+            quickEstimateMode = false
         }
     }
 
@@ -390,6 +490,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         if (uri != null) {
             pendingOriginalUri = uri
             cropLauncher.launch(CropImageContractOptions(uri, CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK")))
+        } else {
+            // Sélection de photo annulée : idem, ne pas laisser quickEstimateMode actif.
+            quickEstimateMode = false
         }
     }
 
@@ -422,6 +525,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             val uri = Uri.parse(pending)
             pendingOriginalUri = uri
             cropLauncher.launch(CropImageContractOptions(uri, CropImageOptions(activityMenuIconColor = android.graphics.Color.WHITE, cropMenuCropButtonTitle = "OK")))
+        } else {
+            // Prise de photo annulée : idem, ne pas laisser quickEstimateMode actif.
+            quickEstimateMode = false
         }
     }
     val cameraPermissionLauncher = rememberLauncherForActivityResult(
@@ -431,6 +537,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             val pair = MediaUtils.newCameraFile(context)
             pendingCameraUri = pair.first.toString()
             cameraLauncher.launch(pair.first)
+        } else {
+            // Permission caméra refusée : idem, ne pas laisser quickEstimateMode actif.
+            quickEstimateMode = false
         }
     }
     fun launchCamera() {
@@ -487,6 +596,62 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         }
         return
     }
+    if (quickEstimateLoadingPrice) {
+        BackHandler { currentScanJob?.cancel(); quickEstimateLoadingPrice = false }
+        Box(Modifier.fillMaxSize().background(themedGradient()), contentAlignment = Alignment.Center) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                CircularProgressIndicator(color = NeonCyan)
+                Spacer(Modifier.height(12.dp))
+                Text(stringResource(R.string.quick_estimate_loading), color = Color.White)
+                Spacer(Modifier.height(20.dp))
+                TextButton(onClick = { currentScanJob?.cancel(); quickEstimateLoadingPrice = false }) {
+                    Text(stringResource(R.string.cancel), color = Color.White)
+                }
+            }
+        }
+        return
+    }
+    quickEstimateResult?.let { data ->
+        QuickEstimateResultScreen(
+            data = data,
+            onAddToCollection = {
+                if (!blockedByCollectionLimit()) {
+                    editor = CollectionEditor(
+                        name = data.name,
+                        barcode = data.barcode,
+                        presetName = data.presetName,
+                        accessoryName = data.accessoryName,
+                        gameMatch = data.gameMatch,
+                        gameConsoleHint = data.gameConsoleHint,
+                        coverUri = data.coverUri,
+                        originalCoverUri = data.originalCoverUri,
+                        initialPriceCents = data.priceCents,
+                        initialPriceIsAiEstimate = data.priceIsAiEstimate,
+                        isWishlist = false
+                    )
+                    quickEstimateResult = null
+                }
+            },
+            onAddToWishlist = {
+                editor = CollectionEditor(
+                    name = data.name,
+                    barcode = data.barcode,
+                    presetName = data.presetName,
+                    accessoryName = data.accessoryName,
+                    gameMatch = data.gameMatch,
+                    gameConsoleHint = data.gameConsoleHint,
+                    coverUri = data.coverUri,
+                    originalCoverUri = data.originalCoverUri,
+                    initialPriceCents = data.priceCents,
+                    initialPriceIsAiEstimate = data.priceIsAiEstimate,
+                    isWishlist = true
+                )
+                quickEstimateResult = null
+            },
+            onDismiss = { quickEstimateResult = null }
+        )
+        return
+    }
 
     // --- Formulaires plein écran ---
     if (addingCustomPreset) {
@@ -522,6 +687,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             initialGameConsoleHint = ed.gameConsoleHint,
             initialCoverUri = ed.coverUri,
             initialOriginalCoverUri = ed.originalCoverUri,
+            initialPriceCents = ed.initialPriceCents,
+            initialPriceIsAiEstimate = ed.initialPriceIsAiEstimate,
             isWishlist = ed.isWishlist,
             onSave = { item, photos -> vm.saveCollectionItem(item, photos); editor = null },
             onCancel = { editor = null }
@@ -646,11 +813,20 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         return
     }
 
-    // Scan code-barres complet (caméra -> ScanDex/eBay gratuit -> bases à quota si besoin), extrait
-    // en fonction indépendante pour pouvoir être relancé directement depuis [showScanFailedDialog]
-    // (bouton « Réessayer ») sans repasser par tout le menu d'ajout.
-    fun startBarcodeScan() {
-        fun applyResult(code: String, r: ScanTools.ScanResult?) {
+    fun applyBarcodeResult(code: String, r: ScanTools.ScanResult?) {
+        if (quickEstimateMode) {
+            quickEstimateMode = false
+            startQuickEstimatePriceResolution(
+                barcode = code,
+                presetName = r?.consolePresetName,
+                accessoryName = r?.accessoryName,
+                gameMatch = r?.gameMatch,
+                gameConsoleHint = r?.gameConsoleHint,
+                suggestedName = r?.suggestedName,
+                coverUri = null,
+                originalCoverUri = null
+            )
+        } else {
             editor = CollectionEditor(
                 name = r?.suggestedName ?: "",
                 barcode = code,
@@ -661,46 +837,71 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 isWishlist = chooserForWishlist
             )
         }
-        fun isUseful(r: ScanTools.ScanResult?) =
-            r?.gameMatch != null || r?.consolePresetName != null || r?.accessoryName != null
-        // Suite "complète" (bases à quota partagé) : seulement si le quota gratuit du jour n'est
-        // pas atteint (Premium/V2SP toujours illimités), sinon pub récompensée pour débloquer un
-        // scan de plus (cf. GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
-        fun runFullScan(code: String) {
-            currentScanJob = scope.launch {
-                AppPrefs.recordBarcodeScanUsed(context)
-                scanning = true
-                val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
-                if (!isActive) return@launch
-                scanning = false
-                if (isUseful(r)) applyResult(code, r) else showScanFailedDialog = true
-            }
-        }
-        fun offerFullScan(code: String) {
-            if (isPremium || AppPrefs.canScanBarcodeFree(context)) {
-                runFullScan(code)
-            } else {
-                watchRewardedAd(
-                    context,
-                    onRewarded = { AppPrefs.recordBarcodeBonusScanGranted(context) },
-                    onClosed = { if (isPremium || AppPrefs.canScanBarcodeFree(context)) runFullScan(code) }
-                )
-            }
-        }
+    }
+    fun isBarcodeResultUseful(r: ScanTools.ScanResult?) =
+        r?.gameMatch != null || r?.consolePresetName != null || r?.accessoryName != null
+    // Suite "complète" (bases à quota partagé) : seulement si le quota gratuit du jour n'est
+    // pas atteint (Premium/V2SP toujours illimités), sinon pub récompensée pour débloquer un
+    // scan de plus (cf. GameShopCatalog.FREE_DAILY_BARCODE_SCANS).
+    fun runFullBarcodeScan(code: String) {
         currentScanJob = scope.launch {
-            val code = runCatching { ScanTools.scanCamera(context) }.getOrNull() ?: return@launch
-            // Premier essai TOUJOURS gratuit (ScanDex + eBay, pas de quota partagé) : la plupart
-            // des jeux se résolvent déjà ici, sans jamais avoir besoin du quota limité ni d'une pub.
+            AppPrefs.recordBarcodeScanUsed(context)
             scanning = true
+            val r = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = true) }.getOrNull()
+            if (!isActive) return@launch
+            scanning = false
+            if (isBarcodeResultUseful(r)) applyBarcodeResult(code, r) else showScanFailedDialog = true
+        }
+    }
+    fun offerFullBarcodeScan(code: String) {
+        if (isPremium || AppPrefs.canScanBarcodeFree(context)) {
+            runFullBarcodeScan(code)
+        } else {
+            watchRewardedAd(
+                context,
+                onRewarded = { AppPrefs.recordBarcodeBonusScanGranted(context) },
+                onClosed = { if (isPremium || AppPrefs.canScanBarcodeFree(context)) runFullBarcodeScan(code) }
+            )
+        }
+    }
+    // Suite commune une fois un code-barres lu, quelle que soit la source (scanner Google ou
+    // scanner natif CameraX en test, cf. [showNativeScanner] plus bas) : premier essai TOUJOURS
+    // gratuit (ScanDex + eBay, pas de quota partagé) avant d'éventuellement basculer sur les bases
+    // à quota.
+    fun continueAfterBarcode(code: String) {
+        currentScanJob = scope.launch {
             val free = runCatching { ScanTools.identifyFromBarcode(code, allowQuotaLimitedSources = false) }.getOrNull()
             if (!isActive) return@launch
             scanning = false
-            if (isUseful(free)) {
-                applyResult(code, free)
+            if (isBarcodeResultUseful(free)) {
+                applyBarcodeResult(code, free)
             } else {
-                offerFullScan(code)
+                offerFullBarcodeScan(code)
             }
         }
+    }
+    // Scan code-barres : scanner caméra natif (CameraX + ML Kit embarqué, cf.
+    // [NativeBarcodeScannerScreen]), extrait en fonction indépendante pour pouvoir être relancé
+    // directement depuis [showScanFailedDialog] (bouton « Réessayer ») sans repasser par tout le
+    // menu d'ajout. Remplace l'ancien scanner hébergé par Google Play Services
+    // (GmsBarcodeScanning), dont le module séparé pouvait échouer à se télécharger
+    // indépendamment de l'app — validé d'abord sur l'édition TEST avant généralisation.
+    fun startBarcodeScan() {
+        showNativeScanner = true
+    }
+
+    if (showNativeScanner) {
+        NativeBarcodeScannerScreen(onResult = { code ->
+            showNativeScanner = false
+            if (code != null) {
+                scanning = true
+                continueAfterBarcode(code)
+            } else {
+                // Scan annulé : ne pas laisser quickEstimateMode actif pour un futur scan normal.
+                quickEstimateMode = false
+            }
+        })
+        return
     }
 
     // --- Paywall Premium (abonnements + achat à vie) ---
@@ -814,6 +1015,57 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             },
             dismissButton = {
                 TextButton(onClick = { showScanFailedDialog = false }) { Text(stringResource(R.string.cancel)) }
+            }
+        )
+    }
+
+    // --- Estimation rapide ("$") : choix photo/scan, puis échec éventuel ---
+    if (showQuickEstimateChooser) {
+        AlertDialog(
+            onDismissRequest = { showQuickEstimateChooser = false },
+            title = { Text(stringResource(R.string.quick_estimate_chooser_title)) },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { showQuickEstimateChooser = false }) { Text(stringResource(R.string.cancel)) }
+            },
+            text = {
+                Column {
+                    TextButton(
+                        onClick = { showQuickEstimateChooser = false; quickEstimateMode = true; startBarcodeScan() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.scan_barcode_option)) }
+
+                    TextButton(
+                        onClick = {
+                            showQuickEstimateChooser = false
+                            quickEstimateMode = true
+                            photoLauncher.launch(
+                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                            )
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.choose_photo_option)) }
+
+                    TextButton(
+                        onClick = { showQuickEstimateChooser = false; quickEstimateMode = true; launchCamera() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.take_photo_option)) }
+                }
+            }
+        )
+    }
+    if (quickEstimateFailed) {
+        AlertDialog(
+            onDismissRequest = { quickEstimateFailed = false },
+            title = { Text(stringResource(R.string.quick_estimate_not_recognized_title)) },
+            text = { Text(stringResource(R.string.quick_estimate_not_recognized_text)) },
+            confirmButton = {
+                TextButton(onClick = { quickEstimateFailed = false; showQuickEstimateChooser = true }) {
+                    Text(stringResource(R.string.retry))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { quickEstimateFailed = false }) { Text(stringResource(R.string.cancel)) }
             }
         )
     }
@@ -1180,6 +1432,34 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             Icon(
                                 Icons.Filled.Storefront,
                                 contentDescription = stringResource(R.string.shop_content_description),
+                                tint = Color.White
+                            )
+                        }
+                        // Estimation rapide ("$") : identifie un objet (photo/scan) et affiche tout
+                        // de suite sa cote eBay/IA avant de proposer de l'ajouter. Quota séparé du
+                        // scan code-barres normal (FREE_DAILY_QUICK_ESTIMATES), empilé par-dessus si
+                        // le scan retombe en plus sur les bases à quota partagé — comportement
+                        // demandé explicitement, pas un oubli.
+                        IconButton(onClick = {
+                            if (isPremium || AppPrefs.canQuickEstimateFree(context)) {
+                                AppPrefs.recordQuickEstimateUsed(context)
+                                showQuickEstimateChooser = true
+                            } else {
+                                watchRewardedAd(
+                                    context,
+                                    onRewarded = { AppPrefs.recordQuickEstimateBonusGranted(context) },
+                                    onClosed = {
+                                        if (isPremium || AppPrefs.canQuickEstimateFree(context)) {
+                                            AppPrefs.recordQuickEstimateUsed(context)
+                                            showQuickEstimateChooser = true
+                                        }
+                                    }
+                                )
+                            }
+                        }) {
+                            Icon(
+                                Icons.Filled.AttachMoney,
+                                contentDescription = stringResource(R.string.quick_estimate_content_description),
                                 tint = Color.White
                             )
                         }

@@ -12,6 +12,16 @@
     <string name="choose_photo_option">🖼️  Choisir une photo</string>
     <string name="take_photo_option">📸  Prendre une photo</string>
     <string name="manual_entry_option">✏️  Saisie manuelle</string>
+    <string name="quick_estimate_content_description">Estimation rapide</string>
+    <string name="quick_estimate_chooser_title">Estimation rapide</string>
+    <string name="quick_estimate_loading">Recherche du prix en cours…</string>
+    <string name="quick_estimate_price_unknown">Prix non trouvé</string>
+    <string name="quick_estimate_add_to_collection">+ Ajouter à la collection</string>
+    <string name="quick_estimate_add_to_wishlist">+ Ajouter aux souhaits</string>
+    <string name="quick_estimate_not_recognized_title">Objet non reconnu</string>
+    <string name="quick_estimate_not_recognized_text">Réessaie avec une photo plus nette ou un autre code-barres.</string>
+    <string name="native_scanner_framing_hint">Cadre le code-barres…</string>
+    <string name="set_as_main_photo_button">⭐ Définir comme photo principale</string>
     <string name="lang_dialog_title">Langue de l\'application</string>
     <string name="lang_dialog_rawg_note">Affecte aussi les descriptions et genres des jeux récupérés en ligne (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -64,6 +74,7 @@
     <string name="sort_name">Nom</string>
     <string name="sort_brand">Marque</string>
     <string name="sort_console">Console</string>
+    <string name="console_picker_title">Choisir une console</string>
     <string name="console_group_unknown">Console non précisée</string>
     <string name="console_group_summary">%1$d objets · %2$s</string>
     <string name="selection_mode_toggle">Mode sélection</string>
@@ -73,6 +84,8 @@
     <string name="bulk_delete_button">Supprimer</string>
     <string name="bulk_delete_confirm_title">Supprimer %1$d objets ?</string>
     <string name="bulk_delete_confirm_message">Cette action est irréversible.</string>
+    <string name="delete_confirm_title">Supprimer « %1$s » ?</string>
+    <string name="bulk_delete_confirm_hint">Décoche les objets que tu veux conserver.</string>
     <string name="bulk_transfer_button">📦 Vers la Collection</string>
     <string name="sort_price_desc">Prix (élevé → bas)</string>
     <string name="sort_price_asc">Prix (bas → élevé)</string>
@@ -241,7 +254,7 @@
     <string name="backup_error_message">Échec de la sauvegarde.</string>
     <string name="restore_success_message">Collection restaurée avec succès.</string>
     <string name="restore_error_message">Échec de la restauration : fichier invalide ou endommagé.</string>
-    <string name="excel_export_explainer">Exporte toute ta collection (et tes souhaits) sous forme de tableau avec une photo par ligne — lisible dans Excel ou tout tableur (Excel affichera un avertissement de format à l\'ouverture, sans conséquence : clique sur « Oui »).</string>
+    <string name="excel_export_explainer">Exporte toute ta collection (et tes souhaits) dans un vrai fichier Excel (.xlsx) : un onglet par catégorie (Consoles, Accessoires, Jeux), filtres activés, une photo par ligne.</string>
     <string name="excel_export_button">📊 Exporter en tableau Excel</string>
     <string name="excel_export_success_message">Tableau Excel exporté avec succès.</string>
     <string name="excel_export_error_message">Échec de l\'export du tableau Excel.</string>
@@ -300,6 +313,8 @@
     <string name="onboarding_light_step3_text">Plus de 600 consoles à découvrir, ajoutables en un tap à ta collection ou tes souhaits.</string>
     <string name="onboarding_light_step4_title">Souhaits &amp; valeur</string>
     <string name="onboarding_light_step4_text">Suis les objets que tu vises et leur valeur — le bouton « Voir les offres » t\'indique directement où les acheter.</string>
+    <string name="onboarding_light_step_estimate_title">Estimation rapide</string>
+    <string name="onboarding_light_step_estimate_text">L\'icône « $ » en haut donne une cote instantanée (eBay/IA) par photo ou scan, avec ajout direct à la collection ou aux souhaits.</string>
     <string name="onboarding_light_step5_title">Joue &amp; gagne des points</string>
     <string name="onboarding_light_step5_text">Des mini-jeux rétro t\'attendent dans l\'onglet Jeux — gagne des points, débloque des thèmes.</string>
     <string name="onboarding_light_step6_title">Toujours un doute ?</string>

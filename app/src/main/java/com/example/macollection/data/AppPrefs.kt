@@ -32,6 +32,9 @@ object AppPrefs {
     private const val KEY_BARCODE_SCANS_TODAY = "barcodeScansToday"
     private const val KEY_BARCODE_BONUS_TODAY = "barcodeBonusScansToday"
     private const val KEY_BARCODE_SCANS_DAY = "barcodeScansDay"
+    private const val KEY_QUICK_ESTIMATES_TODAY = "quickEstimatesToday"
+    private const val KEY_QUICK_ESTIMATE_BONUS_TODAY = "quickEstimateBonusToday"
+    private const val KEY_QUICK_ESTIMATES_DAY = "quickEstimatesDay"
 
     /**
      * Image de fond personnalisée (URI "file://..."), ou null pour le dégradé par défaut.
@@ -142,6 +145,15 @@ object AppPrefs {
      *  ([GameShopCatalog.FREE_DAILY_BARCODE_SCANS]) — remis à 0 au changement de jour aussi. */
     val barcodeBonusScansToday = mutableStateOf(0)
 
+    /** Estimations rapides ("$", cf. QuickEstimateScreen) déjà lancées AUJOURD'HUI — compteur
+     *  SÉPARÉ du quota de scan code-barres ci-dessus : une estimation rapide par scan peut en plus
+     *  retomber sur ce même quota de scan (2 paliers indépendants empilés, demandé explicitement). */
+    val quickEstimatesToday = mutableStateOf(0)
+
+    /** Estimations bonus débloquées AUJOURD'HUI via pub récompensée, en plus du quota gratuit
+     *  ([GameShopCatalog.FREE_DAILY_QUICK_ESTIMATES]) — remis à 0 au changement de jour aussi. */
+    val quickEstimateBonusToday = mutableStateOf(0)
+
     fun load(context: Context) {
         val p = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         language = p.getString(KEY_LANG, "fr") ?: "fr"
@@ -174,6 +186,13 @@ object AppPrefs {
         } else {
             barcodeScansToday.value = 0
             barcodeBonusScansToday.value = 0
+        }
+        if (p.getLong(KEY_QUICK_ESTIMATES_DAY, 0L) == todayEpochDay()) {
+            quickEstimatesToday.value = p.getInt(KEY_QUICK_ESTIMATES_TODAY, 0)
+            quickEstimateBonusToday.value = p.getInt(KEY_QUICK_ESTIMATE_BONUS_TODAY, 0)
+        } else {
+            quickEstimatesToday.value = 0
+            quickEstimateBonusToday.value = 0
         }
     }
 
@@ -239,6 +258,44 @@ object AppPrefs {
         barcodeBonusScansToday.value = updated
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit().putInt(KEY_BARCODE_BONUS_TODAY, updated).apply()
+    }
+
+    private fun resetQuickEstimatesIfNewDay(context: Context) {
+        val today = todayEpochDay()
+        val p = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        if (p.getLong(KEY_QUICK_ESTIMATES_DAY, 0L) != today) {
+            quickEstimatesToday.value = 0
+            quickEstimateBonusToday.value = 0
+            p.edit()
+                .putInt(KEY_QUICK_ESTIMATES_TODAY, 0)
+                .putInt(KEY_QUICK_ESTIMATE_BONUS_TODAY, 0)
+                .putLong(KEY_QUICK_ESTIMATES_DAY, today)
+                .apply()
+        }
+    }
+
+    /** true si le quota gratuit du jour (+ bonus pub déjà débloqués) n'est pas encore atteint. */
+    fun canQuickEstimateFree(context: Context): Boolean {
+        resetQuickEstimatesIfNewDay(context)
+        return quickEstimatesToday.value < GameShopCatalog.FREE_DAILY_QUICK_ESTIMATES + quickEstimateBonusToday.value
+    }
+
+    /** À appeler à chaque estimation rapide effectivement lancée (avant même de connaître le résultat). */
+    fun recordQuickEstimateUsed(context: Context) {
+        resetQuickEstimatesIfNewDay(context)
+        val updated = quickEstimatesToday.value + 1
+        quickEstimatesToday.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putInt(KEY_QUICK_ESTIMATES_TODAY, updated).apply()
+    }
+
+    /** À appeler seulement après un visionnage complet confirmé d'une pub récompensée. */
+    fun recordQuickEstimateBonusGranted(context: Context) {
+        resetQuickEstimatesIfNewDay(context)
+        val updated = quickEstimateBonusToday.value + 1
+        quickEstimateBonusToday.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putInt(KEY_QUICK_ESTIMATE_BONUS_TODAY, updated).apply()
     }
 
     private const val CHEST_COOLDOWN_MS = 24 * 60 * 60 * 1000L

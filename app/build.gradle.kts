@@ -47,8 +47,8 @@ android {
         applicationId = "com.nawash.macollection"
         minSdk = 24
         targetSdk = 36
-        versionCode = 14
-        versionName = "2.10"
+        versionCode = 15
+        versionName = "2.11"
 
         buildConfigField("String", "RAWG_API_KEY", "\"$rawgApiKey\"")
         buildConfigField("String", "EBAY_CLIENT_ID", "\"$ebayClientId\"")
@@ -182,10 +182,21 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
 
-    // Scan par photo : code-barres (caméra + image) et OCR (lecture du titre).
-    implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
+    // Scan par photo : code-barres (image) et OCR (lecture du titre).
     implementation("com.google.mlkit:barcode-scanning:17.3.0")
     implementation("com.google.mlkit:text-recognition:16.0.1")
+    // Scanner code-barres caméra en direct (NativeBarcodeScanner.kt) : réutilise le même modèle
+    // ML Kit "barcode" ci-dessus dans un flux caméra CameraX. Remplace l'ancien scanner hébergé par
+    // Google Play Services (play-services-code-scanner/GmsBarcodeScanning, retiré), dont le module
+    // séparé pouvait échouer à se télécharger indépendamment de l'app.
+    val cameraXVersion = "1.3.4"
+    implementation("androidx.camera:camera-core:$cameraXVersion")
+    implementation("androidx.camera:camera-camera2:$cameraXVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraXVersion")
+    implementation("androidx.camera:camera-view:$cameraXVersion")
+    // ProcessCameraProvider.getInstance() renvoie un ListenableFuture (Guava) : sans cette
+    // dépendance explicite, sa classe n'est pas résolue à la compilation.
+    implementation("com.google.guava:guava:33.0.0-android")
     // Modèle dédié pour le japonais (kanji/hiragana/katakana) : le modèle par défaut
     // ci-dessus ne lit que les caractères latins, donc rien de lisible sur les boîtes
     // de jeux japonaises sans ce modèle spécifique.

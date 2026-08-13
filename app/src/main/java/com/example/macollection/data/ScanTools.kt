@@ -4,7 +4,6 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
@@ -20,8 +19,11 @@ import kotlinx.coroutines.tasks.await
 /**
  * Outils de reconnaissance par photo (ML Kit).
  *
- * - [scanCamera] : ouvre le scanner de code-barres Google (aucune permission à gérer).
- * - [scanImage]  : analyse une image (code-barres + OCR du titre).
+ * - [scanImage] : analyse une image (code-barres + OCR du titre). Le scan caméra en direct est
+ *   géré séparément par [com.example.macollection.ui.NativeBarcodeScannerScreen] (CameraX), qui
+ *   réutilise le même modèle ML Kit "barcode" ci-dessous — voir sa documentation pour l'historique
+ *   (a remplacé le scanner hébergé par Google Play Services, dont le module séparé pouvait échouer
+ *   à se télécharger indépendamment de l'app).
  */
 object ScanTools {
 
@@ -37,13 +39,6 @@ object ScanTools {
         /** Console reconnue en même temps qu'un jeu (ex. cartouche) : à préremplir en "Console associée". */
         val gameConsoleHint: String? = null
     )
-
-    /** Scanner caméra : renvoie le code-barres lu, ou null si annulé / introuvable. */
-    suspend fun scanCamera(context: Context): String? = try {
-        GmsBarcodeScanning.getClient(context).startScan().await().rawValue
-    } catch (e: Exception) {
-        null
-    }
 
     /**
      * Codes-barres de CONSOLES connus en dur, vérifiés manuellement (barcode → nom de preset) :

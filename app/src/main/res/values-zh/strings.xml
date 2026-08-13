@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  选择照片</string>
     <string name="take_photo_option">📸  拍照</string>
     <string name="manual_entry_option">✏️  手动输入</string>
+    <string name="quick_estimate_content_description">快速估价</string>
+    <string name="quick_estimate_chooser_title">快速估价</string>
+    <string name="quick_estimate_loading">正在查询价格…</string>
+    <string name="quick_estimate_price_unknown">未找到价格</string>
+    <string name="quick_estimate_add_to_collection">+ 添加到收藏</string>
+    <string name="quick_estimate_add_to_wishlist">+ 添加到心愿单</string>
+    <string name="quick_estimate_not_recognized_title">未识别到物品</string>
+    <string name="quick_estimate_not_recognized_text">请用更清晰的照片或其他条形码重试。</string>
+    <string name="native_scanner_framing_hint">请将条形码对准取景框…</string>
+    <string name="set_as_main_photo_button">⭐ 设为主照片</string>
     <string name="lang_dialog_title">应用语言</string>
     <string name="lang_dialog_rawg_note">也会影响在线获取的游戏简介和类型（RAWG）。</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -45,6 +55,7 @@
     <string name="sort_name">名称</string>
     <string name="sort_brand">品牌</string>
     <string name="sort_console">主机</string>
+    <string name="console_picker_title">选择主机</string>
     <string name="console_group_unknown">未指定主机</string>
     <string name="console_group_summary">%1$d 件 · %2$s</string>
     <string name="selection_mode_toggle">选择模式</string>
@@ -54,6 +65,8 @@
     <string name="bulk_delete_button">删除</string>
     <string name="bulk_delete_confirm_title">删除 %1$d 件物品？</string>
     <string name="bulk_delete_confirm_message">此操作无法撤销。</string>
+    <string name="delete_confirm_title">删除\"%1$s\"？</string>
+    <string name="bulk_delete_confirm_hint">取消勾选你想保留的物品。</string>
     <string name="bulk_transfer_button">📦 移入收藏</string>
     <string name="sort_price_desc">价格(高→低)</string>
     <string name="sort_price_asc">价格(低→高)</string>
@@ -174,7 +187,7 @@
     <string name="backup_error_message">备份失败。</string>
     <string name="restore_success_message">收藏已成功恢复。</string>
     <string name="restore_error_message">恢复失败：文件无效或已损坏。</string>
-    <string name="excel_export_explainer">将你的整个收藏（和心愿单）导出为表格，每行包含一张照片——可在Excel或任何表格应用中查看（Excel打开时会显示格式警告，没有影响，点击"是"即可）。</string>
+    <string name="excel_export_explainer">将你的整个收藏（和心愿单）导出为真正的Excel文件（.xlsx）：每个分类一个工作表（主机、配件、游戏），已启用筛选，每行一张照片。</string>
     <string name="excel_export_button">📊 导出为Excel表格</string>
     <string name="excel_export_success_message">Excel表格导出成功。</string>
     <string name="excel_export_error_message">Excel表格导出失败。</string>

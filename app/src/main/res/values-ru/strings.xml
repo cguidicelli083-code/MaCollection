@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  Выбрать фото</string>
     <string name="take_photo_option">📸  Сделать фото</string>
     <string name="manual_entry_option">✏️  Ввести вручную</string>
+    <string name="quick_estimate_content_description">Быстрая оценка</string>
+    <string name="quick_estimate_chooser_title">Быстрая оценка</string>
+    <string name="quick_estimate_loading">Поиск цены…</string>
+    <string name="quick_estimate_price_unknown">Цена не найдена</string>
+    <string name="quick_estimate_add_to_collection">+ Добавить в коллекцию</string>
+    <string name="quick_estimate_add_to_wishlist">+ Добавить в желаемое</string>
+    <string name="quick_estimate_not_recognized_title">Предмет не распознан</string>
+    <string name="quick_estimate_not_recognized_text">Попробуйте снова с более чёткой фотографией или другим штрихкодом.</string>
+    <string name="native_scanner_framing_hint">Наведите на штрихкод…</string>
+    <string name="set_as_main_photo_button">⭐ Сделать главным фото</string>
     <string name="lang_dialog_title">Язык приложения</string>
     <string name="lang_dialog_rawg_note">Также влияет на описания и жанры игр, получаемых онлайн (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -45,6 +55,7 @@
     <string name="sort_name">Название</string>
     <string name="sort_brand">Бренд</string>
     <string name="sort_console">Консоль</string>
+    <string name="console_picker_title">Выбрать консоль</string>
     <string name="console_group_unknown">Консоль не указана</string>
     <string name="console_group_summary">%1$d объектов · %2$s</string>
     <string name="selection_mode_toggle">Режим выбора</string>
@@ -54,6 +65,8 @@
     <string name="bulk_delete_button">Удалить</string>
     <string name="bulk_delete_confirm_title">Удалить %1$d объектов?</string>
     <string name="bulk_delete_confirm_message">Это действие необратимо.</string>
+    <string name="delete_confirm_title">Удалить «%1$s»?</string>
+    <string name="bulk_delete_confirm_hint">Снимите отметку с объектов, которые хотите оставить.</string>
     <string name="bulk_transfer_button">📦 В коллекцию</string>
     <string name="sort_price_desc">Цена (выс. → низ.)</string>
     <string name="sort_price_asc">Цена (низ. → выс.)</string>
@@ -174,7 +187,7 @@
     <string name="backup_error_message">Не удалось создать резервную копию.</string>
     <string name="restore_success_message">Коллекция успешно восстановлена.</string>
     <string name="restore_error_message">Не удалось восстановить: файл повреждён или недействителен.</string>
-    <string name="excel_export_explainer">Экспортирует всю вашу коллекцию (и желания) в виде таблицы с одной фотографией в строке — читается в Excel или любой таблице (Excel покажет предупреждение о формате при открытии, без последствий: нажмите «Да»).</string>
+    <string name="excel_export_explainer">Экспортирует всю вашу коллекцию (и желаемое) в настоящий файл Excel (.xlsx): отдельный лист для каждой категории (Консоли, Аксессуары, Игры), с включёнными фильтрами и одной фотографией в строке.</string>
     <string name="excel_export_button">📊 Экспортировать как таблицу Excel</string>
     <string name="excel_export_success_message">Таблица Excel успешно экспортирована.</string>
     <string name="excel_export_error_message">Не удалось экспортировать таблицу Excel.</string>

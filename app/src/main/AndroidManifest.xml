@@ -24,10 +24,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaCollection">
 
-        <!-- Pré-télécharge les modèles ML Kit (code-barres + OCR) à l'installation. -->
+        <!-- Pré-télécharge les modèles ML Kit (code-barres + OCR) à l'installation.
+             "barcode_ui" est un module DISTINCT de "barcode" : "barcode" sert à la détection dans
+             une photo déjà prise ([BarcodeScanning], scan par image), "barcode_ui" est l'écran
+             caméra du scanner rapide ([GmsBarcodeScanning.startScan], utilisé par [scanCamera])
+             — son absence ici faisait que ce module n'était jamais pré-téléchargé à l'installation
+             et devait l'être à la demande, ce qui échouait silencieusement en pratique. -->
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
-            android:value="barcode,ocr,ocr_japanese" />
+            android:value="barcode,barcode_ui,ocr,ocr_japanese" />
 
         <!-- App ID de TEST officiel Google AdMob (jamais d'ID de production inventé ici :
              voir ui/ads/AdsManager.kt pour les unités publicitaires, elles aussi en mode

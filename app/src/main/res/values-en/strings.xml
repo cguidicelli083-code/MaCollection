@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  Choose a photo</string>
     <string name="take_photo_option">📸  Take a photo</string>
     <string name="manual_entry_option">✏️  Manual entry</string>
+    <string name="quick_estimate_content_description">Quick estimate</string>
+    <string name="quick_estimate_chooser_title">Quick estimate</string>
+    <string name="quick_estimate_loading">Searching for a price…</string>
+    <string name="quick_estimate_price_unknown">Price not found</string>
+    <string name="quick_estimate_add_to_collection">+ Add to collection</string>
+    <string name="quick_estimate_add_to_wishlist">+ Add to wishlist</string>
+    <string name="quick_estimate_not_recognized_title">Item not recognized</string>
+    <string name="quick_estimate_not_recognized_text">Try again with a clearer photo or a different barcode.</string>
+    <string name="native_scanner_framing_hint">Frame the barcode…</string>
+    <string name="set_as_main_photo_button">⭐ Set as main photo</string>
     <string name="lang_dialog_title">App language</string>
     <string name="lang_dialog_rawg_note">Also affects descriptions and genres of games fetched online (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -47,6 +57,7 @@
     <string name="sort_name">Name</string>
     <string name="sort_brand">Brand</string>
     <string name="sort_console">Console</string>
+    <string name="console_picker_title">Choose a console</string>
     <string name="console_group_unknown">Unspecified console</string>
     <string name="console_group_summary">%1$d items · %2$s</string>
     <string name="selection_mode_toggle">Selection mode</string>
@@ -56,6 +67,8 @@
     <string name="bulk_delete_button">Delete</string>
     <string name="bulk_delete_confirm_title">Delete %1$d items?</string>
     <string name="bulk_delete_confirm_message">This action cannot be undone.</string>
+    <string name="delete_confirm_title">Delete \"%1$s\"?</string>
+    <string name="bulk_delete_confirm_hint">Uncheck any items you want to keep.</string>
     <string name="bulk_transfer_button">📦 Move to Collection</string>
     <string name="sort_price_desc">Price (high → low)</string>
     <string name="sort_price_asc">Price (low → high)</string>
@@ -176,7 +189,7 @@
     <string name="backup_error_message">Backup failed.</string>
     <string name="restore_success_message">Collection restored successfully.</string>
     <string name="restore_error_message">Restore failed: invalid or corrupted file.</string>
-    <string name="excel_export_explainer">Exports your whole collection (and wishlist) as a table with one photo per row — readable in Excel or any spreadsheet app (Excel will show a format warning on opening, no issue: click "Yes").</string>
+    <string name="excel_export_explainer">Exports your whole collection (and wishlist) as a real Excel file (.xlsx): one tab per category (Consoles, Accessories, Games), with filters enabled and one photo per row.</string>
     <string name="excel_export_button">📊 Export as Excel table</string>
     <string name="excel_export_success_message">Excel table exported successfully.</string>
     <string name="excel_export_error_message">Failed to export the Excel table.</string>

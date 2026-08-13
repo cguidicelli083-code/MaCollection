@@ -61,6 +61,7 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.UnfoldMore
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -219,6 +220,9 @@ fun CollectionScreen(
     var selectionMode by remember { mutableStateOf(false) }
     var selectedIds by remember { mutableStateOf(setOf<Long>()) }
     var confirmingBulkDelete by remember { mutableStateOf(false) }
+    var confirmingSingleDelete by remember { mutableStateOf<CollectionItem?>(null) }
+    var showConsoleJump by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
     fun exitSelectionMode() { selectionMode = false; selectedIds = emptySet() }
     BackHandler(enabled = selectionMode) { exitSelectionMode() }
     val items = remember(allItems, searchQuery) {
@@ -239,6 +243,17 @@ fun CollectionScreen(
     val consoleGroups = remember(items, groupByConsole) {
         if (!groupByConsole) emptyList()
         else items.groupConsecutiveBy { it.platform?.trim()?.takeIf { p -> p.isNotBlank() } }
+    }
+    // Index de chaque en-tête de console dans la LazyColumn à plat (1 slot pour le stickyHeader +
+    // N slots pour ses fiches), pour permettre au sélecteur rapide (§ConsoleJumpDialog) de sauter
+    // directement dessus via listState.animateScrollToItem, sans devoir défiler console par console.
+    val consoleGroupIndices = remember(consoleGroups) {
+        var index = 0
+        consoleGroups.map { (console, groupItems) ->
+            val startIndex = index
+            index += 1 + groupItems.size
+            Triple(console, groupItems, startIndex)
+        }
     }
     // Sélection invalidée si la liste affichée change (filtre/tri/recherche/suppression ailleurs) :
     // évite de garder cochée une fiche qui n'est plus visible et qu'on ne pourrait plus décocher.
@@ -302,7 +317,8 @@ fun CollectionScreen(
                                 ConsoleGroupHeader(
                                     console ?: stringResource(R.string.console_group_unknown),
                                     itemCount = groupItems.size,
-                                    totalCents = groupItems.sumOf { it.priceCents ?: 0 }
+                                    totalCents = groupItems.sumOf { it.priceCents ?: 0 },
+                                    onClick = { showConsoleJump = true }
                                 )
                             }
                             items(groupItems, key = { it.id }) { item ->
@@ -310,7 +326,7 @@ fun CollectionScreen(
                                     item = item,
                                     onOpen = { onOpen(item) },
                                     onEdit = { onEdit(item) },
-                                    onDelete = { vm.deleteCollectionItem(item) },
+                                    onDelete = { confirmingSingleDelete = item },
                                     selectionMode = selectionMode,
                                     selected = item.id in selectedIds,
                                     onToggleSelect = {
@@ -326,7 +342,7 @@ fun CollectionScreen(
                                 item = item,
                                 onOpen = { onOpen(item) },
                                 onEdit = { onEdit(item) },
-                                onDelete = { vm.deleteCollectionItem(item) },
+                                onDelete = { confirmingSingleDelete = item },
                                 selectionMode = selectionMode,
                                 selected = item.id in selectedIds,
                                 onToggleSelect = {
@@ -364,23 +380,158 @@ fun CollectionScreen(
         }
     }
 
-    if (confirmingBulkDelete) {
+    confirmingSingleDelete?.let { item ->
         AlertDialog(
-            onDismissRequest = { confirmingBulkDelete = false },
-            title = { Text(stringResource(R.string.bulk_delete_confirm_title, selectedItems.size)) },
+            onDismissRequest = { confirmingSingleDelete = null },
+            title = { Text(stringResource(R.string.delete_confirm_title, item.name.ifBlank { stringResource(R.string.unnamed_item) })) },
             text = { Text(stringResource(R.string.bulk_delete_confirm_message)) },
             confirmButton = {
                 TextButton(onClick = {
-                    vm.bulkDeleteItems(selectedItems)
-                    confirmingBulkDelete = false
-                    exitSelectionMode()
-                }) { Text(stringResource(R.string.bulk_delete_button)) }
+                    vm.deleteCollectionItem(item)
+                    confirmingSingleDelete = null
+                }) { Text(stringResource(R.string.delete)) }
             },
             dismissButton = {
-                TextButton(onClick = { confirmingBulkDelete = false }) { Text(stringResource(R.string.cancel)) }
+                TextButton(onClick = { confirmingSingleDelete = null }) { Text(stringResource(R.string.cancel)) }
             }
         )
     }
+
+    if (confirmingBulkDelete) {
+        BulkDeleteConfirmDialog(
+            candidateItems = selectedItems,
+            onConfirm = { toDelete ->
+                vm.bulkDeleteItems(toDelete)
+                confirmingBulkDelete = false
+                exitSelectionMode()
+            },
+            onDismiss = { confirmingBulkDelete = false }
+        )
+    }
+
+    if (showConsoleJump) {
+        ConsoleJumpDialog(
+            groups = consoleGroupIndices,
+            onPick = { startIndex ->
+                showConsoleJump = false
+                scope.launch { listState.animateScrollToItem(startIndex) }
+            },
+            onDismiss = { showConsoleJump = false }
+        )
+    }
+}
+
+/**
+ * Confirmation de suppression groupée : chaque objet sélectionné est listé avec sa propre case à
+ * cocher (toutes cochées par défaut), pour permettre d'en exclure certains avant validation plutôt
+ * que de devoir annuler et refaire la sélection depuis zéro. Seuls les objets encore cochés au
+ * moment de valider sont transmis à [onConfirm].
+ */
+@Composable
+private fun BulkDeleteConfirmDialog(
+    candidateItems: List<CollectionItem>,
+    onConfirm: (List<CollectionItem>) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var checkedIds by remember(candidateItems) { mutableStateOf(candidateItems.map { it.id }.toSet()) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.bulk_delete_confirm_title, checkedIds.size)) },
+        text = {
+            Column {
+                Text(
+                    stringResource(R.string.bulk_delete_confirm_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(10.dp))
+                LazyColumn(Modifier.heightIn(max = 320.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                    items(candidateItems, key = { it.id }) { item ->
+                        val checked = item.id in checkedIds
+                        Row(
+                            Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    checkedIds = if (checked) checkedIds - item.id else checkedIds + item.id
+                                }
+                                .padding(vertical = 6.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            SelectionCheckbox(checked = checked, onCheckedChange = {
+                                checkedIds = if (checked) checkedIds - item.id else checkedIds + item.id
+                            })
+                            Spacer(Modifier.width(10.dp))
+                            Text(
+                                item.name.ifBlank { stringResource(R.string.unnamed_item) },
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                                color = Color.White
+                            )
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(
+                onClick = { onConfirm(candidateItems.filter { it.id in checkedIds }) },
+                enabled = checkedIds.isNotEmpty()
+            ) { Text(stringResource(R.string.bulk_delete_button)) }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) }
+        }
+    )
+}
+
+/**
+ * Sélection rapide d'une console pour y sauter directement dans la liste (au lieu de défiler
+ * console par console) : liste toutes les consoles du groupement courant avec leur nombre d'objets
+ * et leur valeur totale, comme l'en-tête [ConsoleGroupHeader] qui ouvre ce dialogue.
+ */
+@Composable
+private fun ConsoleJumpDialog(
+    groups: List<Triple<String?, List<CollectionItem>, Int>>,
+    onPick: (Int) -> Unit,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.console_picker_title)) },
+        text = {
+            LazyColumn(Modifier.heightIn(max = 420.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                items(groups, key = { (console, _, _) -> console ?: "?" }) { (console, groupItems, startIndex) ->
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable { onPick(startIndex) }
+                            .padding(vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text(
+                                console ?: stringResource(R.string.console_group_unknown),
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
+                            )
+                            Text(
+                                stringResource(
+                                    R.string.console_group_summary,
+                                    groupItems.size,
+                                    formatPrice(groupItems.sumOf { it.priceCents ?: 0 })
+                                ),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) }
+        }
+    )
 }
 
 /** Bandeau d'actions groupées affiché sous la liste Collection/Souhaits en mode sélection multiple. */
@@ -567,9 +718,13 @@ private fun <T, K> List<T>.groupConsecutiveBy(keySelector: (T) -> K): List<Pair<
     return result
 }
 
-/** En-tête figé (sticky) au-dessus d'un groupe de jeux/accessoires partageant la même console. */
+/**
+ * En-tête figé (sticky) au-dessus d'un groupe de jeux/accessoires partageant la même console.
+ * Cliquable : ouvre [ConsoleJumpDialog] pour sauter directement à une autre console de la liste
+ * sans avoir à défiler groupe par groupe.
+ */
 @Composable
-private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: Int) {
+private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: Int, onClick: () -> Unit = {}) {
     Box(
         Modifier
             .fillMaxWidth()
@@ -582,6 +737,7 @@ private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: 
                 .clip(RoundedCornerShape(12.dp))
                 .background(CardGradient)
                 .border(1.5.dp, NeonBorder, RoundedCornerShape(12.dp))
+                .clickable(onClick = onClick)
                 .padding(vertical = 8.dp, horizontal = 14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -600,6 +756,7 @@ private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: 
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
+            Icon(Icons.Filled.UnfoldMore, contentDescription = stringResource(R.string.console_picker_title), tint = Color.White)
         }
     }
 }
@@ -903,7 +1060,12 @@ fun ItemDetailScreen(
     LaunchedEffect(item.id, item.priceCents) { history = loadHistory(item.id) }
     val galleryPhotos by vm.photosFor(item.id).collectAsState(initial = emptyList())
     var fullscreenUri by remember { mutableStateOf<String?>(null) }
+    // Distinct de fullscreenUri (photo principale, déjà "la principale" — pas d'action à proposer) :
+    // porte l'objet ItemPhoto complet (pas juste son URI) pour pouvoir la promouvoir en principale
+    // depuis la vue plein écran.
+    var fullscreenGalleryPhoto by remember { mutableStateOf<ItemPhoto?>(null) }
     var editingPrice by remember { mutableStateOf(false) }
+    var confirmingDelete by remember { mutableStateOf(false) }
 
     // Description dans la langue de l'utilisateur : si elle n'a pas encore été traduite/vérifiée
     // dans la langue courante (descriptionLang != langue de l'appli), on tente une traduction Groq
@@ -1209,7 +1371,7 @@ fun ItemDetailScreen(
                                     .size(96.dp)
                                     .clip(RoundedCornerShape(14.dp))
                                     .border(1.dp, NeonBorder, RoundedCornerShape(14.dp))
-                                    .clickable { fullscreenUri = photo.uri }
+                                    .clickable { fullscreenGalleryPhoto = photo }
                             )
                         }
                     }
@@ -1225,7 +1387,7 @@ fun ItemDetailScreen(
                         Spacer(Modifier.width(6.dp))
                         Text(stringResource(R.string.edit))
                     }
-                    OutlinedButton(onClick = onDelete, modifier = Modifier.weight(1f)) {
+                    OutlinedButton(onClick = { confirmingDelete = true }, modifier = Modifier.weight(1f)) {
                         Icon(Icons.Filled.Delete, null, tint = NeonPink)
                         Spacer(Modifier.width(6.dp))
                         Text(stringResource(R.string.delete))
@@ -1236,8 +1398,24 @@ fun ItemDetailScreen(
         }
     }
 
-    fullscreenUri?.let { uri ->
-        Dialog(onDismissRequest = { fullscreenUri = null }) {
+    if (confirmingDelete) {
+        AlertDialog(
+            onDismissRequest = { confirmingDelete = false },
+            title = { Text(stringResource(R.string.delete_confirm_title, item.name.ifBlank { stringResource(R.string.unnamed_item) })) },
+            text = { Text(stringResource(R.string.bulk_delete_confirm_message)) },
+            confirmButton = {
+                TextButton(onClick = { confirmingDelete = false; onDelete() }) { Text(stringResource(R.string.delete)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { confirmingDelete = false }) { Text(stringResource(R.string.cancel)) }
+            }
+        )
+    }
+
+    (fullscreenUri ?: fullscreenGalleryPhoto?.uri)?.let { uri ->
+        val galleryPhoto = fullscreenGalleryPhoto
+        fun closeFullscreen() { fullscreenUri = null; fullscreenGalleryPhoto = null }
+        Dialog(onDismissRequest = { closeFullscreen() }) {
             Box(
                 Modifier
                     .fillMaxSize()
@@ -1250,8 +1428,22 @@ fun ItemDetailScreen(
                         .fillMaxWidth()
                         .padding(16.dp)
                 )
+                // Uniquement pour une photo de galerie (la photo principale l'est déjà) : la
+                // promeut au rang de photo principale, prioritaire dans la fiche et seule reprise
+                // à l'export Excel (voir AppViewModel.setMainPhoto).
+                if (galleryPhoto != null) {
+                    Button(
+                        onClick = {
+                            vm.setMainPhoto(item, galleryPhoto)
+                            closeFullscreen()
+                        },
+                        modifier = Modifier.align(Alignment.BottomCenter).padding(24.dp)
+                    ) {
+                        Text(stringResource(R.string.set_as_main_photo_button))
+                    }
+                }
                 IconButton(
-                    onClick = { fullscreenUri = null },
+                    onClick = { closeFullscreen() },
                     modifier = Modifier.align(Alignment.TopEnd).padding(8.dp)
                 ) {
                     Icon(Icons.Filled.Close, stringResource(R.string.close), tint = Color.White)
@@ -1484,6 +1676,9 @@ fun AddCollectionForm(
     /** Photo telle que choisie/prise AVANT recadrage (galerie/caméra) : c'est elle qu'il faut
      * recadrer à nouveau (bouton « Recadrer »), pas le résultat déjà rogné une première fois. */
     initialOriginalCoverUri: String? = null,
+    /** Pré-remplissage depuis l'estimation rapide ("$", cf. QuickEstimateScreen). */
+    initialPriceCents: Int? = null,
+    initialPriceIsAiEstimate: Boolean = false,
     isWishlist: Boolean = false
 ) {
     val isEdit = existing != null
@@ -1528,7 +1723,10 @@ fun AddCollectionForm(
     // comme pour le scan par lot (voir [GameCatalog.preserveEditionSuffix]).
     var edition by remember { mutableStateOf("") }
     var rawgId by remember { mutableStateOf(existing?.rawgId ?: initialGameMatch?.sourceId) }
-    var price by remember { mutableStateOf(existing?.priceCents?.let { centsToText(it) } ?: "") }
+    var price by remember { mutableStateOf(existing?.priceCents?.let { centsToText(it) } ?: initialPriceCents?.let { centsToText(it) } ?: "") }
+    // Tag "(IA)" pré-rempli depuis l'estimation rapide : ne doit survivre que si le prix affiché
+    // reste exactement celui de l'estimation (remis à false dès que l'utilisateur retouche le champ).
+    var priceIsAiEstimate by remember { mutableStateOf(existing?.priceIsAiEstimate ?: initialPriceIsAiEstimate) }
     var barcode by remember { mutableStateOf(existing?.barcode ?: initialBarcode ?: "") }
     var sourceUrl by remember { mutableStateOf(existing?.sourceUrl ?: "") }
     var importing by remember { mutableStateOf(false) }
@@ -1937,16 +2135,12 @@ fun AddCollectionForm(
             consoleHint = platform.ifBlank { null },
             initialQuery = name,
             onPick = { game ->
-                // Le titre déjà tapé n'est remplacé par celui du résultat choisi que s'ils
-                // partagent au moins un mot significatif : sinon, le résultat vient forcément
-                // d'une correspondance multilingue (alias connu de RAWG, ou traduction automatique
-                // de la cascade de recherche, cf. [SearchCascade]) — remplacer donnerait un titre
-                // dans une langue différente de celle voulue (ex. garder "Max et les monstres"
-                // plutôt que le "Where the Wild Things Are" qui a servi à le retrouver). Le reste
-                // de la fiche (genre/année/description/jaquette...) est complété dans tous les cas.
-                if (sharesSignificantWord(name, game.name)) {
-                    name = GameCatalog.preserveEditionSuffix(name, game.name)
-                }
+                // Le titre déjà tapé n'est JAMAIS remplacé par celui du résultat choisi (demande
+                // explicite : seul le reste de la fiche - genre/année/description/jaquette... -
+                // doit être complété). Une précédente version ne remplaçait que si les deux titres
+                // ne partageaient aucun mot significatif, mais ça laissait encore passer des
+                // remplacements non voulus (résultat dans la même langue mais formulation
+                // différente) : on ne touche donc plus du tout à `name` ici.
                 if (game.genres.isNotBlank()) genre = game.genres
                 game.releaseYear?.let { year = it.toString() }
                 if (game.description.isNotBlank()) description = game.description
@@ -2250,7 +2444,7 @@ fun AddCollectionForm(
                 ) { edition = it }
             }
         }
-        Field(price, stringResource(R.string.field_price, CurrencyOptions.symbolFor(AppPrefs.currency.value)), KeyboardType.Decimal) { price = it }
+        Field(price, stringResource(R.string.field_price, CurrencyOptions.symbolFor(AppPrefs.currency.value)), KeyboardType.Decimal) { price = it; priceIsAiEstimate = false }
         Field(barcode, stringResource(R.string.field_barcode)) { barcode = it }
         OutlinedTextField(
             value = description,
@@ -2301,6 +2495,10 @@ fun AddCollectionForm(
                             // Un prix saisi ici prime sur la cote en ligne et ne sera plus jamais
                             // écrasé automatiquement. Laisser le champ vide pour une cote auto eBay.
                             priceIsManual = typedPriceCents != null,
+                            // Tag "(IA)" conservé seulement si le prix vient (encore) de l'estimation
+                            // rapide pré-remplie — perdu dès que l'utilisateur retouche le champ prix
+                            // (voir le onValueChange du champ ci-dessus) ou le vide.
+                            priceIsAiEstimate = priceIsAiEstimate && typedPriceCents != null,
                             barcode = barcode.ifBlank { null },
                             description = description.ifBlank { null },
                             imageUri = localCover,
@@ -2466,6 +2664,7 @@ fun OnboardingScreenLight(onFinish: () -> Unit) {
         OnboardingLightStep("📷", R.string.onboarding_light_step2_title, R.string.onboarding_light_step2_text),
         OnboardingLightStep("📚", R.string.onboarding_light_step3_title, R.string.onboarding_light_step3_text),
         OnboardingLightStep("💎", R.string.onboarding_light_step4_title, R.string.onboarding_light_step4_text),
+        OnboardingLightStep("💰", R.string.onboarding_light_step_estimate_title, R.string.onboarding_light_step_estimate_text),
         OnboardingLightStep("🕹️", R.string.onboarding_light_step5_title, R.string.onboarding_light_step5_text),
         OnboardingLightStep("⚙️", R.string.onboarding_light_step6_title, R.string.onboarding_light_step6_text),
         OnboardingLightStep("🚀", R.string.onboarding_light_step7_title, R.string.onboarding_light_step7_text)
@@ -2638,7 +2837,7 @@ fun BackupScreen(vm: AppViewModel, gameVm: GameViewModel, onOpenShop: () -> Unit
         if (uri != null) confirmRestoreUri = uri
     }
     val excelExportLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.CreateDocument("application/vnd.ms-excel")
+        ActivityResultContracts.CreateDocument("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
     ) { uri ->
         if (uri != null) {
             working = true
@@ -2733,7 +2932,7 @@ fun BackupScreen(vm: AppViewModel, gameVm: GameViewModel, onOpenShop: () -> Unit
             OutlinedButton(
                 onClick = {
                     if (excelUnlocked) {
-                        val name = "macollection-${System.currentTimeMillis()}.xls"
+                        val name = "macollection-${System.currentTimeMillis()}.xlsx"
                         excelExportLauncher.launch(name)
                     } else {
                         onOpenShop()
@@ -3961,6 +4160,14 @@ private fun GameSearchDialog(
                 cleaningCandidates = SearchCascade::gameCleaningCandidates,
                 translate = { GroqVision.translate(it, "en") },
                 onStageStart = { currentStage = it },
+                // Un résultat Wikipédia/Wikidata seul (source "wiki"/"wikidata") ne renseigne
+                // jamais plateforme/genre : la cascade continuerait de le prendre pour un succès et
+                // s'arrêterait avant l'étape traduite, qui elle atteint IGDB/RAWG (titres anglais)
+                // avec de vraies métadonnées. Ex. "Harry Potter et la Coupe de Feu" : IGDB/RAWG ne
+                // trouvent rien en français, seul Wikipédia FR matche (fiche incomplète) — sans ce
+                // garde-fou la traduction n'était jamais tentée.
+                isSufficient = { list -> list.any { it.source == "igdb" || it.source == "rawg" } },
+                shortenedCandidates = SearchCascade::progressiveShortenings,
                 search = { q ->
                     val session = HybridGameSearch(q, platformId, consoleHint)
                     lastSession = session
@@ -4461,25 +4668,13 @@ private fun conditionColor(c: Condition): Color = when (c) {
 /** Taux de la devise choisie par rapport à l'euro (base de stockage des cotes) ; 1.0 par défaut. */
 private fun currentCurrencyRate(): Double = AppPrefs.currencyRates.value[AppPrefs.currency.value] ?: 1.0
 
-private fun formatPrice(cents: Int?): String =
+// internal (pas private) : réutilisé par QuickEstimateScreen.kt pour le même formatage de prix.
+internal fun formatPrice(cents: Int?): String =
     if (cents == null || cents == 0) "—"
     else String.format(Locale.FRANCE, "%.2f %s", (cents / 100.0) * currentCurrencyRate(), CurrencyOptions.symbolFor(AppPrefs.currency.value))
 
 private fun centsToText(cents: Int): String =
     String.format(Locale.FRANCE, "%.2f", (cents / 100.0) * currentCurrencyRate())
-
-/**
- * Vrai si [a] et [b] partagent au moins un mot significatif (≥3 lettres) — ou si [a] n'en a aucun,
- * auquel cas il n'y a rien à préserver. Sert à décider si le titre déjà tapé d'un jeu peut être
- * remplacé par celui d'un résultat de recherche choisi (cf. [GameSearchDialog]) sans risquer de
- * passer d'une langue à une autre (ex. "Max et les monstres" -> "Where the Wild Things Are").
- */
-private fun sharesSignificantWord(a: String, b: String): Boolean {
-    fun words(s: String) = s.lowercase().replace(Regex("[^\\p{L}\\p{Nd} ]"), " ")
-        .split(" ").filter { it.length >= 3 }.toSet()
-    val wa = words(a)
-    return wa.isEmpty() || words(b).any { it in wa }
-}
 
 private fun parsePriceToCents(text: String): Int? {
     val cleaned = text.replace(",", ".").trim()

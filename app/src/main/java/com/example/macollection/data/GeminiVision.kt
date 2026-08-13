@@ -173,16 +173,18 @@ object GeminiVision {
         // consoles à des prix très différents) : sans la préciser ici, la requête ne changeait
         // jamais quand on modifiait la plateforme associée dans la fiche.
         val platformNote = if (!platform.isNullOrBlank() && !itemName.lowercase().contains(platform.lowercase())) " sur $platform" else ""
-        // On nomme explicitement Vinted/LeBoncoin/Rakuten en plus d'eBay : sans ça, le search
-        // grounding de Gemini a tendance à ne formuler que des requêtes génériques ("annonce vente
-        // X occasion France") qui retombent surtout sur des résultats eBay/Google Shopping — pour
-        // les objets déjà sans annonce eBay comparable, élargir aux autres plateformes d'occasion
-        // françaises donne une chance de plus de trouver un prix fiable.
+        // On nomme explicitement PriceCharting/Vinted/LeBoncoin/Rakuten en plus d'eBay : sans ça, le
+        // search grounding de Gemini a tendance à ne formuler que des requêtes génériques ("annonce
+        // vente X occasion France") qui retombent surtout sur des résultats eBay/Google Shopping —
+        // pour les objets déjà sans annonce eBay comparable, élargir aux autres sources donne une
+        // chance de plus de trouver un prix fiable. PriceCharting cité en premier (référence de cote
+        // pour les jeux vidéo) à la demande explicite de l'utilisateur.
         val prompt = "Cherche sur internet des annonces ou ventes récentes en France pour ce $label " +
             "d'occasion : \"$itemName\"$platformNote, état ${condition.label}, $completeness. Regarde en " +
-            "particulier sur Vinted, LeBoncoin et Rakuten (Priceminister) en plus d'eBay. Réponds " +
-            "UNIQUEMENT en JSON strict, sans texte ni balise autour : {\"prix_eur\": nombre en euros, " +
-            "ou null si tu ne trouves vraiment rien de fiable}."
+            "priorité sur PriceCharting.com (référence de cote pour les jeux vidéo), puis sur Vinted, " +
+            "LeBoncoin et Rakuten (Priceminister) en plus d'eBay. Réponds UNIQUEMENT en JSON strict, " +
+            "sans texte ni balise autour : {\"prix_eur\": nombre en euros, ou null si tu ne trouves " +
+            "vraiment rien de fiable}."
         val request = GemRequest(
             contents = listOf(GemContent(listOf(GemPart(text = prompt)))),
             tools = listOf(GemTool())

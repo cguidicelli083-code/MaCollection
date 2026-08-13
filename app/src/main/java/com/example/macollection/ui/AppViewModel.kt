@@ -578,6 +578,28 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         MediaUtils.deleteFile(photo.uri)
     }
 
+    /**
+     * Promeut une photo de galerie au rang de photo principale ([CollectionItem.imageUri]),
+     * utilisée en priorité dans la fiche et seule photo reprise à l'export Excel. Échange sans
+     * perte : l'ancienne photo principale rejoint la galerie à la place de [photo] — aucun
+     * fichier n'est jamais supprimé, l'opération reste réversible à tout moment.
+     */
+    fun setMainPhoto(item: CollectionItem, photo: ItemPhoto) = viewModelScope.launch {
+        photoDao.delete(photo)
+        val previousMain = item.imageUri
+        if (previousMain != null) {
+            photoDao.insert(
+                ItemPhoto(
+                    itemId = item.id,
+                    uri = previousMain,
+                    position = photoDao.observeForItem(item.id).first().size,
+                    createdAt = System.currentTimeMillis()
+                )
+            )
+        }
+        collectionDao.update(item.copy(imageUri = photo.uri))
+    }
+
     private suspend fun attachPhotos(itemId: Long, uris: List<String>) {
         val startPosition = photoDao.observeForItem(itemId).first().size
         uris.forEachIndexed { index, uri ->
@@ -687,6 +709,22 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
         return PriceResolution(r.priceCents, false, r.info)
+    }
+
+    /** Résultat public de [quickEstimatePrice] (équivalent exposé de [PriceResolution], privée). */
+    data class QuickPriceEstimate(val priceCents: Int?, val isAiEstimate: Boolean, val info: String?)
+
+    /**
+     * Estimation de cote autonome pour l'aperçu rapide ("$", cf. QuickEstimateScreen), AVANT tout
+     * ajout en collection/souhaits : réutilise exactement la même cascade eBay -> IA que
+     * [saveCollectionItemInternal]/[refreshAllPrices] ([resolvePrice]). Condition/boîte/notice
+     * inconnues à ce stade (l'objet n'a pas encore de fiche) : mêmes valeurs par défaut que
+     * [com.example.macollection.ui.AddCollectionForm] pour un nouvel objet ; l'utilisateur pourra les
+     * ajuster ensuite dans la fiche, ce qui redéclenchera une résolution à l'enregistrement.
+     */
+    suspend fun quickEstimatePrice(type: ItemType, brand: String, name: String, platform: String?): QuickPriceEstimate {
+        val r = resolvePrice(null, type, brand, name, Region.PAL, Condition.BON, hasBox = true, hasManual = true, platform)
+        return QuickPriceEstimate(r.priceCents, r.isAiEstimate, r.info)
     }
 
     /** Ajoute un point d'historique si le prix a changé depuis le dernier relevé. */

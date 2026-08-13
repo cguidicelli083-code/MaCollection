@@ -89,7 +89,9 @@ object TavilyPriceEstimate {
         val platformNote = if (!platform.isNullOrBlank() && !itemName.lowercase().contains(platform.lowercase())) " $platform" else ""
 
         val results = try {
-            api.search(TavilySearchRequest(key, "prix occasion $itemName$platformNote ${condition.label} France vente")).results.orEmpty()
+            // "pricecharting" ajouté à la requête pour favoriser la remontée de cette référence de
+            // cote jeux vidéo dans les résultats, même logique que GeminiVision.estimatePrice.
+            api.search(TavilySearchRequest(key, "prix occasion $itemName$platformNote ${condition.label} France vente pricecharting")).results.orEmpty()
         } catch (e: CancellationException) {
             throw e
         } catch (e: retrofit2.HttpException) {

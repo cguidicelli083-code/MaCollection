@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  Scegli una foto</string>
     <string name="take_photo_option">📸  Scatta una foto</string>
     <string name="manual_entry_option">✏️  Inserimento manuale</string>
+    <string name="quick_estimate_content_description">Stima rapida</string>
+    <string name="quick_estimate_chooser_title">Stima rapida</string>
+    <string name="quick_estimate_loading">Ricerca del prezzo in corso…</string>
+    <string name="quick_estimate_price_unknown">Prezzo non trovato</string>
+    <string name="quick_estimate_add_to_collection">+ Aggiungi alla collezione</string>
+    <string name="quick_estimate_add_to_wishlist">+ Aggiungi ai desideri</string>
+    <string name="quick_estimate_not_recognized_title">Oggetto non riconosciuto</string>
+    <string name="quick_estimate_not_recognized_text">Riprova con una foto più nitida o un altro codice a barre.</string>
+    <string name="native_scanner_framing_hint">Inquadra il codice a barre…</string>
+    <string name="set_as_main_photo_button">⭐ Imposta come foto principale</string>
     <string name="lang_dialog_title">Lingua dell\'app</string>
     <string name="lang_dialog_rawg_note">Influisce anche su descrizioni e generi dei giochi recuperati online (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -45,6 +55,7 @@
     <string name="sort_name">Nome</string>
     <string name="sort_brand">Marca</string>
     <string name="sort_console">Console</string>
+    <string name="console_picker_title">Scegli una console</string>
     <string name="console_group_unknown">Console non specificata</string>
     <string name="console_group_summary">%1$d oggetti · %2$s</string>
     <string name="selection_mode_toggle">Modalità selezione</string>
@@ -54,6 +65,8 @@
     <string name="bulk_delete_button">Elimina</string>
     <string name="bulk_delete_confirm_title">Eliminare %1$d oggetti?</string>
     <string name="bulk_delete_confirm_message">Questa azione è irreversibile.</string>
+    <string name="delete_confirm_title">Eliminare «%1$s»?</string>
+    <string name="bulk_delete_confirm_hint">Deseleziona gli oggetti che vuoi conservare.</string>
     <string name="bulk_transfer_button">📦 Nella Collezione</string>
     <string name="sort_price_desc">Prezzo (alto → basso)</string>
     <string name="sort_price_asc">Prezzo (basso → alto)</string>
@@ -174,7 +187,7 @@
     <string name="backup_error_message">Backup non riuscito.</string>
     <string name="restore_success_message">Collezione ripristinata con successo.</string>
     <string name="restore_error_message">Ripristino non riuscito: file non valido o danneggiato.</string>
-    <string name="excel_export_explainer">Esporta tutta la tua collezione (e i tuoi desideri) come una tabella con una foto per riga — leggibile in Excel o in qualsiasi foglio di calcolo (Excel mostrerà un avviso di formato all\'apertura, senza conseguenze: clicca su «Sì»).</string>
+    <string name="excel_export_explainer">Esporta tutta la tua collezione (e i tuoi desideri) in un vero file Excel (.xlsx): una scheda per categoria (Console, Accessori, Giochi), con filtri attivi e una foto per riga.</string>
     <string name="excel_export_button">📊 Esporta come tabella Excel</string>
     <string name="excel_export_success_message">Tabella Excel esportata con successo.</string>
     <string name="excel_export_error_message">Esportazione della tabella Excel non riuscita.</string>

@@ -11,6 +11,16 @@
     <string name="choose_photo_option">🖼️  Επιλογή φωτογραφίας</string>
     <string name="take_photo_option">📸  Λήψη φωτογραφίας</string>
     <string name="manual_entry_option">✏️  Χειροκίνητη καταχώριση</string>
+    <string name="quick_estimate_content_description">Γρήγορη εκτίμηση</string>
+    <string name="quick_estimate_chooser_title">Γρήγορη εκτίμηση</string>
+    <string name="quick_estimate_loading">Αναζήτηση τιμής…</string>
+    <string name="quick_estimate_price_unknown">Δεν βρέθηκε τιμή</string>
+    <string name="quick_estimate_add_to_collection">+ Προσθήκη στη συλλογή</string>
+    <string name="quick_estimate_add_to_wishlist">+ Προσθήκη στις επιθυμίες</string>
+    <string name="quick_estimate_not_recognized_title">Το αντικείμενο δεν αναγνωρίστηκε</string>
+    <string name="quick_estimate_not_recognized_text">Δοκίμασε ξανά με πιο καθαρή φωτογραφία ή άλλο barcode.</string>
+    <string name="native_scanner_framing_hint">Στόχευσε το barcode…</string>
+    <string name="set_as_main_photo_button">⭐ Ορισμός ως κύριας φωτογραφίας</string>
     <string name="lang_dialog_title">Γλώσσα εφαρμογής</string>
     <string name="lang_dialog_rawg_note">Επηρεάζει επίσης τις περιγραφές και τα είδη παιχνιδιών που λαμβάνονται online (RAWG).</string>
     <string name="lang_option_checked">%1$s  ✓</string>
@@ -45,6 +55,7 @@
     <string name="sort_name">Όνομα</string>
     <string name="sort_brand">Μάρκα</string>
     <string name="sort_console">Κονσόλα</string>
+    <string name="console_picker_title">Επιλογή κονσόλας</string>
     <string name="console_group_unknown">Απροσδιόριστη κονσόλα</string>
     <string name="console_group_summary">%1$d αντικείμενα · %2$s</string>
     <string name="selection_mode_toggle">Λειτουργία επιλογής</string>
@@ -54,6 +65,8 @@
     <string name="bulk_delete_button">Διαγραφή</string>
     <string name="bulk_delete_confirm_title">Διαγραφή %1$d αντικειμένων;</string>
     <string name="bulk_delete_confirm_message">Αυτή η ενέργεια είναι μη αναστρέψιμη.</string>
+    <string name="delete_confirm_title">Διαγραφή «%1$s»;</string>
+    <string name="bulk_delete_confirm_hint">Αποεπιλέξτε τα αντικείμενα που θέλετε να κρατήσετε.</string>
     <string name="bulk_transfer_button">📦 Στη Συλλογή</string>
     <string name="sort_price_desc">Τιμή (υψηλή → χαμηλή)</string>
     <string name="sort_price_asc">Τιμή (χαμηλή → υψηλή)</string>
@@ -174,7 +187,7 @@
     <string name="backup_error_message">Η δημιουργία αντιγράφου απέτυχε.</string>
     <string name="restore_success_message">Η συλλογή ανακτήθηκε με επιτυχία.</string>
     <string name="restore_error_message">Η επαναφορά απέτυχε: μη έγκυρο ή κατεστραμμένο αρχείο.</string>
-    <string name="excel_export_explainer">Εξάγει όλη τη συλλογή σου (και τις επιθυμίες σου) ως πίνακα με μία φωτογραφία ανά γραμμή — αναγνώσιμο στο Excel ή σε οποιοδήποτε υπολογιστικό φύλλο (το Excel θα εμφανίσει προειδοποίηση μορφής κατά το άνοιγμα, χωρίς συνέπειες: κάνε κλικ στο «Ναι»).</string>
+    <string name="excel_export_explainer">Εξάγει όλη τη συλλογή σου (και τις επιθυμίες σου) σε πραγματικό αρχείο Excel (.xlsx): ένα φύλλο ανά κατηγορία (Κονσόλες, Αξεσουάρ, Παιχνίδια), με ενεργά φίλτρα και μία φωτογραφία ανά γραμμή.</string>
     <string name="excel_export_button">📊 Εξαγωγή ως πίνακα Excel</string>
     <string name="excel_export_success_message">Ο πίνακας Excel εξήχθη με επιτυχία.</string>
     <string name="excel_export_error_message">Αποτυχία εξαγωγής του πίνακα Excel.</string>
