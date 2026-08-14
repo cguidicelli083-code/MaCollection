@@ -1,5 +1,689 @@
 [
   {
+    "id": "d296bfe61f75e8164fd3c43b268f76ab1c09dd98",
+    "title": "High On Life VR announced for PS VR2, PC, and Quest",
+    "summary": "Flat2VR Studios and Squanch Games have announced High On Life VR for PlayStation VR2, PC &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/high-on-life-vr-announced-for-ps-vr2-pc-and-quest",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T18:50:23+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422188+00:00",
+    "translations": {
+      "en": {
+        "title": "High On Life VR announced for PS VR2, PC, and Quest",
+        "summary": "Flat2VR Studios and Squanch Games have announced High On Life VR for PlayStation VR2, PC &hellip;"
+      },
+      "fr": {
+        "title": "High On Life VR annoncé sur PS VR2, PC et Quest",
+        "summary": "Flat2VR Studios et Squanch Games ont annoncé High On Life VR pour PlayStation VR2, PC &hellip;"
+      },
+      "es": {
+        "title": "High On Life VR anunciado para PS VR2, PC y Quest",
+        "summary": "Flat2VR Studios y Squanch Games han anunciado High On Life VR para PlayStation VR2, PC &hellip;"
+      },
+      "it": {
+        "title": "Annunciato High On Life VR per PS VR2, PC e Quest",
+        "summary": "Flat2VR Studios e Squanch Games hanno annunciato High On Life VR per PlayStation VR2, PC &hellip;"
+      },
+      "de": {
+        "title": "High On Life VR für PS VR2, PC und Quest angekündigt",
+        "summary": "Flat2VR Studios und Squanch Games haben High On Life VR für PlayStation VR2, PC &hellip; angekündigt."
+      },
+      "pt": {
+        "title": "High On Life VR anunciado para PS VR2, PC e Quest",
+        "summary": "Flat2VR Studios e Squanch Games anunciaram High On Life VR para PlayStation VR2, PC &hellip;"
+      },
+      "ru": {
+        "title": "High On Life VR анонсирован для PS VR2, ПК и Quest",
+        "summary": "Flat2VR Studios и Squanch Games анонсировали High On Life VR для PlayStation VR2, ПК &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το High On Life VR για PS VR2, PC και Quest",
+        "summary": "Τα Flat2VR Studios και Squanch Games ανακοίνωσαν το High On Life VR για PlayStation VR2, PC &hellip;"
+      },
+      "tr": {
+        "title": "High On Life VR, PS VR2, PC ve Quest için duyuruldu",
+        "summary": "Flat2VR Studios ve Squanch Games, PlayStation VR2 ve PC için High On Life VR'ı duyurdu."
+      },
+      "ja": {
+        "title": "High On Life VRがPS VR2、PC、Quest向けに発表",
+        "summary": "Flat2VR Studios と Squanch Games は、PlayStation VR2、PC 向け High On Life VR を発表しました。"
+      },
+      "zh": {
+        "title": "High On Life VR 宣布推出 PS VR2、PC 和 Quest",
+        "summary": "Flat2VR Studios 和 Squanch Games 宣布推出适用于 PlayStation VR2、PC 的 High On Life VR……"
+      }
+    }
+  },
+  {
+    "id": "2c8ef164cb3844491db787062702828b0402b513",
+    "title": "Mafia: The Omerta Collection announced for PS5, Xbox Series, and PC",
+    "summary": "Publisher 2K and developer Hangar 13 have announced Mafia: The Omerta Collection for PlayStation 5, &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/mafia-the-omerta-collection-announced-for-ps5-xbox-series-and-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T16:11:04+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422294+00:00",
+    "translations": {
+      "en": {
+        "title": "Mafia: The Omerta Collection announced for PS5, Xbox Series, and PC",
+        "summary": "Publisher 2K and developer Hangar 13 have announced Mafia: The Omerta Collection for PlayStation 5, &hellip;"
+      },
+      "fr": {
+        "title": "Mafia : The Omerta Collection annoncée sur PS5, Xbox Series et PC",
+        "summary": "L'éditeur 2K et le développeur Hangar 13 ont annoncé Mafia : The Omerta Collection pour PlayStation 5, &hellip;"
+      },
+      "es": {
+        "title": "Mafia: The Omerta Collection anunciado para PS5, Xbox Series y PC",
+        "summary": "El editor 2K y el desarrollador Hangar 13 han anunciado Mafia: The Omerta Collection para PlayStation 5, &hellip;"
+      },
+      "it": {
+        "title": "Mafia: The Omerta Collection annunciata per PS5, Xbox Series e PC",
+        "summary": "L'editore 2K e lo sviluppatore Hangar 13 hanno annunciato Mafia: The Omerta Collection per PlayStation 5, &hellip;"
+      },
+      "de": {
+        "title": "Mafia: The Omerta Collection für PS5, Xbox Series und PC angekündigt",
+        "summary": "Publisher 2K und Entwickler Hangar 13 haben Mafia: The Omerta Collection für PlayStation 5 angekündigt, &hellip;"
+      },
+      "pt": {
+        "title": "Mafia: The Omerta Collection anunciada para PS5, Xbox Series e PC",
+        "summary": "A editora 2K e a desenvolvedora Hangar 13 anunciaram Mafia: The Omerta Collection para PlayStation 5, &hellip;"
+      },
+      "ru": {
+        "title": "Mafia: The Omerta Collection анонсирована для PS5, Xbox Series и ПК",
+        "summary": "Издатель 2K и разработчик Hangar 13 анонсировали Mafia: The Omerta Collection для PlayStation 5, &hellip;"
+      },
+      "el": {
+        "title": "Mafia: The Omerta Collection ανακοινώθηκε για PS5, Xbox Series και PC",
+        "summary": "Ο εκδότης 2K και ο προγραμματιστής Hangar 13 ανακοίνωσαν το Mafia: The Omerta Collection για το PlayStation 5, &hellip;"
+      },
+      "tr": {
+        "title": "Mafia: The Omerta Collection PS5, Xbox Series ve PC için duyuruldu",
+        "summary": "Yayıncı 2K ve geliştirici Hangar 13, Mafia: The Omerta Collection'ı PlayStation 5 için duyurdu."
+      },
+      "ja": {
+        "title": "『マフィア: ザ オメルタ コレクション』が PS5、Xbox シリーズ、PC 向けに発表",
+        "summary": "パブリッシャー 2K とデベロッパー Hangar 13 は、PlayStation 5 向け『Mafia: The Omerta Collection』を発表しました。"
+      },
+      "zh": {
+        "title": "《四海兄弟：奥默塔合集》宣布推出 PS5、Xbox 系列和 PC 版本",
+        "summary": "发行商 2K 和开发商 Hangar 13 宣布推出 PlayStation 5 版《四海兄弟：奥默塔合集》，…"
+      }
+    }
+  },
+  {
+    "id": "48a0255a64246c57c4b6714d5489c06472a2bfc6",
+    "title": "US: Nintendo Download for 13th August, 2026",
+    "summary": "This week’s Nintendo Download includes the following content: &#160;Pre-orders: Nintendo Music: Activities: Nintendo eShop sales on Nintendo Switch 2 and Nintendo Switch: Also new this week on Nintendo eShop on Nintendo Switch 2: Also new this week on Nintendo eShop on Nintendo Switch: Nintendo of America Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/08/13/us-nintendo-download-for-13th-august-2026/",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T15:19:40+00:00",
+    "scrapedAt": "2026-08-14T04:54:44.746014+00:00",
+    "translations": {
+      "en": {
+        "title": "US: Nintendo Download for 13th August, 2026",
+        "summary": "This week’s Nintendo Download includes the following content: &#160;Pre-orders: Nintendo Music: Activities: Nintendo eShop sales on Nintendo Switch 2 and Nintendo Switch: Also new this week on Nintendo eShop on Nintendo Switch 2: Also new this week on Nintendo eShop on Nintendo Switch: Nintendo of America Source"
+      },
+      "fr": {
+        "title": "États-Unis : téléchargement Nintendo pour le 13 août 2026",
+        "summary": "Le téléchargement Nintendo de cette semaine comprend le contenu suivant : &#160;Précommandes : Nintendo Music : Activités : Ventes sur le Nintendo eShop sur Nintendo Switch 2 et Nintendo Switch : Également nouveau cette semaine sur le Nintendo eShop sur Nintendo Switch 2 : Également nouveau cette semaine sur le Nintendo eShop sur Nintendo Switch : Nintendo of America Source"
+      },
+      "es": {
+        "title": "EE. UU.: Descarga de Nintendo para el 13 de agosto de 2026",
+        "summary": "La descarga de Nintendo de esta semana incluye el siguiente contenido: &#160;Reservas: Nintendo Música: Actividades: Ventas de Nintendo eShop en Nintendo Switch 2 y Nintendo Switch: También nuevo esta semana en Nintendo eShop de Nintendo Switch 2: También nuevo esta semana en Nintendo eShop de Nintendo Switch: Nintendo of America Fuente"
+      },
+      "it": {
+        "title": "USA: download Nintendo per il 13 agosto 2026",
+        "summary": "Il download Nintendo di questa settimana include i seguenti contenuti: &#160;Preordini: Nintendo Music: Attività: saldi nel Nintendo eShop su Nintendo Switch 2 e Nintendo Switch: Novità anche questa settimana nel Nintendo eShop su Nintendo Switch 2: Novità anche questa settimana nel Nintendo eShop su Nintendo Switch: Nintendo of America Fonte"
+      },
+      "de": {
+        "title": "USA: Nintendo-Download für den 13. August 2026",
+        "summary": "Der Nintendo-Download dieser Woche enthält die folgenden Inhalte: „Vorbestellungen: Nintendo-Musik: Aktivitäten: Nintendo eShop-Verkäufe auf Nintendo Switch 2 und Nintendo Switch: Auch diese Woche neu im Nintendo eShop auf Nintendo Switch 2: Auch diese Woche neu im Nintendo eShop auf Nintendo Switch: Nintendo of America-Quelle"
+      },
+      "pt": {
+        "title": "EUA: download da Nintendo para 13 de agosto de 2026",
+        "summary": "O download da Nintendo desta semana inclui o seguinte conteúdo: Pré-encomendas: Nintendo Music: Atividades: vendas do Nintendo eShop no Nintendo Switch 2 e Nintendo Switch: Também novidade esta semana na Nintendo eShop no Nintendo Switch 2: Também novidade esta semana na Nintendo eShop no Nintendo Switch: Nintendo of America Fonte"
+      },
+      "ru": {
+        "title": "США: загрузка для Nintendo, 13 августа 2026 г.",
+        "summary": "Загрузка Nintendo на этой неделе включает в себя следующий контент: «Предварительные заказы: Nintendo Music: Мероприятия: продажи Nintendo eShop на Nintendo Switch 2 и Nintendo Switch: Также новинка на этой неделе в Nintendo eShop на Nintendo Switch 2: Также новинка на этой неделе в Nintendo eShop на Nintendo Switch: Nintendo of America Источник"
+      },
+      "el": {
+        "title": "ΗΠΑ: Λήψη Nintendo για 13 Αυγούστου 2026",
+        "summary": "Το Nintendo Download αυτής της εβδομάδας περιλαμβάνει το ακόλουθο περιεχόμενο: &#160;Προπαραγγελίες: Nintendo Music: Δραστηριότητες: Πωλήσεις Nintendo eShop στο Nintendo Switch 2 και στο Nintendo Switch: Επίσης νέο αυτήν την εβδομάδα στο Nintendo eShop στο Nintendo Switch 2: Επίσης νέο αυτήν την εβδομάδα στο Nintendo eShop στο Nintendo Switch"
+      },
+      "tr": {
+        "title": "ABD: 13 Ağustos 2026 için Nintendo İndirme",
+        "summary": "Bu haftanın Nintendo İndirmesi aşağıdaki içeriği içerir: Ön Siparişler: Nintendo Müzik: Etkinlikler: Nintendo Switch 2 ve Nintendo Switch'te Nintendo eShop satışları: Ayrıca bu hafta Nintendo Switch 2'de Nintendo eShop'ta yeni: Nintendo Switch'te Nintendo eShop'ta da bu hafta yeni: Nintendo of America Kaynak"
+      },
+      "ja": {
+        "title": "米国: 任天堂 2026 年 8 月 13 日のダウンロード",
+        "summary": "今週の Nintendo ダウンロードには次のコンテンツが含まれます: 予約注文: Nintendo Music: アクティビティ: Nintendo Switch 2 および Nintendo Switch での Nintendo eShop 販売: Nintendo Switch 2 の Nintendo eShop で今週も新登場: Nintendo Switch の Nintendo eShop で今週も新登場: Nintendo of America 出典"
+      },
+      "zh": {
+        "title": "美国：任天堂 2026 年 8 月 13 日下载",
+        "summary": "本周的 Nintendo Download 包括以下内容： 预购：Nintendo 音乐：活动：Nintendo Switch 2 和 Nintendo Switch 上的 Nintendo eShop 销售：本周 Nintendo Switch 2 上的 Nintendo eShop 上也有新内容：本周 Nintendo Switch 上的 Nintendo eShop 上也有新内容：Nintendo of America 来源"
+      }
+    }
+  },
+  {
+    "id": "f2a6d534074280db61bf2b8f1c749b2fec9836bb",
+    "title": "Still Not Sold on Dawnwalker? Dev Presents 'Everything You Need to Know' About the Open World RPG",
+    "summary": "Night by night. The Blood of Dawnwalker is probably the most anticipated RPG coming to PS5 right now, and with its 3rd September release date fast approaching, it's time for developer Rebel Wolves to orchestrate one last marketing push. To be fair, the studio's already marketed the hell out of Dawnwalker in partnership with publisher Bandai Namco up until this point — but if you're still not quite sold on the game, I'd recommend giving this overview video a watch. Read the full article on pushsq",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/still-not-sold-on-dawnwalker-dev-presents-everything-you-need-to-know-about-the-open-world-rpg",
+    "imageUrl": "https://images.pushsquare.com/954ad31eb8890/large.jpg",
+    "publishedAt": "2026-08-13T15:00:00+00:00",
+    "scrapedAt": "2026-08-14T04:53:22.341821+00:00",
+    "translations": {
+      "en": {
+        "title": "Still Not Sold on Dawnwalker? Dev Presents 'Everything You Need to Know' About the Open World RPG",
+        "summary": "Night by night. The Blood of Dawnwalker is probably the most anticipated RPG coming to PS5 right now, and with its 3rd September release date fast approaching, it's time for developer Rebel Wolves to orchestrate one last marketing push. To be fair, the studio's already marketed the hell out of Dawnwalker in partnership with publisher Bandai Namco up until this point — but if you're still not quite sold on the game, I'd recommend giving this overview video a watch. Read the full article on pushsq"
+      },
+      "fr": {
+        "title": "Toujours pas vendu sur Dawnwalker ? Dev présente « Tout ce que vous devez savoir » sur le RPG en monde ouvert",
+        "summary": "Nuit après nuit. The Blood of Dawnwalker est probablement le RPG le plus attendu sur PS5 à l'heure actuelle, et avec sa date de sortie le 3 septembre qui approche à grands pas, il est temps pour le développeur Rebel Wolves d'orchestrer une dernière poussée marketing. Pour être honnête, le studio a déjà commercialisé Dawnwalker en partenariat avec l'éditeur Bandai Namco jusqu'à présent – ​​mais si vous n'êtes toujours pas tout à fait convaincu par le jeu, je vous recommande de regarder cette vidéo de présentation. Lire l'article complet sur pushsql"
+      },
+      "es": {
+        "title": "¿Aún no has vendido Dawnwalker? Desarrollador presenta 'todo lo que necesitas saber' sobre el juego de rol de mundo abierto",
+        "summary": "Noche tras noche. The Blood of Dawnwalker es probablemente el juego de rol más esperado para PS5 en este momento, y con su fecha de lanzamiento del 3 de septiembre acercándose rápidamente, es hora de que el desarrollador Rebel Wolves orqueste un último impulso de marketing. Para ser justos, el estudio ya ha comercializado muchísimo Dawnwalker en asociación con el editor Bandai Namco hasta este momento, pero si aún no estás del todo convencido del juego, te recomiendo que veas este video de descripción general. Lea el artículo completo en pushsq"
+      },
+      "it": {
+        "title": "Non hai ancora venduto su Dawnwalker? Gli sviluppatori presentano \"Tutto quello che devi sapere\" sul gioco di ruolo open world",
+        "summary": "Notte dopo notte. The Blood of Dawnwalker è probabilmente il gioco di ruolo più atteso in arrivo su PS5 in questo momento e, con la data di uscita del 3 settembre che si avvicina rapidamente, è tempo che lo sviluppatore Rebel Wolves orchestra un'ultima spinta di marketing. Per essere onesti, lo studio ha già commercializzato Dawnwalker in collaborazione con l'editore Bandai Namco fino a questo momento, ma se non sei ancora del tutto convinto del gioco, ti consiglio di dare un'occhiata a questo video panoramico. Leggi l'articolo completo su pushsq"
+      },
+      "de": {
+        "title": "Immer noch nicht bei Dawnwalker verkauft? Dev präsentiert „Alles, was Sie wissen müssen“ über das Open-World-Rollenspiel",
+        "summary": "Nacht für Nacht. The Blood of Dawnwalker ist derzeit wahrscheinlich das am meisten erwartete Rollenspiel für PS5, und da der Veröffentlichungstermin am 3. September immer näher rückt, ist es für Entwickler Rebel Wolves an der Zeit, einen letzten Marketingschub zu starten. Fairerweise muss man sagen, dass das Studio bis zu diesem Zeitpunkt in Zusammenarbeit mit dem Publisher Bandai Namco bereits jede Menge Dawnwalker vermarktet hat – aber wenn Sie immer noch nicht ganz von dem Spiel überzeugt sind, würde ich Ihnen empfehlen, sich dieses Übersichtsvideo anzusehen. Lesen Sie den vollständigen Artikel auf pushsq"
+      },
+      "pt": {
+        "title": "Ainda não foi vendido no Dawnwalker? Dev apresenta ‘tudo o que você precisa saber’ sobre o RPG de mundo aberto",
+        "summary": "Noite após noite. The Blood of Dawnwalker é provavelmente o RPG mais esperado que chega ao PS5 no momento, e com sua data de lançamento em 3 de setembro se aproximando rapidamente, é hora do desenvolvedor Rebel Wolves orquestrar um último impulso de marketing. Para ser justo, o estúdio já comercializou Dawnwalker em parceria com a editora Bandai Namco até este ponto - mas se você ainda não está convencido do jogo, recomendo dar uma olhada neste vídeo de visão geral. Leia o artigo completo sobre pushsq"
+      },
+      "ru": {
+        "title": "«Dawnwalker» все еще не продан? Разработчик представляет «все, что вам нужно знать» о ролевой игре с открытым миром",
+        "summary": "Ночь за ночью. Blood of Dawnwalker, пожалуй, самая ожидаемая ролевая игра, которая выйдет на PS5 прямо сейчас, и поскольку дата ее выпуска 3 сентября быстро приближается, разработчику Rebel Wolves пора организовать последний маркетинговый рывок. Честно говоря, до этого момента студия уже чертовски продвигала Dawnwalker в партнерстве с издателем Bandai Namco — но если вы все еще не совсем увлечены игрой, я бы рекомендовал посмотреть это обзорное видео. Прочитайте полную статью о pushsq"
+      },
+      "el": {
+        "title": "Ακόμα δεν έχει πωληθεί στο Dawnwalker; Ο Dev παρουσιάζει το 'Όλα όσα πρέπει να γνωρίζετε' για το Open World RPG",
+        "summary": "Νύχτα με τη νύχτα. Το Blood of Dawnwalker είναι ίσως το πιο αναμενόμενο RPG που έρχεται στο PS5 αυτή τη στιγμή και με την ημερομηνία κυκλοφορίας του στις 3 Σεπτεμβρίου να πλησιάζει γρήγορα, ήρθε η ώρα για τον προγραμματιστή Rebel Wolves να ενορχηστρώσει μια τελευταία ώθηση μάρκετινγκ. Για να είμαστε δίκαιοι, το στούντιο κυκλοφόρησε ήδη την κόλαση του Dawnwalker σε συνεργασία με τον εκδότη Bandai Namco μέχρι αυτό το σημείο — αλλά αν δεν είστε ακόμα αρκετά πουλημένοι στο παιχνίδι, θα συνιστούσα να παρακολουθήσετε αυτό το βίντεο επισκόπησης. Διαβάστε ολόκληρο το άρθρο για το pushsq"
+      },
+      "tr": {
+        "title": "Dawnwalker'da Hala Satılmadı mı? Dev, Açık Dünya RPG'si Hakkında 'Bilmeniz Gereken Her Şeyi' Sunuyor",
+        "summary": "Gece gece. Blood of Dawnwalker muhtemelen şu anda PS5'e gelen en çok beklenen RPG'dir ve 3 Eylül çıkış tarihi hızla yaklaşırken, geliştirici Rebel Wolves'un son bir pazarlama hamlesi düzenlemesinin zamanı geldi. Adil olmak gerekirse, stüdyo bu noktaya kadar yayıncı Bandai Namco ile ortaklaşa Dawnwalker'ı zaten çok iyi pazarlıyordu - ancak oyundan hala tam olarak emin değilseniz, bu genel bakış videosunu bir izlemenizi tavsiye ederim. Pushsq'daki makalenin tamamını okuyun"
+      },
+      "ja": {
+        "title": "ドーンウォーカーではまだ販売されていませんか？開発者がオープンワールド RPG について「知っておくべきことすべて」を紹介",
+        "summary": "夜ごとに。 『Blood of Dawnwalker』は、おそらく現時点で PS5 に登場する最も期待されている RPG であり、9 月 3 日の発売日が迫っており、開発者の Rebel Wolves が最後のマーケティング活動を調整する時期が来ました。公平を期すために言うと、スタジオはこの時点までに、パブリッシャーのバンダイナムコと提携して『ドーンウォーカー』を徹底的に宣伝してきましたが、まだこのゲームのことがよく分からないという方には、この概要ビデオを見ていただくことをお勧めします。 Pushsq の記事全文を読む"
+      },
+      "zh": {
+        "title": "《黎明行者》尚未发售？ Dev 介绍了有关开放世界角色扮演游戏的“您需要了解的一切”",
+        "summary": "夜复一夜。 《黎明行者之血》可能是目前 PS5 上最受期待的角色扮演游戏，随着 9 月 3 日的发布日期很快临近，开发商 Rebel Wolves 是时候策划最后一次营销活动了。公平地说，到目前为止，该工作室已经与发行商万代南梦宫合作对《黎明行者》进行了大力营销——但如果你仍然不太喜欢这款游戏，我建议你观看一下这个概述视频。阅读有关 PushSq 的完整文章"
+      }
+    }
+  },
+  {
+    "id": "a6f789b7cdc90686a5c8c2835f57ad9237c0d0aa",
+    "title": "Co-op island adventure game NAUTUS announced for PC",
+    "summary": "Publisher Arc Games and Have a Nice Death developer Magic Design Studios have announced NAUTUS, &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/co-op-island-adventure-game-nautus-announced-for-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T14:34:24+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422327+00:00",
+    "translations": {
+      "en": {
+        "title": "Co-op island adventure game NAUTUS announced for PC",
+        "summary": "Publisher Arc Games and Have a Nice Death developer Magic Design Studios have announced NAUTUS, &hellip;"
+      },
+      "fr": {
+        "title": "Le jeu d'aventure insulaire coopératif NAUTUS annoncé sur PC",
+        "summary": "L'éditeur Arc Games et le développeur de Have a Nice Death, Magic Design Studios, ont annoncé NAUTUS, &hellip;"
+      },
+      "es": {
+        "title": "El juego cooperativo de aventuras isleñas NAUTUS anunciado para PC",
+        "summary": "El editor Arc Games y el desarrollador de Have a Nice Death, Magic Design Studios, han anunciado NAUTUS, &hellip;"
+      },
+      "it": {
+        "title": "Annunciato il gioco di avventura cooperativo sull'isola NAUTUS per PC",
+        "summary": "L'editore Arc Games e lo sviluppatore di Have a Nice Death Magic Design Studios hanno annunciato NAUTUS, &hellip;"
+      },
+      "de": {
+        "title": "Koop-Inselabenteuerspiel NAUTUS für PC angekündigt",
+        "summary": "Publisher Arc Games und Have a Nice Death-Entwickler Magic Design Studios haben NAUTUS, &hellip;"
+      },
+      "pt": {
+        "title": "Jogo cooperativo de aventura na ilha NAUTUS anunciado para PC",
+        "summary": "A editora Arc Games e a desenvolvedora de Have a Nice Death, Magic Design Studios, anunciaram o NAUTUS, &hellip;"
+      },
+      "ru": {
+        "title": "Кооперативная островная приключенческая игра NAUTUS анонсирована для ПК",
+        "summary": "Издательство Arc Games и разработчик Have a Nice Death Magic Design Studios анонсировали NAUTUS, &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το Co-op island adventure παιχνίδι NAUTUS για PC",
+        "summary": "Ο εκδότης Arc Games και ο προγραμματιστής Have a Nice Death Magic Design Studios ανακοίνωσαν το NAUTUS, &hellip;"
+      },
+      "tr": {
+        "title": "Co-op ada macera oyunu NAUTUS PC için duyuruldu",
+        "summary": "Yayıncı Arc Games ve Have a Nice Death'in geliştiricisi Magic Design Studios, NAUTUS'u duyurdu."
+      },
+      "ja": {
+        "title": "Co-opアイランドアドベンチャーゲームNAUTUSがPC向けに発表",
+        "summary": "パブリッシャーの Arc Games と Have a Nice Death のデベロッパー Magic Design Studios は、NAUTUS、&hellip; を発表しました。"
+      },
+      "zh": {
+        "title": "合作岛屿冒险游戏 NAUTUS 宣布登陆 PC",
+        "summary": "发行商 Arc Games 和 Have a Nice Death 开发商 Magic Design Studios 宣布推出 NAUTUS，…"
+      }
+    }
+  },
+  {
+    "id": "347d6fbf3edf1eb4b2a997dff3c5a33674a8e8cf",
+    "title": "Review: KONKR Pocket Advance - The Nintendo GBA, Perfected",
+    "summary": "AYANEO's latest budget handheld is one of its best. AYANEO's budget brand, KONKR, has already given us some welcome options in the handheld emulation space, but few of them have attracted the kind of fevered attention that the Pocket Advance has managed. This GBA-inspired portable sold out of its pre-order quota in astonishingly quick time, convincing AYANEO to offer a second batch ( as well as new colourways ) in order to satisfy demand. Read the full article on timeextension.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/reviews/konkr-pocket-advance-the-nintendo-gba-perfected",
+    "imageUrl": "https://images.timeextension.com/61f561aa7dd56/large.jpg",
+    "publishedAt": "2026-08-13T14:30:00+00:00",
+    "scrapedAt": "2026-08-14T04:52:48.273043+00:00",
+    "translations": {
+      "en": {
+        "title": "Review: KONKR Pocket Advance - The Nintendo GBA, Perfected",
+        "summary": "AYANEO's latest budget handheld is one of its best. AYANEO's budget brand, KONKR, has already given us some welcome options in the handheld emulation space, but few of them have attracted the kind of fevered attention that the Pocket Advance has managed. This GBA-inspired portable sold out of its pre-order quota in astonishingly quick time, convincing AYANEO to offer a second batch ( as well as new colourways ) in order to satisfy demand. Read the full article on timeextension.com"
+      },
+      "fr": {
+        "title": "Critique : KONKR Pocket Advance - La Nintendo GBA, perfectionnée",
+        "summary": "Le dernier ordinateur de poche économique d'AYANEO est l'un de ses meilleurs. La marque économique d'AYANEO, KONKR, nous a déjà proposé quelques options bienvenues dans le domaine de l'émulation portable, mais peu d'entre elles ont attiré le genre d'attention fébrile que le Pocket Advance a réussi. Ce portable inspiré de GBA a vendu son quota de précommande dans un délai étonnamment rapide, convainquant AYANEO de proposer un deuxième lot (ainsi que de nouveaux coloris) afin de satisfaire la demande. Lire l'article complet sur timeextension.com"
+      },
+      "es": {
+        "title": "Reseña: KONKR Pocket Advance - La Nintendo GBA, perfeccionada",
+        "summary": "La última computadora de mano económica de AYANEO es una de las mejores. La marca económica de AYANEO, KONKR, ya nos ha brindado algunas opciones bienvenidas en el espacio de la emulación portátil, pero pocas de ellas han atraído el tipo de atención febril que ha logrado el Pocket Advance. Este portátil inspirado en GBA agotó su cuota de pedidos anticipados en un tiempo sorprendentemente rápido, lo que convenció a AYANEO de ofrecer un segundo lote (así como nuevas combinaciones de colores) para satisfacer la demanda. Lea el artículo completo en timeextension.com"
+      },
+      "it": {
+        "title": "Recensione: KONKR Pocket Advance - Il Nintendo GBA, perfezionato",
+        "summary": "L'ultimo palmare economico di AYANEO è uno dei migliori. Il marchio economico di AYANEO, KONKR, ci ha già offerto alcune gradite opzioni nello spazio dell'emulazione portatile, ma poche di queste hanno attirato il tipo di attenzione febbrile che è riuscita a ottenere Pocket Advance. Questo portatile ispirato alla GBA ha esaurito la sua quota di preordine in un tempo sorprendentemente rapido, convincendo AYANEO a offrire un secondo lotto (così come nuove colorazioni) per soddisfare la domanda. Leggi l'articolo completo su timeextension.com"
+      },
+      "de": {
+        "title": "Rezension: KONKR Pocket Advance – Der Nintendo GBA, perfektioniert",
+        "summary": "Der neueste preisgünstige Handheld von AYANEO ist einer seiner besten. Die preisgünstige Marke von AYANEO, KONKR, hat uns bereits einige willkommene Optionen im Bereich der Handheld-Emulationen beschert, aber nur wenige davon haben so viel Aufmerksamkeit erregt wie der Pocket Advance. Dieses vom GBA inspirierte tragbare Gerät war in erstaunlich kurzer Zeit ausverkauft und überzeugte AYANEO, eine zweite Charge (sowie neue Farbvarianten) anzubieten, um die Nachfrage zu befriedigen. Lesen Sie den vollständigen Artikel auf timeextension.com"
+      },
+      "pt": {
+        "title": "Revisão: KONKR Pocket Advance - O Nintendo GBA, Aperfeiçoado",
+        "summary": "O mais recente portátil econômico da AYANEO é um dos melhores. A marca econômica da AYANEO, KONKR, já nos deu algumas opções bem-vindas no espaço de emulação portátil, mas poucas delas atraíram o tipo de atenção febril que o Pocket Advance conseguiu. Este portátil inspirado no GBA esgotou sua cota de pré-encomenda em um tempo surpreendentemente rápido, convencendo a AYANEO a oferecer um segundo lote (bem como novas cores) para satisfazer a demanda. Leia o artigo completo em timeextension.com"
+      },
+      "ru": {
+        "title": "Обзор: KONKR Pocket Advance — улучшенная версия Nintendo GBA",
+        "summary": "Последний бюджетный портативный компьютер AYANEO — один из лучших. Бюджетный бренд AYANEO, KONKR, уже предоставил нам несколько желанных опций в области портативной эмуляции, но лишь немногие из них привлекли такое горячее внимание, как Pocket Advance. Этот портативный компьютер, вдохновленный GBA, был распродан в удивительно короткие сроки, что убедило AYANEO предложить вторую партию (а также новые цветовые решения), чтобы удовлетворить спрос. Полную версию статьи можно прочитать на сайте timeextension.com."
+      },
+      "el": {
+        "title": "Κριτική: KONKR Pocket Advance - The Nintendo GBA, Perfected",
+        "summary": "Η τελευταία οικονομική συσκευή χειρός της AYANEO είναι μία από τις καλύτερες. Η οικονομική επωνυμία της AYANEO, KONKR, μας έχει ήδη δώσει μερικές ευπρόσδεκτες επιλογές στον χώρο εξομοίωσης χειρός, αλλά λίγες από αυτές έχουν τραβήξει την πυρετώδη προσοχή που κατάφερε το Pocket Advance. Αυτό το φορητό εμπνευσμένο από το GBA εξαντλήθηκε το όριο προπαραγγελίας του σε εκπληκτικά γρήγορο χρόνο, πείθοντας την AYANEO να προσφέρει μια δεύτερη παρτίδα (καθώς και νέους χρωματισμούς) προκειμένου να ικανοποιήσει τη ζήτηση. Διαβάστε το πλήρες άρθρο στο timeextension.com"
+      },
+      "tr": {
+        "title": "İnceleme: KONKR Pocket Advance - Nintendo GBA, Mükemmelleştirilmiş",
+        "summary": "AYANEO'nun en son bütçeye uygun el cihazı en iyilerinden biridir. AYANEO'nun bütçe markası KONKR, el tipi emülasyon alanında bize zaten bazı hoş geldiniz seçenekleri sundu, ancak bunlardan çok azı Pocket Advance'ın başardığı türden hararetli ilgiyi çekti. GBA'dan ilham alan bu portatif, ön sipariş kotasını şaşırtıcı derecede kısa bir sürede tükendi ve AYANEO'yu talebi karşılamak için ikinci bir parti (ve yeni renk çeşitleri) sunmaya ikna etti. Makalenin tamamını timeextension.com'da okuyun"
+      },
+      "ja": {
+        "title": "レビュー: KONKR Pocket Advance - 完成された任天堂 GBA",
+        "summary": "AYANEO の最新の低価格ハンドヘルドは最高のものの 1 つです。 AYANEO の低価格ブランドである KONKR は、ハンドヘルドエミュレーション分野ですでにいくつかの歓迎すべきオプションを提供していますが、Pocket Advance ほど熱狂的な注目を集めたものはほとんどありません。 GBA からインスピレーションを得たこのポータブル製品は、驚くほど短期間で予約枠を完売し、AYANEO は需要を満たすために第 2 バッチ (および新色) を提供することを説得しました。 timeextension.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "评论：KONKR Pocket Advance - 任天堂 GBA，完美",
+        "summary": "AYANEO 最新的经济型手持设备是最好的手持设备之一。 AYANEO 的廉价品牌 KONKR 已经在手持仿真领域为我们提供了一些受欢迎的选择，但其中很少有像 Pocket Advance 那样吸引了如此热烈的关注。这款受 GBA 启发的便携式设备在极短的时间内就售罄了预购配额，说服 AYANEO 提供第二批产品（以及新的配色）以满足需求。在 timeextension.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "b23c1e61a764e850d82a80b325181454db2d84cc",
+    "title": "This Kingdom Hearts-Inspired Platformer Is Out Now On Xbox, And Reviews Are Looking Great",
+    "summary": "\"A love letter to the action platformers of the '90s and early '00s\". In a recent indie game feature , we highlighted a bunch of August titles we fully expected to fly under your radar, one of which was called Duskfade . It's an action platformer that harkens back to the early 2000s, drawing comparisons to PS2-era classics like Kingdom Hearts and Jak and Daxter. Read the full article on purexbox.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/this-kingdom-hearts-inspired-platformer-is-out-now-on-xbox-and-reviews-are-looking-great",
+    "imageUrl": "https://images.purexbox.com/4b65fe5ac3901/large.jpg",
+    "publishedAt": "2026-08-13T14:30:00+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.302584+00:00",
+    "translations": {
+      "en": {
+        "title": "This Kingdom Hearts-Inspired Platformer Is Out Now On Xbox, And Reviews Are Looking Great",
+        "summary": "\"A love letter to the action platformers of the '90s and early '00s\". In a recent indie game feature , we highlighted a bunch of August titles we fully expected to fly under your radar, one of which was called Duskfade . It's an action platformer that harkens back to the early 2000s, drawing comparisons to PS2-era classics like Kingdom Hearts and Jak and Daxter. Read the full article on purexbox.com"
+      },
+      "fr": {
+        "title": "Ce jeu de plateforme inspiré de Kingdom Hearts est maintenant disponible sur Xbox et les critiques sont excellentes",
+        "summary": "\"Une lettre d'amour aux jeux de plateforme d'action des années 90 et du début des années 2000\". Dans une récente fonctionnalité de jeu indépendant, nous avons mis en évidence un certain nombre de titres du mois d'août dont nous nous attendions à ce qu'ils passent sous votre radar, dont l'un s'appelait Duskfade. Il s'agit d'un jeu de plateforme et d'action qui rappelle le début des années 2000, faisant des comparaisons avec des classiques de l'ère PS2 comme Kingdom Hearts et Jak et Daxter. Lire l'article complet sur purexbox.com"
+      },
+      "es": {
+        "title": "Este juego de plataformas inspirado en Kingdom Hearts ya está disponible en Xbox y las críticas se ven geniales",
+        "summary": "\"Una carta de amor a los juegos de plataformas de acción de los años 90 y principios de los 2000\". En una característica reciente de un juego independiente, destacamos un montón de títulos de agosto que esperábamos que pasaran desapercibidos, uno de los cuales se llamaba Duskfade. Es un juego de plataformas de acción que se remonta a principios de la década de 2000 y genera comparaciones con clásicos de la era de PS2 como Kingdom Hearts y Jak and Daxter. Lea el artículo completo en purexbox.com"
+      },
+      "it": {
+        "title": "Questo platform ispirato a Kingdom Hearts è ora disponibile su Xbox e le recensioni sembrano fantastiche",
+        "summary": "\"Una lettera d'amore ai platform d'azione degli anni '90 e dei primi anni '00\". In un recente articolo sui giochi indie, abbiamo evidenziato una serie di titoli di agosto che ci aspettavamo passassero sotto il vostro radar, uno dei quali si chiamava Duskfade. È un platform d'azione che risale ai primi anni 2000, facendo paragoni con i classici dell'era PS2 come Kingdom Hearts e Jak and Daxter. Leggi l'articolo completo su purexbox.com"
+      },
+      "de": {
+        "title": "Dieser von Kingdom Hearts inspirierte Plattformer ist jetzt auf Xbox erhältlich und die Rezensionen sehen großartig aus",
+        "summary": "„Ein Liebesbrief an die Action-Plattformer der 90er und frühen 2000er“. In einem aktuellen Indie-Game-Feature haben wir eine Reihe von August-Titeln hervorgehoben, von denen wir voll und ganz erwartet hatten, dass sie unter eurem Radar verschwinden würden, einer davon hieß Duskfade. Es handelt sich um einen Action-Plattformer, der auf die frühen 2000er Jahre zurückblickt und Vergleiche mit Klassikern der PS2-Ära wie Kingdom Hearts und Jak und Daxter zieht. Lesen Sie den vollständigen Artikel auf purexbox.com"
+      },
+      "pt": {
+        "title": "Este jogo de plataforma inspirado em Kingdom Hearts já está disponível no Xbox e as avaliações parecem ótimas",
+        "summary": "\"Uma carta de amor aos jogos de plataforma de ação dos anos 90 e início dos anos 2000\" . Em um recente recurso de jogo indie, destacamos vários títulos de agosto que esperávamos passar despercebidos pelo seu radar, um dos quais se chamava Duskfade. É um jogo de plataforma de ação que remonta ao início dos anos 2000, fazendo comparações com clássicos da era PS2 como Kingdom Hearts e Jak and Daxter. Leia o artigo completo em purexbox.com"
+      },
+      "ru": {
+        "title": "Этот платформер, вдохновленный Kingdom Hearts, уже доступен на Xbox, и отзывы выглядят великолепно",
+        "summary": "«Любовное письмо платформерам-боевикам 90-х и начала 00-х». В недавней статье об инди-играх мы выделили несколько августовских игр, которые, как мы ожидали, останутся незамеченными, одна из которых называлась Duskfade. Это экшн-платформер, который восходит к началу 2000-х годов и сравнивается с классикой эпохи PS2, такой как Kingdom Hearts и Jak and Daxter. Полную версию статьи можно прочитать на сайте purexbox.com."
+      },
+      "el": {
+        "title": "Αυτή η πλατφόρμα πλατφόρμας εμπνευσμένη από το Kingdom Hearts κυκλοφορεί τώρα στο Xbox και οι κριτικές φαίνονται υπέροχες",
+        "summary": "«Ένα γράμμα αγάπης για τους action platformers της δεκαετίας του '90 και των αρχών του '00». Σε μια πρόσφατη λειτουργία indie παιχνιδιού, επισημάναμε μια δέσμη τίτλων Αυγούστου που περιμέναμε πλήρως να πετάξουμε κάτω από το ραντάρ σας, ένας από τους οποίους ονομαζόταν Duskfade. Είναι ένα παιχνίδι πλατφόρμας δράσης που ξεκινά από τις αρχές της δεκαετίας του 2000, συγκρίνοντας τα κλασικά της εποχής του PS2, όπως το Kingdom Hearts και το Jak and Daxter. Διαβάστε ολόκληρο το άρθρο στο purexbox.com"
+      },
+      "tr": {
+        "title": "Kingdom Hearts'tan İlham Alan Bu Platform Oyunu Artık Xbox'ta Çıktı ve İncelemeler Harika Görünüyor",
+        "summary": "\"90'lı ve 2000'li yılların başındaki aksiyon platform oyuncularına bir aşk mektubu\". Yakın zamanda yayınlanan bir bağımsız oyun özelliğinde, radarınızın altından geçmesini beklediğimiz bir dizi Ağustos oyununun altını çizdik; bunlardan birinin adı Duskfade'di. 2000'li yılların başlarına dayanan, Kingdom Hearts ve Jak ve Daxter gibi PS2 dönemi klasikleriyle karşılaştırmalar yapan bir aksiyon platform oyunudur. Makalenin tamamını purexbox.com'da okuyun"
+      },
+      "ja": {
+        "title": "このキングダム ハーツにインスピレーションを得たプラットフォーマーが Xbox でリリースされ、レビューは非常に好評です",
+        "summary": "「90年代から00年代初頭のアクションプラットフォーマーへのラブレター」。最近のインディー ゲーム特集 では、皆さんの目に留まると完全に予想されていた 8 月のタイトルを多数取り上げましたが、その 1 つが Duskfade と呼ばれるものでした。これは 2000 年代初頭に遡るアクション プラットフォーマーで、キングダム ハーツやジャック アンド ダクスターなどの PS2 時代の古典と比較されます。 purexbox.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "这款以《王国之心》为灵感的平台游戏现已在 Xbox 上推出，评论看起来很棒",
+        "summary": "“一封写给 90 年代和 00 年代初动作平台游戏的情书”。在最近的独立游戏专题中，我们重点介绍了一系列八月份的游戏，我们完全预计这些游戏会在您的雷达下消失，其中一个名为 Duskfade 。这是一款让人回想起 2000 年代初期的动作平台游戏，与《王国之心》、《杰克与达斯特》等 PS2 时代的经典游戏相比较。在 purexbox.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "3353c3fa970b026bff4f7db958470f26b3cb8db6",
+    "title": "Roundup: All The Xbox Reveals From The Kinetic Publishing Showcase 2026",
+    "summary": "Including the follow-up to Her Story and Immortality. Last night treated us to the first ever Kinetic Publishing Showcase, and all five games in the broadcast were actually confirmed for Xbox Series X and Xbox Series S as part of it, along with Xbox Play Anywhere support for all of them. The highlight here was PRECOGNITION , which is the follow-up to the amazing Her Story and Immortality games from Sam Barlow (the latter of which we gave an \"Outstanding\" 10/10 to here at Pure Xbox in 2022). Read",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/roundup-all-the-xbox-reveals-from-the-kinetic-publishing-showcase-2026",
+    "imageUrl": "https://images.purexbox.com/326ed60855b49/large.jpg",
+    "publishedAt": "2026-08-13T13:30:00+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.302653+00:00",
+    "translations": {
+      "en": {
+        "title": "Roundup: All The Xbox Reveals From The Kinetic Publishing Showcase 2026",
+        "summary": "Including the follow-up to Her Story and Immortality. Last night treated us to the first ever Kinetic Publishing Showcase, and all five games in the broadcast were actually confirmed for Xbox Series X and Xbox Series S as part of it, along with Xbox Play Anywhere support for all of them. The highlight here was PRECOGNITION , which is the follow-up to the amazing Her Story and Immortality games from Sam Barlow (the latter of which we gave an \"Outstanding\" 10/10 to here at Pure Xbox in 2022). Read"
+      },
+      "fr": {
+        "title": "Roundup : toutes les révélations Xbox du Kinetic Publishing Showcase 2026",
+        "summary": "Y compris la suite de Her Story et Immortality. Hier soir, nous avons assisté au tout premier Kinetic Publishing Showcase, et les cinq jeux diffusés ont en fait été confirmés pour Xbox Series X et Xbox Series S dans le cadre de celui-ci, ainsi que la prise en charge de Xbox Play Anywhere pour chacun d'entre eux. Le point culminant ici a été PRECOGNITION, qui fait suite aux incroyables jeux Her Story et Immortality de Sam Barlow (auquel nous avons attribué un 10/10 « exceptionnel » ici sur Pure Xbox en 2022). Lire"
+      },
+      "es": {
+        "title": "Resumen: todas las revelaciones de Xbox del Kinetic Publishing Showcase 2026",
+        "summary": "Incluyendo la continuación de Su historia e Inmortalidad. Anoche nos invitó al primer Kinetic Publishing Showcase, y los cinco juegos de la transmisión fueron confirmados para Xbox Series X y Xbox Series S como parte del mismo, junto con el soporte de Xbox Play Anywhere para todos ellos. Lo más destacado aquí fue PRECOGNITION, que es la continuación de los increíbles juegos Her Story e Immortality de Sam Barlow (a este último le otorgamos un 10/10 de \"Sobresaliente\" aquí en Pure Xbox en 2022). Leer"
+      },
+      "it": {
+        "title": "Riepilogo: tutte le rivelazioni Xbox dal Kinetic Publishing Showcase 2026",
+        "summary": "Compreso il seguito di Her Story e Immortality. Ieri sera abbiamo assistito al primo Kinetic Publishing Showcase in assoluto e tutti e cinque i giochi trasmessi sono stati effettivamente confermati per Xbox Series X e Xbox Series S come parte di esso, insieme al supporto Xbox Play Anywhere per tutti loro. Il momento clou qui è stato PRECOGNITION, che è il seguito degli straordinari giochi Her Story e Immortality di Sam Barlow (a quest'ultimo abbiamo assegnato un \"Eccezionale\" 10/10 qui su Pure Xbox nel 2022). Leggere"
+      },
+      "de": {
+        "title": "Zusammenfassung: Alle Xbox-Enthüllungen aus dem Kinetic Publishing Showcase 2026",
+        "summary": "Einschließlich der Fortsetzung von „Her Story“ und „Immortality“. Gestern Abend haben wir das allererste Kinetic Publishing Showcase erlebt, und alle fünf Spiele in der Übertragung wurden als Teil davon tatsächlich für Xbox Series X und Xbox Series S bestätigt, zusammen mit der Unterstützung von Xbox Play Anywhere für alle. Der Höhepunkt hier war PRECOGNITION, der Nachfolger der fantastischen Spiele „Her Story“ und „Immortality“ von Sam Barlow (letzteres haben wir hier bei Pure Xbox im Jahr 2022 mit „Hervorragend“ 10/10 bewertet). Lesen"
+      },
+      "pt": {
+        "title": "Resumo: todas as revelações do Xbox no Kinetic Publishing Showcase 2026",
+        "summary": "Incluindo a continuação de Her Story and Immortality. A noite passada nos proporcionou o primeiro Kinetic Publishing Showcase, e todos os cinco jogos na transmissão foram confirmados para Xbox Series X e Xbox Series S como parte dele, junto com o suporte do Xbox Play Anywhere para todos eles. O destaque aqui foi PRECOGNITION, que é a continuação dos incríveis jogos Her Story e Immortality de Sam Barlow (esse último demos nota “Excelente” 10/10 aqui no Pure Xbox em 2022). Ler"
+      },
+      "ru": {
+        "title": "Сводка новостей: все новости Xbox с выставки Kinetic Publishing Showcase 2026",
+        "summary": "Включая продолжение «Ее истории и бессмертия». Вчера вечером мы посетили первую в истории Kinetic Publishing Showcase, и все пять игр в трансляции были фактически подтверждены для Xbox Series X и Xbox Series S как ее часть, а также поддержка Xbox Play Anywhere для всех из них. Самым ярким моментом здесь стала PRECOGNITION, которая является продолжением потрясающих игр Her Story и Immortality от Сэма Барлоу (последней из которых мы поставили «выдающуюся» оценку 10/10 здесь, на Pure Xbox, в 2022 году). Читать"
+      },
+      "el": {
+        "title": "Roundup: All The Xbox Reveals From The Kinetic Publishing Showcase 2026",
+        "summary": "Συμπεριλαμβανομένης της συνέχειας της ιστορίας της και της αθανασίας. Χθες το βράδυ μας κέρασε το πρώτο Kinetic Publishing Showcase και και τα πέντε παιχνίδια στη μετάδοση επιβεβαιώθηκαν για το Xbox Series X και το Xbox Series S ως μέρος του, μαζί με την υποστήριξη του Xbox Play Anywhere για όλα αυτά. Το αποκορύφωμα εδώ ήταν το PRECOGNITION , το οποίο είναι η συνέχεια των εκπληκτικών παιχνιδιών Her Story και Immortality από τον Sam Barlow (το τελευταίο από τα οποία δώσαμε \"Εξαιρετικό\" 10/10 εδώ στο Pure Xbox το 2022). Ανάγνωση"
+      },
+      "tr": {
+        "title": "Geçen Hafta: Kinetic Publishing Showcase 2026'dan Tüm Xbox Gösterimleri",
+        "summary": "Onun Hikayesi ve Ölümsüzlük'ün devamı da dahil. Dün gece bize ilk Kinetic Publishing Showcase'i ikram etti ve yayındaki beş oyunun tümü, Xbox Play Anywhere desteğiyle birlikte bunun bir parçası olarak Xbox Series X ve Xbox Series S için onaylandı. Burada öne çıkan, Sam Barlow'un muhteşem Her Story ve Immortality oyunlarının devamı olan PRECOGNITION'dı (ikincisine 2022'de Pure Xbox'ta \"Olağanüstü\" 10/10 verdik). Okumak"
+      },
+      "ja": {
+        "title": "まとめ: Kinetic Publishing Showcase 2026 で Xbox が明らかにしたすべて",
+        "summary": "Her StoryとImmortalityの続報を含みます。昨夜は、史上初のキネティック パブリッシング ショーケースが私たちに行われました。放送された 5 つのゲームすべてが、実際にその一部として Xbox シリーズ X および Xbox シリーズ S に対応することが確認され、そのすべてが Xbox Play Anywhere でサポートされることが確認されました。ここでのハイライトは、Sam Barlow による驚くべき Her Story と Immortality ゲームの続編である PRECOGNITION でした (後者については、2022 年の Pure Xbox で 10/10 点「傑出した」評価を与えました)。読む"
+      },
+      "zh": {
+        "title": "综述：2026 年 Kinetic Publishing Showcase 中 Xbox 的全部内容",
+        "summary": "包括《她的故事》和《不朽》的后续。昨晚，我们迎来了有史以来第一次 Kinetic Publishing Showcase，直播中的所有五款游戏实际上都已确认适用于 Xbox Series X 和 Xbox Series S，并且 Xbox Play Anywhere 支持所有这些游戏。这里的亮点是 PRECOGNITION ，它是 Sam Barlow 令人惊叹的《Her Story》和《Immortality》游戏的后续作品（后者我们在 2022 年 Pure Xbox 上给予了“杰出”10/10 评价）。读"
+      }
+    }
+  },
+  {
+    "id": "f0f5bf2041be57618d1c9cf24e0c21cd4d77b11e",
+    "title": "Lovecraftian extraction first-person shooter Waste The Fallen announced for PC",
+    "summary": "South Korean developer Royal Crow has announced Waste The Fallen, a Lovecraftian extraction first-person shooter &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/lovecraftian-extraction-first-person-shooter-waste-the-fallen-announced-for-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T13:03:55+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422439+00:00",
+    "translations": {
+      "en": {
+        "title": "Lovecraftian extraction first-person shooter Waste The Fallen announced for PC",
+        "summary": "South Korean developer Royal Crow has announced Waste The Fallen, a Lovecraftian extraction first-person shooter &hellip;"
+      },
+      "fr": {
+        "title": "Waste The Fallen, jeu de tir à la première personne avec extraction lovecraftienne, annoncé sur PC",
+        "summary": "Le développeur sud-coréen Royal Crow a annoncé Waste The Fallen, un jeu de tir à la première personne à extraction lovecraftienne &hellip;"
+      },
+      "es": {
+        "title": "Se anuncia el shooter en primera persona de extracción lovecraftiana Waste The Fallen para PC",
+        "summary": "El desarrollador surcoreano Royal Crow ha anunciado Waste The Fallen, un shooter en primera persona de extracción lovecraftiana &hellip;"
+      },
+      "it": {
+        "title": "Lo sparatutto in prima persona di estrazione lovecraftiana Waste The Fallen è stato annunciato per PC",
+        "summary": "Lo sviluppatore sudcoreano Royal Crow ha annunciato Waste The Fallen, uno sparatutto in prima persona di estrazione lovecraftiana &hellip;"
+      },
+      "de": {
+        "title": "Lovecraftian-Extraction-Ego-Shooter Waste The Fallen für PC angekündigt",
+        "summary": "Der südkoreanische Entwickler Royal Crow hat Waste The Fallen angekündigt, einen Ego-Shooter im Lovecraft-Stil &hellip;"
+      },
+      "pt": {
+        "title": "Waste The Fallen, jogo de tiro em primeira pessoa com extração Lovecraftiana, anunciado para PC",
+        "summary": "A desenvolvedora sul-coreana Royal Crow anunciou Waste The Fallen, um jogo de tiro em primeira pessoa com extração Lovecraftiana &hellip;"
+      },
+      "ru": {
+        "title": "Шутер от первого лица в стиле Лавкрафта Waste The Fallen анонсирован на ПК",
+        "summary": "Южнокорейский разработчик Royal Crow анонсировал Waste The Fallen, шутер от первого лица в стиле Лавкрафта &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το Lovecraftian Extraction πρώτου προσώπου shooter Waste The Fallen για υπολογιστή",
+        "summary": "Ο Νοτιοκορεάτης προγραμματιστής Royal Crow ανακοίνωσε το Waste The Fallen, ένα shooter πρώτου προσώπου Lovecraftian &hellip;"
+      },
+      "tr": {
+        "title": "Lovecraft tarzı birinci şahıs nişancı oyunu Waste The Fallen PC için duyuruldu",
+        "summary": "Güney Koreli geliştirici Royal Crow, Lovecraft tarzı birinci şahıs nişancı oyunu Waste The Fallen'ı duyurdu."
+      },
+      "ja": {
+        "title": "ラヴクラフト的抽出の一人称シューティング ゲーム「Waste The Fallen」が PC 向けに発表",
+        "summary": "韓国のデベロッパー Royal Crow は、ラヴクラフト風の一人称シューティング ゲーム、Waste The Fallen を発表しました。"
+      },
+      "zh": {
+        "title": "洛夫克拉夫特式撤离第一人称射击游戏 Waste The Fallen 宣布推出 PC 版",
+        "summary": "韩国开发商 Royal Crow 宣布推出《Waste The Fallen》，这是一款洛夫克拉夫特风格的提取第一人称射击游戏……"
+      }
+    }
+  },
+  {
+    "id": "71378c9953299129eefadc5d5d134f89d0a5bbaf",
+    "title": "Cinematic single-player adventure RPG .curator announced for PS5, Xbox Series, and PC",
+    "summary": "STRL Games has announced .curator, a cinematic single-player adventure RPG by Altered Carbon creator Richard &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/cinematic-single-player-adventure-rpg-curator-announced-for-ps5-xbox-series-and-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-08-13T13:03:28+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422472+00:00",
+    "translations": {
+      "en": {
+        "title": "Cinematic single-player adventure RPG .curator announced for PS5, Xbox Series, and PC",
+        "summary": "STRL Games has announced .curator, a cinematic single-player adventure RPG by Altered Carbon creator Richard &hellip;"
+      },
+      "fr": {
+        "title": "Un RPG d'aventure cinématographique solo .curator annoncé pour PS5, Xbox Series et PC",
+        "summary": "STRL Games a annoncé .curator, un RPG d'aventure cinématographique solo du créateur d'Altered Carbon, Richard &hellip;"
+      },
+      "es": {
+        "title": "Se anuncia el RPG cinematográfico de aventuras para un jugador .curator para PS5, Xbox Series y PC",
+        "summary": "STRL Games ha anunciado .curator, un juego de rol cinematográfico de aventuras para un jugador del creador de Altered Carbon, Richard &hellip;"
+      },
+      "it": {
+        "title": "Annunciato il gioco di ruolo cinematografico d'avventura per giocatore singolo .curator per PS5, Xbox Series e PC",
+        "summary": "STRL Games ha annunciato .curator, un gioco di ruolo d'avventura cinematografico per giocatore singolo del creatore di Altered Carbon Richard &hellip;"
+      },
+      "de": {
+        "title": "Filmisches Einzelspieler-Abenteuer-Rollenspiel .curator für PS5, Xbox Series und PC angekündigt",
+        "summary": "STRL Games hat .curator angekündigt, ein filmisches Einzelspieler-Abenteuer-Rollenspiel von Altered Carbon-Schöpfer Richard &hellip;"
+      },
+      "pt": {
+        "title": "Curador de RPG de aventura cinematográfica para um jogador anunciado para PS5, Xbox Series e PC",
+        "summary": "STRL Games anunciou .curator, um RPG de aventura cinematográfico para um jogador do criador de Altered Carbon, Richard &hellip;"
+      },
+      "ru": {
+        "title": "Кинематографичная однопользовательская приключенческая ролевая игра .curator анонсирована для PS5, Xbox Series и ПК",
+        "summary": "Компания STRL Games анонсировала .curator, кинематографическую однопользовательскую приключенческую ролевую игру от создателя Altered Carbon Ричарда &hellip;"
+      },
+      "el": {
+        "title": "Ανακοινώθηκε το Cinematic single-player adventure RPG .curator για PS5, Xbox Series και PC",
+        "summary": "Η STRL Games ανακοίνωσε το .curator, ένα κινηματογραφικό RPG περιπέτειας για έναν παίκτη από τον δημιουργό του Altered Carbon, Richard &hellip;"
+      },
+      "tr": {
+        "title": "Sinematik tek oyunculu macera RPG .curator PS5, Xbox Series ve PC için duyuruldu",
+        "summary": "STRL Games, Altered Carbon'un yaratıcısı Richard &hellip; tarafından hazırlanan sinematik tek oyunculu macera RPG'si .curator'ı duyurdu."
+      },
+      "ja": {
+        "title": "映画のようなシングルプレイヤー アドベンチャー RPG .curator が PS5、Xbox シリーズ、PC 向けに発表",
+        "summary": "STRL Games は、Altered Carbon のクリエイター Richard &hellip; によるシネマティック シングルプレイヤー アドベンチャー RPG である .curator を発表しました。"
+      },
+      "zh": {
+        "title": "电影般的单人冒险角色扮演游戏 .curator 宣布推出 PS5、Xbox 系列和 PC 平台",
+        "summary": "STRL Games 宣布推出 .curator，这是一款由 Altered Carbon 创作者 Richard 创作的电影级单人冒险角色扮演游戏"
+      }
+    }
+  },
+  {
+    "id": "8e98ce67364681a8b85f59c698e91a904672a6fc",
+    "title": "Gears Of War: E-Day Dev Announces 10 Improvements For Beta Weekend 2",
+    "summary": "Lancer buff, Versus Aim Assist, stability fixes, and more. Gears of War: E-Day 's Multiplayer Beta is entering its second weekend today, following a massive turnout during the first Beta , despite access being limited to those who pre-ordered the game or subscribed to Xbox Game Pass Ultimate. The Coalition recently posted on the official Gears X/Twitter account, outlining a whole bunch of performance tweaks and balance tuning fixes ahead of today's Open Beta, which is set to kick off at: Read th",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/gears-of-war-e-day-dev-announces-10-improvements-for-beta-weekend-2",
+    "imageUrl": "https://images.purexbox.com/a5bda43409e10/large.jpg",
+    "publishedAt": "2026-08-13T11:00:00+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.302721+00:00",
+    "translations": {
+      "en": {
+        "title": "Gears Of War: E-Day Dev Announces 10 Improvements For Beta Weekend 2",
+        "summary": "Lancer buff, Versus Aim Assist, stability fixes, and more. Gears of War: E-Day 's Multiplayer Beta is entering its second weekend today, following a massive turnout during the first Beta , despite access being limited to those who pre-ordered the game or subscribed to Xbox Game Pass Ultimate. The Coalition recently posted on the official Gears X/Twitter account, outlining a whole bunch of performance tweaks and balance tuning fixes ahead of today's Open Beta, which is set to kick off at: Read th"
+      },
+      "fr": {
+        "title": "Gears Of War: E-Day Dev annonce 10 améliorations pour le week-end bêta 2",
+        "summary": "Buff Lancer, Versus Aim Assist, correctifs de stabilité et bien plus encore. La bêta multijoueur de Gears of War: E-Day entame aujourd'hui son deuxième week-end, après une participation massive lors de la première bêta, bien que l'accès soit limité à ceux qui ont précommandé le jeu ou se sont abonnés au Xbox Game Pass Ultimate. La Coalition a récemment publié sur le compte officiel Gears X/Twitter, décrivant tout un tas d'ajustements de performances et de correctifs d'équilibrage avant la bêta ouverte d'aujourd'hui, qui devrait démarrer à : Lire le"
+      },
+      "es": {
+        "title": "Gears Of War: E-Day Dev anuncia 10 mejoras para el fin de semana Beta 2",
+        "summary": "Mejora de Lancer, asistencia de puntería versus, correcciones de estabilidad y más. La Beta multijugador de Gears of War: E-Day ingresa hoy a su segundo fin de semana, luego de una participación masiva durante la primera Beta, a pesar de que el acceso está limitado a aquellos que reservaron el juego o se suscribieron a Xbox Game Pass Ultimate. La Coalición publicó recientemente en la cuenta oficial de Gears X/Twitter, describiendo una gran cantidad de ajustes de rendimiento y correcciones de equilibrio antes de la Beta Abierta de hoy, que comenzará en: Leer"
+      },
+      "it": {
+        "title": "Gears Of War: E-Day Dev annuncia 10 miglioramenti per la Beta Weekend 2",
+        "summary": "Potenziamento di Lancer, Mira assistita, correzioni di stabilità e altro ancora. La beta multigiocatore di Gears of War: E-Day entra oggi nel suo secondo fine settimana, dopo una massiccia affluenza durante la prima beta, nonostante l'accesso sia limitato a coloro che hanno preordinato il gioco o si sono abbonati a Xbox Game Pass Ultimate. La Coalizione ha recentemente pubblicato un post sull'account ufficiale di Gears X/Twitter, delineando tutta una serie di modifiche alle prestazioni e correzioni di bilanciamento in vista dell'Open Beta di oggi, che inizierà alle:"
+      },
+      "de": {
+        "title": "Gears Of War: E-Day Dev kündigt 10 Verbesserungen für Beta-Wochenende 2 an",
+        "summary": "Lancer-Buff, Versus-Zielhilfe, Stabilitätskorrekturen und mehr. Die Multiplayer-Beta von Gears of War: E-Day geht heute in ihr zweites Wochenende, nachdem es während der ersten Beta eine große Beteiligung gab, obwohl der Zugang auf diejenigen beschränkt war, die das Spiel vorbestellt oder den Xbox Game Pass Ultimate abonniert haben. Die Coalition hat kürzlich auf dem offiziellen Twitter-Konto von Gears"
+      },
+      "pt": {
+        "title": "Gears Of War: E-Day Dev anuncia 10 melhorias para o fim de semana beta 2",
+        "summary": "Buff do Lancer, Versus Aim Assist, correções de estabilidade e muito mais. O Multiplayer Beta de Gears of War: E-Day está entrando em seu segundo fim de semana hoje, após uma grande participação durante o primeiro Beta, apesar do acesso ser limitado àqueles que pré-encomendaram o jogo ou assinaram o Xbox Game Pass Ultimate. A Coalizão postou recentemente na conta oficial do Gears X/Twitter, descrevendo uma série de ajustes de desempenho e correções de equilíbrio antes do Open Beta de hoje, que está programado para começar em: Leia isto"
+      },
+      "ru": {
+        "title": "Gears Of War: E-Day Dev Announces 10 Improvements For Beta Weekend 2",
+        "summary": "Lancer buff, Versus Aim Assist, stability fixes, and more. Gears of War: E-Day 's Multiplayer Beta is entering its second weekend today, following a massive turnout during the first Beta , despite access being limited to those who pre-ordered the game or subscribed to Xbox Game Pass Ultimate. The Coalition recently posted on the official Gears X/Twitter account, outlining a whole bunch of performance tweaks and balance tuning fixes ahead of today's Open Beta, which is set to kick off at: Read th"
+      },
+      "el": {
+        "title": "Το Gears Of War: E-Day Dev ανακοινώνει 10 βελτιώσεις για το Beta Weekend 2",
+        "summary": "Lancer buff, Versus Aim Assist, διορθώσεις σταθερότητας και πολλά άλλα. Η Beta για πολλούς παίκτες του Gears of War: E-Day μπαίνει στο δεύτερο Σαββατοκύριακο σήμερα, μετά από μια τεράστια συμμετοχή κατά τη διάρκεια της πρώτης Beta, παρά το γεγονός ότι η πρόσβαση περιορίζεται σε όσους προπαρήγγειλαν το παιχνίδι ή έχουν εγγραφεί στο Xbox Game Pass Ultimate. Η Coalition δημοσίευσε πρόσφατα στον επίσημο λογαριασμό Gears X/Twitter, περιγράφοντας μια ολόκληρη σειρά από τροποποιήσεις απόδοσης και διορθώσεις ρύθμισης ισορροπίας ενόψει της σημερινής Open Beta, η οποία πρόκειται να ξεκινήσει στις: Διαβάστε το"
+      },
+      "tr": {
+        "title": "Gears Of War: E-Day Geliştirici, Beta Hafta Sonu 2 İçin 10 İyileştirmeyi Duyurdu",
+        "summary": "Lancer güçlendirmesi, Versus Aim Assist, kararlılık düzeltmeleri ve daha fazlası. Gears of War: E-Day'in Çok Oyunculu Betası, erişimin oyunun ön siparişini veren veya Xbox Game Pass Ultimate'a abone olanlarla sınırlı olmasına rağmen, ilk Beta sırasındaki yoğun katılımın ardından bugün ikinci haftasonuna giriyor. Koalisyon yakın zamanda resmi Gears X/Twitter hesabında, şu saatte başlayacak olan bugünkü Açık Beta öncesinde bir dizi performans ayarlaması ve denge ayarlama düzeltmelerinin ana hatlarını çizen bir gönderi paylaştı:"
+      },
+      "ja": {
+        "title": "Gears Of War: E-Day 開発者がベータ ウィークエンド 2 に向けた 10 の改善点を発表",
+        "summary": "ランサーのバフ、対照準アシスト、安定性の修正など。 Gears of War: E-Day のマルチプレイヤー ベータ版は、ゲームを事前注文した人または Xbox Game Pass Ultimate に登録した人にアクセスが制限されていたにもかかわらず、最初のベータ版での大規模な参加者に続いて、本日 2 回目の週末に入ります。 Coalition は最近、Gears X/Twitter の公式アカウントに投稿し、本日のオープン ベータに先立って、パフォーマンスの調整とバランス調整の修正を大量に概説しました。"
+      },
+      "zh": {
+        "title": "战争机器：E-Day 开发者宣布 Beta Weekend 2 的 10 项改进",
+        "summary": "Lancer 增益、对战瞄准辅助、稳定性修复等等。战争机器：E-Day 的多人测试版今天进入第二个周末，尽管第一个测试版期间参与人数众多，但访问仅限于预购游戏或订阅 Xbox Game Pass Ultimate 的玩家。该联盟最近在 Gears X/Twitter 官方帐户上发布了消息，概述了今天的公开测试版之前的一系列性能调整和平衡调整修复，该测试版将于以下时间开始： 阅读"
+      }
+    }
+  },
+  {
+    "id": "b2cb503ed3fede5cd9dda11b2d50559167dc28fa",
+    "title": "Three Games Are Available Today Across Various Tiers Of Xbox Game Pass (August 13)",
+    "summary": "\"Have you seen the dog bowl?\" \"I didn't think he could!\" 🥁. We're back with another Xbox Game Pass update for you all, this time to spotlight the three new additions available today across various tiers of the service. First up to the crease is Cricket 26 , bringing its swinging-wicket-cricket gameplay to every tier bar Essential. Howsat? Want more? Alright, the stunning metroidvania MIO: Memories In Orbit is making the move to Premium today, whilst Sandustry launches on PC and Ultimate - not ba",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/three-games-are-available-today-across-various-tiers-of-xbox-game-pass-august-13",
+    "imageUrl": "https://images.purexbox.com/17d468442c523/large.jpg",
+    "publishedAt": "2026-08-13T10:00:00+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.302802+00:00",
+    "translations": {
+      "en": {
+        "title": "Three Games Are Available Today Across Various Tiers Of Xbox Game Pass (August 13)",
+        "summary": "\"Have you seen the dog bowl?\" \"I didn't think he could!\" 🥁. We're back with another Xbox Game Pass update for you all, this time to spotlight the three new additions available today across various tiers of the service. First up to the crease is Cricket 26 , bringing its swinging-wicket-cricket gameplay to every tier bar Essential. Howsat? Want more? Alright, the stunning metroidvania MIO: Memories In Orbit is making the move to Premium today, whilst Sandustry launches on PC and Ultimate - not ba"
+      },
+      "fr": {
+        "title": "Trois jeux sont disponibles aujourd'hui sur différents niveaux du Xbox Game Pass (13 août)",
+        "summary": "\"Avez-vous vu la gamelle du chien ?\" \"Je ne pensais pas qu'il le pouvait!\" 🥁. Nous sommes de retour avec une autre mise à jour Xbox Game Pass pour vous tous, cette fois pour mettre en lumière les trois nouveaux ajouts disponibles aujourd'hui sur différents niveaux du service. Le premier à se lancer est Cricket 26, apportant son gameplay de cricket swing à chaque barre de niveau Essential. Comment ça s'est passé ? Vous en voulez plus ? D'accord, l'étonnant metroidvania MIO: Memories In Orbit passe aujourd'hui à Premium, tandis que Sandustry est lancé sur PC et Ultimate - pas ba"
+      },
+      "es": {
+        "title": "Tres juegos están disponibles hoy en varios niveles de Xbox Game Pass (13 de agosto)",
+        "summary": "\"¿Has visto el plato para perros?\" \"¡No pensé que pudiera!\" 🥁. Regresamos con otra actualización de Xbox Game Pass para todos ustedes, esta vez para destacar las tres nuevas incorporaciones disponibles hoy en varios niveles del servicio. El primero en llegar es Cricket 26, que lleva su juego de cricket y swing a todos los niveles, excepto Essential. ¿Cómo está? ¿Quieres más? Muy bien, el impresionante metroidvania MIO: Memories In Orbit se está moviendo a Premium hoy, mientras que Sandustry se lanza en PC y Ultimate, no ba"
+      },
+      "it": {
+        "title": "Tre giochi sono disponibili oggi in vari livelli di Xbox Game Pass (13 agosto)",
+        "summary": "\"Hai visto la ciotola del cane?\" \"Non pensavo che potesse!\" 🥁. Siamo tornati con un altro aggiornamento di Xbox Game Pass per tutti voi, questa volta per mettere in luce le tre nuove aggiunte disponibili oggi su vari livelli del servizio. Il primo a raggiungere l'obiettivo è Cricket 26, che porta il suo gameplay di cricket oscillante a tutti i livelli Essential. Come sta? Vuoi di più? Va bene, lo straordinario metroidvania MIO: Memories In Orbit passa oggi a Premium, mentre Sandustry verrà lanciato su PC e Ultimate, non solo"
+      },
+      "de": {
+        "title": "Drei Spiele sind heute in verschiedenen Stufen des Xbox Game Pass verfügbar (13. August)",
+        "summary": "„Hast du den Hundenapf gesehen?“ „Ich hätte nicht gedacht, dass er es könnte!“ 🥁. Wir sind zurück mit einem weiteren Xbox Game Pass-Update für Sie alle, dieses Mal, um die drei neuen Ergänzungen hervorzuheben, die heute in verschiedenen Stufen des Dienstes verfügbar sind. An erster Stelle steht Cricket 26, das sein Swinging-Wicket-Cricket-Gameplay in jede Spielklasse bringt. Wie ist's? Lust auf mehr? Okay, das atemberaubende Metroidvania MIO: Memories In Orbit wechselt heute zu Premium, während Sandustry auf PC und Ultimate erscheint – nicht auf BA"
+      },
+      "pt": {
+        "title": "Três jogos estão disponíveis hoje em vários níveis do Xbox Game Pass (13 de agosto)",
+        "summary": "\"Você viu a tigela do cachorro?\" \"Eu não pensei que ele pudesse!\" 🥁. Estamos de volta com outra atualização do Xbox Game Pass para todos vocês, desta vez para destacar as três novas adições disponíveis hoje em vários níveis do serviço. O primeiro a chegar é Cricket 26, trazendo sua jogabilidade de críquete oscilante para cada barra de nível Essential. Como está? Quer mais? Tudo bem, o impressionante metroidvania MIO: Memories In Orbit está migrando para Premium hoje, enquanto Sandustry é lançado para PC e Ultimate - não ba"
+      },
+      "ru": {
+        "title": "Сегодня доступны три игры на разных уровнях Xbox Game Pass (13 августа)",
+        "summary": "«Вы видели собачью миску?» «Я не думал, что он сможет!» 🥁. Мы вернулись с еще одним обновлением Xbox Game Pass для всех вас, на этот раз чтобы рассказать о трех новых дополнениях, доступных сегодня на различных уровнях сервиса. Первым на пике популярности является Cricket 26, в котором игровой процесс с качающейся калиткой и крикетом доступен на всех уровнях Essential. Как дела? Хотите больше? Хорошо, потрясающая метроидвания MIO: Memories In Orbit сегодня переходит в Премиум, а Sandustry запускается на ПК и Ultimate, а не только"
+      },
+      "el": {
+        "title": "Τρία παιχνίδια είναι διαθέσιμα σήμερα σε διάφορα επίπεδα του Xbox Game Pass (13 Αυγούστου)",
+        "summary": "«Έχεις δει το μπολ του σκύλου;» «Δεν πίστευα ότι μπορούσε!» 🥁. Επιστρέψαμε με άλλη μια ενημέρωση Xbox Game Pass για όλους σας, αυτή τη φορά για να αναδείξουμε τις τρεις νέες προσθήκες που είναι διαθέσιμες σήμερα σε διάφορα επίπεδα της υπηρεσίας. Πρώτο μέχρι το τσαλάκωμα είναι το Cricket 26, φέρνοντας το παιχνίδι swinging-wicket-cricket σε κάθε βαθμίδα Essential. Howsat; Θέλετε περισσότερα; Εντάξει, το εκπληκτικό metroidvania MIO: Memories In Orbit κάνει τη μετάβαση στο Premium σήμερα, ενώ το Sandustry κυκλοφορεί σε PC και Ultimate - όχι ba"
+      },
+      "tr": {
+        "title": "Bugün Xbox Game Pass'in Çeşitli Seviyelerinde Üç Oyun Mevcut (13 Ağustos)",
+        "summary": "\"Köpek mama kabını gördün mü?\" \"Yapabileceğini düşünmemiştim!\" 🥁. Hepiniz için başka bir Xbox Game Pass güncellemesiyle geri döndük; bu sefer hizmetin çeşitli katmanlarında bugün mevcut olan üç yeni eklemeye dikkat çekmek için. İlk olarak Cricket 26, sallanan wicket-kriket oynanışını her seviye çubuğu Essential'a taşıyor. Nasıl? Daha fazlasını ister misin? Tamam, büyüleyici metroidvania MIO: Memories In Orbit bugün Premium'a geçiş yaparken, Sandustry PC ve Ultimate için çıkıyor - değil"
+      },
+      "ja": {
+        "title": "Xbox Game Pass のさまざまなレベルで 3 つのゲームが本日利用可能になります (8 月 13 日)",
+        "summary": "「犬用のボウルを見たことがありますか？」 「彼ができるとは思わなかった！」 🥁。皆さんに Xbox Game Pass のアップデートをもう一度お届けします。今回は、サービスのさまざまなレベルで今日利用できる 3 つの新しい追加機能に焦点を当てます。最初のクリースは Cricket 26 で、スウィングウィケットクリケットのゲームプレイをすべてのティアバー Essential にもたらします。ハウサット？もっと知りたいですか?さて、見事なメトロイドヴァニア MIO: Memories In Orbit は本日プレミアムに移行しますが、Sandustry は PC と Ultimate でリリースされます - BA ではありません"
+      },
+      "zh": {
+        "title": "今天，三款游戏在不同级别的 Xbox Game Pass 上推出（8 月 13 日）",
+        "summary": "“你看到狗碗了吗？” “我没想到他可以！” 🥁。我们再次为大家带来了 Xbox Game Pass 更新，这一次重点介绍了今天在各个服务级别上提供的三个新功能。首先登场的是 Cricket 26，将摇摆板球游戏带到了 Essential 的各个级别的酒吧。怎么样？想要更多吗？好吧，令人惊叹的银河恶魔城 MIO：轨道记忆今天将转向高级版，而 Sandustry 则在 PC 和旗舰版上推出 - 而不是 ba"
+      }
+    }
+  },
+  {
     "id": "48d6d80a8d82ef8fc92cf3ade62ba769e8b6021a",
     "title": "Mind Diver coming to PS5, Switch 2 on August 27",
     "summary": "Publisher PLAYISM and developer Indoor Sunglasses will release PlayStation 5 and Switch 2 versions of &hellip;",
@@ -8,7 +692,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/mind-diver-coming-to-ps5-switch-2-on-august-27",
     "imageUrl": "",
     "publishedAt": "2026-08-13T04:00:57+00:00",
-    "scrapedAt": "2026-08-13T05:00:09.520044+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422566+00:00",
     "translations": {
       "en": {
         "title": "Mind Diver coming to PS5, Switch 2 on August 27",
@@ -65,7 +749,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/pachinko-inspired-roguelike-game-high-roller-penny-announced-for-pc",
     "imageUrl": "",
     "publishedAt": "2026-08-13T03:15:17+00:00",
-    "scrapedAt": "2026-08-13T05:00:09.520080+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422600+00:00",
     "translations": {
       "en": {
         "title": "Pachinko-inspired roguelike game High Roller Penny announced for PC",
@@ -122,7 +806,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/limited-run-announces-lord-of-the-rings-war-in-the-north-physical-release",
     "imageUrl": "https://images.nintendolife.com/670087004e318/large.jpg",
     "publishedAt": "2026-08-13T02:55:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.668218+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.947346+00:00",
     "translations": {
       "en": {
         "title": "Limited Run Announces Lord Of The Rings: War In The North Physical Release",
@@ -179,7 +863,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/angeline-era-coming-to-ps5-xbox-series-ps4-xbox-one-and-switch-on-september-2",
     "imageUrl": "",
     "publishedAt": "2026-08-12T21:00:56+00:00",
-    "scrapedAt": "2026-08-13T05:00:09.520137+00:00",
+    "scrapedAt": "2026-08-14T04:55:00.422666+00:00",
     "translations": {
       "en": {
         "title": "Angeline Era coming to PS5, Xbox Series, PS4, Xbox One, and Switch on September 2",
@@ -236,7 +920,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/12/warner-bros-confirms-hogwarts-legacy-2-is-in-development/",
     "imageUrl": "",
     "publishedAt": "2026-08-12T20:19:47+00:00",
-    "scrapedAt": "2026-08-13T04:59:51.695012+00:00",
+    "scrapedAt": "2026-08-14T04:54:44.746376+00:00",
     "translations": {
       "en": {
         "title": "Warner Bros confirms Hogwarts Legacy 2 is in development",
@@ -293,7 +977,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/kikis-delivery-service-meets-akira-in-crescent-county-launching-summer-27",
     "imageUrl": "https://images.nintendolife.com/c31b23a8a19d5/large.jpg",
     "publishedAt": "2026-08-12T20:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.668373+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.947548+00:00",
     "translations": {
       "en": {
         "title": "Kiki's Delivery Service Meets Akira in 'Crescent County', Launching Summer '27",
@@ -350,7 +1034,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/precognition-a-new-horror-from-sam-barlow-and-brandon-cronenberg-is-confirmed-for-switch-2",
     "imageUrl": "https://images.nintendolife.com/c24455fd7d213/large.jpg",
     "publishedAt": "2026-08-12T19:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.668453+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.947650+00:00",
     "translations": {
       "en": {
         "title": "Precognition, A New Horror From Sam Barlow And Brandon Cronenberg, Is Confirmed For Switch 2",
@@ -464,7 +1148,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/no-more-room-in-hell-2-is-out-now-bringing-its-intense-co-op-survival-fps-to-xbox",
     "imageUrl": "https://images.purexbox.com/ac5db1b7ed27a/large.jpg",
     "publishedAt": "2026-08-12T18:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:59:01.814099+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.302944+00:00",
     "translations": {
       "en": {
         "title": "No More Room In Hell 2 Is Out Now, Bringing Its 'Intense' Co-Op Survival FPS To Xbox",
@@ -521,7 +1205,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/2-more-truly-fascinating-retro-games-are-coming-to-ps5-this-week",
     "imageUrl": "https://images.pushsquare.com/5da8ad20ffd82/large.jpg",
     "publishedAt": "2026-08-12T17:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.052921+00:00",
+    "scrapedAt": "2026-08-14T04:53:22.342453+00:00",
     "translations": {
       "en": {
         "title": "2 More Truly Fascinating Retro Games Are Coming to PS5 This Week",
@@ -692,7 +1376,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-unveils-two-new-official-controllers-for-gears-of-war-e-day",
     "imageUrl": "https://images.purexbox.com/7c8499923adff/large.jpg",
     "publishedAt": "2026-08-12T14:21:00+00:00",
-    "scrapedAt": "2026-08-13T04:59:01.814248+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.303126+00:00",
     "translations": {
       "en": {
         "title": "Xbox Unveils Two New Official Controllers For Gears Of War E-Day",
@@ -806,7 +1490,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/aspyr-promises-more-lord-of-the-rings-revivals-in-the-future",
     "imageUrl": "https://images.nintendolife.com/15e73a43ef6a0/large.jpg",
     "publishedAt": "2026-08-12T14:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.668807+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.948070+00:00",
     "translations": {
       "en": {
         "title": "Aspyr Promises More Lord Of The Rings Revivals In The Future",
@@ -863,7 +1547,7 @@
     "sourceUrl": "https://retrododo.com/pokemon-ruby-sapphire-emerald-are-reportedly-coming-to-switch-2-this-year/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/pokemon-gen-3.jpg",
     "publishedAt": "2026-08-12T13:39:27+00:00",
-    "scrapedAt": "2026-08-13T04:56:37.841549+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.465709+00:00",
     "translations": {
       "en": {
         "title": "Pokémon Ruby, Sapphire, & Emerald Are Reportedly Coming To Switch 2 This Year",
@@ -920,7 +1604,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/bubsy-4d-black-hole-free-update-adds-15-levels-new-outfits-and-more",
     "imageUrl": "https://images.nintendolife.com/50c085a58359e/large.jpg",
     "publishedAt": "2026-08-12T13:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.668841+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.948113+00:00",
     "translations": {
       "en": {
         "title": "Bubsy 4D 'Black Hole' Free Update Adds 15 Levels, New Outfits, And More",
@@ -977,7 +1661,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/fans-can-try-out-the-evercade-nexus-early-at-this-exclusive-event-taking-place-next-month",
     "imageUrl": "https://images.timeextension.com/b9627071f6a55/large.jpg",
     "publishedAt": "2026-08-12T13:05:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:17.640346+00:00",
+    "scrapedAt": "2026-08-14T04:52:48.273544+00:00",
     "translations": {
       "en": {
         "title": "Fans Can Try Out The Evercade Nexus Early At This Exclusive Event, Taking Place Next Month",
@@ -1091,7 +1775,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/oblivion-remastered-could-finally-be-fixed-on-ps5-as-bethesda-promises-optimisations-patch",
     "imageUrl": "https://images.pushsquare.com/675611a06a036/large.jpg",
     "publishedAt": "2026-08-12T12:45:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.053337+00:00",
+    "scrapedAt": "2026-08-14T04:53:22.342944+00:00",
     "translations": {
       "en": {
         "title": "Oblivion Remastered Could Finally Be Fixed on PS5 as Bethesda Promises 'Optimisations' Patch",
@@ -1205,7 +1889,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/two-games-are-available-today-across-various-tiers-of-xbox-game-pass-august-12",
     "imageUrl": "https://images.purexbox.com/9a6821e0a461f/large.jpg",
     "publishedAt": "2026-08-12T10:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:59:01.814502+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.303429+00:00",
     "translations": {
       "en": {
         "title": "Two Games Are Available Today Across Various Tiers Of Xbox Game Pass (August 12)",
@@ -1262,7 +1946,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/state-of-play-for-phantom-blade-zero-announced-for-next-week-11-minute-trailer-revealed",
     "imageUrl": "https://images.pushsquare.com/5b3a8cd3a41dc/large.jpg",
     "publishedAt": "2026-08-12T08:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.053527+00:00",
+    "scrapedAt": "2026-08-14T04:53:22.343172+00:00",
     "translations": {
       "en": {
         "title": "State of Play for Phantom Blade Zero Announced for Next Week, 11-Minute Trailer Revealed",
@@ -1433,7 +2117,7 @@
     "sourceUrl": "https://retrododo.com/pre-orders-for-gbc-pokemon-esque-game-pachipals-go/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/incube8games-pachipals.webp",
     "publishedAt": "2026-08-11T18:00:22+00:00",
-    "scrapedAt": "2026-08-13T04:56:37.841733+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.465919+00:00",
     "translations": {
       "en": {
         "title": "Pre-orders For GBC Pokémon-esque Game PachiPals Are Now Live",
@@ -1775,7 +2459,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/more-avid-consumers-are-pre-ordering-usd100-gta-6-edition-over-the-cheaper-version",
     "imageUrl": "https://images.purexbox.com/faaab2f236989/large.jpg",
     "publishedAt": "2026-08-11T12:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:59:01.814946+00:00",
+    "scrapedAt": "2026-08-14T04:53:40.303993+00:00",
     "translations": {
       "en": {
         "title": "More 'Avid Consumers' Are Pre-Ordering $100 GTA 6 Edition Over The Cheaper Version",
@@ -1946,7 +2630,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/le-producteur-de-persona-4-revival-a-tres-envie-de-faire-des-remakes-de-persona-1-et-2-3050871599.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871599/le-producteur-de-persona-4-revival-a-tres-envie-de-faire-des-remakes-de-persona-1-et-2-6ff257c6__800_800__701-0-1780-1080.jpg",
     "publishedAt": "2026-08-11T09:58:00+00:00",
-    "scrapedAt": "2026-08-13T05:02:07.934756+00:00",
+    "scrapedAt": "2026-08-14T04:56:14.286640+00:00",
     "translations": {
       "fr": {
         "title": "Le producteur de Persona 4 Revival a très envie de faire des remakes de Persona 1 et 2",
@@ -2231,7 +2915,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/ds-emulator-melondualds-just-got-a-rebrand-and-a-lighter-sibling-for-android-handhelds-with-limited-performance",
     "imageUrl": "https://images.timeextension.com/39f9a9bd7d8a5/large.jpg",
     "publishedAt": "2026-08-10T11:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:17.641296+00:00",
+    "scrapedAt": "2026-08-14T04:52:48.274621+00:00",
     "translations": {
       "en": {
         "title": "DS Emulator MelonDualDS Just Got A Rebrand & A Lighter Sibling \"For Android Handhelds With Limited Performance\"",
@@ -8216,7 +8900,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/30/out-now-in-japan-one-piece-demon-slayer/",
     "imageUrl": "",
     "publishedAt": "2026-07-30T14:36:01+00:00",
-    "scrapedAt": "2026-08-13T04:56:37.599257+00:00",
+    "scrapedAt": "2026-08-14T04:53:21.180432+00:00",
     "translations": {
       "en": {
         "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
@@ -9128,7 +9812,7 @@
     "sourceUrl": "https://the-retrogamer.com/vectaguard-sur-pc-le-vectoriel-ressuscite-par-tony-barnes/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T12:50:36+00:00",
-    "scrapedAt": "2026-08-13T05:02:04.837425+00:00",
+    "scrapedAt": "2026-08-14T04:56:11.216801+00:00",
     "translations": {
       "fr": {
         "title": "VectaGuard sur PC : Le vectoriel ressuscité par Tony Barnes",
@@ -11750,7 +12434,7 @@
     "sourceUrl": "https://the-retrogamer.com/arcade1up-devoile-sa-borne-outrun-supreme-le-volant-et-le-pedalier-enfin-de-retour/",
     "imageUrl": "",
     "publishedAt": "2026-07-24T08:52:29+00:00",
-    "scrapedAt": "2026-08-13T05:02:04.837533+00:00",
+    "scrapedAt": "2026-08-14T04:56:11.216941+00:00",
     "translations": {
       "fr": {
         "title": "Arcade1Up dévoile sa borne OutRun Supreme : le volant et le pédalier enfin de retour",
@@ -11909,120 +12593,6 @@
       "zh": {
         "title": "指南：2026 年新 PS4 游戏发布日期",
         "summary": "2026 年所有即将推出的 PS4 发布日期。 2025 年有哪些新的 PS4 游戏发布日期即将到来？ PS4 无疑即将寿终正寝，但仍有大量软件正在开发中，我们将在此页面上跟踪所有 2026 年 PS4 发布日期。请记住，据我们所知，这些信息是准确的，并且会定期更新。但是，发行商可能会更改其发行计划，因此日期可能会发生变化。阅读全文"
-      }
-    }
-  },
-  {
-    "id": "2c18a1e1dba2fedf388665b9b724fb5dde8f1abc",
-    "title": "Crime-solving party game Batman: Caped Crusader – Chronicles announced for Luna",
-    "summary": "Amazon Games has announced Batman: Caped Crusader &#8211; Chronicles is a cooperative crime-solving party game &hellip;",
-    "category": "GAME_RELEASE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/07/crime-solving-party-game-batman-caped-crusader-chronicles-announced-for-luna",
-    "imageUrl": "",
-    "publishedAt": "2026-07-23T23:30:51+00:00",
-    "scrapedAt": "2026-07-28T05:53:57.334946+00:00",
-    "translations": {
-      "en": {
-        "title": "Crime-solving party game Batman: Caped Crusader – Chronicles announced for Luna",
-        "summary": "Amazon Games has announced Batman: Caped Crusader &#8211; Chronicles is a cooperative crime-solving party game &hellip;"
-      },
-      "fr": {
-        "title": "Batman: Caped Crusader – Jeu de société de résolution de crime – Chroniques annoncé pour Luna",
-        "summary": "Amazon Games a annoncé Batman: Caped Crusader &#8211; Chronicles est un jeu de société coopératif de résolution de crime &hellip;"
-      },
-      "es": {
-        "title": "Batman: Caped Crusader – Chronicles anunciado para Luna",
-        "summary": "Amazon Games ha anunciado Batman: Caped Crusader &#8211; Chronicles es un juego cooperativo para resolver crímenes &hellip;"
-      },
-      "it": {
-        "title": "Annunciato per Luna il party game di risoluzione del crimine Batman: Caped Crusader – Chronicles",
-        "summary": "Amazon Games ha annunciato Batman: Caped Crusader &#8211; Chronicles è un gioco di società cooperativo per la risoluzione del crimine &hellip;"
-      },
-      "de": {
-        "title": "Das Krimi-Partyspiel Batman: Caped Crusader – Chronicles ist für Luna angekündigt",
-        "summary": "Amazon Games hat Batman: Caped Crusader &#8211; Chronicles ist ein kooperatives Partyspiel zur Verbrechensaufklärung &hellip;"
-      },
-      "pt": {
-        "title": "Jogo de festa para resolução de crimes Batman: Caped Crusader – Chronicles anunciado para Luna",
-        "summary": "Amazon Games anunciou Batman: Caped Crusader &#8211; Chronicles é um jogo cooperativo de resolução de crimes em grupo &hellip;"
-      },
-      "ru": {
-        "title": "Игра для вечеринок по раскрытию преступлений Batman: Caped Crusader – Chronicles анонсирована для Луны",
-        "summary": "Amazon Games анонсировала Batman: Caped Crusader &#8211; Chronicles — это совместная командная игра по раскрытию преступлений &hellip;"
-      },
-      "el": {
-        "title": "Παιχνίδι πάρτι για την επίλυση εγκλημάτων Batman: Caped Crusader – Chronicles ανακοινώθηκε για το Luna",
-        "summary": "Η Amazon Games ανακοίνωσε το Batman: Caped Crusader &#8211; Το Chronicles είναι ένα συνεργατικό πάρτι για την επίλυση εγκλημάτων &hellip;"
-      },
-      "tr": {
-        "title": "Suç çözme parti oyunu Batman: Caped Crusader – Chronicles Luna için duyuruldu",
-        "summary": "Amazon Games, Batman: Caped Crusader'ın &#8211; Chronicles, işbirliğine dayalı bir suç çözme parti oyunudur."
-      },
-      "ja": {
-        "title": "犯罪解決パーティーゲーム「バットマン：ケープド・クルセイダー – クロニクルズ」がルナ向けに発表",
-        "summary": "Amazon Games はバットマン: ケープド クルセイダー &#8211; を発表しました。 Chronicles は、協力して犯罪を解決するパーティー ゲームです。"
-      },
-      "zh": {
-        "title": "破案派对游戏《蝙蝠侠：斗篷十字军 – 编年史》宣布推出《露娜》",
-        "summary": "亚马逊游戏宣布推出《蝙蝠侠：披风十字军》 Chronicles 是一款合作侦破犯罪的派对游戏……"
-      }
-    }
-  },
-  {
-    "id": "f17f1c3c6af162621dd5e72eec930331b14dec3b",
-    "title": "Xbox Introduces Free Game Streaming With Ads, Outlines Five Principles They'll Adhere To",
-    "summary": "Rolling out now as a \"test\" for Xbox Insiders. There have been rumours for a while now that Xbox might be planning to introduce a form of ad-supported tier for Xbox Cloud Gaming , and they've now announced that they're introducing the idea as a \"test\" with Xbox Insiders . Basically, the way it works is that you'll get a one-hour slot to stream \"select games from your library\" through the cloud without requiring any form of Xbox Game Pass membership. Ads will play \"before sessions begin\" and then",
-    "category": "GAME_RELEASE",
-    "sourceName": "Pure Xbox",
-    "sourceUrl": "https://www.purexbox.com/news/2026/07/xbox-introduces-free-game-streaming-with-ads-outlines-five-principles-theyll-adhere-to",
-    "imageUrl": "https://images.purexbox.com/b76c6c69371bf/large.jpg",
-    "publishedAt": "2026-07-23T16:45:00+00:00",
-    "scrapedAt": "2026-07-28T05:53:34.317310+00:00",
-    "translations": {
-      "en": {
-        "title": "Xbox Introduces Free Game Streaming With Ads, Outlines Five Principles They'll Adhere To",
-        "summary": "Rolling out now as a \"test\" for Xbox Insiders. There have been rumours for a while now that Xbox might be planning to introduce a form of ad-supported tier for Xbox Cloud Gaming , and they've now announced that they're introducing the idea as a \"test\" with Xbox Insiders . Basically, the way it works is that you'll get a one-hour slot to stream \"select games from your library\" through the cloud without requiring any form of Xbox Game Pass membership. Ads will play \"before sessions begin\" and then"
-      },
-      "fr": {
-        "title": "Xbox présente le streaming de jeux gratuit avec des publicités et décrit cinq principes auxquels ils adhéreront",
-        "summary": "Déploiement maintenant en tant que « test » pour les Xbox Insiders. Il y a eu des rumeurs depuis un certain temps maintenant selon lesquelles Xbox pourrait envisager d'introduire une forme de niveau financé par la publicité pour Xbox Cloud Gaming, et ils ont maintenant annoncé qu'ils introduisaient l'idée comme un \"test\" avec Xbox Insiders. Fondamentalement, la façon dont cela fonctionne est que vous bénéficierez d'un créneau d'une heure pour diffuser \"certains jeux de votre bibliothèque\" via le cloud sans nécessiter aucune forme d'abonnement Xbox Game Pass. Les annonces seront diffusées \"avant le début des sessions\", puis"
-      },
-      "es": {
-        "title": "Xbox presenta la transmisión gratuita de juegos con anuncios y describe cinco principios a los que se adherirán",
-        "summary": "Implementado ahora como una \"prueba\" para Xbox Insiders. Ha habido rumores desde hace algún tiempo de que Xbox podría estar planeando introducir una forma de nivel con publicidad para Xbox Cloud Gaming, y ahora han anunciado que están presentando la idea como una \"prueba\" con Xbox Insiders. Básicamente, la forma en que funciona es que obtendrás un espacio de una hora para transmitir \"juegos seleccionados de tu biblioteca\" a través de la nube sin necesidad de ningún tipo de membresía de Xbox Game Pass. Los anuncios se reproducirán \"antes de que comiencen las sesiones\" y luego"
-      },
-      "it": {
-        "title": "Xbox presenta lo streaming di giochi gratuito con annunci pubblicitari e delinea cinque principi a cui aderiranno",
-        "summary": "Disponibile ora come \"test\" per Xbox Insider. Da un po' di tempo circolano voci secondo cui Xbox potrebbe pianificare di introdurre una forma di livello supportato da pubblicità per Xbox Cloud Gaming e ora hanno annunciato che stanno introducendo l'idea come \"test\" con Xbox Insiders. Fondamentalmente, il modo in cui funziona è che otterrai uno slot di un'ora per eseguire lo streaming di \"giochi selezionati dalla tua libreria\" attraverso il cloud senza richiedere alcuna forma di abbonamento Xbox Game Pass. Gli annunci verranno riprodotti \"prima dell'inizio delle sessioni\" e poi"
-      },
-      "de": {
-        "title": "Xbox führt kostenloses Spiele-Streaming mit Werbung ein und stellt fünf Prinzipien vor, an die sie sich halten werden",
-        "summary": "Wird jetzt als „Test“ für Xbox Insider eingeführt. Es gibt schon seit einiger Zeit Gerüchte, dass Xbox plant, eine Art werbefinanziertes Level für Xbox Cloud Gaming einzuführen, und sie haben nun angekündigt, dass sie die Idee als „Test“ mit Xbox Insiders vorstellen werden. Grundsätzlich funktioniert es so, dass Sie einen einstündigen Slot erhalten, um „ausgewählte Spiele aus Ihrer Bibliothek“ über die Cloud zu streamen, ohne dass eine Xbox Game Pass-Mitgliedschaft erforderlich ist. Anzeigen werden „bevor die Sitzungen beginnen“ und dann abgespielt"
-      },
-      "pt": {
-        "title": "Xbox apresenta streaming gratuito de jogos com anúncios e descreve cinco princípios que eles seguirão",
-        "summary": "Lançado agora como um “teste” para Xbox Insiders. Já há algum tempo que há rumores de que o Xbox pode estar planejando introduzir uma forma de nível suportado por anúncios para Xbox Cloud Gaming, e agora eles anunciaram que estão apresentando a ideia como um “teste” com Xbox Insiders. Basicamente, a forma como funciona é que você terá um intervalo de uma hora para transmitir “jogos selecionados da sua biblioteca” através da nuvem, sem exigir qualquer forma de assinatura do Xbox Game Pass. Os anúncios serão reproduzidos \"antes do início das sessões\" e depois"
-      },
-      "ru": {
-        "title": "Xbox представляет бесплатную потоковую передачу игр с рекламой и выделяет пять принципов, которых они будут придерживаться",
-        "summary": "Выпускается сейчас в качестве «теста» для инсайдеров Xbox. Некоторое время ходили слухи, что Xbox, возможно, планирует представить своего рода уровень с рекламной поддержкой для Xbox Cloud Gaming, и теперь они объявили, что представляют эту идею в качестве «теста» с инсайдерами Xbox. По сути, это работает так: вы получаете один час для потоковой передачи «выбранных игр из вашей библиотеки» через облако без необходимости какой-либо формы членства в Xbox Game Pass. Объявления будут воспроизводиться «до начала сеансов», а затем"
-      },
-      "el": {
-        "title": "Το Xbox εισάγει δωρεάν ροή παιχνιδιών με διαφημίσεις, περιγράφει πέντε αρχές που θα τηρούν",
-        "summary": "Κυκλοφορεί τώρα ως «δοκιμή» για το Xbox Insiders. Υπήρχαν φήμες εδώ και καιρό ότι το Xbox μπορεί να σχεδιάζει να εισαγάγει μια μορφή επιπέδου που υποστηρίζεται από διαφημίσεις για το Xbox Cloud Gaming και τώρα έχουν ανακοινώσει ότι παρουσιάζουν την ιδέα ως \"δοκιμή\" με το Xbox Insiders . Βασικά, ο τρόπος με τον οποίο λειτουργεί είναι ότι θα έχετε μια ώρα υποδοχής για να μεταδώσετε ροή \"επιλογών παιχνιδιών από τη βιβλιοθήκη σας\" μέσω του cloud χωρίς να απαιτείται καμία μορφή συνδρομής στο Xbox Game Pass. Οι διαφημίσεις θα παίζουν \"πριν από την έναρξη των συνεδριών\" και μετά"
-      },
-      "tr": {
-        "title": "Xbox, Reklamlarla Ücretsiz Oyun Yayınını Tanıtıyor ve Uyacağı Beş İlkeyi Açıklıyor",
-        "summary": "Şimdi Xbox Insider'lar için bir \"test\" olarak kullanıma sunuluyor. Bir süredir Xbox'ın Xbox Cloud Gaming için bir tür reklam destekli katman sunmayı planlayabileceğine dair söylentiler vardı ve şimdi bu fikri Xbox Insiders ile bir \"test\" olarak tanıtacaklarını duyurdular. Temel olarak çalışma şekli, herhangi bir Xbox Game Pass üyeliği gerektirmeden bulut üzerinden \"kitaplığınızdan seçilen oyunları\" yayınlamak için bir saatlik bir yuvaya sahip olmanızdır. Reklamlar \"oturumlar başlamadan önce\" oynatılacak ve ardından"
-      },
-      "ja": {
-        "title": "Xbox が広告付きの無料ゲーム ストリーミングを導入、遵守する 5 つの原則を概説",
-        "summary": "Xbox Insider 向けの「テスト」として現在展開されています。 Xbox が Xbox Cloud Gaming に広告サポート枠の導入を計画しているのではないかという噂はしばらく前からありましたが、今回 Xbox Insiders でこのアイデアを「テスト」として導入すると発表しました。基本的にその仕組みは、Xbox Game Pass メンバーシップの形式を必要とせずに、クラウドを通じて「ライブラリから選択したゲーム」をストリーミングするための 1 時間のスロットを取得することです。広告は「セッションの開始前」に再生され、その後"
-      },
-      "zh": {
-        "title": "Xbox 推出带广告的免费游戏流媒体，概述了他们将遵守的五项原则",
-        "summary": "现在作为 Xbox Insider 的“测试”推出。一段时间以来一直有传言称 Xbox 可能计划为 Xbox 云游戏引入某种形式的广告支持层，现在他们宣布将这一想法作为 Xbox Insiders 的“测试”引入。基本上，它的工作原理是，您将获得一小时的时间通过云流式传输“从您的库中选择游戏”，而无需任何形式的 Xbox Game Pass 会员资格。广告将在“会话开始之前”播放，然后"
       }
     }
   },
