@@ -1,5 +1,62 @@
 [
   {
+    "id": "3c6a7886faba75811121c457375b2b4c609d6cdc",
+    "title": "Sally Face 2 announced for consoles, PC, iOS, and Android",
+    "summary": "Portable Moose has announced supernatural, post-apocalypse horror adventure game sequel Sally Face 2. It will &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/08/sally-face-2-announced-for-consoles-pc-ios-and-android",
+    "imageUrl": "",
+    "publishedAt": "2026-08-16T18:00:55+00:00",
+    "scrapedAt": "2026-08-17T03:54:55.054600+00:00",
+    "translations": {
+      "en": {
+        "title": "Sally Face 2 announced for consoles, PC, iOS, and Android",
+        "summary": "Portable Moose has announced supernatural, post-apocalypse horror adventure game sequel Sally Face 2. It will &hellip;"
+      },
+      "fr": {
+        "title": "Sally Face 2 annoncé pour consoles, PC, iOS et Android",
+        "summary": "Portable Moose a annoncé la suite du jeu d'aventure d'horreur surnaturel et post-apocalypse, Sally Face 2. Ce sera &hellip;"
+      },
+      "es": {
+        "title": "Sally Face 2 anunciado para consolas, PC, iOS y Android",
+        "summary": "Portable Moose ha anunciado la secuela del juego de aventuras de terror post-apocalipsis sobrenatural Sally Face 2. &hellip;"
+      },
+      "it": {
+        "title": "Sally Face 2 annunciato per console, PC, iOS e Android",
+        "summary": "Portable Moose ha annunciato il sequel del gioco d'avventura horror soprannaturale post-apocalittico Sally Face 2. &hellip;"
+      },
+      "de": {
+        "title": "Sally Face 2 für Konsolen, PC, iOS und Android angekündigt",
+        "summary": "Portable Moose hat die Fortsetzung des übernatürlichen Post-Apokalypse-Horror-Abenteuerspiels Sally Face 2 angekündigt."
+      },
+      "pt": {
+        "title": "Sally Face 2 anunciado para consoles, PC, iOS e Android",
+        "summary": "Portable Moose anunciou a sequência do jogo de aventura de terror sobrenatural pós-apocalíptico Sally Face 2. Ele irá…"
+      },
+      "ru": {
+        "title": "Sally Face 2 announced for consoles, PC, iOS, and Android",
+        "summary": "Portable Moose has announced supernatural, post-apocalypse horror adventure game sequel Sally Face 2. It will &hellip;"
+      },
+      "el": {
+        "title": "Sally Face 2 announced for consoles, PC, iOS, and Android",
+        "summary": "Portable Moose has announced supernatural, post-apocalypse horror adventure game sequel Sally Face 2. It will &hellip;"
+      },
+      "tr": {
+        "title": "Sally Face 2 konsollar, PC, iOS ve Android için duyuruldu",
+        "summary": "Portable Moose, doğaüstü, kıyamet sonrası korku macera oyunu devamı olan Sally Face 2'yi duyurdu."
+      },
+      "ja": {
+        "title": "Sally Face 2 がコンソール、PC、iOS、Android 向けに発表",
+        "summary": "Portable Moose は、超常現象のポスト黙示録ホラー アドベンチャー ゲームの続編 Sally Face 2 を発表しました。"
+      },
+      "zh": {
+        "title": "Sally Face 2 announced for consoles, PC, iOS, and Android",
+        "summary": "Portable Moose has announced supernatural, post-apocalypse horror adventure game sequel Sally Face 2. It will &hellip;"
+      }
+    }
+  },
+  {
     "id": "01e93b241483b8841d0d75dce7e26bf37e821345",
     "title": "Rare Two-Player Version Of First Arcade Game Up For Auction From Shiny Entertainment Founder",
     "summary": "Computer Space is often regarded as the first commercially distributed arcade machine, and David Perry’s personal two-player unit of this historical artifact is now up for grabs",
@@ -8,7 +65,7 @@
     "sourceUrl": "https://kotaku.com/rare-two-player-version-of-first-arcade-game-up-for-auction-from-shiny-entertainment-founder-2000724719",
     "imageUrl": "https://kotaku.com/app/uploads/2026/08/computerspace-1280x857.jpg",
     "publishedAt": "2026-08-15T18:13:43+00:00",
-    "scrapedAt": "2026-08-16T03:55:09.817780+00:00",
+    "scrapedAt": "2026-08-17T03:55:07.353458+00:00",
     "translations": {
       "en": {
         "title": "Rare Two-Player Version Of First Arcade Game Up For Auction From Shiny Entertainment Founder",
@@ -65,7 +122,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/after-several-ps-store-knock-offs-the-real-tcg-card-shop-simulator-hits-ps5-next-month",
     "imageUrl": "https://images.pushsquare.com/0e87e3f4076dd/large.jpg",
     "publishedAt": "2026-08-15T18:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.066171+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.399707+00:00",
     "translations": {
       "en": {
         "title": "After Several PS Store Knock-Offs, the Real TCG Card Shop Simulator Hits PS5 Next Month",
@@ -122,7 +179,7 @@
     "sourceUrl": "https://www.nintendolife.com/features/talking-point-is-an-analogue-3d-worth-the-money",
     "imageUrl": "https://images.nintendolife.com/ef62d9564a98e/large.jpg",
     "publishedAt": "2026-08-15T15:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:19.533741+00:00",
+    "scrapedAt": "2026-08-17T03:54:52.689427+00:00",
     "translations": {
       "en": {
         "title": "Talking Point: Is An Analogue 3D Worth The Money?",
@@ -179,7 +236,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/four-games-are-confirmed-for-xbox-game-pass-in-september-2026-so-far",
     "imageUrl": "https://images.purexbox.com/a273a9ad14c9b/large.jpg",
     "publishedAt": "2026-08-15T13:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.538146+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.059665+00:00",
     "translations": {
       "en": {
         "title": "Four Games Are Confirmed For Xbox Game Pass In September 2026 So Far",
@@ -236,7 +293,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/a-kingdom-hearts-animated-series-is-coming-soon-to-disney-channel-disney-plus",
     "imageUrl": "https://images.pushsquare.com/84b30fe25cf75/large.jpg",
     "publishedAt": "2026-08-15T12:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.066378+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.399853+00:00",
     "translations": {
       "en": {
         "title": "A Kingdom Hearts Animated Series Is 'Coming Soon' to Disney Channel, Disney Plus",
@@ -293,7 +350,7 @@
     "sourceUrl": "https://www.pushsquare.com/guides/these-25plus-ps5-and-ps-plus-games-are-coming-to-ps5-next-week-17th-23rd-august",
     "imageUrl": "https://images.pushsquare.com/f1f138112547b/large.jpg",
     "publishedAt": "2026-08-15T11:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.066502+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.399950+00:00",
     "translations": {
       "en": {
         "title": "Guide: These 25+ PS5 and PS Plus Games Are Coming to PS5 Next Week (17th-23rd August)",
@@ -350,7 +407,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/pixars-coco-confirmed-for-kingdom-hearts-4-launching-on-ps5-in-late-2027",
     "imageUrl": "https://images.pushsquare.com/fb874b5e25bfd/large.jpg",
     "publishedAt": "2026-08-15T10:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.066560+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.400020+00:00",
     "translations": {
       "en": {
         "title": "Pixar's Coco Confirmed for Kingdom Hearts 4, Launching on PS5 in Late 2027",
@@ -407,7 +464,7 @@
     "sourceUrl": "https://www.pushsquare.com/guides/when-is-the-phantom-blade-zero-state-of-play",
     "imageUrl": "https://images.pushsquare.com/cba4e9c650f67/large.jpg",
     "publishedAt": "2026-08-15T08:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.066677+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.400119+00:00",
     "translations": {
       "en": {
         "title": "Guide: When Is the Phantom Blade Zero State of Play?",
@@ -464,7 +521,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/disney-dreamlight-valley-teases-fourth-expansion-the-keepsake-sea-and-jack-sparrow",
     "imageUrl": "https://images.nintendolife.com/eea9127aa5d17/large.jpg",
     "publishedAt": "2026-08-15T06:05:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:19.533884+00:00",
+    "scrapedAt": "2026-08-17T03:54:52.689540+00:00",
     "translations": {
       "en": {
         "title": "Disney Dreamlight Valley Teases Fourth Expansion 'The Keepsake Sea' And Jack Sparrow",
@@ -521,7 +578,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/disney-kingdom-hearts-anime-series-coming-soon",
     "imageUrl": "https://images.nintendolife.com/2f408e3ce29e2/large.jpg",
     "publishedAt": "2026-08-15T05:05:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:19.533930+00:00",
+    "scrapedAt": "2026-08-17T03:54:52.689576+00:00",
     "translations": {
       "en": {
         "title": "Disney Kingdom Hearts Anime Series \"Coming Soon\"",
@@ -578,7 +635,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/15/kingdom-hearts-4-launches-late-2027-anime-series-announced-for-disney/",
     "imageUrl": "",
     "publishedAt": "2026-08-15T03:34:51+00:00",
-    "scrapedAt": "2026-08-16T03:54:35.168504+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.661339+00:00",
     "translations": {
       "en": {
         "title": "Kingdom Hearts 4 launches late 2027, anime series announced for Disney+",
@@ -635,7 +692,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/the-simpsons-hit-and-run-could-be-making-a-return-in-some-form",
     "imageUrl": "https://images.nintendolife.com/5e8013af479e7/large.jpg",
     "publishedAt": "2026-08-15T02:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:19.533983+00:00",
+    "scrapedAt": "2026-08-17T03:54:52.689616+00:00",
     "translations": {
       "en": {
         "title": "The Simpsons Hit & Run Could Be Making A Return \"In Some Form\"",
@@ -749,7 +806,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/ayaneo-reveals-yet-another-konkr-pocket-advance-variant-but-you-cant-buy-it",
     "imageUrl": "https://images.timeextension.com/480a1ef554d4c/large.jpg",
     "publishedAt": "2026-08-14T17:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:17.033978+00:00",
+    "scrapedAt": "2026-08-17T03:54:49.485240+00:00",
     "translations": {
       "en": {
         "title": "AYANEO Reveals Yet Another KONKR Pocket Advance Variant, But You Can't Buy It",
@@ -863,7 +920,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/narrative-driven-fantasy-action-rpg-bringer-announced-for-ps5-pc-ios-and-android",
     "imageUrl": "",
     "publishedAt": "2026-08-14T08:45:58+00:00",
-    "scrapedAt": "2026-08-16T03:54:35.402931+00:00",
+    "scrapedAt": "2026-08-17T03:54:55.054879+00:00",
     "translations": {
       "en": {
         "title": "Narrative-driven fantasy action RPG Bringer announced for PS5, PC, iOS, and Android",
@@ -920,7 +977,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/platonica-space-coming-to-switch-on-august-27",
     "imageUrl": "",
     "publishedAt": "2026-08-14T03:00:38+00:00",
-    "scrapedAt": "2026-08-16T03:54:35.403000+00:00",
+    "scrapedAt": "2026-08-17T03:54:55.054930+00:00",
     "translations": {
       "en": {
         "title": "PLATONICA SPACE coming to Switch on August 27",
@@ -977,7 +1034,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/high-on-life-vr-announced-for-ps-vr2-pc-and-quest",
     "imageUrl": "",
     "publishedAt": "2026-08-13T18:50:23+00:00",
-    "scrapedAt": "2026-08-16T03:54:35.403132+00:00",
+    "scrapedAt": "2026-08-17T03:54:55.055042+00:00",
     "translations": {
       "en": {
         "title": "High On Life VR announced for PS VR2, PC, and Quest",
@@ -1205,7 +1262,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/still-not-sold-on-dawnwalker-dev-presents-everything-you-need-to-know-about-the-open-world-rpg",
     "imageUrl": "https://images.pushsquare.com/954ad31eb8890/large.jpg",
     "publishedAt": "2026-08-13T15:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:53:03.067552+00:00",
+    "scrapedAt": "2026-08-17T03:54:53.400815+00:00",
     "translations": {
       "en": {
         "title": "Still Not Sold on Dawnwalker? Dev Presents 'Everything You Need to Know' About the Open World RPG",
@@ -1319,7 +1376,7 @@
     "sourceUrl": "https://www.timeextension.com/reviews/konkr-pocket-advance-the-nintendo-gba-perfected",
     "imageUrl": "https://images.timeextension.com/61f561aa7dd56/large.jpg",
     "publishedAt": "2026-08-13T14:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:17.034829+00:00",
+    "scrapedAt": "2026-08-17T03:54:49.485919+00:00",
     "translations": {
       "en": {
         "title": "Review: KONKR Pocket Advance - The Nintendo GBA, Perfected",
@@ -1376,7 +1433,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/this-kingdom-hearts-inspired-platformer-is-out-now-on-xbox-and-reviews-are-looking-great",
     "imageUrl": "https://images.purexbox.com/4b65fe5ac3901/large.jpg",
     "publishedAt": "2026-08-13T14:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.539359+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.060598+00:00",
     "translations": {
       "en": {
         "title": "This Kingdom Hearts-Inspired Platformer Is Out Now On Xbox, And Reviews Are Looking Great",
@@ -1433,7 +1490,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/roundup-all-the-xbox-reveals-from-the-kinetic-publishing-showcase-2026",
     "imageUrl": "https://images.purexbox.com/326ed60855b49/large.jpg",
     "publishedAt": "2026-08-13T13:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.539430+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.060652+00:00",
     "translations": {
       "en": {
         "title": "Roundup: All The Xbox Reveals From The Kinetic Publishing Showcase 2026",
@@ -1604,7 +1661,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/gears-of-war-e-day-dev-announces-10-improvements-for-beta-weekend-2",
     "imageUrl": "https://images.purexbox.com/a5bda43409e10/large.jpg",
     "publishedAt": "2026-08-13T11:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.539499+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.060707+00:00",
     "translations": {
       "en": {
         "title": "Gears Of War: E-Day Dev Announces 10 Improvements For Beta Weekend 2",
@@ -1661,7 +1718,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/three-games-are-available-today-across-various-tiers-of-xbox-game-pass-august-13",
     "imageUrl": "https://images.purexbox.com/17d468442c523/large.jpg",
     "publishedAt": "2026-08-13T10:00:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.539581+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.060773+00:00",
     "translations": {
       "en": {
         "title": "Three Games Are Available Today Across Various Tiers Of Xbox Game Pass (August 13)",
@@ -2174,7 +2231,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/no-more-room-in-hell-2-is-out-now-bringing-its-intense-co-op-survival-fps-to-xbox",
     "imageUrl": "https://images.purexbox.com/ac5db1b7ed27a/large.jpg",
     "publishedAt": "2026-08-12T18:30:00+00:00",
-    "scrapedAt": "2026-08-16T03:54:19.539722+00:00",
+    "scrapedAt": "2026-08-17T03:54:54.060888+00:00",
     "translations": {
       "en": {
         "title": "No More Room In Hell 2 Is Out Now, Bringing Its 'Intense' Co-Op Survival FPS To Xbox",
@@ -2573,7 +2630,7 @@
     "sourceUrl": "https://retrododo.com/pokemon-ruby-sapphire-emerald-are-reportedly-coming-to-switch-2-this-year/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/pokemon-gen-3.jpg",
     "publishedAt": "2026-08-12T13:39:27+00:00",
-    "scrapedAt": "2026-08-16T03:52:19.009465+00:00",
+    "scrapedAt": "2026-08-17T03:54:52.132664+00:00",
     "translations": {
       "en": {
         "title": "Pokémon Ruby, Sapphire, & Emerald Are Reportedly Coming To Switch 2 This Year",
@@ -2687,7 +2744,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/fans-can-try-out-the-evercade-nexus-early-at-this-exclusive-event-taking-place-next-month",
     "imageUrl": "https://images.timeextension.com/b9627071f6a55/large.jpg",
     "publishedAt": "2026-08-12T13:05:00+00:00",
-    "scrapedAt": "2026-08-16T03:52:17.035286+00:00",
+    "scrapedAt": "2026-08-17T03:54:49.486307+00:00",
     "translations": {
       "en": {
         "title": "Fans Can Try Out The Evercade Nexus Early At This Exclusive Event, Taking Place Next Month",
@@ -9926,7 +9983,7 @@
     "sourceUrl": "https://arcadeheroes.com/2026/07/30/out-now-in-japan-one-piece-demon-slayer/",
     "imageUrl": "",
     "publishedAt": "2026-07-30T14:36:01+00:00",
-    "scrapedAt": "2026-08-16T03:52:18.681727+00:00",
+    "scrapedAt": "2026-08-17T03:54:51.353205+00:00",
     "translations": {
       "en": {
         "title": "Out Now In Japan: One Piece Dawn Strike & Demon Slayer Kimetsu No Yaiba: Nichirin Battle Slash",
@@ -10838,7 +10895,7 @@
     "sourceUrl": "https://the-retrogamer.com/vectaguard-sur-pc-le-vectoriel-ressuscite-par-tony-barnes/",
     "imageUrl": "",
     "publishedAt": "2026-07-29T12:50:36+00:00",
-    "scrapedAt": "2026-08-16T03:55:23.585108+00:00",
+    "scrapedAt": "2026-08-17T03:55:09.403459+00:00",
     "translations": {
       "fr": {
         "title": "VectaGuard sur PC : Le vectoriel ressuscité par Tony Barnes",
@@ -12365,120 +12422,6 @@
       "zh": {
         "title": "Switch 2 上的《最终幻想 XIV》大约一周后发布",
         "summary": "Square Enix 利用 2026 年柏林粉丝节的主题发布了一段五分钟的预告片以及有关《最终幻想》第六扩展包 Evercold 的大量细节"
-      }
-    }
-  },
-  {
-    "id": "704ec652e46025f115cf9a32eca64b0ab0846b09",
-    "title": "Three Games Are Confirmed For Xbox Game Pass To End The Month (July 28-31)",
-    "summary": "Two of them being huge additions! The final week of July is approaching! We've got three titles set to join Xbox Game Pass over the next few days, and considering they're spread out, we thought we'd round them up in this article to ensure you don't miss anything. Of course, Halo: Campaign Evolved is the big highlight - a game we've been having a blast with here at Pure Xbox , and one that's finally coming out of its Premium \"early access\" period on July 28th. Read the full article on purexbox.co",
-    "category": "GAME_RELEASE",
-    "sourceName": "Pure Xbox",
-    "sourceUrl": "https://www.purexbox.com/news/2026/07/three-games-are-confirmed-for-xbox-game-pass-to-end-the-month-july-28-31",
-    "imageUrl": "https://images.purexbox.com/e714ca8fcf121/large.jpg",
-    "publishedAt": "2026-07-26T15:00:00+00:00",
-    "scrapedAt": "2026-07-31T06:19:42.489457+00:00",
-    "translations": {
-      "en": {
-        "title": "Three Games Are Confirmed For Xbox Game Pass To End The Month (July 28-31)",
-        "summary": "Two of them being huge additions! The final week of July is approaching! We've got three titles set to join Xbox Game Pass over the next few days, and considering they're spread out, we thought we'd round them up in this article to ensure you don't miss anything. Of course, Halo: Campaign Evolved is the big highlight - a game we've been having a blast with here at Pure Xbox , and one that's finally coming out of its Premium \"early access\" period on July 28th. Read the full article on purexbox.co"
-      },
-      "fr": {
-        "title": "Trois jeux sont confirmés pour le Xbox Game Pass pour terminer le mois (28-31 juillet)",
-        "summary": "Deux d’entre eux sont d’énormes ajouts ! La dernière semaine de juillet approche ! Nous avons trois titres qui rejoindront le Xbox Game Pass au cours des prochains jours, et étant donné qu'ils sont dispersés, nous avons pensé les rassembler dans cet article pour vous assurer de ne rien manquer. Bien sûr, Halo: Campaign Evolved est le grand moment fort - un jeu avec lequel nous nous sommes bien amusés ici sur Pure Xbox, et qui sort enfin de sa période Premium \"d'accès anticipé\" le 28 juillet. Lire l'article complet sur purexbox.co"
-      },
-      "es": {
-        "title": "Se confirman tres juegos para Xbox Game Pass para finalizar el mes (28 al 31 de julio)",
-        "summary": "¡Dos de ellas son grandes adiciones! ¡Se acerca la última semana de julio! Tenemos tres títulos que se unirán a Xbox Game Pass en los próximos días y, considerando que están dispersos, pensamos en reunirlos en este artículo para asegurarnos de que no te pierdas nada. Por supuesto, Halo: Campaign Evolved es lo más destacado: un juego con el que nos hemos estado divirtiendo mucho aquí en Pure Xbox y que finalmente saldrá de su período Premium de \"acceso anticipado\" el 28 de julio. Lea el artículo completo en purexbox.co"
-      },
-      "it": {
-        "title": "Tre giochi confermati per Xbox Game Pass alla fine del mese (28-31 luglio)",
-        "summary": "Due di loro sono enormi aggiunte! L'ultima settimana di luglio si avvicina! Abbiamo tre titoli pronti ad unirsi a Xbox Game Pass nei prossimi giorni e, considerando che sono distribuiti, abbiamo pensato di riunirli in questo articolo per assicurarci di non perdere nulla. Naturalmente, Halo: Campaign Evolved è il pezzo forte: un gioco con cui ci siamo divertiti tantissimo qui su Pure Xbox e che finalmente uscirà dal periodo di \"accesso anticipato\" Premium il 28 luglio. Leggi l'articolo completo su purexbox.co"
-      },
-      "de": {
-        "title": "Drei Spiele sind für den Xbox Game Pass zum Monatsende (28.–31. Juli) bestätigt",
-        "summary": "Zwei davon sind riesige Ergänzungen! Die letzte Juliwoche naht! Wir haben drei Titel geplant, die in den nächsten Tagen dem Xbox Game Pass beitreten werden, und da sie bereits verteilt sind, dachten wir, wir würden sie in diesem Artikel zusammenfassen, um sicherzustellen, dass Sie nichts verpassen. Natürlich ist Halo: Campaign Evolved das große Highlight – ein Spiel, mit dem wir hier bei Pure Xbox viel Spaß hatten und das am 28. Juli endlich seine Premium-„Early-Access“-Phase verlässt. Lesen Sie den vollständigen Artikel auf purexbox.co"
-      },
-      "pt": {
-        "title": "Três jogos estão confirmados para o Xbox Game Pass até o final do mês (28 a 31 de julho)",
-        "summary": "Dois deles sendo grandes adições! A última semana de julho está se aproximando! Temos três títulos definidos para ingressar no Xbox Game Pass nos próximos dias e, considerando que estão espalhados, pensamos em reuni-los neste artigo para garantir que você não perca nada. Claro, Halo: Campaign Evolved é o grande destaque – um jogo com o qual estamos nos divertindo muito aqui no Pure Xbox e que finalmente sairá do período de “acesso antecipado” Premium em 28 de julho. Leia o artigo completo em purexbox.co"
-      },
-      "ru": {
-        "title": "Три игры подтверждены для Xbox Game Pass до конца месяца (28–31 июля)",
-        "summary": "Два из них — огромные дополнения! Приближается последняя неделя июля! В ближайшие несколько дней у нас есть три игры, которые присоединятся к Xbox Game Pass, и, учитывая, что они разбросаны, мы решили собрать их в этой статье, чтобы вы ничего не пропустили. Конечно, самым ярким событием является Halo: Campaign Evolved — игра, которая нам очень понравилась здесь, в Pure Xbox, и которая наконец-то выйдет из периода «раннего доступа» Премиума 28 июля. Полную версию статьи можно прочитать на сайте purexbox.co."
-      },
-      "el": {
-        "title": "Τρία παιχνίδια επιβεβαιώθηκαν για το Xbox Game Pass για το τέλος του μήνα (28-31 Ιουλίου)",
-        "summary": "Δύο από αυτά είναι τεράστιες προσθήκες! Η τελευταία εβδομάδα του Ιουλίου πλησιάζει! Έχουμε τρεις τίτλους που θα συμμετάσχουν στο Xbox Game Pass τις επόμενες ημέρες και λαμβάνοντας υπόψη ότι είναι απλωμένοι, σκεφτήκαμε να τους συγκεντρώσουμε σε αυτό το άρθρο για να διασφαλίσουμε ότι δεν θα χάσετε τίποτα. Φυσικά, το Halo: Campaign Evolved είναι το μεγάλο αποκορύφωμα - ένα παιχνίδι με το οποίο περάσαμε υπέροχα εδώ στο Pure Xbox, και ένα παιχνίδι που τελικά βγαίνει από την Premium περίοδο \"πρώιμης πρόσβασης\" στις 28 Ιουλίου. Διαβάστε ολόκληρο το άρθρο στο purexbox.co"
-      },
-      "tr": {
-        "title": "Ayın Sonuna Kadar Üç Oyunun Xbox Game Pass'te Kullanılacağı Onaylandı (28-31 Temmuz)",
-        "summary": "Bunlardan ikisi büyük eklemeler! Temmuz ayının son haftası yaklaşıyor! Önümüzdeki birkaç gün içinde Xbox Game Pass'e katılacak üç oyunumuz var ve bunların yaygın olduğunu göz önünde bulundurarak, hiçbir şeyi kaçırmamanızı sağlamak için bunları bu makalede özetlemeyi düşündük. Tabii ki Halo: Campaign Evolved en önemli nokta; Pure Xbox'ta çok keyif aldığımız ve nihayet 28 Temmuz'da Premium \"erken erişim\" döneminden çıkacak olan bir oyun. Makalenin tamamını purexbox.co'da okuyun"
-      },
-      "ja": {
-        "title": "月末 (7 月 28 ～ 31 日) に Xbox Game Pass の対象となる 3 つのゲームが決定",
-        "summary": "そのうちの 2 つは大きな追加です。 7月も最終週が近づいてきました！今後数日間で 3 つのタイトルが Xbox Game Pass に参加する予定であり、それらが広範囲に及ぶことを考慮して、見逃さないようにこの記事でそれらをまとめて紹介することにしました。もちろん、Halo: Campaign Evolved が最大のハイライトです。このゲームは、ここ Pure Xbox で非常に楽しんでおり、7 月 28 日にプレミアムの「早期アクセス」期間がついに終了します。 purexbox.co で記事全文を読む"
-      },
-      "zh": {
-        "title": "Xbox Game Pass 已确认三款游戏将于本月结束（7 月 28 日至 31 日）",
-        "summary": "其中两个是巨大的补充！七月的最后一周即将来临！我们已经准备好三款游戏在接下来的几天内加入 Xbox Game Pass，考虑到它们的分布比较分散，我们认为应该将它们集中在本文中，以确保您不会错过任何内容。当然，《光环：战役进化》是一大亮点 - 这是一款我们在 Pure Xbox 上玩得很开心的游戏，并且终于在 7 月 28 日结束了高级版“抢先体验”期。在 purexbox.co 上阅读完整文章"
-      }
-    }
-  },
-  {
-    "id": "94cc669d6f0ec95514fce6b73061cd0bc3930bec",
-    "title": "KONOSUBA – God’s Blessing on This Wonderful World! Prosperity to This Beloved Town! announced for PC, iOS, and Android",
-    "summary": "Kadokawa Corporation has announced KONOSUBA &#8211; God&#8217;s Blessing on This Wonderful World! Prosperity to This &hellip;",
-    "category": "GAME_RELEASE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/07/konosuba-gods-blessing-on-this-wonderful-world-prosperity-to-this-beloved-town-announced-for-pc-ios-and-android",
-    "imageUrl": "",
-    "publishedAt": "2026-07-26T11:30:55+00:00",
-    "scrapedAt": "2026-07-28T05:53:57.334611+00:00",
-    "translations": {
-      "en": {
-        "title": "KONOSUBA – God’s Blessing on This Wonderful World! Prosperity to This Beloved Town! announced for PC, iOS, and Android",
-        "summary": "Kadokawa Corporation has announced KONOSUBA &#8211; God&#8217;s Blessing on This Wonderful World! Prosperity to This &hellip;"
-      },
-      "fr": {
-        "title": "KONOSUBA – Bénédiction de Dieu sur ce monde merveilleux ! Prospérité à cette ville bien-aimée ! annoncé pour PC, iOS et Android",
-        "summary": "Kadokawa Corporation a annoncé KONOSUBA &#8211; Bénédiction de Dieu sur ce monde merveilleux ! La prospérité pour cela &hellip;"
-      },
-      "es": {
-        "title": "KONOSUBA – ¡La bendición de Dios en este maravilloso mundo! ¡Prosperidad para este Amado Pueblo! anunciado para PC, iOS y Android",
-        "summary": "Kadokawa Corporation ha anunciado KONOSUBA &#8211; ¡La bendición de Dios en este maravilloso mundo! Prosperidad para esto &hellip;"
-      },
-      "it": {
-        "title": "KONOSUBA – La benedizione di Dio su questo meraviglioso mondo! Prosperità a questa amata città! annunciato per PC, iOS e Android",
-        "summary": "Kadokawa Corporation ha annunciato KONOSUBA &#8211; La benedizione di Dio su questo meraviglioso mondo! Prosperità a questo &hellip;"
-      },
-      "de": {
-        "title": "KONOSUBA – Gottes Segen für diese wunderbare Welt! Wohlstand für diese geliebte Stadt! für PC, iOS und Android angekündigt",
-        "summary": "Kadokawa Corporation hat KONOSUBA &#8211; Gottes Segen für diese wunderbare Welt! Wohlstand dazu &hellip;"
-      },
-      "pt": {
-        "title": "KONOSUBA – A Bênção de Deus para Este Mundo Maravilhoso! Prosperidade para esta cidade amada! anunciado para PC, iOS e Android",
-        "summary": "A Kadokawa Corporation anunciou KONOSUBA &#8211; A bênção de Deus sobre este mundo maravilhoso! Prosperidade para isso &hellip;"
-      },
-      "ru": {
-        "title": "КОНОСУБА – Божье благословение этому чудесному миру! Процветания любимому городу! анонсирован для ПК, iOS и Android",
-        "summary": "Корпорация Kadokawa объявила о выпуске KONOSUBA &#8211; Благословение Божие этому чудесному миру! Процветания этому &hellip;"
-      },
-      "el": {
-        "title": "KONOSUBA - Η ευλογία του Θεού σε αυτόν τον υπέροχο κόσμο! Ευημερία σε αυτή την αγαπημένη πόλη! ανακοινώθηκε για PC, iOS και Android",
-        "summary": "Η Kadokawa Corporation ανακοίνωσε το KONOSUBA &#8211; Η ευλογία του Θεού σε αυτόν τον υπέροχο κόσμο! Ευημερία σε αυτό &hellip;"
-      },
-      "tr": {
-        "title": "KONOSUBA – Tanrının Bu Harika Dünyadaki Lütfu! Bu Sevgili Kasabaya Refah! PC, iOS ve Android için duyuruldu",
-        "summary": "Kadokawa Corporation, KONOSUBA &#8211; Bu Harika Dünyaya Tanrı'nın Lütfu! Buna Refah &hellip;"
-      },
-      "ja": {
-        "title": "この素晴らしい世界に祝福を!愛するこの街に繁栄を！ PC、iOS、Android向けに発表",
-        "summary": "株式会社ＫＡＤＯＫＡＷＡは、このすば『このすば』を発表しました。この素晴らしい世界に祝福を!繁栄をこれまでに&hellip;"
-      },
-      "zh": {
-        "title": "KONOSUBA——上帝对这个美好世界的祝福！祝这个可爱的小镇繁荣昌盛！宣布适用于 PC、iOS 和 Android",
-        "summary": "角川公司宣布 KONOSUBA &#8211;上帝祝福这个美好的世界！繁荣至此……"
       }
     }
   },
