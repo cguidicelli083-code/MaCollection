@@ -1,5 +1,746 @@
 [
   {
+    "id": "58b402b88dfb07474c3302fef75a163962411e6c",
+    "title": "Alien: Isolation 2 Won’t Receive A Release Date at Gamescom",
+    "summary": "The prologue for Creative Assembly's long-awaited sequel will be playable on the show floor for attendees, but that's pretty much it.",
+    "category": "GAME_RELEASE",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/alien-isolation-2-wont-receive-a-release-date-at-gamescom",
+    "imageUrl": "",
+    "publishedAt": "2026-08-21T18:36:45+00:00",
+    "scrapedAt": "2026-08-22T03:48:50.567966+00:00",
+    "translations": {
+      "en": {
+        "title": "Alien: Isolation 2 Won’t Receive A Release Date at Gamescom",
+        "summary": "The prologue for Creative Assembly's long-awaited sequel will be playable on the show floor for attendees, but that's pretty much it."
+      },
+      "fr": {
+        "title": "Alien: Isolation 2 ne recevra pas de date de sortie à la Gamescom",
+        "summary": "Le prologue de la suite tant attendue de Creative Assembly sera jouable sur le salon pour les participants, mais c'est à peu près tout."
+      },
+      "es": {
+        "title": "Alien: Isolation 2 no recibirá una fecha de lanzamiento en la Gamescom",
+        "summary": "El prólogo de la tan esperada secuela de Creative Assembly se podrá reproducir en la sala de exposiciones para los asistentes, pero eso es todo."
+      },
+      "it": {
+        "title": "Alien: Isolation 2 non riceverà una data di uscita alla Gamescom",
+        "summary": "Il prologo del tanto atteso seguito di Creative Assembly sarà riproducibile in fiera per i partecipanti, ma è praticamente tutto."
+      },
+      "de": {
+        "title": "Alien: Isolation 2 wird auf der Gamescom keinen Veröffentlichungstermin erhalten",
+        "summary": "Der Prolog zur lang erwarteten Fortsetzung von Creative Assembly wird für die Besucher auf der Ausstellungsfläche spielbar sein, aber das ist auch schon alles."
+      },
+      "pt": {
+        "title": "Alien: Isolation 2 não receberá data de lançamento na Gamescom",
+        "summary": "O prólogo da tão esperada sequência da Creative Assembly poderá ser reproduzido no salão do show para os participantes, mas é basicamente isso."
+      },
+      "ru": {
+        "title": "Alien: Isolation 2 не получит дату выхода на Gamescom",
+        "summary": "Пролог к ​​долгожданному продолжению Creative Assembly будет доступен на выставочной площадке для посетителей, но это, пожалуй, и все."
+      },
+      "el": {
+        "title": "Το Alien: Isolation 2 δεν θα λάβει ημερομηνία κυκλοφορίας στην Gamescom",
+        "summary": "Ο πρόλογος για το πολυαναμενόμενο σίκουελ του Creative Assembly θα μπορεί να παιχτεί στο πάτωμα της παράστασης για τους παρευρισκόμενους, αλλά αυτό είναι λίγο πολύ."
+      },
+      "tr": {
+        "title": "Alien: Isolation 2, Gamescom'da Çıkış Tarihi Almayacak",
+        "summary": "Creative Assembly'nin uzun zamandır beklenen devam oyununun önsözü katılımcılar için gösteri alanında oynanabilecek, ancak bu kadar."
+      },
+      "ja": {
+        "title": "『Alien: Isolation 2』はGamescomで発売日を発表されない",
+        "summary": "Creative Assembly の待望の続編のプロローグは、ショーフロアで参加者向けにプレイ可能ですが、それだけです。"
+      },
+      "zh": {
+        "title": "Gamescom 上不会公布《异形：隔离 2》的发售日期",
+        "summary": "Creative Assembly 期待已久的续集的序幕将在展会上为与会者播放，但仅此而已。"
+      }
+    }
+  },
+  {
+    "id": "d39e0191c8cbfb9d14315dd0b4eeb1bf3bef1b8c",
+    "title": "Xbox Series X25 Console Slated for November 27th Launch, Will Cost $900 – Rumor",
+    "summary": "The special edition console that celebrates the 25th anniversary of Xbox is seemingly planned for a strategic launch on Black Friday.",
+    "category": "COLLECTOR_PACK",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/xbox-series-x25-console-slated-for-november-27th-launch-will-cost-900-rumor",
+    "imageUrl": "",
+    "publishedAt": "2026-08-21T16:49:13+00:00",
+    "scrapedAt": "2026-08-22T03:48:50.568168+00:00",
+    "translations": {
+      "en": {
+        "title": "Xbox Series X25 Console Slated for November 27th Launch, Will Cost $900 – Rumor",
+        "summary": "The special edition console that celebrates the 25th anniversary of Xbox is seemingly planned for a strategic launch on Black Friday."
+      },
+      "fr": {
+        "title": "La console Xbox Series X25 devrait être lancée le 27 novembre et coûtera 900 $ – Rumeur",
+        "summary": "La console en édition spéciale qui célèbre le 25e anniversaire de Xbox devrait apparemment être lancée stratégiquement le Black Friday."
+      },
+      "es": {
+        "title": "La consola Xbox Series X25 programada para su lanzamiento el 27 de noviembre costará $ 900: rumor",
+        "summary": "La consola de edición especial que celebra el 25 aniversario de Xbox aparentemente tiene previsto un lanzamiento estratégico el Black Friday."
+      },
+      "it": {
+        "title": "La console Xbox Series X25 prevista per il lancio del 27 novembre costerà $ 900 - Rumor",
+        "summary": "Sembra che il lancio strategico della console in edizione speciale che celebra il 25° anniversario di Xbox sia previsto per il Black Friday."
+      },
+      "de": {
+        "title": "Gerüchten zufolge soll die Xbox Series X25-Konsole am 27. November auf den Markt kommen und 900 US-Dollar kosten",
+        "summary": "Die Sonderedition der Konsole zur Feier des 25-jährigen Xbox-Jubiläums soll offenbar am Black Friday strategisch auf den Markt kommen."
+      },
+      "pt": {
+        "title": "Console Xbox Series X25 com lançamento previsto para 27 de novembro e custará US$ 900 – boato",
+        "summary": "O console de edição especial que comemora o 25º aniversário do Xbox está aparentemente planejado para um lançamento estratégico na Black Friday."
+      },
+      "ru": {
+        "title": "Консоль Xbox Series X25 выйдет 27 ноября и будет стоить 900 долларов – слухи",
+        "summary": "Специальное издание консоли, посвященное 25-летию Xbox, по-видимому, запланировано к стратегическому запуску в Черную пятницу."
+      },
+      "el": {
+        "title": "Η κονσόλα Xbox Series X25 αναμένεται να κυκλοφορήσει στις 27 Νοεμβρίου, θα κοστίζει $900 - Φήμες",
+        "summary": "Η κονσόλα ειδικής έκδοσης που γιορτάζει την 25η επέτειο του Xbox φαίνεται ότι έχει προγραμματιστεί για μια στρατηγική κυκλοφορία τη Μαύρη Παρασκευή."
+      },
+      "tr": {
+        "title": "Xbox Series X25 Konsolu 27 Kasım'da Piyasaya Sürülecek, Fiyatı 900 Dolar Olacak – Söylentiler",
+        "summary": "Xbox'ın 25. yılını kutlayan özel sürüm konsolun Black Friday'de stratejik bir lansmanı planlanıyor gibi görünüyor."
+      },
+      "ja": {
+        "title": "Xbox シリーズ X25 コンソールは 11 月 27 日に発売予定、価格は 900 ドル – 噂",
+        "summary": "Xbox 25 周年を祝う特別版コンソールは、ブラック フライデーに戦略的に発売される予定のようです。"
+      },
+      "zh": {
+        "title": "Xbox Series X25 主机定于 11 月 27 日发布，售价 900 美元——传闻",
+        "summary": "这款庆祝 Xbox 25 周年的特别版游戏机似乎计划在黑色星期五战略发布。"
+      }
+    }
+  },
+  {
+    "id": "95c80eee97bef8b8f9b7c72b00bece40fe8f627a",
+    "title": "The Blood Of Dawnwalker Has Two Performance Modes On Xbox Series X, But No 60FPS",
+    "summary": "Take a look at console footage. We've timestamped the gameplay trailer to start at the beginning of the Xbox Series X performance mode specifications. Rebel Wolves has posted Xbox Series X gameplay for its upcoming RPG, The Blood of Dawnwalker , revealing the two graphical modes you can expect when it launches on Xbox and other platforms on September 3rd. Read the full article on purexbox.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/the-blood-of-dawnwalker-has-two-performance-modes-on-xbox-series-x-but-no-60fps",
+    "imageUrl": "https://images.purexbox.com/1ddaf9dfbb538/large.jpg",
+    "publishedAt": "2026-08-21T16:30:00+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.355127+00:00",
+    "translations": {
+      "en": {
+        "title": "The Blood Of Dawnwalker Has Two Performance Modes On Xbox Series X, But No 60FPS",
+        "summary": "Take a look at console footage. We've timestamped the gameplay trailer to start at the beginning of the Xbox Series X performance mode specifications. Rebel Wolves has posted Xbox Series X gameplay for its upcoming RPG, The Blood of Dawnwalker , revealing the two graphical modes you can expect when it launches on Xbox and other platforms on September 3rd. Read the full article on purexbox.com"
+      },
+      "fr": {
+        "title": "The Blood Of Dawnwalker propose deux modes de performances sur Xbox Series X, mais pas de 60FPS",
+        "summary": "Jetez un œil aux images de la console. Nous avons horodaté la bande-annonce de gameplay pour qu'elle commence au début des spécifications du mode performance de la Xbox Series X. Rebel Wolves a publié le gameplay Xbox Series X pour son prochain RPG, The Blood of Dawnwalker, révélant les deux modes graphiques auxquels vous pouvez vous attendre lors de son lancement sur Xbox et sur d'autres plateformes le 3 septembre. Lire l'article complet sur purexbox.com"
+      },
+      "es": {
+        "title": "The Blood Of Dawnwalker tiene dos modos de rendimiento en Xbox Series X, pero no 60FPS",
+        "summary": "Eche un vistazo a las imágenes de la consola. Hemos marcado la hora del avance del juego para que comience al comienzo de las especificaciones del modo de rendimiento de Xbox Series X. Rebel Wolves ha publicado la jugabilidad de Xbox Series X para su próximo juego de rol, The Blood of Dawnwalker, revelando los dos modos gráficos que puedes esperar cuando se lance en Xbox y otras plataformas el 3 de septiembre. Lea el artículo completo en purexbox.com"
+      },
+      "it": {
+        "title": "The Blood Of Dawnwalker ha due modalità di prestazione su Xbox Series X, ma nessuna 60FPS",
+        "summary": "Dai un'occhiata ai filmati della console. Abbiamo contrassegnato la data e l'ora del trailer di gioco in modo che inizi all'inizio delle specifiche della modalità prestazioni di Xbox Series X. Rebel Wolves ha pubblicato il gameplay di Xbox Series X per il suo prossimo gioco di ruolo, The Blood of Dawnwalker, rivelando le due modalità grafiche che puoi aspettarti quando verrà lanciato su Xbox e altre piattaforme il 3 settembre. Leggi l'articolo completo su purexbox.com"
+      },
+      "de": {
+        "title": "The Blood Of Dawnwalker verfügt auf der Xbox Series X über zwei Leistungsmodi, aber keine 60 FPS",
+        "summary": "Schauen Sie sich das Konsolenmaterial an. Wir haben den Gameplay-Trailer mit einem Zeitstempel versehen, sodass er am Anfang der Spezifikationen für den Leistungsmodus der Xbox Series X beginnt. Rebel Wolves hat das Gameplay der Xbox Series Lesen Sie den vollständigen Artikel auf purexbox.com"
+      },
+      "pt": {
+        "title": "The Blood Of Dawnwalker tem dois modos de desempenho no Xbox Series X, mas sem 60FPS",
+        "summary": "Dê uma olhada nas imagens do console. Marcamos a data e hora do trailer do jogo para começar no início das especificações do modo de desempenho do Xbox Series X. Rebel Wolves postou a jogabilidade do Xbox Series X para seu próximo RPG, The Blood of Dawnwalker, revelando os dois modos gráficos que você pode esperar quando for lançado no Xbox e outras plataformas em 3 de setembro. Leia o artigo completo em purexbox.com"
+      },
+      "ru": {
+        "title": "У Blood Of Dawnwalker есть два режима производительности на Xbox Series X, но нет 60FPS",
+        "summary": "Посмотрите кадры с консоли. Мы отметили время трейлера игрового процесса так, чтобы оно начиналось с начала спецификаций режима производительности Xbox Series X. Rebel Wolves опубликовала игровой процесс Xbox Series X для своей предстоящей ролевой игры The Blood of Dawnwalker, раскрыв два графических режима, которые вы можете ожидать, когда она выйдет на Xbox и других платформах 3 сентября. Полную версию статьи можно прочитать на сайте purexbox.com."
+      },
+      "el": {
+        "title": "Το Blood Of Dawnwalker έχει δύο λειτουργίες απόδοσης στο Xbox Series X, αλλά όχι 60 FPS",
+        "summary": "Ρίξτε μια ματιά στα πλάνα της κονσόλας. Δώσαμε χρονική σήμανση στο τρέιλερ του παιχνιδιού για να ξεκινάει από την αρχή των προδιαγραφών λειτουργίας απόδοσης Xbox Series X. Η Rebel Wolves δημοσίευσε το παιχνίδι Xbox Series X για το επερχόμενο RPG της, The Blood of Dawnwalker, αποκαλύπτοντας τις δύο λειτουργίες γραφικών που μπορείτε να περιμένετε όταν κυκλοφορήσει στο Xbox και σε άλλες πλατφόρμες στις 3 Σεπτεμβρίου. Διαβάστε ολόκληρο το άρθρο στο purexbox.com"
+      },
+      "tr": {
+        "title": "Blood of Dawnwalker'ın Xbox Series X'te İki Performans Modu Var, Ancak 60FPS Yok",
+        "summary": "Konsol görüntülerine bir göz atın. Oyun fragmanına Xbox Series X performans modu teknik özelliklerinin başlangıcından başlayacak şekilde zaman damgası koyduk. Rebel Wolves, yaklaşan RPG'si The Blood of Dawnwalker için Xbox Series X oynanışını yayınladı ve 3 Eylül'de Xbox ve diğer platformlarda yayınlandığında bekleyebileceğiniz iki grafik modunu ortaya çıkardı. Makalenin tamamını purexbox.com'da okuyun"
+      },
+      "ja": {
+        "title": "Xbox Series X には 2 つのパフォーマンス モードがありますが、60FPS はありません",
+        "summary": "コンソールの映像を見てみましょう。 Xbox Series X パフォーマンス モード仕様の開始時にゲームプレイ トレーラーが開始されるようにタイムスタンプを付けました。 Rebel Wolves は、新作 RPG「The Blood of Dawnwalker」の Xbox Series X ゲームプレイを投稿し、9 月 3 日に Xbox およびその他のプラットフォームで発売される際に期待できる 2 つのグラフィック モードを明らかにしました。 purexbox.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "《黎明行者之血》在 Xbox Series X 上有两种性能模式，但没有 60FPS",
+        "summary": "看看控制台的镜头。我们已在 Xbox Series X 性能模式规范的开头为游戏预告片添加了时间戳。 Rebel Wolves 发布了其即将推出的角色扮演游戏《黎明行者之血》的 Xbox Series X 游戏玩法，揭示了该游戏于 9 月 3 日在 Xbox 和其他平台上发布时可以期待的两种图形模式。在 purexbox.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "bf478cb637fd317c15afd36904c4d794d1b7f4b9",
+    "title": "Mr. Nutz Is The Next 16-Bit Character To Get A Physical Resurrection On SNES And Genesis",
+    "summary": "Mr. Nutz: Hoppin' Mad makes its console debut after over 30 years. Strictly Limited and Atari have announced that Mr. Nutz and its \"long lost\" sequel are getting physical releases. Designed by Philippe Dessoly and Pierre Adane for Ocean, the original game launched on SNES in 1993, with a Mega Drive / Genesis version following in 1994. It would also come to the Game Boy, Game Boy Color and Game Boy Advance. Read the full article on timeextension.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/08/mr-nutz-is-the-next-16-bit-character-to-get-a-physical-resurrection-on-snes-and-genesis",
+    "imageUrl": "https://images.timeextension.com/1a6f7a2dc744a/large.jpg",
+    "publishedAt": "2026-08-21T14:45:00+00:00",
+    "scrapedAt": "2026-08-22T03:46:29.899016+00:00",
+    "translations": {
+      "en": {
+        "title": "Mr. Nutz Is The Next 16-Bit Character To Get A Physical Resurrection On SNES And Genesis",
+        "summary": "Mr. Nutz: Hoppin' Mad makes its console debut after over 30 years. Strictly Limited and Atari have announced that Mr. Nutz and its \"long lost\" sequel are getting physical releases. Designed by Philippe Dessoly and Pierre Adane for Ocean, the original game launched on SNES in 1993, with a Mega Drive / Genesis version following in 1994. It would also come to the Game Boy, Game Boy Color and Game Boy Advance. Read the full article on timeextension.com"
+      },
+      "fr": {
+        "title": "M. Nutz est le prochain personnage 16 bits à obtenir une résurrection physique sur SNES et Genesis",
+        "summary": "M. Nutz : Hoppin' Mad fait ses débuts sur console après plus de 30 ans. Strictly Limited et Atari ont annoncé que Mr. Nutz et sa suite \"perdue depuis longtemps\" allaient sortir en version physique. Conçu par Philippe Dessoly et Pierre Adane pour Ocean, le jeu original lancé sur SNES en 1993, suivi d'une version Mega Drive / Genesis en 1994. Il viendrait également sur Game Boy, Game Boy Color et Game Boy Advance. Lire l'article complet sur timeextension.com"
+      },
+      "es": {
+        "title": "Nutz es el próximo personaje de 16 bits en obtener una resurrección física en SNES y Genesis",
+        "summary": "Mr. Nutz: Hoppin' Mad hace su debut en consolas después de más de 30 años. Strictly Limited y Atari han anunciado que Mr. Nutz y su secuela \"perdida hace mucho tiempo\" se lanzarán físicamente. Diseñado por Philippe Dessoly y Pierre Adane para Ocean, el juego original se lanzó para SNES en 1993, seguido de una versión para Mega Drive/Genesis en 1994. También llegaría a Game Boy, Game Boy Color y Game Boy Advance. Lea el artículo completo en timeextension.com"
+      },
+      "it": {
+        "title": "Mr. Nutz è il prossimo personaggio a 16 bit a ottenere una resurrezione fisica su SNES e Genesis",
+        "summary": "Mr. Nutz: Hoppin' Mad fa il suo debutto su console dopo oltre 30 anni. Strictly Limited e Atari hanno annunciato che Mr. Nutz e il suo seguito \"perduto da tempo\" riceveranno versioni fisiche. Progettato da Philippe Dessoly e Pierre Adane per Ocean, il gioco originale è stato lanciato su SNES nel 1993, seguito da una versione Mega Drive/Genesis nel 1994. Sarebbe arrivato anche su Game Boy, Game Boy Color e Game Boy Advance. Leggi l'articolo completo su timeextension.com"
+      },
+      "de": {
+        "title": "Mr. Nutz ist der nächste 16-Bit-Charakter, der auf SNES und Genesis eine physische Auferstehung erlebt",
+        "summary": "Mr. Nutz: Hoppin' Mad feiert nach über 30 Jahren sein Konsolendebüt. Strictly Limited und Atari haben angekündigt, dass Mr. Nutz und seine „längst verschollene“ Fortsetzung physisch erscheinen werden. Das von Philippe Dessoly und Pierre Adane für Ocean entworfene Originalspiel erschien 1993 auf SNES, 1994 folgte eine Mega Drive/Genesis-Version. Es erschien auch für den Game Boy, den Game Boy Color und den Game Boy Advance. Lesen Sie den vollständigen Artikel auf timeextension.com"
+      },
+      "pt": {
+        "title": "Nutz é o próximo personagem de 16 bits a obter uma ressurreição física no SNES e no Genesis",
+        "summary": "Mr. Nutz: Hoppin' Mad faz sua estreia no console depois de mais de 30 anos. Strictly Limited e Atari anunciaram que Mr. Nutz e sua sequência “há muito perdida” estão recebendo lançamentos físicos. Projetado por Philippe Dessoly e Pierre Adane para a Ocean, o jogo original foi lançado no SNES em 1993, seguido por uma versão para Mega Drive / Genesis em 1994. Também viria para Game Boy, Game Boy Color e Game Boy Advance. Leia o artigo completo em timeextension.com"
+      },
+      "ru": {
+        "title": "Мистер Натц — следующий 16-битный персонаж, который физически воскреснет на SNES и Genesis",
+        "summary": "Mr. Nutz: Hoppin' Mad дебютирует на консолях спустя более 30 лет. Strictly Limited и Atari объявили, что Mr. Nutz и его «давно потерянное» продолжение выходят на физических носителях. Оригинальная игра, разработанная Филиппом Дессоли и Пьером Аданом для Ocean, была выпущена на SNES в 1993 году, а в 1994 году последовала версия Mega Drive / Genesis. Она также появилась на Game Boy, Game Boy Color и Game Boy Advance. Полную версию статьи можно прочитать на сайте timeextension.com."
+      },
+      "el": {
+        "title": "Ο κύριος Nutz είναι ο επόμενος 16-bit χαρακτήρας που θα πάρει μια φυσική ανάσταση στο SNES και στο Genesis",
+        "summary": "Mr. Nutz: Το Hoppin' Mad κάνει το ντεμπούτο του στην κονσόλα μετά από περισσότερα από 30 χρόνια. Η Strictly Limited και η Atari ανακοίνωσαν ότι ο κύριος Νουτς και το «χαμένο από καιρό» συνέχειά του αποκτούν φυσικές κυκλοφορίες. Σχεδιασμένο από τους Philippe Dessoly και Pierre Adane για το Ocean, το αρχικό παιχνίδι κυκλοφόρησε στο SNES το 1993, με μια έκδοση Mega Drive / Genesis να ακολουθεί το 1994. Θα κυκλοφορούσε επίσης στα Game Boy, Game Boy Color και Game Boy Advance. Διαβάστε το πλήρες άρθρο στο timeextension.com"
+      },
+      "tr": {
+        "title": "Bay Nutz, SNES ve Genesis'te Fiziksel Diriliş Sağlayacak Sonraki 16-Bit Karakter",
+        "summary": "Mr. Nutz: Hoppin' Mad makes its console debut after over 30 years. Strictly Limited and Atari have announced that Mr. Nutz and its \"long lost\" sequel are getting physical releases. Philippe Dessoly ve Pierre Adane tarafından Ocean için tasarlanan orijinal oyun, 1993 yılında SNES'te piyasaya sürüldü ve ardından 1994 yılında Mega Drive / Genesis versiyonu geldi. Aynı zamanda Game Boy, Game Boy Color ve Game Boy Advance'a da gelecekti. Makalenin tamamını timeextension.com'da okuyun"
+      },
+      "ja": {
+        "title": "Mr. NutzはSNESとGenesisで物理的に復活する次の16ビットキャラクターです",
+        "summary": "Nutz氏: Hoppin' Madは30年以上の時を経てコンソールデビューします。 Strictly Limited と Atari は、Mr Nutz とその「長らく失われた」続編が物理的にリリースされることを発表しました。フィリップ・デッソリーとピエール・アダンが『Ocean』のためにデザインしたオリジナルのゲームは、1993 年に SNES で発売され、1994 年にはメガドライブ/ジェネシスのバージョンが続きました。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスにも登場しました。 timeextension.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "Nutz 先生是下一个在 SNES 和 Genesis 上获得实体复活的 16 位角色",
+        "summary": "Mr. Nutz: Hoppin' Mad 时隔 30 多年，首次在主机上亮相。 Strictly Limited 和 Atari 宣布《Mr. Nutz》及其“失落已久”的续作即将推出实体版。由 Philippe Dessoly 和 Pierre Adane 为 Ocean 设计的原版游戏于 1993 年在 SNES 上推出，随后于 1994 年推出了 Mega Drive / Genesis 版本。它也出现在 Game Boy、Game Boy Color 和 Game Boy Advance 上。在 timeextension.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "63f5f9ab9b3308321039040cf3c925d225a382a5",
+    "title": "Game and watch - Cyberpunk Edgerunners 2 : Netflix dévoile la date de sortie de la nouvelle série événement",
+    "summary": "Après l'accueil phénoménal réservé aux dix épisodes de Cyberpunk Edgerunners en 2022, Netflix et le studio d'animation Trigger peuvent se frotter les mains, tout comme les comptables de CD Projekt. Cyberpunk Edgerunners 2 fera ses débuts le 20 octobre 2026.",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gamekult",
+    "sourceUrl": "https://www.gamekult.com/actualite/cyberpunk-edgerunners-2-netflix-devoile-la-date-de-sortie-de-la-nouvelle-serie-evenement-3050871718.html",
+    "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871718/cyberpunk-edgerunners-2-netflix-devoile-la-date-de-sortie-de-la-nouvelle-serie-evenement-f027cd3b__800_800__840-0-1920-1079.jpg",
+    "publishedAt": "2026-08-21T14:40:00+00:00",
+    "scrapedAt": "2026-08-22T03:49:18.963041+00:00",
+    "translations": {
+      "fr": {
+        "title": "Game and watch - Cyberpunk Edgerunners 2 : Netflix dévoile la date de sortie de la nouvelle série événement",
+        "summary": "Après l'accueil phénoménal réservé aux dix épisodes de Cyberpunk Edgerunners en 2022, Netflix et le studio d'animation Trigger peuvent se frotter les mains, tout comme les comptables de CD Projekt. Cyberpunk Edgerunners 2 fera ses débuts le 20 octobre 2026."
+      },
+      "en": {
+        "title": "Game and watch - Cyberpunk Edgerunners 2: Netflix reveals the release date of the new event series",
+        "summary": "After the phenomenal reception reserved for the ten episodes of Cyberpunk Edgerunners in 2022, Netflix and the animation studio Trigger can rub their hands, just like the accountants at CD Projekt. Cyberpunk Edgerunners 2 will debut on October 20, 2026."
+      },
+      "es": {
+        "title": "Juego y ver - Cyberpunk Edgerunners 2: Netflix revela la fecha de lanzamiento de la nueva serie de eventos",
+        "summary": "Tras la fenomenal acogida reservada a los diez episodios de Cyberpunk Edgerunners en 2022, Netflix y el estudio de animación Trigger pueden frotarse las manos, como los contables de CD Projekt. Cyberpunk Edgerunners 2 debutará el 20 de octubre de 2026."
+      },
+      "it": {
+        "title": "Gioca e guarda - Cyberpunk Edgerunners 2: Netflix svela la data di uscita della nuova serie evento",
+        "summary": "Dopo la fenomenale accoglienza riservata ai dieci episodi di Cyberpunk Edgerunners nel 2022, Netflix e lo studio di animazione Trigger possono fregarsi le mani, proprio come i contabili di CD Projekt. Cyberpunk Edgerunners 2 debutterà il 20 ottobre 2026."
+      },
+      "de": {
+        "title": "Spielen und Anschauen – Cyberpunk Edgerunners 2: Netflix verrät das Erscheinungsdatum der neuen Event-Reihe",
+        "summary": "Nach dem phänomenalen Empfang, der den zehn Episoden von Cyberpunk Edgerunners im Jahr 2022 vorbehalten war, können sich Netflix und das Animationsstudio Trigger ebenso wie die Buchhalter von CD Projekt die Hände reiben. Cyberpunk Edgerunners 2 erscheint am 20. Oktober 2026."
+      },
+      "pt": {
+        "title": "Jogue e assista – Cyberpunk Edgerunners 2: Netflix revela a data de lançamento da nova série de eventos",
+        "summary": "Depois da recepção fenomenal reservada aos dez episódios de Cyberpunk Edgerunners em 2022, a Netflix e o estúdio de animação Trigger podem esfregar as mãos, assim como os contadores da CD Projekt. Cyberpunk Edgerunners 2 será lançado em 20 de outubro de 2026."
+      },
+      "ru": {
+        "title": "Играйте и смотрите — Cyberpunk Edgerunners 2: Netflix раскрывает дату выхода новой серии событий",
+        "summary": "После феноменального приема десяти эпизодов Cyberpunk Edgerunners в 2022 году Netflix и анимационная студия Trigger могут потирать руки, как и бухгалтеры CD Projekt. Cyberpunk Edgerunners 2 дебютирует 20 октября 2026 года."
+      },
+      "el": {
+        "title": "Παιχνίδι και ρολόι - Cyberpunk Edgerunners 2: Netflix αποκαλύπτει την ημερομηνία κυκλοφορίας της νέας σειράς εκδηλώσεων",
+        "summary": "Μετά την εκπληκτική υποδοχή που επιφυλάχθηκε για τα δέκα επεισόδια του Cyberpunk Edgerunners το 2022, το Netflix και το στούντιο κινουμένων σχεδίων Trigger μπορούν να τρίψουν τα χέρια τους, όπως και οι λογιστές της CD Projekt. Το Cyberpunk Edgerunners 2 θα κάνει το ντεμπούτο του στις 20 Οκτωβρίου 2026."
+      },
+      "tr": {
+        "title": "Oyna ve izle - Cyberpunk Edgerunners 2: Netflix, yeni etkinlik serisinin çıkış tarihini açıkladı",
+        "summary": "Cyberpunk Edgerunners'ın 2022'deki on bölümü için ayrılan olağanüstü resepsiyonun ardından Netflix ve animasyon stüdyosu Trigger, tıpkı CD Projekt'teki muhasebeciler gibi ellerini ovuşturabilir. Cyberpunk Edgerunners 2, 20 Ekim 2026'da vizyona girecek."
+      },
+      "ja": {
+        "title": "ゲーム＆ウォッチ - サイバーパンク エッジランナー 2: Netflix が新しいイベント シリーズのリリース日を明らかに",
+        "summary": "2022 年に予定されていた『サイバーパンク エッジランナーズ』10 話が驚異的な反響を呼んだことを受けて、Netflix とアニメーション スタジオのトリガーは、CD Projekt の会計担当者と同じように協力することができます。 Cyber​​punk Edgerunners 2 は 2026 年 10 月 20 日にデビューします。"
+      },
+      "zh": {
+        "title": "游戏和观看 - Cyber​​punk Edgerunners 2：Netflix 公布了新活动系列的发行日期",
+        "summary": "在 2022 年十集《赛博朋克边缘跑者》获得惊人反响后，Netflix 和动画工作室 Trigger 可以像 CD Projekt 的会计师一样摩拳擦掌。 《赛博朋克 Edgerunners 2》将于 2026 年 10 月 20 日推出。"
+      }
+    }
+  },
+  {
+    "id": "bf490511b3e55d9776eb87c23c71a096308826ec",
+    "title": "Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain",
+    "summary": "ActuGaming.net Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain Un peu vite oublié dans la mesure où il est sorti au tout début de [&#8230;] L'article Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain est disponible sur ActuGaming.net",
+    "category": "GAME_RELEASE",
+    "sourceName": "ActuGaming",
+    "sourceUrl": "https://www.actugaming.net/code-vein-ii-en-a-encore-sous-le-coude-avec-un-dlc-qui-sortira-le-9-septembre-prochain-818882/",
+    "imageUrl": "https://static.actugaming.net/media/2026/07/code-vein-2.jpg",
+    "publishedAt": "2026-08-21T14:19:44+00:00",
+    "scrapedAt": "2026-08-22T03:49:35.065296+00:00",
+    "translations": {
+      "fr": {
+        "title": "Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain",
+        "summary": "ActuGaming.net Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain Un peu vite oublié dans la mesure où il est sorti au tout début de [&#8230;] L'article Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain est disponible sur ActuGaming.net"
+      },
+      "en": {
+        "title": "Code Vein II still has more under its belt with a DLC which will be released on September 9",
+        "summary": "News"
+      },
+      "es": {
+        "title": "Code Vein II aún tiene más en su haber con un DLC que se lanzará el 9 de septiembre",
+        "summary": "Noticias"
+      },
+      "it": {
+        "title": "Code Vein II ha ancora altro al suo attivo con un DLC che uscirà il 9 settembre",
+        "summary": "Notizia"
+      },
+      "de": {
+        "title": "Code Vein II hat mit einem DLC, der am 9. September veröffentlicht wird, noch mehr zu bieten",
+        "summary": "Nachricht"
+      },
+      "pt": {
+        "title": "Code Vein II ainda tem mais em seu currículo com um DLC que será lançado em 9 de setembro",
+        "summary": "Notícias"
+      },
+      "ru": {
+        "title": "Code Vein II еще имеет в своем активе DLC, который выйдет 9 сентября.",
+        "summary": "Новости"
+      },
+      "el": {
+        "title": "Το Code Vein II έχει ακόμα περισσότερα στη ζώνη του με ένα DLC που θα κυκλοφορήσει στις 9 Σεπτεμβρίου",
+        "summary": "Νέα"
+      },
+      "tr": {
+        "title": "Code Vein II'nin 9 Eylül'de piyasaya sürülecek DLC'si ile hâlâ çok daha fazlası var",
+        "summary": "Haberler"
+      },
+      "ja": {
+        "title": "コードヴェイン II には、9 月 9 日にリリースされる DLC がまだ追加されています。",
+        "summary": "ニュース"
+      },
+      "zh": {
+        "title": "《噬血代码 II》还有更多内容，DLC 将于 9 月 9 日发布",
+        "summary": "消息"
+      }
+    }
+  },
+  {
+    "id": "cafcfcc6e4f9e6a22336a797c01d2965712121bc",
+    "title": "Review: Evercade Wireless Controller - The Perfect Interface For The Next Era Of Evercade",
+    "summary": "Cut the cable. The impending arrival of the Evercade Nexus means that Blaze's retro-focused family of systems finally has dual analogue control built-in – but, as long-standing fans will tell you, that's already been possible on the Evercade VS , VS-R and Alpha consoles. Support for third-party dual analogue controllers has been in beta for some time now, and is naturally limited to titles that can make use of such controls. The Nexus is launching alongside the Banjo-Kazooie Double Pack , which ",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/reviews/evercade-wireless-controller-the-perfect-interface-for-the-next-era-of-evercade",
+    "imageUrl": "https://images.timeextension.com/0a4e2c198d76c/large.jpg",
+    "publishedAt": "2026-08-21T13:00:00+00:00",
+    "scrapedAt": "2026-08-22T03:46:29.899289+00:00",
+    "translations": {
+      "en": {
+        "title": "Review: Evercade Wireless Controller - The Perfect Interface For The Next Era Of Evercade",
+        "summary": "Cut the cable. The impending arrival of the Evercade Nexus means that Blaze's retro-focused family of systems finally has dual analogue control built-in – but, as long-standing fans will tell you, that's already been possible on the Evercade VS , VS-R and Alpha consoles. Support for third-party dual analogue controllers has been in beta for some time now, and is naturally limited to titles that can make use of such controls. The Nexus is launching alongside the Banjo-Kazooie Double Pack , which "
+      },
+      "fr": {
+        "title": "Critique : Contrôleur sans fil Evercade – L'interface parfaite pour la prochaine ère d'Evercade",
+        "summary": "Coupez le câble. L'arrivée imminente de l'Evercade Nexus signifie que la famille de systèmes rétro de Blaze intègre enfin une double commande analogique – mais, comme les fans de longue date vous le diront, cela est déjà possible sur les consoles Evercade VS, VS-R et Alpha. La prise en charge des contrôleurs analogiques doubles tiers est en version bêta depuis un certain temps déjà et est naturellement limitée aux titres pouvant utiliser de tels contrôles. Le Nexus est lancé aux côtés du Banjo-Kazooie Double Pack, qui"
+      },
+      "es": {
+        "title": "Revisión: Controlador inalámbrico Evercade: la interfaz perfecta para la próxima era de Evercade",
+        "summary": "Corta el cable. La inminente llegada del Evercade Nexus significa que la familia de sistemas retro de Blaze finalmente tiene control analógico dual incorporado, pero, como le dirán los fanáticos de toda la vida, eso ya es posible en las consolas Evercade VS, VS-R y Alpha. La compatibilidad con controladores analógicos duales de terceros ha estado en versión beta desde hace algún tiempo y, naturalmente, está limitada a títulos que pueden utilizar dichos controles. El Nexus se lanza junto con el paquete doble Banjo-Kazooie, que"
+      },
+      "it": {
+        "title": "Recensione: Controller wireless Evercade: l'interfaccia perfetta per la prossima era di Evercade",
+        "summary": "Tagliare il cavo. L'imminente arrivo di Evercade Nexus significa che la famiglia di sistemi incentrati sul retro di Blaze ha finalmente un doppio controllo analogico integrato ma, come ti diranno i fan di lunga data, ciò è già stato possibile sulle console Evercade VS, VS-R e Alpha. Il supporto per i controller doppi analogici di terze parti è in versione beta ormai da qualche tempo ed è naturalmente limitato ai titoli che possono utilizzare tali controlli. Il Nexus verrà lanciato insieme al Double Pack Banjo-Kazooie, che"
+      },
+      "de": {
+        "title": "Bewertung: Evercade Wireless Controller – die perfekte Schnittstelle für die nächste Ära von Evercade",
+        "summary": "Schneiden Sie das Kabel ab. Die bevorstehende Einführung des Evercade Nexus bedeutet, dass Blazes Retro-fokussierte Systemfamilie endlich über eine integrierte Dual-Analog-Steuerung verfügt – aber wie langjährige Fans Ihnen sagen werden, war dies bereits auf den Evercade VS-, VS-R- und Alpha-Konsolen möglich. Die Unterstützung für Dual-Analog-Controller von Drittanbietern befindet sich bereits seit einiger Zeit in der Beta-Phase und ist natürlich auf Titel beschränkt, die solche Steuerungen nutzen können. Der Nexus erscheint zusammen mit dem Banjo-Kazooie Double Pack, das"
+      },
+      "pt": {
+        "title": "Revisão: Evercade Wireless Controller - A interface perfeita para a próxima era do Evercade",
+        "summary": "Corte o cabo. A chegada iminente do Evercade Nexus significa que a família de sistemas com foco retro do Blaze finalmente tem controle analógico duplo integrado – mas, como os fãs de longa data dirão, isso já é possível nos consoles Evercade VS, VS-R e Alpha. O suporte para controladores analógicos duplos de terceiros já está em beta há algum tempo e está naturalmente limitado a títulos que podem fazer uso de tais controles. O Nexus será lançado junto com o Pacote Duplo Banjo-Kazooie, que"
+      },
+      "ru": {
+        "title": "Обзор: Беспроводной контроллер Evercade — идеальный интерфейс для следующей эры Evercade",
+        "summary": "Обрежьте кабель. Предстоящее появление Evercade Nexus означает, что ретро-ориентированное семейство систем Blaze наконец-то имеет встроенное двойное аналоговое управление – но, как скажут вам давние фанаты, это уже стало возможным на консолях Evercade VS, VS-R и Alpha. Поддержка сторонних двойных аналоговых контроллеров уже некоторое время находится в стадии бета-тестирования и, естественно, ограничивается играми, которые могут использовать такие элементы управления. Nexus выпускается вместе с пакетом Banjo-Kazooie Double Pack, который"
+      },
+      "el": {
+        "title": "Κριτική: Ασύρματο χειριστήριο Evercade - Η τέλεια διεπαφή για την επόμενη εποχή του Evercade",
+        "summary": "Κόψτε το καλώδιο. Η επικείμενη άφιξη του Evercade Nexus σημαίνει ότι η οικογένεια συστημάτων της Blaze με ρετρό εστίαση έχει επιτέλους ενσωματωμένο διπλό αναλογικό έλεγχο – αλλά, όπως θα σας πουν οι μακροχρόνιοι θαυμαστές, αυτό είναι ήδη δυνατό στις κονσόλες Evercade VS , VS-R και Alpha. Η υποστήριξη για διπλούς αναλογικούς ελεγκτές τρίτων είναι σε beta εδώ και αρκετό καιρό και φυσικά περιορίζεται σε τίτλους που μπορούν να κάνουν χρήση τέτοιων στοιχείων ελέγχου. Το Nexus λανσάρεται παράλληλα με το διπλό πακέτο Banjo-Kazoie, το οποίο"
+      },
+      "tr": {
+        "title": "İnceleme: Evercade Kablosuz Kontrol Cihazı - Evercade'in Sonraki Dönemi İçin Mükemmel Arayüz",
+        "summary": "Kabloyu kesin. Evercade Nexus'un yaklaşan gelişi, Blaze'in retro odaklı sistem ailesinin nihayet yerleşik ikili analog kontrole sahip olduğu anlamına geliyor - ancak uzun süredir devam eden hayranların size söyleyeceği gibi bu, Evercade VS, VS-R ve Alpha konsollarında zaten mümkündü. Üçüncü taraf ikili analog denetleyicilere yönelik destek bir süredir beta aşamasındadır ve doğal olarak bu tür kontrolleri kullanabilen oyunlarla sınırlıdır. Nexus, Banjo-Kazooie İkili Paketi ile birlikte piyasaya sürülüyor."
+      },
+      "ja": {
+        "title": "レビュー: Evercade ワイヤレス コントローラー - Evercade の次の時代に最適なインターフェイス",
+        "summary": "ケーブルを切ります。 Evercade Nexus の登場が迫っているということは、Blaze のレトロに焦点を当てたシステム ファミリについにデュアル アナログ コントロールが組み込まれたことを意味します。しかし、長年のファンが言うように、それは Evercade VS 、VS-R、Alpha コンソールではすでに可能でした。サードパーティのデュアル アナログ コントローラーのサポートは、しばらくの間ベータ版として提供されており、当然のことながら、そのようなコントロールを利用できるタイトルに限定されています。 Nexus は、バンジョーとカズーイのダブル パックと一緒に発売されます。"
+      },
+      "zh": {
+        "title": "评论：Evercade 无线控制器 - Evercade 下一个时代的完美接口",
+        "summary": "剪断电缆。 Evercade Nexus 即将到来，意味着 Blaze 的复古系列系统终于内置了双模拟控制 - 但是，正如长期粉丝会告诉您的那样，这已经在 Evercade VS、VS-R 和 Alpha 控制台上实现了。对第三方双模拟控制器的支持已经测试了一段时间，并且自然仅限于可以使用此类控件的游戏。 Nexus 与 Banjo-Kazooie Double Pack 一起推出，"
+      }
+    }
+  },
+  {
+    "id": "35b60948bdbc656fb25a4c581e51b7d3f439cf85",
+    "title": "PS5 Console Exclusive Phantom Blade Zero Poised for Gargantuan Launch",
+    "summary": "Sharpen your swords. There’s a reason Sony is backing Phantom Blade Zero , a console exclusive, hard . The game is shaping up to be the biggest Chinese release since Black Myth Wukong , and while that was likely a once-in-a-generation phenomenon, estimates from Alinea Analytics predict it may have already sold 300k copies via pre-orders on Steam alone. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/ps5-console-exclusive-phantom-blade-zero-poised-for-gargantuan-launch",
+    "imageUrl": "https://images.pushsquare.com/5f05a84bdea4d/large.jpg",
+    "publishedAt": "2026-08-21T12:15:00+00:00",
+    "scrapedAt": "2026-08-22T03:47:34.647037+00:00",
+    "translations": {
+      "en": {
+        "title": "PS5 Console Exclusive Phantom Blade Zero Poised for Gargantuan Launch",
+        "summary": "Sharpen your swords. There’s a reason Sony is backing Phantom Blade Zero , a console exclusive, hard . The game is shaping up to be the biggest Chinese release since Black Myth Wukong , and while that was likely a once-in-a-generation phenomenon, estimates from Alinea Analytics predict it may have already sold 300k copies via pre-orders on Steam alone. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Phantom Blade Zero Poised, exclusivité de la console PS5, pour un lancement gargantuesque",
+        "summary": "Aiguisez vos épées. Il y a une raison pour laquelle Sony soutient Phantom Blade Zero, une exclusivité console. Le jeu s'annonce comme la plus grande sortie chinoise depuis Black Myth Wukong, et bien qu'il s'agisse probablement d'un phénomène unique dans une génération, les estimations d'Alinea Analytics prédisent qu'il a peut-être déjà vendu 300 000 exemplaires via des précommandes sur Steam uniquement. Lire l'article complet sur pushsquare.com"
+      },
+      "es": {
+        "title": "Phantom Blade Zero exclusivo de la consola PS5 está listo para un lanzamiento gigantesco",
+        "summary": "Afila tus espadas. Hay una razón por la que Sony respalda con fuerza Phantom Blade Zero, una consola exclusiva. El juego se perfila como el mayor lanzamiento chino desde Black Myth Wukong, y aunque probablemente fue un fenómeno único en una generación, las estimaciones de Alinea Analytics predicen que es posible que ya haya vendido 300.000 copias a través de pedidos anticipados solo en Steam. Lea el artículo completo en pushsquare.com"
+      },
+      "it": {
+        "title": "L'esclusiva console PS5 Phantom Blade Zero è pronta per un lancio gigantesco",
+        "summary": "Affila le tue spade. C'è una ragione per cui Sony sta sostenendo Phantom Blade Zero, un'esclusiva per console, hard. Il gioco si preannuncia come la più grande uscita cinese dai tempi di Black Myth Wukong e, sebbene sia stato probabilmente un fenomeno irripetibile, le stime di Alinea Analytics prevedono che potrebbe aver già venduto 300.000 copie tramite preordini solo su Steam. Leggi l'articolo completo su pushsquare.com"
+      },
+      "de": {
+        "title": "Das für die PS5-Konsole exklusive Phantom Blade Zero steht vor der gigantischen Veröffentlichung",
+        "summary": "Schärfe deine Schwerter. Es gibt einen Grund, warum Sony Phantom Blade Zero unterstützt, ein exklusives, hartes Konsolenspiel. Das Spiel entwickelt sich zur größten chinesischen Veröffentlichung seit Black Myth Wukong, und obwohl dies wahrscheinlich ein einmaliges Phänomen in einer Generation war, gehen Schätzungen von Alinea Analytics davon aus, dass allein über Vorbestellungen auf Steam bereits 300.000 Exemplare verkauft wurden. Lesen Sie den vollständigen Artikel auf pushsquare.com"
+      },
+      "pt": {
+        "title": "Phantom Blade Zero exclusivo do console PS5 preparado para lançamento gigantesco",
+        "summary": "Afie suas espadas. Há uma razão pela qual a Sony está apoiando Phantom Blade Zero, um console exclusivo, difícil. O jogo está se preparando para ser o maior lançamento chinês desde Black Myth Wukong e, embora isso tenha sido provavelmente um fenômeno que ocorre uma vez em uma geração, as estimativas da Alinea Analytics prevêem que ele já pode ter vendido 300 mil cópias por meio de pré-encomendas apenas no Steam. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "Эксклюзивный Phantom Blade Zero для консоли PS5 готов к грандиозному запуску",
+        "summary": "Наточите свои мечи. Есть причина, по которой Sony поддерживает Phantom Blade Zero, эксклюзивную консольную игру. Игра обещает стать крупнейшим китайским релизом со времен Black Myth Wukong, и хотя это, вероятно, явление, которое случается раз в поколение, по оценкам Alinea Analytics, уже было продано 300 тысяч копий только через предварительные заказы в Steam. Полную версию статьи читайте на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "Η αποκλειστική κονσόλα PS5 Phantom Blade Zero Poised για Gargantuan Launch",
+        "summary": "Ακονίστε τα ξίφη σας. Υπάρχει λόγος που η Sony υποστηρίζει το Phantom Blade Zero, μια αποκλειστική κονσόλα, σκληρά. Το παιχνίδι διαμορφώνεται ως η μεγαλύτερη κινεζική κυκλοφορία μετά το Black Myth Wukong, και ενώ αυτό ήταν πιθανό φαινόμενο που συμβαίνει μια φορά στη γενιά, οι εκτιμήσεις της Alinea Analytics προβλέπουν ότι μπορεί να έχει ήδη πουλήσει 300 χιλιάδες αντίτυπα μέσω προπαραγγελιών μόνο στο Steam. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
+      },
+      "tr": {
+        "title": "PS5 Konsoluna Özel Phantom Blade Zero Devasa Lansmana Hazır",
+        "summary": "Kılıçlarınızı keskinleştirin. Sony'nin konsollara özel, zorlu bir oyun olan Phantom Blade Zero'yu desteklemesinin bir nedeni var. Oyun, Black Myth Wukong'dan bu yana Çin'deki en büyük sürüm olacak şekilde şekilleniyor ve bu muhtemelen nesilde bir kez görülen bir fenomen olsa da, Alinea Analytics'in tahminleri, oyunun yalnızca Steam'deki ön siparişlerle şimdiden 300 bin kopya satmış olabileceğini öngörüyor. Makalenin tamamını pushsquare.com'da okuyun"
+      },
+      "ja": {
+        "title": "PS5 コンソール専用のファントム ブレード ゼロが巨大な発売に向けて準備完了",
+        "summary": "剣を研いでください。ソニーがコンソール専用のハードである Phantom Blade Zero を支援するのには理由があります。このゲームは、『Black Myth Wukong』以来最大の中国リリースとなりつつあり、おそらく一世代に一度の現象だったが、Alinea Analytics の推定では、Steam での予約注文だけですでに 30 万本が売れた可能性があると予測されている。 Pushsquare.comで記事全文を読む"
+      },
+      "zh": {
+        "title": "PS5 主机独家《幻影之刃零》准备大规模发布",
+        "summary": "磨利你的剑。索尼大力支持《幻影之刃零》这款游戏机独占游戏是有原因的。该游戏即将成为自《黑神话悟空》以来最大规模的中国发行游戏，虽然这可能是千载难逢的现象，但 Alinea Analytics 的估计预计，仅通过 Steam 上的预订，该游戏可能已经售出 30 万份。在pushsquare.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "4cadd1dc864c0728dce85da513312f7f73c8d429",
+    "title": "Cave's Bullet Hell Revival Of 'Dodonpachi Resurrection' Arrives This Month With \"A Series First\" Battle Royale Mode",
+    "summary": "\"Not dead yet. The battle continues\". Cave, the legendary developer behind classic bullet hell shooters like Dodonpachi, Espgaluda, and Mushihimesama , has just announced it is working on an enhanced version of Dodonpachi Resurrection (otherwise known as Dodonpachi DaiFukkatsu in Japan). Dodonpachi Resurrection Reignite , as the new version of the game is called, is part of a new \"Refine Series\" and is described as featuring \"new stages\", \"a new character\", and \"new music\", while maintaining the",
+    "category": "REISSUE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/08/caves-bullet-hell-revival-of-dodonpachi-resurrection-arrives-this-month-with-a-series-first-battle-royale-mode",
+    "imageUrl": "https://images.timeextension.com/d897410f39496/large.jpg",
+    "publishedAt": "2026-08-21T11:30:00+00:00",
+    "scrapedAt": "2026-08-22T03:46:29.899483+00:00",
+    "translations": {
+      "en": {
+        "title": "Cave's Bullet Hell Revival Of 'Dodonpachi Resurrection' Arrives This Month With \"A Series First\" Battle Royale Mode",
+        "summary": "\"Not dead yet. The battle continues\". Cave, the legendary developer behind classic bullet hell shooters like Dodonpachi, Espgaluda, and Mushihimesama , has just announced it is working on an enhanced version of Dodonpachi Resurrection (otherwise known as Dodonpachi DaiFukkatsu in Japan). Dodonpachi Resurrection Reignite , as the new version of the game is called, is part of a new \"Refine Series\" and is described as featuring \"new stages\", \"a new character\", and \"new music\", while maintaining the"
+      },
+      "fr": {
+        "title": "La renaissance de Cave's Bullet Hell de \"Dodonpachi Resurrection\" arrive ce mois-ci avec le mode Battle Royale \"A Series First\"",
+        "summary": "\"Pas encore mort. La bataille continue\". Cave, le développeur légendaire derrière les jeux de tir classiques comme Dodonpachi, Espgaluda et Mushihimesama, vient d'annoncer qu'il travaille sur une version améliorée de Dodonpachi Resurrection (autrement connu sous le nom de Dodonpachi DaiFukkatsu au Japon). Dodonpachi Resurrection Reignite, comme on appelle la nouvelle version du jeu, fait partie d'une nouvelle \"Série Refine\" et est décrite comme comportant \"de nouvelles étapes\", \"un nouveau personnage\" et \"une nouvelle musique\", tout en conservant le"
+      },
+      "es": {
+        "title": "El renacimiento de Cave's Bullet Hell de 'Dodonpachi Resurrection' llega este mes con el modo Battle Royale \"A Series First\"",
+        "summary": "\"Aún no estoy muerto. La batalla continúa\". Cave, el legendario desarrollador detrás de los juegos de disparos clásicos como Dodonpachi, Espgaluda y Mushihimesama, acaba de anunciar que está trabajando en una versión mejorada de Dodonpachi Resurrection (también conocido como Dodonpachi DaiFukkatsu en Japón). Dodonpachi Resurrection Reignite, como se llama la nueva versión del juego, es parte de una nueva \"Serie Refine\" y se describe que presenta \"nuevas etapas\", \"un nuevo personaje\" y \"nueva música\", manteniendo al mismo tiempo la"
+      },
+      "it": {
+        "title": "Il revival di Cave's Bullet Hell di \"Dodonpachi Resurrection\" arriva questo mese con la modalità Battle Royale \"A Series First\"",
+        "summary": "\"Non ancora morto. La battaglia continua\". Cave, il leggendario sviluppatore dietro i classici sparatutto bullet hell come Dodonpachi, Espgaluda e Mushihimesama, ha appena annunciato che sta lavorando su una versione migliorata di Dodonpachi Resurrection (altrimenti noto come Dodonpachi DaiFukkatsu in Giappone). Dodonpachi Resurrection Reignite, come viene chiamata la nuova versione del gioco, fa parte di una nuova \"Serie Refine\" ed è descritta come caratterizzata da \"nuovi livelli\", \"un nuovo personaggio\" e \"nuova musica\", pur mantenendo il"
+      },
+      "de": {
+        "title": "Caves Bullet-Hell-Revival von „Dodonpachi Resurrection“ erscheint diesen Monat mit dem „A Series First“-Battle-Royale-Modus",
+        "summary": "„Noch nicht tot. Der Kampf geht weiter.“ Cave, der legendäre Entwickler hinter klassischen Bullet-Hell-Shootern wie Dodonpachi, Espgaluda und Mushihimesama, hat gerade angekündigt, dass es an einer erweiterten Version von Dodonpachi Resurrection (in Japan auch als Dodonpachi DaiFukkatsu bekannt) arbeitet. Dodonpachi Resurrection Reignite, wie die neue Version des Spiels heißt, ist Teil einer neuen „Refine Series“ und wird als „neue Level“, „einen neuen Charakter“ und „neue Musik“ beschrieben, während das Spiel beibehalten wird"
+      },
+      "pt": {
+        "title": "O renascimento do Cave's Bullet Hell de ‘Dodonpachi Resurrection’ chega este mês com o modo Battle Royale “A Series First”",
+        "summary": "\"Ainda não estou morto. A batalha continua\". Cave, o lendário desenvolvedor por trás de jogos de tiro clássicos como Dodonpachi, Espgaluda e Mushihimesama, acaba de anunciar que está trabalhando em uma versão aprimorada de Dodonpachi Resurrection (também conhecido como Dodonpachi DaiFukkatsu no Japão). Dodonpachi Resurrection Reignite, como é chamada a nova versão do jogo, faz parte de uma nova \"Série Refine\" e é descrito como apresentando \"novos estágios\", \"um novo personagem\" e \"nova música\", mantendo o"
+      },
+      "ru": {
+        "title": "Возрождение Cave’s Bullet Hell «Dodonpachi Resurrection» выйдет в этом месяце с режимом «Королевская битва» «впервые в серии»",
+        "summary": "«Еще не мертв. Битва продолжается». Cave, легендарный разработчик классических адских шутеров, таких как Dodonpachi, Espgaluda и Mushihimesama, только что объявил, что работает над расширенной версией Dodonpachi Resurrection (также известной в Японии как Dodonpachi DaiFukkatsu). Dodonpachi Resurrection Reignite, как называется новая версия игры, является частью новой «Refine Series» и описывается как включает «новые этапы», «нового персонажа» и «новую музыку», сохраняя при этом"
+      },
+      "el": {
+        "title": "Το Cave's Bullet Hell Revival Of 'Dodonpachi Resurrection' φτάνει αυτόν τον μήνα με τη λειτουργία Battle Royale \"A Series First\"",
+        "summary": "\"Δεν έχει πεθάνει ακόμα. Η μάχη συνεχίζεται\". Ο Cave, ο θρυλικός προγραμματιστής πίσω από τα κλασικά bullet hell shooters όπως οι Dodonpachi, Espgaluda και Mushihimesama, μόλις ανακοίνωσε ότι εργάζεται σε μια βελτιωμένη έκδοση του Dodonpachi Resurrection (αλλιώς γνωστό ως Dodonpachi DaiFukkatsu στην Ιαπωνία). Το Dodonpachi Resurrection Reignite , όπως ονομάζεται η νέα έκδοση του παιχνιδιού, είναι μέρος μιας νέας \"Σειράς Refine\" και περιγράφεται ότι περιλαμβάνει \"νέα στάδια\", \"ένα νέο χαρακτήρα\" και \"νέα μουσική\", ενώ διατηρεί το"
+      },
+      "tr": {
+        "title": "Cave'in 'Dodonpachi Resurrection'ın Mermi Cehennemi Yeniden Dirilişi Bu Ay \"A Series First\" Battle Royale Moduyla Geliyor",
+        "summary": "\"Henüz ölmedi. Savaş devam ediyor\". Dodonpachi, Espgaluda ve Mushihimesama gibi klasik kurşun cehennemi atıcıların arkasındaki efsanevi geliştirici Cave, Dodonpachi Resurrection'ın (Japonya'da Dodonpachi DaiFukkatsu olarak da bilinir) geliştirilmiş bir versiyonu üzerinde çalıştığını duyurdu. Oyunun yeni versiyonu olarak adlandırılan Dodonpachi Resurrection Reignite, yeni bir \"Refine Serisi\"nin parçası ve \"yeni aşamalar\", \"yeni bir karakter\" ve \"yeni müzik\" içerecek şekilde tanımlanıyor."
+      },
+      "ja": {
+        "title": "ケイブの弾幕リバイバル「怒首領蜂 Resurrection」が今月登場、「シリーズ初」のバトルロイヤルモードが登場",
+        "summary": "「まだ死んではいない。戦いは続く」。怒首領蜂、エスプガルーダ、虫姫さまなどの古典的な弾幕シューティング ゲームを開発した伝説的な開発者であるケイブは、怒首領蜂 Resurrection (日本では怒首領蜂大復活として知られる) の強化版に取り組んでいることを発表しました。新しいバージョンのゲームは「怒首領蜂 Resurrection Reignite」と呼ばれており、新しい「Refine シリーズ」の一部であり、「新しいステージ」、「新しいキャラクター」、「新しい音楽」をフィーチャーすると説明されています。"
+      },
+      "zh": {
+        "title": "Cave 的弹幕射击重制版《Dodonpachi Resurrection》将于本月推出“系列首发”大逃杀模式",
+        "summary": "“还没死，战斗还在继续”。 Cave 是《Dodonpachi》、《Espgaluda》和《Mushihimesama》等经典弹幕射击游戏的传奇开发商，刚刚宣布正在开发《Dodonpachi Resurrection》（在日本也称为 Dodonpachi DaiFukkatsu）的增强版。新版本的游戏《Dodonpachi Resurrection Reignite》是新“Refine 系列”的一部分，被描述为具有“新关卡”、“新角色”和“新音乐”，同时保持了"
+      }
+    }
+  },
+  {
+    "id": "53f012256bdb3f29aa4c239bffadcbb57e1b02e7",
+    "title": "'Great Games Belong in Your Collection, Not Just Your Library': Retailer Promotes Physical Revival with Reprinted PS4 Lineup",
+    "summary": "No disc, no buy. Import retailer Play Asia hopes you’ll keep the “no disc, no buy” energy with its Physical Revival campaign, underway now. The site has assembled a curated collection of physical PS4 games , reprinted and back in stock “for collectors, fans, and anyone who believes great games belong on the shelf”. Read the full article on pushsquare.com",
+    "category": "REISSUE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/great-games-belong-in-your-collection-not-just-your-library-retailer-promotes-physical-revival-with-reprinted-ps4-lineup",
+    "imageUrl": "https://images.pushsquare.com/a74bbcefaf6f0/large.jpg",
+    "publishedAt": "2026-08-21T11:30:00+00:00",
+    "scrapedAt": "2026-08-22T03:47:34.647096+00:00",
+    "translations": {
+      "en": {
+        "title": "'Great Games Belong in Your Collection, Not Just Your Library': Retailer Promotes Physical Revival with Reprinted PS4 Lineup",
+        "summary": "No disc, no buy. Import retailer Play Asia hopes you’ll keep the “no disc, no buy” energy with its Physical Revival campaign, underway now. The site has assembled a curated collection of physical PS4 games , reprinted and back in stock “for collectors, fans, and anyone who believes great games belong on the shelf”. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "« Les grands jeux appartiennent à votre collection, pas seulement à votre bibliothèque » : le détaillant favorise la renaissance physique avec une gamme PS4 réimprimée",
+        "summary": "Pas de disque, pas d'achat. Le détaillant importateur Play Asia espère que vous conserverez l’énergie « pas de disque, pas d’achat » avec sa campagne Physical Revival, en cours actuellement. Le site a rassemblé une collection de jeux PS4 physiques, réimprimés et de nouveau en stock « pour les collectionneurs, les fans et tous ceux qui croient que les grands jeux ont leur place sur les étagères ». Lire l'article complet sur pushsquare.com"
+      },
+      "es": {
+        "title": "'Los grandes juegos pertenecen a tu colección, no solo a tu biblioteca': el minorista promueve el renacimiento físico con una línea reimpresa de PS4",
+        "summary": "Sin disco no hay compra. El minorista de importación Play Asia espera que mantenga la energía de \"sin disco, no se compra\" con su campaña Physical Revival, que ya está en marcha. El sitio ha reunido una colección seleccionada de juegos físicos de PS4, reimpresos y nuevamente disponibles \"para coleccionistas, fanáticos y cualquiera que crea que los grandes juegos deben estar en el estante\". Lea el artículo completo en pushsquare.com"
+      },
+      "it": {
+        "title": "\"I migliori giochi fanno parte della tua collezione, non solo della tua libreria\": il rivenditore promuove il revival fisico con la ristampa della gamma PS4",
+        "summary": "Nessun disco, nessun acquisto. Il rivenditore di importazione Play Asia spera che manterrai l'energia \"no disc, no buy\" con la sua campagna Physical Revival, in corso ora. Il sito ha messo insieme una raccolta curata di giochi fisici per PS4, ristampati e di nuovo disponibili \"per collezionisti, fan e chiunque creda che i grandi giochi debbano stare sullo scaffale\". Leggi l'articolo completo su pushsquare.com"
+      },
+      "de": {
+        "title": "„Großartige Spiele gehören in Ihre Sammlung, nicht nur in Ihre Bibliothek“: Einzelhändler fördert physische Wiederbelebung mit neu aufgelegter PS4-Reihe",
+        "summary": "Keine CD, kein Kauf. Der Import-Einzelhändler Play Asia hofft, dass Sie mit seiner derzeit laufenden Physical Revival-Kampagne die „Keine CD, kein Kauf“-Mentalität beibehalten. Die Website hat eine kuratierte Sammlung physischer PS4-Spiele zusammengestellt, die nachgedruckt und wieder auf Lager sind, „für Sammler, Fans und alle, die glauben, dass großartige Spiele ins Regal gehören“. Lesen Sie den vollständigen Artikel auf pushsquare.com"
+      },
+      "pt": {
+        "title": "‘Grandes jogos pertencem à sua coleção, não apenas à sua biblioteca’: varejista promove renascimento físico com linha PS4 reimpressa",
+        "summary": "Sem disco, sem compra. O varejista de importação Play Asia espera que você mantenha a energia “sem disco, não compre” com sua campanha Physical Revival, em andamento agora. O site reuniu uma coleção com curadoria de jogos físicos de PS4, reimpressos e novamente em estoque “para colecionadores, fãs e qualquer pessoa que acredite que grandes jogos devem estar na prateleira”. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "«Великие игры принадлежат вашей коллекции, а не только вашей библиотеке»: ритейлер продвигает физическое возрождение с помощью переизданной линейки PS4",
+        "summary": "Нет диска – нет покупки. Импортный ритейлер Play Asia надеется, что вы сохраните идею «нет диска — нет покупки» в рамках кампании Physical Revival, которая уже ведется. На сайте собрана тщательно подобранная коллекция игр для PS4 на физических носителях, переизданная и снова поступившая в продажу «для коллекционеров, фанатов и всех, кто считает, что отличным играм место на полке». Полную версию статьи читайте на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "«Τα σπουδαία παιχνίδια ανήκουν στη συλλογή σας, όχι μόνο στη βιβλιοθήκη σας»: Ο πωλητής λιανικής προωθεί τη φυσική αναβίωση με την ανατυπωμένη σειρά PS4",
+        "summary": "Ούτε δίσκος, ούτε αγορά. Ο πωλητής λιανικής εισαγωγής Play Asia ελπίζει ότι θα διατηρήσετε την ενέργεια \"χωρίς δίσκο, χωρίς αγορά\" με την καμπάνια Physical Revival, που βρίσκεται σε εξέλιξη τώρα. Ο ιστότοπος έχει συγκεντρώσει μια επιμελημένη συλλογή φυσικών παιχνιδιών PS4, τα οποία έχουν ανατυπωθεί και είναι ξανά σε απόθεμα «για συλλέκτες, θαυμαστές και οποιονδήποτε πιστεύει ότι τα σπουδαία παιχνίδια ανήκουν στο ράφι». Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
+      },
+      "tr": {
+        "title": "'Harika Oyunlar Sadece Kitaplığınıza Değil, Koleksiyonunuza da Ait': Satıcı, Yeniden Basılmış PS4 Serisiyle Fiziksel Canlanmayı Destekliyor",
+        "summary": "Disk yok, satın alma yok. İthalat perakendecisi Play Asia, şu anda devam eden Fiziksel Uyanış kampanyasıyla \"disk yok, satın alma yok\" enerjisini koruyacağınızı umuyor. Site, \"koleksiyoncular, hayranlar ve harika oyunların rafta olması gerektiğine inanan herkes için\" yeniden basılan ve tekrar stoğa alınan fiziksel PS4 oyunlarından oluşan özel bir koleksiyon oluşturdu. Makalenin tamamını pushsquare.com'da okuyun"
+      },
+      "ja": {
+        "title": "「素晴らしいゲームはあなたのライブラリだけでなくあなたのコレクションに属します」：小売業者がPS4の復刻ラインナップで物理的な復活を促進",
+        "summary": "ディスクがなければ購入できません。輸入小売業者の Play Asia は、現在実施中のフィジカル リバイバル キャンペーンで「ディスクなし、購入なし」のエネルギーを維持していただけることを願っています。このサイトは、「コレクター、ファン、そして素晴らしいゲームが棚にあると信じている人のために」再版および再入荷された PS4 物理ゲームの精選されたコレクションを集めています。 Pushsquare.comで記事全文を読む"
+      },
+      "zh": {
+        "title": "“伟大的游戏属于您的收藏，而不仅仅是您的图书馆”：零售商通过重印的 PS4 系列促进实体复兴",
+        "summary": "没有光盘，不买。进口零售商 Play Asia 希望您能通过目前正在进行的“身体复兴”活动保持“无光盘，不购买”的活力。该网站汇集了一系列精选的实体 PS4 游戏，并重新印刷并重新上架，“为收藏家、粉丝和任何相信优秀游戏应该上架的人”。在pushsquare.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "b84a6917d2d63567cd25c573ca3f60b3c26be539",
+    "title": "Sony Admits Mistake After Erroneously Purging Legit Indie Dev without Explanation",
+    "summary": "Highly rated Stonks-9800 coming to PS5 again. Sony has been ridding the PS Store of shovelware, erasing entire publisher catalogues from its virtual plaza. While I think this news has been broadly well received , I’ve always cautioned that legit devs may one day get caught up in the crossfire. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/08/sony-admits-mistake-after-erroneously-purging-legit-indie-dev-without-explanation",
+    "imageUrl": "https://images.pushsquare.com/fd078163bb0a5/large.jpg",
+    "publishedAt": "2026-08-21T10:30:00+00:00",
+    "scrapedAt": "2026-08-22T03:47:34.647237+00:00",
+    "translations": {
+      "en": {
+        "title": "Sony Admits Mistake After Erroneously Purging Legit Indie Dev without Explanation",
+        "summary": "Highly rated Stonks-9800 coming to PS5 again. Sony has been ridding the PS Store of shovelware, erasing entire publisher catalogues from its virtual plaza. While I think this news has been broadly well received , I’ve always cautioned that legit devs may one day get caught up in the crossfire. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Sony admet son erreur après avoir purgé par erreur les développeurs indépendants légitimes sans explication",
+        "summary": "Le Stonks-9800 très bien noté revient à nouveau sur PS5. Sony a débarrassé le PS Store des shovelwares, effaçant des catalogues entiers d'éditeurs de sa place virtuelle. Même si je pense que cette nouvelle a été globalement bien accueillie, j’ai toujours prévenu que les développeurs légitimes pourraient un jour se retrouver pris entre deux feux. Lire l'article complet sur pushsquare.com"
+      },
+      "es": {
+        "title": "Sony admite un error después de purgar erróneamente a un desarrollador independiente legítimo sin explicación",
+        "summary": "Stonks-9800, altamente calificado, vuelve a PS5. Sony ha estado eliminando los shovelware de la PS Store, borrando catálogos enteros de editores de su plaza virtual. Si bien creo que esta noticia ha sido bien recibida en general, siempre he advertido que los desarrolladores legítimos algún día podrían quedar atrapados en el fuego cruzado. Lea el artículo completo en pushsquare.com"
+      },
+      "it": {
+        "title": "Sony ammette l'errore dopo aver erroneamente eliminato lo sviluppo indipendente legittimo senza spiegazioni",
+        "summary": "Stonks-9800, molto apprezzato, in arrivo di nuovo su PS5. Sony ha liberato il PS Store dagli shovelware, cancellando interi cataloghi di editori dalla sua piazza virtuale. Anche se penso che questa notizia sia stata generalmente ben accolta, ho sempre avvertito che gli sviluppatori legittimi potrebbero un giorno rimanere coinvolti nel fuoco incrociato. Leggi l'articolo completo su pushsquare.com"
+      },
+      "de": {
+        "title": "Sony gibt einen Fehler zu, nachdem es legitime Indie-Entwickler fälschlicherweise ohne Erklärung gelöscht hat",
+        "summary": "Der hoch bewertete Stonks-9800 erscheint wieder für PS5. Sony hat den PS Store von Schaufelware befreit und ganze Verlagskataloge von seinem virtuellen Marktplatz gelöscht. Obwohl ich denke, dass diese Nachricht allgemein gut aufgenommen wurde, habe ich immer darauf hingewiesen, dass seriöse Entwickler eines Tages ins Kreuzfeuer geraten könnten. Lesen Sie den vollständigen Artikel auf pushsquare.com"
+      },
+      "pt": {
+        "title": "Sony admite erro após eliminar erroneamente desenvolvedor indie legítimo sem explicação",
+        "summary": "Stonks-9800 altamente avaliado chegando ao PS5 novamente. A Sony está livrando a PS Store de shovelware, apagando catálogos inteiros de editores de sua praça virtual. Embora eu ache que esta notícia foi amplamente bem recebida, sempre avisei que desenvolvedores legítimos podem um dia ser pegos no fogo cruzado. Leia o artigo completo em pushsquare.com"
+      },
+      "ru": {
+        "title": "Sony признает ошибку после ошибочного удаления легальных инди-разработчиков без объяснения причин",
+        "summary": "Высоко оцененная Stonks-9800 снова появится на PS5. Sony избавляет PS Store от ненужного ПО, удаляя целые каталоги издателей со своей виртуальной площади. Хотя я думаю, что эта новость была широко принята, я всегда предупреждал, что законные разработчики однажды могут оказаться под перекрестным огнем. Полную версию статьи читайте на сайте pushsquare.com."
+      },
+      "el": {
+        "title": "Η Sony παραδέχεται το λάθος μετά την εσφαλμένη εκκαθάριση του Legit Indie Dev χωρίς εξήγηση",
+        "summary": "Το Stonks-9800 με υψηλή βαθμολογία έρχεται ξανά στο PS5. Η Sony απαλλάσσει το PS Store από σκεύη φτυαριών, σβήνοντας ολόκληρους καταλόγους εκδοτών από την εικονική της πλατεία. Αν και πιστεύω ότι αυτά τα νέα έτυχαν ευρέως αποδεκτής, πάντα προειδοποίησα ότι οι νόμιμοι προγραμματιστές μπορεί μια μέρα να εμπλακούν σε διασταυρούμενα πυρά. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
+      },
+      "tr": {
+        "title": "Sony, Yasal Bağımsız Geliştiriciyi Açıklama Yapmadan Yanlışlıkla Temizledikten Sonra Hatasını Kabul Etti",
+        "summary": "Yüksek puan alan Stonks-9800 yeniden PS5'e geliyor. Sony, PS Store'u kürek yazılımlarından temizliyor ve yayıncı kataloglarının tamamını sanal plazasından siliyor. Bu haberin genel olarak iyi karşılandığını düşünsem de, yasal geliştiricilerin bir gün çapraz ateşte kalabileceği konusunda her zaman uyardım. Makalenin tamamını pushsquare.com'da okuyun"
+      },
+      "ja": {
+        "title": "ソニー、正当なインディーズ開発者を説明なしに誤って追放した後、間違いを認める",
+        "summary": "高評価の Stonks-9800 が再び PS5 に登場。ソニーは PS Store からショベルウェアを排除し、仮想プラザからパブリッシャーのカタログ全体を消去しました。このニュースは広く受け入れられていると思いますが、私は正規の開発者がいつか集中砲火に巻き込まれる可能性があると常に警告してきました。 Pushsquare.comで記事全文を読む"
+      },
+      "zh": {
+        "title": "索尼在错误地清除合法独立开发者后承认错误，且没有任何解释",
+        "summary": "Highly rated Stonks-9800 coming to PS5 again.索尼一直在清除 PS Store 中的铲子软件，从其虚拟广场上删除整个出版商目录。虽然我认为这一消息受到了广泛的欢迎，但我一直警告说，合法的开发者有一天可能会陷入交火之中。在pushsquare.com 上阅读全文"
+      }
+    }
+  },
+  {
+    "id": "6005ad114c1cc590ab758f57936aeeca93cc026d",
+    "title": "Xbox Series X25 Price & Release Date Details Are Starting To Leak Out",
+    "summary": "We've got the European price and a seemingly confirmed date. Here we go! We know many people have been eager to learn more about the Xbox Series X25 console 's release date and price, and it looks like we've finally got some details on both of those things via a new leak. The well-known and usually very accurate website Dealabs is reporting that the Xbox Series X25 console will be priced at €899.99 in Europe when it releases later this year, which they estimate will equate to $899.99 in the US. ",
+    "category": "GAME_RELEASE",
+    "sourceName": "Pure Xbox",
+    "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-series-x25-price-and-release-date-details-are-starting-to-leak-out",
+    "imageUrl": "https://images.purexbox.com/fe085c291c56e/large.jpg",
+    "publishedAt": "2026-08-21T10:27:00+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.355486+00:00",
+    "translations": {
+      "en": {
+        "title": "Xbox Series X25 Price & Release Date Details Are Starting To Leak Out",
+        "summary": "We've got the European price and a seemingly confirmed date. Here we go! We know many people have been eager to learn more about the Xbox Series X25 console 's release date and price, and it looks like we've finally got some details on both of those things via a new leak. The well-known and usually very accurate website Dealabs is reporting that the Xbox Series X25 console will be priced at €899.99 in Europe when it releases later this year, which they estimate will equate to $899.99 in the US. "
+      },
+      "fr": {
+        "title": "Les détails du prix et de la date de sortie de la Xbox Series X25 commencent à être divulgués",
+        "summary": "Nous avons le prix européen et une date apparemment confirmée. On y va! Nous savons que de nombreuses personnes étaient impatientes d'en savoir plus sur la date de sortie et le prix de la console Xbox Series X25, et il semble que nous ayons enfin quelques détails sur ces deux choses via une nouvelle fuite. Le site Web bien connu et généralement très précis Dealabs rapporte que la console Xbox Series X25 sera au prix de 899,99 € en Europe lors de sa sortie plus tard cette année, ce qui, selon eux, équivaudra à 899,99 $ aux États-Unis."
+      },
+      "es": {
+        "title": "Los detalles del precio y la fecha de lanzamiento de Xbox Series X25 están comenzando a filtrarse",
+        "summary": "Tenemos el precio europeo y una fecha aparentemente confirmada. ¡Aquí vamos! Sabemos que muchas personas han estado ansiosas por saber más sobre la fecha de lanzamiento y el precio de la consola Xbox Series X25, y parece que finalmente tenemos algunos detalles sobre ambas cosas a través de una nueva filtración. El conocido y normalmente muy preciso sitio web Dealabs informa que la consola Xbox Series X25 tendrá un precio de 899,99 euros en Europa cuando se lance a finales de este año, lo que estiman equivaldrá a 899,99 dólares en Estados Unidos."
+      },
+      "it": {
+        "title": "I dettagli sul prezzo e sulla data di uscita di Xbox Series X25 stanno iniziando a trapelare",
+        "summary": "Abbiamo il prezzo europeo e una data apparentemente confermata. Eccoci qui! Sappiamo che molte persone erano ansiose di saperne di più sulla data di rilascio e sul prezzo della console Xbox Series X25, e sembra che abbiamo finalmente ottenuto alcuni dettagli su entrambe le cose tramite una nuova fuga di notizie. Il noto e solitamente molto accurato sito Web Dealabs riporta che la console Xbox Series X25 avrà un prezzo di € 899,99 in Europa quando verrà rilasciata entro la fine dell'anno, che secondo loro equivarrà a $ 899,99 negli Stati Uniti."
+      },
+      "de": {
+        "title": "Preis- und Erscheinungsdatumsdetails für die Xbox Series X25 werden allmählich bekannt",
+        "summary": "Wir haben den europäischen Preis und ein scheinbar bestätigtes Datum. Auf geht's! Wir wissen, dass viele Leute gespannt darauf waren, mehr über das Erscheinungsdatum und den Preis der Xbox Series Die bekannte und meist sehr genaue Website Dealabs berichtet, dass die Xbox Series"
+      },
+      "pt": {
+        "title": "Detalhes de preço e data de lançamento do Xbox Series X25 estão começando a vazar",
+        "summary": "Temos o preço europeu e uma data aparentemente confirmada. Aqui vamos nós! Sabemos que muitas pessoas estão ansiosas para saber mais sobre a data de lançamento e o preço do console Xbox Series X25, e parece que finalmente obtivemos alguns detalhes sobre essas duas coisas por meio de um novo vazamento. O conhecido e geralmente muito preciso site Dealabs está relatando que o console Xbox Series X25 custará € 899,99 na Europa quando for lançado ainda este ano, o que eles estimam que equivalerá a US$ 899,99 nos EUA."
+      },
+      "ru": {
+        "title": "Подробности о цене и дате выпуска Xbox Series X25 начинают просачиваться",
+        "summary": "У нас есть европейская цена и вроде бы подтвержденная дата. Вот так! Мы знаем, что многие люди хотели узнать больше о дате выпуска и цене консоли Xbox Series X25, и похоже, что мы наконец-то получили некоторые подробности об обеих этих вещах благодаря новой утечке. Известный и, как правило, очень точный веб-сайт Dealabs сообщает, что консоль Xbox Series X25 будет стоить 899,99 евро в Европе, когда она выйдет позднее в этом году, что, по их оценкам, будет равняться 899,99 доллара в США."
+      },
+      "el": {
+        "title": "Οι λεπτομέρειες τιμής και ημερομηνίας κυκλοφορίας του Xbox Series X25 αρχίζουν να διαρρέουν",
+        "summary": "Έχουμε την ευρωπαϊκή τιμή και μια φαινομενικά επιβεβαιωμένη ημερομηνία. Πάμε λοιπόν! Γνωρίζουμε ότι πολλοί άνθρωποι ήταν πρόθυμοι να μάθουν περισσότερα για την ημερομηνία κυκλοφορίας και την τιμή της κονσόλας Xbox Series X25 και φαίνεται ότι επιτέλους έχουμε κάποιες λεπτομέρειες και για τα δύο αυτά πράγματα μέσω μιας νέας διαρροής. Ο γνωστός και συνήθως πολύ ακριβής ιστότοπος Dealabs αναφέρει ότι η τιμή της κονσόλας Xbox Series X25 θα είναι 899,99 € στην Ευρώπη όταν κυκλοφορήσει αργότερα φέτος, η οποία εκτιμάται ότι θα ισοδυναμεί με 899,99 δολάρια στις ΗΠΑ."
+      },
+      "tr": {
+        "title": "Xbox Series X25 Fiyat ve Çıkış Tarihi Ayrıntıları Sızmaya Başlıyor",
+        "summary": "Elimizde Avrupa fiyatı ve görünüşe göre onaylanmış bir tarih var. İşte başlıyoruz! Pek çok kişinin Xbox Series X25 konsolunun çıkış tarihi ve fiyatı hakkında daha fazla bilgi edinmek için istekli olduğunu biliyoruz ve görünen o ki, yeni bir sızıntı aracılığıyla sonunda her iki konu hakkında da bazı ayrıntılara sahip olduk. Tanınmış ve genellikle çok doğru bilgiler veren web sitesi Dealabs, Xbox Series X25 konsolunun bu yılın sonlarında piyasaya sürüldüğünde Avrupa'da 899,99 € fiyatla satışa sunulacağını bildiriyor ve bu fiyatın ABD'de 899,99 $'a eşit olacağını tahmin ediyorlar."
+      },
+      "ja": {
+        "title": "XboxシリーズX25の価格と発売日の詳細がリークされ始めている",
+        "summary": "ヨーロッパでの価格と、確定した日付が判明しました。さぁ行こう！多くの人々が Xbox Series X25 本体の発売日と価格について知りたがっていたことは承知していますが、新たなリークにより、これらの両方についての詳細がついに得られたようです。有名で通常は非常に正確な Web サイト Dealabs は、Xbox シリーズ X25 本体の今年後半発売時の価格がヨーロッパで 899.99 ユーロになると報告しており、米国では 899.99 ドルに相当すると推定されています。"
+      },
+      "zh": {
+        "title": "Xbox Series X25 价格和发布日期详细信息开始泄露",
+        "summary": "我们已经得到了欧洲价格和似乎已确定的日期。开始了！我们知道很多人都渴望了解有关 Xbox Series X25 主机的发布日期和价格的更多信息，看起来我们终于通过新的泄露获得了有关这两件事的一些细节。知名且通常非常准确的网站 Dealabs 报道称，Xbox Series X25 游戏机将于今年晚些时候在欧洲发布，售价为 899.99 欧元，他们估计在美国的售价为 899.99 美元。"
+      }
+    }
+  },
+  {
+    "id": "f279c429ce5a56e3a2db55e9728d40d08d26b9b8",
+    "title": "Final Fantasy VII Revelation Panels Announced For September & October",
+    "summary": "A \"new look\" at the third chapter will also feature at ONL. Before Final Fantasy VII Revelation arrives on the Switch 2 next Spring, Square Enix is building the excitement for this third and final part in the remake trilogy with all sorts of reveals. Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/final-fantasy-vii-revelation-panels-announced-for-september-and-october",
+    "imageUrl": "https://images.nintendolife.com/e8ea1b67898fe/large.jpg",
+    "publishedAt": "2026-08-21T03:55:00+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.022893+00:00",
+    "translations": {
+      "en": {
+        "title": "Final Fantasy VII Revelation Panels Announced For September & October",
+        "summary": "A \"new look\" at the third chapter will also feature at ONL. Before Final Fantasy VII Revelation arrives on the Switch 2 next Spring, Square Enix is building the excitement for this third and final part in the remake trilogy with all sorts of reveals. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Panneaux de révélation de Final Fantasy VII annoncés pour septembre et octobre",
+        "summary": "Un « nouveau regard » sur le troisième chapitre sera également présenté à l'ONL. Avant l'arrivée de Final Fantasy VII Revelation sur Switch 2 au printemps prochain, Square Enix crée l'enthousiasme pour ce troisième et dernier volet de la trilogie remake avec toutes sortes de révélations. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Se anuncian los paneles de revelación de Final Fantasy VII para septiembre y octubre",
+        "summary": "En ONL también se presentará una \"nueva mirada\" al tercer capítulo. Antes de que Final Fantasy VII Revelation llegue a Switch 2 la próxima primavera, Square Enix está generando entusiasmo por esta tercera y última parte de la trilogía de remakes con todo tipo de revelaciones. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Annunciati i pannelli Revelation di Final Fantasy VII per settembre e ottobre",
+        "summary": "All'ONL sarà presente anche una \"nuova veste\" del terzo capitolo. Prima che Final Fantasy VII Revelation arrivi su Switch 2 la prossima primavera, Square Enix sta creando entusiasmo per questa terza e ultima parte della trilogia di remake con ogni sorta di rivelazioni. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Final Fantasy VII Revelation Panels für September und Oktober angekündigt",
+        "summary": "Ein „neuer Blick“ auf das dritte Kapitel wird es auch bei ONL geben. Bevor Final Fantasy VII Revelation im nächsten Frühjahr auf Switch 2 erscheint, bereitet Square Enix mit allerlei Enthüllungen die Spannung auf diesen dritten und letzten Teil der Remake-Trilogie vor. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Painéis de revelação de Final Fantasy VII anunciados para setembro e outubro",
+        "summary": "Um “novo visual” do terceiro capítulo também estará presente no ONL. Antes de Final Fantasy VII Revelation chegar ao Switch 2 na próxima primavera, a Square Enix está construindo a emoção para esta terceira e última parte da trilogia remake com todos os tipos de revelações. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Панели Final Fantasy VII Revelation анонсированы на сентябрь и октябрь",
+        "summary": "«Новый взгляд» на третью главу также будет представлен на ONL. Прежде чем Final Fantasy VII Revelation выйдет на Switch 2 следующей весной, Square Enix готовит ажиотаж к этой третьей и последней части трилогии-римейка со всевозможными раскрытиями. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Το Final Fantasy VII Revelation Panels ανακοινώθηκε για τον Σεπτέμβριο και τον Οκτώβριο",
+        "summary": "Μια \"νέα ματιά\" στο τρίτο κεφάλαιο θα εμφανιστεί επίσης στο ONL. Πριν το Final Fantasy VII Revelation φτάσει στο Switch 2 την επόμενη Άνοιξη, η Square Enix χτίζει τον ενθουσιασμό για αυτό το τρίτο και τελευταίο μέρος της τριλογίας του remake με κάθε είδους αποκαλύψεις. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "Final Fantasy VII Vahiy Panelleri Eylül ve Ekim Ayında Açıklandı",
+        "summary": "ONL'de üçüncü bölüme \"yeni bir bakış\" da yer alacak. Final Fantasy VII Revelation önümüzdeki baharda Switch 2'ye gelmeden önce Square Enix, her türlü açıklamayla yeniden yapım üçlemesinin bu üçüncü ve son bölümünün heyecanını artırıyor. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "ファイナルファンタジー VII リベレーションパネルが 9 月と 10 月に発表される",
+        "summary": "第 3 章の「新しい外観」も ONL で特集されます。 『ファイナルファンタジー VII リベレーション』が来年の春に Switch 2 に登場する前に、スクウェア・エニックスはあらゆる種類の公開を行い、リメイク三部作の 3 番目で最後のパートに向けた興奮を高めています。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "《最终幻想 VII 启示录》面板将于 9 月和 10 月公布",
+        "summary": "第三章的“新面貌”也将在 ONL 上亮相。在明年春季《最终幻想 VII 启示录》登陆 Switch 2 之前，史克威尔艾尼克斯正在通过各种揭晓内容为重制三部曲的第三部，也是最后一部，营造令人兴奋的氛围。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
     "id": "01a708e282768bd9bb0e07a63a11221aedc8b897",
     "title": "S.T.A.L.K.E.R. 2: Cost of Hope Out Now, New Trailer Showcases Intense Story",
     "summary": "We knew the price of hope in a place like the Zone was steep, but it might be one even Skif could not pay in the unfolding war.",
@@ -65,7 +806,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/resident-evil-veronica-producer-yoshiaki-hirabayashi-attending-gamescom-2026/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T18:21:59+00:00",
-    "scrapedAt": "2026-08-21T03:57:05.910283+00:00",
+    "scrapedAt": "2026-08-22T03:48:49.135554+00:00",
     "translations": {
       "en": {
         "title": "Resident Evil Veronica producer Yoshiaki Hirabayashi attending Gamescom 2026",
@@ -122,7 +863,7 @@
     "sourceUrl": "https://retrododo.com/analogues-24k-gold-pocket-sells-out-in-minutes-already-on-ebay-for-1k/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/ap-ebay.webp",
     "publishedAt": "2026-08-20T17:01:28+00:00",
-    "scrapedAt": "2026-08-21T03:54:33.977353+00:00",
+    "scrapedAt": "2026-08-22T03:47:18.254175+00:00",
     "translations": {
       "en": {
         "title": "Analogue's 24K Gold Pocket Sells Out In Minutes - Already On eBay For $1K+",
@@ -179,7 +920,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-reportedly-makes-up-less-than-5percent-of-us-physical-sales-in-2026",
     "imageUrl": "https://images.purexbox.com/58b584fb43e53/large.jpg",
     "publishedAt": "2026-08-20T16:30:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:35.484275+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.355788+00:00",
     "translations": {
       "en": {
         "title": "Xbox Reportedly Makes Up Less Than 5% Of US Physical Sales In 2026",
@@ -236,7 +977,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/this-fmv-mystery-set-in-akihabara-now-has-a-demo-ps5-pre-orders-come-with-ps-plus-discount",
     "imageUrl": "https://images.pushsquare.com/fb5e9ee5ccdf7/large.jpg",
     "publishedAt": "2026-08-20T16:15:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:06.910011+00:00",
+    "scrapedAt": "2026-08-22T03:47:34.648044+00:00",
     "translations": {
       "en": {
         "title": "This FMV Mystery Set in Akihabara Now Has a Demo, PS5 Pre-Orders Come with PS Plus Discount",
@@ -293,7 +1034,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/nintendo-says-the-duskbloods-isnt-releasing-on-24th-september/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T15:51:07+00:00",
-    "scrapedAt": "2026-08-21T03:57:05.910361+00:00",
+    "scrapedAt": "2026-08-22T03:48:49.135617+00:00",
     "translations": {
       "en": {
         "title": "Nintendo says The Duskbloods isn’t releasing on 24th September",
@@ -344,13 +1085,13 @@
   {
     "id": "7c138bfb288b67dd4cfd08a4a08c5b679a968b7f",
     "title": "Gears Of War: E-Day 1:1 'Prototype Lancer' Replica Goes Up For Pre-Order Today",
-    "summary": "Update: Immediately out of stock, but keep checking! Gears of War: E-Day is coming exclusively to Xbox this October, and it's already an absolute blast to play, especially the new Horde Siege mode. That said, if you're into prized possessions and collectibles, there's a 1:1 replica of E-Day's 'Prototype Lancer' on the way, and it looks sick! Details are few and far between at the moment, with pre-orders set to go live at some point today. If you'd like to know when they do, head to the Xbox Game",
+    "summary": "Update: Second batch of stock now available. Gears of War: E-Day is coming exclusively to Xbox this October, and it's already an absolute blast to play, especially the new Horde Siege mode. That said, if you're into prized possessions and collectibles, there's a 1:1 replica of E-Day's 'Prototype Lancer' on the way, and it looks sick! Details are few and far between at the moment, with pre-orders set to go live at some point today. If you'd like to know when they do, head to the Xbox Game Studios",
     "category": "GAME_RELEASE",
     "sourceName": "Pure Xbox",
     "sourceUrl": "https://www.purexbox.com/news/2026/08/gears-of-war-e-day-11-prototype-lancer-replica-goes-up-for-pre-order-today",
     "imageUrl": "https://images.purexbox.com/c8114b3dec387/large.jpg",
     "publishedAt": "2026-08-20T15:50:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:35.484363+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.355873+00:00",
     "translations": {
       "en": {
         "title": "Gears Of War: E-Day 1:1 'Prototype Lancer' Replica Goes Up For Pre-Order Today",
@@ -407,7 +1148,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-denies-rumoured-release-date-for-the-duskbloods",
     "imageUrl": "https://images.nintendolife.com/207812da43d80/large.jpg",
     "publishedAt": "2026-08-20T15:20:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:47.959499+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.023421+00:00",
     "translations": {
       "en": {
         "title": "Nintendo Denies Rumoured Release Date For The Duskbloods",
@@ -464,7 +1205,7 @@
     "sourceUrl": "https://www.gematsu.com/2026/08/zero-hour-coming-to-ps5-xbox-series-this-fall",
     "imageUrl": "",
     "publishedAt": "2026-08-20T15:05:57+00:00",
-    "scrapedAt": "2026-08-21T03:57:53.468005+00:00",
+    "scrapedAt": "2026-08-22T03:48:49.479346+00:00",
     "translations": {
       "en": {
         "title": "Zero Hour coming to PS5, Xbox Series this fall",
@@ -578,7 +1319,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/us-nintendo-download-for-20th-august-2026/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T14:41:01+00:00",
-    "scrapedAt": "2026-08-21T03:57:05.910566+00:00",
+    "scrapedAt": "2026-08-22T03:48:49.135816+00:00",
     "translations": {
       "en": {
         "title": "US: Nintendo Download for 20th August, 2026",
@@ -623,63 +1364,6 @@
       "zh": {
         "title": "美国：任天堂 2026 年 8 月 20 日下载",
         "summary": "预订：任天堂音乐：活动：Nintendo Switch 2 和 Nintendo Switch 上的 Nintendo eShop 销售：本周在 Nintendo Switch 2 上的 Nintendo eShop 上也有新功能：本周在 Nintendo Switch 上的 Nintendo eShop 上也有新功能：Nintendo UK 来源"
-      }
-    }
-  },
-  {
-    "id": "ea502f5186c444fc1611d5a5a60af656735fdb39",
-    "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, Boasts 120fps Gameplay",
-    "summary": "Yo. PM Studios and Pocket Trap have announced that Pipistrello and the Cursed Yoyo is getting a Switch 2 version... and it's out now! Available on the eShop for £17.99 / $19.99 , the new release boasts 120fps gameplay at 1080p resolution in handheld mode, while docked mode goes all the way up to 4K. Current owners can upgrade to the Switch 2 version for absolutely nothing. Read the full article on nintendolife.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Nintendo Life",
-    "sourceUrl": "https://www.nintendolife.com/news/2026/08/pipistrello-and-the-cursed-yoyo-shadow-drops-on-switch-2-boasts-120fps-gameplay",
-    "imageUrl": "https://images.nintendolife.com/552051a964e2c/large.jpg",
-    "publishedAt": "2026-08-20T14:15:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:47.959686+00:00",
-    "translations": {
-      "en": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, Boasts 120fps Gameplay",
-        "summary": "Yo. PM Studios and Pocket Trap have announced that Pipistrello and the Cursed Yoyo is getting a Switch 2 version... and it's out now! Available on the eShop for £17.99 / $19.99 , the new release boasts 120fps gameplay at 1080p resolution in handheld mode, while docked mode goes all the way up to 4K. Current owners can upgrade to the Switch 2 version for absolutely nothing. Read the full article on nintendolife.com"
-      },
-      "fr": {
-        "title": "Pipistrello et le maudit Yoyo Shadow-Drops sur Switch 2, offre un gameplay à 120 ips",
-        "summary": "Yo. PM Studios et Pocket Trap ont annoncé que Pipistrello and the Cursed Yoyo allait recevoir une version Switch 2... et elle est disponible maintenant ! Disponible sur l'eShop au prix de 17,99 £ / 19,99 $, la nouvelle version offre un gameplay à 120 ips à une résolution de 1080p en mode portable, tandis que le mode ancré va jusqu'à 4K. Les propriétaires actuels peuvent passer à la version Switch 2 pour absolument rien. Lire l'article complet sur nintendolife.com"
-      },
-      "es": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops en Switch 2, cuenta con una jugabilidad de 120 fps",
-        "summary": "Yo. PM Studios y Pocket Trap han anunciado que Pipistrello and the Cursed Yoyo tendrá una versión para Switch 2... ¡y ya está disponible! Disponible en la eShop por £17.99 / $19.99, la nueva versión ofrece una jugabilidad de 120 fps con una resolución de 1080p en modo portátil, mientras que el modo acoplado llega hasta 4K. Los propietarios actuales pueden actualizar a la versión Switch 2 por absolutamente nada. Lea el artículo completo en nintendolife.com"
-      },
-      "it": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops su Switch 2, vanta un gameplay a 120 fps",
-        "summary": "Ehi. PM Studios e Pocket Trap hanno annunciato che Pipistrello and the Cursed Yoyo riceverà una versione per Switch 2... ed è ora disponibile! Disponibile sull'eShop per £ 17,99 / $ 19,99, la nuova versione vanta un gameplay a 120 fps con risoluzione 1080p in modalità portatile, mentre la modalità dock arriva fino a 4K. Gli attuali proprietari possono eseguire l'aggiornamento alla versione Switch 2 senza alcun costo. Leggi l'articolo completo su nintendolife.com"
-      },
-      "de": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2 bietet 120-fps-Gameplay",
-        "summary": "Yo. PM Studios und Pocket Trap haben angekündigt, dass Pipistrello and the Cursed Yoyo eine Switch 2-Version erhält … und sie ist jetzt erhältlich! Die neue Version ist im eShop für 17,99 £ / 19,99 $ erhältlich und bietet 120fps-Gameplay bei 1080p-Auflösung im Handheld-Modus, während der angedockte Modus bis zu 4K ermöglicht. Aktuelle Besitzer können völlig kostenlos auf die Switch 2-Version upgraden. Lesen Sie den vollständigen Artikel auf nintendolife.com"
-      },
-      "pt": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops no Switch 2, possui jogabilidade de 120fps",
-        "summary": "Ei. PM Studios e Pocket Trap anunciaram que Pipistrello and the Cursed Yoyo está recebendo uma versão Switch 2... e já foi lançada! Disponível na eShop por £ 17,99 / $ 19,99, o novo lançamento oferece jogabilidade de 120fps com resolução de 1080p no modo portátil, enquanto o modo dock vai até 4K. Os proprietários atuais podem atualizar para a versão Switch 2 por absolutamente nada. Leia o artigo completo em nintendolife.com"
-      },
-      "ru": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops на Switch 2 может похвастаться игровым процессом со скоростью 120 кадров в секунду",
-        "summary": "Йо. PM Studios и Pocket Trap объявили, что Pipistrello and the Cursed Yoyo получит версию для Switch 2… и она уже вышла! Новая версия, доступная в интернет-магазине по цене 17,99 фунтов стерлингов / 19,99 долларов США, может похвастаться игровым процессом со скоростью 120 кадров в секунду и разрешением 1080p в портативном режиме, а в режиме состыковки — вплоть до 4K. Нынешние владельцы могут обновиться до версии Switch 2 совершенно бесплатно. Полную версию статьи можно прочитать на сайте nintendolife.com."
-      },
-      "el": {
-        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, διαθέτει παιχνίδι 120fps",
-        "summary": "Yo. Τα PM Studios και το Pocket Trap ανακοίνωσαν ότι οι Pipistrello and the Cursed Yoyo αποκτούν μια έκδοση Switch 2... και κυκλοφόρησε τώρα! Διαθέσιμο στο eShop για 17,99 £ / 19,99 $, η νέα έκδοση μπορεί να υπερηφανεύεται για το παιχνίδι 120 fps σε ανάλυση 1080p σε λειτουργία χειρός, ενώ η λειτουργία docked φτάνει μέχρι τα 4K. Οι τρέχοντες ιδιοκτήτες μπορούν να κάνουν αναβάθμιση στην έκδοση Switch 2 για απολύτως τίποτα. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
-      },
-      "tr": {
-        "title": "Pipistrello ve Lanetli Yoyo Shadow-Drops Switch 2'de, 120 Fps Oyun Oynanışıyla Övünüyor",
-        "summary": "Hey. PM Studios ve Pocket Trap, Pipistrello ve Cursed Yoyo'nun Switch 2 versiyonunu alacağını duyurdu... ve şu anda çıktı! eShop'ta 17,99 £ / 19,99 $ fiyatla satışa sunulan yeni sürüm, el tipi modda 1080p çözünürlükte 120 fps oynanış sunarken, yerleşik mod 4K'ya kadar çıkıyor. Mevcut sahipler kesinlikle hiçbir ücret ödemeden Switch 2 sürümüne yükseltme yapabilirler. Makalenin tamamını nintendolife.com'da okuyun"
-      },
-      "ja": {
-        "title": "Pipistrello and the Cursed Yoyo Shadow-Drops が Switch 2 に登場、120fps のゲームプレイを誇る",
-        "summary": "よー。 PM Studios と Pocket Trap は、Pipistrello and the Cursed Yoyo が Switch 2 バージョンを入手すると発表しました...そしてそれは現在リリースされています! eShop で £17.99 / $19.99 で入手できるこの新しいリリースは、ハンドヘルド モードでは 1080p 解像度で 120fps のゲームプレイを誇り、ドッキング モードでは最大 4K になります。現在の所有者は、まったく無料で Switch 2 バージョンにアップグレードできます。 nintendolife.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "Pipistrello 和被诅咒的 Yoyo Shadow-Drops 登陆 Switch 2，拥有 120fps 游戏体验",
-        "summary": "哟。 PM Studios 和 Pocket Trap 宣布《Pipistrello 和被诅咒的溜溜球》即将推出 Switch 2 版本……现已推出！新版本在 eShop 上发售，售价为 17.99 英镑/19.99 美元，手持模式下可在 1080p 分辨率下实现 120 fps 的游戏体验，而底座模式则可最高支持 4K。目前的用户可以免费升级到 Switch 2 版本。在 nintendolife.com 上阅读完整文章"
       }
     }
   },
@@ -741,6 +1425,63 @@
     }
   },
   {
+    "id": "ea502f5186c444fc1611d5a5a60af656735fdb39",
+    "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, Boasts 120fps Gameplay",
+    "summary": "Yo. PM Studios and Pocket Trap have announced that Pipistrello and the Cursed Yoyo is getting a Switch 2 version... and it's out now! Available on the eShop for £17.99 / $19.99 , the new release boasts 120fps gameplay at 1080p resolution in handheld mode, while docked mode goes all the way up to 4K. Current owners can upgrade to the Switch 2 version for absolutely nothing. Read the full article on nintendolife.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/08/pipistrello-and-the-cursed-yoyo-shadow-drops-on-switch-2-boasts-120fps-gameplay",
+    "imageUrl": "https://images.nintendolife.com/552051a964e2c/large.jpg",
+    "publishedAt": "2026-08-20T14:15:00+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.023621+00:00",
+    "translations": {
+      "en": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, Boasts 120fps Gameplay",
+        "summary": "Yo. PM Studios and Pocket Trap have announced that Pipistrello and the Cursed Yoyo is getting a Switch 2 version... and it's out now! Available on the eShop for £17.99 / $19.99 , the new release boasts 120fps gameplay at 1080p resolution in handheld mode, while docked mode goes all the way up to 4K. Current owners can upgrade to the Switch 2 version for absolutely nothing. Read the full article on nintendolife.com"
+      },
+      "fr": {
+        "title": "Pipistrello et le maudit Yoyo Shadow-Drops sur Switch 2, offre un gameplay à 120 ips",
+        "summary": "Yo. PM Studios et Pocket Trap ont annoncé que Pipistrello and the Cursed Yoyo allait recevoir une version Switch 2... et elle est disponible maintenant ! Disponible sur l'eShop au prix de 17,99 £ / 19,99 $, la nouvelle version offre un gameplay à 120 ips à une résolution de 1080p en mode portable, tandis que le mode ancré va jusqu'à 4K. Les propriétaires actuels peuvent passer à la version Switch 2 pour absolument rien. Lire l'article complet sur nintendolife.com"
+      },
+      "es": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops en Switch 2, cuenta con una jugabilidad de 120 fps",
+        "summary": "Yo. PM Studios y Pocket Trap han anunciado que Pipistrello and the Cursed Yoyo tendrá una versión para Switch 2... ¡y ya está disponible! Disponible en la eShop por £17.99 / $19.99, la nueva versión ofrece una jugabilidad de 120 fps con una resolución de 1080p en modo portátil, mientras que el modo acoplado llega hasta 4K. Los propietarios actuales pueden actualizar a la versión Switch 2 por absolutamente nada. Lea el artículo completo en nintendolife.com"
+      },
+      "it": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops su Switch 2, vanta un gameplay a 120 fps",
+        "summary": "Ehi. PM Studios e Pocket Trap hanno annunciato che Pipistrello and the Cursed Yoyo riceverà una versione per Switch 2... ed è ora disponibile! Disponibile sull'eShop per £ 17,99 / $ 19,99, la nuova versione vanta un gameplay a 120 fps con risoluzione 1080p in modalità portatile, mentre la modalità dock arriva fino a 4K. Gli attuali proprietari possono eseguire l'aggiornamento alla versione Switch 2 senza alcun costo. Leggi l'articolo completo su nintendolife.com"
+      },
+      "de": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2 bietet 120-fps-Gameplay",
+        "summary": "Yo. PM Studios und Pocket Trap haben angekündigt, dass Pipistrello and the Cursed Yoyo eine Switch 2-Version erhält … und sie ist jetzt erhältlich! Die neue Version ist im eShop für 17,99 £ / 19,99 $ erhältlich und bietet 120fps-Gameplay bei 1080p-Auflösung im Handheld-Modus, während der angedockte Modus bis zu 4K ermöglicht. Aktuelle Besitzer können völlig kostenlos auf die Switch 2-Version upgraden. Lesen Sie den vollständigen Artikel auf nintendolife.com"
+      },
+      "pt": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops no Switch 2, possui jogabilidade de 120fps",
+        "summary": "Ei. PM Studios e Pocket Trap anunciaram que Pipistrello and the Cursed Yoyo está recebendo uma versão Switch 2... e já foi lançada! Disponível na eShop por £ 17,99 / $ 19,99, o novo lançamento oferece jogabilidade de 120fps com resolução de 1080p no modo portátil, enquanto o modo dock vai até 4K. Os proprietários atuais podem atualizar para a versão Switch 2 por absolutamente nada. Leia o artigo completo em nintendolife.com"
+      },
+      "ru": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops на Switch 2 может похвастаться игровым процессом со скоростью 120 кадров в секунду",
+        "summary": "Йо. PM Studios и Pocket Trap объявили, что Pipistrello and the Cursed Yoyo получит версию для Switch 2… и она уже вышла! Новая версия, доступная в интернет-магазине по цене 17,99 фунтов стерлингов / 19,99 долларов США, может похвастаться игровым процессом со скоростью 120 кадров в секунду и разрешением 1080p в портативном режиме, а в режиме состыковки — вплоть до 4K. Нынешние владельцы могут обновиться до версии Switch 2 совершенно бесплатно. Полную версию статьи можно прочитать на сайте nintendolife.com."
+      },
+      "el": {
+        "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, διαθέτει παιχνίδι 120fps",
+        "summary": "Yo. Τα PM Studios και το Pocket Trap ανακοίνωσαν ότι οι Pipistrello and the Cursed Yoyo αποκτούν μια έκδοση Switch 2... και κυκλοφόρησε τώρα! Διαθέσιμο στο eShop για 17,99 £ / 19,99 $, η νέα έκδοση μπορεί να υπερηφανεύεται για το παιχνίδι 120 fps σε ανάλυση 1080p σε λειτουργία χειρός, ενώ η λειτουργία docked φτάνει μέχρι τα 4K. Οι τρέχοντες ιδιοκτήτες μπορούν να κάνουν αναβάθμιση στην έκδοση Switch 2 για απολύτως τίποτα. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
+      },
+      "tr": {
+        "title": "Pipistrello ve Lanetli Yoyo Shadow-Drops Switch 2'de, 120 Fps Oyun Oynanışıyla Övünüyor",
+        "summary": "Hey. PM Studios ve Pocket Trap, Pipistrello ve Cursed Yoyo'nun Switch 2 versiyonunu alacağını duyurdu... ve şu anda çıktı! eShop'ta 17,99 £ / 19,99 $ fiyatla satışa sunulan yeni sürüm, el tipi modda 1080p çözünürlükte 120 fps oynanış sunarken, yerleşik mod 4K'ya kadar çıkıyor. Mevcut sahipler kesinlikle hiçbir ücret ödemeden Switch 2 sürümüne yükseltme yapabilirler. Makalenin tamamını nintendolife.com'da okuyun"
+      },
+      "ja": {
+        "title": "Pipistrello and the Cursed Yoyo Shadow-Drops が Switch 2 に登場、120fps のゲームプレイを誇る",
+        "summary": "よー。 PM Studios と Pocket Trap は、Pipistrello and the Cursed Yoyo が Switch 2 バージョンを入手すると発表しました...そしてそれは現在リリースされています! eShop で £17.99 / $19.99 で入手できるこの新しいリリースは、ハンドヘルド モードでは 1080p 解像度で 120fps のゲームプレイを誇り、ドッキング モードでは最大 4K になります。現在の所有者は、まったく無料で Switch 2 バージョンにアップグレードできます。 nintendolife.com で記事全文を読む"
+      },
+      "zh": {
+        "title": "Pipistrello 和被诅咒的 Yoyo Shadow-Drops 登陆 Switch 2，拥有 120fps 游戏体验",
+        "summary": "哟。 PM Studios 和 Pocket Trap 宣布《Pipistrello 和被诅咒的溜溜球》即将推出 Switch 2 版本……现已推出！新版本在 eShop 上发售，售价为 17.99 英镑/19.99 美元，手持模式下可在 1080p 分辨率下实现 120 fps 的游戏体验，而底座模式则可最高支持 4K。目前的用户可以免费升级到 Switch 2 版本。在 nintendolife.com 上阅读完整文章"
+      }
+    }
+  },
+  {
     "id": "4a6320fde51754dc52c8b552275e2db143ad5898",
     "title": "\"The Best Official Versions\" - New Banjo-Kazooie Deep Dive Shows Just How Sharp It Looks On The New Evercade Nexus",
     "summary": "\"These new ports were developed from the ground up for Evercade\". Blaze Entertainment has just released a new deep-dive video showing the lengths the company went to bring Rare's Banjo-Kazooie and Banjo-Tooie to its Evercade family of systems. We've already experienced some of the improvements via the Rare Super Pocket handheld , which includes the first Banjo-Kazooie game. However, this new footage makes it clear that, when running the game on the Nexus , we're getting an experience a level abo",
@@ -749,7 +1490,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/the-best-official-versions-new-banjo-kazooie-deep-dive-shows-just-how-sharp-it-looks-on-the-new-evercade-nexus",
     "imageUrl": "https://images.timeextension.com/12975bdb82bb4/large.jpg",
     "publishedAt": "2026-08-20T13:45:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:17.543661+00:00",
+    "scrapedAt": "2026-08-22T03:46:29.900087+00:00",
     "translations": {
       "en": {
         "title": "\"The Best Official Versions\" - New Banjo-Kazooie Deep Dive Shows Just How Sharp It Looks On The New Evercade Nexus",
@@ -806,7 +1547,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-download-20th-august-north-america",
     "imageUrl": "https://images.nintendolife.com/c1c24b83a4d9b/large.jpg",
     "publishedAt": "2026-08-20T13:30:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:47.959808+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.023742+00:00",
     "translations": {
       "en": {
         "title": "Nintendo Download: 20th August (North America)",
@@ -977,7 +1718,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/pokemon-pokopia-expansion-pass-getting-packaged-download-release",
     "imageUrl": "https://images.nintendolife.com/9734d790fdd87/large.jpg",
     "publishedAt": "2026-08-20T04:30:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:47.960008+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.023936+00:00",
     "translations": {
       "en": {
         "title": "Pokémon Pokopia Expansion Pass Getting Packaged Download Release",
@@ -1091,7 +1832,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/splatoon-3-ver-11-3-0-update-out-now-here-are-the-full-patch-notes",
     "imageUrl": "https://images.nintendolife.com/ab415d205d952/large.jpg",
     "publishedAt": "2026-08-20T01:15:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:47.960203+00:00",
+    "scrapedAt": "2026-08-22T03:47:19.024113+00:00",
     "translations": {
       "en": {
         "title": "Splatoon 3 Ver. 11.3.0 Update Out Now, Here Are The Full Patch Notes",
@@ -1262,7 +2003,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/sin-reloaded-le-prochain-remaster-de-nightdive-studios-prend-date-sur-consoles-et-pc-3050871694.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871694/sin-reloaded-arrive-sur-pc-et-consoles-le-24-septembre-2026-2565fac6__800_800__749-0-2909-2160.jpg",
     "publishedAt": "2026-08-19T17:10:00+00:00",
-    "scrapedAt": "2026-08-21T03:59:03.817756+00:00",
+    "scrapedAt": "2026-08-22T03:49:18.964809+00:00",
     "translations": {
       "fr": {
         "title": "Communiqué de presse - SiN : Reloaded, le prochain remaster de Nightdive Studios, prend date sur consoles et PC",
@@ -1319,7 +2060,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/five-new-console-features-begin-rolling-out-today-for-xbox-insiders-august-19",
     "imageUrl": "https://images.purexbox.com/3df69eefe612a/large.jpg",
     "publishedAt": "2026-08-19T16:21:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:35.484901+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.356388+00:00",
     "translations": {
       "en": {
         "title": "Five New Console Features Begin Rolling Out Today For Xbox Insiders (August 19)",
@@ -1376,7 +2117,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/against-all-odds-the-janky-soviet-themed-fps-you-are-empty-is-coming-back-later-this-year-new-and-improved",
     "imageUrl": "https://images.timeextension.com/a9b7d091c438f/large.jpg",
     "publishedAt": "2026-08-19T16:00:00+00:00",
-    "scrapedAt": "2026-08-21T03:54:17.544343+00:00",
+    "scrapedAt": "2026-08-22T03:46:29.900734+00:00",
     "translations": {
       "en": {
         "title": "Against All Odds, The Janky Soviet-Themed FPS 'You Are Empty' Is Coming Back Later This Year, New & Improved",
@@ -1433,7 +2174,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-25th-anniversary-controller-release-date-price-and-other-details-seemingly-revealed",
     "imageUrl": "https://images.purexbox.com/72ebe26fdd55f/large.jpg",
     "publishedAt": "2026-08-19T15:10:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:35.485043+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.356538+00:00",
     "translations": {
       "en": {
         "title": "Xbox 25th Anniversary Controller: Release Date, Price & Other Details Seemingly Revealed",
@@ -2060,7 +2801,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/control-resonant-goes-gold-but-delays-physical-version-by-a-few-weeks",
     "imageUrl": "https://images.purexbox.com/3a098943e9e86/large.jpg",
     "publishedAt": "2026-08-19T12:00:00+00:00",
-    "scrapedAt": "2026-08-21T03:56:35.485300+00:00",
+    "scrapedAt": "2026-08-22T03:48:17.356796+00:00",
     "translations": {
       "en": {
         "title": "Control Resonant Goes Gold, But Delays Physical Version By A Few Weeks",
@@ -2231,7 +2972,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/order-of-the-sinking-star-le-tres-ambitieux-et-foutraque-jeu-d-enigmes-de-jonathan-blow-sortira-tout-debut-octobre-3050871682.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871682/order-of-the-sinking-star-le-tres-ambitieux-et-foutraque-jeu-d-enigmes-de-jonathan-blow-sortira-tout-debut-octobre-85b0144a__800_800__388-0-1467-1080.jpg",
     "publishedAt": "2026-08-19T05:36:00+00:00",
-    "scrapedAt": "2026-08-21T03:59:03.818572+00:00",
+    "scrapedAt": "2026-08-22T03:49:18.965611+00:00",
     "translations": {
       "fr": {
         "title": "Order of the Sinking Star : le très ambitieux (et foutraque) jeu d'énigmes de Jonathan Blow sortira tout début octobre",
@@ -3884,7 +4625,7 @@
     "sourceUrl": "https://kotaku.com/rare-two-player-version-of-first-arcade-game-up-for-auction-from-shiny-entertainment-founder-2000724719",
     "imageUrl": "https://kotaku.com/app/uploads/2026/08/computerspace-1280x857.jpg",
     "publishedAt": "2026-08-15T18:13:43+00:00",
-    "scrapedAt": "2026-08-21T03:58:46.736613+00:00",
+    "scrapedAt": "2026-08-22T03:48:50.064448+00:00",
     "translations": {
       "en": {
         "title": "Rare Two-Player Version Of First Arcade Game Up For Auction From Shiny Entertainment Founder",
@@ -12935,519 +13676,6 @@
       "zh": {
         "title": "谈话要点：这个周末你玩什么？ （8月1日）",
         "summary": "宝可准备。周末到了，我们所有人都渴望玩游戏。这对于任天堂的世界来说是相当安静的一周。我们终于确定了 Pokémon Pokopia Expansion Pass 的“第 1 部分”的发布日期，以及我们第一次看到“第 2 部分”，任天堂宣布《超级马里奥阳光》将登陆 GameCube NSO 库，而《异度神剑 2》将以时髦的新 Switch 2 版本登陆。在 nintendolife.com 上阅读完整文章"
-      }
-    }
-  },
-  {
-    "id": "79ded423d4c996a1f8ec10ab6c2c84f0de802957",
-    "title": "Waterpark Simulator 1.0 Is Out Now On Xbox, After 'Overwhelmingly Positive' PC Early Access",
-    "summary": "Well, well, well... water we got here? We mentioned feeling wee bit jealous that viral hit Waterpark Simulator didn't include Xbox when it launched into Early Access last year. Well, with the arrival of version 1.0, it's finally time to grab your snorkels, speedos, and controllers, because Waterpark Simulator is now available on Xbox Series X|S! &lt;related ids=\"192631\"&gt; Read the full article on purexbox.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Pure Xbox",
-    "sourceUrl": "https://www.purexbox.com/news/2026/07/waterpark-simulator-1-0-is-out-now-on-xbox-after-overwhelmingly-positive-pc-early-access",
-    "imageUrl": "https://images.purexbox.com/3d76de6ad91bc/large.jpg",
-    "publishedAt": "2026-07-31T16:30:00+00:00",
-    "scrapedAt": "2026-08-05T05:52:49.027636+00:00",
-    "translations": {
-      "en": {
-        "title": "Waterpark Simulator 1.0 Is Out Now On Xbox, After 'Overwhelmingly Positive' PC Early Access",
-        "summary": "Well, well, well... water we got here? We mentioned feeling wee bit jealous that viral hit Waterpark Simulator didn't include Xbox when it launched into Early Access last year. Well, with the arrival of version 1.0, it's finally time to grab your snorkels, speedos, and controllers, because Waterpark Simulator is now available on Xbox Series X|S! &lt;related ids=\"192631\"&gt; Read the full article on purexbox.com"
-      },
-      "fr": {
-        "title": "Waterpark Simulator 1.0 est maintenant disponible sur Xbox, après un accès anticipé sur PC « extrêmement positif »",
-        "summary": "Eh bien, eh bien... de l'eau, nous avons ici ? Nous avons mentionné que nous étions un peu jaloux du fait que le hit viral Waterpark Simulator n'incluait pas la Xbox lors de son lancement en accès anticipé l'année dernière. Eh bien, avec l'arrivée de la version 1.0, il est enfin temps de récupérer vos tubas, speedos et contrôleurs, car Waterpark Simulator est désormais disponible sur Xbox Series X|S ! &lt;identifiants associés=\"192631\"&gt; Lire l'article complet sur purexbox.com"
-      },
-      "es": {
-        "title": "Waterpark Simulator 1.0 ya está disponible en Xbox, después del acceso anticipado a PC \"abrumadoramente positivo\"",
-        "summary": "Bueno, bueno, bueno... ¿agua que tenemos aquí? Mencionamos que nos sentimos un poco celosos de que el éxito viral Waterpark Simulator no incluyera Xbox cuando se lanzó en acceso anticipado el año pasado. Bueno, con la llegada de la versión 1.0, finalmente es hora de tomar tus snorkels, velocímetros y controladores, ¡porque Waterpark Simulator ahora está disponible en Xbox Series X|S! &lt;ids relacionados=\"192631\"&gt; Lea el artículo completo en purexbox.com"
-      },
-      "it": {
-        "title": "Waterpark Simulator 1.0 è ora disponibile su Xbox, dopo l'accesso anticipato per PC \"straordinariamente positivo\".",
-        "summary": "Bene, bene, bene... acqua che abbiamo qui? Abbiamo accennato al fatto che eravamo un po' gelosi del fatto che il successo virale Waterpark Simulator non includesse Xbox quando è stato lanciato in accesso anticipato lo scorso anno. Bene, con l'arrivo della versione 1.0, è finalmente il momento di prendere boccagli, speedo e controller, perché Waterpark Simulator è ora disponibile su Xbox Series X|S! &lt;correlati ids=\"192631\"&gt; Leggi l'articolo completo su purexbox.com"
-      },
-      "de": {
-        "title": "Waterpark Simulator 1.0 ist jetzt auf Xbox erhältlich, nach „überwältigend positivem“ PC Early Access",
-        "summary": "Nun, nun, nun... Wasser, das wir hier haben? Wir erwähnten, dass wir ein wenig neidisch waren, dass der virale Hit Waterpark Simulator letztes Jahr keine Xbox enthielt, als er in den Early Access startete. Nun, mit der Veröffentlichung von Version 1.0 ist es endlich an der Zeit, sich Schnorchel, Tachos und Controller zu schnappen, denn Waterpark Simulator ist jetzt für Xbox Series X|S verfügbar! &lt;verwandte ids=\"192631\"&gt; Lesen Sie den vollständigen Artikel auf purexbox.com"
-      },
-      "pt": {
-        "title": "Waterpark Simulator 1.0 já está disponível no Xbox, após acesso antecipado para PC ‘esmagadoramente positivo’",
-        "summary": "Bem, bem, bem... água que temos aqui? Mencionamos que sentimos um pouco de ciúme porque o sucesso viral do Waterpark Simulator não incluía o Xbox quando foi lançado no acesso antecipado no ano passado. Bem, com a chegada da versão 1.0, finalmente é hora de pegar seus snorkels, sungas e controladores, porque o Waterpark Simulator já está disponível no Xbox Series X|S! &lt;IDs relacionados=\"192631\"&gt; Leia o artigo completo em purexbox.com"
-      },
-      "ru": {
-        "title": "Waterpark Simulator 1.0 уже доступен на Xbox после «чрезвычайно позитивного» раннего доступа на ПК",
-        "summary": "Ну-ну-ну... вода у нас здесь есть? Мы упомянули, что немного завидуем тому, что вирусный хит Waterpark Simulator не включал Xbox, когда он был запущен в раннем доступе в прошлом году. Что ж, с выходом версии 1.0 наконец-то пришло время взять в руки трубки, спидометры и контроллеры, потому что Waterpark Simulator теперь доступен на Xbox Series X|S! &lt;связанные идентификаторы=\"192631\"&gt; Полную версию статьи можно прочитать на сайте purexbox.com."
-      },
-      "el": {
-        "title": "Το Waterpark Simulator 1.0 κυκλοφορεί τώρα στο Xbox, μετά την πρώιμη πρόσβαση στον υπολογιστή \"Υπερβολικά θετική\"",
-        "summary": "Λοιπόν, καλά, καλά... νερό φτάσαμε εδώ; Αναφέραμε ότι νιώθαμε λίγο ζήλια που η μεγάλη επιτυχία του Waterpark Simulator δεν περιελάμβανε το Xbox όταν κυκλοφόρησε στην Early Access πέρυσι. Λοιπόν, με την άφιξη της έκδοσης 1.0, ήρθε επιτέλους η ώρα να πάρετε τα αναπνευστήρες, τα speedos και τα χειριστήρια σας, επειδή το Waterpark Simulator είναι πλέον διαθέσιμο στο Xbox Series X|S! &lt;related IDs=\"192631\"&gt; Διαβάστε ολόκληρο το άρθρο στο purexbox.com"
-      },
-      "tr": {
-        "title": "Waterpark Simulator 1.0 'Son Derece Olumlu' PC Erken Erişiminin Ardından Şimdi Xbox'ta Çıktı",
-        "summary": "Peki, peki... suyumuz var mı? Viral hit olan Su Parkı Simülatörü'nün geçen yıl Erken Erişim'e çıktığında Xbox'ı içermemesini biraz kıskandığımızdan bahsetmiştik. 1.0 sürümünün gelişiyle nihayet şnorkellerinizi, hız ayarlarınızı ve kontrol cihazlarınızı almanın zamanı geldi çünkü Su Parkı Simülatörü artık Xbox Series X|S'de mevcut! &lt;ilişkili ids=\"192631\"&gt; Makalenin tamamını purexbox.com'da okuyun"
-      },
-      "ja": {
-        "title": "ウォーターパーク シミュレーター 1.0 が PC 早期アクセスで「圧倒的に好評」を経て Xbox でリリース",
-        "summary": "まあ、まあ、まあ... ここで水が手に入るのですか？昨年早期アクセスを開始したときに、バイラルヒット作『ウォーターパーク シミュレーター』に Xbox が含まれていなかったことを少しうらやましいと感じたことについては触れました。バージョン 1.0 の登場により、ウォーターパーク シミュレーターが Xbox Series X|S で利用できるようになったため、いよいよシュノーケル、スピードメーター、コントローラーを手に入れる時が来ました。 &lt;関連ids=\"192631\"&gt; purexbox.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "在 PC 抢先体验获得“压倒性积极”之后，《水上乐园模拟器》1.0 现已在 Xbox 上发布",
-        "summary": "好吧，好吧，好吧……我们这里有水吗？我们提到，去年火爆的 Waterpark Simulator 在推出抢先体验版时并不包含 Xbox，对此我们感到有点嫉妒。好吧，随着 1.0 版本的到来，您终于可以拿起呼吸管、泳裤和控制器了，因为《水上乐园模拟器》现已在 Xbox Series X|S 上推出！ &lt;相关 ids=\"192631\"&gt;在 purexbox.com 上阅读全文"
-      }
-    }
-  },
-  {
-    "id": "7e3471a08e1043ff37e64e3963d47cc45df7e202",
-    "title": "Borderlands 4’s Bounty Pack 4: Murders and Acquisitions is Out Now",
-    "summary": "The DLC, available separately for $5.99 or as part of the Deluxe and Super Deluxe Editions of Borderlands 4, involves warring Ripper gangs.",
-    "category": "GAME_RELEASE",
-    "sourceName": "GamingBolt",
-    "sourceUrl": "https://gamingbolt.com/borderlands-4s-bounty-pack-4-murders-and-acquisitions-is-out-now",
-    "imageUrl": "",
-    "publishedAt": "2026-07-31T15:55:12+00:00",
-    "scrapedAt": "2026-08-02T06:08:40.023247+00:00",
-    "translations": {
-      "en": {
-        "title": "Borderlands 4’s Bounty Pack 4: Murders and Acquisitions is Out Now",
-        "summary": "The DLC, available separately for $5.99 or as part of the Deluxe and Super Deluxe Editions of Borderlands 4, involves warring Ripper gangs."
-      },
-      "fr": {
-        "title": "Le Bounty Pack 4 de Borderlands 4 : Meurtres et acquisitions est maintenant disponible",
-        "summary": "Le DLC, disponible séparément au prix de 5,99 $ ou dans le cadre des éditions Deluxe et Super Deluxe de Borderlands 4, implique des gangs Ripper en guerre."
-      },
-      "es": {
-        "title": "El Bounty Pack 4 de Borderlands 4: Asesinatos y adquisiciones ya está disponible",
-        "summary": "El DLC, disponible por separado por $5,99 o como parte de las ediciones Deluxe y Super Deluxe de Borderlands 4, involucra a bandas de Destripadores en guerra."
-      },
-      "it": {
-        "title": "Il Bounty Pack 4 di Borderlands 4: Omicidi e acquisizioni è ora disponibile",
-        "summary": "Il DLC, disponibile separatamente per $ 5,99 o come parte delle edizioni Deluxe e Super Deluxe di Borderlands 4, prevede la guerra tra bande di Squartatori."
-      },
-      "de": {
-        "title": "Das Bounty Pack 4: Murders and Acquisitions von Borderlands 4 ist jetzt erhältlich",
-        "summary": "Der DLC, der separat für 5,99 $ oder als Teil der Deluxe- und Super-Deluxe-Editionen von Borderlands 4 erhältlich ist, beinhaltet verfeindete Ripper-Banden."
-      },
-      "pt": {
-        "title": "Pacote de recompensas 4 de Borderlands 4: assassinatos e aquisições já foi lançado",
-        "summary": "O DLC, disponível separadamente por US$ 5,99 ou como parte das edições Deluxe e Super Deluxe de Borderlands 4, envolve gangues rivais do Estripador."
-      },
-      "ru": {
-        "title": "Borderlands 4’s Bounty Pack 4: Murders and Acquisitions уже доступен",
-        "summary": "DLC, доступный отдельно за 5,99 долларов США или как часть изданий Deluxe и Super Deluxe игры Borderlands 4, включает в себя враждующие банды Потрошителей."
-      },
-      "el": {
-        "title": "Το Borderlands 4 Bounty Pack 4: Murders and Acquisitions κυκλοφορεί τώρα",
-        "summary": "Το DLC, διαθέσιμο χωριστά για 5,99 $ ή ως μέρος των εκδόσεων Deluxe και Super Deluxe του Borderlands 4, περιλαμβάνει αντιμαχόμενες συμμορίες Ripper."
-      },
-      "tr": {
-        "title": "Borderlands 4'ün Ödül Paketi 4: Cinayetler ve Satın Almalar Çıktı",
-        "summary": "Ayrı olarak 5,99 $ karşılığında veya Borderlands 4'ün Deluxe ve Super Deluxe Sürümlerinin bir parçası olarak sunulan DLC, savaşan Ripper çetelerini içeriyor."
-      },
-      "ja": {
-        "title": "『ボーダーランズ 4』のバウンティ パック 4: 殺人と買収がリリースされました",
-        "summary": "この DLC は、5.99 ドルで個別に、またはボーダーランズ 4 のデラックス エディションおよびスーパー デラックス エディションの一部として入手可能で、リッパー ギャングとの抗争が含まれます。"
-      },
-      "zh": {
-        "title": "《无主之地 4》赏金包 4：谋杀与收购现已推出",
-        "summary": "该 DLC 可以单独购买，价格为 5.99 美元，也可以作为《无主之地 4》豪华版和超级豪华版的一部分，涉及交战的开膛手帮派。"
-      }
-    }
-  },
-  {
-    "id": "a7e7bf64d8f91ac3b51dbb9f2cedb0bf402516f2",
-    "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-    "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Pure Xbox",
-    "sourceUrl": "https://www.purexbox.com/guides/gears-of-war-e-day-open-beta-dates-early-access-and-xbox-game-pass-details",
-    "imageUrl": "https://images.purexbox.com/0045fe8cf386d/large.jpg",
-    "publishedAt": "2026-07-31T15:00:00+00:00",
-    "scrapedAt": "2026-08-04T05:55:24.766568+00:00",
-    "translations": {
-      "en": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "fr": {
-        "title": "Guide : Gears Of War : dates de bêta ouverte E-Day, accès anticipé et détails du Xbox Game Pass",
-        "summary": "Tout ce que vous devez savoir sur la version bêta de Gears E-Day. La bêta ouverte de Gears of War: E-Day est officiellement à nos portes ! De nombreux joueurs auront la chance de découvrir le nouveau mode multijoueur de Gears dans quelques jours seulement, avec des objets exclusifs si vous précommandez également le jeu. Voici donc un aperçu de tout ce que vous devez savoir sur Gears of War : Bêta ouverte E-Day : Lisez l'article complet sur purexbox.com"
-      },
-      "es": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "it": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "de": {
-        "title": "Leitfaden: Gears Of War: E-Day Open Beta-Termine, Early Access und Details zum Xbox Game Pass",
-        "summary": "Alles, was Sie über die Gears E-Day Beta wissen müssen. Die offene Beta von Gears of War: E-Day steht offiziell vor der Tür! Viele Spieler werden in wenigen Tagen die Chance bekommen, den neuen Gears-Multiplayer auszuprobieren, komplett mit einigen exklusiven Gegenständen, wenn Sie das Spiel auch vorbestellen. Hier finden Sie alles, was Sie über die offene Beta von Gears of War: E-Day wissen müssen: Lesen Sie den vollständigen Artikel auf purexbox.com"
-      },
-      "pt": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "ru": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "el": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "tr": {
-        "title": "Guide: Gears Of War: E-Day Open Beta Dates, Early Access & Xbox Game Pass Details",
-        "summary": "Everything you need to know about the Gears E-Day Beta. Gears of War: E-Day 's Open Beta is officially upon us! Loads of players will be getting a chance to check out the new Gears multiplayer in just a few days' time, complete with some exclusive items if you pre-order the game as well. So, here's a look at everything you need to know about the Gears of War: E-Day Open Beta: Read the full article on purexbox.com"
-      },
-      "ja": {
-        "title": "ガイド: Gears Of War: E-Day オープン ベータの日付、早期アクセス、Xbox ゲーム パスの詳細",
-        "summary": "Gears E-Day ベータ版について知っておくべきことすべて。 Gears of War: E-Day のオープン ベータが正式に始まります!数日以内に多くのプレイヤーが新しい Gears マルチプレイヤーをチェックする機会が得られます。ゲームを事前注文すると、いくつかの限定アイテムも付属します。そこで、Gears of War: E-Day オープン ベータについて知っておくべきことをすべて見てみましょう: purexbox.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "指南：战争机器：E-Day 公开测试日期、抢先体验和 Xbox Game Pass 详细信息",
-        "summary": "关于 Gears E-Day Beta 您需要了解的一切。 Gears of War: E-Day 的公开测试版正式上线！几天后，大量玩家将有机会体验新的《战争机器》多人游戏，如果您也预订了游戏，还可以享受一些独家物品。因此，以下是您需要了解的有关 Gears of War: E-Day Open Beta 的所有信息：阅读 purexbox.com 上的完整文章"
-      }
-    }
-  },
-  {
-    "id": "b2d2020e9a32b5d918440d43f5e4575f093097cb",
-    "title": "Mortal Shell 2 Beta is Out Now on PS5 and Xbox Series X/S",
-    "summary": "Play through the first three hours of the upcoming Souls-like with its first Shell, Tiel the Acolyte, ahead of its August launch.",
-    "category": "GAME_RELEASE",
-    "sourceName": "GamingBolt",
-    "sourceUrl": "https://gamingbolt.com/mortal-shell-2-beta-is-out-now-on-ps5-and-xbox-series-x-s",
-    "imageUrl": "",
-    "publishedAt": "2026-07-31T14:06:42+00:00",
-    "scrapedAt": "2026-08-01T06:06:25.648876+00:00",
-    "translations": {
-      "en": {
-        "title": "Mortal Shell 2 Beta is Out Now on PS5 and Xbox Series X/S",
-        "summary": "Play through the first three hours of the upcoming Souls-like with its first Shell, Tiel the Acolyte, ahead of its August launch."
-      },
-      "fr": {
-        "title": "Mortal Shell 2 Beta est maintenant disponible sur PS5 et Xbox Series X/S",
-        "summary": "Jouez aux trois premières heures du prochain Souls-like avec son premier Shell, Tiel l'Acolyte, avant son lancement en août."
-      },
-      "es": {
-        "title": "Mortal Shell 2 Beta ya está disponible en PS5 y Xbox Series X/S",
-        "summary": "Juega las primeras tres horas del próximo Souls-like con su primer Shell, Tiel the Acolyte, antes de su lanzamiento en agosto."
-      },
-      "it": {
-        "title": "Mortal Shell 2 Beta è ora disponibile su PS5 e Xbox Series X/S",
-        "summary": "Gioca le prime tre ore del prossimo Souls-like con il suo primo Shell, Tiel the Acolyte, prima del suo lancio ad agosto."
-      },
-      "de": {
-        "title": "Die Betaversion von Mortal Shell 2 ist jetzt für PS5 und Xbox Series X/S erhältlich",
-        "summary": "Spielen Sie die ersten drei Stunden des kommenden Souls-like mit seiner ersten Shell, Tiel the Acolyte, vor der Veröffentlichung im August durch."
-      },
-      "pt": {
-        "title": "Mortal Shell 2 Beta já foi lançado no PS5 e Xbox Series X/S",
-        "summary": "Jogue as primeiras três horas do próximo Souls-like com seu primeiro Shell, Tiel the Acolyte, antes de seu lançamento em agosto."
-      },
-      "ru": {
-        "title": "Бета-версия Mortal Shell 2 уже доступна на PS5 и Xbox Series X/S",
-        "summary": "Сыграйте первые три часа предстоящей игры Souls-like с ее первым Shell, Tiel the Acolyte, перед ее августовским запуском."
-      },
-      "el": {
-        "title": "Το Mortal Shell 2 Beta κυκλοφορεί τώρα σε PS5 και Xbox Series X/S",
-        "summary": "Παίξτε τις πρώτες τρεις ώρες του επερχόμενου Souls-like με το πρώτο του Shell, το Tiel the Acolyte, πριν από την κυκλοφορία του τον Αύγουστο."
-      },
-      "tr": {
-        "title": "Mortal Shell 2 Beta Şimdi PS5 ve Xbox Series X/S'de Çıktı",
-        "summary": "Ağustos lansmanı öncesinde ilk Shell Tiel the Acolyte ile yakında çıkacak olan Souls-like'ın ilk üç saatini oynayın."
-      },
-      "ja": {
-        "title": "Mortal Shell 2 ベータ版が PS5 および Xbox Series X/S でリリースされました",
-        "summary": "8 月の発売に先立って、最初のシェルである Tiel the Acolyte を使用して、次期 Souls-like の最初の 3 時間をプレイしてください。"
-      },
-      "zh": {
-        "title": "《致命躯壳 2》测试版现已在 PS5 和 Xbox Series X/S 上发布",
-        "summary": "在即将推出的《魂之类》游戏 8 月推出之前，使用其首款 Shell 《Tiel the Acolyte》玩完前三个小时。"
-      }
-    }
-  },
-  {
-    "id": "d21e51812089c2d2ad2c4f755c8477494c0a5dfb",
-    "title": "CloverPit coming to PS5, Switch 2, PS4, and Switch on August 13",
-    "summary": "Publisher Future Friends Games and developer Panik Arcade will release slot machine roguelite horror game &hellip;",
-    "category": "GAME_RELEASE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/07/cloverpit-coming-to-ps5-switch-2-ps4-and-switch-on-august-13",
-    "imageUrl": "",
-    "publishedAt": "2026-07-31T13:42:02+00:00",
-    "scrapedAt": "2026-08-04T05:55:56.999767+00:00",
-    "translations": {
-      "en": {
-        "title": "CloverPit coming to PS5, Switch 2, PS4, and Switch on August 13",
-        "summary": "Publisher Future Friends Games and developer Panik Arcade will release slot machine roguelite horror game &hellip;"
-      },
-      "fr": {
-        "title": "CloverPit arrive sur PS5, Switch 2, PS4 et Switch le 13 août",
-        "summary": "L'éditeur Future Friends Games et le développeur Panik Arcade lanceront un jeu d'horreur roguelite sur machine à sous &hellip;"
-      },
-      "es": {
-        "title": "CloverPit llegará a PS5, Switch 2, PS4 y Switch el 13 de agosto",
-        "summary": "El editor Future Friends Games y el desarrollador Panik Arcade lanzarán el juego de terror roguelite de máquinas tragamonedas &hellip;"
-      },
-      "it": {
-        "title": "CloverPit in arrivo su PS5, Switch 2, PS4 e Switch il 13 agosto",
-        "summary": "L'editore Future Friends Games e lo sviluppatore Panik Arcade rilasceranno il gioco horror roguelite di slot machine &hellip;"
-      },
-      "de": {
-        "title": "CloverPit erscheint am 13. August für PS5, Switch 2, PS4 und Switch",
-        "summary": "Der Herausgeber Future Friends Games und der Entwickler Panik Arcade werden das Roguelite-Horrorspiel &hellip;"
-      },
-      "pt": {
-        "title": "CloverPit chegando ao PS5, Switch 2, PS4 e Switch em 13 de agosto",
-        "summary": "A editora Future Friends Games e a desenvolvedora Panik Arcade lançarão um jogo de terror roguelite para caça-níqueis &hellip;"
-      },
-      "ru": {
-        "title": "CloverPit выйдет на PS5, Switch 2, PS4 и Switch 13 августа",
-        "summary": "Издательство Future Friends Games и разработчик Panik Arcade выпустят хоррор-рогалик для игровых автоматов &hellip;"
-      },
-      "el": {
-        "title": "Το CloverPit έρχεται σε PS5, Switch 2, PS4 και Switch στις 13 Αυγούστου",
-        "summary": "Ο Publisher Future Friends Games και ο προγραμματιστής Panik Arcade θα κυκλοφορήσουν το παιχνίδι τρόμου roguelite κουλοχέρη &hellip;"
-      },
-      "tr": {
-        "title": "CloverPit 13 Ağustos'ta PS5, Switch 2, PS4 ve Switch'e geliyor",
-        "summary": "Yayıncı Future Friends Games ve geliştirici Panik Arcade, slot makinesi roguelite korku oyununu piyasaya sürecek &hellip;"
-      },
-      "ja": {
-        "title": "CloverPit は 8 月 13 日に PS5、Switch 2、PS4、Switch に登場します",
-        "summary": "パブリッシャーFuture Friends GamesとデベロッパーPanik Arcadeは、スロットマシンのローグライトホラーゲームをリリースします&hellip;"
-      },
-      "zh": {
-        "title": "CloverPit 将于 8 月 13 日登陆 PS5、Switch 2、PS4 和 Switch",
-        "summary": "发行商 Future Friends Games 和开发商 Panik Arcade 将推出老虎机 Roguelite 恐怖游戏……"
-      }
-    }
-  },
-  {
-    "id": "76bbc9e7cf008126ff9c1e516a91fb6c74c7b327",
-    "title": "Recovering Balatro Players Should Probably Stay Away from CloverPit, Coming to PS5 Next Month",
-    "summary": "Bit of a gamble. If you're into endlessly replayable roguelikes that are all about racking up crazy high scores using various synergies and perks, CloverPit has probably been on your radar. It's been available on PC since September of last year, where it has over 12,000 \"Very Positive\" Steam reviews. It's since been ported to Xbox and mobile, and between those three platforms has reached 5 million players. Read the full article on pushsquare.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Push Square",
-    "sourceUrl": "https://www.pushsquare.com/news/2026/07/recovering-balatro-players-should-probably-stay-away-from-cloverpit-coming-to-ps5-next-month",
-    "imageUrl": "https://images.pushsquare.com/4629d08c2e602/large.jpg",
-    "publishedAt": "2026-07-31T13:00:00+00:00",
-    "scrapedAt": "2026-08-03T06:29:36.432284+00:00",
-    "translations": {
-      "en": {
-        "title": "Recovering Balatro Players Should Probably Stay Away from CloverPit, Coming to PS5 Next Month",
-        "summary": "Bit of a gamble. If you're into endlessly replayable roguelikes that are all about racking up crazy high scores using various synergies and perks, CloverPit has probably been on your radar. It's been available on PC since September of last year, where it has over 12,000 \"Very Positive\" Steam reviews. It's since been ported to Xbox and mobile, and between those three platforms has reached 5 million players. Read the full article on pushsquare.com"
-      },
-      "fr": {
-        "title": "Les joueurs de Balatro en récupération devraient probablement rester à l'écart de CloverPit, qui arrivera sur PS5 le mois prochain",
-        "summary": "C'est un peu un pari. Si vous aimez les roguelikes rejouables à l'infini qui visent à accumuler des scores élevés en utilisant diverses synergies et avantages, CloverPit a probablement été sur votre radar. Il est disponible sur PC depuis septembre de l'année dernière, où il compte plus de 12 000 critiques Steam « très positives ». Il a depuis été porté sur Xbox et mobile, et entre ces trois plates-formes, il a atteint 5 millions de joueurs. Lire l'article complet sur pushsquare.com"
-      },
-      "es": {
-        "title": "Los jugadores en recuperación de Balatro probablemente deberían mantenerse alejados de CloverPit, que llegará a PS5 el próximo mes",
-        "summary": "Un poco arriesgado. Si te gustan los roguelikes infinitamente rejugables que consisten en acumular puntuaciones increíblemente altas utilizando diversas sinergias y ventajas, CloverPit probablemente haya estado en tu radar. Ha estado disponible para PC desde septiembre del año pasado, donde cuenta con más de 12.000 reseñas de Steam \"muy positivas\". Desde entonces, se trasladó a Xbox y dispositivos móviles, y entre esas tres plataformas ha alcanzado los 5 millones de jugadores. Lea el artículo completo en pushsquare.com"
-      },
-      "it": {
-        "title": "I giocatori di Balatro in recupero dovrebbero probabilmente stare lontani da CloverPit, in arrivo su PS5 il mese prossimo",
-        "summary": "Un po' una scommessa. Se ti piacciono i roguelike rigiocabili all'infinito in cui si accumulano punteggi pazzeschi utilizzando varie sinergie e vantaggi, probabilmente CloverPit è stato sul tuo radar. È disponibile su PC da settembre dello scorso anno, dove ha oltre 12.000 recensioni \"Molto positive\" su Steam. Da allora è stato portato su Xbox e dispositivi mobili e tra queste tre piattaforme ha raggiunto 5 milioni di giocatori. Leggi l'articolo completo su pushsquare.com"
-      },
-      "de": {
-        "title": "Sich erholende Balatro-Spieler sollten sich wahrscheinlich von CloverPit fernhalten, das nächsten Monat auf PS5 erscheint",
-        "summary": "Ein bisschen ein Glücksspiel. Wenn Sie endlos wiederholbare Roguelikes mögen, bei denen es darum geht, mit verschiedenen Synergien und Vorteilen verrückte Highscores zu erzielen, ist CloverPit wahrscheinlich auf Ihrem Radar. Es ist seit September letzten Jahres auf dem PC verfügbar und hat dort über 12.000 „sehr positive“ Steam-Rezensionen erhalten. Seitdem wurde es auf Xbox und Mobilgeräte portiert und hat auf diesen drei Plattformen 5 Millionen Spieler erreicht. Lesen Sie den vollständigen Artikel auf pushsquare.com"
-      },
-      "pt": {
-        "title": "Os jogadores de Balatro em recuperação provavelmente deveriam ficar longe do CloverPit, que chegará ao PS5 no próximo mês",
-        "summary": "Uma pequena aposta. Se você gosta de roguelikes infinitamente reproduzíveis, que visam obter pontuações altas e loucas usando várias sinergias e vantagens, o CloverPit provavelmente está no seu radar. Está disponível para PC desde setembro do ano passado, onde possui mais de 12.000 análises “muito positivas” do Steam. Desde então, foi portado para Xbox e dispositivos móveis e, entre essas três plataformas, atingiu 5 milhões de jogadores. Leia o artigo completo em pushsquare.com"
-      },
-      "ru": {
-        "title": "Игрокам, выздоравливающим Балатро, вероятно, следует держаться подальше от CloverPit, который выйдет на PS5 в следующем месяце",
-        "summary": "Немного азартная игра. Если вам нравятся бесконечно повторяемые рогалики, целью которых является набирать сумасшедшие очки, используя различные синергии и льготы, CloverPit, вероятно, был на вашем радаре. Игра доступна на ПК с сентября прошлого года и получила более 12 000 «очень положительных» отзывов в Steam. С тех пор она была портирована на Xbox и мобильные устройства, и на этих трех платформах количество игроков достигло 5 миллионов. Полную версию статьи можно прочитать на сайте pushsquare.com."
-      },
-      "el": {
-        "title": "Η ανάκτηση των παικτών Balatro θα πρέπει πιθανώς να μείνει μακριά από το CloverPit, έρχεται στο PS5 τον επόμενο μήνα",
-        "summary": "Λίγο στοίχημα. Αν σας αρέσουν τα ατελείωτα επαναλαμβανόμενα roguelike που έχουν σκοπό να συγκεντρώσετε τρελά υψηλά σκορ χρησιμοποιώντας διάφορες συνέργειες και προνόμια, το CloverPit πιθανότατα ήταν στο ραντάρ σας. Είναι διαθέσιμο σε PC από τον Σεπτέμβριο του περασμένου έτους, όπου έχει πάνω από 12.000 \"Πολύ Θετικές\" κριτικές Steam. Έκτοτε έχει μεταφερθεί σε Xbox και κινητά, και μεταξύ αυτών των τριών πλατφορμών έχει φτάσει τα 5 εκατομμύρια παίκτες. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
-      },
-      "tr": {
-        "title": "İyileşen Balatro Oyuncuları Muhtemelen Gelecek Ay PS5'e Gelen CloverPit'ten Uzak Durmalı",
-        "summary": "Biraz kumar. Çeşitli sinerjileri ve avantajları kullanarak çılgın yüksek puanlar toplamayı amaçlayan sonsuz tekrar oynanabilir roguelike oyunlarını seviyorsanız CloverPit muhtemelen radarınızda olmuştur. Geçen yılın Eylül ayından bu yana PC'de mevcut ve 12.000'den fazla \"Çok Olumlu\" Steam incelemesine sahip. O zamandan beri Xbox'a ve mobil cihazlara taşındı ve bu üç platform arasında 5 milyon oyuncuya ulaştı. Makalenin tamamını pushsquare.com'da okuyun"
-      },
-      "ja": {
-        "title": "バラトロ選手を回復するには、おそらく来月 PS5 に登場する CloverPit には近づかないほうがよいでしょう",
-        "summary": "ちょっとしたギャンブル。さまざまな相乗効果や特典を使用してクレイジーなハイスコアを獲得することを目的とした、無限にリプレイ可能なローグライク ゲームに興味があるなら、おそらく CloverPit が注目されているでしょう。昨年 9 月から PC で利用可能になり、Steam では 12,000 件を超える「非常に好評」のレビューが付いています。その後、Xbox とモバイルに移植され、これら 3 つのプラットフォームのプレイヤー数は 500 万人に達しました。 Pushsquare.comで記事全文を読む"
-      },
-      "zh": {
-        "title": "康复中的 Balatro 玩家可能应该远离 CloverPit，下个月登陆 PS5",
-        "summary": "有点赌博。如果您喜欢无限重玩的 roguelike 游戏，这些游戏都是为了利用各种协同作用和福利来获得疯狂的高分，那么 CloverPit 可能已经在您的关注范围内了。自去年 9 月起，它就在 PC 上推出，并拥有超过 12,000 条“非常积极”的 Steam 评论。此后，它被移植到 Xbox 和移动设备上，这三个平台上的玩家数量已达到 500 万。在pushsquare.com 上阅读全文"
-      }
-    }
-  },
-  {
-    "id": "80f44753ee7dc8f28f612b40c910b31e8537e20b",
-    "title": "Love Etrian Odyssey, Wizardy, & Shin Megami Tensei? This New Dungeon RPG Could Be Right Up Your Street",
-    "summary": "For fans who like \"methodical party-building, careful mapping, & turn-based combat\". If your favourite video games include Wizardry , Etrian Odyssey , and Shin Megami Tensei , then the upcoming dungeon-crawling RPG Häxeri might be a project to keep an eye on in the future. Developed by the Swedish solo developer Fabian Sorensson (under the name Tarpit Games), the game is a tribute \"to the now dormant Etrian Odyssey series\" and has been in development for the past two years, with a release window",
-    "category": "GAME_RELEASE",
-    "sourceName": "Time Extension",
-    "sourceUrl": "https://www.timeextension.com/news/2026/07/love-etrian-odyssey-wizardy-and-shin-megami-tensei-this-new-dungeon-rpg-could-be-right-up-your-street",
-    "imageUrl": "https://images.timeextension.com/51b6ee47881f3/large.jpg",
-    "publishedAt": "2026-07-31T12:00:00+00:00",
-    "scrapedAt": "2026-08-05T05:51:00.414631+00:00",
-    "translations": {
-      "en": {
-        "title": "Love Etrian Odyssey, Wizardy, & Shin Megami Tensei? This New Dungeon RPG Could Be Right Up Your Street",
-        "summary": "For fans who like \"methodical party-building, careful mapping, & turn-based combat\". If your favourite video games include Wizardry , Etrian Odyssey , and Shin Megami Tensei , then the upcoming dungeon-crawling RPG Häxeri might be a project to keep an eye on in the future. Developed by the Swedish solo developer Fabian Sorensson (under the name Tarpit Games), the game is a tribute \"to the now dormant Etrian Odyssey series\" and has been in development for the past two years, with a release window"
-      },
-      "fr": {
-        "title": "Vous aimez Etrian Odyssey, Wizardy et Shin Megami Tensei ? Ce nouveau RPG de donjon pourrait bien vous convenir",
-        "summary": "Pour les fans qui aiment « la construction méthodique d’un groupe, une cartographie soignée et des combats au tour par tour ». Si vos jeux vidéo préférés incluent Wizardry, Etrian Odyssey et Shin Megami Tensei, alors le prochain RPG d'exploration de donjons Häxeri pourrait être un projet à surveiller à l'avenir. Développé par le développeur solo suédois Fabian Sorensson (sous le nom de Tarpit Games), le jeu est un hommage \"à la série Etrian Odyssey, désormais endormie\", et est en développement depuis deux ans, avec une fenêtre de sortie."
-      },
-      "es": {
-        "title": "¿Te encanta Etrian Odyssey, Wizardy y Shin Megami Tensei? Este nuevo juego de rol de mazmorras podría ser ideal para ti",
-        "summary": "Para fanáticos a quienes les gusta \"la creación de grupos metódica, el mapeo cuidadoso y el combate por turnos\". Si tus videojuegos favoritos incluyen Wizardry, Etrian Odyssey y Shin Megami Tensei, entonces el próximo juego de rol de exploración de mazmorras Häxeri podría ser un proyecto al que debes estar atento en el futuro. Desarrollado por el desarrollador en solitario sueco Fabian Sorensson (bajo el nombre de Tarpit Games), el juego es un tributo \"a la ahora inactiva serie Etrian Odyssey\" y ha estado en desarrollo durante los últimos dos años, con una ventana de lanzamiento."
-      },
-      "it": {
-        "title": "Ti piacciono Etrian Odyssey, Wizardy e Shin Megami Tensei? Questo nuovo gioco di ruolo Dungeon potrebbe fare al caso tuo",
-        "summary": "Per i fan che amano \"la creazione metodica di feste, la mappatura attenta e il combattimento a turni\". Se i tuoi videogiochi preferiti includono Wizardry, Etrian Odyssey e Shin Megami Tensei, allora il prossimo gioco di ruolo dungeon crawling Häxeri potrebbe essere un progetto da tenere d'occhio in futuro. Sviluppato dallo sviluppatore solista svedese Fabian Sorensson (sotto il nome di Tarpit Games), il gioco è un tributo \"all'ormai dormiente serie Etrian Odyssey\" ed è in sviluppo da due anni, con una finestra di rilascio"
-      },
-      "de": {
-        "title": "Lieben Sie Etrian Odyssey, Wizardy und Shin Megami Tensei? Dieses neue Dungeon-Rollenspiel könnte genau das Richtige für Sie sein",
-        "summary": "Für Fans, die „methodischen Gruppenaufbau, sorgfältige Kartierung und rundenbasierte Kämpfe“ mögen. Wenn zu Ihren Lieblingsvideospielen Wizardry, Etrian Odyssey und Shin Megami Tensei gehören, dann ist das kommende Dungeon-Crawler-Rollenspiel Häxeri möglicherweise ein Projekt, das Sie in Zukunft im Auge behalten sollten. Das vom schwedischen Soloentwickler Fabian Sorensson (unter dem Namen Tarpit Games) entwickelte Spiel ist eine Hommage „an die inzwischen ruhende Etrian Odyssey-Reihe“ und befindet sich seit zwei Jahren in der Entwicklung, mit einem Veröffentlichungsfenster"
-      },
-      "pt": {
-        "title": "Ama Etrian Odyssey, Wizardy e Shin Megami Tensei? Este novo RPG de masmorra pode ser a escolha certa para você",
-        "summary": "Para fãs que gostam de \"construção metódica de grupos, mapeamento cuidadoso e combate por turnos\". Se seus videogames favoritos incluem Wizardry, Etrian Odyssey e Shin Megami Tensei, então o próximo RPG de masmorras Häxeri pode ser um projeto para ficar de olho no futuro. Desenvolvido pelo desenvolvedor solo sueco Fabian Sorensson (sob o nome de Tarpit Games), o jogo é uma homenagem “à agora adormecida série Etrian Odyssey” e está em desenvolvimento nos últimos dois anos, com uma janela de lançamento"
-      },
-      "ru": {
-        "title": "Любите Etrian Odyssey, Wizardy и Shin Megami Tensei? Эта новая ролевая игра о подземельях может оказаться прямо на вашей улице",
-        "summary": "Для фанатов, которым нравится «методичное партийное построение, тщательное картографирование и пошаговые бои». Если ваши любимые видеоигры включают Wizardry, Etrian Odyssey и Shin Megami Tensei, то грядущая ролевая игра Häxeri о ползании по подземельям может стать проектом, за которым стоит следить в будущем. Игра, разработанная шведским разработчиком Фабианом Соренссоном (под названием Tarpit Games), является данью «ныне бездействующей серии Etrian Odyssey» и находилась в разработке последние два года с окном выпуска."
-      },
-      "el": {
-        "title": "Σας αρέσει το Etrian Odyssey, το Wizardy και το Shin Megami Tensei; Αυτό το νέο Dungeon RPG θα μπορούσε να είναι ακριβώς επάνω σας",
-        "summary": "Για θαυμαστές που τους αρέσει η \"μεθοδική δημιουργία πάρτι, η προσεκτική χαρτογράφηση και η μάχη με το turn-based\". Εάν τα αγαπημένα σας βιντεοπαιχνίδια περιλαμβάνουν το Wizardry , το Etrian Odyssey και το Shin Megami Tensei , τότε το επερχόμενο RPG Häxeri με μπουντρούμια μπορεί να είναι ένα έργο που πρέπει να παρακολουθείτε στο μέλλον. Αναπτύχθηκε από τον Σουηδό σόλο προγραμματιστή Fabian Sorensson (με το όνομα Tarpit Games), το παιχνίδι είναι ένας φόρος τιμής \"στην αδρανοποιημένη πλέον σειρά Etrian Odyssey\" και βρίσκεται σε εξέλιξη τα τελευταία δύο χρόνια, με παράθυρο κυκλοφορίας."
-      },
-      "tr": {
-        "title": "Etrian Odyssey, Wizardy ve Shin Megami Tensei'yi seviyor musunuz? Bu Yeni Zindan RPG'si Hemen Sokağınızda Olabilir",
-        "summary": "\"Metodik parti oluşturmayı, dikkatli haritalamayı ve sıra tabanlı dövüşü\" seven hayranlar için. En sevdiğiniz video oyunları arasında Wizardry, Etrian Odyssey ve Shin Megami Tensei yer alıyorsa, yakında çıkacak olan zindanlarda gezinen RPG Häxeri gelecekte dikkat edilmesi gereken bir proje olabilir. İsveçli solo geliştirici Fabian Sorensson (Tarpit Games adı altında) tarafından geliştirilen oyun, \"şu anda hareketsiz olan Etrian Odyssey serisine\" bir saygı duruşu niteliği taşıyor ve son iki yıldır geliştirilme aşamasında ve bir çıkış penceresi var."
-      },
-      "ja": {
-        "title": "世界樹の迷宮、Wizardy、真・女神転生が好きですか?この新しいダンジョン RPG はあなたの街にも登場するかもしれません",
-        "summary": "「計画的なパーティー構築、慎重なマッピング、ターン制戦闘」を好むファン向け。あなたのお気に入りのビデオ ゲームに「ウィザードリィ」、「世界樹の迷宮」、「真・女神転生」が含まれるなら、今後登場するダンジョン探索 RPG「Häxeri」は将来注目すべきプロジェクトになるかもしれません。スウェーデンの個人開発者 Fabian Sorensson (Tarpit Games という名前で) によって開発されたこのゲームは、「現在休止中の世界樹の迷宮シリーズ」へのオマージュであり、リリース期間を設けて過去 2 年間開発が続けられています。"
-      },
-      "zh": {
-        "title": "喜欢《Etrian Odyssey》、《Wizardy》和《真女神转生》吗？这款新的地下城角色扮演游戏可能就在您的街道上",
-        "summary": "适合喜欢“有条不紊的队伍建设、细致的地图和回合制战斗”的粉丝。如果您最喜欢的视频游戏包括《Wizardry》、《Etrian Odyssey》和《Shin Megami Tensei》，那么即将推出的地下城角色扮演游戏 Häxeri 可能是您未来值得关注的项目。该游戏由瑞典独立开发商 Fabian Sorensson（名称为 Tarpit Games）开发，旨在向“现已休眠的 Etrian Odyssey 系列”致敬，并已开发了两年，并有发布窗口"
-      }
-    }
-  },
-  {
-    "id": "91a861deb8220406ae71425147152246e7230d29",
-    "title": "Hands On: Taki Udon's Console Mode Finally Gives MiSTer FPGA the Accessibility I've Always Craved",
-    "summary": "Works on both MiSTer and SuperStation One. If there's one big sticking point with MiSTer FPGA at the moment, it's the fact that the system's intentionally lightweight user interface isn't quite as user-friendly as it could be, and, to more casual players, could present something of a stumbling block. That's why there's been so much interest in Taki Udon's Console Mode , which launched yesterday after months of hard work and optimisation . As the name suggests, Console Mode presents the user with",
-    "category": "RETRO_CONSOLE",
-    "sourceName": "Time Extension",
-    "sourceUrl": "https://www.timeextension.com/features/hands-on-taki-udons-console-mode-finally-gives-mister-fpga-the-accessibility-ive-always-craved",
-    "imageUrl": "https://images.timeextension.com/6b632aa6117b1/large.jpg",
-    "publishedAt": "2026-07-31T11:00:00+00:00",
-    "scrapedAt": "2026-08-05T05:51:00.414726+00:00",
-    "translations": {
-      "en": {
-        "title": "Hands On: Taki Udon's Console Mode Finally Gives MiSTer FPGA the Accessibility I've Always Craved",
-        "summary": "Works on both MiSTer and SuperStation One. If there's one big sticking point with MiSTer FPGA at the moment, it's the fact that the system's intentionally lightweight user interface isn't quite as user-friendly as it could be, and, to more casual players, could present something of a stumbling block. That's why there's been so much interest in Taki Udon's Console Mode , which launched yesterday after months of hard work and optimisation . As the name suggests, Console Mode presents the user with"
-      },
-      "fr": {
-        "title": "Pratique : le mode console de Taki Udon donne enfin à MiSTer FPGA l'accessibilité dont j'ai toujours rêvé",
-        "summary": "Fonctionne à la fois sur MiSTer et SuperStation One. S'il y a un gros point de friction avec MiSTer FPGA pour le moment, c'est le fait que l'interface utilisateur intentionnellement légère du système n'est pas aussi conviviale qu'elle pourrait l'être et, pour les joueurs plus occasionnels, pourrait constituer une pierre d'achoppement. C'est pourquoi le mode console de Taki Udon a suscité tant d'intérêt, lancé hier après des mois de travail acharné et d'optimisation. Comme son nom l'indique, le mode console présente à l'utilisateur"
-      },
-      "es": {
-        "title": "Manos a la obra: el modo de consola de Taki Udon finalmente le brinda a MiSTer FPGA la accesibilidad que siempre anhelé",
-        "summary": "Funciona tanto en MiSTer como en SuperStation One. Si hay un gran problema con MiSTer FPGA en este momento, es el hecho de que la interfaz de usuario intencionalmente liviana del sistema no es tan fácil de usar como podría ser y, para los jugadores más ocasionales, podría presentar una especie de obstáculo. Es por eso que ha habido tanto interés en el Modo Consola de Taki Udon, que se lanzó ayer después de meses de arduo trabajo y optimización. Como sugiere el nombre, el Modo Consola presenta al usuario"
-      },
-      "it": {
-        "title": "Hands On: la modalità console di Taki Udon offre finalmente a MiSTer FPGA l'accessibilità che ho sempre desiderato",
-        "summary": "Funziona sia su MiSTer che su SuperStation One. Se c'è un grosso punto critico con MiSTer FPGA al momento, è il fatto che l'interfaccia utente volutamente leggera del sistema non è così facile da usare come potrebbe essere e, per i giocatori più occasionali, potrebbe rappresentare una sorta di ostacolo. Ecco perché c'è stato così tanto interesse per la modalità Console di Taki Udon, lanciata ieri dopo mesi di duro lavoro e ottimizzazione. Come suggerisce il nome, la modalità console presenta all'utente"
-      },
-      "de": {
-        "title": "Hands On: Der Konsolenmodus von Taki Udon gibt MiSTer FPGA endlich die Zugänglichkeit, nach der ich mich immer gesehnt habe",
-        "summary": "Funktioniert sowohl auf MiSTer als auch auf SuperStation One. Wenn es derzeit einen großen Knackpunkt bei MiSTer FPGA gibt, dann ist es die Tatsache, dass die absichtlich schlanke Benutzeroberfläche des Systems nicht ganz so benutzerfreundlich ist, wie sie sein könnte, und für Gelegenheitsspieler eine Art Stolperstein darstellen könnte. Deshalb gab es so großes Interesse am Konsolenmodus von Taki Udon, der gestern nach Monaten harter Arbeit und Optimierung gestartet wurde. Wie der Name schon sagt, präsentiert der Konsolenmodus dem Benutzer Folgendes:"
-      },
-      "pt": {
-        "title": "Prática: o modo console de Taki Udon finalmente dá ao MiSTer FPGA a acessibilidade que sempre desejei",
-        "summary": "Funciona tanto no MiSTer quanto no SuperStation One. Se há um grande obstáculo com o MiSTer FPGA no momento, é o fato de que a interface de usuário intencionalmente leve do sistema não é tão amigável quanto poderia ser e, para jogadores mais casuais, pode representar uma espécie de obstáculo. É por isso que tem havido tanto interesse no Modo Console de Taki Udon, lançado ontem após meses de trabalho duro e otimização. Como o nome sugere, o Modo Console apresenta ao usuário"
-      },
-      "ru": {
-        "title": "Практические занятия: консольный режим Таки Удона наконец-то дает MiSTer FPGA доступность, о которой я всегда мечтал",
-        "summary": "Работает как на MiSTer, так и на SuperStation One. Если на данный момент есть один большой камень преткновения в MiSTer FPGA, так это тот факт, что намеренно облегченный пользовательский интерфейс системы не так удобен для пользователя, как мог бы быть, и для более случайных игроков может стать камнем преткновения. Вот почему такой большой интерес был к консольному режиму Таки Удона, который был запущен вчера после месяцев напряженной работы и оптимизации. Как следует из названия, консольный режим предоставляет пользователю"
-      },
-      "el": {
-        "title": "Hands On: Η λειτουργία κονσόλας του Taki Udon δίνει τελικά στο MiSTer FPGA την προσβασιμότητα που πάντα λαχταρούσα",
-        "summary": "Λειτουργεί τόσο στο MiSTer όσο και στο SuperStation One. Εάν υπάρχει ένα μεγάλο σημείο κόλλησης με το MiSTer FPGA αυτή τη στιγμή, είναι το γεγονός ότι η ηθελημένα ελαφριά διεπαφή χρήστη του συστήματος δεν είναι τόσο φιλική προς το χρήστη όσο θα μπορούσε να είναι και, σε πιο περιστασιακούς παίκτες, θα μπορούσε να αποτελέσει εμπόδιο. Αυτός είναι ο λόγος για τον οποίο υπήρξε τόσο μεγάλο ενδιαφέρον για τη λειτουργία κονσόλας του Taki Udon, η οποία κυκλοφόρησε χθες μετά από μήνες σκληρής δουλειάς και βελτιστοποίησης. Όπως υποδηλώνει το όνομα, το Console Mode παρουσιάζει στον χρήστη"
-      },
-      "tr": {
-        "title": "Uygulamalı: Taki Udon'un Konsol Modu Nihayet MiSTer FPGA'ya Her Zaman Özlediğim Erişilebilirliği Sağlıyor",
-        "summary": "Hem MiSTer hem de SuperStation One'da çalışır. Şu anda MiSTer FPGA ile ilgili büyük bir anlaşmazlık noktası varsa, o da sistemin kasıtlı olarak hafif kullanıcı arayüzünün olabileceği kadar kullanıcı dostu olmaması ve daha sıradan oyuncular için bir tür engel oluşturabileceği gerçeğidir. Taki Udon'un aylarca süren yoğun çalışma ve optimizasyonun ardından dün kullanıma sunulan Konsol Moduna bu kadar ilgi gösterilmesinin nedeni de bu. Adından da anlaşılacağı üzere Konsol Modu kullanıcıya"
-      },
-      "ja": {
-        "title": "ハンズオン: たきうどんのコンソール モードで、私が常に切望していたアクセシビリティを MiSTer FPGA についに提供",
-        "summary": "MiSTer と SuperStation One の両方で動作します。現時点で MiSTer FPGA に大きな問題点があるとすれば、それは、システムの意図的に軽量化されたユーザー インターフェイスが、思ったほどユーザーフレンドリーではなく、よりカジュアルなプレイヤーにとっては、何かつまずきとなる可能性があるという事実です。だからこそ、Taki Udon のコンソール モードに大きな関心が寄せられています。コンソール モードは、数か月にわたる努力と最適化を経て、昨日リリースされました。名前が示すように、コンソール モードではユーザーに次の機能が提供されます。"
-      },
-      "zh": {
-        "title": "动手实践：Taki Udon 的控制台模式最终为 MiSTer FPGA 提供了我一直渴望的可访问性",
-        "summary": "适用于 MiSTer 和 SuperStation One。如果说目前 MiSTer FPGA 存在一个大症结的话，那就是该系统特意设计的轻量级用户界面并不像它应有的那么用户友好，而且对于更休闲的玩家来说，可能会成为绊脚石。这就是为什么人们对 Taki Udon 的控制台模式如此感兴趣，该模式经过几个月的努力和优化，于昨天推出。顾名思义，控制台模式向用户提供"
-      }
-    }
-  },
-  {
-    "id": "f5b50f34f0f53698cf34e61d684e9a3cdc57e4d9",
-    "title": "Dragon Ball: Sparking! ZERO Super Limit-Breaking NEO is Out Now",
-    "summary": "This one’s got a lot of fighting between some new faces, in new places, and for brand-new prizes while long-term fans are going to be happy.",
-    "category": "GAME_RELEASE",
-    "sourceName": "GamingBolt",
-    "sourceUrl": "https://gamingbolt.com/dragon-ball-sparking-zero-super-limit-breaking-neo-is-out-now",
-    "imageUrl": "",
-    "publishedAt": "2026-07-31T04:25:28+00:00",
-    "scrapedAt": "2026-07-31T06:21:21.791486+00:00",
-    "translations": {
-      "en": {
-        "title": "Dragon Ball: Sparking! ZERO Super Limit-Breaking NEO is Out Now",
-        "summary": "This one’s got a lot of fighting between some new faces, in new places, and for brand-new prizes while long-term fans are going to be happy."
-      },
-      "fr": {
-        "title": "Dragon Ball : Des étincelles ! ZERO Super Limit-Breaking NEO est maintenant disponible",
-        "summary": "Celui-ci comporte de nombreux combats entre de nouveaux visages, dans de nouveaux endroits et pour de tout nouveaux prix, tandis que les fans de longue date seront heureux."
-      },
-      "es": {
-        "title": "Dragon Ball: ¡Chispas! ZERO Super Limit-Breaking NEO ya está disponible",
-        "summary": "Este tiene muchas peleas entre caras nuevas, en lugares nuevos y por premios nuevos, mientras que los fanáticos a largo plazo estarán felices."
-      },
-      "it": {
-        "title": "Dragon Ball: Scintille! ZERO Super Limit-Breaking NEO è ora disponibile",
-        "summary": "In questo caso ci saranno molti combattimenti tra alcuni volti nuovi, in posti nuovi e per premi nuovi di zecca, mentre i fan di lunga data saranno felici."
-      },
-      "de": {
-        "title": "Dragon Ball: Funken! ZERO Super Limit-Breaking NEO ist jetzt erhältlich",
-        "summary": "Hier gibt es viele Kämpfe zwischen einigen neuen Gesichtern, an neuen Orten und um brandneue Preise, während langjährige Fans glücklich sein werden."
-      },
-      "pt": {
-        "title": "Dragon Ball: Faísca! ZERO Super Limit-Breaking NEO já foi lançado",
-        "summary": "Este terá muitas brigas entre alguns rostos novos, em novos lugares e por prêmios totalmente novos, enquanto os fãs de longa data ficarão felizes."
-      },
-      "ru": {
-        "title": "Жемчуг дракона: Искра! ZERO Super Limit Breaking NEO уже доступен",
-        "summary": "Здесь будет много борьбы между новыми лицами, в новых местах и ​​за совершенно новые призы, в то время как давние фанаты будут счастливы."
-      },
-      "el": {
-        "title": "Dragon Ball: Σπινθήρα! Το ZERO Super Limit-Breaking NEO κυκλοφορεί τώρα",
-        "summary": "Αυτό έχει πολλές μάχες μεταξύ μερικών νέων προσώπων, σε νέα μέρη και για ολοκαίνουργια βραβεία, ενώ οι μακροχρόνιοι θαυμαστές θα είναι ευχαριστημένοι."
-      },
-      "tr": {
-        "title": "Dragon Ball: Kıvılcımlar saçıyor! SIFIR Süper Limiti Aşan NEO Artık Çıktı",
-        "summary": "Bu seferki bazı yeni yüzler arasında, yeni yerlerde ve yepyeni ödüller için çok fazla kavga var, uzun vadeli hayranlar ise mutlu olacak."
-      },
-      "ja": {
-        "title": "ドラゴンボール スパーキング！ 『ZERO 超限界突破NEO』発売",
-        "summary": "この作品では、新しい顔ぶれの間で、新しい場所で、そして真新しい賞品をめぐって多くの争いが繰り広げられるが、長年のファンは満足するだろう。"
-      },
-      "zh": {
-        "title": "龙珠：火花四射！零超极限突破NEO现已上线",
-        "summary": "在这场比赛中，一些新面孔、新地点和全新奖品之间展开了激烈的战斗，而长期粉丝将会很高兴。"
       }
     }
   },
