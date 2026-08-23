@@ -1,5 +1,119 @@
 [
   {
+    "id": "9fc5cb111ad3058bb107b04b0ef34499db001502",
+    "title": "A New $230 RetroTink Is Finally Here With 1440p Upscaling",
+    "summary": "An upcoming RetroTink product has been teased for a while now, but today marks the day that it has been officially revealed. For those new to the RetroTink scene, it&apos;s simply a high-quality accessory for retro game consoles that converts your low-quality analogue video and upscales",
+    "category": "RETRO_CONSOLE",
+    "sourceName": "RetroDodo",
+    "sourceUrl": "https://retrododo.com/a-new-230-retrotink-is-finally-here-with-1440p-upscaling/",
+    "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/retrotink-6x.webp",
+    "publishedAt": "2026-08-22T19:41:52+00:00",
+    "scrapedAt": "2026-08-23T03:54:20.055278+00:00",
+    "translations": {
+      "en": {
+        "title": "A New $230 RetroTink Is Finally Here With 1440p Upscaling",
+        "summary": "An upcoming RetroTink product has been teased for a while now, but today marks the day that it has been officially revealed. For those new to the RetroTink scene, it&apos;s simply a high-quality accessory for retro game consoles that converts your low-quality analogue video and upscales"
+      },
+      "fr": {
+        "title": "Un nouveau RetroTink à 230 $ est enfin là avec une mise à l'échelle 1440p",
+        "summary": "Un prochain produit RetroTink est teasé depuis un certain temps déjà, mais aujourd'hui marque le jour où il a été officiellement révélé. Pour ceux qui découvrent la scène RetroTink, il s'agit simplement d'un accessoire de haute qualité pour consoles de jeux rétro qui convertit votre vidéo analogique de faible qualité et la met à l'échelle."
+      },
+      "es": {
+        "title": "Finalmente está aquí un nuevo RetroTink de $ 230 con mejora de 1440p",
+        "summary": "Un próximo producto RetroTink ha sido objeto de burlas desde hace un tiempo, pero hoy marca el día en que se reveló oficialmente. Para aquellos nuevos en la escena RetroTink, es simplemente un accesorio de alta calidad para consolas de juegos retro que convierte su vídeo analógico de baja calidad y lo mejora."
+      },
+      "it": {
+        "title": "A New $230 RetroTink Is Finally Here With 1440p Upscaling",
+        "summary": "An upcoming RetroTink product has been teased for a while now, but today marks the day that it has been officially revealed. For those new to the RetroTink scene, it&apos;s simply a high-quality accessory for retro game consoles that converts your low-quality analogue video and upscales"
+      },
+      "de": {
+        "title": "Endlich ist ein neuer RetroTink für 230 $ mit 1440p-Upscaling da",
+        "summary": "Ein kommendes RetroTink-Produkt wurde schon seit einiger Zeit angepriesen, aber heute ist der Tag, an dem es offiziell enthüllt wurde. Für diejenigen, die neu in der RetroTink-Szene sind: Es handelt sich einfach um ein hochwertiges Zubehör für Retro-Spielekonsolen, das Ihre minderwertigen analogen Videos umwandelt und hochskaliert"
+      },
+      "pt": {
+        "title": "Um novo RetroTink de $ 230 finalmente chegou com upscaling de 1440p",
+        "summary": "Um próximo produto RetroTink já foi divulgado há algum tempo, mas hoje marca o dia em que foi oficialmente revelado. Para aqueles que são novos no cenário RetroTink, é simplesmente um acessório de alta qualidade para consoles de jogos retrô que converte seu vídeo analógico de baixa qualidade e aprimora"
+      },
+      "ru": {
+        "title": "Наконец-то появился новый RetroTink за 230 долларов с масштабированием до 1440p",
+        "summary": "Предстоящий продукт RetroTink анонсировали уже некоторое время, но сегодня отмечается день его официального анонса. Для новичков в сфере RetroTink: это просто высококачественный аксессуар для ретро-игровых консолей, который преобразует низкокачественное аналоговое видео и повышает его качество."
+      },
+      "el": {
+        "title": "Ένα νέο RetroTink $230 είναι επιτέλους εδώ με αναβάθμιση 1440p",
+        "summary": "Ένα επερχόμενο προϊόν RetroTink έχει πειραχθεί εδώ και λίγο καιρό, αλλά σήμερα σηματοδοτεί την ημέρα που αποκαλύφθηκε επίσημα. Για όσους είναι νέοι στη σκηνή του RetroTink, είναι απλώς ένα αξεσουάρ υψηλής ποιότητας για ρετρό κονσόλες παιχνιδιών που μετατρέπει το αναλογικό βίντεο χαμηλής ποιότητας και τις αναβαθμίσεις"
+      },
+      "tr": {
+        "title": "230 Dolarlık Yeni RetroTink Nihayet 1440p Yükseltmeyle Karşınızda",
+        "summary": "Yaklaşan bir RetroTink ürünü bir süredir tanıtılıyor ancak bugün resmi olarak tanıtıldığı gün. RetroTink sahnesine yeni başlayanlar için, düşük kaliteli analog videolarınızı ve yükseltmelerinizi dönüştüren, retro oyun konsollarına yönelik yüksek kaliteli bir aksesuardır."
+      },
+      "ja": {
+        "title": "1440p アップスケーリングを備えた 230 ドルの新しい RetroTink がついに登場",
+        "summary": "次期 RetroTink 製品がしばらくからかわれていましたが、今日、それが正式に発表される日となりました。 RetroTink シーンを初めて使用する人にとって、これは単に低品質のアナログ ビデオを変換してアップスケールする、レトロ ゲーム コンソール用の高品質のアクセサリです。"
+      },
+      "zh": {
+        "title": "售价 230 美元的新款 RetroTink 终于上市了，分辨率为 1440p",
+        "summary": "即将推出的 RetroTink 产品已经被调侃了一段时间，但今天标志着它正式发布的日子。对于那些刚接触 RetroTink 场景的人来说，它只是复古游戏机的高品质配件，可将低品质模拟视频转换为高品质视频"
+      }
+    }
+  },
+  {
+    "id": "3a8cc51277d9fd09274dcc00825bf67eb82caeaf",
+    "title": "PS6 : PlayStation doit réagir. Oui, mais comment ?",
+    "summary": "Que va choisir Sony pour le lancement de la prochaine génération de PlayStation ? Alors que les analystes n’arrivent pas à se mettre d’accord sur la date de sortie de la PS6, le groupe japonais joue la prudence et assure que rien n’est décidé pour le moment. La situation dans laquelle se trouve PlayStation...",
+    "category": "GAME_RELEASE",
+    "sourceName": "JeuxVideo.com",
+    "sourceUrl": "https://www.jeuxvideo.com/news/2099937/ps6-playstation-doit-reagir-oui-mais-comment.htm",
+    "imageUrl": "https://image.jeuxvideo.com/medias-lg/178730/1787303809-2956-card.jpg",
+    "publishedAt": "2026-08-22T18:10:08+00:00",
+    "scrapedAt": "2026-08-23T03:54:47.756770+00:00",
+    "translations": {
+      "fr": {
+        "title": "PS6 : PlayStation doit réagir. Oui, mais comment ?",
+        "summary": "Que va choisir Sony pour le lancement de la prochaine génération de PlayStation ? Alors que les analystes n’arrivent pas à se mettre d’accord sur la date de sortie de la PS6, le groupe japonais joue la prudence et assure que rien n’est décidé pour le moment. La situation dans laquelle se trouve PlayStation..."
+      },
+      "en": {
+        "title": "PS6: PlayStation must react. Yes, but how?",
+        "summary": "What will Sony choose for the launch of the next generation of PlayStation? While analysts cannot agree on the release date of the PS6, the Japanese group is playing it safe and assures that nothing has been decided for the moment. The situation PlayStation finds itself in..."
+      },
+      "es": {
+        "title": "PS6: PlayStation debe reaccionar. Sí, pero ¿cómo?",
+        "summary": "¿Qué elegirá Sony para el lanzamiento de la próxima generación de PlayStation? Si bien los analistas no pueden ponerse de acuerdo sobre la fecha de lanzamiento de la PS6, el grupo japonés va a lo seguro y asegura que no hay nada decidido por el momento. La situación en la que se encuentra PlayStation..."
+      },
+      "it": {
+        "title": "PS6: PlayStation deve reagire. Sì, ma come?",
+        "summary": "Cosa sceglierà Sony per il lancio della prossima generazione di PlayStation? Anche se gli analisti non riescono a mettersi d'accordo sulla data di uscita di PS6, il gruppo giapponese va sul sicuro e assicura che per il momento non è stato deciso nulla. La situazione in cui si trova PlayStation..."
+      },
+      "de": {
+        "title": "PS6: PlayStation muss reagieren. Ja, aber wie?",
+        "summary": "Was wird Sony für die Einführung der nächsten PlayStation-Generation wählen? Während sich die Analysten nicht auf den Veröffentlichungstermin der PS6 einigen können, geht der japanische Konzern auf Nummer sicher und versichert, dass vorerst noch nichts entschieden sei. Die Situation, in der sich PlayStation befindet..."
+      },
+      "pt": {
+        "title": "PS6: PlayStation deve reagir. Sim, mas como?",
+        "summary": "O que a Sony escolherá para o lançamento da próxima geração do PlayStation? Embora os analistas não cheguem a acordo sobre a data de lançamento do PS6, o grupo japonês joga pelo seguro e garante que nada foi decidido no momento. A situação em que o PlayStation se encontra..."
+      },
+      "ru": {
+        "title": "PS6: PlayStation должна отреагировать. Да, но как?",
+        "summary": "Что выберет Sony для запуска следующего поколения PlayStation? Хотя аналитики не могут договориться о дате выпуска PS6, японская группа перестраховывается и уверяет, что на данный момент ничего не решено. Ситуация, в которой оказалась PlayStation..."
+      },
+      "el": {
+        "title": "PS6: Το PlayStation πρέπει να αντιδράσει. Ναι, αλλά πώς;",
+        "summary": "Τι θα επιλέξει η Sony για το λανσάρισμα της επόμενης γενιάς του PlayStation; Ενώ οι αναλυτές δεν μπορούν να συμφωνήσουν για την ημερομηνία κυκλοφορίας του PS6, το ιαπωνικό γκρουπ το παίζει καλά και διαβεβαιώνει ότι τίποτα δεν έχει αποφασιστεί προς το παρόν. Η κατάσταση στην οποία βρίσκεται το PlayStation..."
+      },
+      "tr": {
+        "title": "PS6: PlayStation'ın tepki vermesi gerekiyor. Evet ama nasıl?",
+        "summary": "Sony, yeni nesil PlayStation'ın lansmanı için neyi seçecek? Analistler PS6'nın çıkış tarihi konusunda fikir birliğine varamasa da Japon grup riskten uzak duruyor ve şu an için hiçbir şeye karar verilmediğinin garantisini veriyor. PlayStation'ın içinde bulunduğu durum..."
+      },
+      "ja": {
+        "title": "PS6: PlayStation は反応する必要があります。はい、でもどうやって？",
+        "summary": "ソニーは次世代プレイステーションの発売に何を選択するでしょうか?アナリストらはPS6の発売日について同意できていないが、日本のグループは安全策をとっており、現時点では何も決まっていないと断言する。 PlayStation が置かれている状況は..."
+      },
+      "zh": {
+        "title": "PS6：PlayStation 必须做出反应。是的，但是怎么办呢？",
+        "summary": "索尼会选择什么来推出下一代 PlayStation？虽然分析师无法就 PS6 的发布日期达成一致，但这家日本集团正在谨慎行事，并保证目前尚未做出任何决定。 PlayStation 所处的情况......"
+      }
+    }
+  },
+  {
     "id": "58b402b88dfb07474c3302fef75a163962411e6c",
     "title": "Alien: Isolation 2 Won’t Receive A Release Date at Gamescom",
     "summary": "The prologue for Creative Assembly's long-awaited sequel will be playable on the show floor for attendees, but that's pretty much it.",
@@ -8,7 +122,7 @@
     "sourceUrl": "https://gamingbolt.com/alien-isolation-2-wont-receive-a-release-date-at-gamescom",
     "imageUrl": "",
     "publishedAt": "2026-08-21T18:36:45+00:00",
-    "scrapedAt": "2026-08-22T03:48:50.567966+00:00",
+    "scrapedAt": "2026-08-23T03:54:39.612076+00:00",
     "translations": {
       "en": {
         "title": "Alien: Isolation 2 Won’t Receive A Release Date at Gamescom",
@@ -65,7 +179,7 @@
     "sourceUrl": "https://gamingbolt.com/xbox-series-x25-console-slated-for-november-27th-launch-will-cost-900-rumor",
     "imageUrl": "",
     "publishedAt": "2026-08-21T16:49:13+00:00",
-    "scrapedAt": "2026-08-22T03:48:50.568168+00:00",
+    "scrapedAt": "2026-08-23T03:54:39.612232+00:00",
     "translations": {
       "en": {
         "title": "Xbox Series X25 Console Slated for November 27th Launch, Will Cost $900 – Rumor",
@@ -122,7 +236,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/the-blood-of-dawnwalker-has-two-performance-modes-on-xbox-series-x-but-no-60fps",
     "imageUrl": "https://images.purexbox.com/1ddaf9dfbb538/large.jpg",
     "publishedAt": "2026-08-21T16:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:48:17.355127+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.073449+00:00",
     "translations": {
       "en": {
         "title": "The Blood Of Dawnwalker Has Two Performance Modes On Xbox Series X, But No 60FPS",
@@ -179,7 +293,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/mr-nutz-is-the-next-16-bit-character-to-get-a-physical-resurrection-on-snes-and-genesis",
     "imageUrl": "https://images.timeextension.com/1a6f7a2dc744a/large.jpg",
     "publishedAt": "2026-08-21T14:45:00+00:00",
-    "scrapedAt": "2026-08-22T03:46:29.899016+00:00",
+    "scrapedAt": "2026-08-23T03:54:17.808618+00:00",
     "translations": {
       "en": {
         "title": "Mr. Nutz Is The Next 16-Bit Character To Get A Physical Resurrection On SNES And Genesis",
@@ -236,7 +350,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/cyberpunk-edgerunners-2-netflix-devoile-la-date-de-sortie-de-la-nouvelle-serie-evenement-3050871718.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871718/cyberpunk-edgerunners-2-netflix-devoile-la-date-de-sortie-de-la-nouvelle-serie-evenement-f027cd3b__800_800__840-0-1920-1079.jpg",
     "publishedAt": "2026-08-21T14:40:00+00:00",
-    "scrapedAt": "2026-08-22T03:49:18.963041+00:00",
+    "scrapedAt": "2026-08-23T03:54:44.577165+00:00",
     "translations": {
       "fr": {
         "title": "Game and watch - Cyberpunk Edgerunners 2 : Netflix dévoile la date de sortie de la nouvelle série événement",
@@ -293,7 +407,7 @@
     "sourceUrl": "https://www.actugaming.net/code-vein-ii-en-a-encore-sous-le-coude-avec-un-dlc-qui-sortira-le-9-septembre-prochain-818882/",
     "imageUrl": "https://static.actugaming.net/media/2026/07/code-vein-2.jpg",
     "publishedAt": "2026-08-21T14:19:44+00:00",
-    "scrapedAt": "2026-08-22T03:49:35.065296+00:00",
+    "scrapedAt": "2026-08-23T03:54:47.329882+00:00",
     "translations": {
       "fr": {
         "title": "Code Vein II en a encore sous le coude avec un DLC qui sortira le 9 septembre prochain",
@@ -350,7 +464,7 @@
     "sourceUrl": "https://www.timeextension.com/reviews/evercade-wireless-controller-the-perfect-interface-for-the-next-era-of-evercade",
     "imageUrl": "https://images.timeextension.com/0a4e2c198d76c/large.jpg",
     "publishedAt": "2026-08-21T13:00:00+00:00",
-    "scrapedAt": "2026-08-22T03:46:29.899289+00:00",
+    "scrapedAt": "2026-08-23T03:54:17.808837+00:00",
     "translations": {
       "en": {
         "title": "Review: Evercade Wireless Controller - The Perfect Interface For The Next Era Of Evercade",
@@ -407,7 +521,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/ps5-console-exclusive-phantom-blade-zero-poised-for-gargantuan-launch",
     "imageUrl": "https://images.pushsquare.com/5f05a84bdea4d/large.jpg",
     "publishedAt": "2026-08-21T12:15:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:34.647037+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.554167+00:00",
     "translations": {
       "en": {
         "title": "PS5 Console Exclusive Phantom Blade Zero Poised for Gargantuan Launch",
@@ -464,7 +578,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/caves-bullet-hell-revival-of-dodonpachi-resurrection-arrives-this-month-with-a-series-first-battle-royale-mode",
     "imageUrl": "https://images.timeextension.com/d897410f39496/large.jpg",
     "publishedAt": "2026-08-21T11:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:46:29.899483+00:00",
+    "scrapedAt": "2026-08-23T03:54:17.808981+00:00",
     "translations": {
       "en": {
         "title": "Cave's Bullet Hell Revival Of 'Dodonpachi Resurrection' Arrives This Month With \"A Series First\" Battle Royale Mode",
@@ -521,7 +635,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/great-games-belong-in-your-collection-not-just-your-library-retailer-promotes-physical-revival-with-reprinted-ps4-lineup",
     "imageUrl": "https://images.pushsquare.com/a74bbcefaf6f0/large.jpg",
     "publishedAt": "2026-08-21T11:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:34.647096+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.554214+00:00",
     "translations": {
       "en": {
         "title": "'Great Games Belong in Your Collection, Not Just Your Library': Retailer Promotes Physical Revival with Reprinted PS4 Lineup",
@@ -578,7 +692,7 @@
     "sourceUrl": "https://www.pushsquare.com/news/2026/08/sony-admits-mistake-after-erroneously-purging-legit-indie-dev-without-explanation",
     "imageUrl": "https://images.pushsquare.com/fd078163bb0a5/large.jpg",
     "publishedAt": "2026-08-21T10:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:34.647237+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.554327+00:00",
     "translations": {
       "en": {
         "title": "Sony Admits Mistake After Erroneously Purging Legit Indie Dev without Explanation",
@@ -635,7 +749,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-series-x25-price-and-release-date-details-are-starting-to-leak-out",
     "imageUrl": "https://images.purexbox.com/fe085c291c56e/large.jpg",
     "publishedAt": "2026-08-21T10:27:00+00:00",
-    "scrapedAt": "2026-08-22T03:48:17.355486+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.073736+00:00",
     "translations": {
       "en": {
         "title": "Xbox Series X25 Price & Release Date Details Are Starting To Leak Out",
@@ -692,7 +806,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/final-fantasy-vii-revelation-panels-announced-for-september-and-october",
     "imageUrl": "https://images.nintendolife.com/e8ea1b67898fe/large.jpg",
     "publishedAt": "2026-08-21T03:55:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:19.022893+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.073977+00:00",
     "translations": {
       "en": {
         "title": "Final Fantasy VII Revelation Panels Announced For September & October",
@@ -806,7 +920,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/resident-evil-veronica-producer-yoshiaki-hirabayashi-attending-gamescom-2026/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T18:21:59+00:00",
-    "scrapedAt": "2026-08-22T03:48:49.135554+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.418454+00:00",
     "translations": {
       "en": {
         "title": "Resident Evil Veronica producer Yoshiaki Hirabayashi attending Gamescom 2026",
@@ -863,7 +977,7 @@
     "sourceUrl": "https://retrododo.com/analogues-24k-gold-pocket-sells-out-in-minutes-already-on-ebay-for-1k/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/ap-ebay.webp",
     "publishedAt": "2026-08-20T17:01:28+00:00",
-    "scrapedAt": "2026-08-22T03:47:18.254175+00:00",
+    "scrapedAt": "2026-08-23T03:54:20.055479+00:00",
     "translations": {
       "en": {
         "title": "Analogue's 24K Gold Pocket Sells Out In Minutes - Already On eBay For $1K+",
@@ -920,7 +1034,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/xbox-reportedly-makes-up-less-than-5percent-of-us-physical-sales-in-2026",
     "imageUrl": "https://images.purexbox.com/58b584fb43e53/large.jpg",
     "publishedAt": "2026-08-20T16:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:48:17.355788+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.073975+00:00",
     "translations": {
       "en": {
         "title": "Xbox Reportedly Makes Up Less Than 5% Of US Physical Sales In 2026",
@@ -1034,7 +1148,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/nintendo-says-the-duskbloods-isnt-releasing-on-24th-september/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T15:51:07+00:00",
-    "scrapedAt": "2026-08-22T03:48:49.135617+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.418503+00:00",
     "translations": {
       "en": {
         "title": "Nintendo says The Duskbloods isn’t releasing on 24th September",
@@ -1091,7 +1205,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/gears-of-war-e-day-11-prototype-lancer-replica-goes-up-for-pre-order-today",
     "imageUrl": "https://images.purexbox.com/c8114b3dec387/large.jpg",
     "publishedAt": "2026-08-20T15:50:00+00:00",
-    "scrapedAt": "2026-08-22T03:48:17.355873+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.074041+00:00",
     "translations": {
       "en": {
         "title": "Gears Of War: E-Day 1:1 'Prototype Lancer' Replica Goes Up For Pre-Order Today",
@@ -1148,7 +1262,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-denies-rumoured-release-date-for-the-duskbloods",
     "imageUrl": "https://images.nintendolife.com/207812da43d80/large.jpg",
     "publishedAt": "2026-08-20T15:20:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:19.023421+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.074419+00:00",
     "translations": {
       "en": {
         "title": "Nintendo Denies Rumoured Release Date For The Duskbloods",
@@ -1319,7 +1433,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/20/us-nintendo-download-for-20th-august-2026/",
     "imageUrl": "",
     "publishedAt": "2026-08-20T14:41:01+00:00",
-    "scrapedAt": "2026-08-22T03:48:49.135816+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.418673+00:00",
     "translations": {
       "en": {
         "title": "US: Nintendo Download for 20th August, 2026",
@@ -1433,7 +1547,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/pipistrello-and-the-cursed-yoyo-shadow-drops-on-switch-2-boasts-120fps-gameplay",
     "imageUrl": "https://images.nintendolife.com/552051a964e2c/large.jpg",
     "publishedAt": "2026-08-20T14:15:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:19.023621+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.074580+00:00",
     "translations": {
       "en": {
         "title": "Pipistrello And The Cursed Yoyo Shadow-Drops On Switch 2, Boasts 120fps Gameplay",
@@ -1490,7 +1604,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/the-best-official-versions-new-banjo-kazooie-deep-dive-shows-just-how-sharp-it-looks-on-the-new-evercade-nexus",
     "imageUrl": "https://images.timeextension.com/12975bdb82bb4/large.jpg",
     "publishedAt": "2026-08-20T13:45:00+00:00",
-    "scrapedAt": "2026-08-22T03:46:29.900087+00:00",
+    "scrapedAt": "2026-08-23T03:54:17.809410+00:00",
     "translations": {
       "en": {
         "title": "\"The Best Official Versions\" - New Banjo-Kazooie Deep Dive Shows Just How Sharp It Looks On The New Evercade Nexus",
@@ -1547,7 +1661,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/nintendo-download-20th-august-north-america",
     "imageUrl": "https://images.nintendolife.com/c1c24b83a4d9b/large.jpg",
     "publishedAt": "2026-08-20T13:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:19.023742+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.074680+00:00",
     "translations": {
       "en": {
         "title": "Nintendo Download: 20th August (North America)",
@@ -1718,7 +1832,7 @@
     "sourceUrl": "https://www.nintendolife.com/news/2026/08/pokemon-pokopia-expansion-pass-getting-packaged-download-release",
     "imageUrl": "https://images.nintendolife.com/9734d790fdd87/large.jpg",
     "publishedAt": "2026-08-20T04:30:00+00:00",
-    "scrapedAt": "2026-08-22T03:47:19.023936+00:00",
+    "scrapedAt": "2026-08-23T03:54:37.074843+00:00",
     "translations": {
       "en": {
         "title": "Pokémon Pokopia Expansion Pass Getting Packaged Download Release",
@@ -2003,7 +2117,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/sin-reloaded-le-prochain-remaster-de-nightdive-studios-prend-date-sur-consoles-et-pc-3050871694.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871694/sin-reloaded-arrive-sur-pc-et-consoles-le-24-septembre-2026-2565fac6__800_800__749-0-2909-2160.jpg",
     "publishedAt": "2026-08-19T17:10:00+00:00",
-    "scrapedAt": "2026-08-22T03:49:18.964809+00:00",
+    "scrapedAt": "2026-08-23T03:54:44.578605+00:00",
     "translations": {
       "fr": {
         "title": "Communiqué de presse - SiN : Reloaded, le prochain remaster de Nightdive Studios, prend date sur consoles et PC",
@@ -2060,7 +2174,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/five-new-console-features-begin-rolling-out-today-for-xbox-insiders-august-19",
     "imageUrl": "https://images.purexbox.com/3df69eefe612a/large.jpg",
     "publishedAt": "2026-08-19T16:21:00+00:00",
-    "scrapedAt": "2026-08-22T03:48:17.356388+00:00",
+    "scrapedAt": "2026-08-23T03:54:38.074464+00:00",
     "translations": {
       "en": {
         "title": "Five New Console Features Begin Rolling Out Today For Xbox Insiders (August 19)",
@@ -2117,7 +2231,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/against-all-odds-the-janky-soviet-themed-fps-you-are-empty-is-coming-back-later-this-year-new-and-improved",
     "imageUrl": "https://images.timeextension.com/a9b7d091c438f/large.jpg",
     "publishedAt": "2026-08-19T16:00:00+00:00",
-    "scrapedAt": "2026-08-22T03:46:29.900734+00:00",
+    "scrapedAt": "2026-08-23T03:54:17.809945+00:00",
     "translations": {
       "en": {
         "title": "Against All Odds, The Janky Soviet-Themed FPS 'You Are Empty' Is Coming Back Later This Year, New & Improved",
@@ -2972,7 +3086,7 @@
     "sourceUrl": "https://www.gamekult.com/actualite/order-of-the-sinking-star-le-tres-ambitieux-et-foutraque-jeu-d-enigmes-de-jonathan-blow-sortira-tout-debut-octobre-3050871682.html",
     "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871682/order-of-the-sinking-star-le-tres-ambitieux-et-foutraque-jeu-d-enigmes-de-jonathan-blow-sortira-tout-debut-octobre-85b0144a__800_800__388-0-1467-1080.jpg",
     "publishedAt": "2026-08-19T05:36:00+00:00",
-    "scrapedAt": "2026-08-22T03:49:18.965611+00:00",
+    "scrapedAt": "2026-08-23T03:54:44.579271+00:00",
     "translations": {
       "fr": {
         "title": "Order of the Sinking Star : le très ambitieux (et foutraque) jeu d'énigmes de Jonathan Blow sortira tout début octobre",
@@ -4625,7 +4739,7 @@
     "sourceUrl": "https://kotaku.com/rare-two-player-version-of-first-arcade-game-up-for-auction-from-shiny-entertainment-founder-2000724719",
     "imageUrl": "https://kotaku.com/app/uploads/2026/08/computerspace-1280x857.jpg",
     "publishedAt": "2026-08-15T18:13:43+00:00",
-    "scrapedAt": "2026-08-22T03:48:50.064448+00:00",
+    "scrapedAt": "2026-08-23T03:54:39.280578+00:00",
     "translations": {
       "en": {
         "title": "Rare Two-Player Version Of First Arcade Game Up For Auction From Shiny Entertainment Founder",
@@ -13509,63 +13623,6 @@
     }
   },
   {
-    "id": "58fd9d9ffb9e6229a56d3caccc33bc883ea63554",
-    "title": "\"What A Year It's Been\" - Commodore Celebrates Its Birthday With A New Game Initiative For The C64 Ultimate",
-    "summary": "\"New games built specifically for the Commodore 64 Ultimate's unique capabilities\". Commodore International is launching an initiative that should see new titles being developed for its C64 Ultimate FPGA home computer. The company – which was reborn a year ago – says the range will feature \"new games built specifically for the Commodore 64 Ultimate's unique capabilities,\" and each release will carry an official 'Made For U(ltimate)' holographic sticker. Read the full article on timeextension.com",
-    "category": "RETRO_CONSOLE",
-    "sourceName": "Time Extension",
-    "sourceUrl": "https://www.timeextension.com/news/2026/08/what-a-year-its-been-commodore-celebrates-its-birthday-with-a-new-game-initiative-for-the-c64-ultimate",
-    "imageUrl": "https://images.timeextension.com/f778a911c808f/large.jpg",
-    "publishedAt": "2026-08-01T16:30:00+00:00",
-    "scrapedAt": "2026-08-05T05:51:00.414383+00:00",
-    "translations": {
-      "en": {
-        "title": "\"What A Year It's Been\" - Commodore Celebrates Its Birthday With A New Game Initiative For The C64 Ultimate",
-        "summary": "\"New games built specifically for the Commodore 64 Ultimate's unique capabilities\". Commodore International is launching an initiative that should see new titles being developed for its C64 Ultimate FPGA home computer. The company – which was reborn a year ago – says the range will feature \"new games built specifically for the Commodore 64 Ultimate's unique capabilities,\" and each release will carry an official 'Made For U(ltimate)' holographic sticker. Read the full article on timeextension.com"
-      },
-      "fr": {
-        "title": "\"Quelle année ça a été\" - Commodore célèbre son anniversaire avec une nouvelle initiative de jeu pour le C64 Ultimate",
-        "summary": "\"Nouveaux jeux spécialement conçus pour les capacités uniques du Commodore 64 Ultimate\". Commodore International lance une initiative qui devrait voir le développement de nouveaux titres pour son ordinateur domestique C64 Ultimate FPGA. La société – qui a renaître il y a un an – affirme que la gamme comprendra « de nouveaux jeux spécialement conçus pour les capacités uniques du Commodore 64 Ultimate » et que chaque version portera un autocollant holographique officiel « Made For U(ltimate) ». Lire l'article complet sur timeextension.com"
-      },
-      "es": {
-        "title": "\"Qué año ha sido\": Commodore celebra su cumpleaños con una nueva iniciativa de juego para el C64 Ultimate",
-        "summary": "\"Nuevos juegos creados específicamente para las capacidades únicas del Commodore 64 Ultimate\". Commodore International está lanzando una iniciativa que debería permitir el desarrollo de nuevos títulos para su computadora doméstica C64 Ultimate FPGA. La compañía, que renació hace un año, dice que la gama incluirá \"nuevos juegos creados específicamente para las capacidades únicas del Commodore 64 Ultimate\", y cada lanzamiento llevará una pegatina holográfica oficial 'Made For U(ltimate)'. Lea el artículo completo en timeextension.com"
-      },
-      "it": {
-        "title": "\"Che anno è stato\" - Commodore festeggia il suo compleanno con una nuova iniziativa di gioco per il C64 Ultimate",
-        "summary": "\"Nuovi giochi creati appositamente per le capacità uniche del Commodore 64 Ultimate\". Commodore International sta lanciando un'iniziativa che dovrebbe vedere lo sviluppo di nuovi titoli per il suo computer domestico C64 Ultimate FPGA. L'azienda, rinata un anno fa, afferma che la gamma conterrà \"nuovi giochi creati appositamente per le capacità uniche del Commodore 64 Ultimate\" e ogni versione porterà un adesivo olografico ufficiale \"Made For U(ltimate)\". Leggi l'articolo completo su timeextension.com"
-      },
-      "de": {
-        "title": "„Was war das für ein Jahr“ – Commodore feiert seinen Geburtstag mit einer neuen Spieleinitiative für den C64 Ultimate",
-        "summary": "„Neue Spiele, die speziell für die einzigartigen Fähigkeiten des Commodore 64 Ultimate entwickelt wurden“ . Commodore International startet eine Initiative, bei der neue Titel für seinen C64 Ultimate FPGA-Heimcomputer entwickelt werden sollen. Das Unternehmen, das vor einem Jahr wiedergeboren wurde, sagt, dass die Reihe „neue Spiele enthalten wird, die speziell für die einzigartigen Fähigkeiten des Commodore 64 Ultimate entwickelt wurden“ und dass jede Veröffentlichung einen offiziellen holografischen Aufkleber „Made For U(ltimate)“ tragen wird. Lesen Sie den vollständigen Artikel auf timeextension.com"
-      },
-      "pt": {
-        "title": "“Que ano se passou” – Commodore comemora seu aniversário com uma nova iniciativa de jogo para o C64 Ultimate",
-        "summary": "\"Novos jogos desenvolvidos especificamente para os recursos exclusivos do Commodore 64 Ultimate\" . A Commodore International está lançando uma iniciativa que deverá ver novos títulos sendo desenvolvidos para seu computador doméstico C64 Ultimate FPGA. A empresa – que renasceu há um ano – diz que a linha contará com “novos jogos construídos especificamente para os recursos exclusivos do Commodore 64 Ultimate”, e cada lançamento trará um adesivo holográfico oficial ‘Made For U(ltimate)’. Leia o artigo completo em timeextension.com"
-      },
-      "ru": {
-        "title": "«Какой это был год» — Commodore отмечает свой день рождения выпуском новой игры для C64 Ultimate",
-        "summary": "«Новые игры, созданные специально для уникальных возможностей Commodore 64 Ultimate». Commodore International запускает инициативу, которая должна привести к разработке новых игр для домашнего компьютера C64 Ultimate FPGA. Компания, возродившаяся год назад, заявляет, что в линейке будут представлены «новые игры, созданные специально для уникальных возможностей Commodore 64 Ultimate», и каждый выпуск будет сопровождаться официальной голографической наклейкой «Made For U(ltimate)». Полную версию статьи можно прочитать на сайте timeextension.com."
-      },
-      "el": {
-        "title": "\"What A Year It's Been\" - Ο Commodore γιορτάζει τα γενέθλιά του με μια νέα πρωτοβουλία παιχνιδιού για το C64 Ultimate",
-        "summary": "\"Νέα παιχνίδια κατασκευασμένα ειδικά για τις μοναδικές δυνατότητες του Commodore 64 Ultimate\". Η Commodore International εγκαινιάζει μια πρωτοβουλία που αναμένεται να δει νέους τίτλους να αναπτύσσονται για τον οικιακό υπολογιστή C64 Ultimate FPGA. Η εταιρεία – η οποία αναγεννήθηκε πριν από ένα χρόνο – λέει ότι η σειρά θα περιλαμβάνει «νέα παιχνίδια κατασκευασμένα ειδικά για τις μοναδικές δυνατότητες του Commodore 64 Ultimate» και κάθε κυκλοφορία θα φέρει ένα επίσημο ολογραφικό αυτοκόλλητο «Made For U(ltimate)». Διαβάστε το πλήρες άρθρο στο timeextension.com"
-      },
-      "tr": {
-        "title": "\"Nasıl Bir Yıl Oldu\" - Commodore, C64 Ultimate İçin Yeni Bir Oyun Girişimiyle Doğum Gününü Kutluyor",
-        "summary": "\"Commodore 64 Ultimate'ın benzersiz yetenekleri için özel olarak oluşturulmuş yeni oyunlar\". Commodore International, C64 Ultimate FPGA ev bilgisayarı için yeni oyunların geliştirildiğini görecek bir girişim başlatıyor. Bir yıl önce yeniden doğan şirket, serinin \"Commodore 64 Ultimate'ın benzersiz yetenekleri için özel olarak tasarlanmış yeni oyunlar\" içereceğini ve her sürümün resmi bir \"Made For U(ltimate)\" holografik etiketi taşıyacağını söylüyor. Timeextension.com'daki makalenin tamamını okuyun"
-      },
-      "ja": {
-        "title": "「素晴らしい一年でした」 - Commodore が C64 Ultimate の新しいゲーム構想で誕生日を祝う",
-        "summary": "「Commodore 64 Ultimate のユニークな機能に特化して構築された新しいゲーム」。 Commodore International は、C64 Ultimate FPGA ホーム コンピュータ向けに新しいタイトルが開発されることを期待する取り組みを開始しています。 1年前に生まれ変わった同社は、このシリーズには「Commodore 64 Ultimateのユニークな機能に特化して構築された新しいゲーム」をフィーチャーし、各リリースには公式の「Made For U(ltimate)」ホログラフィックステッカーが貼られると述べている。 timeextension.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "“这是多么美好的一年” - Commodore 为 C64 Ultimate 推出了新游戏计划来庆祝其生日",
-        "summary": "“专为 Commodore 64 Ultimate 的独特功能而打造的新游戏”。 Commodore International 正在发起一项计划，预计将为其 C64 Ultimate FPGA 家用计算机开发新游戏。该公司于一年前重生，表示该系列将包含“专为 Commodore 64 Ultimate 的独特功能而打造的新游戏”，并且每个版本都将带有官方的“Made For U(ltimate)”全息贴纸。在 timeextension.com 上阅读全文"
-      }
-    }
-  },
-  {
     "id": "0bfc680ead1e3c895bc372e0a5ec06e3bc78755e",
     "title": "Guide: Xbox Game Pass: All Games Coming Soon In August 2026",
     "summary": "All the confirmed reveals so far. Looking for a complete list of games coming to Xbox Game Pass in August 2026 ? It can be pretty difficult to keep track of all the comings and goings in the world of Xbox Game Pass every month, so we've put together this handy guide to provide an overview of what's coming to the service over the next few weeks. Without further ado, here's the list of all new games coming soon on Xbox Game Pass in August 2026 (so far): Read the full article on purexbox.com",
@@ -13619,63 +13676,6 @@
       "zh": {
         "title": "指南：Xbox Game Pass：2026 年 8 月即将推出的所有游戏",
         "summary": "迄今为止所有已确认的消息。正在寻找 2026 年 8 月登陆 Xbox Game Pass 的游戏的完整列表？每个月跟踪 Xbox Game Pass 世界的所有动态可能相当困难，因此我们整理了这份方便的指南，以概述该服务在未来几周内将推出的内容。言归正传，以下是 2026 年 8 月（到目前为止）即将在 Xbox Game Pass 上推出的所有新游戏的列表：阅读 purexbox.com 上的完整文章"
-      }
-    }
-  },
-  {
-    "id": "1cd94048340807f864869dc8f7ca98c4d5ba204e",
-    "title": "Talking Point: What Are You Playing This Weekend? (1st August)",
-    "summary": "Poké Preparations. The weekend is here, and all of us are hungry for a spot of gaming. It was a reasonably quiet week in the world of Nintendo this time. We finally got a release date for 'Part 1' of the Pokémon Pokopia Expansion Pass and our first look at 'Part 2' , Nintendo announced Super Mario Sunshine is coming to the GameCube NSO library , and Xenoblade Chronicles 2 arrived in a swanky new Switch 2 Edition. Read the full article on nintendolife.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Nintendo Life",
-    "sourceUrl": "https://www.nintendolife.com/features/talking-point-what-are-you-playing-this-weekend-1st-august",
-    "imageUrl": "https://images.nintendolife.com/fe50561c93f0f/large.jpg",
-    "publishedAt": "2026-08-01T09:00:00+00:00",
-    "scrapedAt": "2026-08-04T05:54:47.563861+00:00",
-    "translations": {
-      "en": {
-        "title": "Talking Point: What Are You Playing This Weekend? (1st August)",
-        "summary": "Poké Preparations. The weekend is here, and all of us are hungry for a spot of gaming. It was a reasonably quiet week in the world of Nintendo this time. We finally got a release date for 'Part 1' of the Pokémon Pokopia Expansion Pass and our first look at 'Part 2' , Nintendo announced Super Mario Sunshine is coming to the GameCube NSO library , and Xenoblade Chronicles 2 arrived in a swanky new Switch 2 Edition. Read the full article on nintendolife.com"
-      },
-      "fr": {
-        "title": "Sujet de discussion : à quoi jouez-vous ce week-end ? (1er août)",
-        "summary": "Préparations Poké. Le week-end est là et nous avons tous faim de jouer. Ce fut cette fois une semaine relativement calme dans le monde de Nintendo. Nous avons enfin obtenu une date de sortie pour la \"Partie 1\" du Pokémon Pokopia Expansion Pass et notre premier aperçu de la \"Partie 2\", Nintendo a annoncé que Super Mario Sunshine arrive dans la bibliothèque GameCube NSO, et Xenoblade Chronicles 2 est arrivé dans une nouvelle édition Switch 2 chic. Lire l'article complet sur nintendolife.com"
-      },
-      "es": {
-        "title": "Punto de conversación: ¿Qué vas a jugar este fin de semana? (1 de agosto)",
-        "summary": "Preparaciones de Poké. El fin de semana está aquí y todos tenemos hambre de jugar. Esta vez fue una semana razonablemente tranquila en el mundo de Nintendo. Finalmente obtuvimos una fecha de lanzamiento para la 'Parte 1' del Pase de expansión Pokémon Pokopia y nuestro primer vistazo a la 'Parte 2', Nintendo anunció que Super Mario Sunshine llegará a la biblioteca de GameCube NSO y Xenoblade Chronicles 2 llegó en una nueva y elegante edición Switch 2. Lea el artículo completo en nintendolife.com"
-      },
-      "it": {
-        "title": "Punto di discussione: cosa suonerai questo fine settimana? (1 agosto)",
-        "summary": "Preparazioni per i Poké. Il fine settimana è arrivato e tutti noi abbiamo fame di un po' di gioco. Questa volta è stata una settimana ragionevolmente tranquilla nel mondo Nintendo. Abbiamo finalmente ottenuto la data di uscita della \"Parte 1\" del Pass di espansione di Pokémon Pokopia e il nostro primo sguardo alla \"Parte 2\", Nintendo ha annunciato che Super Mario Sunshine arriverà nella libreria NSO di GameCube e Xenoblade Chronicles 2 è arrivato in una nuova ed elegante edizione per Switch 2. Leggi l'articolo completo su nintendolife.com"
-      },
-      "de": {
-        "title": "Gesprächsthema: Was spielst du dieses Wochenende? (1. August)",
-        "summary": "Poké-Vorbereitungen. Das Wochenende steht vor der Tür und wir alle sind hungrig auf etwas Spielvergnügen. Diesmal war es eine einigermaßen ruhige Woche in der Welt von Nintendo. Wir haben endlich einen Veröffentlichungstermin für „Teil 1“ des Pokémon Pokopia-Erweiterungspasses und einen ersten Blick auf „Teil 2“ erhalten, Nintendo hat angekündigt, dass Super Mario Sunshine in die GameCube NSO-Bibliothek kommt, und Xenoblade Chronicles 2 ist in einer schicken neuen Switch 2 Edition erschienen. Lesen Sie den vollständigen Artikel auf nintendolife.com"
-      },
-      "pt": {
-        "title": "Ponto de discussão: O que você vai jogar neste fim de semana? (1º de agosto)",
-        "summary": "Preparações Poké. O fim de semana chegou e todos nós estamos com fome de jogar. Desta vez foi uma semana razoavelmente tranquila no mundo da Nintendo. Finalmente conseguimos uma data de lançamento para a 'Parte 1' do Pokémon Pokopia Expansion Pass e nossa primeira olhada na 'Parte 2', a Nintendo anunciou que Super Mario Sunshine está chegando à biblioteca GameCube NSO, e Xenoblade Chronicles 2 chegou em um novo e sofisticado Switch 2 Edition. Leia o artigo completo em nintendolife.com"
-      },
-      "ru": {
-        "title": "Тема для разговора: во что вы играете на этих выходных? (1 августа)",
-        "summary": "Подготовка к поке. Приближаются выходные, и всем нам не терпится поиграть. На этот раз в мире Nintendo выдалась относительно спокойная неделя. Мы наконец-то узнали дату выхода «Части 1» Pokémon Pokopia Expansion Pass и впервые увидели «Часть 2», Nintendo объявила, что Super Mario Sunshine появится в библиотеке GameCube NSO, а Xenoblade Chronicles 2 появилась в шикарном новом издании для Switch 2. Полную версию статьи можно прочитать на сайте nintendolife.com."
-      },
-      "el": {
-        "title": "Talking Point: Τι παίζετε αυτό το Σαββατοκύριακο; (1η Αυγούστου)",
-        "summary": "Poké Preparations. Το Σαββατοκύριακο είναι εδώ και όλοι μας πεινάμε για ένα μέρος για gaming. Αυτή τη φορά ήταν μια αρκετά ήσυχη εβδομάδα στον κόσμο της Nintendo. Επιτέλους πήραμε μια ημερομηνία κυκλοφορίας για το 'Part 1' του Pokémon Pokopia Expansion Pass και την πρώτη μας ματιά στο 'Part 2', η Nintendo ανακοίνωσε ότι το Super Mario Sunshine έρχεται στη βιβλιοθήκη GameCube NSO και το Xenoblade Chronicles 2 έφτασε σε μια υπέροχη νέα έκδοση Switch 2. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
-      },
-      "tr": {
-        "title": "Konuşma Konusu: Bu Hafta Sonu Ne Oynuyoruz? (1 Ağustos)",
-        "summary": "Poké Hazırlıkları. Hafta sonu geldi ve hepimiz oyun oynamaya açtık. Bu sefer Nintendo dünyasında oldukça sessiz bir haftaydı. Nihayet Pokémon Pokopia Expansion Pass'in 'Bölüm 1'i için bir çıkış tarihi aldık ve 'Bölüm 2'ye ilk bakışımız oldu, Nintendo, Super Mario Sunshine'ın GameCube NSO kütüphanesine geleceğini duyurdu ve Xenoblade Chronicles 2, gösterişli yeni bir Switch 2 Sürümüyle geldi. Makalenin tamamını nintendolife.com'da okuyun"
-      },
-      "ja": {
-        "title": "トーキングポイント: 今週末は何をしますか? (8月1日)",
-        "summary": "ポケの準備。週末がやってきました。私たちは皆、ゲームをする場所に飢えています。今週は任天堂の世界では比較的静かな一週間でした。ポケモン ポコピア エキスパンション パスの「パート 1」のリリース日と「パート 2」の初見をついに入手しました。任天堂はスーパー マリオ サンシャインがゲームキューブ NSO ライブラリに登場すると発表しました。また、ゼノブレイド 2 はおしゃれな新しい Switch 2 エディションで登場しました。 nintendolife.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "谈话要点：这个周末你玩什么？ （8月1日）",
-        "summary": "宝可准备。周末到了，我们所有人都渴望玩游戏。这对于任天堂的世界来说是相当安静的一周。我们终于确定了 Pokémon Pokopia Expansion Pass 的“第 1 部分”的发布日期，以及我们第一次看到“第 2 部分”，任天堂宣布《超级马里奥阳光》将登陆 GameCube NSO 库，而《异度神剑 2》将以时髦的新 Switch 2 版本登陆。在 nintendolife.com 上阅读完整文章"
       }
     }
   },
