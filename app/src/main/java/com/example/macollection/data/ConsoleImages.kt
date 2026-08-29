@@ -242,7 +242,12 @@ object ConsoleImages {
         "Nintendo 64 Jungle Green" to "file:///android_asset/console_photos/nintendo_64_jungle_green.webp",
         "Nintendo 64 Fire Orange" to "file:///android_asset/console_photos/nintendo_64_fire_orange.webp",
         "NES Classic Edition" to "file:///android_asset/console_photos/nes_classic_edition_2.webp",
+        // Photos Wikimedia Commons vérifiées (licence libre) : Famicom Mini (Nintendo_CLV-101_20161110.jpg,
+        // CC BY-SA 2.0, Toshiyuki IMAI) et Super Famicom Mini (Nintendo_Classic_Mini_Super_Famicom_20210313.jpg,
+        // CC BY-SA 4.0).
+        "Famicom Mini" to "file:///android_asset/console_photos/famicom_mini.webp",
         "Super NES Classic Edition" to "file:///android_asset/console_photos/super_nes_classic_edition.webp",
+        "Super Famicom Mini" to "file:///android_asset/console_photos/super_famicom_mini.webp",
         "Mega Drive Mini" to "file:///android_asset/console_photos/mega_drive_mini.webp",
         "Neo Geo Mini" to "file:///android_asset/console_photos/neo_geo_mini.webp",
         "Neo Geo Mini Japon" to "file:///android_asset/console_photos/neogeo_mini_jp.webp",
@@ -458,6 +463,22 @@ object ConsoleImages {
         // --- Éditions collector complémentaires (recherche approfondie 2026-07-26) ---
         "PlayStation 4 Édition Metal Gear Solid V" to "file:///android_asset/console_photos/non_libre/ps4_metal_gear_solid_v.webp",
         "PlayStation 4 Pro Édition Kingdom Hearts III" to "file:///android_asset/console_photos/non_libre/ps4_pro_kingdom_hearts3.webp",
+        // Photos officielles Sony/PlayStation Europe (Flickr/PlayStation.Blog) — pas de photo libre
+        // de droits trouvée pour ces coloris/éditions.
+        "PlayStation 4 Pro 500 Million Limited Edition" to "file:///android_asset/console_photos/non_libre/ps4pro_500million.webp",
+        "PlayStation 4 Slim Gold" to "file:///android_asset/console_photos/non_libre/ps4_slim_gold.webp",
+        "PlayStation 4 Slim Silver" to "file:///android_asset/console_photos/non_libre/ps4_slim_silver.webp",
+        "PlayStation 4 Slim Glacier White" to "file:///android_asset/console_photos/non_libre/ps4_slim_glacier_white.webp",
+        // Photos produit consolevariations.com (base collector) — aucune photo libre trouvée sur
+        // Wikimedia Commons pour ces 8 éditions/coloris malgré recherche approfondie (2026-08-23).
+        "PlayStation 4 Pro Édition Star Wars Battlefront II" to "file:///android_asset/console_photos/non_libre/ps4pro_battlefront2.webp",
+        "PlayStation 4 Slim Édition Star Wars Battlefront II" to "file:///android_asset/console_photos/non_libre/ps4slim_battlefront2.webp",
+        "Game Boy Play It Loud! Verte" to "file:///android_asset/console_photos/non_libre/gbplayitloud_verte.webp",
+        "Game Boy Play It Loud! Jaune" to "file:///android_asset/console_photos/non_libre/gbplayitloud_jaune.webp",
+        "Game Boy Play It Loud! Bleue" to "file:///android_asset/console_photos/non_libre/gbplayitloud_bleue.webp",
+        "Game Boy Play It Loud! Blanche" to "file:///android_asset/console_photos/non_libre/gbplayitloud_blanche.webp",
+        "Game Boy Pocket Jaune" to "file:///android_asset/console_photos/non_libre/gbpocket_jaune.webp",
+        "Game Boy Pocket Transparente" to "file:///android_asset/console_photos/non_libre/gbpocket_transparente.webp",
         "Game Boy Color Édition Pokémon Center (Or & Argent)" to "file:///android_asset/console_photos/non_libre/gbc_pokemon_center.webp",
         "Game Boy Color Édition Hello Kitty" to "file:///android_asset/console_photos/non_libre/gbc_hello_kitty.webp",
         "Game Boy Light Édition Astro Boy (Tetsuwan Atom)" to "file:///android_asset/console_photos/non_libre/gblight_astroboy.webp",
@@ -473,6 +494,8 @@ object ConsoleImages {
         "Game Boy Play It Loud! Noire" to "file:///android_asset/console_photos/gb_black.webp",
         "Game Boy Play It Loud! Rouge" to "file:///android_asset/console_photos/gb_red_gray.webp",
         "Game Boy Play It Loud! Transparente" to "file:///android_asset/console_photos/gb_clear.webp",
+        // Verte/Jaune/Bleue/Blanche (Play It Loud) et Pocket Jaune/Transparente : voir plus haut,
+        // photos non libres (consolevariations.com) faute de photo Wikimedia Commons disponible.
         "Game Boy Pocket Noire" to "file:///android_asset/console_photos/gbp_black.webp",
         "Game Boy Pocket Bleue" to "file:///android_asset/console_photos/gbp_blue.webp",
         "Game Boy Pocket Verte" to "file:///android_asset/console_photos/gbp_green.webp",
@@ -769,7 +792,36 @@ object ConsoleImages {
         "Game Gear Micro Rouge" to "file:///android_asset/console_photos/non_libre/game_gear_micro_rouge.webp",
         "Game Gear Blanche" to "file:///android_asset/console_photos/non_libre/game_gear_blanche.webp",
         "PC Engine Shuttle" to "file:///android_asset/console_photos/pc_engine_shuttle.webp",
-        "PC Engine Duo-R" to "file:///android_asset/console_photos/pc_engine_duo_r.webp"
+        "PC Engine Duo-R" to "file:///android_asset/console_photos/pc_engine_duo_r.webp",
+
+        // --- Tour des consoles exclusives au Japon (recherche 2026-08-23), photos produit non
+        // libres de droits (import/collector) rangées dans assets/console_photos/non_libre/. ---
+        "PlayStation 3 Édition Metal Gear Rising: Revengeance" to "file:///android_asset/console_photos/non_libre/ps3_mgs_rising.webp",
+        "PlayStation 3 Super Slim Édition Yakuza 5 (Emblem Edition)" to "file:///android_asset/console_photos/non_libre/ps3_yakuza5_emblem.webp",
+        "PlayStation 3 Super Slim Édition Hokuto Musou: Ken's Rage 2 (Legend Edition)" to "file:///android_asset/console_photos/non_libre/ps3_hokuto_musou_legend.webp",
+        "PlayStation 3 Édition Resident Evil 5 (Premium Limited Box)" to "file:///android_asset/console_photos/non_libre/ps3_re5_premium_box.webp",
+        "PlayStation 3 Édition Yakuza 3 (Ceramic White)" to "file:///android_asset/console_photos/non_libre/ps3_yakuza3_ceramic_white.webp",
+        "PlayStation 3 Édition Final Fantasy VII: Advent Children Complete (Cloud Black)" to "file:///android_asset/console_photos/non_libre/ps3_ffvii_ac_cloud_black.webp",
+        "Nintendo 3DS Édition Metal Gear Solid: Snake Eater 3D (Premium Package)" to "file:///android_asset/console_photos/non_libre/3ds_mgs_snake_eater_premium.webp",
+        "Nintendo 3DS Édition Monster Hunter 3G (Special Pack)" to "file:///android_asset/console_photos/non_libre/3ds_mh3g_special_pack.webp",
+        "3DS XL Édition Yo-kai Watch (Jibanyan Pack)" to "file:///android_asset/console_photos/non_libre/3dsxl_yokai_watch_jibanyan.webp",
+        "3DS XL Édition One Piece Unlimited World R (Chopper Pink)" to "file:///android_asset/console_photos/non_libre/3dsxl_onepiece_chopper_pink.webp",
+        "3DS XL Édition Pokémon Center X/Y (Premium Gold)" to "file:///android_asset/console_photos/non_libre/3dsxl_pokecenter_xy_gold.webp",
+        "3DS XL Édition Pokémon Center Évoli" to "file:///android_asset/console_photos/non_libre/3dsxl_pokecenter_eevee.webp",
+        "3DS XL Édition Pokémon Center Dracaufeu (Charizard)" to "file:///android_asset/console_photos/non_libre/3dsxl_pokecenter_charizard.webp",
+        "3DS XL Édition Pokémon Center Pikachu (2012)" to "file:///android_asset/console_photos/non_libre/3dsxl_pokecenter_pikachu2012.webp",
+        "New 3DS XL Édition Fire Emblem Fates" to "file:///android_asset/console_photos/non_libre/new3dsxl_fire_emblem_fates.webp",
+        "New 3DS XL Édition Hyrule" to "file:///android_asset/console_photos/non_libre/new3dsxl_hyrule_edition.webp",
+        "New 3DS XL Édition Galaxy (Toys \"R\" Us)" to "file:///android_asset/console_photos/non_libre/new3dsxl_galaxy_toysrus.webp",
+        "New 3DS XL Édition Super Smash Bros." to "file:///android_asset/console_photos/non_libre/new3dsxl_smash_bros.webp",
+        "New 3DS XL Édition Animal Crossing: Happy Home Designer" to "file:///android_asset/console_photos/non_libre/new3dsxl_ac_happy_home.webp",
+        "PlayStation Vita Slim Édition Yakuza 0 (Ryu ga Gotoku 0)" to "file:///android_asset/console_photos/non_libre/vita_slim_yakuza0.webp",
+        "PlayStation Vita Slim Édition God Eater 2: Rage Burst" to "file:///android_asset/console_photos/non_libre/vita_slim_godeater2_rageburst.webp",
+        "PlayStation Vita Slim Édition God Eater 2 (Fenrir Edition)" to "file:///android_asset/console_photos/non_libre/vita_slim_godeater2_fenrir.webp",
+        "PlayStation Vita Slim Édition Gundam Breaker (Starter Pack)" to "file:///android_asset/console_photos/non_libre/vita_slim_gundam_breaker.webp",
+        "PlayStation Vita Édition Toukiden (Onigara)" to "file:///android_asset/console_photos/non_libre/vita_toukiden_onigara.webp",
+        "PlayStation Vita Slim Édition Final Fantasy X/X-2 HD Remaster (Resolution Box)" to "file:///android_asset/console_photos/non_libre/vita_slim_ffx_x2_resolution_box.webp",
+        "PlayStation Vita Slim Édition Doko Demo Issyo (Toro to Issho)" to "file:///android_asset/console_photos/non_libre/vita_slim_doko_demo_issyo.webp"
     )
 
     fun urlFor(name: String): String? = gameAndWatchModelPhotos[name] ?: byName[name]

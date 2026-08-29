@@ -21,6 +21,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -75,9 +76,9 @@ fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, onOpenPaywall: () -> Unit,
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = onBack) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = null, tint = Color.White)
+                    Icon(Icons.Filled.ArrowBack, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface)
                 }
-                Text("Boutique", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                Text("Boutique", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 20.sp)
             }
             Spacer(Modifier.height(4.dp))
             Text("$points points disponibles", color = NeonCyan, fontWeight = FontWeight.Bold)
@@ -110,7 +111,7 @@ fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, onOpenPaywall: () -> Unit,
             }
 
             Spacer(Modifier.height(8.dp))
-            Text("Statut Premium (accès total)", color = Color.White.copy(alpha = 0.85f), fontWeight = FontWeight.Bold)
+            Text("Statut Premium (accès total)", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.85f), fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(8.dp))
 
             if (premiumItem != null) {
@@ -131,11 +132,11 @@ fun ShopScreen(vm: GameViewModel, onBack: () -> Unit, onOpenPaywall: () -> Unit,
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Column(Modifier.fillMaxWidth().background(CardGradient).padding(16.dp)) {
-                    Text("Premium via Google Play (argent réel)", color = Color.White, fontWeight = FontWeight.Bold)
+                    Text("Premium via Google Play (argent réel)", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold)
                     Spacer(Modifier.height(6.dp))
                     Text(
                         "Débloque tout instantanément sans dépenser de points : abonnement mensuel, annuel, ou pass à vie.",
-                        color = Color.White.copy(alpha = 0.75f),
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f),
                         fontSize = 13.sp
                     )
                     Spacer(Modifier.height(12.dp))
@@ -175,12 +176,12 @@ private fun ShopRow(
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(Modifier.fillMaxWidth().background(CardGradient).padding(16.dp)) {
-            Text(item.title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            Text(item.title, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 16.sp)
             Spacer(Modifier.height(4.dp))
-            Text(item.description, color = Color.White.copy(alpha = 0.75f), fontSize = 13.sp)
+            Text(item.description, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f), fontSize = 13.sp)
             subtitle?.let {
                 Spacer(Modifier.height(4.dp))
-                Text(it, color = Color.White.copy(alpha = 0.6f), fontSize = 12.sp)
+                Text(it, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f), fontSize = 12.sp)
             }
             Spacer(Modifier.height(10.dp))
             if (owned && ownedLabel != null) {

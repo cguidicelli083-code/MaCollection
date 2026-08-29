@@ -21,6 +21,8 @@ data class GameInfo(
     val coverUrl: String?,
     /** Éditeur (publisher) — uniquement disponible via la fiche détaillée [GameCatalog.detail]. */
     val publisher: String? = null,
+    /** Studio de développement — disponible via IGDB et la fiche détaillée RAWG [GameCatalog.detail]. */
+    val developer: String? = null,
     /** API d'origine ("rawg" ou "igdb") — [sourceId] n'a de sens que pour RAWG. */
     val source: String = "rawg"
 )
@@ -45,7 +47,8 @@ private data class RawgGameDetail(
     val description_raw: String?,
     val genres: List<RawgNamed>?,
     val platforms: List<RawgPlatformWrap>?,
-    val publishers: List<RawgNamed>?
+    val publishers: List<RawgNamed>?,
+    val developers: List<RawgNamed>?
 )
 private data class RawgMoviesResponse(val count: Int?, val results: List<RawgMovie>?)
 private data class RawgMovie(val id: Int, val name: String?, val preview: String?, val data: RawgMovieData?)
@@ -75,6 +78,7 @@ private interface RawgApi {
         @Query("key") key: String,
         @Query("platforms") platform: Int,
         @Query("ordering") ordering: String = "-added",
+        @Query("page") page: Int = 1,
         @Query("page_size") pageSize: Int = 40
     ): RawgSearchResponse
 
@@ -152,6 +156,21 @@ object GameCatalog {
         if (!isConfigured()) return emptyList()
         return try {
             api.gamesByPlatform(key, platformId).results.orEmpty().map { it.toGameInfo() }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    /**
+     * Une page de 40 jeux d'une plateforme (triés par popularité RAWG), [page] démarrant à 1 —
+     * contrairement à [gamesForPlatform] (un seul appel figé, top 40), utilisée pour parcourir TOUT
+     * le catalogue d'une plateforme par [GameCatalogSync] (repli RAWG si IGDB indisponible). Vide
+     * en cas d'échec OU quand la page dépasse la fin du catalogue (signal d'arrêt de la boucle).
+     */
+    suspend fun gamesForPlatformPage(platformId: Int, page: Int): List<GameInfo> {
+        if (!isConfigured()) return emptyList()
+        return try {
+            api.gamesByPlatform(key, platformId, page = page).results.orEmpty().map { it.toGameInfo() }
         } catch (e: Exception) {
             emptyList()
         }
@@ -320,6 +339,7 @@ object GameCatalog {
         releaseYear = released?.take(4)?.toIntOrNull(),
         description = description_raw.orEmpty(),
         coverUrl = background_image,
-        publisher = publishers.orEmpty().mapNotNull { it.name }.firstOrNull()
+        publisher = publishers.orEmpty().mapNotNull { it.name }.firstOrNull(),
+        developer = developers.orEmpty().mapNotNull { it.name }.firstOrNull()
     )
 }

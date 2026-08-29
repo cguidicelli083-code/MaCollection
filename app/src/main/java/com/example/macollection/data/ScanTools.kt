@@ -37,7 +37,16 @@ object ScanTools {
         /** Jeu retrouvé en ligne (RAWG) à partir du texte lu (sinon null). */
         val gameMatch: GameInfo? = null,
         /** Console reconnue en même temps qu'un jeu (ex. cartouche) : à préremplir en "Console associée". */
-        val gameConsoleHint: String? = null
+        val gameConsoleHint: String? = null,
+        /** Catégorie déterminée par cette recherche, quand elle est sûre — toujours renseigné dès
+         * qu'un [suggestedName] l'est aussi, SAUF quand aucune correspondance fiable n'a été trouvée
+         * (suggestedName lui-même null). Évite à l'appelant de devoir redeviner le type par la seule
+         * présence de [consolePresetName]/[accessoryName]/[gameMatch] — piège qui faisait retomber à
+         * tort un objet "console"/"accessoire" reconnu par l'IA mais absent du catalogue sur
+         * [ItemType.JEU] par défaut (aucun des 3 champs n'était alors renseigné). Inclut
+         * [ItemType.AUTRE] pour un objet de collection hors jeu vidéo (cf. [GeminiVision.PROMPT]).
+         */
+        val itemType: ItemType? = null
     )
 
     /**
@@ -67,7 +76,7 @@ object ScanTools {
      * des scans n'ont jamais besoin de toucher au quota partagé.
      */
     suspend fun identifyFromBarcode(barcode: String, allowQuotaLimitedSources: Boolean = true): ScanResult {
-        knownConsoleBarcodes[barcode]?.let { return ScanResult(barcode, it, consolePresetName = it) }
+        knownConsoleBarcodes[barcode]?.let { return ScanResult(barcode, it, consolePresetName = it, itemType = ItemType.CONSOLE) }
 
         // ScanDex : base spécialisée JEUX VIDÉO, essayée en tout premier — un code-barres qui y
         // est connu est déjà apparié à une fiche IGDB précise par LEUR base (pas un titre
@@ -89,7 +98,7 @@ object ScanTools {
                 ?: GameInfo(sourceId = null, name = scanDexMatch.name, platforms = scanDexMatch.platformName.orEmpty(), genres = "", releaseYear = null, description = "", coverUrl = null, source = "igdb")
             val consoleName = scanDexMatch.platformName?.let { ConsoleRecognition.recognize(it) }
             Log.d("ScanBarcode", "RESULT (ScanDex direct) suggestedName=${game.name} console=$consoleName")
-            return ScanResult(barcode, game.name, gameMatch = game, gameConsoleHint = consoleName)
+            return ScanResult(barcode, game.name, gameMatch = game, gameConsoleHint = consoleName, itemType = ItemType.JEU)
         }
 
         // UPCitemdb en premier, puis Barcode Lookup et Barcode Spider : contrairement à une
@@ -133,7 +142,7 @@ object ScanTools {
             if (r.category?.contains("console", ignoreCase = true) == true) {
                 matchConsolePreset(r.title)?.let { preset ->
                     Log.d("ScanBarcode", "RESULT (UPCitemdb catégorie console) preset=${preset.name}")
-                    return ScanResult(barcode, preset.name, consolePresetName = preset.name)
+                    return ScanResult(barcode, preset.name, consolePresetName = preset.name, itemType = ItemType.CONSOLE)
                 }
             }
         }
@@ -261,7 +270,8 @@ object ScanTools {
         val gameConsoleHint = if (gameMatch != null) consoleName else null
 
         Log.d("ScanBarcode", "RESULT suggestedName=$suggestedName gameMatch=${gameMatch?.name} console=$consoleName accessory=$accessoryName")
-        return ScanResult(barcode, suggestedName, accessoryName = accessoryName, gameMatch = gameMatch, gameConsoleHint = gameConsoleHint)
+        val itemType = if (gameMatch != null) ItemType.JEU else if (accessoryName != null) ItemType.ACCESSOIRE else null
+        return ScanResult(barcode, suggestedName, accessoryName = accessoryName, gameMatch = gameMatch, gameConsoleHint = gameConsoleHint, itemType = itemType)
     }
 
     /**
@@ -442,8 +452,9 @@ object ScanTools {
 
             // NIVEAU 1 (OCR) concluant : correspondance console/accessoire/jeu trouvée -> on valide.
             if (gameMatch != null || consoleName != null || accessoryName != null) {
+                val itemType = if (gameMatch != null) ItemType.JEU else if (consoleName != null) ItemType.CONSOLE else ItemType.ACCESSOIRE
                 return ScanResult(
-                    barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint
+                    barcode, suggestedName, consoleName.takeIf { gameMatch == null }, accessoryName, gameMatch, gameConsoleHint, itemType
                 )
             }
         } catch (e: Exception) {
@@ -460,6 +471,17 @@ object ScanTools {
         return ScanResult(barcode, suggestedName, consoleName, accessoryName, gameMatch)
     }
 
+    /**
+     * Identification visuelle DIRECTE par IA (Gemini/Groq), SANS passer par l'OCR/code-barres
+     * (NIVEAU 1 de [scanImage]) : utilisée par l'estimation rapide ("$"), où seule compte
+     * l'identification visuelle de l'objet — l'OCR photo n'apporte rien de plus fiable ici et
+     * ralentit inutilement un aperçu de prix censé rester rapide. Contrairement à [scanImage],
+     * reconnaît aussi un objet qui n'est ni jeu, ni console, ni accessoire de jeu vidéo
+     * ([ItemType.AUTRE], cf. [GeminiVision.PROMPT]). Ne lève jamais ; null si l'IA échoue
+     * complètement (quota épuisé des deux côtés, réseau...).
+     */
+    suspend fun quickIdentify(context: Context, uri: Uri): ScanResult? = deepScanImage(context, uri, barcode = null)
+
     /** NIVEAU 2 : identification visuelle IA (Gemini) structurée quand l'OCR est ambigu. */
     private suspend fun deepScanImage(context: Context, uri: Uri, barcode: String?): ScanResult? {
         // Gemini d'abord : meilleure qualité de reconnaissance que Groq (Qwen3.6, vérifié en
@@ -467,11 +489,21 @@ object ScanTools {
         // économiser le quota Gemini n'apportait quasiment rien face à la perte de qualité.
         // Repli sur Groq si Gemini échoue (quota atteint, réseau…).
         val v = GeminiVision.identify(context, uri) ?: GroqVision.identify(context, uri) ?: return null
-        // Console/accessoire reconnu en BDD -> fiche exacte.
-        ConsoleRecognition.recognize(v.name)?.let { return ScanResult(barcode, it, consolePresetName = it) }
-        AccessoryRecognition.recognize(v.name)?.let { return ScanResult(barcode, it, accessoryName = it) }
+        // Console/accessoire reconnu en BDD -> fiche exacte. ConsoleRecognition n'est PAS
+        // consultée quand l'IA a déjà classé l'objet "accessoire" (v.type) : son matching par
+        // sous-chaîne reconnaît par ex. "xbox series s" à l'intérieur de "Manette Xbox Series S"
+        // et écrasait à tort une manette correctement identifiée par l'IA en console entière
+        // (bug constaté en conditions réelles : prix estimé ~200-250€ au lieu de ~40-55€ pour
+        // une manette Xbox Series S/X).
+        if (v.type != "accessoire") {
+            ConsoleRecognition.recognize(v.name)?.let { return ScanResult(barcode, it, consolePresetName = it, itemType = ItemType.CONSOLE) }
+        }
+        AccessoryRecognition.recognize(v.name)?.let { return ScanResult(barcode, it, accessoryName = it, itemType = ItemType.ACCESSOIRE) }
         // Type matériel identifié par l'IA mais absent de la BDD : on garde juste le nom.
-        if (v.type == "console" || v.type == "accessoire") return ScanResult(barcode, v.name)
+        if (v.type == "console") return ScanResult(barcode, v.name, itemType = ItemType.CONSOLE)
+        if (v.type == "accessoire") return ScanResult(barcode, v.name, itemType = ItemType.ACCESSOIRE)
+        // Objet de collection hors jeu vidéo (aucun catalogue à interroger, cf. [ItemType.AUTRE]).
+        if (v.type == "autre") return ScanResult(barcode, v.name, itemType = ItemType.AUTRE)
         // Jeu : recherche IGDB/RAWG filtrée sur la console détectée par l'IA si disponible.
         val platformId = v.console?.let { ConsolePlatforms.platformId(it) }
         val game = firstGameMatch(v.name, platformId)
@@ -479,7 +511,7 @@ object ScanTools {
         // Gemini/Groq ; le catalogue (RAWG/IGDB) ne connaît que le titre de base, donc on la
         // réinjecte pour ne pas la perdre en préférant le nom "propre" du catalogue.
         val finalName = game?.name?.takeIf { it.isNotBlank() }?.let { GameCatalog.preserveEditionSuffix(v.name, it) } ?: v.name
-        return ScanResult(barcode, finalName, gameMatch = game?.copy(name = finalName), gameConsoleHint = v.console)
+        return ScanResult(barcode, finalName, gameMatch = game?.copy(name = finalName), gameConsoleHint = v.console, itemType = ItemType.JEU)
     }
 
     /**

@@ -71,6 +71,7 @@ import com.example.macollection.R
 import com.example.macollection.data.AccessoryImages
 import com.example.macollection.data.AccessoryPreset
 import com.example.macollection.data.BrandLogos
+import com.example.macollection.data.CachedGame
 import com.example.macollection.data.ConsoleColorSupport
 import com.example.macollection.data.ConsoleRecognition
 import com.example.macollection.data.ConsoleImages
@@ -78,9 +79,14 @@ import com.example.macollection.data.ConsolePlatforms
 import com.example.macollection.data.ConsolePreset
 import com.example.macollection.data.CuratedGames
 import com.example.macollection.data.CustomPreset
+import com.example.macollection.data.EbayPrices
 import com.example.macollection.data.GameCatalog
+import com.example.macollection.data.GameCatalogSyncState
 import com.example.macollection.data.GameInfo
 import com.example.macollection.data.ItemType
+import com.example.macollection.data.LeBonCoinLink
+import com.example.macollection.data.Offer
+import com.example.macollection.data.VintedLink
 import com.example.macollection.data.accessoryPresets
 import com.example.macollection.data.consolePresets
 import com.example.macollection.data.toAccessoryPreset
@@ -97,6 +103,18 @@ import com.example.macollection.ui.theme.themedGradient
 // ---------------------------------------------------------------------------
 
 enum class EncycloMode { CONSOLES, ACCESSORIES }
+
+/** Critère de tri de la liste des jeux d'une console (onglet Jeux de l'Encyclopédie). */
+enum class GameSortOption { NAME, RELEASE_DATE, RELEASE_DATE_DESC, PRICE, DEVELOPER }
+
+@Composable
+private fun gameSortLabel(o: GameSortOption): String = when (o) {
+    GameSortOption.NAME -> stringResource(R.string.sort_name)
+    GameSortOption.RELEASE_DATE -> stringResource(R.string.sort_release)
+    GameSortOption.RELEASE_DATE_DESC -> stringResource(R.string.sort_release_desc)
+    GameSortOption.PRICE -> stringResource(R.string.sort_price_desc)
+    GameSortOption.DEVELOPER -> stringResource(R.string.sort_developer)
+}
 
 /** Critère de tri de la liste des consoles dans l'encyclopédie. */
 enum class EncycloSortOption { NAME, BRAND, RELEASE_DATE, RELEASE_DATE_DESC }
@@ -135,9 +153,29 @@ private fun encycloKindFilterLabel(f: EncycloKindFilter): String = when (f) {
 private data class ConsoleEntry(val preset: ConsolePreset, val custom: CustomPreset?)
 private data class AccessoryEntry(val preset: AccessoryPreset, val custom: CustomPreset?)
 
-/** Clé stable d'une fiche console, utilisée pour la sélection multiple (voir [EncyclopediaScreen]). */
-private fun ConsoleEntry.key(): String = custom?.let { "custom_${it.id}" } ?: "cat_${preset.brand}_${preset.name}"
-private fun AccessoryEntry.key(): String = custom?.let { "custom_${it.id}" } ?: "cat_${preset.brand}_${preset.name}"
+/**
+ * Clé stable d'une fiche de catalogue (console/accessoire) : "cat_marque_nom" pour une fiche
+ * native, "custom_id" pour une fiche perso (id propre, insensible à un renommage). Utilisée pour
+ * la sélection multiple (voir [EncyclopediaScreen]) et pour le cache de cote IA
+ * ([com.example.macollection.ui.AppViewModel.cachedPresetPrice]) — [ConsolePreset]/[AccessoryPreset]
+ * n'ayant pas d'identifiant propre.
+ */
+fun presetCacheKey(brand: String, name: String, customId: Long?): String =
+    customId?.let { "custom_$it" } ?: "cat_${brand}_${name}"
+private fun ConsoleEntry.key(): String = presetCacheKey(preset.brand, preset.name, custom?.id)
+private fun AccessoryEntry.key(): String = presetCacheKey(preset.brand, preset.name, custom?.id)
+
+/**
+ * Annonces structurées pour la section "Offres" d'une fiche. eBay est la seule marketplace avec
+ * une vraie API accessible depuis l'app (client ID/secret, voir [EbayPrices]) — LeBonCoin et
+ * Vinted n'ont pas d'API publique officielle : leurs API internes ont été essayées mais se sont
+ * révélées bloquées (LeBonCoin, mur CAPTCHA Datadome dès la 1re requête) ou non fiables (Vinted,
+ * jeton d'authentification requis que seul le site web sait produire via JavaScript) — voir
+ * [LeBonCoinLink] et [VintedLink] pour le repli "lien de recherche" retenu à la place pour ces
+ * deux sites.
+ */
+private suspend fun fetchAllOffers(type: ItemType, brand: String, name: String, platform: String?): List<Offer> =
+    runCatching { EbayPrices.offersFor(type, brand, name, platform) }.getOrDefault(emptyList())
 
 @Composable
 fun EncyclopediaScreen(
@@ -235,21 +273,31 @@ fun EncyclopediaScreen(
 
     Column(modifier.fillMaxSize().padding(horizontal = 14.dp)) {
         Spacer(Modifier.height(8.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-            EncycloModeChip(
-                label = stringResource(R.string.encyclo_mode_consoles),
-                selected = mode == EncycloMode.CONSOLES
-            ) { onModeChange(EncycloMode.CONSOLES) }
-            EncycloModeChip(
-                label = stringResource(R.string.encyclo_mode_accessories),
-                selected = mode == EncycloMode.ACCESSORIES
-            ) { onModeChange(EncycloMode.ACCESSORIES) }
-            Spacer(Modifier.weight(1f))
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+            // Largeur égale (1/2 chacune) plutôt qu'une largeur "au contenu" : un Row classique
+            // peut dépasser la largeur de l'écran (petits téléphones, langues aux libellés plus
+            // longs) et casser le rendu. Ainsi les onglets tiennent TOUJOURS à l'écran sans avoir
+            // besoin de défiler.
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                modifier = Modifier.weight(1f)
+            ) {
+                EncycloModeChip(
+                    label = stringResource(R.string.encyclo_mode_consoles),
+                    selected = mode == EncycloMode.CONSOLES,
+                    modifier = Modifier.weight(1f)
+                ) { onModeChange(EncycloMode.CONSOLES) }
+                EncycloModeChip(
+                    label = stringResource(R.string.encyclo_mode_accessories),
+                    selected = mode == EncycloMode.ACCESSORIES,
+                    modifier = Modifier.weight(1f)
+                ) { onModeChange(EncycloMode.ACCESSORIES) }
+            }
             IconButton(onClick = onToggleSelectionMode) {
                 Icon(
                     Icons.Filled.Checklist,
                     contentDescription = stringResource(R.string.encyclo_selection_mode_toggle),
-                    tint = if (selectionMode) NeonCyan else Color.White
+                    tint = if (selectionMode) NeonCyan else MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -385,8 +433,44 @@ fun EncyclopediaScreen(
             onAddToWishlist = { onAddAccessory(entry.preset, true); selectedAccessory = null },
             onEdit = custom?.let { { onEditPreset(it); selectedAccessory = null } },
             onDelete = custom?.let { { vm.deleteCustomPreset(it); selectedAccessory = null } },
+            customId = custom?.id,
             onDismiss = { selectedAccessory = null }
         )
+    }
+}
+
+/** Une ligne du catalogue de jeux mis en cache (fiche Console de l'Encyclopédie), avec cote si déjà connue. */
+@Composable
+private fun CachedGameRow(game: CachedGame, onClick: () -> Unit) {
+    val shape = RoundedCornerShape(10.dp)
+    Row(
+        Modifier.fillMaxWidth().clip(shape).background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f)).clickable(onClick = onClick).padding(8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        if (game.coverUrl != null) {
+            AsyncImage(
+                model = game.coverUrl,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(48.dp).clip(RoundedCornerShape(8.dp))
+            )
+            Spacer(Modifier.width(10.dp))
+        }
+        Column(Modifier.weight(1f)) {
+            Text(game.name, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(
+                listOfNotNull(game.releaseYear?.toString(), game.developer?.takeIf { it.isNotBlank() })
+                    .joinToString(" • "),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
+        game.priceCents?.let {
+            Spacer(Modifier.width(8.dp))
+            Text(formatPrice(it), color = NeonCyan, fontWeight = FontWeight.Bold, maxLines = 1)
+        }
     }
 }
 
@@ -396,7 +480,7 @@ private fun EncycloSelectionBar(count: Int, onAddToCollection: () -> Unit, onAdd
     Column(Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 4.dp)) {
         Text(
             stringResource(R.string.encyclo_selection_count, count),
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 6.dp)
         )
@@ -423,7 +507,7 @@ private fun RoundCheckbox(checked: Boolean, onCheckedChange: () -> Unit, modifie
             .clickable(onClick = onCheckedChange),
         contentAlignment = Alignment.Center
     ) {
-        if (checked) Icon(Icons.Filled.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
+        if (checked) Icon(Icons.Filled.Check, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface, modifier = Modifier.size(16.dp))
     }
 }
 
@@ -456,17 +540,26 @@ private fun BrandGroupHeader(brand: String) {
 }
 
 @Composable
-private fun EncycloModeChip(label: String, selected: Boolean, onClick: () -> Unit) {
+private fun EncycloModeChip(label: String, selected: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
     val shape = RoundedCornerShape(50)
     Box(
-        Modifier
+        modifier
             .clip(shape)
-            .background(if (selected) NeonPurple else Color.White.copy(alpha = 0.08f))
+            .background(if (selected) NeonPurple else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f))
             .border(1.dp, NeonBorder, shape)
             .clickable { onClick() }
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .padding(horizontal = 8.dp, vertical = 8.dp),
+        contentAlignment = Alignment.Center
     ) {
-        Text(label, color = Color.White, fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal)
+        Text(
+            label,
+            color = MaterialTheme.colorScheme.onSurface,
+            fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal,
+            style = MaterialTheme.typography.bodySmall,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Center
+        )
     }
 }
 
@@ -480,7 +573,7 @@ private fun CustomBadge() {
             .background(NeonPurple)
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
-        Text("Perso", color = Color.White, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+        Text("Perso", color = MaterialTheme.colorScheme.onSurface, fontSize = 10.sp, fontWeight = FontWeight.Bold)
     }
 }
 
@@ -530,7 +623,7 @@ private fun AccessoryRow(
         }
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f)) {
-            Text(preset.name, fontWeight = FontWeight.Bold, color = Color.White, maxLines = 2, overflow = TextOverflow.Ellipsis)
+            Text(preset.name, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface, maxLines = 2, overflow = TextOverflow.Ellipsis)
             Text(
                 "${preset.brand} • ${preset.year}",
                 style = MaterialTheme.typography.bodySmall,
@@ -557,10 +650,24 @@ private fun AccessoryDetailDialog(
     onAddToWishlist: () -> Unit,
     onEdit: (() -> Unit)? = null,
     onDelete: (() -> Unit)? = null,
+    // Id de la fiche perso d'origine si cet accessoire vient d'un ajout utilisateur (voir
+    // [presetCacheKey]) : une fiche native du catalogue intégré n'a pas d'id propre.
+    customId: Long? = null,
     onDismiss: () -> Unit
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
     val scope = androidx.compose.runtime.rememberCoroutineScope()
+    var offers by remember(preset.name) { mutableStateOf<List<Offer>?>(null) }
+    LaunchedEffect(preset.name) {
+        offers = fetchAllOffers(ItemType.ACCESSOIRE, preset.brand, preset.name, preset.console)
+    }
+    var estimatedPrice by remember(preset.name) { mutableStateOf<AppViewModel.QuickPriceEstimate?>(null) }
+    val presetKey = remember(preset.brand, preset.name, customId) { presetCacheKey(preset.brand, preset.name, customId) }
+    LaunchedEffect(presetKey) {
+        estimatedPrice = null
+        estimatedPrice = runCatching { vm.cachedPresetPrice(presetKey, ItemType.ACCESSOIRE, preset.brand, preset.name, preset.console) }
+            .getOrDefault(AppViewModel.QuickPriceEstimate(null, false, null))
+    }
     val cropLauncher = androidx.activity.compose.rememberLauncherForActivityResult(com.canhub.cropper.CropImageContract()) { result ->
         if (result.isSuccessful) {
             result.uriContent?.let { cropped ->
@@ -632,7 +739,7 @@ private fun AccessoryDetailDialog(
                     }
                     Spacer(Modifier.height(10.dp))
                 }
-                Text(preset.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = Color.White)
+                Text(preset.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(Modifier.height(4.dp))
                 Text(
                     "${preset.brand} • ${preset.year} • ${preset.console}",
@@ -640,7 +747,7 @@ private fun AccessoryDetailDialog(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Spacer(Modifier.height(10.dp))
-                Text(preset.description, color = Color.White)
+                Text(preset.description, color = MaterialTheme.colorScheme.onSurface)
                 androidx.compose.material3.TextButton(
                     onClick = {
                         val url = com.example.macollection.data.AccessoryWikipediaLinks.urlFor(preset.name)
@@ -669,6 +776,14 @@ private fun AccessoryDetailDialog(
                 androidx.compose.material3.OutlinedButton(onClick = onAddToWishlist, modifier = Modifier.fillMaxWidth()) {
                     Text(stringResource(R.string.encyclo_add_to_wishlist_button))
                 }
+                Spacer(Modifier.height(8.dp))
+                EstimatedPriceRow(estimatedPrice)
+                Spacer(Modifier.height(8.dp))
+                OffersSection(
+                    offers,
+                    LeBonCoinLink.searchUrl(preset.brand, preset.name, preset.console),
+                    VintedLink.searchUrl(preset.brand, preset.name, preset.console)
+                )
                 Spacer(Modifier.height(8.dp))
                 if (onEdit != null) {
                     androidx.compose.material3.OutlinedButton(onClick = onEdit, modifier = Modifier.fillMaxWidth()) {
@@ -714,7 +829,7 @@ private fun ConsoleRow(
         ConsoleThumb(preset.name, Modifier.size(width = 78.dp, height = 56.dp), overrideUrl)
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f)) {
-            Text(preset.name, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(preset.name, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
             Text(
                 "${preset.brand} • ${preset.year} • ${preset.kind}",
                 style = MaterialTheme.typography.bodySmall,
@@ -773,7 +888,7 @@ private fun EnlargedPhotoDialog(url: String, onDismiss: () -> Unit) {
                     .transformable(transformState)
             )
             IconButton(onClick = onDismiss, modifier = Modifier.align(Alignment.TopEnd).padding(12.dp)) {
-                Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.close), tint = Color.White)
+                Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.close), tint = Color(0xFFFFFFFF))
             }
         }
     }
@@ -803,7 +918,7 @@ private fun ConsoleThumb(name: String, modifier: Modifier, overrideUrl: String? 
         ) {
             Text(
                 name,
-                color = Color.White,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontSize = 10.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
@@ -829,13 +944,52 @@ fun ConsoleEncyclopediaScreen(
     onAddGameToWishlist: (GameInfo) -> Unit,
     onEdit: (() -> Unit)? = null,
     onDelete: (() -> Unit)? = null,
+    // Id de la fiche perso d'origine si cette console vient d'un ajout utilisateur (voir
+    // [presetCacheKey]) : une fiche native du catalogue intégré n'a pas d'id propre.
+    customId: Long? = null,
     onBack: () -> Unit
 ) {
-    var games by remember { mutableStateOf<List<GameInfo>?>(null) }
-    var selectedGame by remember { mutableStateOf<GameInfo?>(null) }
+    // Liste des jeux de cette console : source mise en cache/synchronisée en base (même mécanisme
+    // que l'ex-onglet "Jeux" autonome de l'Encyclopédie, fusionné ici — voir vm.gamesForPlatform),
+    // avec repli sur la liste statique [CuratedGames] si la console n'est pas cartographiée à une
+    // plateforme RAWG/IGDB ([ConsolePlatforms.platformId] == null).
+    val platformKey = remember(preset.name) { ConsolePlatforms.platformId(preset.name) }
+    var selectedGame by remember { mutableStateOf<CachedGame?>(null) }
+    val gamesFlow = remember(platformKey) {
+        platformKey?.let { vm.gamesForPlatform(it) } ?: kotlinx.coroutines.flow.flowOf(emptyList())
+    }
+    val cachedGames by gamesFlow.collectAsState(initial = emptyList())
+    var gameSyncState by remember(platformKey) { mutableStateOf<GameCatalogSyncState?>(null) }
+    LaunchedEffect(platformKey) {
+        if (platformKey != null) {
+            gameSyncState = GameCatalogSyncState(platformKey, "SYNCING", 0, null, null)
+            vm.syncGamesIfNeeded(platformKey)
+            gameSyncState = vm.gameSyncState(platformKey)
+        }
+    }
+    LaunchedEffect(platformKey, cachedGames.size) {
+        if (platformKey != null && cachedGames.isNotEmpty()) gameSyncState = vm.gameSyncState(platformKey)
+    }
+    var gameSortOption by remember(platformKey) { mutableStateOf(GameSortOption.NAME) }
+    val sortedGames = remember(cachedGames, gameSortOption) {
+        when (gameSortOption) {
+            GameSortOption.NAME -> cachedGames.sortedBy { it.name.lowercase() }
+            GameSortOption.RELEASE_DATE -> cachedGames.sortedBy { it.releaseYear ?: Int.MAX_VALUE }
+            GameSortOption.RELEASE_DATE_DESC -> cachedGames.sortedByDescending { it.releaseYear ?: Int.MIN_VALUE }
+            GameSortOption.PRICE -> cachedGames.sortedByDescending { it.priceCents ?: -1 }
+            GameSortOption.DEVELOPER -> cachedGames.sortedBy { (it.developer ?: "").lowercase() }
+        }
+    }
+    var offers by remember { mutableStateOf<List<Offer>?>(null) }
     LaunchedEffect(preset.name) {
-        val pid = ConsolePlatforms.platformId(preset.name)
-        games = if (pid != null) GameCatalog.gamesForPlatform(pid) else emptyList()
+        offers = fetchAllOffers(ItemType.CONSOLE, preset.brand, preset.name, null)
+    }
+    var estimatedPrice by remember { mutableStateOf<AppViewModel.QuickPriceEstimate?>(null) }
+    val presetKey = remember(preset.brand, preset.name, customId) { presetCacheKey(preset.brand, preset.name, customId) }
+    LaunchedEffect(presetKey) {
+        estimatedPrice = null
+        estimatedPrice = runCatching { vm.cachedPresetPrice(presetKey, ItemType.CONSOLE, preset.brand, preset.name, null) }
+            .getOrDefault(AppViewModel.QuickPriceEstimate(null, false, null))
     }
     val photoOverrides by vm.photoOverrides.collectAsState()
     val overrideUrl = photoOverrides[preset.name]
@@ -901,12 +1055,12 @@ fun ConsoleEncyclopediaScreen(
                     title = { Text(preset.name, fontWeight = FontWeight.Bold) },
                     navigationIcon = {
                         IconButton(onClick = onBack) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back), tint = Color.White)
+                            Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back), tint = MaterialTheme.colorScheme.onSurface)
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
-                        titleContentColor = Color.White
+                        titleContentColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             }
@@ -935,7 +1089,7 @@ fun ConsoleEncyclopediaScreen(
                             Modifier.fillMaxWidth().height(160.dp).clip(shape)
                                 .background(Brush.linearGradient(listOf(NeonPurple, NeonCyan))),
                             contentAlignment = Alignment.Center
-                        ) { Text(preset.name, color = Color.White, fontWeight = FontWeight.Bold) }
+                        ) { Text(preset.name, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold) }
                     }
                 }
                 item {
@@ -958,10 +1112,10 @@ fun ConsoleEncyclopediaScreen(
                         "${preset.brand} • ${preset.year} • ${preset.kind}",
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Text(stringResource(R.string.cpu_label, preset.cpu), color = Color.White, style = MaterialTheme.typography.bodySmall)
-                    Text(stringResource(R.string.memory_label, preset.memory), color = Color.White, style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(R.string.cpu_label, preset.cpu), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(R.string.memory_label, preset.memory), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.bodySmall)
                     Spacer(Modifier.height(6.dp))
-                    Text(preset.description, color = Color.White)
+                    Text(preset.description, color = MaterialTheme.colorScheme.onSurface)
                 }
                 item {
                     Row {
@@ -991,6 +1145,10 @@ fun ConsoleEncyclopediaScreen(
                 }
                 item {
                     Spacer(Modifier.height(4.dp))
+                    EstimatedPriceRow(estimatedPrice)
+                }
+                item {
+                    Spacer(Modifier.height(4.dp))
                     Text(
                         stringResource(R.string.popular_games_title),
                         fontWeight = FontWeight.Bold,
@@ -999,29 +1157,48 @@ fun ConsoleEncyclopediaScreen(
                     )
                 }
 
-                val list = games
+                if (platformKey != null && cachedGames.isNotEmpty()) {
+                    item {
+                        Spacer(Modifier.height(2.dp))
+                        ThemedChoiceDropdown(
+                            leading = stringResource(R.string.sort_prefix),
+                            selectedLabel = gameSortLabel(gameSortOption),
+                            options = GameSortOption.values().toList(),
+                            optionLabel = { gameSortLabel(it) },
+                            onSelect = { gameSortOption = it }
+                        )
+                    }
+                }
                 when {
-                    list == null -> item {
+                    platformKey != null && cachedGames.isEmpty() && gameSyncState?.status == "SYNCING" -> item {
                         Box(Modifier.fillMaxWidth().height(80.dp), contentAlignment = Alignment.Center) {
                             CircularProgressIndicator()
                         }
                     }
-                    list.isEmpty() && curated != null -> items(curated, key = { it }) { name ->
+                    platformKey != null && cachedGames.isNotEmpty() -> items(sortedGames, key = { it.id }) { g ->
+                        CachedGameRow(g, onClick = { selectedGame = g })
+                    }
+                    curated != null -> items(curated, key = { it }) { name ->
                         Text(
                             "🎮 $name",
-                            color = Color.White,
+                            color = MaterialTheme.colorScheme.onSurface,
                             modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)
                         )
                     }
-                    list.isEmpty() -> item {
+                    else -> item {
                         Text(
                             stringResource(R.string.game_list_unavailable),
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
-                    else -> items(list, key = { it.sourceId ?: it.name.hashCode() }) { g ->
-                        GameRow(g, onClick = { selectedGame = g })
-                    }
+                }
+                item {
+                    Spacer(Modifier.height(8.dp))
+                    OffersSection(
+                        offers,
+                        LeBonCoinLink.searchUrl(preset.brand, preset.name, null),
+                        VintedLink.searchUrl(preset.brand, preset.name, null)
+                    )
                 }
                 if (onEdit != null) {
                     item {
@@ -1046,12 +1223,28 @@ fun ConsoleEncyclopediaScreen(
         }
     }
 
-    selectedGame?.let { game ->
+    selectedGame?.let { cached ->
+        val info = remember(cached.id, preset.name) {
+            GameInfo(
+                sourceId = if (cached.source == "rawg") cached.sourceId.toInt() else null,
+                name = cached.name,
+                platforms = preset.name,
+                genres = cached.genres,
+                releaseYear = cached.releaseYear,
+                description = cached.description,
+                coverUrl = cached.coverUrl,
+                publisher = cached.publisher,
+                developer = cached.developer,
+                source = cached.source
+            )
+        }
         GameDetailDialog(
-            game = game,
+            vm = vm,
+            game = info,
             consoleName = preset.name,
-            onAddToCollection = { onAddGameToCollection(game); selectedGame = null },
-            onAddToWishlist = { onAddGameToWishlist(game); selectedGame = null },
+            cachedGame = cached,
+            onAddToCollection = { onAddGameToCollection(info); selectedGame = null },
+            onAddToWishlist = { onAddGameToWishlist(info); selectedGame = null },
             onDismiss = { selectedGame = null }
         )
     }
@@ -1059,8 +1252,13 @@ fun ConsoleEncyclopediaScreen(
 
 @Composable
 private fun GameDetailDialog(
+    vm: AppViewModel,
     game: GameInfo,
     consoleName: String,
+    // Renseigné pour un jeu du catalogue mis en cache (section "Jeux populaires" d'une fiche
+    // console) : la cote est alors mise à jour DIRECTEMENT sur sa ligne [CachedGame] plutôt que
+    // dans le cache générique [PresetPriceCache] (pas d'id stable sinon pour un jeu éphémère).
+    cachedGame: CachedGame? = null,
     onAddToCollection: () -> Unit,
     onAddToWishlist: () -> Unit,
     onDismiss: () -> Unit
@@ -1076,6 +1274,22 @@ private fun GameDetailDialog(
         }
         loaded = true
     }
+    var offers by remember(game.name) { mutableStateOf<List<Offer>?>(null) }
+    LaunchedEffect(game.name, consoleName) {
+        offers = fetchAllOffers(ItemType.JEU, "", game.name, consoleName)
+    }
+    var estimatedPrice by remember(game.name, cachedGame?.id) { mutableStateOf<AppViewModel.QuickPriceEstimate?>(null) }
+    LaunchedEffect(game.name, consoleName, cachedGame?.id) {
+        estimatedPrice = null
+        estimatedPrice = runCatching {
+            val cached = cachedGame
+            if (cached != null) vm.cachedGamePrice(cached, consoleName)
+            else vm.cachedPresetPrice(
+                "game_${game.source}_${game.sourceId ?: game.name}",
+                ItemType.JEU, "", game.name, consoleName
+            )
+        }.getOrDefault(AppViewModel.QuickPriceEstimate(null, false, null))
+    }
 
     androidx.compose.ui.window.Dialog(onDismissRequest = onDismiss) {
         androidx.compose.material3.Surface(
@@ -1088,7 +1302,7 @@ private fun GameDetailDialog(
                     .padding(16.dp)
                     .verticalScroll(androidx.compose.foundation.rememberScrollState())
             ) {
-                Text(game.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = Color.White)
+                Text(game.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(Modifier.height(4.dp))
                 Text(
                     listOfNotNull(game.releaseYear?.toString(), game.platforms.takeIf { it.isNotBlank() }, game.genres.takeIf { it.isNotBlank() })
@@ -1103,7 +1317,7 @@ private fun GameDetailDialog(
                     }
                 } else {
                     if (movieUrl != null) {
-                        Text(stringResource(R.string.game_trailer_title), color = Color.White, fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.game_trailer_title), color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold)
                         Spacer(Modifier.height(6.dp))
                         GameTrailerPlayer(movieUrl!!, Modifier.fillMaxWidth().height(180.dp).clip(RoundedCornerShape(14.dp)))
                         Spacer(Modifier.height(10.dp))
@@ -1119,7 +1333,7 @@ private fun GameDetailDialog(
                     val desc = detail?.description?.takeIf { it.isNotBlank() }
                     Text(
                         desc ?: stringResource(R.string.no_description_available),
-                        color = Color.White
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(Modifier.height(10.dp))
                     val ctx = androidx.compose.ui.platform.LocalContext.current
@@ -1135,6 +1349,14 @@ private fun GameDetailDialog(
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.youtube_search_button)) }
                 }
+                Spacer(Modifier.height(8.dp))
+                EstimatedPriceRow(estimatedPrice)
+                Spacer(Modifier.height(8.dp))
+                OffersSection(
+                    offers,
+                    LeBonCoinLink.searchUrl("", game.name, consoleName),
+                    VintedLink.searchUrl("", game.name, consoleName)
+                )
                 Spacer(Modifier.height(12.dp))
                 Button(onClick = onAddToCollection, modifier = Modifier.fillMaxWidth()) {
                     Text(stringResource(R.string.encyclo_add_to_collection_button), fontWeight = FontWeight.Bold)
@@ -1152,16 +1374,22 @@ private fun GameDetailDialog(
     }
 }
 
+/** Une annonce (eBay, Vinted...) dans la section "Offres" d'une fiche Console/Accessoire/Jeu. */
 @Composable
-private fun GameRow(game: GameInfo, onClick: () -> Unit) {
+private fun OfferRow(offer: Offer) {
     val shape = RoundedCornerShape(10.dp)
+    val context = androidx.compose.ui.platform.LocalContext.current
     Row(
-        Modifier.fillMaxWidth().clip(shape).background(Color.White.copy(alpha = 0.05f)).clickable(onClick = onClick).padding(8.dp),
+        Modifier.fillMaxWidth().clip(shape).background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
+            .clickable(enabled = offer.url != null) {
+                context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(offer.url)))
+            }
+            .padding(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (game.coverUrl != null) {
+        if (offer.imageUrl != null) {
             AsyncImage(
-                model = game.coverUrl,
+                model = offer.imageUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(48.dp).clip(RoundedCornerShape(8.dp))
@@ -1169,15 +1397,90 @@ private fun GameRow(game: GameInfo, onClick: () -> Unit) {
             Spacer(Modifier.width(10.dp))
         }
         Column(Modifier.weight(1f)) {
-            Text(game.name, color = Color.White, fontWeight = FontWeight.Bold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(offer.title, color = MaterialTheme.colorScheme.onSurface, maxLines = 2, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodyMedium)
+            // Source + état sur la même ligne (ex. "Vinted • Très bon état") : l'utilisateur doit
+            // savoir où le clic l'emmène avant de taper, plusieurs marketplaces étant mélangées.
             Text(
-                listOfNotNull(game.releaseYear?.toString(), game.genres.takeIf { it.isNotBlank() })
-                    .joinToString(" • "),
+                listOfNotNull(offer.source, offer.condition?.takeIf { it.isNotBlank() }).joinToString(" • "),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
         }
+        offer.priceCents?.let {
+            Spacer(Modifier.width(8.dp))
+            Text(formatPrice(it), color = NeonCyan, fontWeight = FontWeight.Bold, maxLines = 1)
+        }
+    }
+}
+
+/**
+ * Section "Offres" (titre + liste/état de chargement), partagée entre fiche Console, Accessoire
+ * et Jeu. [offers] vient d'eBay, seule marketplace avec des annonces structurées cliquables une
+ * par une (voir [fetchAllOffers]) — [leboncoinSearchUrl]/[vintedSearchUrl] ajoutent chacun un
+ * bouton de recherche externe en bas (voir [LeBonCoinLink]/[VintedLink] pour pourquoi ces deux
+ * sites n'ont pas d'annonces structurées comme eBay).
+ */
+@Composable
+private fun OffersSection(offers: List<Offer>?, leboncoinSearchUrl: String? = null, vintedSearchUrl: String? = null) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    Spacer(Modifier.height(4.dp))
+    Text(
+        stringResource(R.string.offers_title),
+        fontWeight = FontWeight.Bold,
+        color = NeonCyan,
+        style = MaterialTheme.typography.titleMedium
+    )
+    Spacer(Modifier.height(6.dp))
+    when {
+        offers == null -> Box(Modifier.fillMaxWidth().height(80.dp), contentAlignment = Alignment.Center) {
+            CircularProgressIndicator()
+        }
+        offers.isEmpty() -> Text(
+            stringResource(R.string.offers_unavailable),
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        else -> Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            offers.forEach { offer -> OfferRow(offer) }
+        }
+    }
+    if (leboncoinSearchUrl != null || vintedSearchUrl != null) {
+        Spacer(Modifier.height(8.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            if (leboncoinSearchUrl != null) {
+                androidx.compose.material3.OutlinedButton(
+                    onClick = { context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(leboncoinSearchUrl))) },
+                    modifier = Modifier.weight(1f)
+                ) { Text(stringResource(R.string.leboncoin_search_button)) }
+            }
+            if (vintedSearchUrl != null) {
+                androidx.compose.material3.OutlinedButton(
+                    onClick = { context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(vintedSearchUrl))) },
+                    modifier = Modifier.weight(1f)
+                ) { Text(stringResource(R.string.vinted_search_button)) }
+            }
+        }
+    }
+}
+
+/**
+ * Ligne "Cote : X (IA)" d'une fiche Console/Accessoire de l'Encyclopédie ([estimate] vient de
+ * [AppViewModel.cachedPresetPrice]), ou un indicateur de chargement pendant la 1re estimation
+ * (null = en cours). N'affiche rien si l'IA n'a trouvé aucune estimation (plutôt qu'un message
+ * "indisponible" sur une bonne partie des 655+84 fiches du catalogue).
+ */
+@Composable
+private fun EstimatedPriceRow(estimate: AppViewModel.QuickPriceEstimate?) {
+    when {
+        estimate == null -> Box(Modifier.fillMaxWidth().height(32.dp), contentAlignment = Alignment.CenterStart) {
+            CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
+        }
+        estimate.priceCents != null -> Text(
+            stringResource(R.string.wishlist_price_label, formatPrice(estimate.priceCents) + if (estimate.isAiEstimate) " (IA)" else ""),
+            color = NeonCyan,
+            fontWeight = FontWeight.Bold,
+            style = MaterialTheme.typography.titleMedium
+        )
     }
 }

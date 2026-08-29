@@ -18,7 +18,7 @@ import java.util.TimeZone
 private data class TwitchToken(val access_token: String?, val expires_in: Long?)
 private data class IgdbNamed(val name: String?)
 private data class IgdbCover(val image_id: String?)
-private data class IgdbInvolved(val company: IgdbNamed?, val publisher: Boolean?)
+private data class IgdbInvolved(val company: IgdbNamed?, val publisher: Boolean?, val developer: Boolean?)
 private data class IgdbGame(
     val id: Long,
     val name: String?,
@@ -122,7 +122,7 @@ object IgdbCatalog {
         val body = buildString {
             append("search \"").append(q).append("\"; ")
             append("fields name, first_release_date, summary, cover.image_id, genres.name, platforms.name, ")
-            append("involved_companies.company.name, involved_companies.publisher; ")
+            append("involved_companies.company.name, involved_companies.publisher, involved_companies.developer; ")
             // Filtre « Support » impératif quand une console est choisie : on ne garde que les
             // jeux sortis sur cette plateforme IGDB (en plus d'exclure les rééditions).
             append("where version_parent = null")
@@ -158,7 +158,7 @@ object IgdbCatalog {
         if (!isConfigured()) return null
         val body = buildString {
             append("fields name, first_release_date, summary, cover.image_id, genres.name, platforms.name, ")
-            append("involved_companies.company.name, involved_companies.publisher; ")
+            append("involved_companies.company.name, involved_companies.publisher, involved_companies.developer; ")
             append("where id = ").append(id).append(";")
         }
         repeat(2) { attempt ->
@@ -230,6 +230,7 @@ object IgdbCatalog {
         }
         val publisher = involved_companies.orEmpty().firstOrNull { it.publisher == true }?.company?.name
             ?: involved_companies.orEmpty().firstOrNull()?.company?.name
+        val developer = involved_companies.orEmpty().firstOrNull { it.developer == true }?.company?.name
         return GameCatalog.localizeGenres(
             GameInfo(
                 // Pas d'id RAWG : les fiches détaillées et vidéos RAWG ne s'appliquent pas ici,
@@ -242,8 +243,48 @@ object IgdbCatalog {
                 description = summary.orEmpty(),
                 coverUrl = cover?.image_id?.let { "https://images.igdb.com/igdb/image/upload/t_cover_big/$it.jpg" },
                 publisher = publisher,
+                developer = developer,
                 source = "igdb"
             )
         )
+    }
+
+    /**
+     * Comme [toGameInfo] mais conserve l'id IGDB réel (jamais null) — nécessaire à
+     * [GameCatalogSync], qui doit dédupliquer/rafraîchir par id, contrairement à l'affichage à la
+     * volée où [toGameInfo] le met à null (les fonctionnalités propres à RAWG, comme la fiche
+     * détaillée ou la vidéo, ne s'appliquent pas à un jeu IGDB).
+     */
+    data class IgdbCatalogEntry(val id: Long, val info: GameInfo)
+
+    /**
+     * Page du catalogue IGDB d'une plateforme entière (PAS une recherche par titre, contrairement à
+     * [search]) : triée par nom, [limit] jeux à partir de [offset]. Sert à [GameCatalogSync] pour
+     * parcourir tout le catalogue d'une console par pages de 500 (maximum documenté par IGDB).
+     * Liste vide si non configuré, en fin de catalogue, ou en cas d'échec réseau.
+     */
+    suspend fun listByPlatform(platformId: Int, offset: Int, limit: Int = 500): List<IgdbCatalogEntry> {
+        if (!isConfigured()) return emptyList()
+        val body = buildString {
+            append("fields name, first_release_date, summary, cover.image_id, genres.name, platforms.name, ")
+            append("involved_companies.company.name, involved_companies.publisher, involved_companies.developer; ")
+            append("where platforms = (").append(platformId).append(") & version_parent = null; ")
+            append("sort name asc; ")
+            append("limit ").append(limit).append("; offset ").append(offset).append(";")
+        }
+        repeat(2) { attempt ->
+            val bearer = bearer() ?: return emptyList()
+            try {
+                return api.games(clientId, "Bearer $bearer", body.toRequestBody(TEXT))
+                    .map { IgdbCatalogEntry(it.id, it.toGameInfo()) }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                android.util.Log.e("GameCatalogSync", "IGDB listByPlatform failed (attempt $attempt): ${e.javaClass.simpleName}: ${e.message}")
+                token = null
+                if (attempt == 1) return emptyList()
+            }
+        }
+        return emptyList()
     }
 }

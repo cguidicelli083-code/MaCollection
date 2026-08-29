@@ -14,6 +14,7 @@ object AppPrefs {
     private const val KEY_ONBOARDING_SEEN = "onboardingSeen"
     private const val KEY_BACKGROUND_URI = "backgroundUri"
     private const val KEY_CUSTOM_BRANDS = "customBrands"
+    private const val KEY_CUSTOM_CATEGORIES = "customCategories"
     private const val KEY_CURRENCY = "currency"
     private const val KEY_CURRENCY_MANUAL = "currencyManual"
     private const val KEY_RATES = "currencyRates"
@@ -46,6 +47,15 @@ object AppPrefs {
     /** Marques ajoutées manuellement par l'utilisateur (absentes de [KnownBrands]), pour qu'elles
      * réapparaissent ensuite dans la liste déroulante du champ Marque. */
     val customBrands = mutableStateOf<Set<String>>(emptySet())
+
+    /**
+     * Catégories personnalisées créées à la volée par l'utilisateur pour un objet de type
+     * [ItemType.AUTRE] (ex. "Figurines", "Cartes Pokémon") — stockées dans le champ [CollectionItem.genre]
+     * existant, cette liste ne sert qu'à les proposer en autocomplétion la prochaine fois, exactement
+     * comme [customBrands] pour la marque. Pas de nouvelle catégorie de premier niveau : ces objets
+     * restent de type AUTRE en base (aucun changement de schéma, cf. plan "catégories dynamiques").
+     */
+    val customCategories = mutableStateOf<Set<String>>(emptySet())
 
     /** Devise affichée/éditée (la cote reste stockée en euros : conversion à l'affichage uniquement). */
     val currency = mutableStateOf("EUR")
@@ -161,6 +171,7 @@ object AppPrefs {
         onboardingSeen = p.getBoolean(KEY_ONBOARDING_SEEN, false)
         backgroundImageUri.value = p.getString(KEY_BACKGROUND_URI, null)
         customBrands.value = p.getStringSet(KEY_CUSTOM_BRANDS, emptySet()) ?: emptySet()
+        customCategories.value = p.getStringSet(KEY_CUSTOM_CATEGORIES, emptySet()) ?: emptySet()
         currencyManuallySet = p.getBoolean(KEY_CURRENCY_MANUAL, false)
         currency.value = p.getString(KEY_CURRENCY, null) ?: CurrencyOptions.defaultForLanguage(language)
         currencyRates.value = p.getString(KEY_RATES, null)?.let { raw ->
@@ -419,6 +430,18 @@ object AppPrefs {
         customBrands.value = updated
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit().putStringSet(KEY_CUSTOM_BRANDS, updated).apply()
+    }
+
+    /** Enregistre [category] (catégorie libre d'un objet "Autre") pour les prochaines suggestions
+     * si elle n'est pas déjà connue — même logique que [addCustomBrand]. */
+    fun addCustomCategory(context: Context, category: String) {
+        val trimmed = category.trim()
+        if (trimmed.isBlank()) return
+        if (customCategories.value.any { it.equals(trimmed, ignoreCase = true) }) return
+        val updated = customCategories.value + trimmed
+        customCategories.value = updated
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putStringSet(KEY_CUSTOM_CATEGORIES, updated).apply()
     }
 
     /** uri = null pour revenir au fond par défaut. */

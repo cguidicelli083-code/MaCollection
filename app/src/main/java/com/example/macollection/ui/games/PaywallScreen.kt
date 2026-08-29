@@ -25,6 +25,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -89,14 +90,14 @@ fun PaywallScreen(vm: GameViewModel, onClose: () -> Unit, modifier: Modifier = M
         ) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
                 IconButton(onClick = onClose) {
-                    Icon(Icons.Filled.Close, contentDescription = "Fermer", tint = Color.White)
+                    Icon(Icons.Filled.Close, contentDescription = "Fermer", tint = MaterialTheme.colorScheme.onSurface)
                 }
             }
-            Text("✨ Passe à l'illimité", color = Color.White, fontWeight = FontWeight.Black, fontSize = 26.sp)
+            Text("✨ Passe à l'illimité", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Black, fontSize = 26.sp)
             Spacer(Modifier.height(6.dp))
             Text(
                 "Profite de la collection sans aucune limite et soutiens le développement de l'appli.",
-                color = Color.White.copy(alpha = 0.75f),
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f),
                 fontSize = 14.sp
             )
             Spacer(Modifier.height(20.dp))
@@ -166,7 +167,7 @@ fun PaywallScreen(vm: GameViewModel, onClose: () -> Unit, modifier: Modifier = M
             }
             restoreMessage?.let {
                 Spacer(Modifier.height(8.dp))
-                Text(it, color = Color.White.copy(alpha = 0.75f), fontSize = 13.sp)
+                Text(it, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f), fontSize = 13.sp)
             }
             Spacer(Modifier.height(12.dp))
         }
@@ -189,7 +190,7 @@ private fun RewardedAdBonusRow() {
     Column {
         Text(
             "Quota actuel : ${FREE_COLLECTION_LIMIT + extraSlots} objets",
-            color = Color.White.copy(alpha = 0.7f),
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             fontSize = 12.sp
         )
         Spacer(Modifier.height(6.dp))
@@ -227,7 +228,7 @@ private fun BenefitRow(emoji: String, text: String) {
     Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
         Text(emoji, fontSize = 18.sp)
         Spacer(Modifier.width(10.dp))
-        Text(text, color = Color.White, fontSize = 14.sp)
+        Text(text, color = MaterialTheme.colorScheme.onSurface, fontSize = 14.sp)
     }
 }
 
@@ -257,7 +258,7 @@ private fun PremiumActiveCard(hasLifetime: Boolean, activeSubId: String?, willNo
                 Spacer(Modifier.height(8.dp))
                 Text(
                     "⚠️ Ne se renouvellera pas automatiquement à la fin de la période en cours.",
-                    color = Color.White.copy(alpha = 0.75f),
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f),
                     fontSize = 13.sp
                 )
             }
@@ -296,16 +297,16 @@ private fun PremiumOfferCard(
                         .background(NeonPurple, RoundedCornerShape(10.dp))
                         .padding(horizontal = 10.dp, vertical = 4.dp)
                 ) {
-                    Text(badge, color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                    Text(badge, color = MaterialTheme.colorScheme.onSurface, fontSize = 12.sp, fontWeight = FontWeight.Bold)
                 }
                 Spacer(Modifier.height(8.dp))
             }
-            Text(title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 17.sp)
+            Text(title, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 17.sp)
             Spacer(Modifier.height(4.dp))
             Text(priceLabel, color = NeonCyan, fontWeight = FontWeight.Bold, fontSize = 20.sp)
             subLabel?.let {
                 Spacer(Modifier.height(2.dp))
-                Text(it, color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                Text(it, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f), fontSize = 12.sp)
             }
             Spacer(Modifier.height(12.dp))
             if (available) {

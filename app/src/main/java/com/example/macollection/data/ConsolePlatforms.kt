@@ -122,4 +122,12 @@ object ConsolePlatforms {
 
     /** Identifiant plateforme IGDB pour un nom de console (ou null si non cartographié). */
     fun igdbPlatformId(name: String): Int? = byName[name]?.let { rawgToIgdb[it] }
+
+    /**
+     * Identifiant plateforme IGDB à partir d'un identifiant plateforme RAWG déjà résolu (voir
+     * [byName]) — utilisé par [GameCatalogSync], qui manipule directement l'id RAWG (clé de
+     * regroupement `platformKey` du catalogue de jeux mis en cache, commune à toutes les consoles
+     * d'une même famille matérielle).
+     */
+    fun igdbPlatformIdFor(rawgPlatformId: Int): Int? = rawgToIgdb[rawgPlatformId]
 }

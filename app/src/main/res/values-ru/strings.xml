@@ -72,6 +72,7 @@
     <string name="sort_price_asc">Цена (низ. → выс.)</string>
     <string name="sort_release">Дата выхода (старые → новые)</string>
     <string name="sort_release_desc">Дата выхода (новые → старые)</string>
+    <string name="sort_developer">Разработчик</string>
     <string name="filter_all">Все</string>
     <string name="filter_kind_prefix">Тип</string>
     <string name="filter_kind_all">Все</string>
@@ -100,6 +101,7 @@
     <string name="more_info_button">ℹ️ Подробнее</string>
     <string name="platforms_label">Платформы: %1$s</string>
     <string name="genre_label">Жанр: %1$s</string>
+    <string name="category_label">Категория: %1$s</string>
     <string name="gallery_title">📸 Галерея (%1$d)</string>
     <string name="remove_photo">Удалить фото</string>
     <string name="add_photos">Добавить фото</string>
@@ -132,9 +134,12 @@
     <string name="field_release_year">Год выпуска (необязательно)</string>
     <string name="field_platforms">Совместимые платформы</string>
     <string name="field_genre">Жанр (action, гонки...)</string>
+    <string name="field_category">Категория (напр. Фигурки, Карты...)</string>
     <string name="field_edition">Издание (необязательно)</string>
     <string name="edition_none">Нет</string>
     <string name="field_price">Цена (%1$s) (необязательно)</string>
+    <string name="field_purchase_price">Цена покупки (%1$s) (необязательно)</string>
+    <string name="purchase_price_label">Оплачено: %1$s</string>
     <string name="field_barcode">Штрих-код (необязательно)</string>
     <string name="field_description">Описание / характеристики</string>
     <string name="update_button">Обновить</string>
@@ -172,6 +177,10 @@
     <string name="memory_label">Память: %1$s</string>
     <string name="popular_games_title">🎮 Популярные игры</string>
     <string name="game_list_unavailable">Список игр недоступен для этой консоли.</string>
+    <string name="offers_title">🛒 Предложения</string>
+    <string name="offers_unavailable">Сейчас нет доступных предложений.</string>
+    <string name="leboncoin_search_button">🔍 Смотреть на LeBonCoin</string>
+    <string name="vinted_search_button">🔍 Смотреть на Vinted</string>
     <string name="pricecharting_button">🔍 Уточнить цену на PriceCharting</string>
     <string name="edit_price_button">✏️ Изменить цену</string>
     <string name="move_to_collection_button">📦 Отметить как приобретённое (переместить в Коллекцию)</string>
@@ -272,6 +281,11 @@
     <string name="ad_unavailable">Реклама временно недоступна. Повторите попытку позже.</string>
     <string name="batch_saving">Добавление предметов: %1$d…</string>
     <string name="batch_selected_count">Выбрано: %1$d / %2$d</string>
+    <string name="batch_total_estimate">Примерная сумма: %1$s</string>
+    <string name="batch_price_unknown">Цена не найдена</string>
+    <string name="batch_select_all">Выбрать всё</string>
+    <string name="batch_deselect_all">Снять выбор</string>
+    <string name="batch_share">Поделиться</string>
     <string name="batch_validate">Подтвердить добавление партии</string>
     <string name="platform_picker_title">На какой консоли(ях)?</string>
     <string name="platform_picker_message">Эта игра вышла на нескольких консолях. Отметь ту(и), которой(ыми) ты действительно владеешь.</string>

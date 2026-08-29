@@ -1,6 +1,7 @@
 package com.example.macollection.data
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 
@@ -8,7 +9,11 @@ import androidx.room.TypeConverter
 enum class ItemType(val label: String, val labelPlural: String) {
     CONSOLE("Console", "Consoles"),
     JEU("Jeu", "Jeux"),
-    ACCESSOIRE("Accessoire", "Accessoires")
+    ACCESSOIRE("Accessoire", "Accessoires"),
+    // Objet de collection hors jeu vidéo (identifié par estimation rapide via Gemini, cf.
+    // GeminiVision.PROMPT type "autre") : pas de catalogue dédié (pas d'IGDB/RAWG/Encyclopédie),
+    // juste nom/marque/prix comme un objet libre.
+    AUTRE("Autre", "Autres")
 }
 
 /** Région / zone d'un objet. */
@@ -48,6 +53,13 @@ data class CollectionItem(
      * l'actualisation automatique des cotes (eBay) ne doit JAMAIS l'écraser.
      */
     val priceIsManual: Boolean = false,
+    /**
+     * Prix payé par l'utilisateur à l'achat de l'objet (distinct de [priceCents], qui est la cote
+     * ACTUELLE estimée/du marché). Purement informatif : jamais mis à jour automatiquement (pas de
+     * flag "manuel" séparé nécessaire, contrairement à [priceIsManual] pour [priceCents], puisque
+     * ce champ n'est JAMAIS écrasé par une source automatique).
+     */
+    val purchasePriceCents: Int? = null,
     val barcode: String? = null,
     val description: String? = null,
     /**
@@ -148,6 +160,70 @@ fun CustomPreset.toAccessoryPreset(): AccessoryPreset = AccessoryPreset(
 data class PresetPhotoOverride(
     @PrimaryKey val presetName: String,
     val photoUri: String
+)
+
+/**
+ * Cache de la cote estimée par IA (voir [com.example.macollection.ui.AppViewModel.cachedPresetPrice])
+ * d'une fiche Console/Accessoire de l'Encyclopédie. Clé = [presetCacheKey] (com.example.macollection.ui,
+ * "cat_marque_nom" pour une fiche native, "custom_id" pour une fiche perso). Rafraîchi après 30
+ * jours plutôt qu'à chaque ouverture, pour ne pas épuiser le quota gratuit Gemini (20 requêtes/jour).
+ */
+@Entity(tableName = "preset_price_cache")
+data class PresetPriceCache(
+    @PrimaryKey val presetKey: String,
+    val priceCents: Int?,
+    val isAiEstimate: Boolean,
+    val info: String?,
+    val fetchedAt: Long
+)
+
+/**
+ * Un jeu du catalogue Console de l'Encyclopédie ([com.example.macollection.ui.ConsoleEncyclopediaScreen]),
+ * mis en cache localement (navigable hors-ligne, triable) après synchronisation par
+ * [GameCatalogSync] — IGDB en source principale, repli RAWG. [platformKey] est l'identifiant de
+ * plateforme RAWG (voir [ConsolePlatforms.byName]) : il regroupe toutes les consoles d'une même
+ * famille matérielle (ex. "Game Boy" et "Game Boy Pocket" partagent la même ludothèque).
+ *
+ * L'unicité est volontairement sur ([source], [sourceId], [platformKey]) et NON sur ([source],
+ * [sourceId]) seul : un jeu multiplateforme (ex. sorti sur PS2 ET Xbox) doit apparaître dans le
+ * catalogue mis en cache de CHAQUE plateforme séparément, avec une ligne par plateforme.
+ */
+@Entity(
+    tableName = "cached_games",
+    indices = [Index(value = ["source", "sourceId", "platformKey"], unique = true), Index(value = ["platformKey"])]
+)
+data class CachedGame(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val sourceId: Long,
+    val source: String,
+    val platformKey: Int,
+    val name: String,
+    val developer: String?,
+    val publisher: String?,
+    val releaseYear: Int?,
+    val genres: String,
+    val coverUrl: String?,
+    val description: String,
+    val priceCents: Int? = null,
+    val priceIsAiEstimate: Boolean = false,
+    val priceFetchedAt: Long? = null,
+    val importedAt: Long
+)
+
+/**
+ * Avancement de la synchronisation du catalogue de jeux d'une plateforme (voir [CachedGame]) —
+ * permet de savoir si une console a déjà été synchronisée (et quand, pour rafraîchir après 30
+ * jours) sans avoir à recompter [CachedGame], et de reprendre un import interrompu par lots sans
+ * repartir de zéro (voir [GameCatalogSync]).
+ */
+@Entity(tableName = "game_catalog_sync_state")
+data class GameCatalogSyncState(
+    @PrimaryKey val platformKey: Int,
+    /** "NEVER", "SYNCING", "DONE" ou "ERROR". */
+    val status: String,
+    val gameCount: Int,
+    val lastSyncedAt: Long?,
+    val lastError: String?
 )
 
 /** Une photo supplémentaire associée à un objet de la collection (galerie). */

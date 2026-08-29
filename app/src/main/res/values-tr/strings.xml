@@ -72,6 +72,7 @@
     <string name="sort_price_asc">Fiyat (düşük → yüksek)</string>
     <string name="sort_release">Çıkış tarihi (eski → yeni)</string>
     <string name="sort_release_desc">Çıkış tarihi (yeni → eski)</string>
+    <string name="sort_developer">Geliştirici</string>
     <string name="filter_all">Tümü</string>
     <string name="filter_kind_prefix">Tür</string>
     <string name="filter_kind_all">Tümü</string>
@@ -100,6 +101,7 @@
     <string name="more_info_button">ℹ️ Daha fazla bilgi</string>
     <string name="platforms_label">Platformlar: %1$s</string>
     <string name="genre_label">Tür: %1$s</string>
+    <string name="category_label">Kategori: %1$s</string>
     <string name="gallery_title">📸 Galeri (%1$d)</string>
     <string name="remove_photo">Fotoğrafı kaldır</string>
     <string name="add_photos">Fotoğraf ekle</string>
@@ -132,9 +134,12 @@
     <string name="field_release_year">Çıkış yılı (isteğe bağlı)</string>
     <string name="field_platforms">Uyumlu platform(lar)</string>
     <string name="field_genre">Tür (aksiyon, yarış...)</string>
+    <string name="field_category">Kategori (ör. Figürler, Kartlar...)</string>
     <string name="field_edition">Sürüm (isteğe bağlı)</string>
     <string name="edition_none">Yok</string>
     <string name="field_price">Fiyat / değer (%1$s) (isteğe bağlı)</string>
+    <string name="field_purchase_price">Satın alma fiyatı (%1$s) (isteğe bağlı)</string>
+    <string name="purchase_price_label">Ödenen: %1$s</string>
     <string name="field_barcode">Barkod (isteğe bağlı)</string>
     <string name="field_description">Açıklama / özellikler</string>
     <string name="update_button">Güncelle</string>
@@ -172,6 +177,10 @@
     <string name="memory_label">Bellek: %1$s</string>
     <string name="popular_games_title">🎮 Popüler oyunlar</string>
     <string name="game_list_unavailable">Bu konsol için oyun listesi mevcut değil.</string>
+    <string name="offers_title">🛒 Teklifler</string>
+    <string name="offers_unavailable">Şu anda kullanılabilir teklif yok.</string>
+    <string name="leboncoin_search_button">🔍 LeBonCoin\'de görüntüle</string>
+    <string name="vinted_search_button">🔍 Vinted\'de görüntüle</string>
     <string name="pricecharting_button">🔍 PriceCharting\'te fiyatı iyileştir</string>
     <string name="edit_price_button">✏️ Fiyatı düzenle</string>
     <string name="move_to_collection_button">📦 Edinildi olarak işaretle (Koleksiyona taşı)</string>
@@ -272,6 +281,11 @@
     <string name="ad_unavailable">Reklam şu anda kullanılamıyor. Daha sonra tekrar dene.</string>
     <string name="batch_saving">%1$d öğe ekleniyor…</string>
     <string name="batch_selected_count">%1$d / %2$d seçildi</string>
+    <string name="batch_total_estimate">Tahmini toplam: %1$s</string>
+    <string name="batch_price_unknown">Fiyat bulunamadı</string>
+    <string name="batch_select_all">Tümünü seç</string>
+    <string name="batch_deselect_all">Tümünü kaldır</string>
+    <string name="batch_share">Paylaş</string>
     <string name="batch_validate">Gruba eklemeyi onayla</string>
     <string name="platform_picker_title">Hangi konsol(lar)da?</string>
     <string name="platform_picker_message">Bu oyun birden fazla konsolda çıktı. Gerçekten sahip olduğun konsol(lar)ı işaretle.</string>

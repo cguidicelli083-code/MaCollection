@@ -97,16 +97,23 @@ object GeminiVision {
     }
 
     internal const val PROMPT =
-        "Tu es un expert du jeu vidéo rétro. Analyse cette photo (jaquette, boîte, cartouche, " +
-        "console, accessoire) et identifie l'objet principal via ses logos, artworks et éléments " +
-        "matériels. Réponds UNIQUEMENT en JSON strict, sans texte ni balise autour : " +
-        "{\"type\":\"jeu|console|accessoire\",\"nom\":\"nom commercial exact\"," +
-        "\"console\":\"console associée ou null\"}. Le nom sans plateforme entre parenthèses, MAIS " +
-        "en gardant impérativement toute mention de réédition/édition spéciale visible sur la " +
-        "jaquette (Platinum, Collector, Greatest Hits, Player's Choice, Director's Cut, Deluxe, " +
-        "GOTY, Essentials, Classics...) : une réédition ne vaut pas le même prix que l'originale, " +
-        "cette mention ne doit jamais être omise si elle est visible. " +
-        "Si tu ne reconnais rien de fiable : {\"type\":null,\"nom\":null,\"console\":null}."
+        "Tu es un expert du jeu vidéo rétro ET des objets de collection en général. Analyse cette " +
+        "photo (jaquette, boîte, cartouche, console, accessoire, OU tout autre objet de collection " +
+        "si ce n'est manifestement pas du jeu vidéo) et identifie l'objet principal via ses logos, " +
+        "artworks et éléments matériels. Réponds UNIQUEMENT en JSON strict, sans texte ni balise " +
+        "autour : {\"type\":\"jeu|console|accessoire|autre\",\"nom\":\"nom commercial exact\"," +
+        "\"console\":\"console associée ou null\"}. Utilise \"autre\" UNIQUEMENT si l'objet n'est " +
+        "clairement ni un jeu vidéo, ni une console, ni un accessoire de jeu vidéo (ex. figurine, " +
+        "chaussure, carte à collectionner, jouet, vinyle...) ; dans ce cas \"console\" reste null. " +
+        "Attention à ne jamais confondre un ACCESSOIRE (manette, chargeur, casque...) avec la " +
+        "CONSOLE elle-même : un accessoire dont le nom contient le nom d'une console (ex. « Manette " +
+        "Xbox Series S », « Station de charge PlayStation 5 ») reste de type \"accessoire\", jamais " +
+        "\"console\". " +
+        "Le nom sans plateforme entre parenthèses, MAIS en gardant impérativement toute mention de " +
+        "réédition/édition spéciale visible sur la jaquette (Platinum, Collector, Greatest Hits, " +
+        "Player's Choice, Director's Cut, Deluxe, GOTY, Essentials, Classics...) : une réédition ne " +
+        "vaut pas le même prix que l'originale, cette mention ne doit jamais être omise si elle est " +
+        "visible. Si tu ne reconnais rien de fiable : {\"type\":null,\"nom\":null,\"console\":null}."
 
     /** Objet identifié visuellement par l'IA (type + nom + console associée). */
     data class VisualResult(val type: String, val name: String, val console: String?)
@@ -162,6 +169,7 @@ object GeminiVision {
             ItemType.CONSOLE -> "console de jeu vidéo"
             ItemType.JEU -> "jeu vidéo"
             ItemType.ACCESSOIRE -> "accessoire de jeu vidéo"
+            ItemType.AUTRE -> "objet de collection"
         }
         val completeness = when {
             hasBox && hasManual -> "complet en boîte avec notice"
@@ -305,7 +313,9 @@ object GeminiVision {
         "\"console associée ou null\"}]. Le champ \"type\" doit refléter la nature réelle de " +
         "l'article (une console ou un accessoire physique n'est PAS un jeu, même si son nom " +
         "contient une référence à un jeu, ex. une console \"3DS XL Pokémon\" est de type " +
-        "\"console\", pas \"jeu\"). Un objet par boîtier/appareil physiquement visible, MÊME si " +
+        "\"console\", pas \"jeu\" ; de même, une manette \"Manette Xbox Series S\" ou un chargeur " +
+        "\"Station de charge PS5\" reste de type \"accessoire\", jamais \"console\", même si son " +
+        "nom contient le nom d'une console). Un objet par boîtier/appareil physiquement visible, MÊME si " +
         "plusieurs exemplaires identiques du même jeu sont présents (ex. 3 boîtiers \"Les Sims\" " +
         "côte à côte = 3 entrées distinctes dans le tableau, pas une seule) : ne fusionne jamais " +
         "deux titres identiques en une seule entrée. Un objet par article réellement visible et " +

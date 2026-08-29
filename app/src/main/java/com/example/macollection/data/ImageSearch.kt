@@ -97,10 +97,14 @@ object ImageSearch {
 
     // Le court descriptif Wikipédia ("description", ex. « jeu vidéo de plate-forme sorti en
     // 1991 ») distingue fiablement un article de JEU d'un article sur la société qui l'a créé
-    // (« société japonaise de jeux vidéo », « éditeur »...). Absent (null), on ne bloque pas :
-    // beaucoup d'articles de jeux n'ont pas ce descriptif renseigné.
+    // (« société japonaise de jeux vidéo », « éditeur »...) OU sur une œuvre homonyme (film,
+    // série, roman...) — ex. "Alien 3" tombait sur le FILM de 1992 (aucun descriptif "société",
+    // donc accepté à tort comme description du jeu). Absent (null), on ne bloque pas : beaucoup
+    // d'articles de jeux n'ont pas ce descriptif renseigné.
     private val nonGameDescriptors = Regex(
-        "soci[ée]t[ée]|entreprise|[ée]diteur|d[ée]veloppeur|studio|compagnie|constructeur|fabricant"
+        "soci[ée]t[ée]|entreprise|[ée]diteur|d[ée]veloppeur|studio|compagnie|constructeur|fabricant|" +
+            "film|t[ée]l[ée]film|long[- ]m[ée]trage|s[ée]rie (tv|t[ée]l[ée]vis[ée]e)?|roman|nouvelle|" +
+            "bande dessin[ée]e|comics?|manga|album|chanson|magazine"
     )
     private fun looksLikeGameDescription(description: String?): Boolean =
         description.isNullOrBlank() || !nonGameDescriptors.containsMatchIn(description.lowercase())

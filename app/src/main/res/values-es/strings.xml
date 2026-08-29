@@ -72,6 +72,7 @@
     <string name="sort_price_asc">Precio (bajo → alto)</string>
     <string name="sort_release">Fecha de lanzamiento (antiguo → nuevo)</string>
     <string name="sort_release_desc">Fecha de lanzamiento (nuevo → antiguo)</string>
+    <string name="sort_developer">Desarrollador</string>
     <string name="filter_all">Todos</string>
     <string name="filter_kind_prefix">Tipo</string>
     <string name="filter_kind_all">Todas</string>
@@ -100,6 +101,7 @@
     <string name="more_info_button">ℹ️ Más información</string>
     <string name="platforms_label">Plataformas: %1$s</string>
     <string name="genre_label">Género: %1$s</string>
+    <string name="category_label">Categoría: %1$s</string>
     <string name="gallery_title">📸 Galería (%1$d)</string>
     <string name="remove_photo">Quitar la foto</string>
     <string name="add_photos">Añadir fotos</string>
@@ -132,9 +134,12 @@
     <string name="field_release_year">Año de lanzamiento (opcional)</string>
     <string name="field_platforms">Plataforma(s) compatible(s)</string>
     <string name="field_genre">Género (acción, carreras...)</string>
+    <string name="field_category">Categoría (ej. Figuras, Cartas...)</string>
     <string name="field_edition">Edición (opcional)</string>
     <string name="edition_none">Ninguna</string>
     <string name="field_price">Precio / valor (%1$s) (opcional)</string>
+    <string name="field_purchase_price">Precio de compra (%1$s) (opcional)</string>
+    <string name="purchase_price_label">Pagado: %1$s</string>
     <string name="field_barcode">Código de barras (opcional)</string>
     <string name="field_description">Descripción / características</string>
     <string name="update_button">Actualizar</string>
@@ -172,6 +177,10 @@
     <string name="memory_label">Memoria: %1$s</string>
     <string name="popular_games_title">🎮 Juegos populares</string>
     <string name="game_list_unavailable">Lista de juegos no disponible para esta consola.</string>
+    <string name="offers_title">🛒 Ofertas</string>
+    <string name="offers_unavailable">No hay ofertas disponibles por ahora.</string>
+    <string name="leboncoin_search_button">🔍 Ver en LeBonCoin</string>
+    <string name="vinted_search_button">🔍 Ver en Vinted</string>
     <string name="pricecharting_button">🔍 Afinar la cotización en PriceCharting</string>
     <string name="edit_price_button">✏️ Editar precio</string>
     <string name="move_to_collection_button">📦 Marcar como adquirido (mover a la Colección)</string>
@@ -272,6 +281,11 @@
     <string name="ad_unavailable">Anuncio momentáneamente no disponible. Inténtalo de nuevo más tarde.</string>
     <string name="batch_saving">Añadiendo %1$d artículo(s)…</string>
     <string name="batch_selected_count">%1$d / %2$d seleccionado(s)</string>
+    <string name="batch_total_estimate">Total estimado: %1$s</string>
+    <string name="batch_price_unknown">Precio no encontrado</string>
+    <string name="batch_select_all">Seleccionar todo</string>
+    <string name="batch_deselect_all">Deseleccionar todo</string>
+    <string name="batch_share">Compartir</string>
     <string name="batch_validate">Confirmar la adición al lote</string>
     <string name="platform_picker_title">¿En qué consola(s)?</string>
     <string name="platform_picker_message">Este juego salió en varias consolas. Marca la(s) que realmente tienes.</string>

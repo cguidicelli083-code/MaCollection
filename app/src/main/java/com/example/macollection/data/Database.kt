@@ -85,6 +85,42 @@ interface PresetPhotoOverrideDao {
 }
 
 @Dao
+interface PresetPriceCacheDao {
+    @Query("SELECT * FROM preset_price_cache WHERE presetKey = :key")
+    suspend fun get(key: String): PresetPriceCache?
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun upsert(cache: PresetPriceCache)
+}
+
+@Dao
+interface CachedGameDao {
+    @Query("SELECT * FROM cached_games WHERE platformKey = :platformKey")
+    fun observeForPlatform(platformKey: Int): Flow<List<CachedGame>>
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun insertAll(games: List<CachedGame>)
+
+    @Query("DELETE FROM cached_games WHERE platformKey = :platformKey")
+    suspend fun deleteForPlatform(platformKey: Int)
+
+    @Query("UPDATE cached_games SET priceCents = :priceCents, priceIsAiEstimate = :isAiEstimate, priceFetchedAt = :fetchedAt WHERE id = :id")
+    suspend fun updatePrice(id: Long, priceCents: Int?, isAiEstimate: Boolean, fetchedAt: Long)
+}
+
+@Dao
+interface GameCatalogSyncStateDao {
+    @Query("SELECT * FROM game_catalog_sync_state WHERE platformKey = :platformKey")
+    suspend fun get(platformKey: Int): GameCatalogSyncState?
+
+    @Query("SELECT * FROM game_catalog_sync_state")
+    fun observeAll(): Flow<List<GameCatalogSyncState>>
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun upsert(state: GameCatalogSyncState)
+}
+
+@Dao
 interface PlayerProgressDao {
     @Query("SELECT * FROM player_progress WHERE id = 0")
     fun observe(): Flow<PlayerProgress?>
@@ -326,10 +362,59 @@ val MIGRATION_17_18 = object : Migration(17, 18) {
     }
 }
 
+/** Migration 18 -> 19 : ajoute `purchasePriceCents` (prix payé par l'utilisateur à l'achat,
+ * distinct de `priceCents` qui est la cote ACTUELLE estimée) à la collection, SANS effacer les
+ * données. */
+val MIGRATION_18_19 = object : Migration(18, 19) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `collection_items` ADD COLUMN `purchasePriceCents` INTEGER")
+    }
+}
+
+/** Migration 19 -> 20 : ajoute la table cache `preset_price_cache` (cote IA des fiches Console/
+ * Accessoire de l'Encyclopédie, voir AppViewModel.cachedPresetPrice) SANS effacer les données. */
+val MIGRATION_19_20 = object : Migration(19, 20) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `preset_price_cache` " +
+                "(`presetKey` TEXT NOT NULL, `priceCents` INTEGER, `isAiEstimate` INTEGER NOT NULL, " +
+                "`info` TEXT, `fetchedAt` INTEGER NOT NULL, PRIMARY KEY(`presetKey`))"
+        )
+    }
+}
+
+/**
+ * Migration 20 -> 21 : ajoute les tables du catalogue de jeux mis en cache par plateforme
+ * (`cached_games` + `game_catalog_sync_state`, voir GameCatalogSync) SANS effacer les données.
+ */
+val MIGRATION_20_21 = object : Migration(20, 21) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `cached_games` " +
+                "(`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sourceId` INTEGER NOT NULL, " +
+                "`source` TEXT NOT NULL, `platformKey` INTEGER NOT NULL, `name` TEXT NOT NULL, " +
+                "`developer` TEXT, `publisher` TEXT, `releaseYear` INTEGER, `genres` TEXT NOT NULL, " +
+                "`coverUrl` TEXT, `description` TEXT NOT NULL, `priceCents` INTEGER, " +
+                "`priceIsAiEstimate` INTEGER NOT NULL DEFAULT 0, `priceFetchedAt` INTEGER, `importedAt` INTEGER NOT NULL)"
+        )
+        db.execSQL(
+            "CREATE UNIQUE INDEX IF NOT EXISTS `index_cached_games_source_sourceId_platformKey` " +
+                "ON `cached_games` (`source`, `sourceId`, `platformKey`)"
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_cached_games_platformKey` ON `cached_games` (`platformKey`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `game_catalog_sync_state` " +
+                "(`platformKey` INTEGER NOT NULL, `status` TEXT NOT NULL, `gameCount` INTEGER NOT NULL, " +
+                "`lastSyncedAt` INTEGER, `lastError` TEXT, PRIMARY KEY(`platformKey`))"
+        )
+    }
+}
+
 @Database(
     entities = [CollectionItem::class, PriceHistory::class, ItemPhoto::class, CustomPreset::class, PresetPhotoOverride::class,
-        PlayerProgress::class, UnlockedItem::class, GameHighScore::class, RetroNewsEntry::class],
-    version = 18,
+        PlayerProgress::class, UnlockedItem::class, GameHighScore::class, RetroNewsEntry::class, PresetPriceCache::class,
+        CachedGame::class, GameCatalogSyncState::class],
+    version = 21,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -343,6 +428,9 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun unlockedItemDao(): UnlockedItemDao
     abstract fun gameHighScoreDao(): GameHighScoreDao
     abstract fun retroNewsDao(): RetroNewsDao
+    abstract fun presetPriceCacheDao(): PresetPriceCacheDao
+    abstract fun cachedGameDao(): CachedGameDao
+    abstract fun gameCatalogSyncStateDao(): GameCatalogSyncStateDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
@@ -353,7 +441,7 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "macollection.db"
             )
-                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17, MIGRATION_17_18)
+                .addMigrations(MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17, MIGRATION_17_18, MIGRATION_18_19, MIGRATION_19_20, MIGRATION_20_21)
                 .fallbackToDestructiveMigration()
                 .build().also { instance = it }
         }

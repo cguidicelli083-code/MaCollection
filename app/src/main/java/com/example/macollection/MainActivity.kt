@@ -112,6 +112,7 @@ import com.example.macollection.ui.QuickEstimateResultScreen
 import com.example.macollection.ui.NewsScreen
 import com.example.macollection.ui.BackupScreen
 import com.example.macollection.ui.BatchScanDialog
+import com.example.macollection.ui.formatPrice
 import com.example.macollection.ui.ads.watchRewardedAd
 import com.example.macollection.data.GameGuide
 import com.example.macollection.data.GameShopCatalog
@@ -140,10 +141,8 @@ import com.example.macollection.ui.games.orchard.OrchardScreen
 import com.example.macollection.ui.games.bombhunter.BombHunterScreen
 import com.example.macollection.ui.theme.MaCollectionTheme
 import com.example.macollection.ui.theme.NeonCyan
-import com.example.macollection.ui.theme.NeonPurple
 import com.example.macollection.ui.theme.AppTheme
 import com.example.macollection.ui.theme.themedGradient
-import com.example.macollection.ui.theme.SurfaceBg
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.isActive
@@ -185,7 +184,11 @@ data class CollectionEditor(
     // Pré-remplissage venant de l'estimation rapide ("$", cf. QuickEstimateScreen) : le prix reste
     // modifiable dans la fiche, mais s'affiche déjà avec le tag "(IA)" si l'estimation en venait.
     val initialPriceCents: Int? = null,
-    val initialPriceIsAiEstimate: Boolean = false
+    val initialPriceIsAiEstimate: Boolean = false,
+    // Type déjà déterminé par la reconnaissance photo/IA (ScanTools.ScanResult.itemType), quand il
+    // est connu avec certitude — notamment ItemType.AUTRE, qu'aucun des champs presetName/
+    // accessoryName/gameMatch ci-dessus ne peut représenter (aucun catalogue dédié pour ce type).
+    val itemType: ItemType? = null
 )
 
 @Composable
@@ -316,7 +319,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
     // Scanner caméra natif (CameraX, cf. [NativeBarcodeScannerScreen]) réservé à l'édition TEST —
     // voir [startBarcodeScan].
     var showNativeScanner by remember { mutableStateOf(false) }
-    var batchResults by remember { mutableStateOf<List<GeminiVision.BatchItem>?>(null) }
+    var batchResults by remember { mutableStateOf<List<AppViewModel.BatchItemEstimate>?>(null) }
     // Vrai quand l'analyse IA a échoué (quota atteint, réseau…) — à distinguer d'un lot vide.
     var batchError by remember { mutableStateOf(false) }
     var pendingOriginalUri by remember { mutableStateOf<Uri?>(null) }
@@ -336,8 +339,21 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             val res = runCatching { GeminiVision.identifyBatch(context, uri) }.getOrNull()
                 ?: runCatching { GroqVision.identifyBatch(context, uri) }.getOrNull()
             if (!isActive) return@launch
-            scanning = false; batchScanning = false
-            if (res == null) batchError = true else batchResults = res
+            if (res == null) {
+                scanning = false; batchScanning = false
+                batchError = true
+            } else if (res.isEmpty()) {
+                scanning = false; batchScanning = false
+                batchResults = emptyList()
+            } else {
+                // Détection OK : on enchaîne sur l'estimation de prix (aperçu, avant tout ajout)
+                // sous le même indicateur de chargement — une seule attente continue pour
+                // l'utilisateur plutôt qu'un second spinner distinct.
+                val estimated = vm.estimateBatchPrices(res)
+                if (!isActive) return@launch
+                scanning = false; batchScanning = false
+                batchResults = estimated
+            }
         }
     }
     val batchPhotoLauncher = rememberLauncherForActivityResult(
@@ -390,11 +406,17 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         gameConsoleHint: String?,
         suggestedName: String?,
         coverUri: String?,
-        originalCoverUri: String?
+        originalCoverUri: String?,
+        // Type déjà déterminé par ScanTools (ScanResult.itemType), prioritaire sur la déduction par
+        // présence de champ ci-dessous : c'est la seule façon de distinguer ItemType.AUTRE (objet
+        // de collection identifié par Gemini hors jeu vidéo, aucun des 3 champs presetName/
+        // accessoryName/gameMatch n'est alors renseigné) d'un jeu non reconnu, qui tombait par
+        // erreur dans le même cas avant l'ajout de ce paramètre.
+        itemType: ItemType? = null
     ) {
         val recognizedPreset = presetName?.let { n -> consolePresets.firstOrNull { it.name == n } }
         val recognizedAccessory = accessoryName?.let { n -> accessoryPresets.firstOrNull { it.name == n } }
-        val type = when {
+        val type = itemType ?: when {
             presetName != null -> ItemType.CONSOLE
             accessoryName != null -> ItemType.ACCESSOIRE
             else -> ItemType.JEU
@@ -438,8 +460,17 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 quickEstimateMode = false
             } else {
                 currentScanJob = scope.launch {
-                    scanning = true; deepScanning = false
-                    val r = runCatching { ScanTools.scanImage(context, croppedUri) { deepScanning = true } }.getOrNull()
+                    scanning = true; deepScanning = quickEstimateMode
+                    // Estimation rapide : identification DIRECTE par IA (Gemini/Groq, cf.
+                    // ScanTools.quickIdentify), sans passer par l'OCR/code-barres (NIVEAU 1 de
+                    // scanImage) — reconnaît aussi un objet hors jeu vidéo (ItemType.AUTRE), que
+                    // l'OCR ne peut de toute façon jamais identifier. Ajout normal : pipeline
+                    // complet inchangé (OCR d'abord, IA seulement si l'OCR échoue/est ambigu).
+                    val r = if (quickEstimateMode) {
+                        runCatching { ScanTools.quickIdentify(context, croppedUri) }.getOrNull()
+                    } else {
+                        runCatching { ScanTools.scanImage(context, croppedUri) { deepScanning = true } }.getOrNull()
+                    }
                     if (!isActive) return@launch
                     val saved = withContext(Dispatchers.IO) { MediaUtils.copyToInternal(context, croppedUri) }
                     // Garde une copie stable de la photo AVANT ce recadrage : le bouton
@@ -460,7 +491,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             gameConsoleHint = r?.gameConsoleHint,
                             suggestedName = r?.suggestedName,
                             coverUri = saved,
-                            originalCoverUri = originalSaved
+                            originalCoverUri = originalSaved,
+                            itemType = r?.itemType
                         )
                     } else {
                         editor = CollectionEditor(
@@ -472,7 +504,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             gameConsoleHint = r?.gameConsoleHint,
                             coverUri = saved,
                             originalCoverUri = originalSaved,
-                            isWishlist = chooserForWishlist
+                            isWishlist = chooserForWishlist,
+                            itemType = r?.itemType
                         )
                     }
                 }
@@ -586,11 +619,11 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         deepScanning -> R.string.scan_deep_analysis
                         else -> R.string.scanning_in_progress
                     }),
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onBackground
                 )
                 Spacer(Modifier.height(20.dp))
                 TextButton(onClick = { cancelCurrentScan() }) {
-                    Text(stringResource(R.string.cancel), color = Color.White)
+                    Text(stringResource(R.string.cancel), color = MaterialTheme.colorScheme.onBackground)
                 }
             }
         }
@@ -602,10 +635,10 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 CircularProgressIndicator(color = NeonCyan)
                 Spacer(Modifier.height(12.dp))
-                Text(stringResource(R.string.quick_estimate_loading), color = Color.White)
+                Text(stringResource(R.string.quick_estimate_loading), color = MaterialTheme.colorScheme.onBackground)
                 Spacer(Modifier.height(20.dp))
                 TextButton(onClick = { currentScanJob?.cancel(); quickEstimateLoadingPrice = false }) {
-                    Text(stringResource(R.string.cancel), color = Color.White)
+                    Text(stringResource(R.string.cancel), color = MaterialTheme.colorScheme.onBackground)
                 }
             }
         }
@@ -615,7 +648,16 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         QuickEstimateResultScreen(
             data = data,
             onAddToCollection = {
-                if (!blockedByCollectionLimit()) {
+                // blockedByCollectionLimit() déclenche le paywall/dialogue de plafond en effet de
+                // bord (showPaywall/showTestLimitDialog) quand le quota est atteint, mais ce code
+                // est plus bas dans cette fonction : tant que quickEstimateResult reste non nul, le
+                // "return" de ce bloc (juste au-dessus) l'intercepte AVANT d'atteindre ces dialogues
+                // à la recomposition suivante — le paywall ne s'affichait donc jamais, et le bouton
+                // semblait ne rien faire ("l'objet n'est pas pris en compte"). Il faut donc quitter
+                // cet écran (quickEstimateResult = null) que l'ajout soit bloqué ou non.
+                val blocked = blockedByCollectionLimit()
+                quickEstimateResult = null
+                if (!blocked) {
                     editor = CollectionEditor(
                         name = data.name,
                         barcode = data.barcode,
@@ -627,9 +669,9 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         originalCoverUri = data.originalCoverUri,
                         initialPriceCents = data.priceCents,
                         initialPriceIsAiEstimate = data.priceIsAiEstimate,
-                        isWishlist = false
+                        isWishlist = false,
+                        itemType = data.type
                     )
-                    quickEstimateResult = null
                 }
             },
             onAddToWishlist = {
@@ -644,7 +686,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                     originalCoverUri = data.originalCoverUri,
                     initialPriceCents = data.priceCents,
                     initialPriceIsAiEstimate = data.priceIsAiEstimate,
-                    isWishlist = true
+                    isWishlist = true,
+                    itemType = data.type
                 )
                 quickEstimateResult = null
             },
@@ -685,12 +728,20 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             initialAccessoryName = ed.accessoryName,
             initialGameMatch = ed.gameMatch,
             initialGameConsoleHint = ed.gameConsoleHint,
+            initialItemType = ed.itemType,
             initialCoverUri = ed.coverUri,
             initialOriginalCoverUri = ed.originalCoverUri,
             initialPriceCents = ed.initialPriceCents,
             initialPriceIsAiEstimate = ed.initialPriceIsAiEstimate,
             isWishlist = ed.isWishlist,
-            onSave = { item, photos -> vm.saveCollectionItem(item, photos); editor = null },
+            onSave = { item, photos ->
+                vm.saveCollectionItem(item, photos)
+                // Bascule sur l'onglet où l'objet vient d'atterrir, pour que le scroll automatique
+                // (voir AppViewModel.pendingScrollToItemId / CollectionScreen) soit visible même si
+                // le formulaire a été ouvert depuis un autre onglet (ex. Encyclopédie).
+                tab = if (item.isWishlist) Tab.WISHLIST else Tab.COLLECTION
+                editor = null
+            },
             onCancel = { editor = null }
         )
         return
@@ -753,6 +804,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             },
             onEdit = customConsole?.let { { editingCustomPreset = it; encyclo = null; encycloCustom = null } },
             onDelete = customConsole?.let { { vm.deleteCustomPreset(it); encyclo = null; encycloCustom = null } },
+            customId = customConsole?.id,
             onBack = { encyclo = null; encycloCustom = null }
         )
         return
@@ -824,7 +876,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 gameConsoleHint = r?.gameConsoleHint,
                 suggestedName = r?.suggestedName,
                 coverUri = null,
-                originalCoverUri = null
+                originalCoverUri = null,
+                itemType = r?.itemType
             )
         } else {
             editor = CollectionEditor(
@@ -834,7 +887,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 accessoryName = r?.accessoryName,
                 gameMatch = r?.gameMatch,
                 gameConsoleHint = r?.gameConsoleHint,
-                isWishlist = chooserForWishlist
+                isWishlist = chooserForWishlist,
+                itemType = r?.itemType
             )
         }
     }
@@ -1050,6 +1104,19 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                         onClick = { showQuickEstimateChooser = false; quickEstimateMode = true; launchCamera() },
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.take_photo_option)) }
+
+                    // Photo de PLUSIEURS objets à estimer d'un coup : réutilise entièrement le scan
+                    // de lot (mêmes GeminiVision.identifyBatch / BatchScanDialog / prix par objet
+                    // que depuis "Ajouter un objet"), pas le pipeline mono-objet quickIdentify de
+                    // cet écran — un objet unique reste couvert par les 3 boutons ci-dessus.
+                    TextButton(
+                        onClick = {
+                            showQuickEstimateChooser = false
+                            if (isPremium) showBatchChooser = true
+                            else watchRewardedAd(context, onRewarded = { showBatchChooser = true })
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text(stringResource(R.string.batch_scan_option)) }
                 }
             }
         )
@@ -1090,7 +1157,32 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         } else {
             BatchScanDialog(
                 items = res,
-                onConfirm = { selected -> vm.saveBatch(selected, chooserForWishlist); batchResults = null },
+                onAddToCollection = { selected ->
+                    vm.saveBatch(selected.map { it.item }, false)
+                    // Même bascule d'onglet que l'ajout unique, pour que le scroll automatique sur le
+                    // premier objet scanné (AppViewModel.pendingScrollToItemId) soit visible.
+                    tab = Tab.COLLECTION
+                    batchResults = null
+                },
+                onAddToWishlist = { selected ->
+                    vm.saveBatch(selected.map { it.item }, true)
+                    tab = Tab.WISHLIST
+                    batchResults = null
+                },
+                onShare = { selected ->
+                    val lines = selected.map { estimate ->
+                        val price = if (estimate.priceCents != null) formatPrice(estimate.priceCents) else "—"
+                        "${estimate.item.title}${estimate.item.console?.let { " ($it)" } ?: ""} : $price"
+                    }
+                    val totalCents = selected.sumOf { it.priceCents ?: 0 }
+                    val total = context.getString(R.string.batch_total_estimate, formatPrice(totalCents))
+                    val text = (lines + listOf("", total)).joinToString("\n")
+                    val intent = Intent(Intent.ACTION_SEND).apply {
+                        type = "text/plain"
+                        putExtra(Intent.EXTRA_TEXT, text)
+                    }
+                    runCatching { context.startActivity(Intent.createChooser(intent, null)) }
+                },
                 onDismiss = { batchResults = null }
             )
         }
@@ -1190,14 +1282,14 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                 TextButton(onClick = { showThemeDialog = false }) { Text(stringResource(R.string.close)) }
             },
             text = {
-                Column {
+                Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
                     Text(
-                        "Choisis ton ambiance années 80. Les thèmes se débloquent dans la Boutique des jeux (100 points chacun).",
+                        "Choisis ton ambiance. Néon et les thèmes clairs (drapeaux) sont gratuits, les autres thèmes se débloquent dans la Boutique des jeux (100 points chacun).",
                         style = MaterialTheme.typography.bodySmall
                     )
                     Spacer(Modifier.height(8.dp))
                     AppTheme.entries.forEach { theme ->
-                        val available = theme == AppTheme.DEFAULT || isPremium ||
+                        val available = theme == AppTheme.DEFAULT || theme.isLight || isPremium ||
                             unlockedItems.contains(theme.id) ||
                             (!BuildConfig.IS_TEST && AppPrefs.devUnlockAll.value)
                         val selected = currentThemeId == theme.id
@@ -1423,7 +1515,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             Icon(
                                 Icons.Filled.Campaign,
                                 contentDescription = stringResource(R.string.news_content_description),
-                                tint = Color.White
+                                tint = MaterialTheme.colorScheme.onSurface
                             )
                         }
                         // Accès permanent à la Boutique depuis n'importe quel onglet, en plus du
@@ -1432,7 +1524,7 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             Icon(
                                 Icons.Filled.Storefront,
                                 contentDescription = stringResource(R.string.shop_content_description),
-                                tint = Color.White
+                                tint = MaterialTheme.colorScheme.onSurface
                             )
                         }
                         // Estimation rapide ("$") : identifie un objet (photo/scan) et affiche tout
@@ -1460,26 +1552,26 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                             Icon(
                                 Icons.Filled.AttachMoney,
                                 contentDescription = stringResource(R.string.quick_estimate_content_description),
-                                tint = Color.White
+                                tint = MaterialTheme.colorScheme.onSurface
                             )
                         }
                         IconButton(onClick = { showOptionsMenu = true }) {
                             Icon(
                                 Icons.Filled.Settings,
                                 contentDescription = stringResource(R.string.settings_content_description),
-                                tint = Color.White
+                                tint = MaterialTheme.colorScheme.onSurface
                             )
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
-                        titleContentColor = Color.White
+                        titleContentColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             },
             bottomBar = {
                 val navTheme = AppTheme.byId(AppPrefs.selectedTheme.value)
-                NavigationBar(containerColor = SurfaceBg) {
+                NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
                     NavigationBarItem(
                         selected = tab == Tab.COLLECTION,
                         onClick = { tab = Tab.COLLECTION },
@@ -1530,8 +1622,8 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
                                 }
                             }
                         },
-                        containerColor = NeonPurple,
-                        contentColor = Color.White
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = AppTheme.byId(AppPrefs.selectedTheme.value).onAccent
                     ) {
                         Icon(Icons.Filled.Add, contentDescription = stringResource(R.string.add_content_description))
                     }
@@ -1674,8 +1766,8 @@ private fun navColors() = NavigationBarItemDefaults.colors(
     selectedIconColor = MaterialTheme.colorScheme.secondary,
     selectedTextColor = MaterialTheme.colorScheme.secondary,
     indicatorColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.22f),
-    unselectedIconColor = Color(0xFF9A9AB5),
-    unselectedTextColor = Color(0xFF9A9AB5)
+    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
 )
 
 /**
@@ -1761,7 +1853,7 @@ private fun OnboardingLanguageScreen(currentTag: String, onChosen: (String) -> U
                 stringResource(R.string.onboarding_choose_language),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = Color.White,
+                color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center
             )
             Spacer(Modifier.height(24.dp))

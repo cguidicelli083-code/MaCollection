@@ -75,6 +75,7 @@
 -keep class com.example.macollection.data.EbaySearch { *; }
 -keep class com.example.macollection.data.EbayItem { *; }
 -keep class com.example.macollection.data.EbayPrice { *; }
+-keep class com.example.macollection.data.EbayImage { *; }
 
 # UPCitemdb (identification par code-barres, source principale).
 -keep class com.example.macollection.data.UpcItem { *; }

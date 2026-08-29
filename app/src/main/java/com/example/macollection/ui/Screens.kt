@@ -181,6 +181,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.withContext
+import com.example.macollection.ui.theme.AppTheme
 import com.example.macollection.ui.theme.CardGradient
 import com.example.macollection.ui.theme.NeonBorder
 import com.example.macollection.ui.theme.NeonCyan
@@ -255,6 +256,26 @@ fun CollectionScreen(
             Triple(console, groupItems, startIndex)
         }
     }
+    // Recale la liste sur l'objet qui vient d'être ajouté (formulaire unique ou premier objet d'un
+    // lot scanné, voir [AppViewModel.pendingScrollToItemId]) dès qu'il apparaît dans cette liste
+    // affichée (triée/filtrée) — index à plat identique au calcul de [consoleGroupIndices] ci-dessus
+    // quand les fiches sont groupées par console (1 slot d'en-tête + N fiches par groupe).
+    val pendingScrollId by vm.pendingScrollToItemId.collectAsState()
+    LaunchedEffect(pendingScrollId, groupByConsole, items, consoleGroupIndices) {
+        val targetId = pendingScrollId ?: return@LaunchedEffect
+        val flatIndex = if (groupByConsole) {
+            consoleGroupIndices.firstNotNullOfOrNull { (_, groupItems, startIndex) ->
+                val i = groupItems.indexOfFirst { it.id == targetId }
+                if (i >= 0) startIndex + 1 + i else null
+            }
+        } else {
+            items.indexOfFirst { it.id == targetId }.takeIf { it >= 0 }
+        }
+        if (flatIndex != null) {
+            listState.animateScrollToItem(flatIndex)
+            vm.consumePendingScrollTarget()
+        }
+    }
     // Sélection invalidée si la liste affichée change (filtre/tri/recherche/suppression ailleurs) :
     // évite de garder cochée une fiche qui n'est plus visible et qu'on ne pourrait plus décocher.
     LaunchedEffect(items) { selectedIds = selectedIds.intersect(items.map { it.id }.toSet()) }
@@ -277,7 +298,7 @@ fun CollectionScreen(
                 Icon(
                     Icons.Filled.Checklist,
                     contentDescription = stringResource(R.string.selection_mode_toggle),
-                    tint = if (selectionMode) NeonCyan else Color.White
+                    tint = if (selectionMode) NeonCyan else MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -465,7 +486,7 @@ private fun BulkDeleteConfirmDialog(
                                 item.name.ifBlank { stringResource(R.string.unnamed_item) },
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
-                                color = Color.White
+                                color = MaterialTheme.colorScheme.onSurface
                             )
                         }
                     }
@@ -512,7 +533,7 @@ private fun ConsoleJumpDialog(
                             Text(
                                 console ?: stringResource(R.string.console_group_unknown),
                                 fontWeight = FontWeight.Bold,
-                                color = Color.White
+                                color = MaterialTheme.colorScheme.onSurface
                             )
                             Text(
                                 stringResource(
@@ -548,7 +569,7 @@ private fun SelectionActionBar(
     Column(Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 4.dp)) {
         Text(
             stringResource(R.string.selection_count_value, count, formatPrice(totalCents)),
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 6.dp)
         )
@@ -621,7 +642,7 @@ private fun CollectionCard(
                     item.name.ifBlank { stringResource(R.string.unnamed_item) },
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     listOfNotNull(
@@ -645,6 +666,17 @@ private fun CollectionCard(
                         )
                     }
                 }
+                // Catégorie personnalisée d'un objet "Autre" (cf. AppPrefs.customCategories) :
+                // affichée comme sous-titre, exactement comme le genre l'est pour un jeu.
+                if (item.type == ItemType.AUTRE) {
+                    item.genre?.takeIf { it.isNotBlank() }?.let {
+                        Text(
+                            it,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
                 Spacer(Modifier.height(8.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     ConditionBadge(item.condition)
@@ -659,6 +691,13 @@ private fun CollectionCard(
                     fontWeight = FontWeight.Bold,
                     color = NeonCyan
                 )
+                item.purchasePriceCents?.let {
+                    Text(
+                        stringResource(R.string.purchase_price_label, formatPrice(it)),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
                 item.description?.takeIf { it.isNotBlank() }?.let {
                     Spacer(Modifier.height(6.dp))
                     Text(
@@ -697,7 +736,7 @@ private fun SelectionCheckbox(checked: Boolean, onCheckedChange: () -> Unit, mod
             .clickable(onClick = onCheckedChange),
         contentAlignment = Alignment.Center
     ) {
-        if (checked) Icon(Icons.Filled.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
+        if (checked) Icon(Icons.Filled.Check, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface, modifier = Modifier.size(16.dp))
     }
 }
 
@@ -748,7 +787,7 @@ private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: 
                     consoleName,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     stringResource(R.string.console_group_summary, itemCount, formatPrice(totalCents)),
@@ -756,7 +795,7 @@ private fun ConsoleGroupHeader(consoleName: String, itemCount: Int, totalCents: 
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
-            Icon(Icons.Filled.UnfoldMore, contentDescription = stringResource(R.string.console_picker_title), tint = Color.White)
+            Icon(Icons.Filled.UnfoldMore, contentDescription = stringResource(R.string.console_picker_title), tint = MaterialTheme.colorScheme.onSurface)
         }
     }
 }
@@ -814,7 +853,7 @@ fun TotalScreen(
                 Text(
                     stringResource(R.string.total_items_count, items.size),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -854,7 +893,7 @@ private fun TotalCountChip(text: String, modifier: Modifier = Modifier, onClick:
     Box(
         modifier
             .clip(RoundedCornerShape(16.dp))
-            .background(Color.White.copy(alpha = 0.06f))
+            .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.06f))
             .border(1.dp, NeonPurple.copy(alpha = 0.4f), RoundedCornerShape(16.dp))
             .let { if (onClick != null) it.clickable(onClick = onClick) else it }
             .padding(vertical = 10.dp, horizontal = 6.dp),
@@ -863,7 +902,7 @@ private fun TotalCountChip(text: String, modifier: Modifier = Modifier, onClick:
         Text(
             text,
             style = MaterialTheme.typography.bodySmall,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
             textAlign = TextAlign.Center
         )
     }
@@ -1094,12 +1133,12 @@ fun ItemDetailScreen(
                     title = { Text(item.name.ifBlank { stringResource(R.string.unnamed_item) }, fontWeight = FontWeight.Bold) },
                     navigationIcon = {
                         IconButton(onClick = onBack) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back), tint = Color.White)
+                            Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back), tint = MaterialTheme.colorScheme.onSurface)
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
-                        titleContentColor = Color.White
+                        titleContentColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             }
@@ -1172,7 +1211,7 @@ fun ItemDetailScreen(
                     Spacer(Modifier.height(6.dp))
                     Text(
                         stringResource(R.string.associated_console_label, item.platform),
-                        color = Color.White,
+                        color = MaterialTheme.colorScheme.onSurface,
                         textAlign = TextAlign.Center
                     )
                 }
@@ -1202,6 +1241,15 @@ fun ItemDetailScreen(
                             textAlign = TextAlign.Center
                         )
                     }
+                }
+                item.purchasePriceCents?.let {
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        stringResource(R.string.purchase_price_label, formatPrice(it)),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center
+                    )
                 }
                 Spacer(Modifier.height(8.dp))
                 OutlinedButton(
@@ -1285,14 +1333,14 @@ fun ItemDetailScreen(
                     if (info.isNotEmpty()) {
                         Spacer(Modifier.height(12.dp))
                         info.forEach {
-                            Text(it, color = Color.White, textAlign = TextAlign.Center)
+                            Text(it, color = MaterialTheme.colorScheme.onSurface, textAlign = TextAlign.Center)
                         }
                     }
                     Spacer(Modifier.height(14.dp))
                     Text(
                         stringResource(R.string.game_trailer_title),
                         style = MaterialTheme.typography.labelLarge,
-                        color = Color.White
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(Modifier.height(8.dp))
                     OutlinedButton(
@@ -1334,6 +1382,16 @@ fun ItemDetailScreen(
                         }
                     }
                 }
+                if (item.type == ItemType.AUTRE) {
+                    item.genre?.takeIf { it.isNotBlank() }?.let {
+                        Spacer(Modifier.height(12.dp))
+                        Text(
+                            stringResource(R.string.category_label, it),
+                            color = MaterialTheme.colorScheme.onSurface,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
 
                 shownDescription?.takeIf { it.isNotBlank() }?.let {
                     Spacer(Modifier.height(16.dp))
@@ -1355,7 +1413,7 @@ fun ItemDetailScreen(
                         stringResource(R.string.gallery_title, galleryPhotos.size),
                         modifier = Modifier.fillMaxWidth(),
                         style = MaterialTheme.typography.labelLarge,
-                        color = Color.White
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(Modifier.height(8.dp))
                     LazyRow(
@@ -1446,7 +1504,7 @@ fun ItemDetailScreen(
                     onClick = { closeFullscreen() },
                     modifier = Modifier.align(Alignment.TopEnd).padding(8.dp)
                 ) {
-                    Icon(Icons.Filled.Close, stringResource(R.string.close), tint = Color.White)
+                    Icon(Icons.Filled.Close, stringResource(R.string.close), tint = Color(0xFFFFFFFF))
                 }
             }
         }
@@ -1508,7 +1566,7 @@ private fun HeroVisual(item: CollectionItem) {
                 Spacer(Modifier.height(8.dp))
                 Text(
                     item.name.ifBlank { item.type.label },
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
                 )
@@ -1561,7 +1619,7 @@ private fun PriceHistoryChart(history: List<PriceHistory>) {
         Text(
             stringResource(R.string.price_evolution_title, prices.size),
             fontWeight = FontWeight.Bold,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
             style = MaterialTheme.typography.titleSmall
         )
         Spacer(Modifier.height(10.dp))
@@ -1627,7 +1685,7 @@ private fun GalleryThumb(uri: String, onRemove: () -> Unit) {
             Icon(
                 Icons.Filled.Close,
                 contentDescription = stringResource(R.string.remove_photo),
-                tint = Color.White,
+                tint = Color(0xFFFFFFFF),
                 modifier = Modifier.size(14.dp)
             )
         }
@@ -1672,6 +1730,10 @@ fun AddCollectionForm(
     initialAccessoryName: String? = null,
     initialGameMatch: GameInfo? = null,
     initialGameConsoleHint: String? = null,
+    /** Type déjà déterminé par l'appelant (ex. estimation rapide identifiée par Gemini comme
+     * "autre", cf. MainActivity) : prioritaire sur la déduction par présence de champ ci-dessous,
+     * qui ne sait pas distinguer un objet "Autre" d'un jeu sans correspondance catalogue. */
+    initialItemType: ItemType? = null,
     initialCoverUri: String? = null,
     /** Photo telle que choisie/prise AVANT recadrage (galerie/caméra) : c'est elle qu'il faut
      * recadrer à nouveau (bouton « Recadrer »), pas le résultat déjà rogné une première fois. */
@@ -1697,7 +1759,7 @@ fun AddCollectionForm(
     }
     var type by remember {
         mutableStateOf(
-            existing?.type ?: when {
+            existing?.type ?: initialItemType ?: when {
                 recognized != null -> ItemType.CONSOLE
                 initialAccessoryName != null -> ItemType.ACCESSOIRE
                 initialGameMatch != null -> ItemType.JEU
@@ -1727,6 +1789,7 @@ fun AddCollectionForm(
     // Tag "(IA)" pré-rempli depuis l'estimation rapide : ne doit survivre que si le prix affiché
     // reste exactement celui de l'estimation (remis à false dès que l'utilisateur retouche le champ).
     var priceIsAiEstimate by remember { mutableStateOf(existing?.priceIsAiEstimate ?: initialPriceIsAiEstimate) }
+    var purchasePrice by remember { mutableStateOf(existing?.purchasePriceCents?.let { centsToText(it) } ?: "") }
     var barcode by remember { mutableStateOf(existing?.barcode ?: initialBarcode ?: "") }
     var sourceUrl by remember { mutableStateOf(existing?.sourceUrl ?: "") }
     var importing by remember { mutableStateOf(false) }
@@ -1860,6 +1923,9 @@ fun AddCollectionForm(
                     rawgId = detailed.sourceId
                 }
             }
+            // Pas de catalogue pour un objet "Autre" (hors jeu vidéo) : rien à préremplir
+            // automatiquement, l'utilisateur saisit lui-même marque/année/description.
+            ItemType.AUTRE -> {}
         }
     }
 
@@ -1938,6 +2004,14 @@ fun AddCollectionForm(
             r?.accessoryName != null -> {
                 type = ItemType.ACCESSOIRE
                 name = r.accessoryName
+            }
+            // Objet de collection hors jeu vidéo (ItemType.AUTRE) : ni preset, ni accessoire, ni
+            // jeu, mais un type sûr quand même connu (cf. ScanTools.ScanResult.itemType) —
+            // distinct du cas "rien de fiable reconnu" (r?.itemType alors null), qui ne doit PAS
+            // changer le type déjà sélectionné dans le formulaire.
+            r?.itemType == ItemType.AUTRE -> {
+                type = ItemType.AUTRE
+                name = r.suggestedName ?: name
             }
             else -> {
                 name = r?.suggestedName ?: name
@@ -2291,7 +2365,7 @@ fun AddCollectionForm(
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 4.dp)) {
                 CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp, color = NeonCyan)
                 Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.photo_saving), color = Color.White)
+                Text(stringResource(R.string.photo_saving), color = MaterialTheme.colorScheme.onSurface)
             }
         }
         if (coverUrl != null) {
@@ -2332,7 +2406,7 @@ fun AddCollectionForm(
         Text(
             stringResource(R.string.gallery_section_title),
             style = MaterialTheme.typography.labelLarge,
-            color = Color.White
+            color = MaterialTheme.colorScheme.onSurface
         )
         Spacer(Modifier.height(8.dp))
         LazyRow(
@@ -2444,7 +2518,20 @@ fun AddCollectionForm(
                 ) { edition = it }
             }
         }
+        if (type == ItemType.AUTRE) {
+            // Catégorie libre ("Figurines", "Cartes Pokémon"...) pour un objet hors jeu vidéo :
+            // réutilise le champ [CollectionItem.genre] existant, avec autocomplétion sur les
+            // catégories déjà saisies par l'utilisateur (AppPrefs.customCategories, même motif que
+            // customBrands pour la marque) — pas de nouveau type/catégorie de premier niveau.
+            AutocompleteField(
+                value = genre,
+                label = stringResource(R.string.field_category),
+                suggestions = remember(AppPrefs.customCategories.value) { AppPrefs.customCategories.value.sorted() },
+                onValueChange = { genre = it }
+            )
+        }
         Field(price, stringResource(R.string.field_price, CurrencyOptions.symbolFor(AppPrefs.currency.value)), KeyboardType.Decimal) { price = it; priceIsAiEstimate = false }
+        Field(purchasePrice, stringResource(R.string.field_purchase_price, CurrencyOptions.symbolFor(AppPrefs.currency.value)), KeyboardType.Decimal) { purchasePrice = it }
         Field(barcode, stringResource(R.string.field_barcode)) { barcode = it }
         OutlinedTextField(
             value = description,
@@ -2460,6 +2547,7 @@ fun AddCollectionForm(
             onClick = {
                 AppPrefs.setLastType(context, type)
                 AppPrefs.addCustomBrand(context, brand)
+                if (type == ItemType.AUTRE) AppPrefs.addCustomCategory(context, genre)
                 val typedPriceCents = parsePriceToCents(price)
                 isSaving = true
                 scope.launch {
@@ -2499,6 +2587,7 @@ fun AddCollectionForm(
                             // rapide pré-remplie — perdu dès que l'utilisateur retouche le champ prix
                             // (voir le onValueChange du champ ci-dessus) ou le vide.
                             priceIsAiEstimate = priceIsAiEstimate && typedPriceCents != null,
+                            purchasePriceCents = parsePriceToCents(purchasePrice),
                             barcode = barcode.ifBlank { null },
                             description = description.ifBlank { null },
                             imageUri = localCover,
@@ -2519,7 +2608,7 @@ fun AddCollectionForm(
                 CircularProgressIndicator(
                     modifier = Modifier.size(20.dp),
                     strokeWidth = 2.dp,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
             } else {
                 Text(
@@ -2551,7 +2640,7 @@ fun AddCollectionForm(
                     onClick = { fullscreenCoverUri = null },
                     modifier = Modifier.align(Alignment.TopEnd).padding(8.dp)
                 ) {
-                    Icon(Icons.Filled.Close, stringResource(R.string.close), tint = Color.White)
+                    Icon(Icons.Filled.Close, stringResource(R.string.close), tint = Color(0xFFFFFFFF))
                 }
             }
         }
@@ -2605,7 +2694,7 @@ fun OnboardingScreen(onFinish: () -> Unit) {
                         pages[page].title,
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
-                        color = Color.White,
+                        color = MaterialTheme.colorScheme.onSurface,
                         textAlign = TextAlign.Center
                     )
                     Spacer(Modifier.height(16.dp))
@@ -2623,7 +2712,7 @@ fun OnboardingScreen(onFinish: () -> Unit) {
                         Modifier
                             .size(if (i == pagerState.currentPage) 10.dp else 7.dp)
                             .clip(RoundedCornerShape(50))
-                            .background(if (i == pagerState.currentPage) NeonCyan else Color.White.copy(alpha = 0.25f))
+                            .background(if (i == pagerState.currentPage) NeonCyan else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.25f))
                     )
                 }
             }
@@ -2721,7 +2810,7 @@ fun OnboardingScreenLight(onFinish: () -> Unit) {
                         stringResource(step.titleRes),
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
-                        color = Color.White,
+                        color = MaterialTheme.colorScheme.onSurface,
                         textAlign = TextAlign.Center
                     )
                     Spacer(Modifier.height(12.dp))
@@ -2740,7 +2829,7 @@ fun OnboardingScreenLight(onFinish: () -> Unit) {
                         Modifier
                             .size(if (i == pagerState.currentPage) 10.dp else 7.dp)
                             .clip(RoundedCornerShape(50))
-                            .background(if (i == pagerState.currentPage) NeonCyan else Color.White.copy(alpha = 0.25f))
+                            .background(if (i == pagerState.currentPage) NeonCyan else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.25f))
                     )
                 }
             }
@@ -3286,7 +3375,11 @@ fun GamerScreenBackground(content: @Composable () -> Unit) {
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
             )
-            Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = 0.55f)))
+            // Voile assombrissant la photo de fond pour garder le texte lisible par-dessus : en
+            // thème clair ce texte devient sombre (colorScheme.onSurface), donc un voile CLAIR
+            // (pas noir) ici.
+            val light = AppTheme.byId(AppPrefs.selectedTheme.value).isLight
+            Box(Modifier.fillMaxSize().background((if (light) Color(0xFFFFFFFF) else Color.Black).copy(alpha = 0.55f)))
         } else {
             Box(Modifier.fillMaxSize().background(themedGradient()))
         }
@@ -3308,12 +3401,12 @@ private fun FormScaffold(
                     title = { Text(title, fontWeight = FontWeight.Bold) },
                     navigationIcon = {
                         IconButton(onClick = onCancel) {
-                            Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.cancel), tint = Color.White)
+                            Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.cancel), tint = MaterialTheme.colorScheme.onSurface)
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
-                        titleContentColor = Color.White
+                        titleContentColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             }
@@ -3356,7 +3449,7 @@ private fun SwitchRow(label: String, checked: Boolean, onChange: (Boolean) -> Un
     Row(verticalAlignment = Alignment.CenterVertically) {
         Switch(checked = checked, onCheckedChange = onChange)
         Spacer(Modifier.width(10.dp))
-        Text(label, color = Color.White)
+        Text(label, color = MaterialTheme.colorScheme.onSurface)
     }
 }
 
@@ -3368,7 +3461,7 @@ private fun NeonChip(label: String, selected: Boolean, onClick: () -> Unit) {
         label = { Text(label) },
         colors = FilterChipDefaults.filterChipColors(
             selectedContainerColor = NeonPurple,
-            selectedLabelColor = Color.White
+            selectedLabelColor = MaterialTheme.colorScheme.onSurface
         )
     )
 }
@@ -3393,7 +3486,7 @@ private fun TinyTag(label: String, filled: Boolean = true) {
     Box(
         Modifier
             .clip(shape)
-            .background(if (filled) NeonCyan.copy(alpha = 0.22f) else Color.White.copy(alpha = 0.06f))
+            .background(if (filled) NeonCyan.copy(alpha = 0.22f) else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.06f))
             .let { if (filled) it.border(1.dp, NeonCyan.copy(alpha = 0.5f), shape) else it }
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
@@ -3464,7 +3557,7 @@ private fun TypeFilterDropdown(current: ItemType?, onSelect: (ItemType?) -> Unit
     ThemedChoiceDropdown(
         leading = stringResource(R.string.filter_show),
         selectedLabel = typeFilterLabel(current),
-        options = listOf(null, ItemType.CONSOLE, ItemType.ACCESSOIRE, ItemType.JEU),
+        options = listOf(null, ItemType.CONSOLE, ItemType.ACCESSOIRE, ItemType.JEU, ItemType.AUTRE),
         optionLabel = { typeFilterLabel(it) },
         onSelect = onSelect
     )
@@ -3508,7 +3601,7 @@ internal fun <T> ThemedChoiceDropdown(
                 selectedLabel,
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.SemiBold,
-                color = Color.White,
+                color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.weight(1f)
             )
             ExposedDropdownMenuDefaults.TrailingIcon(expanded)
@@ -3564,7 +3657,7 @@ internal fun ThemedSearchField(
                 value = value,
                 onValueChange = onValueChange,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.bodyMedium.copy(color = Color.White),
+                textStyle = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurface),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -3749,7 +3842,7 @@ private fun ConsolePickerDialog(
                     stringResource(R.string.console_catalog_title),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(Modifier.height(10.dp))
                 OutlinedTextField(
@@ -3794,12 +3887,12 @@ private fun ConsolePickerDialog(
                             Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color.White.copy(alpha = 0.05f))
+                                .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
                                 .clickable { onClickEntry() }
                                 .padding(12.dp)
                         ) {
                             Column {
-                                Text(brandName, fontWeight = FontWeight.Bold, color = Color.White)
+                                Text(brandName, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                                 Text(
                                     subtitle,
                                     style = MaterialTheme.typography.bodySmall,
@@ -3891,7 +3984,7 @@ private fun AccessoryPickerDialog(
                     stringResource(R.string.accessory_catalog_title),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(Modifier.height(10.dp))
                 OutlinedTextField(
@@ -3936,12 +4029,12 @@ private fun AccessoryPickerDialog(
                             Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color.White.copy(alpha = 0.05f))
+                                .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
                                 .clickable { onClickEntry() }
                                 .padding(12.dp)
                         ) {
                             Column {
-                                Text(brandName, fontWeight = FontWeight.Bold, color = Color.White)
+                                Text(brandName, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                                 Text(
                                     subtitle,
                                     style = MaterialTheme.typography.bodySmall,
@@ -4026,7 +4119,7 @@ private fun OnlinePresetSearchDialog(
             modifier = Modifier.fillMaxWidth().heightIn(max = 580.dp)
         ) {
             Column(Modifier.padding(16.dp)) {
-                Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = Color.White)
+                Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(Modifier.height(10.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     OutlinedTextField(
@@ -4060,7 +4153,7 @@ private fun OnlinePresetSearchDialog(
                                 Modifier
                                     .fillMaxWidth()
                                     .clip(RoundedCornerShape(12.dp))
-                                    .background(Color.White.copy(alpha = 0.05f))
+                                    .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
                                     .clickable {
                                         // Traduit la description dans la langue de l'appli (via Groq)
                                         // avant de remplir la fiche ; inchangée si déjà bonne / si échec.
@@ -4085,7 +4178,7 @@ private fun OnlinePresetSearchDialog(
                                     Spacer(Modifier.width(10.dp))
                                 }
                                 Column {
-                                    Text(result.title, fontWeight = FontWeight.Bold, color = Color.White)
+                                    Text(result.title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                                     Text(
                                         result.description,
                                         style = MaterialTheme.typography.bodySmall,
@@ -4200,7 +4293,7 @@ private fun GameSearchDialog(
                     stringResource(R.string.search_game_title),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(Modifier.height(10.dp))
 
@@ -4262,7 +4355,7 @@ private fun GameSearchDialog(
                                     Modifier
                                         .fillMaxWidth()
                                         .clip(RoundedCornerShape(12.dp))
-                                        .background(Color.White.copy(alpha = 0.05f))
+                                        .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
                                         .clickable {
                                             scope.launch {
                                                 loading = true
@@ -4300,7 +4393,7 @@ private fun GameSearchDialog(
                                         Text(
                                             game.name,
                                             fontWeight = FontWeight.Bold,
-                                            color = Color.White
+                                            color = MaterialTheme.colorScheme.onSurface
                                         )
                                         val meta = listOfNotNull(
                                             game.releaseYear?.toString(),
@@ -4428,7 +4521,7 @@ private fun PlatformPickerDialog(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Checkbox(checked = checked[i], onCheckedChange = { checked[i] = it })
-                            Text(name, color = Color.White, modifier = Modifier.weight(1f))
+                            Text(name, color = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f))
                         }
                     }
                 }
@@ -4450,13 +4543,17 @@ private fun PlatformPickerDialog(
 
 @Composable
 fun BatchScanDialog(
-    items: List<GeminiVision.BatchItem>,
-    onConfirm: (List<GeminiVision.BatchItem>) -> Unit,
+    items: List<AppViewModel.BatchItemEstimate>,
+    onAddToCollection: (List<AppViewModel.BatchItemEstimate>) -> Unit,
+    onAddToWishlist: (List<AppViewModel.BatchItemEstimate>) -> Unit,
+    onShare: (List<AppViewModel.BatchItemEstimate>) -> Unit,
     onDismiss: () -> Unit
 ) {
     // Tout coché par défaut ; l'utilisateur décoche les erreurs avant de valider.
     val checked = remember(items) { mutableStateListOf<Boolean>().apply { repeat(items.size) { add(true) } } }
     val selectedCount = checked.count { it }
+    val totalCents = items.filterIndexed { i, _ -> checked[i] }.sumOf { it.priceCents ?: 0 }
+    val allChecked = checked.isNotEmpty() && checked.all { it }
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.batch_detected_title, items.size)) },
@@ -4467,19 +4564,38 @@ fun BatchScanDialog(
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
-                Spacer(Modifier.height(8.dp))
+                Text(
+                    stringResource(R.string.batch_total_estimate, formatPrice(totalCents)),
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    TextButton(onClick = { for (i in checked.indices) checked[i] = !allChecked }) {
+                        Text(stringResource(if (allChecked) R.string.batch_deselect_all else R.string.batch_select_all))
+                    }
+                    TextButton(onClick = { onShare(items.filterIndexed { i, _ -> checked[i] }) }, enabled = checked.any { it }) {
+                        Text(stringResource(R.string.batch_share))
+                    }
+                }
                 LazyColumn(Modifier.heightIn(max = 380.dp)) {
-                    itemsIndexed(items) { i, item ->
+                    itemsIndexed(items) { i, estimate ->
+                        val item = estimate.item
                         Row(
                             Modifier.fillMaxWidth().clickable { checked[i] = !checked[i] }.padding(vertical = 2.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Checkbox(checked = checked[i], onCheckedChange = { checked[i] = it })
                             Column(Modifier.weight(1f)) {
-                                Text("${batchTypeEmoji(item.type)} ${item.title}", fontWeight = FontWeight.Bold, color = Color.White)
+                                Text("${batchTypeEmoji(item.type)} ${item.title}", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                                 item.console?.let {
                                     Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 }
+                                Text(
+                                    if (estimate.priceCents != null) formatPrice(estimate.priceCents) else stringResource(R.string.batch_price_unknown),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
                             }
                         }
                     }
@@ -4487,10 +4603,16 @@ fun BatchScanDialog(
             }
         },
         confirmButton = {
-            TextButton(
-                onClick = { onConfirm(items.filterIndexed { i, _ -> checked[i] }) },
-                enabled = checked.any { it }
-            ) { Text(stringResource(R.string.batch_validate)) }
+            Row {
+                TextButton(
+                    onClick = { onAddToCollection(items.filterIndexed { i, _ -> checked[i] }) },
+                    enabled = checked.any { it }
+                ) { Text(stringResource(R.string.encyclo_add_to_collection_button)) }
+                TextButton(
+                    onClick = { onAddToWishlist(items.filterIndexed { i, _ -> checked[i] }) },
+                    enabled = checked.any { it }
+                ) { Text(stringResource(R.string.encyclo_add_to_wishlist_button)) }
+            }
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) } }
     )
@@ -4587,7 +4709,7 @@ private fun ImportPreviewDialog(
                         ) {
                             Checkbox(checked = checked[i], onCheckedChange = { checked[i] = it })
                             Column(Modifier.weight(1f)) {
-                                Text(item.name, fontWeight = FontWeight.Bold, color = Color.White)
+                                Text(item.name, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                                 item.platform?.let {
                                     Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 }
@@ -4654,6 +4776,7 @@ private fun typeEmoji(t: ItemType): String = when (t) {
     ItemType.CONSOLE -> "🕹️"
     ItemType.JEU -> "💿"
     ItemType.ACCESSOIRE -> "🎮"
+    ItemType.AUTRE -> "🏷️"
 }
 
 private fun conditionColor(c: Condition): Color = when (c) {

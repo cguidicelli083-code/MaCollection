@@ -11,7 +11,10 @@ import com.example.macollection.data.accessoryPresets
 import com.example.macollection.data.AppDatabase
 import com.example.macollection.data.AppPrefs
 import com.example.macollection.data.BackupManager
+import com.example.macollection.data.CachedGame
 import com.example.macollection.data.CollectionItem
+import com.example.macollection.data.GameCatalogSync
+import com.example.macollection.data.GameCatalogSyncState
 import com.example.macollection.data.Condition
 import com.example.macollection.data.ConsoleImages
 import com.example.macollection.data.ConsolePreset
@@ -32,6 +35,7 @@ import com.example.macollection.data.ItemPhoto
 import com.example.macollection.data.ItemType
 import com.example.macollection.data.MediaUtils
 import com.example.macollection.data.PresetPhotoOverride
+import com.example.macollection.data.PresetPriceCache
 import com.example.macollection.data.PriceHistory
 import com.example.macollection.data.RetroNewsEntry
 import com.example.macollection.data.RetroNewsRepository
@@ -90,6 +94,9 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     private val photoOverrideDao = db.presetPhotoOverrideDao()
     private val retroNewsDao = db.retroNewsDao()
     private val unlockedItemDao = db.unlockedItemDao()
+    private val presetPriceCacheDao = db.presetPriceCacheDao()
+    private val cachedGameDao = db.cachedGameDao()
+    private val gameCatalogSyncStateDao = db.gameCatalogSyncStateDao()
 
     private val billing = BillingManager.get(app)
 
@@ -286,6 +293,19 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
      */
     val batchSaving = MutableStateFlow<Int?>(null)
 
+    /**
+     * Id de l'objet sur lequel l'écran Collection/Souhaits doit se recaler après un ajout (formulaire
+     * unique ou lot scanné) : consommé une seule fois par [CollectionScreen] (scroll puis remise à
+     * null via [consumePendingScrollTarget]). Pour un lot, c'est le premier objet SCANNÉ (ordre
+     * d'origine de la liste transmise à [saveBatch]), pas nécessairement le premier de la liste
+     * triée/affichée à l'écran.
+     */
+    val pendingScrollToItemId = MutableStateFlow<Long?>(null)
+
+    fun consumePendingScrollTarget() {
+        pendingScrollToItemId.value = null
+    }
+
     fun saveBatch(items: List<GeminiVision.BatchItem>, isWishlist: Boolean) = viewModelScope.launch {
         batchSaving.value = items.size
         try {
@@ -305,6 +325,9 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             // le plafond TEST_ITEM_LIMIT reste vérifié un par un sans risque de dépassement par
             // des coroutines concurrentes qui liraient le même compte avant qu'aucune n'ait inséré.
             val inserted = prepared.mapNotNull { insertOrUpdateBareItem(it) }
+            // Premier objet SCANNÉ (ordre d'origine de [items]), pas forcément inserted[0] si le
+            // tout premier a été rejeté par le plafond TEST_ITEM_LIMIT.
+            pendingScrollToItemId.value = inserted.firstOrNull()?.first
 
             // Phase 3 (parallèle, bornée) : résolution des prix (eBay puis IA) — la partie la plus
             // lente d'un lot, désormais menée de front au lieu d'un jeu après l'autre.
@@ -317,6 +340,44 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         } finally {
             batchSaving.value = null
         }
+    }
+
+    /**
+     * Article détecté par [saveBatch] enrichi d'une estimation de prix (voir [estimateBatchPrices]),
+     * affichée dans [com.example.macollection.ui.BatchScanDialog] AVANT que l'utilisateur ne
+     * choisisse quels objets ajouter — [priceCents] reste null si aucune estimation n'a pu être
+     * obtenue (l'objet reste sélectionnable, simplement exclu du total tant qu'aucun prix n'existe).
+     */
+    data class BatchItemEstimate(
+        val item: GeminiVision.BatchItem,
+        val priceCents: Int?,
+        val isAiEstimate: Boolean
+    )
+
+    /**
+     * Estimation de prix (aperçu, avant tout ajout) de chaque article détecté par un scan de lot,
+     * en parallèle (borné par [BATCH_CONCURRENCY], même constante que les phases de [saveBatch]).
+     * Réutilise [quickEstimatePrice] telle quelle — pas de recherche catalogue complète ici
+     * (contrairement à [buildBatchCollectionItem]/[buildBatchGame]) : un simple aperçu de prix n'a
+     * pas besoin de résoudre la fiche IGDB/RAWG exacte, seulement titre + plateforme suffisent à
+     * l'IA. Pas de cache : un lot scanné est du texte libre sans clé stable réutilisable, comme
+     * pour la résolution de prix définitive de [saveBatch] (Phase 3), déjà non cachée elle aussi.
+     */
+    suspend fun estimateBatchPrices(items: List<GeminiVision.BatchItem>): List<BatchItemEstimate> = coroutineScope {
+        val semaphore = Semaphore(BATCH_CONCURRENCY)
+        items.map { batchItem ->
+            async {
+                val type = when (batchItem.type) {
+                    "console" -> ItemType.CONSOLE
+                    "accessoire" -> ItemType.ACCESSOIRE
+                    else -> ItemType.JEU
+                }
+                val estimate = semaphore.withPermit {
+                    quickEstimatePrice(type, "", batchItem.title.trim(), batchItem.console)
+                }
+                BatchItemEstimate(batchItem, estimate.priceCents, estimate.isAiEstimate)
+            }
+        }.awaitAll()
     }
 
     /**
@@ -458,6 +519,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
      */
     private suspend fun saveCollectionItemInternal(item: CollectionItem, newPhotoUris: List<String> = emptyList()) {
         val (id, stored) = insertOrUpdateBareItem(item) ?: return
+        pendingScrollToItemId.value = id
         resolvePriceAndFinish(id, stored, newPhotoUris)
     }
 
@@ -716,15 +778,79 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     /**
      * Estimation de cote autonome pour l'aperçu rapide ("$", cf. QuickEstimateScreen), AVANT tout
-     * ajout en collection/souhaits : réutilise exactement la même cascade eBay -> IA que
-     * [saveCollectionItemInternal]/[refreshAllPrices] ([resolvePrice]). Condition/boîte/notice
-     * inconnues à ce stade (l'objet n'a pas encore de fiche) : mêmes valeurs par défaut que
-     * [com.example.macollection.ui.AddCollectionForm] pour un nouvel objet ; l'utilisateur pourra les
-     * ajuster ensuite dans la fiche, ce qui redéclenchera une résolution à l'enregistrement.
+     * ajout en collection/souhaits : directement par IA ([aiEstimatePrice] — Gemini avec recherche
+     * Google intégrée, repli Tavily+Groq si quota Gemini épuisé), PAS via une recherche eBay par
+     * texte comme le fait [resolvePrice] pour l'ajout définitif ([saveCollectionItemInternal]/
+     * [refreshAllPrices]) : l'estimation rapide doit rester une estimation IA pure de bout en bout
+     * (identification ET prix), y compris pour un objet qui n'est ni jeu, ni console, ni accessoire
+     * de jeu vidéo ([ItemType.AUTRE], cf. [com.example.macollection.data.ScanTools.quickIdentify]),
+     * pour lequel une recherche eBay en catégorie jeu vidéo n'aurait de toute façon aucun sens.
+     * Condition/boîte/notice inconnues à ce stade (l'objet n'a pas encore de fiche) : mêmes valeurs
+     * par défaut que [com.example.macollection.ui.AddCollectionForm] pour un nouvel objet ;
+     * l'utilisateur pourra les ajuster ensuite dans la fiche, ce qui redéclenchera une résolution
+     * (cette fois via [resolvePrice]) à l'enregistrement.
      */
     suspend fun quickEstimatePrice(type: ItemType, brand: String, name: String, platform: String?): QuickPriceEstimate {
-        val r = resolvePrice(null, type, brand, name, Region.PAL, Condition.BON, hasBox = true, hasManual = true, platform)
-        return QuickPriceEstimate(r.priceCents, r.isAiEstimate, r.info)
+        val ai = aiEstimatePrice(type, brand, name, Condition.BON, hasBox = true, hasManual = true, platform)
+        val (priceCents, viaTavily) = ai ?: return QuickPriceEstimate(null, false, null)
+        val info = if (viaTavily) "Estimation par IA (recherche web) — quota Gemini indisponible"
+            else "Estimation par IA (recherche en ligne)"
+        return QuickPriceEstimate(priceCents, true, info)
+    }
+
+    /** Durée de vie du cache de cote d'une fiche Console/Accessoire de l'Encyclopédie (voir [cachedPresetPrice]). */
+    private val PRESET_PRICE_CACHE_MAX_AGE_MS = 30L * 24 * 60 * 60 * 1000
+
+    /**
+     * Cote estimée d'une fiche Console/Accessoire de l'Encyclopédie (pas encore dans la collection),
+     * mise en cache 30 jours pour ne jamais épuiser le quota gratuit Gemini (20 requêtes/JOUR) en
+     * naviguant simplement dans les 655+84 fiches du catalogue. [presetKey] identifie la fiche de
+     * façon stable (voir [com.example.macollection.ui.presetCacheKey]) : elle n'a pas d'id propre
+     * pour une fiche native du catalogue intégré.
+     */
+    suspend fun cachedPresetPrice(presetKey: String, type: ItemType, brand: String, name: String, platform: String?): QuickPriceEstimate {
+        val cached = presetPriceCacheDao.get(presetKey)
+        val now = System.currentTimeMillis()
+        if (cached != null && now - cached.fetchedAt < PRESET_PRICE_CACHE_MAX_AGE_MS) {
+            return QuickPriceEstimate(cached.priceCents, cached.isAiEstimate, cached.info)
+        }
+        val estimate = quickEstimatePrice(type, brand, name, platform)
+        presetPriceCacheDao.upsert(
+            PresetPriceCache(presetKey, estimate.priceCents, estimate.isAiEstimate, estimate.info, now)
+        )
+        return estimate
+    }
+
+    /** Catalogue de jeux mis en cache pour une plateforme (voir [CachedGame], onglet Jeux de l'Encyclopédie). */
+    fun gamesForPlatform(platformKey: Int): Flow<List<CachedGame>> = cachedGameDao.observeForPlatform(platformKey)
+
+    /** Avancement de la synchronisation d'une plateforme (voir [GameCatalogSyncState]). */
+    suspend fun gameSyncState(platformKey: Int): GameCatalogSyncState? = gameCatalogSyncStateDao.get(platformKey)
+
+    /**
+     * Déclenche la synchronisation du catalogue de jeux d'une plateforme si nécessaire (voir
+     * [GameCatalogSync.syncIfNeeded]) — appelé à l'ouverture de l'onglet Jeux d'une console dans
+     * l'Encyclopédie. Ne fait rien (renvoie faux) si déjà à jour depuis moins de 30 jours.
+     */
+    suspend fun syncGamesIfNeeded(platformKey: Int): Boolean =
+        GameCatalogSync.syncIfNeeded(cachedGameDao, gameCatalogSyncStateDao, platformKey)
+
+    /**
+     * Cote estimée d'un jeu du catalogue mis en cache, mise en cache DIRECTEMENT sur la ligne
+     * [CachedGame] (colonnes priceCents/priceIsAiEstimate/priceFetchedAt) plutôt que dans
+     * [PresetPriceCache] — même logique de rafraîchissement après 30 jours que [cachedPresetPrice],
+     * mais un jeu a déjà un id propre ([CachedGame.id]), pas besoin d'une clé composite séparée.
+     * [consoleName] (celle choisie dans le sélecteur de l'écran Jeux) sert à la requête eBay/IA,
+     * une plateforme groupant plusieurs consoles ([CachedGame.platformKey] seul ne suffit pas.
+     */
+    suspend fun cachedGamePrice(game: CachedGame, consoleName: String?): QuickPriceEstimate {
+        val now = System.currentTimeMillis()
+        if (game.priceFetchedAt != null && now - game.priceFetchedAt < PRESET_PRICE_CACHE_MAX_AGE_MS) {
+            return QuickPriceEstimate(game.priceCents, game.priceIsAiEstimate, null)
+        }
+        val estimate = quickEstimatePrice(ItemType.JEU, "", game.name, consoleName)
+        cachedGameDao.updatePrice(game.id, estimate.priceCents, estimate.isAiEstimate, now)
+        return estimate
     }
 
     /** Ajoute un point d'historique si le prix a changé depuis le dernier relevé. */

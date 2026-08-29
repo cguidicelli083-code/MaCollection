@@ -72,6 +72,7 @@
     <string name="sort_price_asc">価格(低→高)</string>
     <string name="sort_release">発売日（古い → 新しい）</string>
     <string name="sort_release_desc">発売日（新しい → 古い）</string>
+    <string name="sort_developer">開発元</string>
     <string name="filter_all">すべて</string>
     <string name="filter_kind_prefix">種類</string>
     <string name="filter_kind_all">すべて</string>
@@ -100,6 +101,7 @@
     <string name="more_info_button">ℹ️ 詳細情報</string>
     <string name="platforms_label">プラットフォーム: %1$s</string>
     <string name="genre_label">ジャンル: %1$s</string>
+    <string name="category_label">カテゴリー：%1$s</string>
     <string name="gallery_title">📸 ギャラリー (%1$d)</string>
     <string name="remove_photo">写真を削除</string>
     <string name="add_photos">写真を追加</string>
@@ -132,9 +134,12 @@
     <string name="field_release_year">発売年（任意）</string>
     <string name="field_platforms">対応プラットフォーム</string>
     <string name="field_genre">ジャンル（アクション、レースなど）</string>
+    <string name="field_category">カテゴリー（例：フィギュア、カード）</string>
     <string name="field_edition">エディション（任意）</string>
     <string name="edition_none">なし</string>
     <string name="field_price">価格 / 価値（%1$s、任意）</string>
+    <string name="field_purchase_price">購入価格（%1$s、任意）</string>
+    <string name="purchase_price_label">購入額：%1$s</string>
     <string name="field_barcode">バーコード（任意）</string>
     <string name="field_description">説明 / 特徴</string>
     <string name="update_button">更新</string>
@@ -172,6 +177,10 @@
     <string name="memory_label">メモリ: %1$s</string>
     <string name="popular_games_title">🎮 人気ゲーム</string>
     <string name="game_list_unavailable">この機種のゲームリストは利用できません。</string>
+    <string name="offers_title">🛒 出品情報</string>
+    <string name="offers_unavailable">現在、出品情報はありません。</string>
+    <string name="leboncoin_search_button">🔍 LeBonCoinで見る</string>
+    <string name="vinted_search_button">🔍 Vintedで見る</string>
     <string name="pricecharting_button">🔍 PriceChartingで価格を調べる</string>
     <string name="edit_price_button">✏️ 価格を編集</string>
     <string name="move_to_collection_button">📦 購入済みにする（コレクションに移動）</string>
@@ -272,6 +281,11 @@
     <string name="ad_unavailable">広告は現在利用できません。しばらくしてから再度お試しください。</string>
     <string name="batch_saving">%1$d件のアイテムを追加しています…</string>
     <string name="batch_selected_count">%2$d件中%1$d件を選択</string>
+    <string name="batch_total_estimate">推定合計：%1$s</string>
+    <string name="batch_price_unknown">価格が見つかりません</string>
+    <string name="batch_select_all">すべて選択</string>
+    <string name="batch_deselect_all">すべて解除</string>
+    <string name="batch_share">共有</string>
     <string name="batch_validate">まとめて追加を確定</string>
     <string name="platform_picker_title">どの機種？</string>
     <string name="platform_picker_message">このゲームは複数の機種で発売されています。実際に持っている機種にチェックを入れてください。</string>

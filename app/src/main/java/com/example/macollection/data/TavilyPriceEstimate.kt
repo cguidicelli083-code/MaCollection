@@ -78,6 +78,7 @@ object TavilyPriceEstimate {
             ItemType.CONSOLE -> "console de jeu vidéo"
             ItemType.JEU -> "jeu vidéo"
             ItemType.ACCESSOIRE -> "accessoire de jeu vidéo"
+            ItemType.AUTRE -> "objet de collection"
         }
         val completeness = when {
             hasBox && hasManual -> "complet en boîte avec notice"

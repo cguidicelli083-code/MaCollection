@@ -21,7 +21,16 @@ object AccessoryRecognition {
         listOf("dualshock 3", "dual shock 3") to "Manette DualShock 3 (PS3)",
         listOf("dualshock 2", "dual shock 2") to "Manette DualShock 2 (PS2)",
         listOf("dualshock", "dual shock") to "Manette DualShock (PS1)",
-        listOf("xbox series controller", "manette xbox series") to "Manette Xbox Series",
+        // Variantes élargies (2026-08-25) : "Series S"/"Series X" intercalé entre "xbox series"
+        // et "controller"/"manette" (ex. "Xbox Wireless Controller (Series S/X)") ne matchait pas
+        // les clés d'origine (mots non adjacents), faisant retomber la reconnaissance sur
+        // ConsoleRecognition (nom de console détecté par sous-chaîne) au lieu de cette entrée.
+        listOf(
+            "xbox series controller", "manette xbox series", "manette xbox series s", "manette xbox series x",
+            "xbox series s controller", "xbox series x controller",
+            "xbox wireless controller series", "wireless controller (series s/x)",
+            "xbox wireless controller (series s/x)", "controller series s/x"
+        ) to "Manette Xbox Series",
         listOf("xbox one controller", "manette xbox one") to "Manette Xbox One",
         listOf("xbox 360 controller", "manette xbox 360") to "Manette Xbox 360",
         listOf("joy-con", "joycon") to "Paire de Joy-Con (Switch)",

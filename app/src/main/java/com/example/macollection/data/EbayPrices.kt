@@ -18,8 +18,9 @@ import kotlin.math.roundToInt
 // --- DTO eBay ---
 private data class EbayToken(val access_token: String?, val expires_in: Long?)
 private data class EbaySearch(val total: Int?, val itemSummaries: List<EbayItem>?)
-private data class EbayItem(val title: String?, val price: EbayPrice?, val condition: String?)
+private data class EbayItem(val title: String?, val price: EbayPrice?, val condition: String?, val image: EbayImage?, val itemWebUrl: String?)
 private data class EbayPrice(val value: String?, val currency: String?)
+private data class EbayImage(val imageUrl: String?)
 
 private interface EbayApi {
     @FormUrlEncoded
@@ -207,7 +208,7 @@ object EbayPrices {
         val category = when (type) {
             ItemType.CONSOLE -> CAT_CONSOLES
             ItemType.JEU -> CAT_GAMES
-            ItemType.ACCESSOIRE -> null
+            ItemType.ACCESSOIRE, ItemType.AUTRE -> null
         }
         val filter = "$FIXED_PRICE,conditionIds:{${conditionIdsFor(condition)}}"
 
@@ -367,7 +368,7 @@ object EbayPrices {
         val category = when (type) {
             ItemType.CONSOLE -> CAT_CONSOLES
             ItemType.JEU -> CAT_GAMES
-            ItemType.ACCESSOIRE -> null
+            ItemType.ACCESSOIRE, ItemType.AUTRE -> null
         }
         var words = buildQuery(type, brand, name, platform, condition = null)
             .split(Regex("\\s+")).filter { it.isNotBlank() }
@@ -383,6 +384,81 @@ object EbayPrices {
         }
         android.util.Log.d("WishlistOffers", "findWorkingEbayQuery($name): AUCUN résultat après repli complet")
         return null
+    }
+
+    /**
+     * Annonces eBay structurées (titre/prix/état/image) prêtes à afficher DANS l'app — onglet
+     * "Offres" d'une fiche Console/Accessoire de l'Encyclopédie. Contrairement à [findWorkingEbayQuery]
+     * (qui ne renvoie qu'une requête texte pour ouvrir eBay dans le navigateur externe) et à [lookup]
+     * (qui filtre sur achat immédiat + état déclaré pour calculer une cote FIABLE), ici on montre
+     * simplement les annonces les plus proches trouvées, enchères comprises. Même repli progressif
+     * mot par mot que [findWorkingEbayQuery] si la requête complète ne trouve rien.
+     */
+    suspend fun offersFor(type: ItemType, brand: String, name: String, platform: String?, limit: Int = 20): List<Offer> {
+        if (!isConfigured()) return emptyList()
+        if (token() == null) return emptyList()
+        val category = when (type) {
+            ItemType.CONSOLE -> CAT_CONSOLES
+            ItemType.JEU -> CAT_GAMES
+            ItemType.ACCESSOIRE, ItemType.AUTRE -> null
+        }
+        var words = buildQuery(type, brand, name, platform, condition = null)
+            .split(Regex("\\s+")).filter { it.isNotBlank() }
+        var items = emptyList<EbayItem>()
+        while (words.isNotEmpty()) {
+            val q = words.joinToString(" ")
+            items = searchOrFallback { bearer ->
+                api.search(bearer, MARKET, q = q, categoryIds = category, limit = limit)
+            }?.itemSummaries.orEmpty()
+            if (items.isNotEmpty()) break
+            if (words.size <= 2) break
+            words = words.dropLast(1)
+        }
+        return items
+            .filterNot { isLikelyHardwarePart(it.title.orEmpty()) }
+            .filter { isRelevantOffer(it.title.orEmpty(), name, platform) }
+            .mapNotNull { item ->
+                val title = item.title?.takeIf { it.isNotBlank() } ?: return@mapNotNull null
+                val priceCents = item.price
+                    ?.takeIf { it.currency == "EUR" }
+                    ?.value?.toDoubleOrNull()
+                    ?.let { (it * 100).roundToInt() }
+                Offer("eBay", title, priceCents, item.condition, item.image?.imageUrl, item.itemWebUrl)
+            }
+    }
+
+    /**
+     * Vrai si le titre de l'annonce partage assez de mots significatifs avec [name] pour
+     * raisonnablement affirmer qu'elle correspond au même objet (au moins la moitié, arrondie au
+     * supérieur, des mots de 3 lettres ou plus), ET (si [platform] est renseignée) mentionne
+     * aussi la plateforme. Nécessaire car le repli progressif ci-dessus (mot par mot) retire la
+     * plateforme EN PREMIER (elle est ajoutée en dernier dans [buildQuery]) dès que la requête
+     * stricte ne trouve rien — sans ce second filtre, un jeu multi-plateforme (ex. "Alien
+     * Trilogy", sorti sur 32X/Saturn/PS1) affichait dans la fiche 32X des annonces PS1/Saturn
+     * sans rapport, et aucune vraiment pour la 32X (constaté en conditions réelles). Mieux vaut
+     * une section "Offres" vide que des annonces pour la mauvaise console.
+     */
+    private fun isRelevantOffer(title: String, name: String, platform: String? = null): Boolean {
+        val t = title.lowercase()
+        val nameWords = name.lowercase()
+            .split(Regex("[^\\p{L}\\p{Nd}]+"))
+            .filter { it.length >= 3 }
+            .distinct()
+        if (nameWords.isNotEmpty()) {
+            val matched = nameWords.count { t.contains(it) }
+            if (matched < maxOf(1, (nameWords.size + 1) / 2)) return false
+        }
+        if (!platform.isNullOrBlank()) {
+            val platformWords = platform.lowercase()
+                .split(Regex("[^\\p{L}\\p{Nd}]+"))
+                .filter { it.length >= 2 }
+                .distinct()
+            if (platformWords.isNotEmpty()) {
+                val matched = platformWords.count { t.contains(it) }
+                if (matched < maxOf(1, (platformWords.size + 1) / 2)) return false
+            }
+        }
+        return true
     }
 
     /**

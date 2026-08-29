@@ -49,10 +49,12 @@ object ExcelExport {
     private val CONSOLE_COLUMN_WIDTHS = listOf(27.0, 11.0, 23.0, 16.0, 10.0, 10.0, 10.0, 10.0, 11.0, 11.0, 15.0, 10.0, 40.0, 30.0)
     private val ACCESSOIRE_COLUMN_WIDTHS = listOf(20.0, 11.0, 45.0, 16.0, 10.0, 10.0, 10.0, 10.0, 11.0, 11.0, 15.0, 10.0, 40.0, 30.0)
     private val JEU_COLUMN_WIDTHS = listOf(14.0, 11.0, 25.0, 16.0, 10.0, 10.0, 10.0, 10.0, 10.0, 15.0, 15.0, 10.0, 65.0, 44.0)
+    private val AUTRE_COLUMN_WIDTHS = listOf(20.0, 11.0, 35.0, 16.0, 10.0, 10.0, 10.0, 10.0, 11.0, 11.0, 15.0, 10.0, 40.0, 30.0)
     private fun columnWidthsFor(type: ItemType): List<Double> = when (type) {
         ItemType.CONSOLE -> CONSOLE_COLUMN_WIDTHS
         ItemType.ACCESSOIRE -> ACCESSOIRE_COLUMN_WIDTHS
         ItemType.JEU -> JEU_COLUMN_WIDTHS
+        ItemType.AUTRE -> AUTRE_COLUMN_WIDTHS
     }
     private val HEADERS = listOf(
         "Photo", "Statut", "Nom", "Marque", "Région", "État", "Boîte", "Notice",
@@ -77,6 +79,7 @@ object ExcelExport {
         ItemType.CONSOLE -> ImageSizeCm(widthCm = 5.0, heightCm = 3.2)
         ItemType.ACCESSOIRE -> ImageSizeCm(widthCm = 3.7, heightCm = 3.2)
         ItemType.JEU -> ImageSizeCm(widthCm = 2.7, heightCm = 3.2)
+        ItemType.AUTRE -> ImageSizeCm(widthCm = 3.7, heightCm = 3.2)
     }
 
     /** Estimation (approximative, sans les vraies métriques de police) du nombre de lignes que
@@ -195,12 +198,16 @@ object ExcelExport {
         withContext(Dispatchers.IO) {
             try {
                 val collator = Collator.getInstance(Locale.FRANCE)
-                // Un onglet par catégorie (CONSOLE/ACCESSOIRE/JEU), triés par nom A-Z par défaut —
-                // l'AutoFiltre posé sur l'en-tête permet ensuite de retrier/filtrer sur n'importe
-                // quelle colonne (Plateforme, État, Boîte, Notice compris). Ordre explicite
+                // Un onglet par catégorie (CONSOLE/ACCESSOIRE/JEU/AUTRE), triés par nom A-Z par
+                // défaut — l'AutoFiltre posé sur l'en-tête permet ensuite de retrier/filtrer sur
+                // n'importe quelle colonne (Plateforme, État, Boîte, Notice compris). Ordre explicite
                 // (Consoles, Accessoires, Jeux) demandé par le cahier des charges — distinct de
-                // l'ordre de déclaration de ItemType (Console, Jeu, Accessoire).
-                val sheetOrder = listOf(ItemType.CONSOLE, ItemType.ACCESSOIRE, ItemType.JEU)
+                // l'ordre de déclaration de ItemType (Console, Jeu, Accessoire) — Autre ajouté en
+                // dernier onglet, uniquement si la collection en contient (pas d'onglet vide sinon).
+                val sheetOrder = listOfNotNull(
+                    ItemType.CONSOLE, ItemType.ACCESSOIRE, ItemType.JEU,
+                    ItemType.AUTRE.takeIf { t -> items.any { it.type == t } }
+                )
                 val sheets = sheetOrder.mapIndexed { sheetIndex, type ->
                     val sheetNum = sheetIndex + 1
                     val sheetItems = items.filter { it.type == type }.sortedWith(compareBy(collator) { it.name })

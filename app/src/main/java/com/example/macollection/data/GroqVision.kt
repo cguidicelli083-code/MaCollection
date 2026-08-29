@@ -47,8 +47,12 @@ object GroqVision {
     // ici puisqu'on envoie une image). Modèle « preview » chez Groq (pas de SLA production), à
     // surveiller si Groq le fait évoluer à son tour.
     private const val MODEL = "qwen/qwen3.6-27b"
-    // Modèle texte rapide pour la traduction (free tier généreux).
-    private const val TEXT_MODEL = "llama-3.1-8b-instant"
+    // Modèle texte rapide pour la traduction (free tier généreux). llama-3.1-8b-instant a été
+    // décommissionné par Groq le 16/08/2026 (annonce du 17/06/2026, tier gratuit/développeur) :
+    // toute traduction échouait silencieusement depuis (exception attrapée, texte original gardé
+    // tel quel — cause du bug "traduction ne se fait pas" sur les jeux sourcés Wikipédia, ex.
+    // Destruction AllStars). Remplacé par le modèle de repli recommandé par Groq.
+    private const val TEXT_MODEL = "openai/gpt-oss-20b"
 
     private fun languageName(code: String): String = when (code) {
         "fr" -> "French"; "de" -> "German"; "es" -> "Spanish"; "it" -> "Italian"

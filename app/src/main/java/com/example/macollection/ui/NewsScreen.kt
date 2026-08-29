@@ -28,6 +28,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -123,9 +124,9 @@ fun NewsScreen(vm: AppViewModel, onBack: () -> Unit, modifier: Modifier = Modifi
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBack) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = stringResource(R.string.back), tint = Color.White)
+                    Icon(Icons.Filled.ArrowBack, contentDescription = stringResource(R.string.back), tint = MaterialTheme.colorScheme.onSurface)
                 }
-                Text(stringResource(R.string.title_news), color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                Text(stringResource(R.string.title_news), color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 20.sp)
             }
 
             if (availableCategories.size > 1) {
@@ -138,7 +139,7 @@ fun NewsScreen(vm: AppViewModel, onBack: () -> Unit, modifier: Modifier = Modifi
                             selected = categoryFilter == null,
                             onClick = { categoryFilter = null },
                             label = { Text(stringResource(R.string.news_category_all)) },
-                            colors = FilterChipDefaults.filterChipColors(selectedContainerColor = NeonPurple, selectedLabelColor = Color.White)
+                            colors = FilterChipDefaults.filterChipColors(selectedContainerColor = NeonPurple, selectedLabelColor = MaterialTheme.colorScheme.onSurface)
                         )
                     }
                     items(availableCategories) { category ->
@@ -146,7 +147,7 @@ fun NewsScreen(vm: AppViewModel, onBack: () -> Unit, modifier: Modifier = Modifi
                             selected = categoryFilter == category,
                             onClick = { categoryFilter = category },
                             label = { Text(stringResource(categoryLabel(category))) },
-                            colors = FilterChipDefaults.filterChipColors(selectedContainerColor = NeonPurple, selectedLabelColor = Color.White)
+                            colors = FilterChipDefaults.filterChipColors(selectedContainerColor = NeonPurple, selectedLabelColor = MaterialTheme.colorScheme.onSurface)
                         )
                     }
                 }
@@ -207,7 +208,7 @@ private fun NewsCard(entry: RetroNewsEntry, onClick: () -> Unit) {
             Column(Modifier.fillMaxWidth()) {
                 Text(stringResource(categoryLabel(entry.category)), fontSize = 11.sp, color = NeonCyan, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(2.dp))
-                Text(loc.title ?: entry.title, fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color.White, maxLines = 3)
+                Text(loc.title ?: entry.title, fontWeight = FontWeight.Bold, fontSize = 15.sp, color = MaterialTheme.colorScheme.onSurface, maxLines = 3)
                 Spacer(Modifier.height(4.dp))
                 Text(entry.sourceName, fontSize = 11.sp, color = Color(0xFF7A7A96))
             }

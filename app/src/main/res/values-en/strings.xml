@@ -74,6 +74,7 @@
     <string name="sort_price_asc">Price (low → high)</string>
     <string name="sort_release">Release date (old → new)</string>
     <string name="sort_release_desc">Release date (new → old)</string>
+    <string name="sort_developer">Developer</string>
     <string name="filter_all">All</string>
     <string name="filter_kind_prefix">Type</string>
     <string name="filter_kind_all">All</string>
@@ -102,6 +103,7 @@
     <string name="more_info_button">ℹ️ More info</string>
     <string name="platforms_label">Platforms: %1$s</string>
     <string name="genre_label">Genre: %1$s</string>
+    <string name="category_label">Category: %1$s</string>
     <string name="gallery_title">📸 Gallery (%1$d)</string>
     <string name="remove_photo">Remove photo</string>
     <string name="add_photos">Add photos</string>
@@ -134,9 +136,12 @@
     <string name="field_release_year">Release year (optional)</string>
     <string name="field_platforms">Compatible platform(s)</string>
     <string name="field_genre">Genre (action, racing...)</string>
+    <string name="field_category">Category (e.g. Figures, Cards...)</string>
     <string name="field_edition">Edition (optional)</string>
     <string name="edition_none">None</string>
     <string name="field_price">Price / value (%1$s) (optional)</string>
+    <string name="field_purchase_price">Purchase price (%1$s) (optional)</string>
+    <string name="purchase_price_label">Paid: %1$s</string>
     <string name="field_barcode">Barcode (optional)</string>
     <string name="field_description">Description / specs</string>
     <string name="update_button">Update</string>
@@ -174,6 +179,10 @@
     <string name="memory_label">Memory: %1$s</string>
     <string name="popular_games_title">🎮 Popular games</string>
     <string name="game_list_unavailable">Game list unavailable for this console.</string>
+    <string name="offers_title">🛒 Offers</string>
+    <string name="offers_unavailable">No offers available right now.</string>
+    <string name="leboncoin_search_button">🔍 View on LeBonCoin</string>
+    <string name="vinted_search_button">🔍 View on Vinted</string>
     <string name="pricecharting_button">🔍 Refine the price on PriceCharting</string>
     <string name="edit_price_button">✏️ Edit price</string>
     <string name="move_to_collection_button">📦 Mark as acquired (move to Collection)</string>
@@ -274,6 +283,11 @@
     <string name="ad_unavailable">Ad temporarily unavailable. Please try again later.</string>
     <string name="batch_saving">Adding %1$d item(s)…</string>
     <string name="batch_selected_count">%1$d / %2$d selected</string>
+    <string name="batch_total_estimate">Estimated total: %1$s</string>
+    <string name="batch_price_unknown">Price not found</string>
+    <string name="batch_select_all">Select all</string>
+    <string name="batch_deselect_all">Deselect all</string>
+    <string name="batch_share">Share</string>
     <string name="batch_validate">Confirm batch add</string>
     <string name="platform_picker_title">Which console(s)?</string>
     <string name="platform_picker_message">This game was released on several consoles. Check the one(s) you actually own.</string>

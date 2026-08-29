@@ -72,6 +72,7 @@
     <string name="sort_price_asc">Τιμή (χαμηλή → υψηλή)</string>
     <string name="sort_release">Ημερομηνία κυκλοφορίας (παλιά → νέα)</string>
     <string name="sort_release_desc">Ημερομηνία κυκλοφορίας (νέα → παλιά)</string>
+    <string name="sort_developer">Προγραμματιστής</string>
     <string name="filter_all">Όλα</string>
     <string name="filter_kind_prefix">Τύπος</string>
     <string name="filter_kind_all">Όλες</string>
@@ -100,6 +101,7 @@
     <string name="more_info_button">ℹ️ Περισσότερες πληροφορίες</string>
     <string name="platforms_label">Πλατφόρμες: %1$s</string>
     <string name="genre_label">Είδος: %1$s</string>
+    <string name="category_label">Κατηγορία: %1$s</string>
     <string name="gallery_title">📸 Συλλογή φωτογραφιών (%1$d)</string>
     <string name="remove_photo">Αφαίρεση φωτογραφίας</string>
     <string name="add_photos">Προσθήκη φωτογραφιών</string>
@@ -132,9 +134,12 @@
     <string name="field_release_year">Έτος κυκλοφορίας (προαιρετικό)</string>
     <string name="field_platforms">Συμβατή/ές πλατφόρμα/ες</string>
     <string name="field_genre">Είδος (δράση, αγώνες...)</string>
+    <string name="field_category">Κατηγορία (π.χ. Φιγούρες, Κάρτες...)</string>
     <string name="field_edition">Έκδοση (προαιρετικό)</string>
     <string name="edition_none">Καμία</string>
     <string name="field_price">Τιμή / αξία (%1$s) (προαιρετικό)</string>
+    <string name="field_purchase_price">Τιμή αγοράς (%1$s) (προαιρετικό)</string>
+    <string name="purchase_price_label">Πληρώθηκε: %1$s</string>
     <string name="field_barcode">Γραμμωτός κώδικας (προαιρετικό)</string>
     <string name="field_description">Περιγραφή / χαρακτηριστικά</string>
     <string name="update_button">Ενημέρωση</string>
@@ -172,6 +177,10 @@
     <string name="memory_label">Μνήμη: %1$s</string>
     <string name="popular_games_title">🎮 Δημοφιλή παιχνίδια</string>
     <string name="game_list_unavailable">Η λίστα παιχνιδιών δεν είναι διαθέσιμη για αυτή την κονσόλα.</string>
+    <string name="offers_title">🛒 Προσφορές</string>
+    <string name="offers_unavailable">Δεν υπάρχουν διαθέσιμες προσφορές αυτή τη στιγμή.</string>
+    <string name="leboncoin_search_button">🔍 Προβολή στο LeBonCoin</string>
+    <string name="vinted_search_button">🔍 Προβολή στο Vinted</string>
     <string name="pricecharting_button">🔍 Βελτίωση τιμής στο PriceCharting</string>
     <string name="edit_price_button">✏️ Επεξεργασία τιμής</string>
     <string name="move_to_collection_button">📦 Σήμανση ως αποκτημένο (μεταφορά στη Συλλογή)</string>
@@ -272,6 +281,11 @@
     <string name="ad_unavailable">Η διαφήμιση δεν είναι προσωρινά διαθέσιμη. Δοκίμασε ξανά αργότερα.</string>
     <string name="batch_saving">Προσθήκη %1$d αντικειμένων σε εξέλιξη…</string>
     <string name="batch_selected_count">%1$d / %2$d επιλεγμένα</string>
+    <string name="batch_total_estimate">Εκτιμώμενο σύνολο: %1$s</string>
+    <string name="batch_price_unknown">Δεν βρέθηκε τιμή</string>
+    <string name="batch_select_all">Επιλογή όλων</string>
+    <string name="batch_deselect_all">Αποεπιλογή όλων</string>
+    <string name="batch_share">Κοινοποίηση</string>
     <string name="batch_validate">Επιβεβαίωση προσθήκης στην παρτίδα</string>
     <string name="platform_picker_title">Σε ποια κονσόλα/ες;</string>
     <string name="platform_picker_message">Αυτό το παιχνίδι κυκλοφόρησε σε πολλές κονσόλες. Επίλεξε αυτή/ές που πραγματικά έχεις.</string>

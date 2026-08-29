@@ -126,7 +126,7 @@ fun GamesHubScreen(
                     Spacer(Modifier.width(8.dp))
                     Icon(Icons.Filled.Star, contentDescription = null, tint = MaterialTheme.colorScheme.secondary)
                     Spacer(Modifier.width(8.dp))
-                    Text("$points points", color = Color.White, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+                    Text("$points points", color = MaterialTheme.colorScheme.onSurface, fontSize = 22.sp, fontWeight = FontWeight.Bold)
                 }
                 Spacer(Modifier.height(16.dp))
 
@@ -174,15 +174,15 @@ fun GamesHubScreen(
                             Text("✨", fontSize = 22.sp)
                             Spacer(Modifier.width(10.dp))
                             Column(Modifier.weight(1f)) {
-                                Text("Débloque tout instantanément avec Premium", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
-                                Text("Tous les mini-jeux et tous les thèmes, sans passer par les points.", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                                Text("Débloque tout instantanément avec Premium", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                Text("Tous les mini-jeux et tous les thèmes, sans passer par les points.", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f), fontSize = 12.sp)
                             }
                         }
                     }
                 }
 
                 Spacer(Modifier.height(20.dp))
-                Text("Jeux d'arcade à débloquer", color = Color.White.copy(alpha = 0.8f), fontWeight = FontWeight.Bold)
+                Text("Jeux d'arcade à débloquer", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f), fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(8.dp))
 
                 GameShopCatalog.lockedGames.forEach { item ->
@@ -225,7 +225,7 @@ fun GamesHubScreen(
                     ) {
                         Icon(Icons.Filled.Storefront, contentDescription = null, tint = NeonPurple)
                         Spacer(Modifier.width(12.dp))
-                        Text("Boutique", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                        Text("Boutique", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     }
                 }
 
@@ -264,11 +264,11 @@ private fun DailyChestCard(available: Boolean, remainingMs: Long, onOpen: () -> 
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(Modifier.fillMaxWidth().background(CardGradient).padding(16.dp)) {
-            Text("🎁 Coffre Quotidien", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            Text("🎁 Coffre Quotidien", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 18.sp)
             Spacer(Modifier.height(6.dp))
             Text(
                 "Regarde une pub pour ouvrir le coffre et gagner un bonus de points aléatoire.",
-                color = Color.White.copy(alpha = 0.75f),
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f),
                 fontSize = 13.sp
             )
             Spacer(Modifier.height(12.dp))
@@ -294,9 +294,9 @@ private fun GameCard(title: String, description: String, actionLabel: String, on
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(Modifier.fillMaxWidth().background(CardGradient).padding(16.dp)) {
-            Text(title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            Text(title, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 18.sp)
             Spacer(Modifier.height(6.dp))
-            Text(description, color = Color.White.copy(alpha = 0.75f), fontSize = 13.sp)
+            Text(description, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f), fontSize = 13.sp)
             Spacer(Modifier.height(12.dp))
             Button(
                 onClick = onAction,
@@ -330,12 +330,12 @@ private fun LockedGameCard(
     ) {
         Column(Modifier.fillMaxWidth().background(CardGradient).padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                if (!unlocked) Icon(Icons.Filled.Lock, contentDescription = null, tint = Color.White.copy(alpha = 0.6f))
+                if (!unlocked) Icon(Icons.Filled.Lock, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
                 Spacer(Modifier.width(6.dp))
-                Text(title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                Text(title, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Bold, fontSize = 18.sp)
             }
             Spacer(Modifier.height(6.dp))
-            Text(description, color = Color.White.copy(alpha = 0.75f), fontSize = 13.sp)
+            Text(description, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f), fontSize = 13.sp)
             Spacer(Modifier.height(12.dp))
             if (unlocked) {
                 Button(onClick = onPlay, colors = ButtonDefaults.buttonColors(containerColor = NeonPurple)) {

@@ -52,6 +52,9 @@ import com.example.macollection.data.ItemType
 data class QuickEstimateData(
     val name: String,
     val brand: String,
+    // Type déterminé par la reconnaissance (photo/IA ou code-barres) — inclut désormais
+    // ItemType.AUTRE pour un objet de collection identifié par Gemini hors jeu vidéo, distinct de
+    // CONSOLE/ACCESSOIRE/JEU (voir ScanTools.ScanResult.itemType).
     val type: ItemType,
     val platform: String?,
     val coverUri: String?,
@@ -82,12 +85,12 @@ fun QuickEstimateResultScreen(
                     title = { Text(stringResource(R.string.quick_estimate_chooser_title), fontWeight = FontWeight.Bold) },
                     navigationIcon = {
                         IconButton(onClick = onDismiss) {
-                            Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.close), tint = Color.White)
+                            Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.close), tint = MaterialTheme.colorScheme.onSurface)
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
-                        titleContentColor = Color.White
+                        titleContentColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             }
@@ -103,7 +106,7 @@ fun QuickEstimateResultScreen(
                     Modifier
                         .size(180.dp)
                         .clip(RoundedCornerShape(16.dp))
-                        .background(Color.White.copy(alpha = 0.08f)),
+                        .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)),
                     contentAlignment = Alignment.Center
                 ) {
                     if (data.coverUri != null) {
@@ -116,7 +119,7 @@ fun QuickEstimateResultScreen(
                                 .clip(RoundedCornerShape(16.dp))
                         )
                     } else {
-                        Icon(Icons.Filled.Image, contentDescription = null, tint = Color.White.copy(alpha = 0.4f), modifier = Modifier.size(56.dp))
+                        Icon(Icons.Filled.Image, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f), modifier = Modifier.size(56.dp))
                     }
                 }
                 Spacer(Modifier.height(16.dp))
@@ -124,11 +127,11 @@ fun QuickEstimateResultScreen(
                     data.name.ifBlank { stringResource(R.string.unnamed_item) },
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onSurface,
                     textAlign = TextAlign.Center
                 )
                 data.platform?.takeIf { it.isNotBlank() }?.let {
-                    Text(it, style = MaterialTheme.typography.bodyMedium, color = Color.White.copy(alpha = 0.7f))
+                    Text(it, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
                 }
                 Spacer(Modifier.height(16.dp))
                 Text(
@@ -143,7 +146,7 @@ fun QuickEstimateResultScreen(
                 )
                 data.priceInfo?.takeIf { it.isNotBlank() && data.priceCents != null }?.let {
                     Spacer(Modifier.height(4.dp))
-                    Text(it, style = MaterialTheme.typography.bodySmall, color = Color.White.copy(alpha = 0.6f), textAlign = TextAlign.Center)
+                    Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f), textAlign = TextAlign.Center)
                 }
                 Spacer(Modifier.weight(1f))
                 Button(onClick = onAddToCollection, modifier = Modifier.fillMaxWidth()) {

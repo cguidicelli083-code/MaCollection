@@ -91,6 +91,7 @@
     <string name="sort_price_asc">Prix (bas → élevé)</string>
     <string name="sort_release">Date de sortie (ancien → récent)</string>
     <string name="sort_release_desc">Date de sortie (récent → ancien)</string>
+    <string name="sort_developer">Développeur</string>
     <string name="filter_all">Tous</string>
     <string name="filter_kind_prefix">Type</string>
     <string name="filter_kind_all">Toutes</string>
@@ -122,6 +123,7 @@
     <string name="more_info_button">ℹ️ Plus d\'infos</string>
     <string name="platforms_label">Plateformes : %1$s</string>
     <string name="genre_label">Genre : %1$s</string>
+    <string name="category_label">Catégorie : %1$s</string>
     <string name="gallery_title">📸 Galerie (%1$d)</string>
     <string name="remove_photo">Retirer la photo</string>
     <string name="add_photos">Ajouter des photos</string>
@@ -156,9 +158,12 @@
     <string name="field_release_year">Année de sortie (optionnel)</string>
     <string name="field_platforms">Plateforme(s) compatible(s)</string>
     <string name="field_genre">Genre (action, course...)</string>
+    <string name="field_category">Catégorie (ex. Figurines, Cartes...)</string>
     <string name="field_edition">Édition (optionnel)</string>
     <string name="edition_none">Aucune</string>
     <string name="field_price">Prix / cote (%1$s) (optionnel)</string>
+    <string name="field_purchase_price">Prix d\'achat (%1$s) (optionnel)</string>
+    <string name="purchase_price_label">Payé : %1$s</string>
     <string name="field_barcode">Code-barres (optionnel)</string>
     <string name="field_description">Description / caractéristiques</string>
     <string name="update_button">Mettre à jour</string>
@@ -200,6 +205,11 @@
     <string name="ad_unavailable">Publicité momentanément indisponible. Réessayez plus tard.</string>
     <string name="batch_saving">Ajout de %1$d article(s) en cours…</string>
     <string name="batch_selected_count">%1$d / %2$d sélectionné(s)</string>
+    <string name="batch_total_estimate">Total estimé : %1$s</string>
+    <string name="batch_price_unknown">Prix non trouvé</string>
+    <string name="batch_select_all">Tout sélectionner</string>
+    <string name="batch_deselect_all">Tout décocher</string>
+    <string name="batch_share">Partager</string>
     <string name="search_name_or_brand">Rechercher (nom ou marque)</string>
     <string name="no_console_found">Aucune console trouvée.</string>
 
@@ -227,6 +237,10 @@
     <string name="memory_label">Mémoire : %1$s</string>
     <string name="popular_games_title">🎮 Jeux populaires</string>
     <string name="game_list_unavailable">Liste de jeux indisponible pour cette console.</string>
+    <string name="offers_title">🛒 Offres</string>
+    <string name="offers_unavailable">Aucune offre disponible pour le moment.</string>
+    <string name="leboncoin_search_button">🔍 Voir sur LeBonCoin</string>
+    <string name="vinted_search_button">🔍 Voir sur Vinted</string>
 
     <!-- Presets personnalisés (ajout manuel à la bibliothèque) -->
     <string name="add_custom_preset_title">Ajouter à la bibliothèque</string>
