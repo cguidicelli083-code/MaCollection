@@ -1,5 +1,23 @@
 # Checklist mise en ligne Play Store — Ma Collection V2
 
+## ✅ Fait automatiquement (mise à jour 2026-08-29 — version 2.12 (16))
+- [x] Encyclopédie : le mode "Jeux" autonome est remplacé par une liste de jeux enrichie
+      (cache local synchronisé, tri) directement dans la fiche de chaque console.
+- [x] Offres eBay cliquables (ouverture de l'annonce dans le navigateur), boutons de recherche
+      directs vers LeBonCoin et Vinted pour jeux/consoles/accessoires.
+- [x] Correctif recherche jeu : la requête n'utilise plus l'éditeur comme "marque" parasite.
+- [x] Correctif offres eBay : filtrage par plateforme (une fiche 32X n'affiche plus d'annonces
+      d'une autre console).
+- [x] 11 thèmes clairs aux couleurs des drapeaux des langues de l'app (France + Allemagne, Chine,
+      Espagne, Grèce, Italie, Japon, Portugal, Royaume-Uni, Russie, Turquie), gratuits dès
+      l'installation, avec adaptation du chrome de l'app au thème clair/sombre.
+- [x] Estimation d'un lot de plusieurs objets à partir d'une seule photo : prix par objet estimé,
+      total dynamique selon les objets cochés, tout cocher/décocher, partage du récapitulatif,
+      ajout direct à la collection ou aux souhaits — accessible depuis "Ajouter un objet" et
+      depuis "Estimation rapide".
+- [x] Nouvelles photos locales pour plusieurs consoles/accessoires (remplacent des URLs distantes,
+      plus fiable hors-ligne).
+
 ## ✅ Fait automatiquement (mise à jour 2026-08-07 — version 2.10 (14))
 - [x] Traduction complète de l'app en 11 langues (fr, en, es, it, de, pt, ru, el, tr, ja, zh) — sélecteur de langue dans Réglages.
 - [x] Keystore de release déjà généré et configuré : `C:\Users\Nawash\AndroidKeystores\macollectionv2-release.jks`, référencé dans `local.properties` (gitignore, jamais commit).
@@ -48,7 +66,27 @@
 
 L'ancien tutoriel (14 pages de texte, trop dense d'après ton retour) est remplacé par `OnboardingScreenLight` : une version courte (7 étapes) et visuelle, guidée pas à pas, avec un premier écran de choix de langue pour que la suite s'affiche déjà traduite. Déployé sur les 3 éditions.
 
-## 📝 Notes de version 2.10 (14) — à coller dans Play Console → Notes de version
+## 📝 Notes de version 2.12 (16) — à coller dans Play Console → Notes de version
+
+Français :
+```
+📸 Estimation d'un lot de plusieurs objets en une seule photo : prix par objet, total qui se met à jour selon ce que tu coches, ajout direct à ta collection ou tes souhaits.
+🎮 L'Encyclopédie affiche maintenant les jeux directement dans la fiche de chaque console (tri, mise à jour automatique).
+🔗 Les offres eBay s'ouvrent d'un tap, avec des liens de recherche directs vers LeBonCoin et Vinted.
+🎨 11 thèmes clairs aux couleurs des drapeaux (France, Allemagne, Chine, Espagne, Grèce, Italie, Japon, Portugal, Royaume-Uni, Russie, Turquie), gratuits.
+Correctifs et améliorations de stabilité.
+```
+
+English :
+```
+📸 Estimate a lot of several items from a single photo: price per item, running total based on what you check, add straight to your collection or wishlist.
+🎮 The Encyclopedia now shows games directly on each console's page (sorting, automatic sync).
+🔗 eBay listings open with a single tap, plus direct search links to LeBonCoin and Vinted.
+🎨 11 free light themes in the colors of the app's language flags (France, Germany, China, Spain, Greece, Italy, Japan, Portugal, UK, Russia, Turkey).
+Fixes and stability improvements.
+```
+
+## 📝 Notes de version 2.10 (14) — archivées
 
 Français :
 ```

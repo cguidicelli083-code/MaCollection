@@ -47,8 +47,8 @@ android {
         applicationId = "com.nawash.macollection"
         minSdk = 24
         targetSdk = 36
-        versionCode = 15
-        versionName = "2.11"
+        versionCode = 16
+        versionName = "2.12"
 
         buildConfigField("String", "RAWG_API_KEY", "\"$rawgApiKey\"")
         buildConfigField("String", "EBAY_CLIENT_ID", "\"$ebayClientId\"")
