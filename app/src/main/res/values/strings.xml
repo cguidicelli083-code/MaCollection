@@ -4,6 +4,11 @@
     <!-- MainActivity: dialogs and nav -->
     <string name="add_item_dialog_title">Ajouter un objet</string>
     <string name="cancel">Annuler</string>
+    <string name="duplicate_item_title_collection">Déjà dans ta collection</string>
+    <string name="duplicate_item_title_wishlist">Déjà dans tes souhaits</string>
+    <string name="duplicate_item_message_platform">Tu as déjà « %1$s » sur %2$s. L\'ajouter quand même ?</string>
+    <string name="duplicate_item_message_no_platform">Tu as déjà « %1$s ». L\'ajouter quand même ?</string>
+    <string name="duplicate_item_add_anyway">Ajouter quand même</string>
     <string name="close">Fermer</string>
     <string name="scan_barcode_option">📷  Scanner un code-barres de jeu</string>
     <string name="scan_not_found_title">Rien trouvé</string>

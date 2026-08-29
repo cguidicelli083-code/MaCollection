@@ -3,6 +3,11 @@
 
     <string name="add_item_dialog_title">Objekt hinzufügen</string>
     <string name="cancel">Abbrechen</string>
+    <string name="duplicate_item_title_collection">Bereits in deiner Sammlung</string>
+    <string name="duplicate_item_title_wishlist">Bereits auf deiner Wunschliste</string>
+    <string name="duplicate_item_message_platform">Du hast „%1$s" bereits für %2$s. Trotzdem hinzufügen?</string>
+    <string name="duplicate_item_message_no_platform">Du hast „%1$s" bereits. Trotzdem hinzufügen?</string>
+    <string name="duplicate_item_add_anyway">Trotzdem hinzufügen</string>
     <string name="close">Schließen</string>
     <string name="scan_barcode_option">📷  Spiele-Barcode scannen</string>
     <string name="scan_not_found_title">Nichts gefunden</string>

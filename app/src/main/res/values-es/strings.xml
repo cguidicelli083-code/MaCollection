@@ -3,6 +3,11 @@
 
     <string name="add_item_dialog_title">Añadir un objeto</string>
     <string name="cancel">Cancelar</string>
+    <string name="duplicate_item_title_collection">Ya está en tu colección</string>
+    <string name="duplicate_item_title_wishlist">Ya está en tus deseos</string>
+    <string name="duplicate_item_message_platform">Ya tienes «%1$s» para %2$s. ¿Añadirlo de todos modos?</string>
+    <string name="duplicate_item_message_no_platform">Ya tienes «%1$s». ¿Añadirlo de todos modos?</string>
+    <string name="duplicate_item_add_anyway">Añadir de todos modos</string>
     <string name="close">Cerrar</string>
     <string name="scan_barcode_option">📷  Escanear un código de barras de juego</string>
     <string name="scan_not_found_title">Nada encontrado</string>

@@ -250,6 +250,12 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             .map { list -> list.filter { !it.isWishlist } }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    /** Équivalent [allOwnedItems] côté souhaits, jamais filtré par type — sert à [findDuplicate]. */
+    val allWishlistItems: StateFlow<List<CollectionItem>> =
+        collectionDao.observeAll()
+            .map { list -> list.filter { it.isWishlist } }
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
     /** Valeur totale de la collection (somme des cotes connues), hors acquisitions futures. */
     val totalCents: StateFlow<Int> =
         collectionDao.observeAll()
@@ -510,6 +516,26 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     fun saveCollectionItem(item: CollectionItem, newPhotoUris: List<String> = emptyList()) =
         viewModelScope.launch { saveCollectionItemInternal(item, newPhotoUris) }
+
+    /**
+     * Cherche un objet déjà présent dans LA MÊME liste (collection ou souhaits, selon
+     * [item.isWishlist]) avec le même type, le même nom et la même console/plateforme associée
+     * ([CollectionItem.platform], comparaison trim + insensible à la casse, même convention que le
+     * reste du code) — pour ne jamais signaler un doublon si le nom correspond mais pas la console
+     * (ex. un jeu identique sur une autre plateforme). Exclut [item] lui-même par id (cas d'une
+     * modification, pas d'un ajout). Renvoie null si rien ne correspond.
+     */
+    fun findDuplicate(item: CollectionItem): CollectionItem? {
+        val pool = if (item.isWishlist) allWishlistItems.value else allOwnedItems.value
+        val name = item.name.trim()
+        val platform = item.platform?.trim().orEmpty()
+        return pool.firstOrNull { existing ->
+            existing.id != item.id &&
+                existing.type == item.type &&
+                existing.name.trim().equals(name, ignoreCase = true) &&
+                existing.platform?.trim().orEmpty().equals(platform, ignoreCase = true)
+        }
+    }
 
     /**
      * Corps de [saveCollectionItem], extrait en suspend function pour que [saveBatch] puisse

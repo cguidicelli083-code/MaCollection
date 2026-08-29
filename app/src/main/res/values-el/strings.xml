@@ -3,6 +3,11 @@
 
     <string name="add_item_dialog_title">Προσθήκη αντικειμένου</string>
     <string name="cancel">Άκυρο</string>
+    <string name="duplicate_item_title_collection">Ήδη στη συλλογή σου</string>
+    <string name="duplicate_item_title_wishlist">Ήδη στη λίστα επιθυμιών σου</string>
+    <string name="duplicate_item_message_platform">Έχεις ήδη το «%1$s» για %2$s. Προσθήκη ούτως ή άλλως;</string>
+    <string name="duplicate_item_message_no_platform">Έχεις ήδη το «%1$s». Προσθήκη ούτως ή άλλως;</string>
+    <string name="duplicate_item_add_anyway">Προσθήκη ούτως ή άλλως</string>
     <string name="close">Κλείσιμο</string>
     <string name="scan_barcode_option">📷  Σκανάρισμα γραμμωτού κώδικα παιχνιδιού</string>
     <string name="scan_not_found_title">Δεν βρέθηκε τίποτα</string>

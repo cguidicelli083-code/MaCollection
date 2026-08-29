@@ -3,6 +3,11 @@
 
     <string name="add_item_dialog_title">Add an item</string>
     <string name="cancel">Cancel</string>
+    <string name="duplicate_item_title_collection">Already in your collection</string>
+    <string name="duplicate_item_title_wishlist">Already in your wishlist</string>
+    <string name="duplicate_item_message_platform">You already have “%1$s” for %2$s. Add it anyway?</string>
+    <string name="duplicate_item_message_no_platform">You already have “%1$s”. Add it anyway?</string>
+    <string name="duplicate_item_add_anyway">Add anyway</string>
     <string name="close">Close</string>
     <string name="scan_barcode_option">📷  Scan a game barcode</string>
     <string name="scan_not_found_title">Nothing found</string>

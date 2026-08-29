@@ -3,6 +3,11 @@
 
     <string name="add_item_dialog_title">Добавить предмет</string>
     <string name="cancel">Отмена</string>
+    <string name="duplicate_item_title_collection">Уже в коллекции</string>
+    <string name="duplicate_item_title_wishlist">Уже в списке желаний</string>
+    <string name="duplicate_item_message_platform">У тебя уже есть «%1$s» для %2$s. Всё равно добавить?</string>
+    <string name="duplicate_item_message_no_platform">У тебя уже есть «%1$s». Всё равно добавить?</string>
+    <string name="duplicate_item_add_anyway">Добавить всё равно</string>
     <string name="close">Закрыть</string>
     <string name="scan_barcode_option">📷  Сканировать штрих-код игры</string>
     <string name="scan_not_found_title">Ничего не найдено</string>

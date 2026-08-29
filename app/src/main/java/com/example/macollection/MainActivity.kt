@@ -262,6 +262,10 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
         else -> (freeCollectionQuota - testCollectionItems.size).coerceAtLeast(0)
     }
     var editor by remember { mutableStateOf<CollectionEditor?>(null) }
+    // Objet en attente de confirmation après détection d'un doublon (voir AppViewModel.findDuplicate)
+    // dans le onSave de AddCollectionForm plus bas : le formulaire reste ouvert derrière tant que
+    // l'utilisateur n'a pas choisi "Ajouter quand même" ou "Annuler".
+    var pendingDuplicate by remember { mutableStateOf<Pair<CollectionItem, List<String>>?>(null) }
     var viewing by remember { mutableStateOf<CollectionItem?>(null) }
     // Hissés ici (avant les branches editor/viewing ET le when(tab) plus bas) pour que la
     // position de défilement de chaque liste survive à la fois à un aller-retour vers la fiche
@@ -735,15 +739,48 @@ fun AppRoot(vm: AppViewModel = viewModel(), gameVm: GameViewModel = viewModel())
             initialPriceIsAiEstimate = ed.initialPriceIsAiEstimate,
             isWishlist = ed.isWishlist,
             onSave = { item, photos ->
-                vm.saveCollectionItem(item, photos)
-                // Bascule sur l'onglet où l'objet vient d'atterrir, pour que le scroll automatique
-                // (voir AppViewModel.pendingScrollToItemId / CollectionScreen) soit visible même si
-                // le formulaire a été ouvert depuis un autre onglet (ex. Encyclopédie).
-                tab = if (item.isWishlist) Tab.WISHLIST else Tab.COLLECTION
-                editor = null
+                if (item.id == 0L && vm.findDuplicate(item) != null) {
+                    pendingDuplicate = item to photos
+                } else {
+                    vm.saveCollectionItem(item, photos)
+                    // Bascule sur l'onglet où l'objet vient d'atterrir, pour que le scroll automatique
+                    // (voir AppViewModel.pendingScrollToItemId / CollectionScreen) soit visible même si
+                    // le formulaire a été ouvert depuis un autre onglet (ex. Encyclopédie).
+                    tab = if (item.isWishlist) Tab.WISHLIST else Tab.COLLECTION
+                    editor = null
+                }
             },
             onCancel = { editor = null }
         )
+        pendingDuplicate?.let { (item, photos) ->
+            AlertDialog(
+                onDismissRequest = { pendingDuplicate = null },
+                title = {
+                    Text(stringResource(if (item.isWishlist) R.string.duplicate_item_title_wishlist else R.string.duplicate_item_title_collection))
+                },
+                text = {
+                    Text(
+                        if (!item.platform.isNullOrBlank())
+                            stringResource(R.string.duplicate_item_message_platform, item.name, item.platform)
+                        else
+                            stringResource(R.string.duplicate_item_message_no_platform, item.name)
+                    )
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        vm.saveCollectionItem(item, photos)
+                        tab = if (item.isWishlist) Tab.WISHLIST else Tab.COLLECTION
+                        editor = null
+                        pendingDuplicate = null
+                    }) { Text(stringResource(R.string.duplicate_item_add_anyway)) }
+                },
+                dismissButton = {
+                    // Annule seulement la tentative d'enregistrement : le formulaire reste ouvert,
+                    // rien n'est perdu.
+                    TextButton(onClick = { pendingDuplicate = null }) { Text(stringResource(R.string.cancel)) }
+                }
+            )
+        }
         return
     }
     viewing?.let { snapshot ->
