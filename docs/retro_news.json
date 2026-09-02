@@ -1,5 +1,746 @@
 [
   {
+    "id": "6a2a70ae66d164a19ea3b608a9c138f894891f29",
+    "title": "No Rest for the Wicked : l'action-RPG de Moon Studios recule au mois de mars 2027",
+    "summary": "Son évolution en accès anticipé a montré de belles promesses, mais la dernière ligne droite semble difficile pour No Rest for the Wicked. Alors que l'action-RPG semblait prêt pour une sortie le mois prochain, Moon Studios repousse finalement le jour J au mois de mars 2027 sur PlayStation 5 et Steam.",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gamekult",
+    "sourceUrl": "https://www.gamekult.com/actualite/no-rest-for-the-wicked-l-action-rpg-de-moon-studios-recule-au-mois-de-mars-2027-3050871862.html",
+    "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871862/no-rest-for-the-wicked-l-action-rpg-de-moon-studios-recule-au-mois-de-mars-2027-91683718__800_800__534-135-1479-1080.jpg",
+    "publishedAt": "2026-09-02T05:38:00+00:00",
+    "scrapedAt": "2026-09-02T07:47:36.989667+00:00",
+    "translations": {
+      "fr": {
+        "title": "No Rest for the Wicked : l'action-RPG de Moon Studios recule au mois de mars 2027",
+        "summary": "Son évolution en accès anticipé a montré de belles promesses, mais la dernière ligne droite semble difficile pour No Rest for the Wicked. Alors que l'action-RPG semblait prêt pour une sortie le mois prochain, Moon Studios repousse finalement le jour J au mois de mars 2027 sur PlayStation 5 et Steam."
+      },
+      "en": {
+        "title": "No Rest for the Wicked: Moon Studios' action-RPG moves back to March 2027",
+        "summary": "Its evolution in early access has shown great promise, but the final stretch seems difficult for No Rest for the Wicked. While the action-RPG seemed ready for release next month, Moon Studios finally postponed the D-day to March 2027 on PlayStation 5 and Steam."
+      },
+      "es": {
+        "title": "No Rest for the Wicked: el juego de rol de acción de Moon Studios se remonta a marzo de 2027",
+        "summary": "Su evolución en acceso anticipado se ha mostrado muy prometedora, pero la recta final parece complicada para No Rest for the Wicked. Si bien el juego de rol de acción parecía estar listo para su lanzamiento el próximo mes, Moon Studios finalmente pospuso el día D hasta marzo de 2027 en PlayStation 5 y Steam."
+      },
+      "it": {
+        "title": "No Rest for the Wicked: il gioco di ruolo d'azione di Moon Studios torna a marzo 2027",
+        "summary": "La sua evoluzione nell'accesso anticipato si è rivelata molto promettente, ma il tratto finale sembra difficile per No Rest for the Wicked. Mentre il gioco di ruolo d'azione sembrava pronto per il rilascio il mese prossimo, Moon Studios ha finalmente posticipato il D-day a marzo 2027 su PlayStation 5 e Steam."
+      },
+      "de": {
+        "title": "No Rest for the Wicked: Das Action-Rollenspiel von Moon Studios verschiebt sich auf März 2027",
+        "summary": "Die Entwicklung im Early Access hat sich als vielversprechend erwiesen, aber der letzte Abschnitt scheint für No Rest for the Wicked schwierig zu sein. Während das Action-Rollenspiel für die Veröffentlichung im nächsten Monat bereit schien, verschob Moon Studios den D-Day schließlich auf März 2027 für PlayStation 5 und Steam."
+      },
+      "pt": {
+        "title": "No Rest for the Wicked: o RPG de ação da Moon Studios volta para março de 2027",
+        "summary": "Sua evolução no acesso antecipado tem se mostrado muito promissora, mas a reta final parece difícil para No Rest for the Wicked. Embora o RPG de ação parecesse pronto para lançamento no próximo mês, Moon Studios finalmente adiou o dia D para março de 2027 no PlayStation 5 e Steam."
+      },
+      "ru": {
+        "title": "No Rest for the Wicked: действие ролевой игры Moon Studios переносится в март 2027 года",
+        "summary": "Его эволюция в раннем доступе показала большие надежды, но финальный этап No Rest for the Wicked кажется трудным. Хотя ролевая игра, казалось, была готова к выпуску в следующем месяце, Moon Studios наконец перенесла день «Д» на март 2027 года на PlayStation 5 и Steam."
+      },
+      "el": {
+        "title": "No Rest for the Wicked: Το action-RPG των Moon Studios επιστρέφει στον Μάρτιο του 2027",
+        "summary": "Η εξέλιξή του στην πρώιμη πρόσβαση έχει δείξει πολλά υποσχόμενη, αλλά η τελική ευθεία φαίνεται δύσκολη για το No Rest for the Wicked. Ενώ το action-RPG φαινόταν έτοιμο για κυκλοφορία τον επόμενο μήνα, η Moon Studios τελικά ανέβαλε την D-day για τον Μάρτιο του 2027 στο PlayStation 5 και στο Steam."
+      },
+      "tr": {
+        "title": "Kötülere Dinlenmek Yok: Moon Studios'un aksiyon RPG'si Mart 2027'ye geri dönüyor",
+        "summary": "Erken erişimdeki gelişimi büyük umut vaat ediyor ancak No Rest for the Wicked için son aşama zor görünüyor. Aksiyon RPG oyunu önümüzdeki ay yayınlanmaya hazır gibi görünse de Moon Studios sonunda PlayStation 5 ve Steam'deki D-day'ı Mart 2027'ye erteledi."
+      },
+      "ja": {
+        "title": "邪悪な者に休息なし: Moon Studios のアクション RPG が 2027 年 3 月に遡る",
+        "summary": "早期アクセスにおけるその進化は大きな期待を示していますが、No Rest for the Wicked にとって最後の展開は難しいようです。このアクション RPG は来月リリースの準備が整っているように見えましたが、Moon Studios は最終的に PlayStation 5 と Steam での D-day を 2027 年 3 月に延期しました。"
+      },
+      "zh": {
+        "title": "No Rest for the Wicked: Moon Studios 的动作角色扮演游戏移至 2027 年 3 月",
+        "summary": "它在抢先体验阶段的发展已经展现出了巨大的希望，但对于《No Rest for the Wicked》来说，最后的阶段似乎很困难。虽然这款动作角色扮演游戏似乎已准备好在下个月发布，但 Moon Studios 最终将 PlayStation 5 和 Steam 上的诺曼底登陆日推迟到了 2027 年 3 月。"
+      }
+    }
+  },
+  {
+    "id": "1beaec3d6f73dbe27ff0f17df8c250c47fba1b47",
+    "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+    "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/09/g-mode-archives-ridge-racer-announced-for-switch-pc",
+    "imageUrl": "",
+    "publishedAt": "2026-09-02T03:38:17+00:00",
+    "scrapedAt": "2026-09-02T07:47:23.053320+00:00",
+    "translations": {
+      "en": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "fr": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "es": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "it": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "de": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "pt": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "ru": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "el": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "tr": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "ja": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      },
+      "zh": {
+        "title": "G-MODE Archives+ Ridge Racer announced for Switch, PC",
+        "summary": "G-MODE will release the feature phone version of Ridge Racer as a G-MODE Archives+ title, the &hellip;"
+      }
+    }
+  },
+  {
+    "id": "dd12c40976d6c532aaedfbd0cbf2376a81fea3ab",
+    "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+    "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well.",
+    "category": "GAME_RELEASE",
+    "sourceName": "GamingBolt",
+    "sourceUrl": "https://gamingbolt.com/nvidia-dlss-5-launches-on-september-3-debuts-in-nba-2k27",
+    "imageUrl": "",
+    "publishedAt": "2026-09-02T03:02:15+00:00",
+    "scrapedAt": "2026-09-02T07:47:27.503472+00:00",
+    "translations": {
+      "en": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "fr": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "es": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "it": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "de": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "pt": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "ru": {
+        "title": "Nvidia DLSS 5 выйдет 3 сентября и дебютирует в NBA 2K27",
+        "summary": "Возможно, пришло время увидеть ваших любимых спортсменов в совершенно новом, фотореалистичном свете, поскольку DLSS 5 привносит свое волшебство в игру, которая может его хорошо использовать."
+      },
+      "el": {
+        "title": "Το Nvidia DLSS 5 κυκλοφορεί στις 3 Σεπτεμβρίου, κάνει ντεμπούτο στο NBA 2K27",
+        "summary": "Ίσως ήρθε η ώρα να δείτε τους αγαπημένους σας αθλητές με ένα εντελώς νέο, φωτορεαλιστικό φως, καθώς το DLSS 5 φέρνει τη μαγεία του σε έναν τίτλο που μπορεί να το χρησιμοποιήσει καλά."
+      },
+      "tr": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "ja": {
+        "title": "Nvidia DLSS 5 Launches on September 3, Debuts in NBA 2K27",
+        "summary": "It might be time to see your favorite athletes in a whole new, photorealistic light as DLSS 5 brings its magic to a title that can use it well."
+      },
+      "zh": {
+        "title": "Nvidia DLSS 5 将于 9 月 3 日推出，首次亮相 NBA 2K27",
+        "summary": "也许是时候以全新、逼真的视角来看待您最喜爱的运动员了，因为 DLSS 5 将其魔力融入到一款可以很好地利用它的游戏中。"
+      }
+    }
+  },
+  {
+    "id": "8693ae319bbb5e3c11b9a96bd392c272457acba3",
+    "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+    "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com",
+    "category": "GAME_RELEASE",
+    "sourceName": "Push Square",
+    "sourceUrl": "https://www.pushsquare.com/news/2026/09/colossal-game-changing-dragons-dogma-2-patch-3-2-out-now-on-ps5",
+    "imageUrl": "https://images.pushsquare.com/1be8819a68f08/large.jpg",
+    "publishedAt": "2026-09-02T00:30:00+00:00",
+    "scrapedAt": "2026-09-02T07:47:19.619077+00:00",
+    "translations": {
+      "en": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "fr": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "es": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "it": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "de": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "pt": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "ru": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "el": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "tr": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "ja": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      },
+      "zh": {
+        "title": "Colossal, Game-Changing Dragon's Dogma 2 Patch 3.2 Out Now on PS5",
+        "summary": "Arise, Arisen. As Capcom promised, the biggest ever update for Dragon's Dogma 2 is available to download now on PS5. And when I write 'biggest', I don't just mean that it's packing the most improvements; this thing is 48GB in terms of file size. Read the full article on pushsquare.com"
+      }
+    }
+  },
+  {
+    "id": "8c53fafc60e67416aa77bba541352bc5334c7a49",
+    "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+    "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available",
+    "category": "UPCOMING_CONSOLE",
+    "sourceName": "Nintendo Life",
+    "sourceUrl": "https://www.nintendolife.com/news/2026/09/cd-projekt-red-very-happy-with-cyberpunk-2077-sales-on-switch-2",
+    "imageUrl": "https://images.nintendolife.com/dd6bf2c24d74a/large.jpg",
+    "publishedAt": "2026-09-01T17:45:00+00:00",
+    "scrapedAt": "2026-09-02T07:47:17.108528+00:00",
+    "translations": {
+      "en": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "fr": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "es": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "it": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "de": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "pt": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "ru": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "el": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "tr": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "ja": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      },
+      "zh": {
+        "title": "CD Projekt Red \"Very Happy\" With Cyberpunk 2077 Sales On Switch 2",
+        "summary": "\"the most important bit is that the players are happy\". It's safe to say that, besides from Mario Kart World , CD Projekt Red's Cyberpunk 2077: Ultimate Edition was the game of the Switch 2's launch in 2025. That probably sounds strange considering it's a port of a title that infamously had a disastrous start on other platforms, but by the time it released on Nintendo's new console, it has been improved significantly and was widely considered one of the most impressive open-world games available"
+      }
+    }
+  },
+  {
+    "id": "e766908bec7a2589bc8c8c7f8381d285cd970c30",
+    "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+    "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/09/01/lego-harry-potter-collection-confirmed-for-nintendo-switch-2/",
+    "imageUrl": "",
+    "publishedAt": "2026-09-01T17:26:07+00:00",
+    "scrapedAt": "2026-09-02T07:47:21.100554+00:00",
+    "translations": {
+      "en": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "fr": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "es": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "it": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "de": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "pt": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "ru": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "el": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "tr": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "ja": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      },
+      "zh": {
+        "title": "LEGO Harry Potter Collection confirmed for Nintendo Switch 2",
+        "summary": "Warner Bros Games has confirmed what we already knew and that&#8217;s that the beloved Harry Potter Collection is destined for the Nintendo Switch 2. You can expect the Harry Potter Collection to launch on 16th October and it will cost $49.99. Here&#8217;s the details: Developed by TT Games, published by Warner Bros. Games and ported&#8230;&#160; Read More &#187; LEGO Harry Potter Collection confirmed for Nintendo Switch 2 Source"
+      }
+    }
+  },
+  {
+    "id": "29c629831ac25453958256e58fd5626896b49e11",
+    "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+    "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/09/lego-harry-potter-collection-coming-to-switch-2-on-october-16",
+    "imageUrl": "",
+    "publishedAt": "2026-09-01T17:00:08+00:00",
+    "scrapedAt": "2026-09-02T07:47:23.053545+00:00",
+    "translations": {
+      "en": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "fr": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "es": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "it": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "de": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "pt": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "ru": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "el": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "tr": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "ja": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      },
+      "zh": {
+        "title": "LEGO Harry Potter Collection coming to Switch 2 on October 16",
+        "summary": "Publisher Warner Bros. Games and developers TT Games, Double Eleven, and Cast Iron Games will &hellip;"
+      }
+    }
+  },
+  {
+    "id": "0c103b4ddb6d5f8c9cecf311b141deb848f1f992",
+    "title": "Milki Delivery : Le jeu d’aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC",
+    "summary": "ActuGaming.net Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC Annoncé en tout début d&#8217;année avant de s&#8217;offrir une démo en juin dernier, en marge [&#8230;] L'article Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC est disponible sur ActuGaming.net",
+    "category": "GAME_RELEASE",
+    "sourceName": "ActuGaming",
+    "sourceUrl": "https://www.actugaming.net/milki-delivery-aventure-livraison-lait-blibloop-doot-tiny-games-minami-lane-kabuto-park-date-sortie-pc-821957/",
+    "imageUrl": "https://static.actugaming.net/media/2026/09/Cover_Art.jpg",
+    "publishedAt": "2026-09-01T15:46:47+00:00",
+    "scrapedAt": "2026-09-02T07:48:14.173643+00:00",
+    "translations": {
+      "fr": {
+        "title": "Milki Delivery : Le jeu d’aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC",
+        "summary": "ActuGaming.net Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC Annoncé en tout début d&#8217;année avant de s&#8217;offrir une démo en juin dernier, en marge [&#8230;] L'article Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC est disponible sur ActuGaming.net"
+      },
+      "en": {
+        "title": "Milki Delivery: The milk delivery adventure game from Blibloop and Doot Tiny Games (Minami Lane, Kabuto Park) will be released on November 17 on PC",
+        "summary": "ActuGaming.net Milki Delivery: The milk delivery adventure game from Blibloop and Doot Tiny Games (Minami Lane, Kabuto Park) will be released on November 17 on PC Announced at the very beginning of the year before offering a demo last June, on the sidelines [&#8230;] The article Milki Delivery: The milk delivery adventure game from Blibloop and Doot Tiny Games (Minami Lane, Kabuto Park) will be released on November 17 on PC and is available on ActuGaming.net"
+      },
+      "es": {
+        "title": "Milki Delivery: el juego de aventuras de entrega de leche de Blibloop y Doot Tiny Games (Minami Lane, Kabuto Park) se lanzará el 17 de noviembre en PC",
+        "summary": "ActuGaming.net Milki Delivery: El juego de aventuras de entrega de leche de Blibloop y Doot Tiny Games (Minami Lane, Kabuto Park) se lanzará el 17 de noviembre en PC Anunciado a principios de año antes de ofrecer una demostración el pasado mes de junio, al margen [&#8230;] El artículo Milki Delivery: El juego de aventuras de entrega de leche de Blibloop y Doot Tiny Games (Minami Lane, Kabuto Park) se lanzará en noviembre 17 en PC y está disponible en ActuGaming.net"
+      },
+      "it": {
+        "title": "Milki Delivery: il gioco d'avventura sulla consegna del latte di Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) uscirà il 17 novembre su PC",
+        "summary": "ActuGaming.net Milki Delivery: il gioco d'avventura con consegna del latte di Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) uscirà il 17 novembre su PC Annunciato all'inizio dell'anno prima di offrire una demo lo scorso giugno, a margine [&#8230;] L'articolo Milki Delivery: il gioco d'avventura con consegna del latte di Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) uscirà a novembre 17 su PC ed è disponibile su ActuGaming.net"
+      },
+      "de": {
+        "title": "Milki Delivery: Das Milchliefer-Abenteuerspiel von Blibloop und Doot Tiny Games (Minami Lane, Kabuto Park) erscheint am 17. November auf dem PC",
+        "summary": "ActuGaming.net Milki Delivery: Das Milchlieferungs-Abenteuerspiel von Blibloop und Doot Tiny Games (Minami Lane, Kabuto Park) wird am 17. November auf dem PC veröffentlicht. Anfang des Jahres angekündigt, bevor im Juni letzten Jahres eine Demo angeboten wurde, am Rande [&#8230;] Der Artikel Milki Delivery: Das Milchlieferungs-Abenteuerspiel von Blibloop und Doot Tiny Games (Minami Lane, Kabuto Park) wird am 17. November auf dem PC veröffentlicht und ist verfügbar auf ActuGaming.net"
+      },
+      "pt": {
+        "title": "Milki Delivery: O jogo de aventura de entrega de leite da Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) será lançado em 17 de novembro no PC",
+        "summary": "ActuGaming.net Milki Delivery: O jogo de aventura de entrega de leite da Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) será lançado em 17 de novembro no PC Anunciado no início do ano antes de oferecer uma demonstração em junho passado, nos bastidores [&#8230;] O artigo Milki Delivery: O jogo de aventura de entrega de leite da Blibloop e Doot Tiny Games (Minami Lane, Kabuto Park) será lançado em novembro 17 no PC e está disponível em ActuGaming.net"
+      },
+      "ru": {
+        "title": "Milki Delivery: приключенческая игра о доставке молока от Blibloop и Doot Tiny Games (Minami Lane, Kabuto Park) выйдет 17 ноября на ПК.",
+        "summary": "ActuGaming.net Milki Delivery: приключенческая игра о доставке молока от Blibloop и Doot Tiny Games (Minami Lane, Kabuto Park) выйдет 17 ноября на ПК Анонсировано в самом начале года, прежде чем предложить демо-версию в июне прошлого года, в кулуарах [&#8230;] Статья Milki Delivery: выйдет приключенческая игра о доставке молока от Blibloop и Doot Tiny Games (Minami Lane, Kabuto Park) 17 ноября на ПК и доступно на ActuGaming.net."
+      },
+      "el": {
+        "title": "Milki Delivery: Το παιχνίδι περιπέτειας παράδοσης γάλακτος από τα Blibloop και Doot Tiny Games (Minami Lane, Kabuto Park) θα κυκλοφορήσει στις 17 Νοεμβρίου σε υπολογιστή",
+        "summary": "ActuGaming.net Milki Delivery: Το παιχνίδι περιπέτειας παράδοσης γάλακτος από τα Blibloop και Doot Tiny Games (Minami Lane, Kabuto Park) θα κυκλοφορήσει στις 17 Νοεμβρίου στον υπολογιστή και ανακοινώθηκε στην αρχή του έτους πριν προσφέρεται ένα demo τον περασμένο Ιούνιο, στο περιθώριο [&#8230;] Το άρθρο Milki Delivery: The milk Dotmiliop Games Lane, Kabuto Park) θα κυκλοφορήσει στις 17 Νοεμβρίου σε υπολογιστή και είναι διαθέσιμο στο ActuGaming.net"
+      },
+      "tr": {
+        "title": "Milki Delivery: Blibloop ve Doot Tiny Games'in (Minami Lane, Kabuto Park) süt dağıtım macera oyunu 17 Kasım'da PC'de yayınlanacak",
+        "summary": "ActuGaming.net Milki Delivery: Blibloop ve Doot Tiny Games'in (Minami Lane, Kabuto Park) süt dağıtım macera oyunu 17 Kasım'da PC'de yayınlanacak. Geçen Haziran'da bir demo sunmadan önce yılın başında duyuruldu, kenarda [&#8230;] Milki Delivery: Blibloop ve Doot Tiny Games'in (Minami Lane, Kabuto Park) süt dağıtım macera oyunu Kasım'da yayınlanacak 17 PC'de ve ActuGaming.net'te mevcut"
+      },
+      "ja": {
+        "title": "Milki Delivery: Blibloop と Doot Tiny Games (ミナミ レーン、カブト パーク) によるミルク配達アドベンチャー ゲームが PC で 11 月 17 日にリリースされます",
+        "summary": "ActuGaming.net Milki Delivery: Blibloop と Doot Tiny Games のミルク配達アドベンチャー ゲーム (カブト パークのミナミ レーン) が 11 月 17 日に PC でリリースされます 昨年 6 月にデモを提供する前に、年の初めに発表されましたが、傍観者でした [&#8230;] 記事 Milki Delivery: Blibloop と Doot Tiny Games のミルク デリバリー アドベンチャー ゲーム (カブト パークのミナミ レーン) が 11 月にリリースされます17 (PC 版)、ActuGaming.net で入手可能"
+      },
+      "zh": {
+        "title": "Milki Delivery : Le jeu d’aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC",
+        "summary": "ActuGaming.net Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC Annoncé en tout début d&#8217;année avant de s&#8217;offrir une démo en juin dernier, en marge [&#8230;] L'article Milki Delivery : Le jeu d&rsquo;aventure de livraison de lait de Blibloop et Doot Tiny Games (Minami Lane, Kabuto Park) sortira le 17 novembre sur PC est disponible sur ActuGaming.net"
+      }
+    }
+  },
+  {
+    "id": "6158c81bdf1e41391abe1f3726811fc642798783",
+    "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+    "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but",
+    "category": "GAME_RELEASE",
+    "sourceName": "RetroDodo",
+    "sourceUrl": "https://retrododo.com/the-pc-version-of-gta-vice-city-is-now-running-on-gamecube/",
+    "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/09/vice-city-gamepad-gamecube.jpg",
+    "publishedAt": "2026-09-01T13:50:19+00:00",
+    "scrapedAt": "2026-09-02T07:47:15.710009+00:00",
+    "translations": {
+      "en": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "fr": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "es": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "it": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "de": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "pt": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "ru": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "el": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "tr": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "ja": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      },
+      "zh": {
+        "title": "The PC Version Of GTA Vice City Is Now Running On GameCube",
+        "summary": "The world seems to be going extra crazy as we approach the release date for Grand Theft Auto 6, with ports of previous games appearing on all manner of different consoles. Never in my wildest dreams did I think I would see GTA Vice City running on the GameCube, but"
+      }
+    }
+  },
+  {
+    "id": "288af21725280073b25dd7221adc0d66e57c1ddc",
+    "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+    "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gematsu",
+    "sourceUrl": "https://www.gematsu.com/2026/09/i-am-your-beast-coming-to-switch-2-switch-on-october-20-alongside-story-dlc-quitting-time",
+    "imageUrl": "",
+    "publishedAt": "2026-09-01T13:09:13+00:00",
+    "scrapedAt": "2026-09-02T07:47:23.053860+00:00",
+    "translations": {
+      "en": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "fr": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "es": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "it": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "de": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "pt": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "ru": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "el": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "tr": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "ja": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      },
+      "zh": {
+        "title": "I Am Your Beast coming to Switch 2, Switch on October 20 alongside story DLC ‘Quitting Time’",
+        "summary": "Strange Scaffold will release revenge thriller first-person shooter I Am Your Beast for Switch 2 &hellip;"
+      }
+    }
+  },
+  {
+    "id": "46ff57ab1c1d15606363d553497114ddcdf7e76f",
+    "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+    "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source",
+    "category": "GAME_RELEASE",
+    "sourceName": "My Nintendo News",
+    "sourceUrl": "https://mynintendonews.com/2026/09/01/metaphor-refantazio-releasing-november-on-nintendo-switch-2/",
+    "imageUrl": "",
+    "publishedAt": "2026-09-01T10:34:53+00:00",
+    "scrapedAt": "2026-09-02T07:47:21.100743+00:00",
+    "translations": {
+      "en": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "fr": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "es": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "it": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "de": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "pt": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "ru": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "el": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "tr": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "ja": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      },
+      "zh": {
+        "title": "Metaphor: ReFantazio releasing  November on Nintendo Switch 2",
+        "summary": "Those of you looking forward to the Nintendo Switch 2 version of the excellent Metaphor: ReFantazio will be pleased to hear that it&#8217;s scheduled to release on the platform on 12th November. To celebrate the news, Atlus has put together a Metaphor: ReFantazio pre-order trailer which you can view down below. Source"
+      }
+    }
+  },
+  {
+    "id": "dd7b22ecf3f05afbc356303263bb4623c67c9e56",
+    "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 s'offre Mick Gordon (DOOM) au son et date sa sortie à octobre 2026",
+    "summary": "Après un Boltgun 1 qui ne nous avait qu'à moitié convaincus, Auroch Digital reprend du service dans le Warp. Le studio a profité de la Gamescom pour livrer une nouvelle bande-annonce de Warhammer 40,000 : Boltgun 2, afin d'officialiser sa date de sortie. Et par la même occasion, on a la confirmation de retrouver le toujours subtil Mick Gordon à la bande originale (enfin, ne vous emballez pas, il est juste de passage).",
+    "category": "GAME_RELEASE",
+    "sourceName": "Gamekult",
+    "sourceUrl": "https://www.gamekult.com/actualite/warhammer-40-000-boltgun-2-s-offre-mick-gordon-doom-au-son-et-date-sa-sortie-a-octobre-2026-3050871849.html",
+    "imageUrl": "https://cdn.gamekult.com/optim/images/news/30/3050871849/warhammer-40-000-boltgun-2-s-offre-mick-gordon-doom-au-son-et-date-sa-sortie-a-octobre-2026-85c6be95__800_800__1146-0-3305-2160.jpg",
+    "publishedAt": "2026-09-01T09:22:00+00:00",
+    "scrapedAt": "2026-09-02T07:47:36.990363+00:00",
+    "translations": {
+      "fr": {
+        "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 s'offre Mick Gordon (DOOM) au son et date sa sortie à octobre 2026",
+        "summary": "Après un Boltgun 1 qui ne nous avait qu'à moitié convaincus, Auroch Digital reprend du service dans le Warp. Le studio a profité de la Gamescom pour livrer une nouvelle bande-annonce de Warhammer 40,000 : Boltgun 2, afin d'officialiser sa date de sortie. Et par la même occasion, on a la confirmation de retrouver le toujours subtil Mick Gordon à la bande originale (enfin, ne vous emballez pas, il est juste de passage)."
+      },
+      "en": {
+        "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 features Mick Gordon (DOOM) in sound and dates its release to October 2026",
+        "summary": "After a Boltgun 1 which only half convinced us, Auroch Digital is back in action in the Warp. The studio took advantage of Gamescom to deliver a new trailer for Warhammer 40,000: Boltgun 2, in order to formalize its release date. And at the same time, we have the confirmation of finding the always subtle Mick Gordon on the soundtrack (well, don't get carried away, he's just passing through)."
+      },
+      "es": {
+        "title": "Juegoscom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 presenta a Mick Gordon (DOOM) en el sonido y fecha su lanzamiento para octubre de 2026",
+        "summary": "Después de un Boltgun 1 que solo nos convenció a medias, Auroch Digital vuelve a la acción en Warp. El estudio aprovechó la Gamescom para entregar un nuevo tráiler de Warhammer 40,000: Boltgun 2, con el fin de formalizar su fecha de lanzamiento. Y al mismo tiempo, tenemos la confirmación de encontrar al siempre sutil Mick Gordon en la banda sonora (bueno, no os dejéis llevar, que está de paso)."
+      },
+      "it": {
+        "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 presenta Mick Gordon (DOOM) nel suono e la sua uscita è prevista per ottobre 2026",
+        "summary": "Dopo un Boltgun 1 che ci ha convinto solo a metà, Auroch Digital è tornata in azione nel Warp. Lo studio ha approfittato della Gamescom per consegnare un nuovo trailer di Warhammer 40.000: Boltgun 2, al fine di ufficializzarne la data di uscita. E allo stesso tempo, abbiamo la conferma di ritrovare nella colonna sonora il sempre discreto Mick Gordon (beh, non fatevi prendere la mano, è solo di passaggio)."
+      },
+      "de": {
+        "title": "Gamescom 2026 | gc2026 – Warhammer 40.000 Boltgun 2 enthält Mick Gordon (DOOM) im Sound und erscheint im Oktober 2026",
+        "summary": "Nach einem Boltgun 1, der uns nur halb überzeugt hat, ist Auroch Digital im Warp wieder im Einsatz. Das Studio nutzte die Gamescom, um einen neuen Trailer für Warhammer 40.000: Boltgun 2 zu liefern, um dessen Veröffentlichungsdatum zu formalisieren. Und gleichzeitig haben wir die Bestätigung, den stets subtilen Mick Gordon im Soundtrack zu finden (nun, lassen Sie sich nicht mitreißen, er ist nur auf der Durchreise)."
+      },
+      "pt": {
+        "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2 apresenta Mick Gordon (DOOM) no som e data de lançamento para outubro de 2026",
+        "summary": "Depois de um Boltgun 1 que nos convenceu apenas parcialmente, Auroch Digital está de volta à ação no Warp. O estúdio aproveitou a Gamescom para entregar um novo trailer de Warhammer 40,000: Boltgun 2, a fim de formalizar sua data de lançamento. E ao mesmo tempo, temos a confirmação de encontrar o sempre sutil Mick Gordon na trilha sonora (bom, não se empolgue, ele está só de passagem)."
+      },
+      "ru": {
+        "title": "Gamescom 2026 | gc2026 — Warhammer 40,000 Boltgun 2 включает в себя звук Мика Гордона (DOOM) и датирует его выпуск октябрем 2026 года.",
+        "summary": "После Boltgun 1, который убедил нас лишь наполовину, Auroch Digital снова в действии в Варпе. Студия воспользовалась Gamescom, чтобы представить новый трейлер Warhammer 40,000: Boltgun 2, чтобы официально определить дату его выпуска. И в то же время у нас есть подтверждение наличия в саундтреке всегда тонкого Мика Гордона (ну, не увлекайтесь, он просто проходит)."
+      },
+      "el": {
+        "title": "Gamescom 2026 | gc2026 - Το Warhammer 40,000 Boltgun 2 διαθέτει τον Mick Gordon (DOOM) στον ήχο και χρονολογεί την κυκλοφορία του τον Οκτώβριο του 2026",
+        "summary": "Μετά από ένα Boltgun 1 που μόνο το μισό μας έπεισε, η Auroch Digital επιστρέφει στη δράση στο Warp. Το στούντιο εκμεταλλεύτηκε την Gamescom για να παραδώσει ένα νέο τρέιλερ για το Warhammer 40.000: Boltgun 2, προκειμένου να επισημοποιηθεί η ημερομηνία κυκλοφορίας του. Και ταυτόχρονα, έχουμε την επιβεβαίωση ότι βρίσκουμε τον πάντα διακριτικό Mick Gordon στο soundtrack (καλά, μην παρασυρθείτε, απλά περνάει)."
+      },
+      "tr": {
+        "title": "Gamescom 2026 | gc2026 - Warhammer 40,000 Boltgun 2'de ses olarak Mick Gordon (DOOM) yer alıyor ve çıkış tarihi Ekim 2026'da",
+        "summary": "Bizi ancak yarı yarıya ikna eden Boltgun 1'den sonra Auroch Digital, Warp'ta yeniden faaliyete geçti. Stüdyo, çıkış tarihini resmileştirmek amacıyla Warhammer 40,000: Boltgun 2 için yeni bir fragman yayınlamak üzere Gamescom'dan yararlandı. Ve aynı zamanda, film müziğinde her zaman incelikli olan Mick Gordon'u bulduğumuza dair onay aldık (pekala, kendinizi kaptırmayın, o sadece geçiyor)."
+      },
+      "ja": {
+        "title": "ゲームズコム 2026 | gc2026 - ウォーハンマー 40,000 ボルトガン 2 はサウンドにミック・ゴードン (DOOM) をフィーチャーし、リリースは 2026 年 10 月に予定されています",
+        "summary": "我々を半ば納得させたボルトガン 1 の後、オーロック デジタルはワープで活動に戻りました。スタジオは、発売日を正式に決定するために、Gamescom を利用して『ウォーハンマー 40,000: ボルトガン 2』の新しいトレーラーを配信しました。そして同時に、私たちはサウンドトラックの中にいつも微妙なミック・ゴードンを見つけたという確信を持っています（まあ、調子に乗らないでください、彼はただ通過しているだけです）。"
+      },
+      "zh": {
+        "title": "科隆游戏展 2026 | gc2026 - 《战锤 40,000 Boltgun 2》以米克·戈登 (DOOM) 为主角，并于 2026 年 10 月发行",
+        "summary": "在 Boltgun 1 只让我们信服了一半之后，Auroch Digital 又回到了亚空间。该工作室利用​​ Gamescom 发布了《战锤 40,000：爆弹枪 2》的新预告片，以正式确定其发行日期。与此同时，我们确认在配乐中找到了总是微妙的米克·戈登（好吧，不要得意忘形，他只是路过）。"
+      }
+    }
+  },
+  {
+    "id": "bee2ebc2eb8d9d75cd1cca79dcee5b2db34cf641",
+    "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+    "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f",
+    "category": "GAME_RELEASE",
+    "sourceName": "Time Extension",
+    "sourceUrl": "https://www.timeextension.com/news/2026/09/cult-snes-rpg-with-character-design-by-castlevania-artist-akihiro-yamada-is-coming-to-switch",
+    "imageUrl": "https://images.timeextension.com/fd92394467937/large.jpg",
+    "publishedAt": "2026-09-01T09:00:00+00:00",
+    "scrapedAt": "2026-09-02T07:47:09.345985+00:00",
+    "translations": {
+      "en": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "fr": {
+        "title": "Le RPG culte SNES avec la conception des personnages de l'artiste Castlevania Akihiro Yamada arrive sur le marché",
+        "summary": "Magie ancienne : Bazoé ! Mahou Sekai sera lancé en novembre. La SNES avait plus que sa juste part de RPG incroyables, vous seriez donc pardonné de ne pas avoir entendu parler d'Ancient Magic : Bazoe ! Mahou Sekai, sorti exclusivement au Japon par Hot-B en 1993. En raison de l'absence de localisation en anglais, Ancient Magic n'a pas la même stature que les autres classiques du genre de la console et, dans le style typique de Hot-B, il est très brut sur les bords. Pourtant, cela n'a pas empêché l'éditeur japonais Mebius f"
+      },
+      "es": {
+        "title": "El juego de rol de culto SNES con diseño de personajes del artista de Castlevania, Akihiro Yamada, llegará a Switch",
+        "summary": "Magia antigua: ¡Bazoe! Mahou Sekai se lanza este noviembre. La SNES tenía más juegos de rol increíbles de los que le correspondían, por lo que se te perdonará que no hayas oído hablar de Ancient Magic: Bazoe. Mahou Sekai, que fue lanzado exclusivamente en Japón por Hot-B en 1993. Gracias a la falta de una localización en inglés, Ancient Magic no tiene la misma estatura que los otros clásicos del género de la consola y, en el estilo típico de Hot-B, es muy tosco. Aún así, eso no ha impedido que el editor japonés Mebius f"
+      },
+      "it": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "de": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "pt": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "ru": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "el": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "tr": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "ja": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      },
+      "zh": {
+        "title": "Cult SNES RPG With Character Design By Castlevania Artist Akihiro Yamada Is Coming To Switch",
+        "summary": "Ancient Magic: Bazoe! Mahou Sekai launches this November. The SNES had more than its fair share of amazing RPGs , so you'd be forgiven for having not heard of Ancient Magic: Bazoe! Mahou Sekai , which was released exclusively in Japan by Hot-B in 1993. Thanks to the lack of an English localisation, Ancient Magic doesn't have the same stature as the console's other genre classics, and, in typical Hot-B style, it's very rough around the edges. Still, that hasn't stopped Japanese publisher Mebius f"
+      }
+    }
+  },
+  {
     "id": "163052a0ebf25300c2e2ab3338df2881317c6b5d",
     "title": "Capcom Spotlight announced for 16th September",
     "summary": "Capcom has announced that they&#8217;ll be hosting another Capcom Spotlight on Wednesday, 16th September at 7am PT / 3pm UK time. What exactly will be featured in the 40-minute presentation has not been revealed, but the live event is being hosted as part of Tokyo Game Show 2026, which is now confirmed to have quite&#8230;&#160; Read More &#187; Capcom Spotlight announced for 16th September Source",
@@ -8,7 +749,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/09/01/capcom-spotlight-announced-for-16th-september/",
     "imageUrl": "",
     "publishedAt": "2026-09-01T06:28:33+00:00",
-    "scrapedAt": "2026-09-01T08:31:32.147454+00:00",
+    "scrapedAt": "2026-09-02T07:47:21.100819+00:00",
     "translations": {
       "en": {
         "title": "Capcom Spotlight announced for 16th September",
@@ -65,7 +806,7 @@
     "sourceUrl": "https://mynintendonews.com/2026/08/31/vgp-lists-lego-harry-potter-collection-for-switch-2-in-october-as-game-key-card/",
     "imageUrl": "",
     "publishedAt": "2026-08-31T21:36:18+00:00",
-    "scrapedAt": "2026-09-01T08:31:32.147690+00:00",
+    "scrapedAt": "2026-09-02T07:47:21.101064+00:00",
     "translations": {
       "en": {
         "title": "VGP lists LEGO Harry Potter Collection for Switch 2 in October as Game-Key Card",
@@ -179,7 +920,7 @@
     "sourceUrl": "https://www.nintendolife.com/reviews/nintendo-switch-2/onimusha-way-of-the-sword",
     "imageUrl": "https://images.nintendolife.com/adc91c5fcf5a8/large.jpg",
     "publishedAt": "2026-08-31T15:00:00+00:00",
-    "scrapedAt": "2026-09-01T08:29:55.018938+00:00",
+    "scrapedAt": "2026-09-02T07:47:17.110184+00:00",
     "translations": {
       "en": {
         "title": "Review: Onimusha: Way Of The Sword (Switch 2) - Capcom Delivers A Superb Samurai Revival",
@@ -236,7 +977,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/anbernics-next-handheld-does-a-great-impression-of-nintendos-switch-lite",
     "imageUrl": "https://images.timeextension.com/a64253b75d106/large.jpg",
     "publishedAt": "2026-08-31T14:00:00+00:00",
-    "scrapedAt": "2026-09-01T08:29:14.603948+00:00",
+    "scrapedAt": "2026-09-02T07:47:09.346224+00:00",
     "translations": {
       "en": {
         "title": "Anbernic's Next Handheld Does A Great Impression Of Nintendo's Switch Lite",
@@ -464,7 +1205,7 @@
     "sourceUrl": "https://www.purexbox.com/features/all-new-games-coming-to-xbox-in-september-2026",
     "imageUrl": "https://images.purexbox.com/0bde02cd69a32/large.jpg",
     "publishedAt": "2026-08-31T11:38:00+00:00",
-    "scrapedAt": "2026-09-01T08:31:09.141515+00:00",
+    "scrapedAt": "2026-09-02T07:47:20.855027+00:00",
     "translations": {
       "en": {
         "title": "Feature: All New Games Coming To Xbox In September 2026",
@@ -521,7 +1262,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/is-2026-the-year-of-zool-this-recently-announced-atari-jaguar-collection-certainly-adds-to-the-argument",
     "imageUrl": "https://images.timeextension.com/37673dd3c3b05/large.jpg",
     "publishedAt": "2026-08-31T11:00:00+00:00",
-    "scrapedAt": "2026-09-01T08:29:14.604157+00:00",
+    "scrapedAt": "2026-09-02T07:47:09.346447+00:00",
     "translations": {
       "en": {
         "title": "Is 2026 The Year Of Zool? This Recently-Announced Atari Jaguar Collection Certainly Adds To The Argument",
@@ -806,7 +1547,7 @@
     "sourceUrl": "https://www.purexbox.com/news/2026/08/state-of-decay-3-confirms-new-release-window-and-closed-beta-plans",
     "imageUrl": "https://images.purexbox.com/8ec822c03b1a1/large.jpg",
     "publishedAt": "2026-08-30T13:00:00+00:00",
-    "scrapedAt": "2026-09-01T08:31:09.141717+00:00",
+    "scrapedAt": "2026-09-02T07:47:20.855255+00:00",
     "translations": {
       "en": {
         "title": "State Of Decay 3 Confirms New Release Window & Closed Beta Plans",
@@ -863,7 +1604,7 @@
     "sourceUrl": "https://www.purexbox.com/guides/xbox-game-pass-all-games-coming-soon-in-september-2026",
     "imageUrl": "https://images.purexbox.com/0a46cade83df6/large.jpg",
     "publishedAt": "2026-08-29T13:30:00+00:00",
-    "scrapedAt": "2026-09-01T08:31:09.141912+00:00",
+    "scrapedAt": "2026-09-02T07:47:20.855461+00:00",
     "translations": {
       "en": {
         "title": "Guide: Xbox Game Pass: All Games Coming Soon In September 2026",
@@ -920,7 +1661,7 @@
     "sourceUrl": "https://www.purexbox.com/features/talking-point-are-you-diving-into-the-modern-warfare-4-open-beta-this-weekend",
     "imageUrl": "https://images.purexbox.com/affe7ca0f1f54/large.jpg",
     "publishedAt": "2026-08-28T18:30:00+00:00",
-    "scrapedAt": "2026-09-01T08:31:09.142076+00:00",
+    "scrapedAt": "2026-09-02T07:47:20.855648+00:00",
     "translations": {
       "en": {
         "title": "Talking Point: Are You Diving Into The Modern Warfare 4 Open Beta This Weekend?",
@@ -1034,7 +1775,7 @@
     "sourceUrl": "https://retrododo.com/joe-mac-retro-collection-pre-orders-are-up-bringing-3-snes-games-to-modern-consoles/",
     "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/joemac-box.webp",
     "publishedAt": "2026-08-28T14:02:15+00:00",
-    "scrapedAt": "2026-09-01T08:29:54.376149+00:00",
+    "scrapedAt": "2026-09-02T07:47:15.710478+00:00",
     "translations": {
       "en": {
         "title": "Joe & Mac Retro Collection Pre-Orders Are Up, Bringing 3 SNES Games To Modern Consoles",
@@ -1376,7 +2117,7 @@
     "sourceUrl": "https://www.timeextension.com/news/2026/08/its-official-the-piko-interactive-collection-1-for-evercade-has-been-reissued",
     "imageUrl": "https://images.timeextension.com/f53e387b49cf4/large.jpg",
     "publishedAt": "2026-08-28T10:30:00+00:00",
-    "scrapedAt": "2026-09-01T08:29:14.604629+00:00",
+    "scrapedAt": "2026-09-02T07:47:09.346994+00:00",
     "translations": {
       "en": {
         "title": "It's Official! The Piko Interactive Collection 1 For Evercade Has Been Reissued",
@@ -11408,7 +12149,7 @@
     "sourceUrl": "https://kotaku.com/rare-two-player-version-of-first-arcade-game-up-for-auction-from-shiny-entertainment-founder-2000724719",
     "imageUrl": "https://kotaku.com/app/uploads/2026/08/computerspace-1280x857.jpg",
     "publishedAt": "2026-08-15T18:13:43+00:00",
-    "scrapedAt": "2026-09-01T08:32:05.823905+00:00",
+    "scrapedAt": "2026-09-02T07:47:27.219147+00:00",
     "translations": {
       "en": {
         "title": "Rare Two-Player Version Of First Arcade Game Up For Auction From Shiny Entertainment Founder",
@@ -14417,576 +15158,6 @@
       "zh": {
         "title": "《幻影之刃零》的游戏状况将于下周公布，并公布 11 分钟预告片",
         "summary": "售价 60 美元的 PS5 游戏现已开放预购。索尼和 S-GAME 已确认《幻影之刃零》的《State of Play》深度探索将于下周首次亮相，时间为 8 月 17 日和 8 月 18 日的深夜或清晨，具体时间取决于您所在的时区。该展示将包含近 20 分钟的游戏内容，并更深入地展示了全新的 11 分钟预告片中的内容，以标记 PS Store 上的预购。基本版售价 54.99 英镑/59.99 美元，而数字豪华版售价"
-      }
-    }
-  },
-  {
-    "id": "2744df424e2dde6bc5ace788ef113950365a6044",
-    "title": "Phantom Blade Zero pre-orders now available, 11-minute trailer; dedicated State of Play set for August 17",
-    "summary": "S-GAME has opened pre-orders and released an 11-minute trailer for Wuxia action RPG Phantom Blade &hellip;",
-    "category": "GAME_RELEASE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/08/phantom-blade-zero-pre-orders-now-available-11-minute-trailer-dedicated-state-of-play-set-for-august-17",
-    "imageUrl": "",
-    "publishedAt": "2026-08-12T02:06:03+00:00",
-    "scrapedAt": "2026-08-12T04:54:14.143544+00:00",
-    "translations": {
-      "en": {
-        "title": "Phantom Blade Zero pre-orders now available, 11-minute trailer; dedicated State of Play set for August 17",
-        "summary": "S-GAME has opened pre-orders and released an 11-minute trailer for Wuxia action RPG Phantom Blade &hellip;"
-      },
-      "fr": {
-        "title": "Les précommandes de Phantom Blade Zero sont désormais disponibles, bande-annonce de 11 minutes ; Un état des lieux dédié prévu pour le 17 août",
-        "summary": "S-GAME a ouvert les précommandes et publié une bande-annonce de 11 minutes pour le RPG d'action Wuxia Phantom Blade &hellip;"
-      },
-      "es": {
-        "title": "Los pedidos anticipados de Phantom Blade Zero ya están disponibles, tráiler de 11 minutos; State of Play dedicado programado para el 17 de agosto",
-        "summary": "S-GAME abrió pedidos anticipados y lanzó un avance de 11 minutos del juego de rol de acción de Wuxia Phantom Blade &hellip;"
-      },
-      "it": {
-        "title": "I preordini di Phantom Blade Zero sono ora disponibili, trailer di 11 minuti; State of Play dedicato fissato per il 17 agosto",
-        "summary": "S-GAME ha aperto i preordini e pubblicato un trailer di 11 minuti per il gioco di ruolo d'azione Wuxia Phantom Blade &hellip;"
-      },
-      "de": {
-        "title": "Vorbestellungen für Phantom Blade Zero jetzt verfügbar, 11-minütiger Trailer; spezielles State of Play-Set für den 17. August",
-        "summary": "S-GAME hat Vorbestellungen eröffnet und einen 11-minütigen Trailer für das Wuxia-Action-Rollenspiel Phantom Blade &hellip; veröffentlicht."
-      },
-      "pt": {
-        "title": "Pré-encomendas de Phantom Blade Zero já disponíveis, trailer de 11 minutos; State of Play dedicado definido para 17 de agosto",
-        "summary": "S-GAME abriu pré-encomendas e lançou um trailer de 11 minutos do RPG de ação Wuxia Phantom Blade &hellip;"
-      },
-      "ru": {
-        "title": "Доступны предварительные заказы на Phantom Blade Zero, 11-минутный трейлер; специальный State of Play, назначенный на 17 августа",
-        "summary": "S-GAME открыла предварительные заказы и выпустила 11-минутный трейлер ролевой игры Wuxia Phantom Blade &hellip;"
-      },
-      "el": {
-        "title": "Διατίθενται πλέον προπαραγγελίες Phantom Blade Zero, τρέιλερ 11 λεπτών. αποκλειστικό State of Play έχει οριστεί για τις 17 Αυγούστου",
-        "summary": "Το S-GAME άνοιξε τις προπαραγγελίες και κυκλοφόρησε ένα τρέιλερ διάρκειας 11 λεπτών για το Wuxia action RPG Phantom Blade &hellip;"
-      },
-      "tr": {
-        "title": "Phantom Blade Zero ön siparişleri artık mevcut, 11 dakikalık fragman; 17 Ağustos için özel State of Play seti",
-        "summary": "S-GAME ön siparişleri açtı ve Wuxia aksiyon RPG Phantom Blade &hellip için 11 dakikalık bir fragman yayınladı."
-      },
-      "ja": {
-        "title": "Phantom Blade Zero の予約注文が開始されました。11 分のトレーラーが公開されています。 8 月 17 日に専用のステート オブ プレイを設定",
-        "summary": "S-GAME は、Wuxia アクション RPG Phantom Blade &hellip; の予約注文を開始し、11 分間のトレーラーを公開しました。"
-      },
-      "zh": {
-        "title": "《幻影之刃零》现已开放预购，11 分钟预告片； 8 月 17 日举行的专门的《State of Play》",
-        "summary": "S-GAME已开启预购，并发布了武侠动作RPG《幻影之刃》的11分钟预告片……"
-      }
-    }
-  },
-  {
-    "id": "5e19a51482d92cb2f1c08c19c5a8cb23942165be",
-    "title": "Stardew Valley - Switch 2 Edition Physical Release Announced, Pre-Orders Now Live",
-    "summary": "Including the Switch game and upgrade pack. The farming and life sim Stardew Valley got a Nintendo Switch 2 Edition last year (and earlier this year in Europe) and a physical edition has now been announced. Fangamer will be distributing a standard edition of the title for $39 , which includes an 18-page full colour illustrated instruction manual. This version includes the base game and upgrade pack and is loaded with Version 1.6 , with free updates available as they're released. Read the full ar",
-    "category": "GAME_RELEASE",
-    "sourceName": "Nintendo Life",
-    "sourceUrl": "https://www.nintendolife.com/news/2026/08/stardew-valley-switch-2-edition-physical-release-announced-pre-orders-now-live",
-    "imageUrl": "https://images.nintendolife.com/ea6c6f93e6884/large.jpg",
-    "publishedAt": "2026-08-12T00:30:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.669168+00:00",
-    "translations": {
-      "en": {
-        "title": "Stardew Valley - Switch 2 Edition Physical Release Announced, Pre-Orders Now Live",
-        "summary": "Including the Switch game and upgrade pack. The farming and life sim Stardew Valley got a Nintendo Switch 2 Edition last year (and earlier this year in Europe) and a physical edition has now been announced. Fangamer will be distributing a standard edition of the title for $39 , which includes an 18-page full colour illustrated instruction manual. This version includes the base game and upgrade pack and is loaded with Version 1.6 , with free updates available as they're released. Read the full ar"
-      },
-      "fr": {
-        "title": "Stardew Valley - Sortie physique de l'édition Switch 2 annoncée, les précommandes sont désormais en ligne",
-        "summary": "Y compris le jeu Switch et le pack de mise à niveau. La simulation agricole et de vie Stardew Valley a reçu une édition Nintendo Switch 2 l'année dernière (et plus tôt cette année en Europe) et une édition physique a maintenant été annoncée. Fangamer distribuera une édition standard du titre pour 39 $, qui comprend un manuel d'instructions illustré en couleur de 18 pages. Cette version comprend le jeu de base et le pack de mise à niveau et est chargée avec la version 1.6, avec des mises à jour gratuites disponibles dès leur sortie. Lire l'intégralité de l'article"
-      },
-      "es": {
-        "title": "Stardew Valley - Se anuncia el lanzamiento físico de la edición Switch 2, los pedidos anticipados ya están disponibles",
-        "summary": "Incluyendo el juego Switch y el paquete de actualización. El simulador de vida y agricultura Stardew Valley obtuvo una edición para Nintendo Switch 2 el año pasado (y a principios de este año en Europa) y ahora se ha anunciado una edición física. Fangamer distribuirá una edición estándar del título por 39 dólares, que incluye un manual de instrucciones ilustrado a todo color de 18 páginas. Esta versión incluye el juego base y el paquete de actualización y viene cargada con la versión 1.6, con actualizaciones gratuitas disponibles a medida que se lanzan. Leer el artículo completo"
-      },
-      "it": {
-        "title": "Annunciata la versione fisica di Stardew Valley - Switch 2 Edition, preordini ora attivi",
-        "summary": "Incluso il gioco Switch e il pacchetto di aggiornamento. Il simulatore di agricoltura e vita Stardew Valley ha ricevuto un'edizione per Nintendo Switch 2 lo scorso anno (e all'inizio di quest'anno in Europa) e ora è stata annunciata un'edizione fisica. Fangamer distribuirà un'edizione standard del titolo per $ 39, che include un manuale di istruzioni illustrato a colori di 18 pagine. Questa versione include il gioco base e il pacchetto di aggiornamento ed è caricata con la versione 1.6, con aggiornamenti gratuiti disponibili non appena vengono rilasciati. Leggi l'intera ar"
-      },
-      "de": {
-        "title": "Physische Veröffentlichung der Stardew Valley – Switch 2 Edition angekündigt, Vorbestellungen jetzt möglich",
-        "summary": "Einschließlich des Switch-Spiels und des Upgrade-Pakets. Die Landwirtschafts- und Lebenssimulation Stardew Valley erhielt letztes Jahr (und Anfang dieses Jahres in Europa) eine Nintendo Switch 2 Edition, und jetzt wurde eine physische Edition angekündigt. Fangamer wird eine Standardausgabe des Titels für 39 US-Dollar vertreiben, die eine 18-seitige, vollfarbig illustrierte Bedienungsanleitung enthält. Diese Version enthält das Basisspiel und das Upgrade-Paket und ist mit Version 1.6 geladen, wobei kostenlose Updates verfügbar sind, sobald sie veröffentlicht werden. Lesen Sie die vollständige Ar"
-      },
-      "pt": {
-        "title": "Stardew Valley - Anunciado o lançamento físico do Switch 2 Edition, pré-encomendas agora ao vivo",
-        "summary": "Incluindo o jogo Switch e o pacote de atualização. O simulador de agricultura e vida Stardew Valley ganhou um Nintendo Switch 2 Edition no ano passado (e no início deste ano na Europa) e uma edição física foi anunciada. A Fangamer distribuirá uma edição padrão do título por US$ 39, que inclui um manual de instruções ilustrado em cores de 18 páginas. Esta versão inclui o jogo base e o pacote de atualização e vem com a versão 1.6, com atualizações gratuitas disponíveis à medida que são lançadas. Leia a íntegra"
-      },
-      "ru": {
-        "title": "Объявлен физический выпуск Stardew Valley — Switch 2 Edition, предварительные заказы уже доступны",
-        "summary": "Включает игру Switch и пакет обновлений. Симулятор фермерства и жизни Stardew Valley получил издание Nintendo Switch 2 в прошлом году (и ранее в этом году в Европе), а теперь было объявлено о физическом издании. Fangamer будет распространять стандартное издание игры за 39 долларов, которое включает 18-страничное полноцветное иллюстрированное руководство по эксплуатации. Эта версия включает базовую игру и пакет обновлений и загружается с версией 1.6, причем бесплатные обновления доступны по мере их выпуска. Читать полную версию"
-      },
-      "el": {
-        "title": "Stardew Valley - Ανακοινώθηκε η φυσική κυκλοφορία του Switch 2, οι προπαραγγελίες τώρα ζωντανά",
-        "summary": "Συμπεριλαμβανομένου του παιχνιδιού Switch και του πακέτου αναβάθμισης. Το farming and life sim Stardew Valley απέκτησε ένα Nintendo Switch 2 Edition πέρυσι (και νωρίτερα φέτος στην Ευρώπη) και τώρα έχει ανακοινωθεί μια φυσική έκδοση. Η Fangamer θα διανείμει μια τυπική έκδοση του τίτλου για 39 $, η οποία περιλαμβάνει ένα πλήρες έγχρωμο εικονογραφημένο εγχειρίδιο οδηγιών 18 σελίδων. Αυτή η έκδοση περιλαμβάνει το βασικό παιχνίδι και το πακέτο αναβάθμισης και είναι φορτωμένη με την έκδοση 1.6, με δωρεάν ενημερώσεις διαθέσιμες κατά την κυκλοφορία τους. Διαβάστε ολόκληρο το αρ"
-      },
-      "tr": {
-        "title": "Stardew Valley - Switch 2 Sürümünün Fiziksel Sürümü Duyuruldu, Ön Siparişler Başladı",
-        "summary": "Switch oyunu ve yükseltme paketi dahil. Çiftçilik ve yaşam simülasyonu Stardew Valley, geçen yıl (ve bu yılın başlarında Avrupa'da) Nintendo Switch 2 Sürümü'nü aldı ve fiziksel sürümü de duyuruldu. Fangamer, 18 sayfalık tam renkli resimli kullanım kılavuzunu içeren oyunun standart sürümünü 39 $ karşılığında dağıtacak. Bu sürüm, temel oyunu ve yükseltme paketini içerir ve Sürüm 1.6 ile yüklenir ve yayınlandıkça ücretsiz güncellemeler sunulur. Ar'ın tamamını okuyun"
-      },
-      "ja": {
-        "title": "Stardew Valley - Switch 2 Edition 物理版リリースが発表、予約注文受付中",
-        "summary": "Switch ゲームとアップグレード パックが含まれます。農業と生活のシムである Stardew Valley は昨年 (そしてヨーロッパでは今年初めに) Nintendo Switch 2 Edition を入手し、今回パッケージ版が発表されました。 Fangamer は、18 ページのフルカラー図解付き取扱説明書を含むタイトルの標準版を 39 ドルで配布します。このバージョンには、基本ゲームとアップグレード パックが含まれており、バージョン 1.6 がロードされており、リリースされると無料のアップデートが利用可能になります。全文を読む"
-      },
-      "zh": {
-        "title": "《星露谷物语》- Switch 2 版实体版已发布，现已开放预购",
-        "summary": "包括 Switch 游戏和升级包。农业和生活模拟游戏《星露谷物语》去年推出了 Nintendo Switch 2 版（今年早些时候在欧洲推出），实体版现已发布。 Fangamer 将以 39 美元的价格发行该游戏的标准版，其中包括一本 18 页的全彩插图说明手册。该版本包括基础游戏和升级包，并加载了 1.6 版，并在发布时提供免费更新。阅读全文"
-      }
-    }
-  },
-  {
-    "id": "e7760be7aa8dbe7af6b237e03a99ddc2babe2a2b",
-    "title": "Pre-orders For GBC Pokémon-esque Game PachiPals Are Now Live",
-    "summary": "&#x1f91d; Like our website? Support us as an independent publisher by tipping , joining our paid community or checking out our accessories brand GAMENOOK ! Did you check out our early look at PachiPals that we posted last week? We&apos;ve been checking out the new Pok&#xe9;mon-esque monster-",
-    "category": "GAME_RELEASE",
-    "sourceName": "RetroDodo",
-    "sourceUrl": "https://retrododo.com/pre-orders-for-gbc-pokemon-esque-game-pachipals-go/",
-    "imageUrl": "https://storage.ghost.io/c/58/fd/58fdc82a-ad84-44e2-ad58-166d1b419bc4/content/images/2026/08/incube8games-pachipals.webp",
-    "publishedAt": "2026-08-11T18:00:22+00:00",
-    "scrapedAt": "2026-08-15T03:44:21.517853+00:00",
-    "translations": {
-      "en": {
-        "title": "Pre-orders For GBC Pokémon-esque Game PachiPals Are Now Live",
-        "summary": "&#x1f91d; Like our website? Support us as an independent publisher by tipping , joining our paid community or checking out our accessories brand GAMENOOK ! Did you check out our early look at PachiPals that we posted last week? We&apos;ve been checking out the new Pok&#xe9;mon-esque monster-"
-      },
-      "fr": {
-        "title": "Les précommandes pour le jeu GBC Pokémon-esque PachiPals sont maintenant en ligne",
-        "summary": "&#x1f91d; Vous aimez notre site Web ? Soutenez-nous en tant qu'éditeur indépendant en donnant un pourboire, en rejoignant notre communauté payante ou en consultant notre marque d'accessoires GAMENOOK ! Avez-vous consulté notre premier aperçu de PachiPals que nous avons publié la semaine dernière ? Nous avons découvert le nouveau monstre de type Pokémon."
-      },
-      "es": {
-        "title": "Los pedidos anticipados para el juego estilo Pokémon de GBC PachiPals ya están disponibles",
-        "summary": "&#x1f91d; ¿Te gusta nuestro sitio web? ¡Apóyanos como editor independiente dando propinas, uniéndote a nuestra comunidad paga o visitando nuestra marca de accesorios GAMENOOK! ¿Revisaste nuestro primer vistazo a PachiPals que publicamos la semana pasada? Hemos estado revisando el nuevo monstruo al estilo Pokémon."
-      },
-      "it": {
-        "title": "I preordini per il gioco in stile Pokémon GBC PachiPals sono ora attivi",
-        "summary": "&#x1f91d; Ti piace il nostro sito web? Sostienici come editore indipendente dando mance, unendoti alla nostra comunità a pagamento o dando un'occhiata al nostro marchio di accessori GAMENOOK! Hai dato un'occhiata al nostro primo sguardo a PachiPals che abbiamo pubblicato la scorsa settimana? Abbiamo dato un'occhiata al nuovo mostro in stile Pokémon..."
-      },
-      "de": {
-        "title": "Vorbestellungen für das GBC-Pokémon-ähnliche Spiel PachiPals sind jetzt online",
-        "summary": "&#x1f91d; Gefällt Ihnen unsere Website? Unterstützen Sie uns als unabhängiger Verlag, indem Sie Trinkgeld geben, unserer kostenpflichtigen Community beitreten oder sich unsere Zubehörmarke GAMENOOK ansehen! Haben Sie sich unseren ersten Blick auf PachiPals angesehen, den wir letzte Woche gepostet haben? Wir haben uns das neue Pokémon-artige Monster angeschaut."
-      },
-      "pt": {
-        "title": "As pré-encomendas do jogo PachiPals no estilo Pokémon GBC já estão ativas",
-        "summary": "&#x1f91d; Gostou do nosso site? Apoie-nos como editor independente dando gorjetas, juntando-se à nossa comunidade paga ou conferindo nossa marca de acessórios GAMENOOK! Você deu uma olhada em nossa primeira visão do PachiPals que postamos na semana passada? Estivemos conferindo o novo monstro estilo Pokémon-"
-      },
-      "ru": {
-        "title": "Предварительные заказы на игру PachiPals в стиле GBC Pokémon уже доступны",
-        "summary": "&#x1f91d; Нравится наш сайт? Поддержите нас как независимого издателя, оставив чаевые, присоединившись к нашему платному сообществу или ознакомившись с аксессуарами нашего бренда GAMENOOK! Вы ознакомились с нашим ранним обзором PachiPals, который мы опубликовали на прошлой неделе? Мы рассматривали нового монстра в стиле покемонов."
-      },
-      "el": {
-        "title": "Οι προπαραγγελίες για το παιχνίδι GBC Pokémon των PachiPals είναι τώρα ζωντανά",
-        "summary": "&#x1f91d; Σας αρέσει ο ιστότοπός μας; Υποστηρίξτε μας ως ανεξάρτητος εκδότης δίνοντας φιλοδωρήματα, γίνετε μέλος της κοινότητάς μας επί πληρωμή ή ελέγχοντας την επωνυμία αξεσουάρ GAMENOOK! Ρίξτε μια ματιά στην αρχική μας ματιά στο PachiPals που δημοσιεύσαμε την περασμένη εβδομάδα; Τσεκάρουμε το νέο τέρας Pok Mon-esque-"
-      },
-      "tr": {
-        "title": "GBC Pokémon-esque Oyunu PachiPals İçin Ön Siparişler Artık Yayında",
-        "summary": "&#x1f91d; Web sitemizi beğendiniz mi? Bahşiş vererek, ücretli topluluğumuza katılarak veya aksesuar markamız GAMENOOK'a göz atarak bağımsız bir yayıncı olarak bizi destekleyin! Geçen hafta yayınladığımız PachiPals'a ilk bakışımıza göz attınız mı? Yeni Pokemon benzeri canavarı inceliyoruz."
-      },
-      "ja": {
-        "title": "GBCのポケモン風のゲーム「パチパル」の予約注文が開始されました",
-        "summary": "&#x1f91d;私たちのウェブサイトが好きですか?チップを投げたり、有料コミュニティに参加したり、アクセサリー ブランド GAMENOOK をチェックしたりして、独立系パブリッシャーとして私たちをサポートしてください。先週投稿したパチパルの初期の様子はチェックしていただけましたか?私たちは新しいポクモン風のモンスターをチェックしてきました。"
-      },
-      "zh": {
-        "title": "GBC 神奇宝贝风格游戏 PachiPals 现已上线预订",
-        "summary": "&#x1f91d;喜欢我们的网站吗？通过打赏、加入我们的付费社区或查看我们的配件品牌 GAMENOOK 来支持我们作为独立发行商！您查看了我们上周发布的 PachiPals 早期作品吗？我们一直在检查新的神奇宝贝风格的怪物 -"
-      }
-    }
-  },
-  {
-    "id": "15911cb1fef5314634a912204ba091b52b2ade87",
-    "title": "Persona 4 Revival ‘New Features’ trailer",
-    "summary": "ATLUS has released a new trailer for Persona 4 Revival introducing five of the remake&#8217;s &hellip;",
-    "category": "REISSUE",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/08/persona-4-revival-new-features-trailer",
-    "imageUrl": "",
-    "publishedAt": "2026-08-11T17:13:06+00:00",
-    "scrapedAt": "2026-08-12T04:54:14.143587+00:00",
-    "translations": {
-      "en": {
-        "title": "Persona 4 Revival ‘New Features’ trailer",
-        "summary": "ATLUS has released a new trailer for Persona 4 Revival introducing five of the remake&#8217;s &hellip;"
-      },
-      "fr": {
-        "title": "Bande-annonce des « nouvelles fonctionnalités » de Persona 4 Revival",
-        "summary": "ATLUS a publié une nouvelle bande-annonce pour Persona 4 Revival présentant cinq des &hellip;"
-      },
-      "es": {
-        "title": "Tráiler de 'Nuevas características' de Persona 4 Revival",
-        "summary": "ATLUS ha lanzado un nuevo tráiler de Persona 4 Revival que presenta cinco de los títulos &hellip;"
-      },
-      "it": {
-        "title": "Trailer \"Nuove funzionalità\" di Persona 4 Revival",
-        "summary": "ATLUS ha rilasciato un nuovo trailer di Persona 4 Revival che introduce cinque dei &hellip;"
-      },
-      "de": {
-        "title": "Persona 4 Revival-Trailer „Neue Funktionen“.",
-        "summary": "ATLUS hat einen neuen Trailer für Persona 4 Revival veröffentlicht, der fünf der &hellip;-Filme des Remakes vorstellt."
-      },
-      "pt": {
-        "title": "Trailer de ‘Novos Recursos’ do Persona 4 Revival",
-        "summary": "ATLUS lançou um novo trailer de Persona 4 Revival apresentando cinco dos…"
-      },
-      "ru": {
-        "title": "Трейлер Persona 4 Revival «Новые возможности»",
-        "summary": "ATLUS выпустила новый трейлер Persona 4 Revival, в котором представлены пять персонажей ремейка &hellip;"
-      },
-      "el": {
-        "title": "Το τρέιλερ του Persona 4 Revival «New Features».",
-        "summary": "Η ATLUS κυκλοφόρησε ένα νέο τρέιλερ για το Persona 4 Revival παρουσιάζοντας πέντε από τα remake &hellip;"
-      },
-      "tr": {
-        "title": "Persona 4 Revival 'Yeni Özellikler' Fragmanı",
-        "summary": "ATLUS, Persona 4 Revival için yeniden yapılanmanın beş oyununu tanıtan yeni bir fragman yayınladı."
-      },
-      "ja": {
-        "title": "ペルソナ4 リバイバル「新機能」トレーラー",
-        "summary": "アトラスは、リメイク版の 5 つを紹介する『ペルソナ 4 リバイバル』の新しいトレーラーを公開しました。"
-      },
-      "zh": {
-        "title": "《女神异闻录 4 复兴》“新功能”预告片",
-        "summary": "ATLUS 发布了《女神异闻录 4 复兴版》的新预告片，介绍了重制版的 5 部影片……"
-      }
-    }
-  },
-  {
-    "id": "7186677559e2883f7aa8734a1bee615e4e4c924e",
-    "title": "Legend Of Zelda Limited Edition Switch 2 Console And Pro Controller Leaks",
-    "summary": "Only a matter of Time. Rumours recently emerged that Nintendo would be producing a limited edition Zelda-themed Switch 2 and Pro Controller, and well, it seems that this is indeed true. Images of the product boxes have been posted online (thanks, Nintendo Everything ), and they look extremely legit. Both contain the 40th anniversary logos for the series along with all the usual small print you'd expect to find. Read the full article on nintendolife.com",
-    "category": "COLLECTOR_PACK",
-    "sourceName": "Nintendo Life",
-    "sourceUrl": "https://www.nintendolife.com/news/2026/08/legend-of-zelda-limited-edition-switch-2-console-and-pro-controller-leaks",
-    "imageUrl": "https://images.nintendolife.com/5e356efbdf671/large.jpg",
-    "publishedAt": "2026-08-11T16:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:56:52.669316+00:00",
-    "translations": {
-      "en": {
-        "title": "Legend Of Zelda Limited Edition Switch 2 Console And Pro Controller Leaks",
-        "summary": "Only a matter of Time. Rumours recently emerged that Nintendo would be producing a limited edition Zelda-themed Switch 2 and Pro Controller, and well, it seems that this is indeed true. Images of the product boxes have been posted online (thanks, Nintendo Everything ), and they look extremely legit. Both contain the 40th anniversary logos for the series along with all the usual small print you'd expect to find. Read the full article on nintendolife.com"
-      },
-      "fr": {
-        "title": "Fuites de la console Switch 2 et du contrôleur Pro Legend Of Zelda Limited Edition",
-        "summary": "Ce n'est qu'une question de temps. Des rumeurs ont récemment émergé selon lesquelles Nintendo produirait une édition limitée Switch 2 et Pro Controller sur le thème de Zelda, et bien, il semble que cela soit effectivement vrai. Des images des boîtes de produits ont été publiées en ligne (merci, Nintendo Everything) et elles semblent extrêmement légitimes. Les deux contiennent les logos du 40e anniversaire de la série ainsi que tous les petits caractères habituels que vous vous attendez à trouver. Lire l'article complet sur nintendolife.com"
-      },
-      "es": {
-        "title": "Fugas de consola y controlador Pro Switch 2 de edición limitada de Legend Of Zelda",
-        "summary": "Sólo es cuestión de tiempo. Recientemente surgieron rumores de que Nintendo estaría produciendo una edición limitada de Switch 2 y Pro Controller con el tema de Zelda, y bueno, parece que esto es cierto. Se han publicado imágenes de las cajas de los productos en línea (gracias, Nintendo Everything) y parecen extremadamente legítimas. Ambos contienen los logotipos del 40 aniversario de la serie junto con toda la letra pequeña habitual que esperarías encontrar. Lea el artículo completo en nintendolife.com"
-      },
-      "it": {
-        "title": "Perdite sulla console Switch 2 e sul controller Pro di Legend Of Zelda in edizione limitata",
-        "summary": "Solo questione di tempo. Recentemente sono emerse voci secondo cui Nintendo avrebbe prodotto uno Switch 2 e un Pro Controller in edizione limitata a tema Zelda, e beh, sembra che questo sia effettivamente vero. Le immagini delle confezioni dei prodotti sono state pubblicate online (grazie, Nintendo Everything) e sembrano estremamente autentiche. Entrambi contengono i loghi del 40° anniversario della serie insieme a tutte le solite scritte in piccolo che ti aspetteresti di trovare. Leggi l'articolo completo su nintendolife.com"
-      },
-      "de": {
-        "title": "Legend Of Zelda Limited Edition Switch 2-Konsole und Pro-Controller-Lecks",
-        "summary": "Nur eine Frage der Zeit. Kürzlich kamen Gerüchte auf, dass Nintendo eine limitierte Edition des Switch 2 und des Pro Controllers im Zelda-Stil produzieren würde, und nun, es scheint, dass dies tatsächlich wahr ist. Bilder der Produktverpackungen wurden online veröffentlicht (Danke, Nintendo Everything) und sie sehen äußerst echt aus. Beide enthalten die Logos zum 40-jährigen Jubiläum der Serie sowie das übliche Kleingedruckte, das Sie erwarten würden. Lesen Sie den vollständigen Artikel auf nintendolife.com"
-      },
-      "pt": {
-        "title": "Legend Of Zelda Limited Edition Switch 2 Console e Pro Controller vazam",
-        "summary": "É apenas uma questão de tempo. Recentemente surgiram rumores de que a Nintendo estaria produzindo uma edição limitada do Switch 2 e do Pro Controller com o tema Zelda, e bem, parece que isso é realmente verdade. Imagens das caixas dos produtos foram postadas online (obrigado, Nintendo Everything) e parecem extremamente legítimas. Ambos contêm os logotipos do 40º aniversário da série, juntamente com todas as letras pequenas que você esperaria encontrar. Leia o artigo completo em nintendolife.com"
-      },
-      "ru": {
-        "title": "Утечки консоли Legend Of Zelda Limited Edition Switch 2 и контроллера Pro",
-        "summary": "Только вопрос времени. Недавно появились слухи, что Nintendo выпустит ограниченную серию Switch 2 и Pro Controller на тему Zelda, и похоже, что это действительно правда. Изображения коробок с продуктом были размещены в Интернете (спасибо Nintendo Everything), и они выглядят очень правдоподобно. Оба содержат логотипы, посвященные 40-летию серии, а также обычный мелкий шрифт, который вы ожидаете найти. Полную версию статьи можно прочитать на сайте nintendolife.com."
-      },
-      "el": {
-        "title": "Διαρροές στην κονσόλα Legend Of Zelda Limited Edition Switch 2 και Pro Controller",
-        "summary": "Μόνο θέμα χρόνου. Πρόσφατα εμφανίστηκαν φήμες ότι η Nintendo θα παράγει μια περιορισμένη έκδοση με θέμα το Zelda Switch 2 και Pro Controller, και καλά, φαίνεται ότι αυτό είναι πράγματι αλήθεια. Οι εικόνες των κουτιών προϊόντων έχουν αναρτηθεί στο διαδίκτυο (ευχαριστώ, Nintendo Everything ) και φαίνονται εξαιρετικά νόμιμες. Και τα δύο περιέχουν τα λογότυπα της 40ης επετείου για τη σειρά μαζί με όλα τα συνηθισμένα μικρά γράμματα που θα περιμένατε να βρείτε. Διαβάστε ολόκληρο το άρθρο στο nintendolife.com"
-      },
-      "tr": {
-        "title": "Legend of Zelda Limited Edition Switch 2 Konsolu ve Pro Denetleyici Sızıntıları",
-        "summary": "Sadece Zaman meselesi. Son zamanlarda Nintendo'nun sınırlı sayıda Zelda temalı Switch 2 ve Pro Controller üreteceğine dair söylentiler ortaya çıktı ve görünüşe göre bu gerçekten doğru. Ürün kutularının görselleri çevrimiçi olarak yayınlandı (teşekkürler, Nintendo Everything) ve son derece okunaklı görünüyorlar. Her ikisinde de serinin 40. yıl dönümü logoları ve bulmayı umduğunuz her zamanki küçük baskılar yer alıyor. Makalenin tamamını nintendolife.com'da okuyun"
-      },
-      "ja": {
-        "title": "ゼルダの伝説限定版Switch 2コンソールとProコントローラーがリーク",
-        "summary": "時間の問題です。最近、任天堂がゼルダをテーマにした限定版のSwitch 2とProコントローラーを生産するという噂が浮上しましたが、どうやらこれは本当のようです。製品の箱の画像がオンラインに投稿されており (Nintendo Everything に感謝)、非常に正規品に見えます。どちらにも、シリーズの 40 周年記念ロゴと、よくある小さな文字がすべて含まれています。 nintendolife.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "《塞尔达传说》限量版 Switch 2 主机和 Pro 控制器泄露",
-        "summary": "只是时间问题。最近有传言称任天堂将生产限量版塞尔达主题的 Switch 2 和 Pro 控制器，看来这确实是真的。产品包装盒的图片已发布在网上（感谢 Nintendo Everything），它们看起来非常合法。两者都包含该系列 40 周年纪念标志以及您期望找到的所有常见小字体。在 nintendolife.com 上阅读完整文章"
-      }
-    }
-  },
-  {
-    "id": "f0e7f3ad77503c9e9f15c8c2b88150b681f6a081",
-    "title": "Marvel’s Wolverine Limited Edition PS5 console bundle and accessories announced",
-    "summary": "Sony Interactive Entertainment has announced the Marvel&#8217;s Wolverine Limited Edition PlayStation 5 console bundle and &hellip;",
-    "category": "COLLECTOR_PACK",
-    "sourceName": "Gematsu",
-    "sourceUrl": "https://www.gematsu.com/2026/08/marvels-wolverine-limited-edition-ps5-console-bundle-and-accessories-announced",
-    "imageUrl": "",
-    "publishedAt": "2026-08-11T14:15:20+00:00",
-    "scrapedAt": "2026-08-12T04:54:14.143692+00:00",
-    "translations": {
-      "en": {
-        "title": "Marvel’s Wolverine Limited Edition PS5 console bundle and accessories announced",
-        "summary": "Sony Interactive Entertainment has announced the Marvel&#8217;s Wolverine Limited Edition PlayStation 5 console bundle and &hellip;"
-      },
-      "fr": {
-        "title": "Annonce du pack de console PS5 et des accessoires Marvel's Wolverine Limited Edition",
-        "summary": "Sony Interactive Entertainment a annoncé le pack console PlayStation 5 Marvel&#8217;s Wolverine Limited Edition et &hellip;"
-      },
-      "es": {
-        "title": "Se anuncian el paquete y los accesorios de la consola PS5 de edición limitada de Marvel's Wolverine",
-        "summary": "Sony Interactive Entertainment ha anunciado el paquete de consola PlayStation 5 de edición limitada de Marvel's Wolverine y &hellip;"
-      },
-      "it": {
-        "title": "Annunciati il ​​bundle e gli accessori della console PS5 in edizione limitata di Marvel's Wolverine",
-        "summary": "Sony Interactive Entertainment ha annunciato il bundle console PlayStation 5 in edizione limitata di Marvel's Wolverine e &hellip;"
-      },
-      "de": {
-        "title": "Marvels Wolverine Limited Edition PS5-Konsolenpaket und Zubehör angekündigt",
-        "summary": "Sony Interactive Entertainment hat das Marvel’s Wolverine Limited Edition PlayStation 5-Konsolenpaket und &hellip; angekündigt."
-      },
-      "pt": {
-        "title": "Pacote e acessórios do console PS5 de edição limitada Wolverine da Marvel anunciados",
-        "summary": "A Sony Interactive Entertainment anunciou o pacote de console PlayStation 5 de edição limitada Wolverine da Marvel e &hellip;"
-      },
-      "ru": {
-        "title": "Анонсирован комплект и аксессуары для консоли Marvel’s Wolverine Limited Edition для PS5",
-        "summary": "Sony Interactive Entertainment анонсировала выпуск консоли Marvel’s Wolverine Limited Edition для PlayStation 5 и &hellip;"
-      },
-      "el": {
-        "title": "Ανακοινώθηκαν το πακέτο και τα αξεσουάρ της Marvel's Wolverine Limited Edition κονσόλας PS5",
-        "summary": "Η Sony Interactive Entertainment ανακοίνωσε το πακέτο κονσόλας PlayStation 5 Wolverine Limited Edition της Marvel και το &hellip;"
-      },
-      "tr": {
-        "title": "Marvel's Wolverine Limited Edition PS5 konsol paketi ve aksesuarları duyuruldu",
-        "summary": "Sony Interactive Entertainment, Marvel'ın Wolverine Limited Edition PlayStation 5 konsol paketini duyurdu ve &hellip;"
-      },
-      "ja": {
-        "title": "Marvel’s Wolverine Limited Edition PS5 本体バンドルとアクセサリが発表",
-        "summary": "ソニー・インタラクティブエンタテインメントは、Marvel's Wolverine Limited Edition PlayStation 5 コンソールバンドルと &hellip; を発表しました。"
-      },
-      "zh": {
-        "title": "漫威金刚狼限量版 PS5 主机套装和配件宣布",
-        "summary": "索尼互动娱乐公司宣布推出漫威金刚狼限量版 PlayStation 5 游戏机捆绑包以及……"
-      }
-    }
-  },
-  {
-    "id": "f0819be733be732415b535ec7eca9c8aa559f643",
-    "title": "Marvel's Wolverine Limited Edition PS5 Consoles, Controllers Announced, Pre-Orders Next Week",
-    "summary": "Nice PS5, bub. Sony has unveiled a series of limited edition Marvel's Wolverine PS5 hardware, including console bundles, cover plates, and DualSense controllers. You can get a glimpse of them in the video below: Read the full article on pushsquare.com",
-    "category": "COLLECTOR_PACK",
-    "sourceName": "Push Square",
-    "sourceUrl": "https://www.pushsquare.com/news/2026/08/marvels-wolverine-limited-edition-ps5-consoles-controllers-announced-pre-orders-next-week",
-    "imageUrl": "https://images.pushsquare.com/175986f80e658/large.jpg",
-    "publishedAt": "2026-08-11T14:15:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.053628+00:00",
-    "translations": {
-      "en": {
-        "title": "Marvel's Wolverine Limited Edition PS5 Consoles, Controllers Announced, Pre-Orders Next Week",
-        "summary": "Nice PS5, bub. Sony has unveiled a series of limited edition Marvel's Wolverine PS5 hardware, including console bundles, cover plates, and DualSense controllers. You can get a glimpse of them in the video below: Read the full article on pushsquare.com"
-      },
-      "fr": {
-        "title": "Consoles PS5 en édition limitée Marvel's Wolverine, contrôleurs annoncés, précommandes la semaine prochaine",
-        "summary": "Belle PS5, mon pote. Sony a dévoilé une série de matériel Marvel's Wolverine PS5 en édition limitée, notamment des ensembles de consoles, des plaques de couverture et des contrôleurs DualSense. Vous pouvez en avoir un aperçu dans la vidéo ci-dessous : Lire l'article complet sur pushsquare.com"
-      },
-      "es": {
-        "title": "Se anuncian las consolas PS5 de edición limitada de Marvel's Wolverine, se anuncian los controladores y se realizarán pedidos anticipados la próxima semana",
-        "summary": "Bonita PS5, amigo. Sony ha presentado una serie de hardware Marvel's Wolverine PS5 de edición limitada, que incluye paquetes de consola, placas de cubierta y controladores DualSense. Puedes verlos en el siguiente vídeo: Lee el artículo completo en pushsquare.com"
-      },
-      "it": {
-        "title": "Annunciati i controller e le console PS5 in edizione limitata di Marvel's Wolverine, preordini la prossima settimana",
-        "summary": "Bella PS5, amico. Sony ha presentato una serie di hardware Marvel's Wolverine PS5 in edizione limitata, inclusi bundle di console, piastre di copertura e controller DualSense. Puoi vederne un assaggio nel video qui sotto: Leggi l'articolo completo su pushsquare.com"
-      },
-      "de": {
-        "title": "Marvel's Wolverine Limited Edition PS5-Konsolen, Controller angekündigt, Vorbestellungen nächste Woche",
-        "summary": "Schöne PS5, Kumpel. Sony hat eine Reihe limitierter Editionen der Marvel's Wolverine PS5-Hardware vorgestellt, darunter Konsolenpakete, Abdeckplatten und DualSense-Controller. Im folgenden Video können Sie einen Blick darauf werfen: Lesen Sie den vollständigen Artikel auf pushsquare.com"
-      },
-      "pt": {
-        "title": "Consoles PS5 de edição limitada Wolverine da Marvel, anunciados controladores, pré-encomendas na próxima semana",
-        "summary": "Belo PS5, cara. A Sony revelou uma série de hardware Wolverine PS5 de edição limitada da Marvel, incluindo pacotes de console, placas de cobertura e controladores DualSense. Você pode dar uma olhada neles no vídeo abaixo: Leia o artigo completo em pushsquare.com"
-      },
-      "ru": {
-        "title": "Консоли PS5 ограниченной серии Marvel's Wolverine, анонс контроллеров, предварительные заказы на следующей неделе",
-        "summary": "Хорошая PS5, чувак. Sony представила серию аппаратного обеспечения Marvel’s Wolverine для PS5 ограниченным тиражом, включая комплекты консолей, накладки и контроллеры DualSense. Вы можете увидеть их на видео ниже: Полную статью можно прочитать на pushsquare.com."
-      },
-      "el": {
-        "title": "Marvel's Wolverine Limited Edition Κονσόλες PS5, Ανακοινώθηκαν οι ελεγκτές, προπαραγγελίες την επόμενη εβδομάδα",
-        "summary": "Ωραίο PS5, bub. Η Sony αποκάλυψε μια σειρά περιορισμένης έκδοσης υλικού Marvel's Wolverine PS5, συμπεριλαμβανομένων πακέτα κονσόλας, πλάκες κάλυψης και ελεγκτές DualSense. Μπορείτε να πάρετε μια γεύση από αυτά στο παρακάτω βίντεο: Διαβάστε το πλήρες άρθρο στο pushsquare.com"
-      },
-      "tr": {
-        "title": "Marvel's Wolverine Limited Edition PS5 Konsolları ve Kontrol Cihazları Açıklandı, Ön Siparişler Gelecek Hafta",
-        "summary": "Güzel PS5, dostum. Sony, konsol paketleri, kapak plakaları ve DualSense denetleyicileri de dahil olmak üzere bir dizi sınırlı sürüm Marvel's Wolverine PS5 donanımını tanıttı. Aşağıdaki videoda bunlara bir göz atabilirsiniz: Makalenin tamamını pushsquare.com'da okuyun."
-      },
-      "ja": {
-        "title": "Marvel's Wolverine 限定版 PS5 コンソール、コントローラーが発表、来週予約開始",
-        "summary": "PS5はいいですね、おい。ソニーは、コンソールバンドル、カバープレート、DualSense コントローラーなど、一連の限定版 Marvel's Wolverine PS5 ハードウェアを発表しました。以下のビデオでその様子を垣間見ることができます。pushsquare.com で全文を読む"
-      },
-      "zh": {
-        "title": "Marvel 金刚狼限量版 PS5 游戏机和控制器已公布，下周开始预订",
-        "summary": "不错的 PS5，小伙子。索尼推出了一系列限量版漫威金刚狼 PS5 硬件，包括主机套装、盖板和 DualSense 控制器。您可以在下面的视频中一睹它们的风采： 在pushsquare.com 上阅读全文"
-      }
-    }
-  },
-  {
-    "id": "e5a7ede35f3022b2e3f2c680f1b80dbe5a14c721",
-    "title": "More 'Avid Consumers' Are Pre-Ordering $100 GTA 6 Edition Over The Cheaper Version",
-    "summary": "\"Pre-orders have gone much better than expected\". Looks like the majority of people are willing to splash $100 on a game, at least when it comes to GTA 6 , arguably the biggest game release in modern history. In an interview with CNBS, Strauss Zelnick, CEO of Rockstar's parent company Take-Two Interactive discussed GTA 6 pre-orders, saying they \"have gone much better than expected\" and revealing that more people opted for the $100 Ultimate Edition. Read the full article on purexbox.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Pure Xbox",
-    "sourceUrl": "https://www.purexbox.com/news/2026/08/more-avid-consumers-are-pre-ordering-usd100-gta-6-edition-over-the-cheaper-version",
-    "imageUrl": "https://images.purexbox.com/faaab2f236989/large.jpg",
-    "publishedAt": "2026-08-11T12:30:00+00:00",
-    "scrapedAt": "2026-08-14T04:53:40.303993+00:00",
-    "translations": {
-      "en": {
-        "title": "More 'Avid Consumers' Are Pre-Ordering $100 GTA 6 Edition Over The Cheaper Version",
-        "summary": "\"Pre-orders have gone much better than expected\". Looks like the majority of people are willing to splash $100 on a game, at least when it comes to GTA 6 , arguably the biggest game release in modern history. In an interview with CNBS, Strauss Zelnick, CEO of Rockstar's parent company Take-Two Interactive discussed GTA 6 pre-orders, saying they \"have gone much better than expected\" and revealing that more people opted for the $100 Ultimate Edition. Read the full article on purexbox.com"
-      },
-      "fr": {
-        "title": "De plus en plus de « consommateurs passionnés » précommandent l'édition GTA 6 à 100 $ par rapport à la version moins chère",
-        "summary": "\"Les précommandes se sont bien mieux déroulées que prévu\". On dirait que la majorité des gens sont prêts à dépenser 100 $ pour un jeu, du moins en ce qui concerne GTA 6, sans doute le plus gros jeu de l'histoire moderne. Dans une interview avec CNBS, Strauss Zelnick, PDG de la société mère de Rockstar, Take-Two Interactive, a discuté des précommandes de GTA 6, affirmant qu'elles \"se sont bien mieux déroulées que prévu\" et révélant que davantage de personnes ont opté pour l'édition Ultimate à 100 $. Lire l'article complet sur purexbox.com"
-      },
-      "es": {
-        "title": "Más 'consumidores Avid' están reservando la edición GTA 6 por $ 100 en lugar de la versión más barata",
-        "summary": "\"Los pedidos anticipados han ido mucho mejor de lo esperado\". Parece que la mayoría de la gente está dispuesta a gastar $100 en un juego, al menos cuando se trata de GTA 6, posiblemente el lanzamiento de juego más grande de la historia moderna. En una entrevista con CNBS, Strauss Zelnick, director ejecutivo de la empresa matriz de Rockstar, Take-Two Interactive, habló sobre los pedidos anticipados de GTA 6, diciendo que \"han ido mucho mejor de lo esperado\" y revelando que más personas optaron por la Ultimate Edition de $100. Lea el artículo completo en purexbox.com"
-      },
-      "it": {
-        "title": "Altri \"consumatori accaniti\" stanno preordinando l'edizione GTA 6 da $ 100 rispetto alla versione più economica",
-        "summary": "\"I preordini sono andati molto meglio del previsto\". Sembra che la maggior parte delle persone sia disposta a spendere $ 100 per un gioco, almeno quando si tratta di GTA 6, probabilmente la più grande uscita di gioco nella storia moderna. In un'intervista con CNBS, Strauss Zelnick, CEO della società madre di Rockstar, Take-Two Interactive, ha discusso dei preordini di GTA 6, affermando che \"sono andati molto meglio del previsto\" e rivelando che più persone hanno optato per la Ultimate Edition da $ 100. Leggi l'articolo completo su purexbox.com"
-      },
-      "de": {
-        "title": "Immer mehr „begeisterte Verbraucher“ bestellen die GTA 6 Edition für 100 US-Dollar gegenüber der günstigeren Version vor",
-        "summary": "„Die Vorbestellungen sind viel besser gelaufen als erwartet.“ Es sieht so aus, als ob die Mehrheit der Leute bereit wäre, 100 US-Dollar für ein Spiel auszugeben, zumindest wenn es um GTA 6 geht, die wohl größte Spielveröffentlichung in der modernen Geschichte. In einem Interview mit CNBS sprach Strauss Zelnick, CEO von Rockstars Muttergesellschaft Take-Two Interactive, über die Vorbestellungen für GTA 6 und sagte, sie seien „viel besser gelaufen als erwartet“ und verriet, dass sich mehr Leute für die 100-Dollar-Ultimate Edition entschieden hätten. Lesen Sie den vollständigen Artikel auf purexbox.com"
-      },
-      "pt": {
-        "title": "Mais 'consumidores ávidos' estão pré-encomendando GTA 6 Edition por $ 100 em vez da versão mais barata",
-        "summary": "“As pré-encomendas foram muito melhores do que o esperado” . Parece que a maioria das pessoas está disposta a gastar US$ 100 em um jogo, pelo menos quando se trata de GTA 6, sem dúvida o maior lançamento de jogo da história moderna. Em entrevista à CNBS, Strauss Zelnick, CEO da Take-Two Interactive, empresa-mãe da Rockstar, discutiu as pré-encomendas de GTA 6, dizendo que \"foram muito melhores do que o esperado\" e revelando que mais pessoas optaram pela Ultimate Edition de US$ 100. Leia o artigo completo em purexbox.com"
-      },
-      "ru": {
-        "title": "Все больше «заядлых потребителей» делают предварительные заказы на GTA 6 Edition за 100 долларов вместо более дешевой версии",
-        "summary": "«Предварительные заказы прошли намного лучше, чем ожидалось». Похоже, большинство людей готовы выложить 100 долларов за игру, по крайней мере, когда речь идет о GTA 6, возможно, крупнейшем игровом релизе в современной истории. В интервью CNBS Штраус Зельник, генеральный директор Take-Two Interactive, материнской компании Rockstar, обсудил предварительные заказы на GTA 6, заявив, что они «прошли намного лучше, чем ожидалось», и отметив, что больше людей выбрали Ultimate Edition за 100 долларов. Полную версию статьи можно прочитать на сайте purexbox.com."
-      },
-      "el": {
-        "title": "Περισσότεροι «άπληστοι καταναλωτές» προπαραγγείλουν 100 $ GTA 6 Edition μέσω της φθηνότερης έκδοσης",
-        "summary": "\"Οι προπαραγγελίες πήγαν πολύ καλύτερα από το αναμενόμενο\". Φαίνεται ότι η πλειονότητα των ανθρώπων είναι πρόθυμοι να ξοδέψουν 100 $ σε ένα παιχνίδι, τουλάχιστον όταν πρόκειται για το GTA 6, αναμφισβήτητα τη μεγαλύτερη κυκλοφορία παιχνιδιού στη σύγχρονη ιστορία. Σε μια συνέντευξη στο CNBS, ο Strauss Zelnick, Διευθύνων Σύμβουλος της μητρικής εταιρείας της Rockstar Take-Two Interactive, συζήτησε τις προπαραγγελίες του GTA 6, λέγοντας ότι «πήγαν πολύ καλύτερα από το αναμενόμενο» και αποκαλύπτοντας ότι περισσότεροι άνθρωποι επέλεξαν την Ultimate Edition των 100$. Διαβάστε ολόκληρο το άρθρο στο purexbox.com"
-      },
-      "tr": {
-        "title": "Daha Fazla 'Hevesli Tüketici' Daha Ucuz Sürüm Yerine 100 Dolarlık GTA 6 Sürümü Ön Siparişi Veriyor",
-        "summary": "\"Ön siparişler beklenenden çok daha iyi geçti\". Görünüşe göre insanların çoğunluğu bir oyuna 100$ harcamaya hazır, en azından konu modern tarihin tartışmasız en büyük oyunu olan GTA 6'ya gelince. Rockstar'ın ana şirketi Take-Two Interactive'in CEO'su Strauss Zelnick, CNBS ile yaptığı röportajda GTA 6 ön siparişlerinden bahsetti ve ön siparişlerin \"beklenenden çok daha iyi gittiğini\" söyledi ve daha fazla kişinin 100 $'lık Ultimate Edition'ı tercih ettiğini açıkladı. Makalenin tamamını purexbox.com'da okuyun"
-      },
-      "ja": {
-        "title": "より多くの「熱心な消費者」が廉価版よりも 100 ドルの GTA 6 エディションを予約注文しています",
-        "summary": "「予約注文は予想よりもはるかに順調です。」少なくとも、おそらく現代史上最大のゲームリリースである GTA 6 に関しては、大多数の人がゲームに 100 ドルを投じることをいとわないようです。 CNBSのインタビューで、ロックスターの親会社テイクツー・インタラクティブの最高経営責任者（CEO）ストラウス・ゼルニック氏はGTA 6の予約注文について語り、「予想よりもはるかに順調だった」と述べ、より多くの人が100ドルのアルティメット・エディションを選択したことを明らかにした。 purexbox.com で記事全文を読む"
-      },
-      "zh": {
-        "title": "更多“狂热消费者”开始预订 100 美元的 GTA 6 版本，而不是更便宜的版本",
-        "summary": "“预购情况比预期好得多”。看起来大多数人都愿意在一款游戏上花 100 美元，至少对于 GTA 6 来说是这样，它可以说是现代历史上最大的游戏发行版。 Rockstar 母公司 Take-Two Interactive 首席执行官 Strauss Zelnick 在接受 CNBS 采访时讨论了 GTA 6 的预订情况，称预订“比预期好得多”，并透露更多人选择了 100 美元的终极版。在 purexbox.com 上阅读全文"
-      }
-    }
-  },
-  {
-    "id": "defff95c96f3c45e9a523662b19f1b520e99b10b",
-    "title": "This Ace Combat 8 Trailer Looks at Fighter Jets the Way Gran Turismo Looks at Cars",
-    "summary": "They are extremely cool to be fair. This recent video for Ace Combat 8: Wings of Theve passed me by, but it's quite unlike anything else Bandai Namco has released about the upcoming game. It's a trailer that's all about showcasing a number of aircraft you'll be able to pilot when the flight action game launches on 2nd October, and it reminds me of Gran Turismo's unique reverence for cars. Read the full article on pushsquare.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Push Square",
-    "sourceUrl": "https://www.pushsquare.com/news/2026/08/this-ace-combat-8-trailer-looks-at-fighter-jets-the-way-gran-turismo-looks-at-cars",
-    "imageUrl": "https://images.pushsquare.com/7d65e3fafba46/large.jpg",
-    "publishedAt": "2026-08-11T12:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.053882+00:00",
-    "translations": {
-      "en": {
-        "title": "This Ace Combat 8 Trailer Looks at Fighter Jets the Way Gran Turismo Looks at Cars",
-        "summary": "They are extremely cool to be fair. This recent video for Ace Combat 8: Wings of Theve passed me by, but it's quite unlike anything else Bandai Namco has released about the upcoming game. It's a trailer that's all about showcasing a number of aircraft you'll be able to pilot when the flight action game launches on 2nd October, and it reminds me of Gran Turismo's unique reverence for cars. Read the full article on pushsquare.com"
-      },
-      "fr": {
-        "title": "Cette bande-annonce d'Ace Combat 8 ​​examine les avions de combat de la même manière que Gran Turismo regarde les voitures",
-        "summary": "Ils sont extrêmement cool pour être honnête. Cette vidéo récente d'Ace Combat 8: Wings of Theve m'a échappé, mais elle ne ressemble à rien d'autre que Bandai Namco a publié sur le jeu à venir. Il s'agit d'une bande-annonce qui présente un certain nombre d'avions que vous pourrez piloter lors du lancement du jeu d'action aérienne le 2 octobre, et cela me rappelle le respect unique de Gran Turismo pour les voitures. Lire l'article complet sur pushsquare.com"
-      },
-      "es": {
-        "title": "Este tráiler de Ace Combat 8 ​​analiza los aviones de combate de la misma manera que Gran Turismo analiza los automóviles",
-        "summary": "Son extremadamente geniales para ser justos. Este vídeo reciente de Ace Combat 8: Wings of The me pasó por alto, pero no se parece a nada que Bandai Namco haya publicado sobre el próximo juego. Es un avance que trata de mostrar una serie de aviones que podrás pilotar cuando el juego de acción de vuelo se lance el 2 de octubre, y me recuerda la reverencia única de Gran Turismo por los autos. Lea el artículo completo en pushsquare.com"
-      },
-      "it": {
-        "title": "Questo trailer di Ace Combat 8 ​​guarda agli aerei da caccia nello stesso modo in cui Gran Turismo guarda alle automobili",
-        "summary": "Sono estremamente fantastici per essere onesti. Questo recente video di Ace Combat 8: Wings of Theve mi è sfuggito, ma è abbastanza diverso da qualsiasi altra cosa che Bandai Namco abbia pubblicato sul prossimo gioco. È un trailer che mostra una serie di aerei che potrai pilotare quando il gioco d'azione di volo verrà lanciato il 2 ottobre e mi ricorda la venerazione unica di Gran Turismo per le auto. Leggi l'articolo completo su pushsquare.com"
-      },
-      "de": {
-        "title": "Dieser Ace Combat 8-Trailer betrachtet Kampfflugzeuge so, wie Gran Turismo Autos betrachtet",
-        "summary": "Um fair zu sein, sind sie extrem cool. Dieses aktuelle Video zu Ace Combat 8: Wings of Theve ist mir entgangen, aber es ist ganz anders als alles andere, was Bandai Namco über das kommende Spiel veröffentlicht hat. In diesem Trailer geht es darum, eine Reihe von Flugzeugen vorzustellen, die Sie steuern können, wenn das Flug-Actionspiel am 2. Oktober erscheint, und er erinnert mich an die einzigartige Ehrfurcht von Gran Turismo vor Autos. Lesen Sie den vollständigen Artikel auf pushsquare.com"
-      },
-      "pt": {
-        "title": "Este trailer de Ace Combat 8 ​​olha para os aviões de combate da mesma forma que o Gran Turismo olha para os carros",
-        "summary": "Eles são extremamente legais para ser justo. Este vídeo recente de Ace Combat 8: Wings of Theve passou por mim, mas é bem diferente de tudo que a Bandai Namco lançou sobre o próximo jogo. É um trailer que mostra uma série de aeronaves que você poderá pilotar quando o jogo de ação de vôo for lançado em 2 de outubro, e me lembra a reverência única do Gran Turismo pelos carros. Leia o artigo completo em pushsquare.com"
-      },
-      "ru": {
-        "title": "Трейлер Ace Combat 8 ​​смотрит на истребители так же, как Gran Turismo смотрит на автомобили",
-        "summary": "Честно говоря, они очень крутые. Это недавнее видео для Ace Combat 8: Wings of Theve прошло мимо меня, но оно совершенно не похоже ни на что другое, что Bandai Namco выпустила о предстоящей игре. Этот трейлер посвящен демонстрации ряда самолетов, которыми вы сможете управлять, когда 2 октября выйдет игра с полетами, и он напоминает мне об уникальном уважении Gran Turismo к автомобилям. Полную версию статьи читайте на сайте pushsquare.com."
-      },
-      "el": {
-        "title": "Αυτό το τρέιλερ του Ace Combat 8 ​​κοιτάζει τα μαχητικά αεροσκάφη με τον τρόπο που το Gran Turismo κοιτάζει τα αυτοκίνητα",
-        "summary": "Είναι εξαιρετικά cool για να είμαστε δίκαιοι. Αυτό το πρόσφατο βίντεο για το Ace Combat 8: Wings of Theve με πέρασε, αλλά δεν μοιάζει με οτιδήποτε άλλο έχει κυκλοφορήσει η Bandai Namco σχετικά με το επερχόμενο παιχνίδι. Είναι ένα τρέιλερ που έχει να κάνει με την παρουσίαση πολλών αεροσκαφών που θα μπορείτε να πιλοτάρετε όταν το παιχνίδι δράσης πτήσης ξεκινήσει στις 2 Οκτωβρίου και μου θυμίζει τη μοναδική ευλάβεια του Gran Turismo για τα αυτοκίνητα. Διαβάστε ολόκληρο το άρθρο στο pushsquare.com"
-      },
-      "tr": {
-        "title": "Ace Combat 8'in Bu Fragmanı, Gran Turismo'nun Arabalara Baktığı Gibi Savaş Jetlerine Bakıyor",
-        "summary": "Adil olmak gerekirse son derece havalılar. Ace Combat 8: Wings of Theve'nin bu son videosu aklımdan geçti ama Bandai Namco'nun yaklaşan oyun hakkında yayınladığı hiçbir şeye benzemiyor. Bu, 2 Ekim'de uçuş aksiyon oyunu çıktığında pilotluk yapabileceğiniz bir dizi uçağı gösteren bir fragman ve bana Gran Turismo'nun arabalara olan eşsiz saygısını hatırlatıyor. Makalenin tamamını pushsquare.com'da okuyun"
-      },
-      "ja": {
-        "title": "このエースコンバット 8 トレーラーは、グランツーリスモが車を見るように戦闘機を考察しています",
-        "summary": "公平に見て、彼らは非常にクールです。最近の『エースコンバット 8: ウイングス オブ テーヴ』のビデオが目に留まりましたが、バンダイナムコが今後のゲームに関してリリースした他のビデオとはまったく異なります。これは、10 月 2 日のフライト アクション ゲームの発売時に操縦できる航空機の数々を紹介するトレーラーで、グランツーリスモの車に対する独特の敬意を思い出させます。 Pushsquare.comで記事全文を読む"
-      },
-      "zh": {
-        "title": "《皇牌空战 8》预告片以《Gran Turismo》看汽车的方式看战斗机",
-        "summary": "公平地说，他们非常酷。最近这段《皇牌空战 8：泰芙之翼》的视频让我错过了，但它与万代南梦宫发布的有关即将推出的游戏的其他任何内容都截然不同。这是一个预告片，展示了飞行动作游戏 10 月 2 日推出时您将能够驾驶的许多飞机，它让我想起了《GT赛车》对汽车的独特崇敬。在pushsquare.com 上阅读全文"
-      }
-    }
-  },
-  {
-    "id": "8d49d979d7d7cb839e1cdbfe85a0eb857112d036",
-    "title": "GTA 6's $100 PS5 Ultimate Edition Is Getting More Pre-Orders Than the Cheaper Version",
-    "summary": "But that's to be expected. The single biggest game on the horizon is Grand Theft Auto 6 , and while it's certainly stirred up some controversy in the run up to launch, it seems many are willing to spend big on it. Strauss Zelnick, CEO of Rockstar's parent company Take-Two Interactive, has not only said that pre-orders are \"exceptional\" so far, but it seems the majority are opting for the most expensive version of GTA 6. Read the full article on pushsquare.com",
-    "category": "GAME_RELEASE",
-    "sourceName": "Push Square",
-    "sourceUrl": "https://www.pushsquare.com/news/2026/08/gta-6s-usd100-ps5-ultimate-edition-is-getting-more-pre-orders-than-the-cheaper-version",
-    "imageUrl": "https://images.pushsquare.com/5b06e0deba813/large.jpg",
-    "publishedAt": "2026-08-11T10:00:00+00:00",
-    "scrapedAt": "2026-08-13T04:58:16.053973+00:00",
-    "translations": {
-      "en": {
-        "title": "GTA 6's $100 PS5 Ultimate Edition Is Getting More Pre-Orders Than the Cheaper Version",
-        "summary": "But that's to be expected. The single biggest game on the horizon is Grand Theft Auto 6 , and while it's certainly stirred up some controversy in the run up to launch, it seems many are willing to spend big on it. Strauss Zelnick, CEO of Rockstar's parent company Take-Two Interactive, has not only said that pre-orders are \"exceptional\" so far, but it seems the majority are opting for the most expensive version of GTA 6. Read the full article on pushsquare.com"
-      },
-      "fr": {
-        "title": "L'édition PS5 Ultimate à 100 $ de GTA 6 reçoit plus de précommandes que la version moins chère",
-        "summary": "Mais il faut s'y attendre. Le jeu le plus important à l'horizon est Grand Theft Auto 6, et même s'il a certainement suscité une certaine controverse à l'approche de son lancement, il semble que beaucoup soient prêts à dépenser gros pour cela. Strauss Zelnick, PDG de Take-Two Interactive, société mère de Rockstar, a non seulement déclaré que les précommandes étaient \"exceptionnelles\" jusqu'à présent, mais il semble que la majorité opte pour la version la plus chère de GTA 6. Lire l'article complet sur pushsquare.com"
-      },
-      "es": {
-        "title": "La edición definitiva de PS5 de $ 100 de GTA 6 está recibiendo más pedidos anticipados que la versión más barata",
-        "summary": "Pero eso es de esperarse. El juego más importante en el horizonte es Grand Theft Auto 6, y si bien ciertamente generó cierta controversia en el período previo al lanzamiento, parece que muchos están dispuestos a gastar mucho en él. Strauss Zelnick, director ejecutivo de la empresa matriz de Rockstar, Take-Two Interactive, no sólo ha dicho que los pedidos anticipados son \"excepcionales\" hasta el momento, sino que parece que la mayoría está optando por la versión más cara de GTA 6. Lea el artículo completo en pushsquare.com"
-      },
-      "it": {
-        "title": "La PS5 Ultimate Edition da $ 100 di GTA 6 sta ottenendo più preordini rispetto alla versione più economica",
-        "summary": "Ma c'è da aspettarselo. Il gioco più importante all'orizzonte è Grand Theft Auto 6 e, anche se ha sicuramente suscitato qualche controversia nel periodo precedente al lancio, sembra che molti siano disposti a spendere molto per esso. Strauss Zelnick, CEO della società madre di Rockstar, Take-Two Interactive, non solo ha affermato che i preordini sono \"eccezionali\" finora, ma sembra che la maggioranza stia optando per la versione più costosa di GTA 6. Leggi l'articolo completo su pushsquare.com"
-      },
-      "de": {
-        "title": "Die 100-Dollar-PS5-Ultimate-Edition von GTA 6 erhält mehr Vorbestellungen als die günstigere Version",
-        "summary": "Aber das ist zu erwarten. Das größte Spiel am Horizont ist Grand Theft Auto 6, und obwohl es im Vorfeld der Veröffentlichung sicherlich einige Kontroversen ausgelöst hat, scheinen viele bereit zu sein, viel dafür auszugeben. Strauss Zelnick, CEO von Rockstars Muttergesellschaft Take-Two Interactive, hat nicht nur gesagt, dass die Vorbestellungen bisher „außergewöhnlich“ seien, sondern es scheint auch, dass sich die Mehrheit für die teuerste Version von GTA 6 entscheidet. Lesen Sie den vollständigen Artikel auf pushsquare.com"
-      },
-      "pt": {
-        "title": "A edição final do PS5 de $ 100 do GTA 6 está recebendo mais encomendas do que a versão mais barata",
-        "summary": "Mas isso era de se esperar. O maior jogo no horizonte é Grand Theft Auto 6 e, embora certamente tenha gerado alguma controvérsia antes do lançamento, parece que muitos estão dispostos a gastar muito nele. Strauss Zelnick, CEO da Take-Two Interactive, empresa controladora da Rockstar, não apenas disse que as pré-encomendas são “excepcionais” até agora, mas parece que a maioria está optando pela versão mais cara do GTA 6. Leia o artigo completo em pushsquare.com"
-      },
-      "ru": {
-        "title": "GTA 6 для PS5 Ultimate Edition за 100 долларов получает больше предварительных заказов, чем более дешевая версия",
-        "summary": "Но этого следовало ожидать. Самой крупной игрой на горизонте является Grand Theft Auto 6, и хотя она, безусловно, вызвала некоторые споры в преддверии запуска, похоже, что многие готовы потратить на нее большие деньги. Штраус Зельник, генеральный директор материнской компании Rockstar, Take-Two Interactive, не только сказал, что предварительные заказы пока «исключительны», но и, похоже, большинство выбирает самую дорогую версию GTA 6. Полную версию статьи можно прочитать на pushsquare.com"
-      },
-      "el": {
-        "title": "Η Ultimate Edition 100 $ του GTA 6 λαμβάνει περισσότερες προπαραγγελίες από την φθηνότερη έκδοση",
-        "summary": "Αλλά αυτό είναι αναμενόμενο. Το μεγαλύτερο παιχνίδι στον ορίζοντα είναι το Grand Theft Auto 6, και ενώ σίγουρα έχει προκαλέσει κάποια διαμάχη εν όψει της κυκλοφορίας, φαίνεται ότι πολλοί είναι πρόθυμοι να ξοδέψουν πολλά για αυτό. Ο Strauss Zelnick, Διευθύνων Σύμβουλος της μητρικής εταιρείας της Rockstar Take-Two Interactive, όχι μόνο είπε ότι οι προπαραγγελίες είναι \"εξαιρετικές\" μέχρι στιγμής, αλλά φαίνεται ότι η πλειοψηφία επιλέγει την πιο ακριβή έκδοση του GTA 6. Διαβάστε το πλήρες άρθρο στο pushsquare.com"
-      },
-      "tr": {
-        "title": "GTA 6'nın 100 Dolarlık PS5 Ultimate Sürümü, Ucuz Sürüme Göre Daha Fazla Ön Sipariş Alıyor",
-        "summary": "Ama bu beklenen bir şey. Ufuktaki en büyük oyun Grand Theft Auto 6'dır ve lansman öncesinde kesinlikle bazı tartışmalara yol açsa da pek çok kişinin buna büyük para harcamaya istekli olduğu görülüyor. Rockstar'ın ana şirketi Take-Two Interactive'in CEO'su Strauss Zelnick, yalnızca ön siparişlerin şu ana kadar \"olağanüstü\" olduğunu söylemekle kalmadı, aynı zamanda çoğunluğun GTA 6'nın en pahalı sürümünü tercih ettiği görülüyor. Makalenin tamamını pushsquare.com'da okuyun."
-      },
-      "ja": {
-        "title": "「GTA 6」の100ドルのPS5アルティメットエディションは廉価版よりも多くの予約注文を獲得している",
-        "summary": "しかし、それは予想通りです。今後登場する最大のゲームは『グランド・セフト・オート6』で、発売に向けて確かに物議をかもしているが、多くの人がそれに大金を投じることをいとわないようだ。ロックスターの親会社テイクツー・インタラクティブのストラウス・ゼルニック最高経営責任者（CEO）は、これまでのところ予約注文が「異例」であるだけでなく、大多数がGTA 6の最も高価なバージョンを選択しているようだと述べた。pushsquare.comで全文を読む"
-      },
-      "zh": {
-        "title": "GTA 6 售价 100 美元的 PS5 终极版比便宜版获得更多预订",
-        "summary": "但这是可以预料的。即将推出的最大游戏是《侠盗猎车手 6》，虽然它在发布前确实引起了一些争议，但似乎很多人都愿意在它身上花大钱。 Rockstar 母公司 Take-Two Interactive 的首席执行官施特劳斯·泽尼克 (Strauss Zelnick) 不仅表示，迄今为止的预购情况“非常出色”，而且似乎大多数人都选择了最昂贵的 GTA 6 版本。请在 Pushsquare.com 上阅读完整文章"
       }
     }
   },
