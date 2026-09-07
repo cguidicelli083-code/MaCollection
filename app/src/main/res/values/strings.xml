@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ma Collection V2</string>
+    <string name="app_name">Ma Collection Retro Gaming</string>
 
     <!-- MainActivity: dialogs and nav -->
     <string name="add_item_dialog_title">Ajouter un objet</string>

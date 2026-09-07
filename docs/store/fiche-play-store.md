@@ -1,12 +1,12 @@
-# Fiche Play Store — Ma Collection V2
+# Fiche Play Store — Ma Collection Retro Gaming
 
 À copier-coller dans Play Console → Présence sur le Store → Fiche Store principale.
 
 ## Titre (30 caractères max)
 ```
-Ma Collection V2
+Ma Collection Retro Gaming
 ```
-(16 caractères — OK)
+(26 caractères — OK)
 
 ## Description courte (80 caractères max)
 ```
@@ -16,7 +16,7 @@ Catalogue ta collection de jeux, consoles et accessoires rétro
 
 ## Description complète (4000 caractères max) — Français
 ```
-Ma Collection V2 t'aide à cataloguer ta collection de jeux vidéo, consoles et accessoires rétro : de l'Atari 2600 à aujourd'hui, plus de 600 consoles et 80 accessoires déjà répertoriés dans l'encyclopédie intégrée.
+Ma Collection Retro Gaming t'aide à cataloguer ta collection de jeux vidéo, consoles et accessoires rétro : de l'Atari 2600 à aujourd'hui, plus de 600 consoles et 80 accessoires déjà répertoriés dans l'encyclopédie intégrée.
 
 📷 AJOUT RAPIDE
 Scanne un code-barres (jeux), prends une photo (jeux, consoles et accessoires, reconnaissance automatique par IA), choisis une photo dans ta galerie, ou saisis tout à la main. Scanne aussi une étagère entière d'un coup : l'IA isole chaque jeu ou console détecté.
@@ -42,13 +42,13 @@ Français, anglais, espagnol, italien, allemand, portugais, russe, grec, turc, j
 🎨 THÈMES PERSONNALISABLES
 Choisis un thème visuel à débloquer, et change l'image de fond de l'application.
 
-Ma Collection V2 est gratuite, financée par des publicités discrètes (bannière + interstitiel + pub récompensée optionnelle). Des abonnements Premium (mensuel ou annuel) ou un achat à vie retirent les limites et débloquent l'accès complet aux mini-jeux et à la boutique.
+Ma Collection Retro Gaming est gratuite, financée par des publicités discrètes (bannière + interstitiel + pub récompensée optionnelle). Des abonnements Premium (mensuel ou annuel) ou un achat à vie retirent les limites et débloquent l'accès complet aux mini-jeux et à la boutique.
 ```
 (≈1900 caractères — OK)
 
 ## Full description (4000 char max) — English
 ```
-Ma Collection V2 helps you catalog your retro video game, console and accessory collection: from the Atari 2600 to today, over 600 consoles and 80 accessories already listed in the built-in encyclopedia.
+Ma Collection Retro Gaming helps you catalog your retro video game, console and accessory collection: from the Atari 2600 to today, over 600 consoles and 80 accessories already listed in the built-in encyclopedia.
 
 📷 QUICK ADD
 Scan a barcode (games), take a photo (games, consoles and accessories, automatic AI recognition), pick a photo from your gallery, or enter everything manually. You can also scan a whole shelf at once: the AI isolates each detected game or console.
@@ -74,7 +74,7 @@ French, English, Spanish, Italian, German, Portuguese, Russian, Greek, Turkish, 
 🎨 CUSTOMIZABLE THEMES
 Unlock a visual theme, and change the app's background image.
 
-Ma Collection V2 is free, funded by unobtrusive ads (banner + interstitial + optional rewarded ad). Premium subscriptions (monthly or yearly) or a lifetime purchase remove the limits and unlock full access to the mini-games and shop.
+Ma Collection Retro Gaming is free, funded by unobtrusive ads (banner + interstitial + optional rewarded ad). Premium subscriptions (monthly or yearly) or a lifetime purchase remove the limits and unlock full access to the mini-games and shop.
 ```
 
 ## Catégorie suggérée

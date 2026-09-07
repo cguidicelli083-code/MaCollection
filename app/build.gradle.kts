@@ -95,7 +95,7 @@ android {
             buildConfigField("boolean", "IS_TEST", "true")
             buildConfigField("boolean", "ADS_ENABLED", "true")
             buildConfigField("boolean", "UNLOCK_ALL", "false")
-            manifestPlaceholders["appLabel"] = "Ma Collection V2 (TEST)"
+            manifestPlaceholders["appLabel"] = "Ma Collection Retro Gaming (TEST)"
         }
         // "noads" : édition SANS PUBLICITÉ (com.nawash.macollection.sp, « V2SP »), installable
         // à côté des deux autres. ADS_ENABLED = false est une constante de compilation : R8 supprime
@@ -108,7 +108,7 @@ android {
             buildConfigField("boolean", "ADS_ENABLED", "false")
             // V2SP : tous les verrous levés (jeux, thèmes, options débloqués) pour les tests.
             buildConfigField("boolean", "UNLOCK_ALL", "true")
-            manifestPlaceholders["appLabel"] = "Ma Collection V2SP"
+            manifestPlaceholders["appLabel"] = "Ma Collection Retro Gaming (SP)"
         }
     }
 

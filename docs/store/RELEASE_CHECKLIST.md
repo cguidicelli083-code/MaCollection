@@ -1,4 +1,4 @@
-# Checklist mise en ligne Play Store — Ma Collection V2
+# Checklist mise en ligne Play Store — Ma Collection Retro Gaming
 
 ## ✅ Fait automatiquement (mise à jour 2026-08-29 — version 2.12 (16))
 - [x] Encyclopédie : le mode "Jeux" autonome est remplacé par une liste de jeux enrichie
