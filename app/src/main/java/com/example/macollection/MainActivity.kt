@@ -113,6 +113,7 @@ import com.example.macollection.ui.NewsScreen
 import com.example.macollection.ui.BackupScreen
 import com.example.macollection.ui.BatchScanDialog
 import com.example.macollection.ui.formatPrice
+import com.example.macollection.ui.ads.requestConsentAndInitAds
 import com.example.macollection.ui.ads.watchRewardedAd
 import com.example.macollection.data.GameGuide
 import com.example.macollection.data.GameShopCatalog
@@ -153,6 +154,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppPrefs.load(this)
+        requestConsentAndInitAds(this)
         setContent {
             MaCollectionTheme {
                 AppRoot()

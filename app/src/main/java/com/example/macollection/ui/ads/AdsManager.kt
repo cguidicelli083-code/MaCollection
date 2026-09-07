@@ -3,16 +3,58 @@ package com.example.macollection.ui.ads
 import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
+import android.util.Log
 import android.widget.Toast
 import com.example.macollection.BuildConfig
 import com.example.macollection.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.ConsentRequestParameters
+import com.google.android.ump.UserMessagingPlatform
+
+private const val TAG = "AdsManager"
+private var mobileAdsInitialized = false
+
+/**
+ * Recueil du consentement RGPD (obligatoire pour tout utilisateur en UE, SDK UMP de Google) avant
+ * toute initialisation du SDK Ads — sans ce recueil, afficher des pubs personnalisées à un
+ * utilisateur européen serait non conforme. Tant que le consentement n'est pas obtenu (ou refusé),
+ * les pubs demandées restent non-personnalisées par défaut (comportement standard du SDK Google).
+ * Ne fait rien dans l'édition sans pub (V2SP) : inutile de solliciter un consentement pour des pubs
+ * qui ne seront jamais affichées. À appeler une fois, depuis `MainActivity.onCreate` (a besoin
+ * d'une Activity, contrairement à `MobileAds.initialize` qui tournait avant depuis l'Application).
+ */
+fun requestConsentAndInitAds(activity: Activity) {
+    if (!BuildConfig.ADS_ENABLED) return
+    val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(activity)
+    val params = ConsentRequestParameters.Builder().build()
+    consentInfo.requestConsentInfoUpdate(
+        activity,
+        params,
+        {
+            UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity) { formError ->
+                if (formError != null) Log.w(TAG, "Formulaire de consentement : ${formError.message}")
+                initMobileAdsIfNeeded(activity)
+            }
+        },
+        { requestError -> Log.w(TAG, "Consentement RGPD : ${requestError.message}") }
+    )
+    // Si le consentement n'est pas requis (ex. hors UE) ou déjà connu, initialiser quand même.
+    if (consentInfo.canRequestAds()) initMobileAdsIfNeeded(activity)
+}
+
+private fun initMobileAdsIfNeeded(context: Context) {
+    if (mobileAdsInitialized) return
+    mobileAdsInitialized = true
+    MobileAds.initialize(context)
+}
 
 /**
  * Unités publicitaires : IDs réels du compte AdMob personnel (créé 2026-07-12), utilisés dans

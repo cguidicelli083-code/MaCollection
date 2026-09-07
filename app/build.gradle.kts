@@ -220,6 +220,8 @@ dependencies {
     // et achat Premium via Google Play Billing (scaffold non fonctionnel tant que l'appli
     // n'est pas publiée sur le Play Console avec un produit in-app configuré).
     implementation("com.google.android.gms:play-services-ads:23.3.0")
+    // Consentement RGPD (UMP) requis avant toute pub personnalisée pour un utilisateur en UE.
+    implementation("com.google.android.ump:user-messaging-platform:2.2.0")
     // Artefact de base (pas -ktx) : évite un conflit de version de métadonnées Kotlin, les
     // extensions coroutines de billing-ktx ne sont pas utilisées ici (callbacks classiques).
     implementation("com.android.billingclient:billing:8.3.0")

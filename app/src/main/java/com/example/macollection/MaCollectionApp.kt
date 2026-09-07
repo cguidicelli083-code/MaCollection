@@ -3,7 +3,6 @@ package com.example.macollection
 import android.app.Application
 import coil.ImageLoader
 import coil.ImageLoaderFactory
-import com.google.android.gms.ads.MobileAds
 import okhttp3.OkHttpClient
 
 /**
@@ -15,8 +14,10 @@ import okhttp3.OkHttpClient
 class MaCollectionApp : Application(), ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
-        // Unités publicitaires de TEST uniquement (voir ui/ads/AdsManager.kt).
-        MobileAds.initialize(this)
+        // L'init des pubs (MobileAds) se fait désormais depuis MainActivity.onCreate, après le
+        // recueil de consentement RGPD (voir ui/ads/AdsManager.requestConsentAndInitAds) — un
+        // contexte Activity est nécessaire pour afficher le formulaire de consentement, ce que
+        // l'Application ne peut pas fournir.
     }
 
     override fun newImageLoader(): ImageLoader {

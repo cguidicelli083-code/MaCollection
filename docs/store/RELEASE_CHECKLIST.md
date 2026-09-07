@@ -17,6 +17,10 @@
       depuis "Estimation rapide".
 - [x] Nouvelles photos locales pour plusieurs consoles/accessoires (remplacent des URLs distantes,
       plus fiable hors-ligne).
+- [x] Consentement RGPD (Google UMP) pour les pubs personnalisées en UE — `ui/ads/AdsManager.requestConsentAndInitAds`,
+      appelé depuis `MainActivity.onCreate` (nécessite une Activity, l'init des pubs a donc été
+      déplacée hors de `MaCollectionApp`). Même modèle que MaCollection WCF. Build de release
+      reconstruit avec ce changement.
 
 ## ✅ Fait automatiquement (mise à jour 2026-08-07 — version 2.10 (14))
 - [x] Traduction complète de l'app en 11 langues (fr, en, es, it, de, pt, ru, el, tr, ja, zh) — sélecteur de langue dans Réglages.
@@ -41,26 +45,24 @@
    - Fixe les prix de ton choix. Tant qu'ils ne sont pas créés et actifs, le Paywall affiche "Bientôt disponible" (comportement normal et voulu, pas un bug).
    - **Rappel offre de lancement** : si tu veux une réduction limitée dans le temps sur `sub_yearly` (ex. 9,99 € le premier mois puis retour à 14,99 €), configure la fenêtre d'offre Play Console AVANT la publication du build de production officiel — pas sur un simple push en test fermé.
 
-1. **Consentement RGPD (UMP) — recommandé avant tout, PAS encore implémenté** : contrairement à MaCollection WCF, ce projet n'a aucun flux de consentement Google User Messaging Platform pour les utilisateurs de l'Union européenne. AdMob impose ce recueil de consentement pour les pubs personnalisées en UE — à ajouter avant une publication grand public en Europe (dis-moi si tu veux que je l'implémente, ça se fait au même endroit que le tutoriel de premier lancement).
+1. **Compte développeur Google Play** (25 $ one-shot si pas déjà fait) : https://play.google.com/console/signup
 
-2. **Compte développeur Google Play** (25 $ one-shot si pas déjà fait) : https://play.google.com/console/signup
+2. **Captures d'écran** : déjà prises, voir `docs/store/screenshots/` (6 images). Rajoutes-en si tu veux couvrir d'autres écrans (jusqu'à 8 recommandé).
 
-3. **Captures d'écran** (2 minimum, jusqu'à 8 recommandé, format téléphone) : Collection, Encyclopédie, fiche détail d'un jeu, onglet Jeux, sélecteur de langue... Ton téléphone est déjà connecté en USB à cette session — dis-le-moi si tu veux qu'on les prenne ensemble maintenant.
+3. **Icône 512×512 et bannière 1024×500** : pas encore générées côté `docs/store/` pour ce projet (contrairement à WCF) — à préparer avant publication.
 
-4. **Icône 512×512 et bannière 1024×500** : pas encore générées côté `docs/store/` pour ce projet (contrairement à WCF) — à préparer avant publication.
-
-5. **Activer GitHub Pages** pour héberger la politique de confidentialité (si pas déjà fait pour ce dépôt — `index.html` semble déjà servi, donc peut-être déjà actif) :
+4. **Activer GitHub Pages** pour héberger la politique de confidentialité (si pas déjà fait pour ce dépôt — `index.html` semble déjà servi, donc peut-être déjà actif) :
    `github.com/cguidicelli083-code/MaCollection → Settings → Pages → Source: branch "main", dossier "/docs"`.
    L'URL sera alors `https://cguidicelli083-code.github.io/MaCollection/privacy-policy.html`.
 
-6. **Dans Play Console** (nouvelle app) :
+5. **Dans Play Console** (nouvelle app) :
    - Nom, description courte/longue, icône, bannière → copier depuis `docs/store/fiche-play-store.md` et `docs/store/*.png` (une fois générés).
-   - Coller l'URL de la politique de confidentialité (étape 5).
+   - Coller l'URL de la politique de confidentialité (étape 4).
    - Questionnaire de classification du contenu (aucun contenu sensible dans l'app elle-même).
    - Section "Sécurité des données" (Data safety) : déclarer les données collectées — voir `docs/privacy-policy.html` pour la liste exacte (photos envoyées à Gemini/Groq pour reconnaissance, codes-barres envoyés à UPCitemdb/Barcode Lookup/Barcode Spider/ScanDex, requêtes de recherche envoyées à IGDB/RAWG/eBay/Tavily/Wikipédia, IDs publicitaires via AdMob). Cocher aussi "Contient des achats intégrés" (voir section dédiée dans `fiche-play-store.md`).
    - Uploader le bundle de release (`app/build/outputs/bundle/fullRelease/app-full-release.aab`) dans une release (commencer par un test interne/fermé est recommandé avant production).
 
-7. **Après publication** : pense à sauvegarder le keystore (`macollectionv2-release.jks`) et son mot de passe (dans `local.properties`) ailleurs que sur ce PC (gestionnaire de mots de passe, cloud chiffré...) — leur perte rendrait impossible toute future mise à jour de l'app.
+6. **Après publication** : pense à sauvegarder le keystore (`macollectionv2-release.jks`) et son mot de passe (dans `local.properties`) ailleurs que sur ce PC (gestionnaire de mots de passe, cloud chiffré...) — leur perte rendrait impossible toute future mise à jour de l'app.
 
 ## 🎓 Tutoriel de premier lancement — terminé
 
