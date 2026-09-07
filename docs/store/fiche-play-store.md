@@ -87,6 +87,11 @@ Coche "Contient des achats intégrés" dans Play Console. Trois produits gérés
 - Achat à vie (unique) — ID produit : `inapp_lifetime`
 - Fourchette de prix suggérée à indiquer dans la fiche Store : à définir toi-même selon les prix choisis côté Monétisation. Voir la note sur l'offre de lancement `sub_yearly` dans `RELEASE_CHECKLIST.md`.
 
+## Assets graphiques déjà générés dans docs/store/
+- `icon-512.png` — icône 512×512 (reprend l'icône réelle de l'app, Game Boy Color turquoise).
+- `feature-graphic-1024x500.png` — bannière de présentation.
+- Captures d'écran : voir `docs/store/screenshots/` (6 images).
+
 ## Classification du contenu
 À faire dans Play Console → questionnaire de classification (aucune violence/contenu adulte réel dans l'app elle-même — catalogue de jeux vidéo/consoles et mini-jeux tout public).
 

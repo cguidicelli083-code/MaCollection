@@ -21,6 +21,10 @@
       appelé depuis `MainActivity.onCreate` (nécessite une Activity, l'init des pubs a donc été
       déplacée hors de `MaCollectionApp`). Même modèle que MaCollection WCF. Build de release
       reconstruit avec ce changement.
+- [x] Icône Play Store 512×512 générée : `docs/store/icon-512.png` (reprend l'icône réelle de l'app,
+      `ic_launcher.xml` — Game Boy Color turquoise sur fond sombre).
+- [x] Bannière de présentation 1024×500 générée : `docs/store/feature-graphic-1024x500.png` (même
+      icône + dégradé du thème par défaut de l'app + titre/tagline).
 
 ## ✅ Fait automatiquement (mise à jour 2026-08-07 — version 2.10 (14))
 - [x] Traduction complète de l'app en 11 langues (fr, en, es, it, de, pt, ru, el, tr, ja, zh) — sélecteur de langue dans Réglages.
@@ -49,20 +53,18 @@
 
 2. **Captures d'écran** : déjà prises, voir `docs/store/screenshots/` (6 images). Rajoutes-en si tu veux couvrir d'autres écrans (jusqu'à 8 recommandé).
 
-3. **Icône 512×512 et bannière 1024×500** : pas encore générées côté `docs/store/` pour ce projet (contrairement à WCF) — à préparer avant publication.
-
-4. **Activer GitHub Pages** pour héberger la politique de confidentialité (si pas déjà fait pour ce dépôt — `index.html` semble déjà servi, donc peut-être déjà actif) :
+3. **Activer GitHub Pages** pour héberger la politique de confidentialité (si pas déjà fait pour ce dépôt — `index.html` semble déjà servi, donc peut-être déjà actif) :
    `github.com/cguidicelli083-code/MaCollection → Settings → Pages → Source: branch "main", dossier "/docs"`.
    L'URL sera alors `https://cguidicelli083-code.github.io/MaCollection/privacy-policy.html`.
 
-5. **Dans Play Console** (nouvelle app) :
-   - Nom, description courte/longue, icône, bannière → copier depuis `docs/store/fiche-play-store.md` et `docs/store/*.png` (une fois générés).
-   - Coller l'URL de la politique de confidentialité (étape 4).
+4. **Dans Play Console** (nouvelle app) :
+   - Nom, description courte/longue, icône, bannière → copier depuis `docs/store/fiche-play-store.md`, `docs/store/icon-512.png` et `docs/store/feature-graphic-1024x500.png`.
+   - Coller l'URL de la politique de confidentialité (étape 3).
    - Questionnaire de classification du contenu (aucun contenu sensible dans l'app elle-même).
    - Section "Sécurité des données" (Data safety) : déclarer les données collectées — voir `docs/privacy-policy.html` pour la liste exacte (photos envoyées à Gemini/Groq pour reconnaissance, codes-barres envoyés à UPCitemdb/Barcode Lookup/Barcode Spider/ScanDex, requêtes de recherche envoyées à IGDB/RAWG/eBay/Tavily/Wikipédia, IDs publicitaires via AdMob). Cocher aussi "Contient des achats intégrés" (voir section dédiée dans `fiche-play-store.md`).
    - Uploader le bundle de release (`app/build/outputs/bundle/fullRelease/app-full-release.aab`) dans une release (commencer par un test interne/fermé est recommandé avant production).
 
-6. **Après publication** : pense à sauvegarder le keystore (`macollectionv2-release.jks`) et son mot de passe (dans `local.properties`) ailleurs que sur ce PC (gestionnaire de mots de passe, cloud chiffré...) — leur perte rendrait impossible toute future mise à jour de l'app.
+5. **Après publication** : pense à sauvegarder le keystore (`macollectionv2-release.jks`) et son mot de passe (dans `local.properties`) ailleurs que sur ce PC (gestionnaire de mots de passe, cloud chiffré...) — leur perte rendrait impossible toute future mise à jour de l'app.
 
 ## 🎓 Tutoriel de premier lancement — terminé
 
