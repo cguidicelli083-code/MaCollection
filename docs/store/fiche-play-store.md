@@ -98,6 +98,3 @@ Coche "Contient des achats intégrés" dans Play Console. Trois produits gérés
 ## Coordonnées / politique de confidentialité
 - URL politique de confidentialité : `docs/privacy-policy.html` dans ce dépôt (fr + en), déjà servi via GitHub Pages (le dossier `docs/` héberge déjà `index.html` et le flux d'actus rétro) :
   `https://cguidicelli083-code.github.io/MaCollection/privacy-policy.html`
-
-## Assets graphiques
-- **Icône 512×512, bannière de présentation 1024×500, captures d'écran** : rien n'est encore généré côté `docs/store/` pour ce projet (contrairement à MaCollection WCF) — à faire avant publication. Dis-moi si tu veux qu'on les prépare ensemble (icône dérivable de l'icône d'app existante, captures prenables directement depuis ton téléphone connecté).
